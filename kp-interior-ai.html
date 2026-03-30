@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>КП — Interior AI | Snezhko AI</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700&family=Unbounded:wght@400;600;700&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0a;
+  --card:#151515;
+  --card2:#1c1c1c;
+  --text:#e8e8e8;
+  --dim:#888;
+  --amber:#f2a904;
+  --amber-dim:rgba(242,169,4,.12);
+  --green:#22c55e;
+  --green-dim:rgba(34,197,94,.12);
+  --border:#222;
+}
+html{background:var(--bg);color:var(--text);font-family:'Onest',sans-serif;font-size:15px;line-height:1.7}
+body{padding:40px 20px;max-width:900px;margin:0 auto}
+
+@media print{
+  body{padding:20px;max-width:100%;font-size:12px}
+  .no-print{display:none}
+  .page-break{page-break-before:always}
+}
+
+h1{font-family:'Unbounded',sans-serif;font-size:2rem;font-weight:700;color:var(--amber);margin-bottom:8px;line-height:1.3}
+h2{font-family:'Unbounded',sans-serif;font-size:1.15rem;font-weight:600;color:var(--text);margin:48px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+h3{font-size:1rem;font-weight:600;margin:24px 0 8px;color:var(--amber)}
+
+p{margin-bottom:12px;color:var(--dim)}
+strong{color:var(--text);font-weight:600}
+
+.cover{text-align:center;padding:80px 0 60px;border-bottom:1px solid var(--border);margin-bottom:48px}
+.cover .logo{font-family:'Unbounded',sans-serif;font-size:1.5rem;font-weight:700;color:var(--amber);margin-bottom:32px;letter-spacing:1px}
+.cover h1{font-size:1.6rem;color:var(--text);margin-bottom:12px}
+.cover .subtitle{font-size:1.1rem;color:var(--dim);margin-bottom:40px}
+.cover .meta{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.cover .meta-item{text-align:center}
+.cover .meta-label{font-size:.75rem;text-transform:uppercase;letter-spacing:1px;color:var(--dim);margin-bottom:4px}
+.cover .meta-value{font-size:.95rem;color:var(--text);font-weight:500}
+
+.badge{display:inline-block;padding:4px 14px;border-radius:20px;font-size:.8rem;font-weight:600}
+.badge-amber{background:var(--amber-dim);color:var(--amber)}
+.badge-green{background:var(--green-dim);color:var(--green)}
+
+table{width:100%;border-collapse:collapse;margin:16px 0 24px;font-size:.9rem}
+th{text-align:left;padding:10px 14px;background:var(--card);color:var(--dim);font-weight:500;font-size:.8rem;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--border)}
+td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+tr:last-child td{border-bottom:none}
+.total-row td{font-weight:700;color:var(--amber);font-size:1rem;border-top:2px solid var(--amber);padding-top:14px}
+
+.card{background:var(--card);border-radius:16px;padding:24px;margin:16px 0}
+.card-highlight{border:1px solid var(--amber);position:relative}
+.card-highlight::after{content:'Рекомендуем';position:absolute;top:-10px;right:20px;background:var(--amber);color:var(--bg);font-size:.7rem;font-weight:700;padding:2px 12px;border-radius:10px;text-transform:uppercase;letter-spacing:.5px}
+
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0}
+.tier{background:var(--card);border-radius:16px;padding:24px;border:1px solid var(--border);transition:border-color .2s}
+.tier-mid{border-color:var(--amber)}
+.tier-name{font-family:'Unbounded',sans-serif;font-size:.9rem;font-weight:600;margin-bottom:4px}
+.tier-price{font-size:1.8rem;font-weight:700;color:var(--amber);margin:8px 0}
+.tier-price span{font-size:.9rem;color:var(--dim);font-weight:400}
+.tier-period{font-size:.8rem;color:var(--dim);margin-bottom:16px}
+.tier ul{list-style:none;padding:0}
+.tier li{padding:6px 0;font-size:.85rem;color:var(--dim);position:relative;padding-left:20px}
+.tier li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700}
+.tier li.muted{opacity:.4}
+.tier li.muted::before{content:'—';color:var(--dim)}
+
+.timeline{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:16px 0}
+.tl-item{background:var(--card);border-radius:12px;padding:14px 10px;text-align:center;border-top:3px solid var(--border)}
+.tl-item.active{border-top-color:var(--amber)}
+.tl-week{font-size:.7rem;text-transform:uppercase;letter-spacing:.5px;color:var(--dim);margin-bottom:6px}
+.tl-task{font-size:.8rem;font-weight:600;color:var(--text);margin-bottom:4px}
+.tl-desc{font-size:.7rem;color:var(--dim)}
+
+ul.checks{list-style:none;padding:0}
+ul.checks li{padding:8px 0;padding-left:24px;position:relative;color:var(--dim)}
+ul.checks li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700}
+ul.excludes{list-style:none;padding:0}
+ul.excludes li{padding:8px 0;padding-left:24px;position:relative;color:var(--dim)}
+ul.excludes li::before{content:'✕';position:absolute;left:0;color:#ef4444;font-weight:700}
+
+.steps{counter-reset:step}
+.step{counter-increment:step;position:relative;padding-left:48px;margin-bottom:20px}
+.step::before{content:counter(step);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--amber-dim);color:var(--amber);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem}
+
+.footer{text-align:center;margin-top:60px;padding-top:24px;border-top:1px solid var(--border)}
+.footer .contact{font-size:1.1rem;font-weight:600;color:var(--amber);margin:8px 0}
+
+.tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0}
+.tech-item{background:var(--card);border-radius:10px;padding:12px;text-align:center}
+.tech-label{font-size:.7rem;color:var(--dim);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.tech-value{font-size:.85rem;font-weight:600;color:var(--text)}
+
+@media(max-width:700px){
+  .tiers{grid-template-columns:1fr}
+  .timeline{grid-template-columns:repeat(3,1fr)}
+  .tech-grid{grid-template-columns:repeat(2,1fr)}
+  .cover .meta{flex-direction:column;gap:16px}
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="logo">SNEZHKO AI</div>
+  <h1>Коммерческое предложение</h1>
+  <div class="subtitle">Разработка Interior AI — веб-сервис для дизайнеров интерьера</div>
+  <div class="meta">
+    <div class="meta-item">
+      <div class="meta-label">Подготовлено для</div>
+      <div class="meta-value">Interior AI</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Дата</div>
+      <div class="meta-value">30 марта 2026</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Действительно до</div>
+      <div class="meta-value">30 апреля 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- 1. РЕЗЮМЕ -->
+<h2>1. Краткое резюме</h2>
+<p>Ваш проект <strong>Interior AI</strong> уже имеет работающий прототип: фронтенд на Next.js 16 + React 19, бэкенд на FastAPI с AI-анализом чертежей через GPT-4o/Claude. Основная архитектура готова.</p>
+<p>Для перехода от прототипа к полноценному продукту необходимо реализовать <strong>4 ключевых модуля:</strong> постоянное хранение данных, точное позиционирование элементов на плане, автоматический подбор мебели и интерактивную расстановку.</p>
+<p>Мы предлагаем завершить разработку за <strong>4-6 недель</strong> с возможностью поэтапной приёмки.</p>
+
+<!-- 2. АНАЛИЗ -->
+<h2>2. Анализ текущего состояния</h2>
+<div class="card">
+  <h3>Что работает</h3>
+  <ul class="checks">
+    <li>Загрузка и AI-анализ PDF-чертежей (определение комнат, мебели)</li>
+    <li>AI-парсинг каталогов мебели (до 500 страниц)</li>
+    <li>Интерактивный канвас с pan/zoom</li>
+    <li>Генерация SVG-blueprint и DALL-E рендеров</li>
+    <li>Переключение между AI-провайдерами (GPT-4o / Claude)</li>
+  </ul>
+</div>
+<div class="card">
+  <h3>Что необходимо доработать</h3>
+  <ul class="excludes">
+    <li>Данные хранятся в localStorage браузера (теряются при очистке кэша)</li>
+    <li>Позиционирование комнат на плане с погрешностью 5-15%</li>
+    <li>Нет автоматической связи между мебелью на плане и каталогом</li>
+    <li>Нет возможности перетаскивать мебель на план из каталога</li>
+  </ul>
+</div>
+
+<!-- 3. ОБЪЁМ РАБОТ -->
+<h2>3. Объём работ и стоимость</h2>
+<table>
+  <tr><th>#</th><th>Задача</th><th>Описание</th><th>Срок</th><th>Стоимость</th></tr>
+  <tr>
+    <td>1</td>
+    <td><strong>PostgreSQL и API</strong></td>
+    <td>SQLAlchemy модели, Alembic миграции, CRUD API (FastAPI), замена localStorage на React Query</td>
+    <td>1.5-2 нед.</td>
+    <td><strong>$900</strong></td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td><strong>Позиционирование</strong></td>
+    <td>Drag-and-resize оверлеев комнат, OpenCV snap к стенам (постобработка контуров)</td>
+    <td>1-1.5 нед.</td>
+    <td><strong>$750</strong></td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td><strong>Matching мебели</strong></td>
+    <td>Автоматический подбор из каталога по размерам (fuzzy matching ±5cm / ±30%), UI статуса</td>
+    <td>0.5-1 нед.</td>
+    <td><strong>$400</strong></td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td><strong>Drag-and-drop</strong></td>
+    <td>Перетаскивание мебели из каталога на план, вращение (0/90/180/270°), визуальные коллизии</td>
+    <td>1.5-2 нед.</td>
+    <td><strong>$950</strong></td>
+  </tr>
+  <tr class="total-row">
+    <td></td>
+    <td>ИТОГО</td>
+    <td>Все 4 задачи</td>
+    <td>4-6 недель</td>
+    <td>$3,000</td>
+  </tr>
+</table>
+
+<!-- 4. ВАРИАНТЫ -->
+<h2>4. Варианты сотрудничества</h2>
+<div class="tiers">
+  <div class="tier">
+    <div class="tier-name">MVP</div>
+    <div class="tier-price">$2,200</div>
+    <div class="tier-period">3 недели</div>
+    <ul>
+      <li>PostgreSQL + CRUD API</li>
+      <li>Drag-resize комнат (без OpenCV)</li>
+      <li>Matching мебели</li>
+      <li>Базовый drag-and-drop (без коллизий)</li>
+      <li>Базовое тестирование</li>
+      <li>README документация</li>
+      <li>1 неделя поддержки</li>
+    </ul>
+  </div>
+  <div class="tier tier-mid">
+    <div class="badge badge-amber" style="margin-bottom:8px">Рекомендуем</div>
+    <div class="tier-name">Полный</div>
+    <div class="tier-price">$3,000</div>
+    <div class="tier-period">5 недель</div>
+    <ul>
+      <li>PostgreSQL + CRUD API</li>
+      <li>Drag-resize + OpenCV snap</li>
+      <li>Matching мебели</li>
+      <li>Полный drag-and-drop + коллизии</li>
+      <li>Полное тестирование</li>
+      <li>README + API docs</li>
+      <li>2 недели поддержки</li>
+    </ul>
+  </div>
+  <div class="tier">
+    <div class="tier-name">Полный + поддержка</div>
+    <div class="tier-price">$3,500</div>
+    <div class="tier-period">6 недель</div>
+    <ul>
+      <li>PostgreSQL + CRUD API</li>
+      <li>Drag-resize + OpenCV snap</li>
+      <li>Matching мебели</li>
+      <li>Полный drag-and-drop + коллизии</li>
+      <li>Полное + нагрузочное тестирование</li>
+      <li>README + API docs + видео</li>
+      <li>1 месяц поддержки</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 5. СТЕК -->
+<h2>5. Технический стек</h2>
+<div class="tech-grid">
+  <div class="tech-item"><div class="tech-label">Frontend</div><div class="tech-value">Next.js 16, React 19</div></div>
+  <div class="tech-item"><div class="tech-label">Язык</div><div class="tech-value">TypeScript + Python</div></div>
+  <div class="tech-item"><div class="tech-label">Стили</div><div class="tech-value">Tailwind CSS</div></div>
+  <div class="tech-item"><div class="tech-label">Backend</div><div class="tech-value">FastAPI</div></div>
+  <div class="tech-item"><div class="tech-label">ORM</div><div class="tech-value">SQLAlchemy + Alembic</div></div>
+  <div class="tech-item"><div class="tech-label">БД</div><div class="tech-value">PostgreSQL</div></div>
+  <div class="tech-item"><div class="tech-label">CV</div><div class="tech-value">OpenCV</div></div>
+  <div class="tech-item"><div class="tech-label">AI</div><div class="tech-value">GPT-4o / Claude</div></div>
+  <div class="tech-item"><div class="tech-label">Инфра</div><div class="tech-value">Docker Compose</div></div>
+</div>
+
+<!-- 6. ГРАФИК -->
+<h2>6. График работ</h2>
+<div class="timeline">
+  <div class="tl-item active"><div class="tl-week">Неделя 1</div><div class="tl-task">БД</div><div class="tl-desc">Модели, миграции, API</div></div>
+  <div class="tl-item active"><div class="tl-week">Неделя 2</div><div class="tl-task">Фронт</div><div class="tl-desc">React Query, замена localStorage</div></div>
+  <div class="tl-item active"><div class="tl-week">Неделя 3</div><div class="tl-task">Позиции</div><div class="tl-desc">Drag-resize + OpenCV snap</div></div>
+  <div class="tl-item active"><div class="tl-week">Неделя 4</div><div class="tl-task">Matching</div><div class="tl-desc">Авто-подбор мебели</div></div>
+  <div class="tl-item active"><div class="tl-week">Неделя 5</div><div class="tl-task">DnD</div><div class="tl-desc">Drag-and-drop + коллизии</div></div>
+  <div class="tl-item"><div class="tl-week">Неделя 6</div><div class="tl-task">Тесты</div><div class="tl-desc">QA + баг-фиксы</div></div>
+</div>
+
+<div class="card">
+  <h3>Контрольные точки</h3>
+  <ul class="checks">
+    <li>Конец недели 2: БД работает, данные не теряются между сессиями</li>
+    <li>Конец недели 3: Комнаты точно совпадают с планом</li>
+    <li>Конец недели 4: Мебель автоматически подобрана из каталога</li>
+    <li>Конец недели 5: Мебель можно расставлять на плане</li>
+    <li>Конец недели 6: Всё протестировано, проект сдан</li>
+  </ul>
+</div>
+
+<!-- 7. ОБОСНОВАНИЕ -->
+<h2>7. Обоснование стоимости</h2>
+<p>Проект требует <strong>4 области экспертизы</strong> одновременно:</p>
+<div class="card">
+  <ul class="checks">
+    <li><strong>Backend-разработка:</strong> PostgreSQL, SQLAlchemy, миграции, REST API</li>
+    <li><strong>Frontend-разработка:</strong> React 19, интерактивный канвас, drag-and-drop, state management</li>
+    <li><strong>Computer Vision:</strong> OpenCV edge detection, contour matching, snap-алгоритмы</li>
+    <li><strong>AI-интеграция:</strong> работа с существующим AI-пайплайном (GPT-4o/Claude)</li>
+  </ul>
+</div>
+<p>На рынке аналогичный объём работ fullstack-разработчика с экспертизой в AI и CV стоит <strong>$4,000-6,000</strong>.</p>
+<p><strong>Ваша экономия:</strong> один исполнитель вместо команды из 3 специалистов. Фиксированная цена без риска «растягивания» часов. Нет потерь при передаче между командами.</p>
+
+<!-- 8. УСЛОВИЯ -->
+<h2>8. Условия работы</h2>
+<div class="card">
+  <h3>Оплата</h3>
+  <p style="font-size:1.1rem"><strong>50%</strong> предоплата перед началом работ — <strong>$1,500</strong><br>
+  <strong>50%</strong> после приёмки и тестирования — <strong>$1,500</strong></p>
+</div>
+
+<h3>Что входит</h3>
+<ul class="checks">
+  <li>Вся разработка по 4 задачам из ТЗ</li>
+  <li>Код-ревью и рефакторинг затронутых модулей</li>
+  <li>Тестирование (ручное + базовые интеграционные тесты)</li>
+  <li>2 недели поддержки после сдачи (баг-фиксы)</li>
+  <li>Документация API (Swagger/OpenAPI)</li>
+</ul>
+
+<h3>Что НЕ входит</h3>
+<ul class="excludes">
+  <li>Новые фичи за рамками 4 задач из ТЗ</li>
+  <li>Дизайн UI (используется текущий дизайн)</li>
+  <li>Настройка серверов и деплой на production</li>
+  <li>Оплата API OpenAI / Anthropic</li>
+  <li>Изменение AI-промптов для улучшения распознавания</li>
+</ul>
+
+<h3>Ваши обязательства</h3>
+<ul class="checks">
+  <li>Предоставить доступ к репозиторию и .env файлу</li>
+  <li>Обратная связь по промежуточным результатам в течение 2 рабочих дней</li>
+  <li>Тестовые PDF-файлы (чертежи и каталоги) для проверки</li>
+</ul>
+
+<!-- 9. СЛЕДУЮЩИЕ ШАГИ -->
+<h2>9. Следующие шаги</h2>
+<div class="steps">
+  <div class="step"><strong>Согласовать объём</strong><br><span style="color:var(--dim)">Выбрать вариант сотрудничества и обсудить детали</span></div>
+  <div class="step"><strong>Подписать договор</strong><br><span style="color:var(--dim)">Зафиксировать условия и внести предоплату</span></div>
+  <div class="step"><strong>Передать доступы</strong><br><span style="color:var(--dim)">Репозиторий, .env, тестовые PDF-файлы</span></div>
+  <div class="step"><strong>Старт разработки</strong><br><span style="color:var(--dim)">В течение 48 часов после оплаты</span></div>
+  <div class="step"><strong>Еженедельные отчёты</strong><br><span style="color:var(--dim)">Прозрачный прогресс с демо на каждом этапе</span></div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="logo" style="font-family:'Unbounded',sans-serif;font-size:1.2rem;font-weight:700;color:var(--amber)">SNEZHKO AI</div>
+  <div class="contact">Telegram: @snezhko_sergey</div>
+  <p style="font-size:.8rem;color:var(--dim);margin-top:12px">Предложение действительно до 30.04.2026</p>
+</div>
+
+</body>
+</html>
