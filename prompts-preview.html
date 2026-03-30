@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>200 AI-промптов для бизнеса | Preview</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  :root {
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-card: #1a1a26;
+    --bg-card-hover: #22222f;
+    --border: #2a2a3a;
+    --text-primary: #f0f0f5;
+    --text-secondary: #a0a0b8;
+    --text-muted: #6a6a82;
+    --accent: #7c5cff;
+    --accent-light: #9b82ff;
+    --accent-glow: rgba(124, 92, 255, 0.15);
+    --gradient-1: linear-gradient(135deg, #7c5cff 0%, #5c9cff 100%);
+    --gradient-2: linear-gradient(135deg, #ff6b9d 0%, #c44dff 100%);
+    --gradient-3: linear-gradient(135deg, #00d4aa 0%, #00a3ff 100%);
+    --tag-marketing: #ff6b9d;
+    --tag-sales: #ffb347;
+    --tag-content: #7c5cff;
+    --tag-seo: #00d4aa;
+    --tag-email: #5c9cff;
+    --tag-smm: #ff5ecb;
+    --tag-analytics: #00c9ff;
+    --tag-automation: #a855f7;
+    --tag-service: #22d3ee;
+    --tag-finance: #4ade80;
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* === COVER === */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(ellipse at 30% 20%, rgba(124, 92, 255, 0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 80%, rgba(92, 156, 255, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .cover-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent-glow);
+    border: 1px solid rgba(124, 92, 255, 0.3);
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent-light);
+    letter-spacing: 0.5px;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover h1 {
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    background: linear-gradient(135deg, #fff 0%, #c4b5fd 50%, #7c5cff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover .subtitle {
+    font-size: clamp(16px, 2.5vw, 22px);
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-bottom: 40px;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-stats {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 48px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-stat {
+    text-align: center;
+  }
+
+  .cover-stat .number {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--accent-light);
+    display: block;
+  }
+
+  .cover-stat .label {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .cover-price {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    background: var(--gradient-1);
+    padding: 16px 40px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 24px rgba(124, 92, 255, 0.3);
+  }
+
+  .cover-price:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(124, 92, 255, 0.5);
+  }
+
+  .cover-price .price-value {
+    font-size: 28px;
+    font-weight: 800;
+  }
+
+  .cover-preview-note {
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--text-muted);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* === CONTAINER === */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* === INTRO === */
+  .intro {
+    padding: 80px 0 40px;
+  }
+
+  .intro h2 {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-light);
+    margin-bottom: 16px;
+  }
+
+  .intro p {
+    font-size: 17px;
+    color: var(--text-secondary);
+    max-width: 700px;
+    line-height: 1.8;
+  }
+
+  .variables-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .variable {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+  }
+
+  .variable code {
+    color: var(--accent-light);
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 12px;
+    background: var(--accent-glow);
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  /* === TOC === */
+  .toc {
+    padding: 60px 0;
+  }
+
+  .toc h2 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 32px;
+    letter-spacing: -0.5px;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.2s;
+  }
+
+  .toc-item:hover {
+    background: var(--bg-card);
+    border-color: var(--accent);
+    transform: translateY(-1px);
+  }
+
+  .toc-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  .toc-label {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .toc-count {
+    margin-left: auto;
+    font-size: 12px;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  /* === CATEGORY SECTION === */
+  .category-section {
+    padding: 80px 0 40px;
+    border-top: 1px solid var(--border);
+    page-break-before: always;
+  }
+
+  .category-header {
+    margin-bottom: 40px;
+  }
+
+  .category-tag {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    color: #fff;
+  }
+
+  .category-header h2 {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+
+  .category-header .prompt-count {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  /* === PROMPT CARD === */
+  .prompt-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    margin-bottom: 20px;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .prompt-card:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(124, 92, 255, 0.3);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .prompt-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .prompt-number {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    background: var(--bg-primary);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+  }
+
+  .prompt-tag {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    border-radius: 100px;
+    color: #fff;
+  }
+
+  .prompt-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.3px;
+  }
+
+  .prompt-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    padding: 20px 24px;
+    background: var(--bg-primary);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .prompt-text::before {
+    content: 'PROMPT';
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent);
+    background: var(--bg-primary);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  .prompt-tip {
+    display: flex;
+    gap: 10px;
+    padding: 14px 18px;
+    background: rgba(124, 92, 255, 0.06);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+
+  .prompt-tip .tip-icon {
+    flex-shrink: 0;
+    font-size: 16px;
+  }
+
+  /* === LOCK BLOCK === */
+  .lock-block {
+    background: var(--bg-card);
+    border: 2px dashed var(--border);
+    border-radius: var(--radius);
+    padding: 48px 32px;
+    text-align: center;
+    margin: 32px 0;
+  }
+
+  .lock-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    opacity: 0.7;
+  }
+
+  .lock-block h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .lock-block p {
+    color: var(--text-muted);
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .lock-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: var(--gradient-1);
+    color: #fff;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(124, 92, 255, 0.3);
+  }
+
+  .lock-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(124, 92, 255, 0.45);
+  }
+
+  /* === FOOTER === */
+  .page-footer {
+    padding: 60px 0 40px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .page-footer p {
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  .section-footer {
+    padding: 24px 0;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* === CTA BOTTOM === */
+  .cta-bottom {
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .cta-bottom h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+  }
+
+  .cta-bottom p {
+    font-size: 17px;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* === TAG COLORS === */
+  .tag-1, .num-1 { background: var(--tag-marketing); }
+  .tag-2, .num-2 { background: var(--tag-sales); }
+  .tag-3, .num-3 { background: var(--tag-content); }
+  .tag-4, .num-4 { background: var(--tag-seo); }
+  .tag-5, .num-5 { background: var(--tag-email); }
+  .tag-6, .num-6 { background: var(--tag-smm); }
+  .tag-7, .num-7 { background: var(--tag-analytics); }
+  .tag-8, .num-8 { background: var(--tag-automation); }
+  .tag-9, .num-9 { background: var(--tag-service); }
+  .tag-10, .num-10 { background: var(--tag-finance); }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 600px) {
+    .cover-stats { gap: 24px; }
+    .prompt-card { padding: 24px 20px; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .variables-grid { grid-template-columns: 1fr; }
+  }
+
+  /* === PRINT STYLES === */
+  @media print {
+    :root {
+      --bg-primary: #fff;
+      --bg-secondary: #f8f8fa;
+      --bg-card: #fff;
+      --bg-card-hover: #fff;
+      --border: #e0e0e8;
+      --text-primary: #1a1a2e;
+      --text-secondary: #4a4a5e;
+      --text-muted: #8a8a9e;
+      --accent: #5a3fd6;
+      --accent-light: #5a3fd6;
+      --accent-glow: rgba(90, 63, 214, 0.08);
+    }
+
+    body {
+      background: #fff;
+      color: #1a1a2e;
+      font-size: 11pt;
+      line-height: 1.5;
+    }
+
+    .cover {
+      min-height: auto;
+      padding: 80px 24px;
+      page-break-after: always;
+    }
+
+    .cover::before { display: none; }
+
+    .cover h1 {
+      background: none;
+      -webkit-text-fill-color: #1a1a2e;
+      color: #1a1a2e;
+      font-size: 36pt;
+    }
+
+    .cover-price,
+    .lock-cta {
+      background: #5a3fd6;
+      box-shadow: none;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .prompt-card {
+      break-inside: avoid;
+      border: 1px solid #e0e0e8;
+      box-shadow: none;
+    }
+
+    .prompt-card:hover {
+      background: #fff;
+      border-color: #e0e0e8;
+      box-shadow: none;
+    }
+
+    .prompt-text {
+      background: #f5f5fa;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .category-section {
+      page-break-before: always;
+    }
+
+    .category-tag, .prompt-tag, .toc-num {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .toc-item:hover {
+      transform: none;
+    }
+
+    .section-footer {
+      color: #8a8a9e;
+    }
+
+    .lock-block {
+      border: 2px dashed #ccc;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ====== COVER ====== -->
+<section class="cover">
+  <div class="cover-badge">PREVIEW VERSION</div>
+  <h1>200 AI-промптов<br>для бизнеса</h1>
+  <p class="subtitle">Готовые промпты для ChatGPT, Claude и других LLM. Копируй, подставляй свои данные, получай результат.</p>
+  <div class="cover-stats">
+    <div class="cover-stat">
+      <span class="number">200</span>
+      <span class="label">промптов</span>
+    </div>
+    <div class="cover-stat">
+      <span class="number">10</span>
+      <span class="label">категорий</span>
+    </div>
+    <div class="cover-stat">
+      <span class="number">20</span>
+      <span class="label">в каждой</span>
+    </div>
+  </div>
+  <a class="cover-price" href="#">Получить все 200 за <span class="price-value">$9.99</span></a>
+  <p class="cover-preview-note">Вы просматриваете превью. Показаны 3 промпта из каждой категории.</p>
+</section>
+
+<!-- ====== INTRO ====== -->
+<div class="container">
+  <section class="intro">
+    <h2>Как использовать</h2>
+    <p>Каждый промпт содержит переменные в квадратных скобках. Замените их на свои данные и отправьте в любую LLM.</p>
+    <div class="variables-grid">
+      <div class="variable"><code>[ваш продукт]</code> продукт или услуга</div>
+      <div class="variable"><code>[целевая аудитория]</code> описание ЦА</div>
+      <div class="variable"><code>[ниша]</code> ваша отрасль</div>
+      <div class="variable"><code>[конкурент]</code> конкурент</div>
+      <div class="variable"><code>[бренд]</code> название бренда</div>
+      <div class="variable"><code>[сайт]</code> URL сайта</div>
+      <div class="variable"><code>[бюджет]</code> рекламный бюджет</div>
+      <div class="variable"><code>[боль клиента]</code> проблема клиента</div>
+    </div>
+  </section>
+
+  <!-- ====== TABLE OF CONTENTS ====== -->
+  <section class="toc">
+    <h2>Содержание</h2>
+    <div class="toc-grid">
+      <a href="#cat-1" class="toc-item"><span class="toc-num num-1">1</span><span class="toc-label">Маркетинг и реклама</span><span class="toc-count">20</span></a>
+      <a href="#cat-2" class="toc-item"><span class="toc-num num-2">2</span><span class="toc-label">Продажи и переговоры</span><span class="toc-count">20</span></a>
+      <a href="#cat-3" class="toc-item"><span class="toc-num num-3">3</span><span class="toc-label">Контент и копирайтинг</span><span class="toc-count">20</span></a>
+      <a href="#cat-4" class="toc-item"><span class="toc-num num-4">4</span><span class="toc-label">SEO и трафик</span><span class="toc-count">20</span></a>
+      <a href="#cat-5" class="toc-item"><span class="toc-num num-5">5</span><span class="toc-label">Email-маркетинг</span><span class="toc-count">20</span></a>
+      <a href="#cat-6" class="toc-item"><span class="toc-num num-6">6</span><span class="toc-label">Соцсети (SMM)</span><span class="toc-count">20</span></a>
+      <a href="#cat-7" class="toc-item"><span class="toc-num num-7">7</span><span class="toc-label">Аналитика и стратегия</span><span class="toc-count">20</span></a>
+      <a href="#cat-8" class="toc-item"><span class="toc-num num-8">8</span><span class="toc-label">Автоматизация и AI</span><span class="toc-count">20</span></a>
+      <a href="#cat-9" class="toc-item"><span class="toc-num num-9">9</span><span class="toc-label">Клиентский сервис</span><span class="toc-count">20</span></a>
+      <a href="#cat-10" class="toc-item"><span class="toc-num num-10">10</span><span class="toc-label">Финансы и планирование</span><span class="toc-count">20</span></a>
+    </div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- CATEGORY 1: MARKETING   -->
+  <!-- ======================== -->
+  <section class="category-section" id="cat-1">
+    <div class="category-header">
+      <span class="category-tag tag-1">Маркетинг</span>
+      <h2>1. Маркетинг и реклама</h2>
+      <p class="prompt-count">20 промптов в категории</p>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#1.1</span>
+        <span class="prompt-tag tag-1">Маркетинг</span>
+      </div>
+      <h3 class="prompt-title">Генерация УТП</h3>
+      <div class="prompt-text">Я продаю [ваш продукт] для [целевая аудитория] в нише [ниша]. Мои основные конкуренты: [конкурент 1], [конкурент 2], [конкурент 3]. Проанализируй их позиционирование и предложи 5 вариантов уникального торгового предложения, которые чётко отстраивают меня от них. Для каждого варианта укажи: формулировку УТП в одно предложение, на какую боль оно давит, почему конкуренты не смогут легко скопировать. Формат: таблица.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Используй после анализа сайтов конкурентов, чтобы данные были конкретными.</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#1.2</span>
+        <span class="prompt-tag tag-1">Маркетинг</span>
+      </div>
+      <h3 class="prompt-title">Рекламные креативы для таргета</h3>
+      <div class="prompt-text">Мне нужно 10 вариантов рекламных креативов для таргетированной рекламы [ваш продукт] в [соцсеть]. Целевая аудитория: [целевая аудитория], основная боль: [боль клиента]. Для каждого креатива напиши: заголовок (до 40 символов), основной текст (до 125 символов), описание визуала, призыв к действию. Используй разные подходы: боль/решение, социальное доказательство, срочность, выгода, любопытство. Не повторяй структуру.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Запускай A/B тесты с лучшими 3 вариантами, потом масштабируй победителя.</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#1.3</span>
+        <span class="prompt-tag tag-1">Маркетинг</span>
+      </div>
+      <h3 class="prompt-title">Медиаплан на месяц</h3>
+      <div class="prompt-text">Составь медиаплан на [период] для продвижения [ваш продукт]. Бюджет: [бюджет]. Целевая аудитория: [целевая аудитория]. Регион: [регион]. Раздели бюджет по каналам (контекст, таргет, блогеры, контент-маркетинг) с обоснованием долей. Для каждого канала укажи: цель, KPI, формат размещения, ожидаемый CPL и количество лидов. Итоговую таблицу сделай понедельно.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Корректируй план каждые 2 недели на основе реальных данных по стоимости лида.</div>
+    </div>
+
+    <div class="lock-block">
+      <div class="lock-icon">&#x1f512;</div>
+      <h3>Полная версия</h3>
+      <p>20 промптов в этой категории. Ещё 17 промптов: анализ кампаний, партнёрская программа, позиционирование, промо-акции, воронки, лендинги, ребрендинг, B2B, ценообразование и другое.</p>
+      <a href="#" class="lock-cta">Получить все 200 промптов</a>
+    </div>
+
+    <div class="section-footer">&copy; 2026 AI Business Tools</div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- CATEGORY 2: SALES        -->
+  <!-- ======================== -->
+  <section class="category-section" id="cat-2">
+    <div class="category-header">
+      <span class="category-tag tag-2">Продажи</span>
+      <h2>2. Продажи и переговоры</h2>
+      <p class="prompt-count">20 промптов в категории</p>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#2.1</span>
+        <span class="prompt-tag tag-2">Продажи</span>
+      </div>
+      <h3 class="prompt-title">Скрипт холодного звонка</h3>
+      <div class="prompt-text">Напиши скрипт холодного звонка для продажи [ваш продукт] лицу, принимающему решение: [должность ЛПР]. Компания клиента: [тип компании]. Ключевая боль: [боль клиента]. Скрипт должен включать: обход секретаря (2 варианта), приветствие и установление контакта (15 секунд), квалифицирующий вопрос, презентацию выгоды в одно предложение, обработку 5 типичных возражений, закрытие на следующий шаг. Укажи паузы и интонационные акценты.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Прочитай скрипт вслух и замерь время, идеальный холодный звонок длится 2-3 минуты.</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#2.2</span>
+        <span class="prompt-tag tag-2">Продажи</span>
+      </div>
+      <h3 class="prompt-title">Обработка возражений</h3>
+      <div class="prompt-text">Собери 15 самых частых возражений при продаже [ваш продукт] для [целевая аудитория]. Для каждого возражения дай 3 варианта ответа разными техниками: присоединение и переформулирование, вопрос-перехват, кейс/доказательство. Возражения должны покрывать: цену, сроки, доверие, необходимость, конкурентов, откладывание решения. Формат: таблица с колонками &laquo;Возражение / Техника / Ответ&raquo;.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Заучи по одному лучшему ответу на каждое возражение до автоматизма.</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#2.3</span>
+        <span class="prompt-tag tag-2">Продажи</span>
+      </div>
+      <h3 class="prompt-title">Коммерческое предложение</h3>
+      <div class="prompt-text">Напиши коммерческое предложение на [ваш продукт/услугу] для компании [название или тип компании]. ЛПР: [должность]. Их задача: [что хотят решить]. Бюджет клиента: [если известен]. Структура: резюме на одну страницу (почему мы, что предлагаем, результат), описание решения, этапы и сроки, стоимость (3 пакета), кейсы (2-3 релевантных), гарантии, следующий шаг. Тон: профессиональный, но без канцеляризмов. Объём: 3-4 страницы.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Адаптируй раздел &laquo;кейсы&raquo; под отрасль конкретного клиента.</div>
+    </div>
+
+    <div class="lock-block">
+      <div class="lock-icon">&#x1f512;</div>
+      <h3>Полная версия</h3>
+      <p>20 промптов в этой категории. Ещё 17 промптов: переговоры о цене, квалификация лидов, follow-up, pitch deck, upsell, возврат клиентов, входящие звонки, CRM-процессы и другое.</p>
+      <a href="#" class="lock-cta">Получить все 200 промптов</a>
+    </div>
+
+    <div class="section-footer">&copy; 2026 AI Business Tools</div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- CATEGORY 3: CONTENT      -->
+  <!-- ======================== -->
+  <section class="category-section" id="cat-3">
+    <div class="category-header">
+      <span class="category-tag tag-3">Контент</span>
+      <h2>3. Контент и копирайтинг</h2>
+      <p class="prompt-count">20 промптов в категории</p>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#3.1</span>
+        <span class="prompt-tag tag-3">Контент</span>
+      </div>
+      <h3 class="prompt-title">Контент-план на месяц</h3>
+      <div class="prompt-text">Составь контент-план на 30 дней для [бренд/продукт] в нише [ниша]. Целевая аудитория: [целевая аудитория]. Цель контента: [привлечение/вовлечение/продажи]. Каналы: [блог/соцсети/newsletter]. Для каждого дня: тема, формат (статья/пост/видео/карусель), ключевое сообщение, CTA, хештеги (если соцсети). Соотношение контента: 40% полезный, 30% вовлекающий, 20% продающий, 10% развлекательный. Темы не должны повторяться.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Готовь контент батчами: за один день создавай контент на всю неделю.</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#3.2</span>
+        <span class="prompt-tag tag-3">Контент</span>
+      </div>
+      <h3 class="prompt-title">Лонгрид для блога</h3>
+      <div class="prompt-text">Напиши структуру и полный текст статьи для блога на тему &laquo;[тема статьи]&raquo;. Целевой запрос: [ключевой запрос SEO]. Целевая аудитория: [целевая аудитория]. Объём: 2000-3000 слов. Структура: заголовок H1 (с ключевым словом), введение с хуком, 5-7 разделов H2 с подразделами H3, практические примеры в каждом разделе, заключение с CTA. Тон: экспертный, но понятный. Вставь 3 места для внутренних ссылок и 2 для внешних авторитетных источников.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Начни с самого ценного раздела, чтобы читатель получил пользу даже при беглом чтении.</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#3.3</span>
+        <span class="prompt-tag tag-3">Контент</span>
+      </div>
+      <h3 class="prompt-title">Продающий текст по формуле AIDA</h3>
+      <div class="prompt-text">Напиши продающий текст для [ваш продукт] по формуле AIDA. Целевая аудитория: [целевая аудитория]. Главная боль: [боль клиента]. Результат, который получает клиент: [результат]. Цена: [цена]. Attention: провокационный заголовок и первый абзац. Interest: раскрой проблему так, чтобы читатель узнал себя (3 ситуации). Desire: покажи решение и результаты (факты, цифры, кейс). Action: оффер с дедлайном и бонусом. Объём: 1500-2000 слов.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Читай текст вслух, если спотыкаешься на фразе, перепиши её проще.</div>
+    </div>
+
+    <div class="lock-block">
+      <div class="lock-icon">&#x1f512;</div>
+      <h3>Полная версия</h3>
+      <p>20 промптов в этой категории. Ещё 17 промптов: сторителлинг, серии прогрева, кейсы клиентов, видео-скрипты, white paper, Tone of Voice, микрокопирайтинг, пресс-релизы и другое.</p>
+      <a href="#" class="lock-cta">Получить все 200 промптов</a>
+    </div>
+
+    <div class="section-footer">&copy; 2026 AI Business Tools</div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- CATEGORY 4: SEO          -->
+  <!-- ======================== -->
+  <section class="category-section" id="cat-4">
+    <div class="category-header">
+      <span class="category-tag tag-4">SEO</span>
+      <h2>4. SEO и трафик</h2>
+      <p class="prompt-count">20 промптов в категории</p>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#4.1</span>
+        <span class="prompt-tag tag-4">SEO</span>
+      </div>
+      <h3 class="prompt-title">SEO-стратегия для нового сайта</h3>
+      <div class="prompt-text">Составь SEO-стратегию на 6 месяцев для нового сайта в нише [ниша]. Домен: [новый/с историей]. Регион: [регион]. Бюджет: [бюджет]. Включи: технический аудит (чек-лист из 15 пунктов), стратегию семантического ядра, приоритизацию страниц для продвижения, план наращивания ссылочной массы по месяцам, контент-план для блога (SEO-статьи), KPI по месяцам (позиции, трафик, конверсии). Покажи реалистичные ожидания роста трафика.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Первые 3 месяца фокусируйся на низкоконкурентных запросах с высоким интентом покупки.</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#4.2</span>
+        <span class="prompt-tag tag-4">SEO</span>
+      </div>
+      <h3 class="prompt-title">Кластеризация семантики</h3>
+      <div class="prompt-text">Вот список ключевых запросов для [ваш продукт/сайт]: [вставь 30-50 запросов]. Кластеризуй их по интенту: информационный, навигационный, коммерческий, транзакционный. Для каждого кластера: определи целевую страницу (существующую или новую), приоритет (высокий/средний/низкий), рекомендуемый тип контента, частотность (если данные не предоставлены, оцени относительно). Выдели кластеры-пересечения, где один контент может охватить несколько групп.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Начинай продвижение с транзакционных и коммерческих кластеров, они приносят деньги.</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#4.3</span>
+        <span class="prompt-tag tag-4">SEO</span>
+      </div>
+      <h3 class="prompt-title">Техническое SEO</h3>
+      <div class="prompt-text">Проведи аудит технического SEO для [сайт]. Составь чек-лист из 30 пунктов с проверками: скорость загрузки (Core Web Vitals), мобильная версия, индексация (robots.txt, sitemap, canonical), структура URL, внутренняя перелинковка, дубли контента, битые ссылки, микроразметка (Schema.org), безопасность (HTTPS, mixed content), международное SEO (hreflang). Для каждого пункта: что проверить, каким инструментом, критерий &laquo;ок/проблема&raquo;, приоритет исправления.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Исправляй технические ошибки до начала работы с контентом и ссылками.</div>
+    </div>
+
+    <div class="lock-block">
+      <div class="lock-icon">&#x1f512;</div>
+      <h3>Полная версия</h3>
+      <p>20 промптов в этой категории. Ещё 17 промптов: анализ конкурентов, мета-теги, ссылочная стратегия, локальное SEO, контент-хабы, Schema.org, E-E-A-T, видео SEO и другое.</p>
+      <a href="#" class="lock-cta">Получить все 200 промптов</a>
+    </div>
+
+    <div class="section-footer">&copy; 2026 AI Business Tools</div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- CATEGORY 5: EMAIL        -->
+  <!-- ======================== -->
+  <section class="category-section" id="cat-5">
+    <div class="category-header">
+      <span class="category-tag tag-5">Email</span>
+      <h2>5. Email-маркетинг</h2>
+      <p class="prompt-count">20 промптов в категории</p>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#5.1</span>
+        <span class="prompt-tag tag-5">Email</span>
+      </div>
+      <h3 class="prompt-title">Welcome-серия</h3>
+      <div class="prompt-text">Напиши welcome-серию из 5 писем для новых подписчиков [бренд/продукт]. Лид-магнит: [что получил подписчик]. Целевая аудитория: [целевая аудитория]. Цель серии: [продажа/вовлечение/обучение]. Для каждого письма: тема (до 50 символов), прехедер, текст письма (300-500 слов), CTA, день отправки (от подписки). Письмо 1: доставка лид-магнита + знакомство. Письмо 2: история/экспертиза. Письмо 3: кейс. Письмо 4: частые вопросы. Письмо 5: оффер.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Первое письмо должно уходить в течение 5 минут после подписки.</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#5.2</span>
+        <span class="prompt-tag tag-5">Email</span>
+      </div>
+      <h3 class="prompt-title">Реактивационная серия</h3>
+      <div class="prompt-text">Напиши серию из 4 писем для реактивации неактивных подписчиков [бренд]. Период неактивности: [число] дней. Размер сегмента: [число] человек. Средний чек: [сумма]. Письмо 1: &laquo;Мы скучаем&raquo; (без скидки, ценность). Письмо 2: &laquo;Вот что вы пропустили&raquo; (новости/обновления). Письмо 3: &laquo;Специальное предложение&raquo; (оффер с дедлайном). Письмо 4: &laquo;Последний шанс&raquo; (отписка или подтверждение). Для каждого: тема, текст, тайминг. Укажи, когда удалять неактивных из базы.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Чистка базы от неактивных повышает deliverability и снижает стоимость сервиса рассылок.</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#5.3</span>
+        <span class="prompt-tag tag-5">Email</span>
+      </div>
+      <h3 class="prompt-title">Продающая цепочка</h3>
+      <div class="prompt-text">Напиши продающую email-серию из 7 писем для запуска [ваш продукт]. Целевая аудитория: [целевая аудитория]. Цена: [цена]. Дедлайн: [дата]. Структура: день 1 (история проблемы), день 2 (разбор ошибок ЦА), день 3 (новый подход), день 4 (кейс клиента), день 5 (детали продукта + оффер), день 6 (ответы на возражения), день 7 (последний шанс). Для каждого письма: цепляющая тема, прехедер, полный текст, P.S. с дополнительным триггером.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> P.S. после подписи читают чаще, чем основной текст, помещай туда ключевое сообщение.</div>
+    </div>
+
+    <div class="lock-block">
+      <div class="lock-icon">&#x1f512;</div>
+      <h3>Полная версия</h3>
+      <p>20 промптов в этой категории. Ещё 17 промптов: триггерные письма, нюслеттеры, A/B тесты, onboarding для SaaS, сегментация, персонализация, email-курс, геймификация и другое.</p>
+      <a href="#" class="lock-cta">Получить все 200 промптов</a>
+    </div>
+
+    <div class="section-footer">&copy; 2026 AI Business Tools</div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- CATEGORY 6: SMM          -->
+  <!-- ======================== -->
+  <section class="category-section" id="cat-6">
+    <div class="category-header">
+      <span class="category-tag tag-6">SMM</span>
+      <h2>6. Соцсети (SMM)</h2>
+      <p class="prompt-count">20 промптов в категории</p>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#6.1</span>
+        <span class="prompt-tag tag-6">SMM</span>
+      </div>
+      <h3 class="prompt-title">SMM-стратегия</h3>
+      <div class="prompt-text">Разработай SMM-стратегию на 3 месяца для [бренд] в нише [ниша]. Текущая ситуация: [число] подписчиков, [число] охват, [число] engagement rate. Цели: [рост подписчиков/продажи/узнаваемость]. Платформы: [соцсети]. Включи: позиционирование в каждой соцсети, контент-микс (соотношение типов контента), визуальный стиль (описание), частоту публикаций, стратегию хештегов, план работы с комментариями, бюджет на продвижение, KPI по месяцам.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Лучше вести 2 платформы хорошо, чем 5 плохо.</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#6.2</span>
+        <span class="prompt-tag tag-6">SMM</span>
+      </div>
+      <h3 class="prompt-title">Рилсы и шортсы</h3>
+      <div class="prompt-text">Напиши 10 сценариев для коротких видео (Reels/Shorts/TikTok) для [бренд/продукт]. Целевая аудитория: [целевая аудитория]. Формат: 15-60 секунд. Для каждого видео: hook (первые 3 секунды), сценарий по секундам, текст на экране, звук/музыка, CTA, хештеги. Типы: обучающий (3), развлекательный (2), продающий (2), трендовый (2), закулисный (1). Каждый hook должен остановить скроллинг.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Снимай 5 хуков для одного видео и выбирай лучший по удержанию первых 3 секунд.</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#6.3</span>
+        <span class="prompt-tag tag-6">SMM</span>
+      </div>
+      <h3 class="prompt-title">Контент для Telegram-канала</h3>
+      <div class="prompt-text">Составь контент-план на 2 недели для Telegram-канала [бренд/тема] с аудиторией [число] подписчиков. Тематика: [ниша]. Для каждого дня (1-2 поста): тип поста (мнение/разбор/новость/инструмент/опрос/кейс), полный текст поста (200-400 слов), форматирование (жирный, курсив, ссылки), время публикации. Учти специфику Telegram: длинные тексты допустимы, ссылки кликабельны, опросы встроены. Тон: [описание тона].</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Посты в Telegram в 8:00-9:00 и 19:00-21:00 получают максимальный охват.</div>
+    </div>
+
+    <div class="lock-block">
+      <div class="lock-icon">&#x1f512;</div>
+      <h3>Полная версия</h3>
+      <p>20 промптов в этой категории. Ещё 17 промптов: вовлекающий контент, Stories, работа с негативом, influencer-маркетинг, UGC, комьюнити, LinkedIn, мемы, аналитика и другое.</p>
+      <a href="#" class="lock-cta">Получить все 200 промптов</a>
+    </div>
+
+    <div class="section-footer">&copy; 2026 AI Business Tools</div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- CATEGORY 7: ANALYTICS    -->
+  <!-- ======================== -->
+  <section class="category-section" id="cat-7">
+    <div class="category-header">
+      <span class="category-tag tag-7">Аналитика</span>
+      <h2>7. Аналитика и стратегия</h2>
+      <p class="prompt-count">20 промптов в категории</p>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#7.1</span>
+        <span class="prompt-tag tag-7">Аналитика</span>
+      </div>
+      <h3 class="prompt-title">Бизнес-модель Canvas</h3>
+      <div class="prompt-text">Заполни Business Model Canvas для [ваш продукт/компания]. Для каждого из 9 блоков дай подробное описание: ключевые партнёры (кто и зачем), ключевые активности (что делаем), ключевые ресурсы (что нужно), ценностное предложение (что даём), взаимоотношения с клиентами (как общаемся), каналы (как доставляем ценность), сегменты клиентов (кому продаём), структура затрат (на что тратим), потоки доходов (откуда деньги). После заполнения укажи 3 слабых места модели и как их усилить.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Пересматривай Canvas каждый квартал, бизнес-модель должна эволюционировать.</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#7.2</span>
+        <span class="prompt-tag tag-7">Аналитика</span>
+      </div>
+      <h3 class="prompt-title">SWOT-анализ</h3>
+      <div class="prompt-text">Проведи детальный SWOT-анализ для [ваш продукт/компания] в нише [ниша]. Для каждого квадранта дай минимум 5 пунктов с пояснениями: Strengths (внутренние сильные стороны), Weaknesses (внутренние слабости), Opportunities (внешние возможности), Threats (внешние угрозы). После анализа составь матрицу стратегий: SO (как использовать силы для реализации возможностей), WO (как возможности компенсируют слабости), ST (как силы защищают от угроз), WT (как минимизировать слабости и угрозы). Приоритизируй стратегии.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> SWOT полезен только когда из него вытекают конкретные действия, не оставляй его в теории.</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#7.3</span>
+        <span class="prompt-tag tag-7">Аналитика</span>
+      </div>
+      <h3 class="prompt-title">Анализ unit-экономики</h3>
+      <div class="prompt-text">Рассчитай unit-экономику для [ваш продукт]. Входные данные: цена продукта [цена], себестоимость [сумма], рекламный бюджет/мес [сумма], количество лидов/мес [число], конверсия в покупку [число]%, средняя частота покупок [число раз/год], средний срок жизни клиента [число месяцев]. Рассчитай: CAC, LTV, LTV/CAC, маржинальность, точку безубыточности, payback period. Укажи, какие метрики в норме и какие нужно улучшить. Предложи 3 рычага для улучшения unit-экономики.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> LTV/CAC ниже 3 означает, что бизнес-модель нуждается в корректировке.</div>
+    </div>
+
+    <div class="lock-block">
+      <div class="lock-icon">&#x1f512;</div>
+      <h3>Полная версия</h3>
+      <p>20 промптов в этой категории. Ещё 17 промптов: конкурентный анализ, OKR, дашборды, Customer Journey Map, анализ оттока, атрибуция, прогнозирование спроса, NPS и другое.</p>
+      <a href="#" class="lock-cta">Получить все 200 промптов</a>
+    </div>
+
+    <div class="section-footer">&copy; 2026 AI Business Tools</div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- CATEGORY 8: AUTOMATION   -->
+  <!-- ======================== -->
+  <section class="category-section" id="cat-8">
+    <div class="category-header">
+      <span class="category-tag tag-8">Автоматизация</span>
+      <h2>8. Автоматизация и AI-воркфлоу</h2>
+      <p class="prompt-count">20 промптов в категории</p>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#8.1</span>
+        <span class="prompt-tag tag-8">Автоматизация</span>
+      </div>
+      <h3 class="prompt-title">Карта автоматизации бизнес-процессов</h3>
+      <div class="prompt-text">Проанализируй бизнес-процессы [ваш бизнес/компания] и определи, что можно автоматизировать. Процессы: [перечисли 5-10 основных процессов]. Для каждого процесса оцени: текущие затраты времени (часов/мес), потенциал автоматизации (высокий/средний/низкий), инструменты для автоматизации (конкретные сервисы), стоимость внедрения, ожидаемая экономия времени и денег, приоритет (по ROI). Составь дорожную карту автоматизации на 6 месяцев.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Начинай с процессов, которые повторяются ежедневно и не требуют творческого решения.</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#8.2</span>
+        <span class="prompt-tag tag-8">Автоматизация</span>
+      </div>
+      <h3 class="prompt-title">Чат-бот для продаж</h3>
+      <div class="prompt-text">Спроектируй чат-бота для квалификации и продажи [ваш продукт]. Платформа: [Telegram/WhatsApp/сайт]. Целевая аудитория: [целевая аудитория]. Опиши: дерево диалога (от первого сообщения до передачи менеджеру или покупки), текст каждого сообщения бота, условия ветвления, интеграции (CRM, платёжная система), FAQ-база (15 вопросов с ответами), сценарий эскалации на живого оператора, метрики эффективности бота.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Бот должен идентифицировать момент, когда нужен человек, и передавать диалог бесшовно.</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#8.3</span>
+        <span class="prompt-tag tag-8">Автоматизация</span>
+      </div>
+      <h3 class="prompt-title">Автоматизация маркетинга</h3>
+      <div class="prompt-text">Разработай схему marketing automation для [бренд]. Инструмент: [платформа, например, n8n/Make/HubSpot]. Опиши 8 автоматизаций: триггер, действия, условия, результат. Примеры: автоматическая сегментация лидов, триггерные email-цепочки, скоринг лидов, передача горячих лидов в CRM, ретаргетинг-аудитории, отчёты, уведомления менеджерам, публикация контента. Для каждой: схема потока, необходимые интеграции, время на настройку.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Автоматизируй сначала то, что уже работает вручную, не изобретай новые процессы.</div>
+    </div>
+
+    <div class="lock-block">
+      <div class="lock-icon">&#x1f512;</div>
+      <h3>Полная версия</h3>
+      <p>20 промптов в этой категории. Ещё 17 промптов: AI-ассистент для команды, автоотчётность, CRM-автоматизации, no-code, скрейпинг конкурентов, персонализация, мониторинг и алерты и другое.</p>
+      <a href="#" class="lock-cta">Получить все 200 промптов</a>
+    </div>
+
+    <div class="section-footer">&copy; 2026 AI Business Tools</div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- CATEGORY 9: SERVICE      -->
+  <!-- ======================== -->
+  <section class="category-section" id="cat-9">
+    <div class="category-header">
+      <span class="category-tag tag-9">Сервис</span>
+      <h2>9. Клиентский сервис</h2>
+      <p class="prompt-count">20 промптов в категории</p>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#9.1</span>
+        <span class="prompt-tag tag-9">Сервис</span>
+      </div>
+      <h3 class="prompt-title">Стандарты обслуживания</h3>
+      <div class="prompt-text">Разработай стандарты клиентского обслуживания для [ваш бизнес]. Каналы: [перечисли: телефон, email, чат, мессенджеры, соцсети]. Для каждого канала: SLA по времени ответа (первый ответ и решение), тон коммуникации (с примерами фраз), шаблоны для типовых ситуаций (5 штук), эскалация (когда и кому), метрики качества. Общие правила: 10 пунктов &laquo;всегда делаем&raquo; и 10 пунктов &laquo;никогда не делаем&raquo;. Система контроля качества: как проверять соблюдение стандартов.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Стандарты работают только если их регулярно проверяют и обновляют.</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#9.2</span>
+        <span class="prompt-tag tag-9">Сервис</span>
+      </div>
+      <h3 class="prompt-title">Скрипты для поддержки</h3>
+      <div class="prompt-text">Напиши 15 скриптов для службы поддержки [ваш продукт]. Категории обращений: технические проблемы (5), вопросы по оплате (3), возврат и обмен (3), жалобы (2), благодарности (2). Для каждого скрипта: триггер (с чем обращается клиент), текст ответа (адаптируемый), действия оператора (что проверить, что сделать), время решения (SLA), условия эскалации. Тон: [дружелюбный/профессиональный/нейтральный]. Каждый скрипт должен быть шаблоном, а не жёстким текстом.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Дай операторам свободу адаптировать скрипт под ситуацию, роботизированные ответы раздражают.</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#9.3</span>
+        <span class="prompt-tag tag-9">Сервис</span>
+      </div>
+      <h3 class="prompt-title">Система обработки жалоб</h3>
+      <div class="prompt-text">Разработай процесс обработки жалоб для [ваш бизнес]. Текущий объём жалоб: [число]/мес. Основные причины: [перечисли]. Процесс: приём (как фиксируем), классификация (категории и приоритеты), расследование (кто и как), решение (варианты компенсации), коммуникация с клиентом (тексты на каждом этапе), закрытие (подтверждение удовлетворённости), анализ (корневые причины). Для каждого этапа: ответственный, SLA, инструмент. Метрики: FCR, CSAT по жалобам, время решения.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Каждая жалоба это подарок: она показывает, что сломано в процессе.</div>
+    </div>
+
+    <div class="lock-block">
+      <div class="lock-icon">&#x1f512;</div>
+      <h3>Полная версия</h3>
+      <p>20 промптов в этой категории. Ещё 17 промптов: программа лояльности, онбординг клиента, база знаний, опросы, VIP-обслуживание, обучение команды, сервис-дизайн, метрики и другое.</p>
+      <a href="#" class="lock-cta">Получить все 200 промптов</a>
+    </div>
+
+    <div class="section-footer">&copy; 2026 AI Business Tools</div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- CATEGORY 10: FINANCE     -->
+  <!-- ======================== -->
+  <section class="category-section" id="cat-10">
+    <div class="category-header">
+      <span class="category-tag tag-10">Финансы</span>
+      <h2>10. Финансы и бизнес-планирование</h2>
+      <p class="prompt-count">20 промптов в категории</p>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#10.1</span>
+        <span class="prompt-tag tag-10">Финансы</span>
+      </div>
+      <h3 class="prompt-title">Бизнес-план</h3>
+      <div class="prompt-text">Составь бизнес-план для [ваш продукт/бизнес]. Стадия: [идея/запуск/рост]. Начальный капитал: [сумма]. Ниша: [ниша]. Регион: [регион]. Структура: резюме (1 стр.), описание бизнеса, анализ рынка, продукт/услуга, маркетинг и продажи, операционный план, команда, финансовый план (доходы, расходы, P&amp;L на 3 года), инвестиции (что нужно, откуда), риски и митигация. Для финансового плана: помесячная детализация первого года, поквартальная второго и третьего.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Инвесторы читают финансовый план с конца, начни с того, когда выходишь на окупаемость.</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#10.2</span>
+        <span class="prompt-tag tag-10">Финансы</span>
+      </div>
+      <h3 class="prompt-title">Финансовая модель</h3>
+      <div class="prompt-text">Построй финансовую модель для [ваш продукт/бизнес]. Входные параметры: цена [цена], себестоимость [сумма], фиксированные расходы/мес [сумма], переменные расходы/единица [сумма], стоимость привлечения клиента [сумма], конверсия [число]%, retention rate [число]%/мес. Рассчитай на 12 месяцев: выручку, маржинальную прибыль, чистую прибыль, точку безубыточности, накопленный денежный поток, runway при текущем темпе. Покажи 3 сценария: оптимистичный, базовый, пессимистичный. Укажи ключевые допущения.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Финансовая модель полезна не точностью прогноза, а пониманием ключевых рычагов.</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <span class="prompt-number">#10.3</span>
+        <span class="prompt-tag tag-10">Финансы</span>
+      </div>
+      <h3 class="prompt-title">Ценовая стратегия</h3>
+      <div class="prompt-text">Разработай ценовую стратегию для [ваш продукт]. Себестоимость: [сумма]. Целевая маржа: [число]%. Конкуренты: [конкурент 1: цена], [конкурент 2: цена]. Целевая аудитория: [описание, платёжеспособность]. Проанализируй стратегии: cost-plus, value-based, конкурентное, freemium, tiered pricing. Рекомендуй оптимальную модель с обоснованием. Спроектируй 3 тарифных плана: названия, наполнение каждого, цена, для кого предназначен. Психология цен: обоснуй выбор конкретных чисел.</div>
+      <div class="prompt-tip"><span class="tip-icon">&#x1f4a1;</span> Средний тарифный план должен быть &laquo;очевидно лучшим выбором&raquo; (decoy-эффект).</div>
+    </div>
+
+    <div class="lock-block">
+      <div class="lock-icon">&#x1f512;</div>
+      <h3>Полная версия</h3>
+      <p>20 промптов в этой категории. Ещё 17 промптов: бюджетирование, инвестиционные проекты, денежный поток, монетизация, P&amp;L анализ, масштабирование, due diligence, оценка бизнеса и другое.</p>
+      <a href="#" class="lock-cta">Получить все 200 промптов</a>
+    </div>
+
+    <div class="section-footer">&copy; 2026 AI Business Tools</div>
+  </section>
+
+  <!-- ====== BOTTOM CTA ====== -->
+  <section class="cta-bottom">
+    <h2>Все 200 промптов за $9.99</h2>
+    <p>Перестань тратить время на формулирование запросов. Копируй, подставляй, получай результат.</p>
+    <a class="cover-price" href="#">Получить полную версию <span class="price-value">$9.99</span></a>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="page-footer">
+    <p>&copy; 2026 AI Business Tools. Все права защищены.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
