@@ -1,0 +1,2013 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>200 AI-промптов для бизнеса</title>
+<style>
+  @page {
+    margin: 2cm;
+    size: A4;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1a1a1a;
+    background: #ffffff;
+    line-height: 1.6;
+    font-size: 14px;
+  }
+  
+  /* Cover Page */
+  .cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 60px 40px;
+    page-break-after: always;
+  }
+  .cover-badge {
+    display: inline-block;
+    background: #f0f0f0;
+    color: #555;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 24px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+  }
+  .cover h1 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #111;
+    margin-bottom: 24px;
+    max-width: 700px;
+  }
+  .cover-subtitle {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 48px;
+    max-width: 550px;
+    line-height: 1.5;
+  }
+  .cover-meta {
+    font-size: 14px;
+    color: #999;
+    margin-top: 40px;
+  }
+  .cover-line {
+    width: 80px;
+    height: 4px;
+    background: #111;
+    margin: 0 auto 40px;
+    border-radius: 2px;
+  }
+  
+  /* Table of Contents */
+  .toc {
+    padding: 60px 40px;
+    max-width: 700px;
+    margin: 0 auto;
+    page-break-after: always;
+  }
+  .toc h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #111;
+  }
+  .toc-item {
+    display: flex;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #eee;
+    text-decoration: none;
+    color: #1a1a1a;
+    transition: background 0.2s;
+  }
+  .toc-item:hover {
+    background: #fafafa;
+  }
+  .toc-emoji {
+    font-size: 28px;
+    width: 50px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .toc-text {
+    flex: 1;
+  }
+  .toc-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111;
+  }
+  .toc-count {
+    font-size: 13px;
+    color: #888;
+    margin-top: 2px;
+  }
+  .toc-number {
+    font-size: 14px;
+    color: #aaa;
+    font-weight: 600;
+    width: 40px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  
+  /* Category Header */
+  .category {
+    page-break-before: always;
+  }
+  .category-header {
+    padding: 60px 40px 40px;
+    text-align: center;
+    border-bottom: 3px solid #111;
+    margin-bottom: 40px;
+  }
+  .category-emoji {
+    font-size: 56px;
+    margin-bottom: 16px;
+  }
+  .category-header h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 8px;
+  }
+  .category-header .cat-subtitle {
+    font-size: 15px;
+    color: #888;
+  }
+  
+  /* Prompt Card */
+  .prompt-card {
+    padding: 28px 40px;
+    margin-bottom: 24px;
+    page-break-inside: avoid;
+  }
+  .prompt-header {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 12px;
+    gap: 12px;
+  }
+  .prompt-number {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    background: #111;
+    padding: 3px 10px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  .prompt-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+  }
+  .prompt-text {
+    background: #f5f5f5;
+    border-left: 4px solid #ddd;
+    padding: 20px 24px;
+    margin: 12px 0;
+    border-radius: 0 8px 8px 0;
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: #333;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  .prompt-tip {
+    font-style: italic;
+    color: #666;
+    font-size: 13px;
+    padding: 8px 0 0 4px;
+    border-top: 1px dashed #ddd;
+    margin-top: 8px;
+  }
+  .prompt-tip strong {
+    color: #444;
+    font-style: normal;
+  }
+  
+  /* Footer */
+  .page-footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #aaa;
+    font-size: 12px;
+    border-top: 1px solid #eee;
+    margin-top: 40px;
+  }
+  
+  /* Print-specific */
+  @media print {
+    body {
+      font-size: 12px;
+    }
+    .prompt-card {
+      padding: 20px 0;
+    }
+    .category-header {
+      padding: 40px 0 30px;
+    }
+    .toc {
+      padding: 40px 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Cover Page -->
+<div class="cover">
+  <div class="cover-badge">Практическое руководство</div>
+  <h1>200 AI-промптов для бизнеса</h1>
+  <div class="cover-line"></div>
+  <div class="cover-subtitle">Готовые промпты для ChatGPT, Claude и других LLM. Копируй, подставляй свои данные, получай результат.</div>
+  <div class="cover-meta">Версия 1.0 | 2026</div>
+</div>
+
+<!-- Table of Contents -->
+<div class="toc">
+  <h2>Содержание</h2>
+  <a href="#cat-1" class="toc-item">
+    <span class="toc-emoji">📢</span>
+    <span class="toc-text">
+      <div class="toc-title">Маркетинг и реклама</div>
+      <div class="toc-count">Промптов: 20</div>
+    </span>
+    <span class="toc-number">1</span>
+  </a>
+  <a href="#cat-2" class="toc-item">
+    <span class="toc-emoji">💰</span>
+    <span class="toc-text">
+      <div class="toc-title">Продажи и переговоры</div>
+      <div class="toc-count">Промптов: 20</div>
+    </span>
+    <span class="toc-number">2</span>
+  </a>
+  <a href="#cat-3" class="toc-item">
+    <span class="toc-emoji">✍️</span>
+    <span class="toc-text">
+      <div class="toc-title">Контент и копирайтинг</div>
+      <div class="toc-count">Промптов: 20</div>
+    </span>
+    <span class="toc-number">3</span>
+  </a>
+  <a href="#cat-4" class="toc-item">
+    <span class="toc-emoji">🔍</span>
+    <span class="toc-text">
+      <div class="toc-title">SEO и трафик</div>
+      <div class="toc-count">Промптов: 20</div>
+    </span>
+    <span class="toc-number">4</span>
+  </a>
+  <a href="#cat-5" class="toc-item">
+    <span class="toc-emoji">📧</span>
+    <span class="toc-text">
+      <div class="toc-title">Email-маркетинг</div>
+      <div class="toc-count">Промптов: 20</div>
+    </span>
+    <span class="toc-number">5</span>
+  </a>
+  <a href="#cat-6" class="toc-item">
+    <span class="toc-emoji">📱</span>
+    <span class="toc-text">
+      <div class="toc-title">Соцсети (SMM)</div>
+      <div class="toc-count">Промптов: 20</div>
+    </span>
+    <span class="toc-number">6</span>
+  </a>
+  <a href="#cat-7" class="toc-item">
+    <span class="toc-emoji">📊</span>
+    <span class="toc-text">
+      <div class="toc-title">Аналитика и стратегия</div>
+      <div class="toc-count">Промптов: 20</div>
+    </span>
+    <span class="toc-number">7</span>
+  </a>
+  <a href="#cat-8" class="toc-item">
+    <span class="toc-emoji">🤖</span>
+    <span class="toc-text">
+      <div class="toc-title">Автоматизация и AI-воркфлоу</div>
+      <div class="toc-count">Промптов: 20</div>
+    </span>
+    <span class="toc-number">8</span>
+  </a>
+  <a href="#cat-9" class="toc-item">
+    <span class="toc-emoji">🎯</span>
+    <span class="toc-text">
+      <div class="toc-title">Клиентский сервис</div>
+      <div class="toc-count">Промптов: 20</div>
+    </span>
+    <span class="toc-number">9</span>
+  </a>
+  <a href="#cat-10" class="toc-item">
+    <span class="toc-emoji">💼</span>
+    <span class="toc-text">
+      <div class="toc-title">Финансы и бизнес-планирование</div>
+      <div class="toc-count">Промптов: 20</div>
+    </span>
+    <span class="toc-number">10</span>
+  </a>
+</div>
+
+<div class="category" id="cat-1">
+  <div class="category-header">
+    <div class="category-emoji">📢</div>
+    <h2>Маркетинг и реклама</h2>
+    <div class="cat-subtitle">Раздел 1 &middot; 20 промптов</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#1.1</span>
+      <span class="prompt-title">Генерация УТП</span>
+    </div>
+    <div class="prompt-text">Я продаю [ваш продукт] для [целевая аудитория] в нише [ниша]. Мои основные конкуренты: [конкурент 1], [конкурент 2], [конкурент 3]. Проанализируй их позиционирование и предложи 5 вариантов уникального торгового предложения, которые чётко отстраивают меня от них. Для каждого варианта укажи: формулировку УТП в одно предложение, на какую боль оно давит, почему конкуренты не смогут легко скопировать. Формат: таблица.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Используй после анализа сайтов конкурентов, чтобы данные были конкретными.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#1.2</span>
+      <span class="prompt-title">Рекламные креативы для таргета</span>
+    </div>
+    <div class="prompt-text">Мне нужно 10 вариантов рекламных креативов для таргетированной рекламы [ваш продукт] в [соцсеть]. Целевая аудитория: [целевая аудитория], основная боль: [боль клиента]. Для каждого креатива напиши: заголовок (до 40 символов), основной текст (до 125 символов), описание визуала, призыв к действию. Используй разные подходы: боль/решение, социальное доказательство, срочность, выгода, любопытство. Не повторяй структуру.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Запускай A/B тесты с лучшими 3 вариантами, потом масштабируй победителя.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#1.3</span>
+      <span class="prompt-title">Медиаплан на месяц</span>
+    </div>
+    <div class="prompt-text">Составь медиаплан на [период] для продвижения [ваш продукт]. Бюджет: [бюджет]. Целевая аудитория: [целевая аудитория]. Регион: [регион]. Раздели бюджет по каналам (контекст, таргет, блогеры, контент-маркетинг) с обоснованием долей. Для каждого канала укажи: цель, KPI, формат размещения, ожидаемый CPL и количество лидов. Итоговую таблицу сделай понедельно.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Корректируй план каждые 2 недели на основе реальных данных по стоимости лида.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#1.4</span>
+      <span class="prompt-title">Анализ рекламной кампании</span>
+    </div>
+    <div class="prompt-text">Вот данные моей рекламной кампании: показы [число], клики [число], CTR [число]%, конверсий [число], CPA [число] руб., потрачено [число] руб. Продукт: [ваш продукт], канал: [канал], аудитория: [целевая аудитория]. Проанализируй эти метрики. Укажи, какие показатели ниже нормы для ниши [ниша]. Дай конкретные рекомендации по улучшению каждого слабого показателя. Предложи 3 гипотезы для следующего теста.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Подставляй реальные цифры из рекламного кабинета для точного анализа.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#1.5</span>
+      <span class="prompt-title">Стратегия запуска на новый рынок</span>
+    </div>
+    <div class="prompt-text">Я хочу вывести [ваш продукт] на рынок [регион/страна]. Текущий рынок: [текущий регион]. Целевая аудитория на новом рынке: [целевая аудитория]. Составь пошаговую стратегию выхода: этапы подготовки, адаптация продукта и коммуникации, выбор каналов привлечения, бюджет на тест, критерии успеха для принятия решения о масштабировании. Учти культурные и языковые особенности региона.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Начинай с минимального теста на одном канале, прежде чем заливать весь бюджет.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#1.6</span>
+      <span class="prompt-title">Партнёрская программа</span>
+    </div>
+    <div class="prompt-text">Разработай структуру партнёрской программы для [ваш продукт]. Целевые партнёры: [тип партнёров, например, блогеры, агентства, фрилансеры]. Средний чек продукта: [сумма]. Опиши: модель вознаграждения (% от продаж, фикс, гибрид), условия выплат, уровни партнёров, материалы для партнёров (что дать), систему трекинга, KPI программы. Приведи расчёт unit-экономики для одного партнёра.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Протестируй условия на 5-10 партнёрах перед публичным запуском программы.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#1.7</span>
+      <span class="prompt-title">Позиционирование бренда</span>
+    </div>
+    <div class="prompt-text">Помоги переосмыслить позиционирование [бренд]. Текущая ситуация: [опишите текущее восприятие бренда]. Целевая аудитория: [целевая аудитория]. Ниша: [ниша]. Конкуренты: [конкурент 1], [конкурент 2]. Сформулируй: Brand Positioning Statement, ключевое сообщение бренда, tone of voice с примерами, 5 столпов коммуникации с расшифровкой, чем мы НЕ являемся (антипозиционирование). Всё должно быть применимо завтра.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Проверь новое позиционирование на фокус-группе из 5-7 представителей ЦА.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#1.8</span>
+      <span class="prompt-title">Промо-акция</span>
+    </div>
+    <div class="prompt-text">Придумай 7 промо-акций для [ваш продукт] на [период/событие]. Целевая аудитория: [целевая аудитория]. Средний чек: [сумма]. Для каждой акции укажи: механику, срок проведения, каналы анонса, ожидаемый прирост продаж в %, расчёт маржинальности с учётом скидки, риски и как их минимизировать. Не предлагай банальные скидки 10-20% без механики.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Выбери 2 акции с лучшим соотношением маржи и ожидаемого прироста.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#1.9</span>
+      <span class="prompt-title">Маркетинговая воронка</span>
+    </div>
+    <div class="prompt-text">Спроектируй маркетинговую воронку для [ваш продукт] от первого касания до повторной покупки. Целевая аудитория: [целевая аудитория]. Каналы трафика: [каналы]. Для каждого этапа воронки (осведомлённость, интерес, решение, покупка, удержание) укажи: ключевое действие пользователя, контент/оффер, инструмент/канал, метрику, бенчмарк конверсии для ниши [ниша]. Нарисуй итоговую таблицу с прогнозом юнит-экономики.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Начни строить воронку с конца, от покупки к первому касанию.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#1.10</span>
+      <span class="prompt-title">Текст для лендинга</span>
+    </div>
+    <div class="prompt-text">Напиши полную структуру текста для лендинга [ваш продукт]. Целевая аудитория: [целевая аудитория]. Главная боль: [боль клиента]. Результат, который получает клиент: [результат]. Структура: заголовок по формуле 4U, подзаголовок, блок проблемы (3 боли), решение, как это работает (3-5 шагов), выгоды (6 штук), социальное доказательство (что запросить у клиентов), FAQ (5 вопросов с ответами), финальный CTA. Каждый блок напиши готовым текстом.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Тестируй разные заголовки через Google Optimize или аналог для поиска лучшей конверсии.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#1.11</span>
+      <span class="prompt-title">Реферальная механика</span>
+    </div>
+    <div class="prompt-text">Разработай реферальную механику для [ваш продукт]. Текущие клиенты: [число]. Средний LTV: [сумма]. Опиши: что получает реферер, что получает приглашённый, условия активации бонуса, механику отслеживания, сценарий коммуникации (сообщения/письма рефереру), прогноз виральности (k-фактор), расчёт стоимости привлечения через реферала vs текущий CAC.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Двусторонний бонус (и рефереру, и приглашённому) работает лучше одностороннего.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#1.12</span>
+      <span class="prompt-title">Ребрендинг коммуникации</span>
+    </div>
+    <div class="prompt-text">Проведи аудит текущих рекламных сообщений [бренд] и предложи обновление. Вот примеры текущих сообщений: [вставь 3-5 примеров]. Целевая аудитория: [целевая аудитория]. Что не устраивает: [проблема]. Для каждого сообщения: укажи слабые места, перепиши в новом стиле, объясни логику изменений. В конце дай общие правила коммуникации бренда (5-7 пунктов) с примерами "так/не так".</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Зафиксируй правила в гайдлайне и раздай всем, кто пишет тексты от имени бренда.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#1.13</span>
+      <span class="prompt-title">Коллаборация брендов</span>
+    </div>
+    <div class="prompt-text">Предложи 10 идей коллабораций [бренд] с другими брендами или инфлюенсерами. Ниша: [ниша]. Целевая аудитория: [целевая аудитория]. Ценности бренда: [ценности]. Для каждой идеи укажи: с кем коллаборация, формат (совместный продукт, контент, ивент), что получает каждая сторона, ориентировочный бюджет, KPI. Отсортируй по соотношению затрат и потенциального охвата.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Начинай с микроколлабораций, чтобы протестировать формат до крупных вложений.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#1.14</span>
+      <span class="prompt-title">Сезонная маркетинговая карта</span>
+    </div>
+    <div class="prompt-text">Составь маркетинговый календарь на 12 месяцев для [ваш продукт] в нише [ниша]. Для каждого месяца укажи: ключевые инфоповоды и праздники, тему кампании, основной канал, тип оффера, бюджетный приоритет (высокий/средний/низкий). Учти сезонность спроса в нише. Отдельно выдели 3 пиковых месяца и стратегию максимизации выручки в них.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Готовь материалы для пиковых месяцев минимум за 6 недель до старта.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#1.15</span>
+      <span class="prompt-title">Ценовое позиционирование</span>
+    </div>
+    <div class="prompt-text">Помоги определить оптимальную цену для [ваш продукт]. Себестоимость: [сумма]. Цены конкурентов: [конкурент 1] — [цена], [конкурент 2] — [цена], [конкурент 3] — [цена]. Целевая аудитория: [целевая аудитория]. Проанализируй: ценовое позиционирование конкурентов, воспринимаемую ценность моего продукта, оптимальную цену при стратегии [проникновение/премиум/середина]. Предложи 3 ценовых пакета с разным наполнением и обоснуй психологию цен.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Тестируй цену на малых объёмах трафика через A/B тест лендинга.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#1.16</span>
+      <span class="prompt-title">Маркетинг для B2B</span>
+    </div>
+    <div class="prompt-text">Разработай стратегию привлечения B2B-клиентов для [ваш продукт]. Целевые компании: [размер, отрасль, регион]. ЛПР: [должность]. Цикл сделки: [срок]. Средний чек: [сумма]. Опиши: каналы лидогенерации (минимум 5), контент-стратегию для каждого этапа воронки, подход к ABM (account-based marketing) для топ-20 целевых компаний, систему квалификации лидов, KPI по каждому каналу.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> В B2B личные связи и контент с экспертизой важнее рекламных бюджетов.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#1.17</span>
+      <span class="prompt-title">Антикризисный маркетинг</span>
+    </div>
+    <div class="prompt-text">Ситуация: [опишите кризис, например, падение продаж на 40%, негативный PR, уход ключевого канала]. Продукт: [ваш продукт]. Текущий бюджет: [бюджет]. Составь антикризисный план на [период]: немедленные действия (первые 48 часов), краткосрочные меры (2 недели), среднесрочная стратегия (1-3 месяца). Для каждого действия: что делаем, кто отвечает, ожидаемый результат, стоимость.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> В кризис фокусируйся на удержании текущих клиентов, а не на привлечении новых.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#1.18</span>
+      <span class="prompt-title">Офлайн-маркетинг</span>
+    </div>
+    <div class="prompt-text">Предложи стратегию офлайн-продвижения [ваш продукт] в [регион]. Бюджет: [бюджет]. Целевая аудитория: [целевая аудитория]. Места скопления ЦА: [перечисли]. Рассмотри: наружную рекламу, ивенты, промоутеры, партнёрства с локальными бизнесами, POS-материалы, семплинг. Для каждого канала: формат, стоимость, охват, способ замера эффективности. Как связать офлайн с онлайн-воронкой.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Всегда добавляй QR-код или промокод для трекинга офлайн-касаний.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#1.19</span>
+      <span class="prompt-title">Маркетинговый бриф</span>
+    </div>
+    <div class="prompt-text">Составь подробный маркетинговый бриф для агентства/фрилансера на продвижение [ваш продукт]. Включи: описание компании и продукта, цели и KPI, целевую аудиторию (сегменты с описанием), конкурентов, текущую ситуацию (что уже делалось, результаты), бюджет и сроки, ограничения и требования, критерии оценки. Бриф должен быть самодостаточным: прочитав его, исполнитель должен понять задачу без дополнительных вопросов.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Хороший бриф экономит 30-50% времени на согласованиях и правках.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#1.20</span>
+      <span class="prompt-title">Ретаргетинг-стратегия</span>
+    </div>
+    <div class="prompt-text">Разработай стратегию ретаргетинга для [ваш продукт]. Трафик на сайт: [число] посетителей/мес. Конверсия: [число]%. Средний чек: [сумма]. Сегментируй аудиторию ретаргетинга: посетители без действия, бросившие корзину, бывшие клиенты, look-alike. Для каждого сегмента: рекламное сообщение, оффер, частота показа, срок жизни аудитории, бюджет. Рассчитай ожидаемый ROAS для каждого сегмента.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Исключай из ретаргетинга тех, кто уже купил, чтобы не тратить бюджет впустую.</div>
+  </div>
+</div>
+
+<div class="category" id="cat-2">
+  <div class="category-header">
+    <div class="category-emoji">💰</div>
+    <h2>Продажи и переговоры</h2>
+    <div class="cat-subtitle">Раздел 2 &middot; 20 промптов</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#2.1</span>
+      <span class="prompt-title">Скрипт холодного звонка</span>
+    </div>
+    <div class="prompt-text">Напиши скрипт холодного звонка для продажи [ваш продукт] лицу, принимающему решение: [должность ЛПР]. Компания клиента: [тип компании]. Ключевая боль: [боль клиента]. Скрипт должен включать: обход секретаря (2 варианта), приветствие и установление контакта (15 секунд), квалифицирующий вопрос, презентацию выгоды в одно предложение, обработку 5 типичных возражений, закрытие на следующий шаг. Укажи паузы и интонационные акценты.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Прочитай скрипт вслух и замерь время, идеальный холодный звонок длится 2-3 минуты.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#2.2</span>
+      <span class="prompt-title">Обработка возражений</span>
+    </div>
+    <div class="prompt-text">Собери 15 самых частых возражений при продаже [ваш продукт] для [целевая аудитория]. Для каждого возражения дай 3 варианта ответа разными техниками: присоединение и переформулирование, вопрос-перехват, кейс/доказательство. Возражения должны покрывать: цену, сроки, доверие, необходимость, конкурентов, откладывание решения. Формат: таблица с колонками "Возражение / Техника / Ответ".</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Заучи по одному лучшему ответу на каждое возражение до автоматизма.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#2.3</span>
+      <span class="prompt-title">Коммерческое предложение</span>
+    </div>
+    <div class="prompt-text">Напиши коммерческое предложение на [ваш продукт/услугу] для компании [название или тип компании]. ЛПР: [должность]. Их задача: [что хотят решить]. Бюджет клиента: [если известен]. Структура: резюме на одну страницу (почему мы, что предлагаем, результат), описание решения, этапы и сроки, стоимость (3 пакета), кейсы (2-3 релевантных), гарантии, следующий шаг. Тон: профессиональный, но без канцеляризмов. Объём: 3-4 страницы.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Адаптируй раздел "кейсы" под отрасль конкретного клиента.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#2.4</span>
+      <span class="prompt-title">Скрипт переговоров о цене</span>
+    </div>
+    <div class="prompt-text">Мне предстоят переговоры о цене с клиентом на [ваш продукт/услугу]. Наша цена: [сумма]. Клиент хочет: [сумма или "скидку"]. Моя минимальная маржа: [сумма или %]. Напиши сценарий переговоров с вилкой уступок. Включи: 3 аргумента в защиту цены, 4 варианта компромисса без прямой скидки (бонусы, сроки, объём), технику "если...то" для каждой уступки, фразы-мосты между позициями, красные линии и как их обозначить.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Никогда не давай скидку без встречной уступки со стороны клиента.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#2.5</span>
+      <span class="prompt-title">Квалификация лидов</span>
+    </div>
+    <div class="prompt-text">Разработай систему квалификации лидов для [ваш продукт]. Целевой клиент: [целевая аудитория]. Средний цикл сделки: [срок]. Создай: скоринговую модель (критерии и баллы), список из 10 квалифицирующих вопросов с пояснением, что даёт каждый ответ, матрицу приоритетов (горячий/тёплый/холодный), процесс передачи лида от маркетинга к продажам, SLA по скорости обработки каждого типа лида.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Пересматривай скоринговую модель каждый квартал на основе данных о закрытых сделках.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#2.6</span>
+      <span class="prompt-title">Follow-up последовательность</span>
+    </div>
+    <div class="prompt-text">Напиши последовательность из 7 follow-up сообщений после встречи/демо [ваш продукт] с потенциальным клиентом. Контекст: [тип встречи, что обсуждали]. Клиент: [должность, компания]. Для каждого сообщения укажи: день отправки, канал (email/мессенджер/звонок), текст сообщения, цель касания. Последовательность должна нарастать по настойчивости, но не переходить в спам. Последнее сообщение — break-up email.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Отправляй первый follow-up в течение 2 часов после встречи, пока контекст свежий.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#2.7</span>
+      <span class="prompt-title">Презентация для инвестора</span>
+    </div>
+    <div class="prompt-text">Составь структуру и тексты для pitch deck на привлечение инвестиций в [ваш продукт/компанию]. Стадия: [pre-seed/seed/серия A]. Сумма раунда: [сумма]. Текущие метрики: [MRR, пользователи, рост]. Слайды: проблема, решение, рынок (TAM/SAM/SOM), продукт, бизнес-модель, traction, конкуренция, команда, финансовый план, запрос. Для каждого слайда: заголовок, ключевое сообщение, что показать визуально, заметки для спикера.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Инвестор принимает решение за первые 3 слайда, сделай их безупречными.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#2.8</span>
+      <span class="prompt-title">Upsell-стратегия</span>
+    </div>
+    <div class="prompt-text">Разработай систему upsell и cross-sell для [ваш продукт]. Текущая продуктовая линейка: [перечисли продукты и цены]. Средний чек: [сумма]. Текущий LTV: [сумма]. Опиши: какие продукты предлагать на каком этапе, триггеры для upsell (действия клиента, время, события), скрипты/сообщения для каждого сценария, целевой прирост среднего чека и LTV, систему мотивации менеджеров на upsell.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Лучший момент для upsell — когда клиент только что получил результат от базового продукта.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#2.9</span>
+      <span class="prompt-title">Возврат ушедших клиентов</span>
+    </div>
+    <div class="prompt-text">Напиши стратегию win-back для возврата клиентов [ваш продукт], которые перестали покупать/платить. Причины ухода (предполагаемые): [причины]. Количество ушедших за [период]: [число]. Средний чек до ухода: [сумма]. Разработай: сегментацию ушедших (по причине, LTV, давности), сценарий коммуникации для каждого сегмента (3-5 касаний), специальные офферы для возврата, скрипт звонка возврата, метрики успеха win-back кампании.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Клиенты с высоким бывшим LTV окупят win-back кампанию быстрее всего.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#2.10</span>
+      <span class="prompt-title">Скрипт входящего звонка</span>
+    </div>
+    <div class="prompt-text">Напиши скрипт обработки входящего звонка/заявки на [ваш продукт]. Источник лида: [откуда приходят заявки]. Целевая аудитория: [целевая аудитория]. Скрипт должен включать: приветствие (5 секунд), выяснение потребности (3-5 вопросов), квалификацию бюджета и сроков, презентацию решения через выгоды, назначение следующего шага, обработку "я подумаю". Укажи критичные ошибки, которых нужно избегать.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Входящий лид уже заинтересован, не "продавай" ему, а помогай принять решение.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#2.11</span>
+      <span class="prompt-title">Партнёрские продажи</span>
+    </div>
+    <div class="prompt-text">Разработай модель партнёрских продаж для [ваш продукт]. Тип партнёров: [интеграторы/реселлеры/аффилиаты]. Целевой рынок партнёра: [описание]. Составь: ценностное предложение для партнёра (почему ему выгодно продавать нас), финансовые условия (комиссия, бонусы, пороги), onboarding-программу для нового партнёра (7 дней), набор материалов для продаж, систему отчётности и контроля качества.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Обучи партнёров продавать ваш продукт так же хорошо, как собственные менеджеры.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#2.12</span>
+      <span class="prompt-title">Демонстрация продукта</span>
+    </div>
+    <div class="prompt-text">Напиши сценарий демо-презентации [ваш продукт] для [целевая аудитория]. Длительность: [число] минут. Ключевая боль клиента: [боль клиента]. Структура: hook (30 секунд), обзор проблемы и текущих решений, демонстрация 3 ключевых функций (от главной боли к дополнительным), интерактив с аудиторией (2 вопроса), социальное доказательство (кейс), оффер и следующий шаг. Для каждого блока: тайминг, ключевые фразы, что показывать на экране.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Покажи результат в первые 2 минуты, потом объясняй как.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#2.13</span>
+      <span class="prompt-title">Система CRM-процессов</span>
+    </div>
+    <div class="prompt-text">Спроектируй воронку продаж в CRM для [ваш продукт]. Источники лидов: [каналы]. Цикл сделки: [срок]. Команда: [число менеджеров]. Опиши: этапы воронки (5-7) с критериями перехода, обязательные действия на каждом этапе, автоматизации (задачи, уведомления, письма), поля для заполнения на каждом этапе, отчёты для руководителя (ежедневный, недельный, месячный), правила работы с зависшими сделками.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Этап "Думает" это не этап воронки, замени его конкретным действием.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#2.14</span>
+      <span class="prompt-title">Ценовая аргументация</span>
+    </div>
+    <div class="prompt-text">Мой продукт [ваш продукт] стоит [цена], это дороже конкурентов на [число]%. Целевая аудитория: [целевая аудитория]. Разработай систему ценовой аргументации: 5 способов обосновать более высокую цену, калькулятор ROI для клиента (какие вводные нужны, формула, пример расчёта), 3 кейса "дорого vs дёшево" с последствиями, фразы-мосты при обсуждении цены, когда давать скидку (и когда категорически нет).</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Переводи разговор с цены на стоимость владения и ROI.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#2.15</span>
+      <span class="prompt-title">Тендерная заявка</span>
+    </div>
+    <div class="prompt-text">Помоги составить выигрышную тендерную заявку на [описание тендера]. Заказчик: [тип организации]. Критерии оценки: [если известны]. Наше преимущество: [ваш продукт/компетенция]. Напиши: сопроводительное письмо, описание компании (фокус на релевантном опыте), техническое предложение (структура), ценовое предложение (стратегия ценообразования), раздел "почему мы" (5 аргументов с доказательствами). Укажи типичные ошибки в тендерах.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Изучи предыдущие выигранные тендеры заказчика, если они в открытом доступе.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#2.16</span>
+      <span class="prompt-title">Продажа через мессенджеры</span>
+    </div>
+    <div class="prompt-text">Напиши 5 сценариев продажи [ваш продукт] через переписку в мессенджере. Источник контакта: [откуда пришёл лид]. Целевая аудитория: [целевая аудитория]. Для каждого сценария: первое сообщение (не "Здравствуйте, чем могу помочь?"), цепочка из 5-8 сообщений, точки выбора (если клиент ответил А или Б), переход к оплате/встрече, реакция на "дорого" и "подумаю". Учти, что в мессенджере люди читают короткие сообщения.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Одно сообщение в мессенджере не больше 3 строк, иначе не дочитают.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#2.17</span>
+      <span class="prompt-title">Стратегия больших сделок</span>
+    </div>
+    <div class="prompt-text">Помоги спланировать стратегию закрытия крупной сделки. Клиент: [компания]. Продукт: [ваш продукт]. Сумма сделки: [сумма]. ЛПР: [должность]. Срок принятия решения: [срок]. Текущий этап: [описание]. Составь: карту влияния (кто влияет на решение, их интересы), план касаний для каждого стейкхолдера, аргументацию для каждого уровня (пользователь/менеджер/директор/финансы), план нейтрализации внутреннего конкурента, чек-лист для подготовки к финальной встрече.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> В крупных сделках продавай не продукт, а бизнес-результат на языке конкретного ЛПР.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#2.18</span>
+      <span class="prompt-title">Онбординг нового менеджера по продажам</span>
+    </div>
+    <div class="prompt-text">Составь программу онбординга нового менеджера по продажам [ваш продукт] на 30 дней. Продукт: [описание]. Цикл сделки: [срок]. Текущая команда: [число] человек. Раздели по неделям: неделя 1 (продукт и рынок), неделя 2 (процессы и инструменты), неделя 3 (практика под наблюдением), неделя 4 (самостоятельная работа). Для каждого дня: задачи, материалы, результат. KPI выхода на плановую эффективность.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Дай новичку послушать 10 лучших записей звонков в первый день.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#2.19</span>
+      <span class="prompt-title">Работа с дебиторской задолженностью</span>
+    </div>
+    <div class="prompt-text">Напиши систему работы с дебиторской задолженностью для [ваш бизнес]. Средний срок оплаты по договору: [число] дней. Типичные должники: [тип клиентов]. Разработай: последовательность напоминаний (от мягкого до жёсткого, 6 этапов с текстами), скрипт звонка должнику, письмо-претензию, условия для рассрочки, критерии передачи в юротдел, профилактические меры (как не допускать задолженность).</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Первое напоминание отправляй за 3 дня до срока оплаты, а не после.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#2.20</span>
+      <span class="prompt-title">Сезонная стратегия продаж</span>
+    </div>
+    <div class="prompt-text">Разработай стратегию продаж [ваш продукт] на год с учётом сезонности. Пиковые месяцы: [месяцы]. Мёртвые месяцы: [месяцы]. Годовой план выручки: [сумма]. Для каждого квартала: цель по выручке, ключевые активности, офферы, фокусные сегменты, размер команды. Отдельно: как компенсировать падение в мёртвый сезон (новые сегменты, продукты, рынки), система мотивации менеджеров с учётом сезонности.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> В мёртвый сезон фокусируйся на обучении команды и подготовке к пику.</div>
+  </div>
+</div>
+
+<div class="category" id="cat-3">
+  <div class="category-header">
+    <div class="category-emoji">✍️</div>
+    <h2>Контент и копирайтинг</h2>
+    <div class="cat-subtitle">Раздел 3 &middot; 20 промптов</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#3.1</span>
+      <span class="prompt-title">Контент-план на месяц</span>
+    </div>
+    <div class="prompt-text">Составь контент-план на 30 дней для [бренд/продукт] в нише [ниша]. Целевая аудитория: [целевая аудитория]. Цель контента: [привлечение/вовлечение/продажи]. Каналы: [блог/соцсети/newsletter]. Для каждого дня: тема, формат (статья/пост/видео/карусель), ключевое сообщение, CTA, хештеги (если соцсети). Соотношение контента: 40% полезный, 30% вовлекающий, 20% продающий, 10% развлекательный. Темы не должны повторяться.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Готовь контент батчами: за один день создавай контент на всю неделю.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#3.2</span>
+      <span class="prompt-title">Лонгрид для блога</span>
+    </div>
+    <div class="prompt-text">Напиши структуру и полный текст статьи для блога на тему "[тема статьи]". Целевой запрос: [ключевой запрос SEO]. Целевая аудитория: [целевая аудитория]. Объём: 2000-3000 слов. Структура: заголовок H1 (с ключевым словом), введение с хуком, 5-7 разделов H2 с подразделами H3, практические примеры в каждом разделе, заключение с CTA. Тон: экспертный, но понятный. Вставь 3 места для внутренних ссылок и 2 для внешних авторитетных источников.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Начни с самого ценного раздела, чтобы читатель получил пользу даже при беглом чтении.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#3.3</span>
+      <span class="prompt-title">Продающий текст по формуле AIDA</span>
+    </div>
+    <div class="prompt-text">Напиши продающий текст для [ваш продукт] по формуле AIDA. Целевая аудитория: [целевая аудитория]. Главная боль: [боль клиента]. Результат, который получает клиент: [результат]. Цена: [цена]. Attention: провокационный заголовок и первый абзац. Interest: раскрой проблему так, чтобы читатель узнал себя (3 ситуации). Desire: покажи решение и результаты (факты, цифры, кейс). Action: оффер с дедлайном и бонусом. Объём: 1500-2000 слов.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Читай текст вслух, если спотыкаешься на фразе, перепиши её проще.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#3.4</span>
+      <span class="prompt-title">Сторителлинг для бренда</span>
+    </div>
+    <div class="prompt-text">Напиши историю бренда [бренд] для страницы "О нас". Факты: основатель [имя], год основания [год], ниша [ниша], миссия [миссия]. Ключевое событие в истории: [событие]. Используй структуру: герой (основатель) столкнулся с проблемой, принял решение, прошёл через трудности, создал решение, помогает другим. Тон: искренний, без пафоса. Текст должен вызывать доверие и объяснять, почему компания делает то, что делает. Объём: 500-700 слов.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Настоящая история с неудачами вызывает больше доверия, чем идеальная.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#3.5</span>
+      <span class="prompt-title">Серия постов для прогрева</span>
+    </div>
+    <div class="prompt-text">Напиши серию из 7 постов для прогрева аудитории к запуску [ваш продукт]. День запуска: [дата]. Целевая аудитория: [целевая аудитория]. Платформа: [соцсеть]. Последовательность: 1) Проблема (боль), 2) Почему старые решения не работают, 3) Инсайт/другой подход, 4) Моя история и экспертиза, 5) Социальное доказательство, 6) Анонс с подробностями, 7) Открытие продаж с дедлайном. Для каждого поста: текст, визуал, CTA.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Начинай прогрев за 7-10 дней до запуска, не позже.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#3.6</span>
+      <span class="prompt-title">Кейс клиента</span>
+    </div>
+    <div class="prompt-text">Напиши кейс использования [ваш продукт] клиентом. Клиент: [тип компании/человек]. Исходная ситуация: [проблема]. Что сделали: [действия]. Результат: [цифры]. Период: [срок]. Структура: заголовок с результатом в цифрах, резюме (3 строки), ситуация до, вызовы и ограничения, решение (почему выбрали нас), процесс внедрения, результаты (с графиками/цифрами), цитата клиента, следующие шаги. Формат: готовый для размещения на сайте.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Самый убедительный кейс содержит конкретные цифры "до" и "после".</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#3.7</span>
+      <span class="prompt-title">Описания товаров для каталога</span>
+    </div>
+    <div class="prompt-text">Напиши продающие описания для 5 товаров [категория товаров]. Целевая аудитория: [целевая аудитория]. Площадка: [интернет-магазин/маркетплейс]. Для каждого товара [подставь названия]: заголовок с ключевым словом, краткое описание (2-3 предложения для превью), полное описание (200-300 слов) с акцентом на выгоды, 5 буллитов с характеристиками (характеристика -&gt; выгода), мета-описание для SEO. Не повторяй слова "качественный", "уникальный", "лучший".</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Описывай товар через сценарий использования, а не через сухие характеристики.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#3.8</span>
+      <span class="prompt-title">Скрипт для видеоролика</span>
+    </div>
+    <div class="prompt-text">Напиши сценарий видеоролика для [цель: реклама/обучение/обзор] длительностью [число] минут. Продукт: [ваш продукт]. Целевая аудитория: [целевая аудитория]. Платформа: [YouTube/Reels/TikTok]. Формат сценария: тайм-код, действие на экране, закадровый текст/диалог, титры/графика. Хук в первые 3 секунды. Если это Reels/TikTok: вертикальный формат, быстрый монтаж, тренды. Если YouTube: удержание внимания каждые 30 секунд.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Снимай hook тремя разными способами и выбирай лучший по статистике удержания.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#3.9</span>
+      <span class="prompt-title">White paper / Исследование</span>
+    </div>
+    <div class="prompt-text">Составь структуру и ключевые тезисы для white paper на тему "[тема]" от имени [бренд]. Целевая аудитория: [целевая аудитория, например, CEO компаний среднего бизнеса]. Цель: [генерация лидов/экспертный статус]. Структура: обложка с заголовком, содержание, executive summary, постановка проблемы с данными рынка, анализ текущих подходов, предлагаемое решение, кейсы (3 штуки), прогнозы и рекомендации, об авторе/компании. Объём: 15-20 страниц. Для каждого раздела: ключевые тезисы и данные, которые нужно найти.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> White paper работает как лид-магнит только если содержит уникальные данные или инсайты.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#3.10</span>
+      <span class="prompt-title">Рерайт и улучшение текста</span>
+    </div>
+    <div class="prompt-text">Вот мой текст: [вставь текст]. Целевая аудитория: [целевая аудитория]. Цель текста: [продажа/информирование/вовлечение]. Перепиши его, улучшив: структуру (добавь подзаголовки, буллиты, абзацы не длиннее 3 строк), читаемость (упрости сложные предложения, убери канцеляризмы), убедительность (добавь конкретику вместо абстракций, замени пассивный залог на активный), SEO (естественно вплети ключевые слова [список]). Покажи изменения с пояснениями.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Хороший рерайт сокращает текст на 20-30% без потери смысла.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#3.11</span>
+      <span class="prompt-title">Заголовки и подзаголовки</span>
+    </div>
+    <div class="prompt-text">Сгенерируй 30 вариантов заголовков для [тип контента: статья/лендинг/реклама] на тему "[тема]". Целевая аудитория: [целевая аудитория]. Раздели на группы по формулам: числа ("7 способов..."), вопрос ("Почему ваш...?"), как-сделать ("Как увеличить..."), провокация, выгода, страх потери, любопытство. Для каждого заголовка оцени: кликабельность (1-10), соответствие ЦА (1-10). Выдели топ-5 для A/B теста.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Заголовок определяет 80% успеха контента, потратьте на него столько же времени, сколько на текст.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#3.12</span>
+      <span class="prompt-title">Tone of Voice гайд</span>
+    </div>
+    <div class="prompt-text">Разработай Tone of Voice гайд для [бренд]. Ниша: [ниша]. Целевая аудитория: [целевая аудитория]. Ценности бренда: [ценности]. Опиши: голос бренда (3-4 прилагательных с расшифровкой), как мы говорим vs как мы НЕ говорим (таблица), примеры текстов в нашем стиле для разных каналов (сайт, соцсети, email, поддержка), словарь бренда (слова-маркеры и запрещённые слова), правила адаптации тона в зависимости от контекста.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Дай гайд 3 разным авторам и проверь, пишут ли они единообразно.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#3.13</span>
+      <span class="prompt-title">Микрокопирайтинг для интерфейса</span>
+    </div>
+    <div class="prompt-text">Напиши UI-тексты для [тип продукта: приложение/сайт/сервис]. Целевая аудитория: [целевая аудитория]. Нужны тексты: кнопки CTA (10 вариантов для разных экранов), сообщения об ошибках (5 сценариев), пустые состояния (3 экрана), onboarding-подсказки (5 шагов), уведомления (push и email-триггеры, 7 штук), placeholder-тексты для форм. Каждый текст: короткий (до 50 символов для кнопок, до 150 для сообщений), понятный с первого раза, в едином тоне бренда.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Тестируй UI-тексты на людях, далёких от продукта, если не поняли сразу, переписывай.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#3.14</span>
+      <span class="prompt-title">Пресс-релиз</span>
+    </div>
+    <div class="prompt-text">Напиши пресс-релиз о [событие: запуск продукта/партнёрство/достижение]. Компания: [бренд]. Дата: [дата]. Целевые СМИ: [тип изданий]. Структура: заголовок (факт + новизна), подзаголовок (расширение), дата и город, лид-абзац (кто, что, когда, где, почему), 2-3 абзаца с деталями, цитата руководителя, цитата партнёра/клиента (если есть), бэкграунд компании, контакты для прессы. Стиль: фактологический, без рекламы.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Отправляй пресс-релиз журналистам в 10:00-11:00 во вторник-четверг для лучшего охвата.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#3.15</span>
+      <span class="prompt-title">FAQ-контент</span>
+    </div>
+    <div class="prompt-text">Составь расширенный FAQ для [ваш продукт/сайт]. Целевая аудитория: [целевая аудитория]. Собери 25 вопросов по категориям: о продукте (7), оплата и цены (5), доставка/подключение (5), использование (5), гарантии и возвраты (3). Для каждого вопроса: ответ (2-4 предложения), ключевое слово для SEO, внутренняя ссылка (куда направить). Вопросы формулируй так, как их задают реальные люди, а не как пишут юристы.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Анализируй реальные вопросы из чата поддержки и отзывов, а не придумывай.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#3.16</span>
+      <span class="prompt-title">Контент для подкаста</span>
+    </div>
+    <div class="prompt-text">Спланируй 10 выпусков подкаста на тему [тема подкаста] для [целевая аудитория]. Формат: [интервью/монолог/дискуссия]. Длительность: [число] минут. Для каждого выпуска: название, краткое описание (3 предложения), 5-7 вопросов/тезисов для обсуждения, тип гостя (если интервью), ключевой вывод для слушателя, CTA в конце. Первые 3 выпуска должны раскрывать базу, остальные углублять тему.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Записывай подкаст батчами по 3-4 выпуска за одну сессию записи.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#3.17</span>
+      <span class="prompt-title">Глоссарий для сайта</span>
+    </div>
+    <div class="prompt-text">Составь глоссарий из 30 терминов для сайта в нише [ниша]. Целевая аудитория: [целевая аудитория, их уровень знаний]. Для каждого термина: определение (1-2 предложения простым языком), пример использования, связанные термины, ключевой запрос SEO. Термины расположи по алфавиту. Каждый термин должен быть отдельной мини-статьёй, которая работает на SEO по информационным запросам.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Глоссарий приносит стабильный информационный трафик при минимальных затратах на обновление.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#3.18</span>
+      <span class="prompt-title">Речь для конференции</span>
+    </div>
+    <div class="prompt-text">Напиши речь/доклад на тему "[тема]" для выступления на [название мероприятия/тип конференции]. Аудитория: [целевая аудитория, число человек]. Хронометраж: [число] минут. Структура: мощное начало (история/факт/вопрос), 3 ключевых блока (тезис -&gt; аргумент -&gt; пример -&gt; вывод для каждого), мост между блоками, финал с призывом к действию. Стиль: разговорный, с паузами. Пометь места для слайдов и моменты взаимодействия с залом.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Репетируй с таймером, 1 слайд на 2 минуты, иначе не уложишься.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#3.19</span>
+      <span class="prompt-title">Сценарий вебинара</span>
+    </div>
+    <div class="prompt-text">Напиши полный сценарий продающего вебинара на тему "[тема]" для продажи [ваш продукт]. Целевая аудитория: [целевая аудитория]. Длительность: 60-90 минут. Структура по минутам: 0-5 приветствие и обещание, 5-25 контентная часть (3 инсайта), 25-35 кейсы, 35-45 презентация продукта, 45-55 оффер и бонусы, 55-65 Q&amp;A, 65-70 закрытие с дедлайном. Для каждого блока: что говорить, что показывать на экране, точки интерактива (опросы, чат).</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Лучшая конверсия вебинара в первые 15 минут после оглашения оффера.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#3.20</span>
+      <span class="prompt-title">Контент-стратегия на квартал</span>
+    </div>
+    <div class="prompt-text">Разработай контент-стратегию на 3 месяца для [бренд] в нише [ниша]. Цели: [цели, например, рост трафика на 50%, 100 лидов/мес]. Текущая ситуация: [трафик, подписчики, конверсия]. Включи: анализ контент-гэпов (что есть у конкурентов, нет у нас), контент-пирамиду (pillar-контент -&gt; кластеры -&gt; микроконтент), календарь публикаций по каналам, KPI для каждого типа контента, систему переупаковки (1 лонгрид = 5 постов = 3 сторис = 1 видео), ресурсы (кто, сколько часов, бюджет на дизайн).</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Один сильный лонгрид в неделю лучше пяти слабых постов каждый день.</div>
+  </div>
+</div>
+
+<div class="category" id="cat-4">
+  <div class="category-header">
+    <div class="category-emoji">🔍</div>
+    <h2>SEO и трафик</h2>
+    <div class="cat-subtitle">Раздел 4 &middot; 20 промптов</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#4.1</span>
+      <span class="prompt-title">SEO-стратегия для нового сайта</span>
+    </div>
+    <div class="prompt-text">Составь SEO-стратегию на 6 месяцев для нового сайта в нише [ниша]. Домен: [новый/с историей]. Регион: [регион]. Бюджет: [бюджет]. Включи: технический аудит (чек-лист из 15 пунктов), стратегию семантического ядра, приоритизацию страниц для продвижения, план наращивания ссылочной массы по месяцам, контент-план для блога (SEO-статьи), KPI по месяцам (позиции, трафик, конверсии). Покажи реалистичные ожидания роста трафика.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Первые 3 месяца фокусируйся на низкоконкурентных запросах с высоким интентом покупки.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#4.2</span>
+      <span class="prompt-title">Кластеризация семантики</span>
+    </div>
+    <div class="prompt-text">Вот список ключевых запросов для [ваш продукт/сайт]: [вставь 30-50 запросов]. Кластеризуй их по интенту: информационный, навигационный, коммерческий, транзакционный. Для каждого кластера: определи целевую страницу (существующую или новую), приоритет (высокий/средний/низкий), рекомендуемый тип контента, частотность (если данные не предоставлены, оцени относительно). Выдели кластеры-пересечения, где один контент может охватить несколько групп.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Начинай продвижение с транзакционных и коммерческих кластеров, они приносят деньги.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#4.3</span>
+      <span class="prompt-title">Техническое SEO</span>
+    </div>
+    <div class="prompt-text">Проведи аудит технического SEO для [сайт]. Составь чек-лист из 30 пунктов с проверками: скорость загрузки (Core Web Vitals), мобильная версия, индексация (robots.txt, sitemap, canonical), структура URL, внутренняя перелинковка, дубли контента, битые ссылки, микроразметка (Schema.org), безопасность (HTTPS, mixed content), международное SEO (hreflang). Для каждого пункта: что проверить, каким инструментом, критерий "ок/проблема", приоритет исправления.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Исправляй технические ошибки до начала работы с контентом и ссылками.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#4.4</span>
+      <span class="prompt-title">Анализ конкурентов в поиске</span>
+    </div>
+    <div class="prompt-text">Проанализируй SEO-конкурентов для [сайт] в нише [ниша]. Конкуренты: [конкурент 1], [конкурент 2], [конкурент 3]. Для каждого конкурента оцени: количество проиндексированных страниц, топ-10 страниц по трафику, стратегию контента (что публикуют, как часто), ссылочный профиль (типы доноров), техническое состояние. Найди: запросы, по которым конкуренты в топе, а мы нет (keyword gap), типы контента, которые у них работают, возможности для нашего роста.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Используй Ahrefs или Serpstat для получения реальных данных перед подстановкой в промпт.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#4.5</span>
+      <span class="prompt-title">Мета-теги для страниц</span>
+    </div>
+    <div class="prompt-text">Напиши мета-теги для 10 страниц [сайт]. Для каждой страницы (URL: [url], ключевой запрос: [запрос], тип страницы: [категория/товар/статья]): Title (до 60 символов, с ключевым словом в начале), Description (до 155 символов, с призывом к действию), H1 (отличается от Title, содержит ключевой запрос). Учти: каждый Title уникален, Description мотивирует кликнуть, формулировки естественные, без спама ключевыми словами.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Мета-описания с цифрами и вопросами дают CTR на 15-20% выше средних.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#4.6</span>
+      <span class="prompt-title">Ссылочная стратегия</span>
+    </div>
+    <div class="prompt-text">Разработай стратегию линкбилдинга для [сайт] в нише [ниша] на [период]. Текущий DR/DA: [число]. Цель: [целевой DR/DA]. Бюджет на ссылки: [бюджет/мес]. Опиши 10 методов получения ссылок: гостевые статьи, крауд-маркетинг, HARO/Pressfeed, битые ссылки, инфографики, исследования, каталоги, партнёрства, комментарии экспертов, digital PR. Для каждого метода: где искать доноров, как выходить на контакт, стоимость, ожидаемое количество ссылок/мес, примерный текст outreach-письма.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> 1 ссылка с сайта DR 50+ стоит больше, чем 50 ссылок с каталогов.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#4.7</span>
+      <span class="prompt-title">Оптимизация существующего контента</span>
+    </div>
+    <div class="prompt-text">Вот текст моей страницы: [вставь текст или URL]. Целевой запрос: [запрос]. Текущая позиция: [номер]. Страницы конкурентов в топ-3: [URL 1, URL 2, URL 3]. Проанализируй мой контент и предложи план оптимизации: какие разделы добавить (content gap), какие переписать, где усилить ключевые слова (LSI), какие внутренние ссылки добавить, как улучшить структуру (H2, H3), нужна ли микроразметка. Дай конкретный текст для каждого изменения.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Обновление и дооптимизация существующих страниц часто эффективнее создания новых.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#4.8</span>
+      <span class="prompt-title">Локальное SEO</span>
+    </div>
+    <div class="prompt-text">Разработай стратегию локального SEO для [бизнес] в [город/регион]. Тип бизнеса: [офлайн точка/доставка/услуги на дому]. Количество локаций: [число]. Включи: оптимизацию Google Business Profile (чек-лист), стратегию получения отзывов, NAP-консистентность, локальные каталоги и справочники (список 15 штук), локальный контент (темы статей), микроразметку LocalBusiness, стратегию по локальным запросам "[услуга] + [город]".</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Отвечайте на каждый отзыв в Google Business Profile, это влияет на локальную выдачу.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#4.9</span>
+      <span class="prompt-title">Контент-хаб (pillar page)</span>
+    </div>
+    <div class="prompt-text">Спроектируй контент-хаб для [сайт] на тему "[основная тема]". Целевой кластер запросов: [10-15 запросов]. Структура: pillar page (основная страница, 3000-5000 слов), 8-12 кластерных статей (по 1500-2000 слов каждая), схема внутренней перелинковки между ними. Для pillar page: полная структура с подзаголовками. Для каждой кластерной статьи: тема, целевой запрос, ключевые тезисы, как она связана с pillar page. Нарисуй схему связей.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Публикуй pillar page первой, а кластерные статьи добавляй по 2-3 в неделю.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#4.10</span>
+      <span class="prompt-title">SEO для маркетплейса</span>
+    </div>
+    <div class="prompt-text">Оптимизируй карточки товаров для [маркетплейс: Wildberries/Ozon/Яндекс.Маркет]. Товар: [категория товаров]. Для 5 товаров составь: SEO-заголовок (с учётом алгоритма конкретного маркетплейса), описание (с ключевыми словами, но читабельное), характеристики (какие заполнить обязательно), rich-контент (если доступен), стратегию отзывов, стратегию ценообразования для попадания в топ выдачи. Учти особенности поисковых алгоритмов конкретного маркетплейса.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> На маркетплейсах скорость доставки и наличие на складе влияют на ранжирование не меньше текстов.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#4.11</span>
+      <span class="prompt-title">Аудит скорости сайта</span>
+    </div>
+    <div class="prompt-text">Составь план оптимизации скорости загрузки [сайт]. Текущие показатели: LCP [число]с, FID [число]мс, CLS [число]. CMS: [WordPress/Tilda/кастом]. Для каждого Core Web Vital: причины плохого показателя, конкретные действия по исправлению, ожидаемый прирост, приоритет. Дополнительно: оптимизация изображений, lazy loading, кэширование, минификация CSS/JS, CDN, шрифты. Оцени трудозатраты и влияние каждого действия.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Оптимизация LCP до менее 2.5 секунд даёт максимальный буст в ранжировании.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#4.12</span>
+      <span class="prompt-title">Миграция сайта без потери SEO</span>
+    </div>
+    <div class="prompt-text">Мы переезжаем [сайт] с [старая платформа] на [новая платформа]. Количество страниц: [число]. Текущий трафик: [число] визитов/мес. Составь чек-лист миграции: до переезда (бэкап, карта редиректов, замер метрик), во время (301-редиректы, канонические URL, проверка контента), после (мониторинг 30 дней, проверка индексации, Search Console). Укажи типичные ошибки, из-за которых теряют трафик при миграции, и как их избежать.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> После миграции мониторь позиции и трафик ежедневно первые 2 недели.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#4.13</span>
+      <span class="prompt-title">Schema.org разметка</span>
+    </div>
+    <div class="prompt-text">Составь микроразметку Schema.org для [сайт]. Тип бизнеса: [тип]. Нужна разметка для: главной страницы (Organization), страниц товаров (Product с отзывами и ценой), статей блога (Article), FAQ-секций (FAQPage), хлебных крошек (BreadcrumbList), контактов (LocalBusiness). Для каждого типа: готовый JSON-LD код с плейсхолдерами, объяснение каждого поля, как проверить валидность. Укажи, какая разметка даёт rich snippets в Google.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Разметка FAQPage и HowTo показывает расширенные сниппеты, что увеличивает CTR на 20-30%.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#4.14</span>
+      <span class="prompt-title">Стратегия нулевого клика</span>
+    </div>
+    <div class="prompt-text">Сайт: [сайт]. Ниша: [ниша]. Многие запросы моих клиентов получают ответ прямо в поисковой выдаче (нулевой клик). Разработай стратегию: как попасть в featured snippets для 10 целевых запросов (формат ответа, структура контента), как оптимизировать для People Also Ask, как использовать Knowledge Panel, какой контент создавать для голосового поиска, как компенсировать потерю кликов через бренд-запросы.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Структурируй ответы на вопросы в формате "определение в 40-60 слов" для попадания в featured snippet.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#4.15</span>
+      <span class="prompt-title">Международное SEO</span>
+    </div>
+    <div class="prompt-text">Разработай стратегию международного SEO для [сайт], который хочет выйти на рынки: [страны/языки]. Текущий рынок: [страна]. Вопросы для решения: структура URL (subdomain vs subdirectory vs ccTLD), hreflang-разметка, локализация контента vs перевод, геотаргетинг в Search Console, ссылочная стратегия для каждого рынка, локальные поисковые системы (Baidu, Yandex, Naver). Для каждого рынка: первые шаги и бюджет.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Локализация (адаптация под культуру) работает в 3 раза лучше простого перевода.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#4.16</span>
+      <span class="prompt-title">Видео SEO</span>
+    </div>
+    <div class="prompt-text">Разработай стратегию продвижения видео для [бренд/канал] в нише [ниша]. Платформы: YouTube, поиск Google. Включи: исследование ключевых слов для видео (10 тем с объёмом), оптимизацию метаданных (title, description, tags, thumbnails), стратегию удержания аудитории (структура видео), плейлисты и серии, shorts/clips стратегию, способы попадания видео в Google поиск (VideoObject разметка, embed на сайте). KPI: просмотры, CTR превью, удержание.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Thumbnail определяет CTR видео больше, чем заголовок, тестируй 3 варианта.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#4.17</span>
+      <span class="prompt-title">Восстановление после фильтра</span>
+    </div>
+    <div class="prompt-text">Мой сайт [сайт] попал под фильтр/санкции поисковика. Симптомы: [падение трафика на X%, выпадение из индекса, ручные действия в Search Console]. Когда случилось: [дата]. Что делали до этого: [действия]. Проведи диагностику: определи тип фильтра (алгоритмический/ручной), составь план восстановления по шагам, укажи сроки восстановления для каждого типа фильтра, какие инструменты использовать для мониторинга, что отправить в запрос на пересмотр (если ручной).</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Честно перечисли ВСЕ нарушения в запросе на пересмотр, сокрытие ухудшает ситуацию.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#4.18</span>
+      <span class="prompt-title">E-E-A-T оптимизация</span>
+    </div>
+    <div class="prompt-text">Разработай план повышения E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) для [сайт] в нише [ниша, особенно YMYL]. Текущие проблемы: [описание]. Действия по каждому фактору: Experience (как показать реальный опыт), Expertise (авторские страницы, биографии, схема разметки), Authoritativeness (публикации, упоминания, ссылки), Trustworthiness (политики, контакты, отзывы, безопасность). Чек-лист из 20 пунктов с приоритетами.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Добавьте авторские страницы с экспертизой для каждого автора блога.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#4.19</span>
+      <span class="prompt-title">Конверсия поискового трафика</span>
+    </div>
+    <div class="prompt-text">Мой сайт [сайт] получает [число] визитов/мес из поиска, но конверсия только [число]%. Ниша: [ниша]. Целевое действие: [покупка/заявка/подписка]. Проанализируй возможные причины низкой конверсии SEO-трафика: несоответствие интента и контента, проблемы юзабилити, слабые CTA, отсутствие доверия. Для каждой причины: как диагностировать (метрики, инструменты), как исправить (конкретные действия), ожидаемый прирост конверсии.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Сегментируй SEO-трафик по типам запросов и оптимизируй конверсию для каждого сегмента отдельно.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#4.20</span>
+      <span class="prompt-title">SEO-отчёт для клиента</span>
+    </div>
+    <div class="prompt-text">Составь шаблон ежемесячного SEO-отчёта для клиента. Включи разделы: резюме (3-5 ключевых выводов), динамика позиций (топ-20 запросов), органический трафик (общий, по страницам, по устройствам), конверсии из органики, технические работы за месяц, контентные работы, ссылочные работы, сравнение с конкурентами, план на следующий месяц. Для каждого раздела: какие графики/таблицы включить, откуда брать данные, как интерпретировать для клиента без технических знаний.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Начинай отчёт с бизнес-результатов (лиды, продажи), а не с технических метрик.</div>
+  </div>
+</div>
+
+<div class="category" id="cat-5">
+  <div class="category-header">
+    <div class="category-emoji">📧</div>
+    <h2>Email-маркетинг</h2>
+    <div class="cat-subtitle">Раздел 5 &middot; 20 промптов</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#5.1</span>
+      <span class="prompt-title">Welcome-серия</span>
+    </div>
+    <div class="prompt-text">Напиши welcome-серию из 5 писем для новых подписчиков [бренд/продукт]. Лид-магнит: [что получил подписчик]. Целевая аудитория: [целевая аудитория]. Цель серии: [продажа/вовлечение/обучение]. Для каждого письма: тема (до 50 символов), прехедер, текст письма (300-500 слов), CTA, день отправки (от подписки). Письмо 1: доставка лид-магнита + знакомство. Письмо 2: история/экспертиза. Письмо 3: кейс. Письмо 4: частые вопросы. Письмо 5: оффер.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Первое письмо должно уходить в течение 5 минут после подписки.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#5.2</span>
+      <span class="prompt-title">Реактивационная серия</span>
+    </div>
+    <div class="prompt-text">Напиши серию из 4 писем для реактивации неактивных подписчиков [бренд]. Период неактивности: [число] дней. Размер сегмента: [число] человек. Средний чек: [сумма]. Письмо 1: "Мы скучаем" (без скидки, ценность). Письмо 2: "Вот что вы пропустили" (новости/обновления). Письмо 3: "Специальное предложение" (оффер с дедлайном). Письмо 4: "Последний шанс" (отписка или подтверждение). Для каждого: тема, текст, тайминг. Укажи, когда удалять неактивных из базы.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Чистка базы от неактивных повышает deliverability и снижает стоимость сервиса рассылок.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#5.3</span>
+      <span class="prompt-title">Продающая цепочка</span>
+    </div>
+    <div class="prompt-text">Напиши продающую email-серию из 7 писем для запуска [ваш продукт]. Целевая аудитория: [целевая аудитория]. Цена: [цена]. Дедлайн: [дата]. Структура: день 1 (история проблемы), день 2 (разбор ошибок ЦА), день 3 (новый подход), день 4 (кейс клиента), день 5 (детали продукта + оффер), день 6 (ответы на возражения), день 7 (последний шанс). Для каждого письма: цепляющая тема, прехедер, полный текст, P.S. с дополнительным триггером.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> P.S. после подписи читают чаще, чем основной текст, помещай туда ключевое сообщение.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#5.4</span>
+      <span class="prompt-title">Триггерные письма</span>
+    </div>
+    <div class="prompt-text">Разработай систему триггерных (автоматических) писем для [ваш продукт/сервис]. Опиши 12 триггеров: событие-триггер, задержка отправки, тема письма, текст письма, CTA. Триггеры: регистрация, первая покупка, брошенная корзина, просмотр без покупки, день рождения, N дней без визита, отмена подписки, достижение в продукте, истечение триала, повышение тарифа, годовщина клиента, реферал-приглашение. Укажи ожидаемый open rate и конверсию для каждого.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Брошенная корзина с 3 письмами возвращает 10-15% покупателей.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#5.5</span>
+      <span class="prompt-title">Нюслеттер</span>
+    </div>
+    <div class="prompt-text">Разработай концепцию еженедельного нюслеттера для [бренд] в нише [ниша]. Целевая аудитория: [целевая аудитория]. Цель: [удержание/продажи/трафик на сайт]. Включи: название рассылки, формат и рубрики (3-5 постоянных рубрик), пример выпуска с полным текстом, стратегию роста базы (5 способов), частоту и время отправки, метрики для отслеживания. Рассылка должна быть ценной сама по себе, не просто анонсы блога.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Нюслеттеры с авторской подачей (от имени человека) открывают на 20-30% чаще, чем корпоративные.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#5.6</span>
+      <span class="prompt-title">A/B тесты email</span>
+    </div>
+    <div class="prompt-text">Составь план A/B тестирования для email-рассылок [бренд]. Текущие показатели: open rate [число]%, CTR [число]%, конверсия [число]%. Распиши 10 тестов в порядке приоритета: что тестируем, гипотеза, вариант А vs вариант Б, метрика успеха, размер выборки, длительность теста. Тесты должны покрывать: темы писем, время отправки, длину текста, количество CTA, дизайн vs плейн-текст, персонализацию, сегментацию.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Тестируй один элемент за раз, иначе не поймёшь, что повлияло на результат.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#5.7</span>
+      <span class="prompt-title">Onboarding email-серия для SaaS</span>
+    </div>
+    <div class="prompt-text">Напиши onboarding-серию из 8 писем для нового пользователя [SaaS-продукт]. Ключевое действие активации: [что должен сделать пользователь]. Триальный период: [число] дней. Структура: день 0 (приветствие + первый шаг), день 1 (главная функция), день 3 (продвинутая функция), день 5 (кейс пользователя), день 7 (интеграции), день 10 (что упускаете на бесплатном плане), день 12 (оффер на оплату), день 14 (дедлайн триала). Для каждого: тема, текст, CTA с глубокой ссылкой в продукт.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Первое письмо должно вести к одному конкретному действию, не к обзору всех функций.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#5.8</span>
+      <span class="prompt-title">Сегментация базы</span>
+    </div>
+    <div class="prompt-text">Помоги сегментировать email-базу [бренд]. Размер базы: [число]. Продукт: [ваш продукт]. Данные, которые у нас есть: [перечисли поля: имя, город, дата регистрации, покупки, открытия писем и т.д.]. Предложи 8 сегментов с критериями, стратегию контента для каждого сегмента, автоматические правила перемещения между сегментами, разные частоты отправки для каждого сегмента, как собрать недостающие данные через письма.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Даже базовая сегментация (покупал/не покупал) повышает выручку с рассылок на 30-50%.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#5.9</span>
+      <span class="prompt-title">Транзакционные письма</span>
+    </div>
+    <div class="prompt-text">Перепиши транзакционные письма для [ваш продукт/магазин], чтобы они работали на маркетинг. Типы писем: подтверждение заказа, статус доставки, чек/квитанция, смена пароля, уведомление об оплате. Для каждого: текущий стандартный текст (опиши), переработанная версия с элементами маркетинга (рекомендации товаров, просьба об отзыве, реферальная ссылка, upsell), но без навязчивости. Укажи, что можно добавить, а что нельзя по закону.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Транзакционные письма имеют open rate 80-90%, используй их для маркетинга.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#5.10</span>
+      <span class="prompt-title">Антиспам и доставляемость</span>
+    </div>
+    <div class="prompt-text">Проведи аудит доставляемости email-рассылок [бренд]. Текущие проблемы: [описание, например, попадание в спам, низкий open rate]. Сервис рассылок: [название]. Объём: [число] писем/мес. Составь чек-лист: технические настройки (SPF, DKIM, DMARC), репутация домена и IP, контентные факторы (спам-слова, соотношение текст/картинки), гигиена базы, частота отправки, процедура прогрева нового домена. Для каждого пункта: как проверить, как исправить.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Настройте DMARC с политикой "reject" для максимальной защиты домена.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#5.11</span>
+      <span class="prompt-title">Email для e-commerce</span>
+    </div>
+    <div class="prompt-text">Разработай полную email-стратегию для интернет-магазина [ниша]. Средний чек: [сумма]. Частота покупок: [раз в N дней]. Категории товаров: [перечисли]. Опиши: lifecycle-серии (от первого визита до адвоката бренда), промо-календарь на месяц, товарные рекомендации (логика подбора), пост-покупочные серии, программа лояльности через email, метрики по каждой серии. Расcчитай ожидаемую долю выручки от email-канала.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Email должен приносить 20-30% выручки e-commerce, если меньше, стратегия слабая.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#5.12</span>
+      <span class="prompt-title">Персонализация писем</span>
+    </div>
+    <div class="prompt-text">Разработай стратегию персонализации email для [бренд]. Данные, доступные для персонализации: [перечисли]. Покажи 10 примеров персонализации разного уровня: базовый (имя, город), поведенческий (просмотренные товары, история покупок), предиктивный (рекомендации на основе сегмента). Для каждого примера: шаблон письма с динамическими блоками, условия показа, технические требования к сервису рассылок. Оцени прирост конверсии для каждого уровня.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Персонализация по поведению (что смотрел, что покупал) работает в 5 раз лучше, чем по имени.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#5.13</span>
+      <span class="prompt-title">Email-курс как лид-магнит</span>
+    </div>
+    <div class="prompt-text">Разработай бесплатный email-курс из 5 уроков на тему "[тема]" как лид-магнит для [ваш продукт]. Целевая аудитория: [целевая аудитория]. Для каждого урока: тема письма, контент (500-700 слов с практическим заданием), ссылка на продукт (нативная, не навязчивая). После 5 уроков: продающее письмо с оффером. Напиши также: текст для лендинга подписки (250 слов), текст для thank you page, идеи для продвижения email-курса.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Каждый урок должен давать конкретный результат, чтобы подписчик дошёл до конца.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#5.14</span>
+      <span class="prompt-title">Письмо о повышении цены</span>
+    </div>
+    <div class="prompt-text">Напиши email-уведомление о повышении цены на [ваш продукт/сервис]. Текущая цена: [цена]. Новая цена: [цена]. Дата повышения: [дата]. Целевая аудитория: текущие клиенты. Письмо должно: объяснить причину (честно, без оправданий), подчеркнуть добавленную ценность, дать возможность зафиксировать старую цену до дедлайна, не вызывать негатив. Напиши 3 варианта: для лояльных клиентов, для новых клиентов, для клиентов на триале. Каждый вариант: тема + полный текст.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Сообщай о повышении цены минимум за 30 дней, это проявление уважения к клиентам.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#5.15</span>
+      <span class="prompt-title">Пост-покупочная серия</span>
+    </div>
+    <div class="prompt-text">Напиши серию из 6 писем после покупки [ваш продукт]. Тип продукта: [физический/цифровой/подписка]. Цикл повторной покупки: [срок]. Структура: день 0 (спасибо + что дальше), день 3 (как использовать, советы), день 7 (запрос обратной связи), день 14 (кейс другого клиента + upsell), день 30 (просьба об отзыве + реферальная программа), день 60 (спецпредложение на повторную покупку). Для каждого: тема, текст, условие отправки (если не купил повторно и т.д.).</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Просьба об отзыве на 7-14 день после покупки даёт максимальный отклик.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#5.16</span>
+      <span class="prompt-title">Антикризисное email-оповещение</span>
+    </div>
+    <div class="prompt-text">Напиши шаблоны кризисных email-уведомлений для [бренд]. Сценарии: утечка данных, сбой сервиса, задержка доставки, отзыв продукта, изменение условий. Для каждого сценария: тема письма, текст (что случилось, что делаем, что нужно от клиента, сроки решения), тон коммуникации, последующее письмо (когда проблема решена). Укажи время реакции для каждого типа кризиса и кто должен одобрить отправку.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Первое кризисное письмо должно уйти в течение 2 часов после инцидента.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#5.17</span>
+      <span class="prompt-title">Геймификация в email</span>
+    </div>
+    <div class="prompt-text">Разработай механику геймификации для email-рассылок [бренд]. Целевая аудитория: [целевая аудитория]. Цель: [повышение вовлечённости/продаж]. Предложи 5 механик: баллы за действия, уровни подписчика, квизы и челленджи, streak (серия открытий), награды за реферал. Для каждой: описание, пример письма, технические требования, метрика эффективности, стоимость внедрения.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Начни с простой механики (квиз с результатом) и усложняй по мере роста базы.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#5.18</span>
+      <span class="prompt-title">Интеграция email с другими каналами</span>
+    </div>
+    <div class="prompt-text">Разработай стратегию омниканального маркетинга, где email является центральным каналом для [бренд]. Другие каналы: [перечислите: SMS, push, мессенджеры, ретаргетинг]. Опиши: в каких сценариях email дополняется другим каналом, правила каскадирования (если не открыл email, отправить SMS через X часов), единый профиль клиента (какие данные синхронизировать), ограничения по частоте касаний (суммарно по всем каналам), примеры 3 омниканальных сценариев с таймлайнами.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Не дублируй одно и то же сообщение в email и SMS, адаптируй формат под канал.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#5.19</span>
+      <span class="prompt-title">Email-дайджест</span>
+    </div>
+    <div class="prompt-text">Создай шаблон и концепцию ежемесячного дайджеста для клиентов [бренд/SaaS]. Цель: удержание и информирование. Рубрики: новые функции (с визуалом), лучший кейс месяца, полезный совет, дорожная карта (что будет), метрики клиента (персонализированные, если SaaS). Напиши пример выпуска с полным текстом. Укажи: оптимальный объём, время отправки, как измерять эффективность дайджеста.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Добавь в дайджест персональную статистику клиента, это повышает open rate на 25%.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#5.20</span>
+      <span class="prompt-title">Email-копирайтинг: формулы</span>
+    </div>
+    <div class="prompt-text">Напиши по одному email-письму для [ваш продукт] по каждой из 6 копирайтерских формул: PAS (Problem-Agitation-Solution), BAB (Before-After-Bridge), 4P (Picture-Promise-Prove-Push), QUEST (Qualify-Understand-Educate-Stimulate-Transition), Star-Story-Solution, ACCA (Awareness-Comprehension-Conviction-Action). Целевая аудитория: [целевая аудитория]. Боль: [боль клиента]. Для каждого письма: тема, прехедер, полный текст (300-400 слов), CTA. Укажи, в каких ситуациях лучше работает каждая формула.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Тестируй разные формулы на одном и том же сегменте, чтобы найти свою "рабочую".</div>
+  </div>
+</div>
+
+<div class="category" id="cat-6">
+  <div class="category-header">
+    <div class="category-emoji">📱</div>
+    <h2>Соцсети (SMM)</h2>
+    <div class="cat-subtitle">Раздел 6 &middot; 20 промптов</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#6.1</span>
+      <span class="prompt-title">SMM-стратегия</span>
+    </div>
+    <div class="prompt-text">Разработай SMM-стратегию на 3 месяца для [бренд] в нише [ниша]. Текущая ситуация: [число] подписчиков, [число] охват, [число] engagement rate. Цели: [рост подписчиков/продажи/узнаваемость]. Платформы: [соцсети]. Включи: позиционирование в каждой соцсети, контент-микс (соотношение типов контента), визуальный стиль (описание), частоту публикаций, стратегию хештегов, план работы с комментариями, бюджет на продвижение, KPI по месяцам.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Лучше вести 2 платформы хорошо, чем 5 плохо.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#6.2</span>
+      <span class="prompt-title">Рилсы и шортсы</span>
+    </div>
+    <div class="prompt-text">Напиши 10 сценариев для коротких видео (Reels/Shorts/TikTok) для [бренд/продукт]. Целевая аудитория: [целевая аудитория]. Формат: 15-60 секунд. Для каждого видео: hook (первые 3 секунды), сценарий по секундам, текст на экране, звук/музыка, CTA, хештеги. Типы: обучающий (3), развлекательный (2), продающий (2), трендовый (2), закулисный (1). Каждый hook должен остановить скроллинг.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Снимай 5 хуков для одного видео и выбирай лучший по удержанию первых 3 секунд.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#6.3</span>
+      <span class="prompt-title">Контент для Telegram-канала</span>
+    </div>
+    <div class="prompt-text">Составь контент-план на 2 недели для Telegram-канала [бренд/тема] с аудиторией [число] подписчиков. Тематика: [ниша]. Для каждого дня (1-2 поста): тип поста (мнение/разбор/новость/инструмент/опрос/кейс), полный текст поста (200-400 слов), форматирование (жирный, курсив, ссылки), время публикации. Учти специфику Telegram: длинные тексты допустимы, ссылки кликабельны, опросы встроены. Тон: [описание тона].</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Посты в Telegram в 8:00-9:00 и 19:00-21:00 получают максимальный охват.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#6.4</span>
+      <span class="prompt-title">Вовлекающий контент</span>
+    </div>
+    <div class="prompt-text">Напиши 15 вовлекающих постов для [бренд] в [соцсеть]. Цель: увеличить engagement rate с [текущий]% до [целевой]%. Типы: вопросы аудитории (3), опросы (3), "это или это" (2), продолжи фразу (2), угадай/квиз (2), мнение по теме (2), UGC-призыв (1). Для каждого поста: полный текст, визуал (описание), ожидаемый тип реакции. Посты должны быть релевантны нише [ниша] и интересны [целевая аудитория].</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Вопросы с двумя вариантами ответа получают в 3 раза больше комментариев, чем открытые.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#6.5</span>
+      <span class="prompt-title">Stories-стратегия</span>
+    </div>
+    <div class="prompt-text">Разработай стратегию Stories для [бренд] в Instagram. Частота: [число] сторис/день. Составь: рубрикатор (7 типов stories: закулисье, отзывы, обучение, опрос, продающая, личная, UGC), шаблоны для каждой рубрики, стратегию Highlights (какие разделы, порядок, обложки), интерактивные элементы (опросы, вопросы, слайдеры, квизы) и когда их использовать, связку Stories с постами и Reels. Напиши сценарий на одну неделю (по дням).</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Сторис с лицом человека получают на 30% больше просмотров, чем с графикой.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#6.6</span>
+      <span class="prompt-title">Работа с комментариями и негативом</span>
+    </div>
+    <div class="prompt-text">Напиши гайд по работе с комментариями и негативными отзывами для SMM-менеджера [бренд]. Категории комментариев: положительный, вопрос, жалоба, троллинг, спам, конструктивная критика. Для каждой категории: стратегия ответа, 3 шаблона ответа (адаптируемые), время реакции, когда эскалировать, когда удалять. Отдельно: как превратить негативный комментарий в лояльного клиента (5 шагов с примерами). Правила: что категорически нельзя делать.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Ответ на негативный комментарий читают в 5 раз больше людей, чем сам комментарий.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#6.7</span>
+      <span class="prompt-title">Influencer-маркетинг</span>
+    </div>
+    <div class="prompt-text">Разработай стратегию работы с блогерами для продвижения [ваш продукт]. Бюджет: [бюджет]. Целевая аудитория: [целевая аудитория]. Платформа: [соцсеть]. Включи: критерии выбора блогера (чек-лист из 10 пунктов), типы интеграций (обзор, нативная реклама, амбассадорство, giveaway), шаблон ТЗ для блогера, формула расчёта справедливой цены (CPM/CPE), шаблон договора (ключевые пункты), как отслеживать ROI, red flags при работе с блогерами.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Микроблогеры (5-50к подписчиков) часто дают лучший ROI, чем миллионники.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#6.8</span>
+      <span class="prompt-title">Конкурсы и гивэвэи</span>
+    </div>
+    <div class="prompt-text">Разработай 5 механик конкурсов/розыгрышей для [бренд] в [соцсеть]. Цель: [рост подписчиков/вовлечённость/UGC]. Бюджет на призы: [бюджет]. Для каждой механики: условия участия, приз, длительность, текст анонса, правила (юридически корректные), способ определения победителя, пост-конкурсный контент, ожидаемые метрики. Одна механика должна генерировать UGC-контент, одна привлекать подписчиков, одна увеличивать продажи.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Конкурсы с простыми условиями (1-2 действия) привлекают в 4 раза больше участников.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#6.9</span>
+      <span class="prompt-title">UGC-стратегия</span>
+    </div>
+    <div class="prompt-text">Разработай стратегию генерации пользовательского контента (UGC) для [бренд]. Продукт: [ваш продукт]. Целевая аудитория: [целевая аудитория]. Включи: 5 мотиваций для создания UGC (почему люди будут это делать), брендированный хештег и как его продвигать, механики стимулирования (челленджи, конкурсы, программа амбассадоров), юридические аспекты (права на контент), как переупаковывать UGC (соцсети, сайт, реклама, email), KPI программы.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Просто попросите, 70% клиентов готовы создать UGC, если их об этом попросить.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#6.10</span>
+      <span class="prompt-title">Кросс-постинг и адаптация</span>
+    </div>
+    <div class="prompt-text">Напиши один пост на тему "[тема]" для [бренд] и адаптируй его для 5 платформ: Instagram (пост + карусель), Telegram (длинный текст), ВКонтакте (пост + опрос), LinkedIn (профессиональный тон), Twitter/X (тред из 5 твитов). Для каждой платформы учти: ограничения по длине, формат контента, тон общения, хештеги, CTA, оптимальное время публикации. Покажи, как один месседж трансформируется под специфику каждой платформы.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Адаптация под платформу не означает смену смысла, только формат и подачу.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#6.11</span>
+      <span class="prompt-title">Комьюнити-менеджмент</span>
+    </div>
+    <div class="prompt-text">Разработай стратегию построения комьюнити вокруг [бренд/продукт]. Платформа: [Telegram-чат/Discord/VK-группа]. Целевой размер: [число] участников за [период]. Включи: позиционирование сообщества (зачем вступать), правила (текст), рубрики и активности (еженедельные), роли участников (новичок/активный/эксперт/модератор), механики вовлечения (5 штук), монетизация через комьюнити, метрики здоровья сообщества, антикризисные сценарии.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Комьюнити растёт через ценность, а не через рекламу, первые 100 участников набирай вручную.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#6.12</span>
+      <span class="prompt-title">Визуальный стиль соцсетей</span>
+    </div>
+    <div class="prompt-text">Разработай визуальный гайдлайн для соцсетей [бренд]. Ниша: [ниша]. Целевая аудитория: [целевая аудитория]. Текущий стиль: [описание или "нет единого стиля"]. Опиши: цветовую палитру (основные и акцентные цвета с HEX-кодами), типографику (шрифты для заголовков и текста), стиль фотографий (ракурсы, фильтры, обработка), шаблоны для разных типов постов (5 типов), правила использования логотипа, примеры "хорошо" и "плохо".</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Единый визуальный стиль повышает узнаваемость бренда в ленте на 35%.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#6.13</span>
+      <span class="prompt-title">Таргетированная реклама в соцсетях</span>
+    </div>
+    <div class="prompt-text">Настрой рекламные кампании в [соцсеть] для [ваш продукт]. Бюджет: [бюджет/мес]. Целевая аудитория: [целевая аудитория]. Цель: [лиды/продажи/подписчики]. Опиши: структуру рекламного кабинета (кампании, группы, объявления), 5 аудиторий для тестирования (с настройками таргетинга), 3 креатива для каждой аудитории, стратегию ставок, бюджет на тест, критерии масштабирования, ежедневный чек-лист оптимизации.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Тестируй аудитории с минимальным бюджетом 3 дня, прежде чем масштабировать.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#6.14</span>
+      <span class="prompt-title">Продажи через личный бренд</span>
+    </div>
+    <div class="prompt-text">Разработай стратегию продаж [ваш продукт] через личный бренд в соцсетях. Эксперт: [имя, должность, экспертиза]. Платформы: [соцсети]. Текущая аудитория: [число]. Включи: позиционирование эксперта, контент-стратегию (соотношение экспертного/личного/продающего контента), план роста аудитории (5 тактик), воронку продаж через личный бренд, переход от бесплатного контента к продукту, этические границы (что публиковать, что нет).</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Личный бренд продаёт через доверие, а не через рекламу, инвестируй в контент.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#6.15</span>
+      <span class="prompt-title">Антикризисные коммуникации в соцсетях</span>
+    </div>
+    <div class="prompt-text">Разработай антикризисный план для соцсетей [бренд]. Сценарии: негативная публикация в СМИ, массовые жалобы клиентов, скандал с сотрудником, технический сбой сервиса, вирусный негатив. Для каждого сценария: время реакции, первое сообщение (текст), последовательность действий (час за часом), внутренняя координация (кто за что отвечает), мониторинг упоминаний, пост-кризисные действия. Отдельно: чего никогда не делать в кризис.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Удаление негативных комментариев в кризис усиливает негатив в 10 раз.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#6.16</span>
+      <span class="prompt-title">Контент-план для LinkedIn</span>
+    </div>
+    <div class="prompt-text">Составь контент-план на месяц для LinkedIn-профиля [имя, должность] в нише [ниша]. Цели: [личный бренд/лидогенерация/найм]. Для каждого из 12 постов (3 в неделю): тип (история/экспертный тезис/кейс/карусель/опрос), полный текст поста (LinkedIn-стиль: короткие абзацы, крючок в первой строке), время публикации. Учти алгоритм LinkedIn: текстовые посты &gt; карусели &gt; видео &gt; ссылки.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Первые 90 минут после публикации критичны, отвечай на каждый комментарий.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#6.17</span>
+      <span class="prompt-title">Социальные доказательства</span>
+    </div>
+    <div class="prompt-text">Разработай систему сбора и публикации социальных доказательств для [бренд] в соцсетях. Типы: отзывы клиентов, кейсы, скриншоты результатов, видео-отзывы, рейтинги, упоминания в СМИ, цифры (клиенты, продажи, лет на рынке). Для каждого типа: как собирать (процесс, скрипт просьбы), как оформлять для соцсетей, частота публикации, юридические аспекты (согласие клиента). Шаблон поста для каждого типа.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Видео-отзыв длиной 30-60 секунд убеждает лучше, чем 10 текстовых отзывов.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#6.18</span>
+      <span class="prompt-title">Мемы и развлекательный контент</span>
+    </div>
+    <div class="prompt-text">Создай 10 идей развлекательного контента (мемы, юмор, тренды) для [бренд] в нише [ниша]. Целевая аудитория: [целевая аудитория]. Платформа: [соцсеть]. Для каждой идеи: описание визуала/мема, текст, связь с продуктом (нативная, не навязчивая), почему это попадает в ЦА. Важно: юмор должен быть уместен для бренда и не обижать аудиторию. Укажи границы допустимого для бренда [тип бренда: серьёзный/дружелюбный/молодёжный].</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Развлекательный контент привлекает аудиторию, но продаёт экспертный, используй оба.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#6.19</span>
+      <span class="prompt-title">Аналитика соцсетей</span>
+    </div>
+    <div class="prompt-text">Составь шаблон ежемесячного отчёта по SMM для [бренд]. Платформы: [соцсети]. Разделы: охват и показы (динамика), рост аудитории (источники), вовлечённость (по типам контента), топ-5 постов месяца (почему они сработали), конверсии из соцсетей, бенчмарки по нише, работа с блогерами (если была), рекламные кампании, выводы и план на следующий месяц. Для каждого раздела: какие метрики, откуда брать, как визуализировать.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Сравнивай метрики не с прошлым месяцем, а с тем же месяцем прошлого года (сезонность).</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#6.20</span>
+      <span class="prompt-title">Коллаборации с другими аккаунтами</span>
+    </div>
+    <div class="prompt-text">Предложи 10 идей коллабораций [бренд] с другими аккаунтами в [соцсеть] для роста аудитории. Ниша: [ниша]. Целевая аудитория: [целевая аудитория]. Текущая аудитория: [число]. Типы коллабораций: совместный эфир, взаимный пост, совместный гивэвэй, челлендж, серия гостевых постов, коллаборация продуктов. Для каждой: с кем (тип аккаунта, размер), формат, что получает каждая сторона, ожидаемый прирост, шаблон предложения о сотрудничестве.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Ищи аккаунты с пересекающейся аудиторией, но не прямых конкурентов.</div>
+  </div>
+</div>
+
+<div class="category" id="cat-7">
+  <div class="category-header">
+    <div class="category-emoji">📊</div>
+    <h2>Аналитика и стратегия</h2>
+    <div class="cat-subtitle">Раздел 7 &middot; 20 промптов</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#7.1</span>
+      <span class="prompt-title">Бизнес-модель Canvas</span>
+    </div>
+    <div class="prompt-text">Заполни Business Model Canvas для [ваш продукт/компания]. Для каждого из 9 блоков дай подробное описание: ключевые партнёры (кто и зачем), ключевые активности (что делаем), ключевые ресурсы (что нужно), ценностное предложение (что даём), взаимоотношения с клиентами (как общаемся), каналы (как доставляем ценность), сегменты клиентов (кому продаём), структура затрат (на что тратим), потоки доходов (откуда деньги). После заполнения укажи 3 слабых места модели и как их усилить.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Пересматривай Canvas каждый квартал, бизнес-модель должна эволюционировать.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#7.2</span>
+      <span class="prompt-title">SWOT-анализ</span>
+    </div>
+    <div class="prompt-text">Проведи детальный SWOT-анализ для [ваш продукт/компания] в нише [ниша]. Для каждого квадранта дай минимум 5 пунктов с пояснениями: Strengths (внутренние сильные стороны), Weaknesses (внутренние слабости), Opportunities (внешние возможности), Threats (внешние угрозы). После анализа составь матрицу стратегий: SO (как использовать силы для реализации возможностей), WO (как возможности компенсируют слабости), ST (как силы защищают от угроз), WT (как минимизировать слабости и угрозы). Приоритизируй стратегии.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> SWOT полезен только когда из него вытекают конкретные действия, не оставляй его в теории.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#7.3</span>
+      <span class="prompt-title">Анализ unit-экономики</span>
+    </div>
+    <div class="prompt-text">Рассчитай unit-экономику для [ваш продукт]. Входные данные: цена продукта [цена], себестоимость [сумма], рекламный бюджет/мес [сумма], количество лидов/мес [число], конверсия в покупку [число]%, средняя частота покупок [число раз/год], средний срок жизни клиента [число месяцев]. Рассчитай: CAC, LTV, LTV/CAC, маржинальность, точку безубыточности, payback period. Укажи, какие метрики в норме и какие нужно улучшить. Предложи 3 рычага для улучшения unit-экономики.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> LTV/CAC ниже 3 означает, что бизнес-модель нуждается в корректировке.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#7.4</span>
+      <span class="prompt-title">Конкурентный анализ</span>
+    </div>
+    <div class="prompt-text">Проведи конкурентный анализ для [ваш продукт] в нише [ниша]. Конкуренты: [конкурент 1], [конкурент 2], [конкурент 3], [конкурент 4]. Параметры сравнения: продукт (функциональность, UX), цена (модели ценообразования), маркетинг (каналы, позиционирование, контент), продажи (модель, команда), клиентский сервис (каналы поддержки, SLA), технологии (стек, интеграции). Оформи как сравнительную таблицу. Выдели: наши преимущества, наши слабости, незанятые ниши, угрозы. Стратегические рекомендации: 5 пунктов.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Мониторь конкурентов постоянно, не раз в год, подпишись на их рассылки и соцсети.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#7.5</span>
+      <span class="prompt-title">OKR для отдела маркетинга</span>
+    </div>
+    <div class="prompt-text">Составь OKR (Objectives and Key Results) для отдела маркетинга [бренд] на квартал. Цели компании: [стратегические цели]. Текущие метрики: [трафик, лиды, конверсия, выручка]. Команда: [число] человек. Напиши 3-4 Objectives с 3-4 Key Results для каждого. Для каждого KR: текущее значение, целевое значение, ответственный, инициативы (что делаем для достижения). OKR должны быть амбициозными, но достижимыми. Укажи каскадирование от OKR компании к OKR отдела.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Если команда достигает 100% OKR, они недостаточно амбициозны, норма 70%.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#7.6</span>
+      <span class="prompt-title">Дашборд маркетинговых метрик</span>
+    </div>
+    <div class="prompt-text">Спроектируй дашборд для мониторинга маркетинговых метрик [бренд]. Каналы: [перечисли каналы привлечения]. Опиши: 15-20 ключевых метрик с формулами расчёта, группировку метрик (привлечение, вовлечение, конверсия, удержание, доход), частоту обновления каждой метрики, визуализацию (тип графика для каждой метрики), пороговые значения (зелёный/жёлтый/красный), источники данных, инструмент для создания (Google Looker Studio/Metabase/другой).</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Дашборд должен отвечать на вопрос "Как дела?" за 30 секунд, не дольше.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#7.7</span>
+      <span class="prompt-title">Customer Journey Map</span>
+    </div>
+    <div class="prompt-text">Составь Customer Journey Map для [ваш продукт]. Персона: [описание ЦА]. Для каждого этапа пути клиента (осведомлённость, рассмотрение, решение, покупка, использование, лояльность/отток): действия клиента, точки контакта с брендом, мысли и вопросы, эмоции (положительные/отрицательные), болевые точки, возможности для улучшения, метрика этапа. Формат: таблица. После карты: топ-5 точек, где мы теряем клиентов, и как это исправить.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Создавай CJM на основе данных (интервью, аналитика), а не предположений.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#7.8</span>
+      <span class="prompt-title">Анализ оттока клиентов</span>
+    </div>
+    <div class="prompt-text">Проанализируй отток клиентов [ваш продукт/сервис]. Текущий churn rate: [число]%/мес. Средний LTV: [сумма]. Количество клиентов: [число]. Причины оттока (если известны): [причины]. Разработай: сегментацию по риску оттока (критерии), систему раннего предупреждения (какие сигналы отслеживать), стратегию удержания для каждого сегмента, расчёт ROI удержания vs привлечения, план снижения churn на [число]% за [период]. Укажи бенчмарки churn для ниши [ниша].</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Снижение churn на 5% может увеличить прибыль на 25-95% (зависит от ниши).</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#7.9</span>
+      <span class="prompt-title">Анализ рынка для нового продукта</span>
+    </div>
+    <div class="prompt-text">Оцени рыночный потенциал для [новый продукт/идея]. Ниша: [ниша]. Регион: [регион]. Проведи анализ: TAM/SAM/SOM с расчётами, тренды рынка (растёт/падает, драйверы), целевая аудитория (сегменты, объём), конкурентный ландшафт (прямые и косвенные конкуренты), барьеры входа, регуляторные ограничения, каналы дистрибуции. Итог: go/no-go рекомендация с обоснованием и минимальным бюджетом для валидации.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Перед инвестициями в продукт проведите custdev с 20-30 представителями ЦА.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#7.10</span>
+      <span class="prompt-title">Аудит маркетинговых каналов</span>
+    </div>
+    <div class="prompt-text">Проведи аудит маркетинговых каналов [бренд]. Текущие каналы: [перечисли каналы и бюджет каждого]. Общая выручка: [сумма]. Для каждого канала рассчитай и оцени: CAC, ROAS, доля в привлечении, тренд за 6 месяцев (растёт/падает), потенциал масштабирования. Составь матрицу: ось X (текущая эффективность), ось Y (потенциал роста). Рекомендации: какие каналы масштабировать, какие оптимизировать, какие отключить, какие новые протестировать.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Перераспределяй бюджет от каналов с падающим ROAS к растущим каждый месяц.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#7.11</span>
+      <span class="prompt-title">Стратегическая сессия</span>
+    </div>
+    <div class="prompt-text">Составь программу стратегической сессии для [бренд/компания] на 1 день. Участники: [число] человек ([роли]). Цель: [определить стратегию на год/решить конкретную проблему]. Включи: расписание по часам, для каждого блока (тема, формат, модерация, ожидаемый результат), инструменты фасилитации (шаблоны, канвасы), подготовительные материалы (что раздать заранее), правила сессии, формат фиксации решений, план действий после сессии.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Отправь подготовительные материалы за 3 дня, чтобы участники пришли подготовленными.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#7.12</span>
+      <span class="prompt-title">Система атрибуции</span>
+    </div>
+    <div class="prompt-text">Разработай модель атрибуции для [бренд]. Каналы: [перечисли 5-8 каналов]. Средний цикл сделки: [срок]. Среднее количество касаний до покупки: [число]. Сравни модели: last-click, first-click, линейная, time-decay, позиционная, data-driven. Для каждой: как считается, плюсы/минусы, когда подходит. Рекомендуй оптимальную модель для нашего бизнеса с обоснованием. Опиши техническую реализацию (UTM-разметка, инструменты, интеграции).</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Начни с позиционной модели (40/20/40), а затем переходи к data-driven по мере накопления данных.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#7.13</span>
+      <span class="prompt-title">Квартальный бизнес-обзор</span>
+    </div>
+    <div class="prompt-text">Составь шаблон QBR (Quarterly Business Review) для [компания]. Аудитория: [руководство/инвесторы/команда]. Включи разделы: ключевые метрики квартала (vs план, vs прошлый квартал), топ-5 достижений, топ-3 проблемы и действия, прогресс по стратегическим инициативам, финансовый обзор (выручка, маржинальность, расходы), план на следующий квартал с OKR, запросы к руководству. Для каждого раздела: что показать, как визуализировать, сколько времени на презентацию.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> QBR это не отчёт о прошлом, а инструмент принятия решений о будущем, фокусируйся на выводах.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#7.14</span>
+      <span class="prompt-title">Продуктовая аналитика</span>
+    </div>
+    <div class="prompt-text">Настрой систему продуктовой аналитики для [ваш продукт/приложение/SaaS]. Текущие инструменты: [список]. Определи: 10 ключевых событий для отслеживания (с параметрами), воронку активации (5 шагов от регистрации до "aha-момента"), когортный анализ (по каким когортам разбивать), метрики удержания (Day 1, 7, 30), метрики вовлечения (DAU/MAU, session length, feature adoption). Для каждой метрики: формула, целевое значение, как улучшить.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Определите "aha-момент" вашего продукта, это действие, после которого пользователь остаётся.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#7.15</span>
+      <span class="prompt-title">Прогнозирование спроса</span>
+    </div>
+    <div class="prompt-text">Помоги спрогнозировать спрос на [ваш продукт] на [период]. Исторические данные: [помесячные продажи за последние 12 месяцев]. Факторы: сезонность, маркетинговые кампании, рост рынка, конкурентная среда. Построй прогноз тремя методами: скользящее среднее, экспоненциальное сглаживание, трендовый анализ. Для каждого метода: расчёт, доверительный интервал. Рекомендация: какому прогнозу доверять и почему. Как адаптировать план производства/закупок под прогноз.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Обновляй прогноз ежемесячно по мере поступления фактических данных.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#7.16</span>
+      <span class="prompt-title">Ценовая эластичность</span>
+    </div>
+    <div class="prompt-text">Проведи анализ ценовой эластичности для [ваш продукт]. Текущая цена: [цена]. Текущий объём продаж: [число]/мес. Исторические данные (если есть): [цена 1 -&gt; объём 1, цена 2 -&gt; объём 2]. Рассчитай: коэффициент ценовой эластичности, оптимальную цену для максимизации выручки, оптимальную цену для максимизации прибыли (с учётом себестоимости [сумма]), стратегию ценового тестирования (как безопасно проверить гипотезы). Покажи расчёты и графики.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Тестируй цены на разных сегментах (по географии или каналу привлечения) для чистых данных.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#7.17</span>
+      <span class="prompt-title">NPS и метрики лояльности</span>
+    </div>
+    <div class="prompt-text">Разработай систему измерения лояльности клиентов [ваш продукт]. Включи: методологию NPS-опроса (вопросы, момент отправки, частота), CSAT (Customer Satisfaction Score) для ключевых точек контакта, CES (Customer Effort Score) для сервисных взаимодействий, процесс обработки ответов (что делать с промоутерами, нейтралами, критиками), дашборд метрик лояльности, план действий для улучшения NPS на [число] пунктов за квартал.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Звоните детракторам (NPS 0-6) лично, это превращает часть из них в лояльных клиентов.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#7.18</span>
+      <span class="prompt-title">Аудит бизнес-процессов</span>
+    </div>
+    <div class="prompt-text">Проведи аудит бизнес-процесса [название процесса, например, "обработка заявки от поступления до закрытия сделки"] в [компания]. Текущее описание процесса: [описание или "не формализован"]. Участники: [роли]. Инструменты: [перечисли]. Проанализируй: узкие места и задержки, дублирование функций, ручные операции (что можно автоматизировать), потери времени, точки контроля качества. Предложи: оптимизированный процесс (схема), ожидаемый прирост эффективности, план внедрения изменений.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Замерь время каждого шага процесса "как есть" перед оптимизацией.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#7.19</span>
+      <span class="prompt-title">Стратегия выхода из кризиса</span>
+    </div>
+    <div class="prompt-text">Компания [бренд] в кризисе: [опишите ситуацию: падение выручки, потеря клиентов, кассовый разрыв и т.д.]. Текущие показатели: [ключевые метрики]. Команда: [число] человек. Резервы: [денежные средства]. Составь антикризисный план: немедленные действия (1 неделя) для стабилизации, краткосрочный план (1-3 месяца) для восстановления, среднесрочная стратегия (3-6 месяцев) для роста. Для каждого действия: что делать, ожидаемый результат, метрика контроля.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> В кризис сначала останови кровотечение (расходы), потом лечи (стратегия).</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#7.20</span>
+      <span class="prompt-title">Годовая стратегия маркетинга</span>
+    </div>
+    <div class="prompt-text">Разработай годовую маркетинговую стратегию для [бренд]. Текущая ситуация: выручка [сумма], рост [число]%, команда [число] человек, бюджет [бюджет]. Цели на год: [цели]. Рынок: [ниша], [регион]. Структура: анализ текущей ситуации (1 страница), стратегические приоритеты (3-5), тактический план по кварталам, бюджет по каналам и кварталам, команда (какие роли нужны), KPI и система отчётности, риски и план Б. Стратегия должна быть реалистичной и привязанной к ресурсам.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Стратегия на год, пересмотр каждый квартал, это оптимальный баланс планирования и гибкости.</div>
+  </div>
+</div>
+
+<div class="category" id="cat-8">
+  <div class="category-header">
+    <div class="category-emoji">🤖</div>
+    <h2>Автоматизация и AI-воркфлоу</h2>
+    <div class="cat-subtitle">Раздел 8 &middot; 20 промптов</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#8.1</span>
+      <span class="prompt-title">Карта автоматизации бизнес-процессов</span>
+    </div>
+    <div class="prompt-text">Проанализируй бизнес-процессы [ваш бизнес/компания] и определи, что можно автоматизировать. Процессы: [перечисли 5-10 основных процессов]. Для каждого процесса оцени: текущие затраты времени (часов/мес), потенциал автоматизации (высокий/средний/низкий), инструменты для автоматизации (конкретные сервисы), стоимость внедрения, ожидаемая экономия времени и денег, приоритет (по ROI). Составь дорожную карту автоматизации на 6 месяцев.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Начинай с процессов, которые повторяются ежедневно и не требуют творческого решения.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#8.2</span>
+      <span class="prompt-title">Чат-бот для продаж</span>
+    </div>
+    <div class="prompt-text">Спроектируй чат-бота для квалификации и продажи [ваш продукт]. Платформа: [Telegram/WhatsApp/сайт]. Целевая аудитория: [целевая аудитория]. Опиши: дерево диалога (от первого сообщения до передачи менеджеру или покупки), текст каждого сообщения бота, условия ветвления, интеграции (CRM, платёжная система), FAQ-база (15 вопросов с ответами), сценарий эскалации на живого оператора, метрики эффективности бота.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Бот должен идентифицировать момент, когда нужен человек, и передавать диалог бесшовно.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#8.3</span>
+      <span class="prompt-title">Автоматизация маркетинга</span>
+    </div>
+    <div class="prompt-text">Разработай схему marketing automation для [бренд]. Инструмент: [платформа, например, n8n/Make/HubSpot]. Опиши 8 автоматизаций: триггер, действия, условия, результат. Примеры: автоматическая сегментация лидов, триггерные email-цепочки, скоринг лидов, передача горячих лидов в CRM, ретаргетинг-аудитории, отчёты, уведомления менеджерам, публикация контента. Для каждой: схема потока, необходимые интеграции, время на настройку.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Автоматизируй сначала то, что уже работает вручную, не изобретай новые процессы.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#8.4</span>
+      <span class="prompt-title">AI-ассистент для команды</span>
+    </div>
+    <div class="prompt-text">Спроектируй AI-ассистента для [отдел: маркетинг/продажи/поддержка] в [компания]. Задачи ассистента: [перечисли 5-7 задач]. Для каждой задачи: промпт (готовый к использованию), входные данные (что нужно подать), выходные данные (что получим), инструмент (ChatGPT/Claude/кастомное решение), частота использования, оценка экономии времени. Также: как обучить команду использовать ассистента, контроль качества выходных данных, риски и ограничения.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> AI-ассистент ускоряет работу на 30-50%, но требует проверки результатов человеком.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#8.5</span>
+      <span class="prompt-title">Автоматизация отчётности</span>
+    </div>
+    <div class="prompt-text">Разработай систему автоматической отчётности для [бренд/компания]. Текущая ситуация: отчёты делаются вручную, занимает [число] часов/мес. Нужные отчёты: ежедневный (ключевые метрики), еженедельный (прогресс по KPI), ежемесячный (полный обзор). Для каждого: метрики, источники данных, инструмент визуализации, расписание автоматической отправки, получатели, формат (дашборд/email/PDF). Стек: [Google Sheets/Looker Studio/другой].</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Если отчёт занимает больше 30 минут ручной работы, его нужно автоматизировать.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#8.6</span>
+      <span class="prompt-title">CRM-автоматизации</span>
+    </div>
+    <div class="prompt-text">Настрой автоматизации в CRM [название CRM] для [ваш бизнес]. Опиши 10 автоматизаций: когда срабатывает (триггер), что делает (действие), зачем нужна (цель). Категории: обработка новых лидов, движение по воронке, напоминания менеджерам, уведомления клиентам, создание задач, эскалация просроченных сделок, автоматическое заполнение полей, интеграция с другими сервисами. Для каждой: пошаговая настройка, тестирование, ожидаемый результат.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Автоматизация в CRM работает только если менеджеры корректно заполняют данные.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#8.7</span>
+      <span class="prompt-title">Воркфлоу контент-производства</span>
+    </div>
+    <div class="prompt-text">Спроектируй автоматизированный воркфлоу производства контента для [бренд]. Объём: [число] единиц контента/мес. Типы: [блог, соцсети, email, видео]. Этапы: идея -&gt; бриф -&gt; создание -&gt; редактура -&gt; дизайн -&gt; публикация -&gt; аналитика. Для каждого этапа: кто отвечает (роль), инструмент, автоматизация (что делает AI/бот), SLA по времени, чек-лист качества. Инструменты: [Notion/Trello/Asana + AI]. Покажи, как один контент-менеджер может производить [число] единиц вместо [текущее число].</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Шаблоны и чек-листы экономят 40% времени на каждой единице контента.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#8.8</span>
+      <span class="prompt-title">Интеграция сервисов</span>
+    </div>
+    <div class="prompt-text">Спроектируй интеграции между сервисами для [ваш бизнес]. Текущий стек: [CRM], [сервис рассылок], [аналитика], [чат], [платёжная система], [другие]. Опиши 10 интеграций: какие сервисы связываем, какие данные передаём, в каком направлении, триггер передачи, инструмент интеграции (API/Zapier/Make/n8n), сложность настройки (1-5), влияние на бизнес-процесс. Приоритизируй по ROI. Укажи подводные камни каждой интеграции.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Начни с интеграции CRM и сервиса рассылок, это даёт максимальный эффект.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#8.9</span>
+      <span class="prompt-title">Автоматизация клиентской поддержки</span>
+    </div>
+    <div class="prompt-text">Разработай систему автоматизации клиентской поддержки для [ваш продукт]. Объём обращений: [число]/мес. Каналы: [email/чат/телефон/мессенджеры]. Типы обращений: [перечисли топ-10 типов]. Автоматизируй: маршрутизацию обращений (по типу к нужному специалисту), автоответы на FAQ (15 вопросов), эскалацию по SLA, сбор обратной связи после решения, отчётность. Инструменты: [тикет-система/чат-бот/AI-ассистент]. Целевые метрики: FRT, resolution time, CSAT.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Автоматизируйте 60-70% типовых обращений, но оставьте простой путь к живому человеку.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#8.10</span>
+      <span class="prompt-title">Скрейпинг и мониторинг конкурентов</span>
+    </div>
+    <div class="prompt-text">Разработай систему автоматического мониторинга конкурентов для [бренд] в нише [ниша]. Конкуренты: [3-5 конкурентов]. Что отслеживать: цены, новые продукты, контент (блог, соцсети), рекламные кампании, вакансии (индикатор роста), отзывы клиентов, позиции в поиске. Для каждого параметра: источник данных, метод мониторинга (RSS, алерты, API, ручной), частота проверки, куда складывать данные, как автоматически уведомлять команду об изменениях.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Вакансии конкурентов это лучший индикатор их стратегических планов.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#8.11</span>
+      <span class="prompt-title">AI для генерации контента</span>
+    </div>
+    <div class="prompt-text">Разработай систему использования AI для масштабирования производства контента в [бренд]. Типы контента: [перечисли]. Объём: [число] единиц/мес. Для каждого типа контента: промпт-шаблон (с плейсхолдерами), процесс редактирования AI-текста (чек-лист), контроль качества (что проверять), инструмент (ChatGPT/Claude/Jasper), стоимость и время на единицу (vs ручное создание). Правила: что AI делает хорошо, что только человек, этические границы (раскрытие AI-контента).</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> AI генерирует 80% черновика, человек доводит до 100%, это оптимальная модель.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#8.12</span>
+      <span class="prompt-title">Автоматизация рекрутинга</span>
+    </div>
+    <div class="prompt-text">Разработай автоматизированный процесс найма для [компания]. Позиция: [должность]. Объём: [число] наймов/мес. Автоматизируй: публикацию вакансий на 5+ площадках, скрининг резюме (критерии), автоматические ответы кандидатам, тестовое задание (автоматическая отправка и сбор), скоринг кандидатов, напоминания HR о дедлайнах, аналитику воронки найма. Инструменты: [ATS/Notion/Google Sheets + автоматизация]. Метрики: time-to-hire, cost-per-hire, quality-of-hire.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Автоматизируйте скрининг, но решение о найме всегда принимает человек после личного общения.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#8.13</span>
+      <span class="prompt-title">Воркфлоу обработки заявок</span>
+    </div>
+    <div class="prompt-text">Спроектируй автоматический воркфлоу обработки входящих заявок для [ваш бизнес]. Источники заявок: [сайт, соцсети, мессенджеры, email, телефон]. Объём: [число] заявок/день. Шаги: сбор в единую систему, дедупликация, автоматическая квалификация, распределение по менеджерам (правила), уведомление клиенту (подтверждение получения), SLA-трекинг, эскалация при нарушении SLA. Для каждого шага: инструмент, настройка, время на внедрение.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Автоматическое подтверждение заявки в течение 1 минуты повышает конверсию на 20%.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#8.14</span>
+      <span class="prompt-title">Персонализация через AI</span>
+    </div>
+    <div class="prompt-text">Разработай систему AI-персонализации для [ваш продукт/сайт/сервис]. Данные о пользователе: [какие данные собираем]. Точки персонализации: главная страница, рекомендации товаров, email-контент, push-уведомления, цены (динамическое ценообразование). Для каждой точки: алгоритм персонализации (правила/ML), данные на входе, результат, инструмент реализации, A/B тест для валидации, ожидаемый прирост конверсии. Этические ограничения: что персонализировать нельзя.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Начните с rule-based персонализации (простые правила), ML подключайте при объёме данных.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#8.15</span>
+      <span class="prompt-title">Автоматическая система отзывов</span>
+    </div>
+    <div class="prompt-text">Создай автоматизированную систему сбора и управления отзывами для [ваш продукт]. Точки сбора: после покупки, после использования (N дней), после общения с поддержкой. Автоматизируй: запрос отзыва (email/SMS/push с оптимальным таймингом), маршрутизацию (положительный -&gt; публичная площадка, отрицательный -&gt; менеджер), публикацию на площадках (Google, Яндекс, маркетплейсы), ответы на отзывы (шаблоны), аналитику (тренды настроений). Инструменты: [перечисли].</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Просите отзыв в момент максимальной удовлетворённости клиента (например, после успешной доставки).</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#8.16</span>
+      <span class="prompt-title">Автоматизация финансовых операций</span>
+    </div>
+    <div class="prompt-text">Разработай систему автоматизации финансовых операций для [ваш бизнес]. Текущие ручные процессы: [выставление счетов, сверка платежей, расчёт зарплат, налоговая отчётность, бюджетирование]. Для каждого процесса: текущие затраты времени, инструмент автоматизации, схема автоматизации, точки контроля (где нужен человек), экономия времени, стоимость внедрения. Отдельно: безопасность финансовых данных и compliance.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Автоматизируйте выставление счетов первым делом, это ускоряет получение денег.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#8.17</span>
+      <span class="prompt-title">No-code автоматизации</span>
+    </div>
+    <div class="prompt-text">Разработай 10 автоматизаций для [ваш бизнес] на no-code платформе [Make/n8n/Zapier]. Для каждой автоматизации: название, описание (зачем), триггер, последовательность шагов (5-10 нод), сервисы и API, пошаговая инструкция настройки, тестирование, мониторинг ошибок. Категории: маркетинг (3), продажи (3), операции (2), HR (1), финансы (1). Оцени: время настройки, стоимость (тарифы сервисов), ROI за месяц.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Начни с простых 3-шаговых автоматизаций, постепенно усложняя.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#8.18</span>
+      <span class="prompt-title">AI-промпт библиотека для команды</span>
+    </div>
+    <div class="prompt-text">Создай библиотеку из 20 промптов для ежедневного использования командой [отдел] в [компания]. Задачи: [перечисли типовые задачи отдела]. Для каждого промпта: название, задача, полный текст промпта с плейсхолдерами, пример заполнения, ожидаемый результат, в каком инструменте использовать (ChatGPT/Claude/другой), время экономии на задачу. Организуй по категориям. Добавь инструкцию для команды: как пользоваться, как адаптировать, чего не делать.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Обновляй библиотеку промптов ежемесячно, AI-модели меняются и промпты устаревают.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#8.19</span>
+      <span class="prompt-title">Мониторинг и алерты</span>
+    </div>
+    <div class="prompt-text">Разработай систему мониторинга и алертов для [ваш бизнес/продукт]. Что мониторим: доступность сайта, скорость, конверсия (падение), аномалии трафика, отзывы (негатив), упоминания бренда, цены конкурентов, остатки товара, SLA поддержки. Для каждого параметра: инструмент мониторинга, пороговое значение для алерта, канал уведомления (Telegram/email/SMS), кто получает, действие при срабатывании. Приоритизируй: критический/предупреждение/информация.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Настройте алерты так, чтобы они не создавали "усталость от уведомлений", только критичные.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#8.20</span>
+      <span class="prompt-title">Автоматизация email-маркетинга через AI</span>
+    </div>
+    <div class="prompt-text">Разработай AI-усиленную систему email-маркетинга для [бренд]. Объём базы: [число]. Частота рассылок: [число]/мес. AI-автоматизации: генерация тем писем (A/B тесты), персонализация контента по сегментам, оптимизация времени отправки (STO), предиктивный скоринг подписчиков, автоматическая чистка базы, генерация контента для писем. Для каждой: инструмент, настройка, метрика до/после, стоимость. Этические аспекты: прозрачность AI-контента.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> AI-оптимизация времени отправки (Send Time Optimization) повышает open rate на 10-15%.</div>
+  </div>
+</div>
+
+<div class="category" id="cat-9">
+  <div class="category-header">
+    <div class="category-emoji">🎯</div>
+    <h2>Клиентский сервис</h2>
+    <div class="cat-subtitle">Раздел 9 &middot; 20 промптов</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#9.1</span>
+      <span class="prompt-title">Стандарты обслуживания</span>
+    </div>
+    <div class="prompt-text">Разработай стандарты клиентского обслуживания для [ваш бизнес]. Каналы: [перечисли: телефон, email, чат, мессенджеры, соцсети]. Для каждого канала: SLA по времени ответа (первый ответ и решение), тон коммуникации (с примерами фраз), шаблоны для типовых ситуаций (5 штук), эскалация (когда и кому), метрики качества. Общие правила: 10 пунктов "всегда делаем" и 10 пунктов "никогда не делаем". Система контроля качества: как проверять соблюдение стандартов.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Стандарты работают только если их регулярно проверяют и обновляют.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#9.2</span>
+      <span class="prompt-title">Скрипты для поддержки</span>
+    </div>
+    <div class="prompt-text">Напиши 15 скриптов для службы поддержки [ваш продукт]. Категории обращений: технические проблемы (5), вопросы по оплате (3), возврат и обмен (3), жалобы (2), благодарности (2). Для каждого скрипта: триггер (с чем обращается клиент), текст ответа (адаптируемый), действия оператора (что проверить, что сделать), время решения (SLA), условия эскалации. Тон: [дружелюбный/профессиональный/нейтральный]. Каждый скрипт должен быть шаблоном, а не жёстким текстом.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Дай операторам свободу адаптировать скрипт под ситуацию, роботизированные ответы раздражают.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#9.3</span>
+      <span class="prompt-title">Система обработки жалоб</span>
+    </div>
+    <div class="prompt-text">Разработай процесс обработки жалоб для [ваш бизнес]. Текущий объём жалоб: [число]/мес. Основные причины: [перечисли]. Процесс: приём (как фиксируем), классификация (категории и приоритеты), расследование (кто и как), решение (варианты компенсации), коммуникация с клиентом (тексты на каждом этапе), закрытие (подтверждение удовлетворённости), анализ (корневые причины). Для каждого этапа: ответственный, SLA, инструмент. Метрики: FCR, CSAT по жалобам, время решения.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Каждая жалоба это подарок: она показывает, что сломано в процессе.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#9.4</span>
+      <span class="prompt-title">Программа лояльности</span>
+    </div>
+    <div class="prompt-text">Разработай программу лояльности для [ваш бизнес]. Средний чек: [сумма]. Частота покупок: [раз в N дней]. Текущая база клиентов: [число]. Опиши: механику начисления и списания баллов/кэшбека, уровни программы (3-5 уровней с привилегиями), welcome-бонус, реферальный бонус, специальные акции для участников, техническую реализацию, стоимость программы (% от выручки), прогноз влияния на retention и LTV. Рассчитай экономику программы.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Программа лояльности должна быть простой: если клиент не может объяснить её за 10 секунд, она сложная.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#9.5</span>
+      <span class="prompt-title">Онбординг клиента</span>
+    </div>
+    <div class="prompt-text">Спроектируй процесс онбординга нового клиента [ваш продукт/сервис]. Тип продукта: [SaaS/услуга/физический]. Цикл онбординга: [число] дней. Цель: клиент получает первый результат за [срок]. Этапы: приветствие (день 0), настройка (день 1-3), обучение (день 3-7), первый результат (день 7-14), закрепление (день 14-30). Для каждого этапа: действия с нашей стороны, коммуникации (email/звонок/чат), материалы (гайды/видео), метрика прогресса, триггеры (если клиент застрял). Чек-лист проверки: клиент считается "онбордированным" когда [критерии].</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Первый результат в первые 7 дней критически влияет на удержание.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#9.6</span>
+      <span class="prompt-title">База знаний / Help Center</span>
+    </div>
+    <div class="prompt-text">Спроектируй структуру базы знаний для [ваш продукт]. Целевая аудитория: [конечные пользователи/администраторы/оба]. Текущий объём обращений: [число]/мес. Топ-20 вопросов: [перечисли или "нужно собрать"]. Структура: категории (5-8), статьи в каждой категории, иерархия (от простого к сложному). Для каждой статьи: заголовок, краткое содержание, формат (текст/видео/скриншоты). Также: поиск, обратная связь ("Помогла ли статья?"), процесс обновления, метрика эффективности (deflection rate).</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Хорошая база знаний снижает нагрузку на поддержку на 30-50%.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#9.7</span>
+      <span class="prompt-title">Опрос удовлетворённости</span>
+    </div>
+    <div class="prompt-text">Разработай систему опросов удовлетворённости клиентов для [ваш бизнес]. Типы опросов: CSAT (после каждого взаимодействия), NPS (ежеквартально), CES (после сервисных ситуаций), глубинный (раз в полгода). Для каждого: вопросы (5-10), шкала оценки, момент отправки, канал, целевой response rate, как анализировать результаты, действия по итогам (для каждой оценки). Также: как не надоесть клиентам опросами, правила частоты.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Короткий опрос из 3 вопросов даёт response rate в 3 раза выше, чем из 10.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#9.8</span>
+      <span class="prompt-title">Система компенсаций</span>
+    </div>
+    <div class="prompt-text">Разработай матрицу компенсаций для недовольных клиентов [ваш бизнес]. Типы инцидентов: задержка доставки, брак товара, ошибка в заказе, грубость сотрудника, сбой сервиса, потеря данных. Для каждого инцидента: уровни серьёзности (3 уровня), тип компенсации для каждого уровня (извинение/скидка/подарок/возврат), лимит компенсации (сумма), кто имеет право принять решение, текст коммуникации с клиентом. Правило: оператор может выдать компенсацию до [сумма] без согласования.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Быстрая щедрая компенсация дешевле, чем потеря клиента и негативный отзыв.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#9.9</span>
+      <span class="prompt-title">Клиентский сервис в мессенджерах</span>
+    </div>
+    <div class="prompt-text">Разработай стандарты клиентского сервиса в мессенджерах для [ваш бизнес]. Каналы: [Telegram/WhatsApp/VK]. Особенности: моментальность, неформальность, ожидание быстрого ответа. Опиши: SLA (первый ответ, решение), tone of voice для мессенджеров, использование стикеров/реакций (можно/нельзя), шаблоны быстрых ответов (15 штук), правила передачи сложных вопросов, нерабочее время (автоответ), мультимедиа в ответах (когда отправлять скриншоты/видеоинструкции). Чек-лист для оператора.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> В мессенджерах клиент ожидает ответ в течение 5 минут, обеспечьте это.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#9.10</span>
+      <span class="prompt-title">VIP-обслуживание</span>
+    </div>
+    <div class="prompt-text">Разработай программу VIP-обслуживания для ключевых клиентов [ваш бизнес]. Критерии VIP: [LTV &gt; X, компания &gt; Y сотрудников, другое]. Количество VIP-клиентов: [число]. Привилегии: выделенный менеджер, приоритетная поддержка (SLA), доступ к бета-функциям, ежемесячные бизнес-обзоры, приглашения на закрытые мероприятия, кастомизация. Для каждой привилегии: что именно делаем, стоимость, как это отражается на retention. Экономика: сколько стоит VIP-программа vs сколько приносит один VIP-клиент.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> 20% клиентов приносят 80% выручки, VIP-программа защищает именно эту выручку.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#9.11</span>
+      <span class="prompt-title">Мультиканальная поддержка</span>
+    </div>
+    <div class="prompt-text">Спроектируй систему мультиканальной поддержки для [ваш бизнес]. Каналы: телефон, email, чат на сайте, Telegram, WhatsApp, соцсети. Для каждого канала: тип обращений (что лучше решать), SLA, стаффинг (сколько операторов), рабочие часы. Ключевое: единая история клиента (как синхронизировать), переход между каналами без потери контекста, приоритизация каналов при пиковой нагрузке. Инструмент: [тикет-система]. Метрики: omnichannel resolution rate, channel switching rate.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Клиент не должен повторять свою проблему при переходе из одного канала в другой.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#9.12</span>
+      <span class="prompt-title">Обучение команды поддержки</span>
+    </div>
+    <div class="prompt-text">Составь программу обучения для нового оператора службы поддержки [ваш продукт]. Длительность: 2 недели. День за днём: теория продукта (3 дня), инструменты и процессы (2 дня), практика с наставником (3 дня), самостоятельная работа с проверкой (4 дня). Для каждого дня: темы, материалы, практические задания, тест. Экзамен после обучения: 20 вопросов + 5 симуляций диалога. Проходной балл: [число]%. Также: программа повышения квалификации (ежемесячно).</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Лучшие операторы поддержки вырастают из тех, кто сам был пользователем продукта.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#9.13</span>
+      <span class="prompt-title">Сервис-дизайн</span>
+    </div>
+    <div class="prompt-text">Спроектируй клиентский опыт для [ваш бизнес/услуга] методом сервис-дизайна. Этапы: до контакта, первый контакт, оказание услуги/покупка, после, повторное обращение. Для каждого этапа: точки контакта (frontstage), внутренние процессы (backstage), системы поддержки, моменты истины (критические точки), боли клиента, возможности для wow-эффекта. Оформи как service blueprint. Выдели 3 точки, где инвестиция в сервис даст максимальный возврат.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> "Моменты истины" это 2-3 точки, по которым клиент судит обо всём опыте, инвестируй в них.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#9.14</span>
+      <span class="prompt-title">Автоматические уведомления клиенту</span>
+    </div>
+    <div class="prompt-text">Разработай систему проактивных уведомлений клиентам [ваш продукт/сервис]. Типы: статус заказа (5 этапов), напоминание о записи, истечение подписки, новые функции, персональные рекомендации, поздравления. Для каждого типа: триггер, канал (email/SMS/push), текст сообщения, время отправки, частота. Правила: максимум [число] уведомлений в неделю, настройки клиента (что можно отключить). Метрика: снижение входящих обращений "Где мой заказ?" на [число]%.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Проактивное уведомление о проблеме до того, как клиент заметил, это высший уровень сервиса.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#9.15</span>
+      <span class="prompt-title">Возврат и обмен</span>
+    </div>
+    <div class="prompt-text">Разработай клиентоориентированную политику возврата и обмена для [ваш бизнес]. Тип продукта: [физический/цифровой/услуга]. Текущая политика: [опишите]. Средний процент возвратов: [число]%. Новая политика: условия возврата (сроки, состояние), процесс (пошагово для клиента), процесс (внутренний), коммуникация на каждом этапе (тексты), исключения, как превратить возврат в обмен (upsell/cross-sell). Баланс: клиентоориентированность vs защита от злоупотреблений.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Щедрая политика возврата повышает конверсию в покупку сильнее, чем скидки.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#9.16</span>
+      <span class="prompt-title">Антикризисная коммуникация с клиентами</span>
+    </div>
+    <div class="prompt-text">Напиши план коммуникации с клиентами в кризисных ситуациях для [ваш бизнес]. Сценарии: масштабный сбой сервиса, утечка данных, задержка поставок, повышение цен, закрытие продукта/функции. Для каждого сценария: кто коммуницирует, канал, тайминг (когда первое сообщение), текст первого сообщения, серия обновлений, финальное сообщение (когда всё решено), компенсация. Тон: честный, без корпоративного жаргона. Принцип: лучше сказать больше раньше, чем меньше позже.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> В кризис клиенты прощают проблему, но не прощают молчание и вранье.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#9.17</span>
+      <span class="prompt-title">Метрики клиентского сервиса</span>
+    </div>
+    <div class="prompt-text">Разработай систему метрик клиентского сервиса для [ваш бизнес]. Категории: скорость (FRT, AHT, Resolution Time), качество (FCR, CSAT, QA Score), эффективность (Cost per Ticket, Tickets per Agent), клиентский опыт (NPS, CES, Churn по причине сервиса). Для каждой метрики: формула расчёта, инструмент измерения, бенчмарк для ниши [ниша], целевое значение, частота пересмотра. Дашборд: какие метрики показывать ежедневно, еженедельно, ежемесячно. Связь метрик сервиса с бизнес-метриками (retention, LTV).</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Не оптимизируй скорость ответа в ущерб качеству решения.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#9.18</span>
+      <span class="prompt-title">Self-service для клиентов</span>
+    </div>
+    <div class="prompt-text">Разработай self-service стратегию для [ваш продукт], чтобы снизить нагрузку на поддержку на [число]%. Текущий объём обращений: [число]/мес. Топ-10 обращений: [перечисли]. Инструменты: база знаний, видео-туториалы, интерактивные гайды, чат-бот, community-форум, status page. Для каждого инструмента: какие обращения закрывает, стоимость создания и поддержки, ожидаемый deflection rate. Roadmap внедрения на 3 месяца. Метрика: self-service rate (% вопросов, решённых без оператора).</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Клиенты предпочитают решать проблемы сами, если вы дадите им удобный инструмент.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#9.19</span>
+      <span class="prompt-title">Голос клиента (VoC)</span>
+    </div>
+    <div class="prompt-text">Разработай программу Voice of Customer для [ваш бизнес]. Источники данных: опросы (NPS, CSAT), отзывы (площадки), обращения в поддержку, социальные сети, интервью, данные продукта. Для каждого источника: как собирать, как структурировать, как анализировать (теги, категории, тональность). Процесс: сбор -&gt; анализ -&gt; приоритизация -&gt; действие -&gt; обратная связь клиенту. Отчётность: ежемесячный VoC-отчёт (шаблон). Как VoC влияет на продуктовые решения, маркетинг, операции.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Закрывайте петлю обратной связи: сообщайте клиентам, что вы сделали по их отзыву.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#9.20</span>
+      <span class="prompt-title">Клиентский сервис как конкурентное преимущество</span>
+    </div>
+    <div class="prompt-text">Разработай стратегию превращения клиентского сервиса в конкурентное преимущество для [ваш бизнес] в нише [ниша], где [описание конкурентной ситуации]. Текущий уровень сервиса: [оценка]. Уровень конкурентов: [оценка]. Определи: 5 wow-моментов (что мы можем делать, чего не делают конкуренты), стоимость каждого wow-момента, влияние на retention и NPS, как коммуницировать сервис в маркетинге, как масштабировать wow-моменты при росте бизнеса.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Один wow-момент, о котором клиенты рассказывают друзьям, стоит дороже рекламной кампании.</div>
+  </div>
+</div>
+
+<div class="category" id="cat-10">
+  <div class="category-header">
+    <div class="category-emoji">💼</div>
+    <h2>Финансы и бизнес-планирование</h2>
+    <div class="cat-subtitle">Раздел 10 &middot; 20 промптов</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#10.1</span>
+      <span class="prompt-title">Бизнес-план</span>
+    </div>
+    <div class="prompt-text">Составь бизнес-план для [ваш продукт/бизнес]. Стадия: [идея/запуск/рост]. Начальный капитал: [сумма]. Ниша: [ниша]. Регион: [регион]. Структура: резюме (1 стр.), описание бизнеса, анализ рынка, продукт/услуга, маркетинг и продажи, операционный план, команда, финансовый план (доходы, расходы, P&amp;L на 3 года), инвестиции (что нужно, откуда), риски и митигация. Для финансового плана: помесячная детализация первого года, поквартальная второго и третьего.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Инвесторы читают финансовый план с конца, начни с того, когда выходишь на окупаемость.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#10.2</span>
+      <span class="prompt-title">Финансовая модель</span>
+    </div>
+    <div class="prompt-text">Построй финансовую модель для [ваш продукт/бизнес]. Входные параметры: цена [цена], себестоимость [сумма], фиксированные расходы/мес [сумма], переменные расходы/единица [сумма], стоимость привлечения клиента [сумма], конверсия [число]%, retention rate [число]%/мес. Рассчитай на 12 месяцев: выручку, маржинальную прибыль, чистую прибыль, точку безубыточности, накопленный денежный поток, runway при текущем темпе. Покажи 3 сценария: оптимистичный, базовый, пессимистичный. Укажи ключевые допущения.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Финансовая модель полезна не точностью прогноза, а пониманием ключевых рычагов.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#10.3</span>
+      <span class="prompt-title">Ценовая стратегия</span>
+    </div>
+    <div class="prompt-text">Разработай ценовую стратегию для [ваш продукт]. Себестоимость: [сумма]. Целевая маржа: [число]%. Конкуренты: [конкурент 1: цена], [конкурент 2: цена]. Целевая аудитория: [описание, платёжеспособность]. Проанализируй стратегии: cost-plus, value-based, конкурентное, freemium, tiered pricing. Рекомендуй оптимальную модель с обоснованием. Спроектируй 3 тарифных плана: названия, наполнение каждого, цена, для кого предназначен. Психология цен: обоснуй выбор конкретных чисел.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Средний тарифный план должен быть "очевидно лучшим выбором" (decoy-эффект).</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#10.4</span>
+      <span class="prompt-title">Бюджетирование на квартал</span>
+    </div>
+    <div class="prompt-text">Составь бюджет на квартал для [отдел/компания]. Текущая выручка: [сумма/мес]. Команда: [число] человек с ролями и зарплатами. Категории расходов: ФОТ, маркетинг, инструменты и подписки, офис, юридические, непредвиденные. Для каждой категории: бюджет с обоснованием, сравнение с прошлым кварталом, ROI (где применимо). Резерв: [число]% от бюджета. Процесс контроля: как отслеживать расходы, кто одобряет, когда пересматривать. Формат: таблица с помесячной разбивкой.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Закладывай 10-15% бюджета на непредвиденные расходы, они будут.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#10.5</span>
+      <span class="prompt-title">Оценка инвестиционного проекта</span>
+    </div>
+    <div class="prompt-text">Оцени инвестиционную привлекательность проекта [описание проекта]. Инвестиции: [сумма]. Ожидаемые денежные потоки: [помесячно или годовые]. Горизонт: [число] лет. Рассчитай: NPV (чистая приведённая стоимость) при ставке дисконтирования [число]%, IRR (внутренняя норма доходности), PI (индекс прибыльности), срок окупаемости (простой и дисконтированный), ROI. Покажи расчёты. Анализ чувствительности: как меняется NPV при изменении ключевых параметров на +/-20%. Рекомендация: инвестировать или нет.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Если IRR ниже стоимости капитала компании, проект не создаёт ценности.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#10.6</span>
+      <span class="prompt-title">Управление денежным потоком</span>
+    </div>
+    <div class="prompt-text">Разработай систему управления денежным потоком для [ваш бизнес]. Текущая ситуация: выручка [сумма]/мес, расходы [сумма]/мес, денежный разрыв [да/нет]. Составь: кассовый план на 3 месяца (помесячно: поступления, выплаты, остаток), правила управления кассовыми разрывами (5 инструментов), политику отсрочек и предоплат, резервный фонд (сколько и где держать), KPI казначейства. Красные флаги: 5 сигналов приближающегося кассового разрыва.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Кассовый план обновляй еженедельно, а не ежемесячно, разрывы возникают быстро.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#10.7</span>
+      <span class="prompt-title">Стратегия монетизации</span>
+    </div>
+    <div class="prompt-text">Разработай стратегию монетизации для [ваш продукт/сервис]. Текущая модель: [бесплатно/подписка/разовая покупка]. Пользователи: [число]. Рассмотри модели: подписка (месяц/год), freemium, pay-per-use, marketplace commission, рекламная модель, лицензирование, white-label. Для каждой модели: как работает для нашего продукта, ожидаемая выручка (расчёт), плюсы/минусы, примеры компаний. Рекомендация: основная модель + дополнительная. Roadmap внедрения.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Комбинируй модели монетизации для снижения зависимости от одного источника дохода.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#10.8</span>
+      <span class="prompt-title">Финансовый дашборд</span>
+    </div>
+    <div class="prompt-text">Спроектируй финансовый дашборд для руководителя [компания]. Метрики: выручка (факт vs план, динамика), расходы по категориям, маржинальность (по продуктам/сегментам), EBITDA, денежный поток, дебиторская/кредиторская задолженность, runway, burn rate, unit-экономика (CAC, LTV). Для каждой метрики: формула, источник данных, частота обновления, визуализация (тип графика), пороговые значения. Инструмент: [Google Sheets/BI-система]. Дашборд должен давать ответ за 1 минуту: "Как финансовое здоровье бизнеса?"</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Руководителю нужны 5-7 ключевых метрик, не 50, выбери самые критичные.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#10.9</span>
+      <span class="prompt-title">Оптимизация расходов</span>
+    </div>
+    <div class="prompt-text">Проведи аудит расходов [компания/отдел] и найди возможности оптимизации. Текущие расходы: [список категорий с суммами]. Выручка: [сумма]. Для каждой категории: доля в расходах, бенчмарк для ниши [ниша], возможность оптимизации (высокая/средняя/низкая), конкретные действия по оптимизации (замена сервисов, пересмотр договоров, автоматизация, сокращение), ожидаемая экономия, риски оптимизации. Итого: план экономии [число]% расходов за [период] без ущерба для качества.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Начинай оптимизацию с 3 самых крупных статей расходов, мелочи экономят время, не деньги.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#10.10</span>
+      <span class="prompt-title">Привлечение инвестиций</span>
+    </div>
+    <div class="prompt-text">Разработай стратегию привлечения инвестиций для [компания/продукт]. Стадия: [pre-seed/seed/серия A]. Сумма: [сумма]. Текущие метрики: [MRR, рост, юнит-экономика]. Составь: список подходящих типов инвесторов (фонды, ангелы, гранты), критерии выбора инвестора, подготовительные материалы (pitch deck, one-pager, data room), стратегию выхода на инвесторов, процесс fundraising по неделям (12 недель), условия (какую долю отдавать), типичные ошибки основателей при привлечении.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Начинай привлекать инвестиции за 6 месяцев до того, как закончатся деньги.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#10.11</span>
+      <span class="prompt-title">P&amp;L анализ</span>
+    </div>
+    <div class="prompt-text">Проанализируй P&amp;L (отчёт о прибылях и убытках) за [период]. Данные: выручка [сумма], себестоимость [сумма], валовая прибыль [сумма], операционные расходы: ФОТ [сумма], маркетинг [сумма], аренда [сумма], подписки [сумма], прочее [сумма]. Рассчитай: валовую маржу, операционную маржу, чистую прибыль, динамику vs предыдущий период. Сравни с бенчмарками ниши [ниша]. Выяви: 3 проблемных зоны, 3 рычага роста прибыли. Рекомендации с расчётом эффекта.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Рост выручки без роста маржи это не рост бизнеса, а рост проблем.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#10.12</span>
+      <span class="prompt-title">Масштабирование бизнеса</span>
+    </div>
+    <div class="prompt-text">Разработай план масштабирования [ваш бизнес] с текущих [метрики] до [целевые метрики] за [период]. Текущая команда: [число]. Текущая модель: [описание]. Ограничения: [ресурсы, технологии, рынок]. Опиши: этапы масштабирования (3 фазы), что менять в продукте, процессах, команде, технологиях на каждом этапе, инвестиции на каждую фазу, риски масштабирования и как их митигировать, метрики перехода между фазами (когда переходить к следующей).</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Масштабируй то, что уже работает, не пытайся масштабировать нерабочую модель.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#10.13</span>
+      <span class="prompt-title">Юнит-экономика подписной модели</span>
+    </div>
+    <div class="prompt-text">Построй модель юнит-экономики для подписного бизнеса [ваш SaaS/сервис]. Входные данные: цена подписки [сумма]/мес, CAC [сумма], churn rate [число]%/мес, стоимость обслуживания 1 клиента [сумма]/мес, маркетинговый бюджет [сумма]/мес, конверсия в платящего [число]%. Рассчитай: LTV, LTV/CAC, payback period, MRR/ARR прогноз на 24 месяца, когортный анализ (retention curve), необходимый churn для безубыточности. Визуализируй когорты.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Если payback period больше 12 месяцев, пересмотри цену или CAC.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#10.14</span>
+      <span class="prompt-title">Due diligence подготовка</span>
+    </div>
+    <div class="prompt-text">Подготовь компанию [бренд/компания] к due diligence перед привлечением инвестиций. Составь чек-лист: юридические документы (учредительные, договоры, IP), финансовые документы (отчётность, налоги, аудит), операционные данные (метрики, процессы, команда), рыночные данные (анализ, конкуренция). Для каждого пункта: что подготовить, в каком формате, частые проблемы (red flags для инвестора), как исправить до начала DD. Структура data room.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Начинай готовить data room за 2-3 месяца до начала fundraising.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#10.15</span>
+      <span class="prompt-title">Финансовое планирование для фрилансера</span>
+    </div>
+    <div class="prompt-text">Составь финансовый план для фрилансера/самозанятого в сфере [ниша]. Текущий доход: [сумма]/мес. Расходы: [перечисли]. Цель: [стабильный доход X руб./мес, подушка безопасности, выход из найма]. Включи: расчёт минимальной ставки часа, ценообразование услуг (3 пакета), план доходов на год (с учётом сезонности), резервный фонд (сколько и как накопить), налогообложение (оптимальный режим), пенсия и страхование, переход от "продаю время" к "продаю результат".</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Фрилансеру нужна подушка минимум на 3 месяца расходов, лучше на 6.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#10.16</span>
+      <span class="prompt-title">Оценка стоимости бизнеса</span>
+    </div>
+    <div class="prompt-text">Оцени стоимость [компания/бизнес] для потенциальной продажи/привлечения инвестиций. Данные: выручка [сумма/год], EBITDA [сумма/год], рост за год [число]%, отрасль [ниша], количество клиентов [число], MRR (если SaaS) [сумма]. Примени методы: мультипликаторы отрасли (Revenue multiple, EBITDA multiple), DCF (дисконтированные денежные потоки), метод сопоставимых сделок. Для каждого метода: расчёт, допущения, результат. Итог: диапазон оценки с обоснованием.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Мультипликаторы зависят от темпов роста: растущий бизнес оценивается по выручке, стабильный по EBITDA.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#10.17</span>
+      <span class="prompt-title">Запуск нового направления</span>
+    </div>
+    <div class="prompt-text">Оцени целесообразность запуска нового направления [описание направления] для [компания]. Текущий бизнес: [описание]. Синергия: [как связано с текущим бизнесом]. Рассчитай: стоимость запуска (разово), операционные расходы/мес, ожидаемая выручка (помесячно, 12 месяцев), точка безубыточности, каннибализация текущего продукта (если есть), необходимые ресурсы (команда, технологии), альтернативная стоимость (что потеряем, если направим ресурсы сюда). Go/no-go рекомендация.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Новое направление должно усиливать основной бизнес, а не отвлекать от него.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#10.18</span>
+      <span class="prompt-title">Управление подписками и SaaS-расходами</span>
+    </div>
+    <div class="prompt-text">Проведи аудит подписок и SaaS-расходов [компания]. Текущие подписки: [список сервисов с ценами]. Команда: [число] человек. Для каждого сервиса: кто использует, частота использования, есть ли бесплатная альтернатива, можно ли перейти на годовую оплату (экономия), дублирование функционала с другими сервисами, ROI. Рекомендации: что отключить, что заменить, что объединить. Ожидаемая экономия/мес. Процесс контроля подписок (чтобы не обрастать снова).</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Проводите аудит подписок каждый квартал, SaaS-расходы растут незаметно.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#10.19</span>
+      <span class="prompt-title">Ценообразование услуг</span>
+    </div>
+    <div class="prompt-text">Помоги установить цены на услуги [тип услуг] для [целевая аудитория]. Текущие цены: [если есть]. Конкуренты: [конкурент 1: цены], [конкурент 2: цены]. Затраты времени на каждую услугу: [часы]. Желаемый доход: [сумма/мес]. Разработай: часовую ставку (расчёт), 3-5 пакетов услуг (наполнение, цена, для кого), проектное ценообразование (формула), value-based pricing (как привязать к результату клиента), стратегию повышения цен (когда, как, на сколько).</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Переходи от почасовой оплаты к пакетам и проектам, это повышает доход на 30-50%.</div>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-number">#10.20</span>
+      <span class="prompt-title">Финансовая грамотность для предпринимателя</span>
+    </div>
+    <div class="prompt-text">Составь чек-лист финансовой грамотности для предпринимателя [ваш бизнес]. Стадия: [старт/рост/зрелость]. Включи: какие отчёты читать (и как), ключевые финансовые метрики бизнеса (10 штук с формулами), налоговое планирование (легальная оптимизация), управление личными финансами основателя, разделение личных и бизнес-финансов, когда нанимать финансиста/бухгалтера, 5 частых финансовых ошибок предпринимателей и как их избежать, рекомендуемые инструменты для учёта.</div>
+    <div class="prompt-tip"><strong>💡 Совет:</strong> Если не понимаешь свой P&amp;L, ты управляешь бизнесом вслепую.</div>
+  </div>
+</div>
+
+<div class="page-footer">
+  © 2026 AI Business Tools | Все права защищены
+</div>
+
+</body>
+</html>
