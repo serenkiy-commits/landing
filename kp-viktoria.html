@@ -3,1194 +3,497 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Коммерческое предложение — Виктория</title>
+<title>КП — Рестобар Виктория | Snezhko AI</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700&family=Unbounded:wght@400;600;700&display=swap');
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0a;
+  --card:#151515;
+  --card2:#1c1c1c;
+  --text:#e8e8e8;
+  --dim:#999;
+  --accent:#10b981;
+  --accent-dim:rgba(16,185,129,.12);
+  --gold:#f59e0b;
+  --gold-dim:rgba(245,158,11,.1);
+  --red:#ef4444;
+  --red-dim:rgba(239,68,68,.1);
+  --blue:#3b82f6;
+  --blue-dim:rgba(59,130,246,.1);
+  --border:#1e1e1e;
+  --border2:#2a2a2a;
+}
+html{background:var(--bg);color:var(--text);font-family:'Onest',sans-serif;font-size:15px;line-height:1.7}
+body{padding:40px 20px;max-width:920px;margin:0 auto}
 
-:root {
-  --bg: #0c1117;
-  --surface: #151b23;
-  --surface2: #1c2430;
-  --border: #2a3441;
-  --text: #e6edf3;
-  --text2: #8b949e;
-  --green: #3fb950;
-  --green-dim: rgba(63, 185, 80, 0.15);
-  --gold: #d4a853;
-  --gold-dim: rgba(212, 168, 83, 0.12);
-  --red: #f85149;
-  --red-dim: rgba(248, 81, 73, 0.12);
-  --blue: #58a6ff;
-  --blue-dim: rgba(88, 166, 255, 0.12);
+@media print{
+  body{padding:20px;max-width:100%;font-size:12px}
+  .no-print{display:none}
 }
 
-body {
-  font-family: 'Inter', -apple-system, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
+h1{font-family:'Unbounded',sans-serif;font-size:2rem;font-weight:700;color:var(--accent);margin-bottom:8px;line-height:1.3}
+h2{font-family:'Unbounded',sans-serif;font-size:1.1rem;font-weight:600;color:var(--text);margin:52px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+h2 .num{color:var(--accent);margin-right:8px}
+h3{font-size:.95rem;font-weight:600;margin:24px 0 10px;color:var(--accent)}
 
-.container {
-  max-width: 820px;
-  margin: 0 auto;
-  padding: 40px 24px;
-}
+p{margin-bottom:12px;color:var(--dim)}
+strong{color:var(--text);font-weight:600}
 
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 60px 0 40px;
-  position: relative;
-}
+/* COVER */
+.cover{text-align:center;padding:72px 0 56px;border-bottom:1px solid var(--border);margin-bottom:48px;position:relative}
+.cover::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:200px;height:200px;background:radial-gradient(circle,rgba(16,185,129,.06) 0%,transparent 70%);pointer-events:none}
+.cover .logo{font-family:'Unbounded',sans-serif;font-size:1.4rem;font-weight:700;color:var(--accent);margin-bottom:32px;letter-spacing:1px}
+.cover h1{font-size:1.5rem;color:var(--text);margin-bottom:8px}
+.cover .subtitle{font-size:1.05rem;color:var(--dim);margin-bottom:36px;max-width:600px;margin-left:auto;margin-right:auto}
+.cover .meta{display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
+.cover .meta-item{text-align:center}
+.cover .meta-label{font-size:.7rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim);margin-bottom:4px}
+.cover .meta-value{font-size:.95rem;color:var(--text);font-weight:500}
 
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -100px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(63,185,80,0.08) 0%, transparent 70%);
-  pointer-events: none;
-}
+/* BADGES */
+.badge{display:inline-block;padding:4px 14px;border-radius:20px;font-size:.78rem;font-weight:600}
+.badge-accent{background:var(--accent-dim);color:var(--accent)}
+.badge-gold{background:var(--gold-dim);color:var(--gold)}
+.badge-red{background:var(--red-dim);color:var(--red)}
+.badge-blue{background:var(--blue-dim);color:var(--blue)}
 
-.hero-badge {
-  display: inline-block;
-  padding: 6px 16px;
-  background: var(--green-dim);
-  border: 1px solid rgba(63,185,80,0.2);
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--green);
-  margin-bottom: 24px;
-}
+/* CARDS */
+.card{background:var(--card);border-radius:14px;padding:24px;margin:16px 0;border:1px solid var(--border)}
+.card-accent{border-color:var(--accent)}
 
-.hero h1 {
-  font-size: 36px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  margin-bottom: 12px;
-}
+/* PROBLEM GRID */
+.problems{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.problem{background:var(--card);border-radius:12px;padding:18px;border-left:3px solid var(--red)}
+.problem .label{font-size:.78rem;color:var(--red);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.problem .desc{font-size:.88rem;color:var(--dim)}
 
-.hero h1 span { color: var(--green); }
+/* SOLUTION BLOCKS */
+.solution-track{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+.track{background:var(--card);border-radius:14px;padding:28px;border:1px solid var(--border);position:relative;overflow:hidden}
+.track::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.track-app::before{background:linear-gradient(90deg,var(--accent),var(--blue))}
+.track-voice::before{background:linear-gradient(90deg,var(--gold),#f97316)}
+.track-cold::before{background:linear-gradient(90deg,#8b5cf6,#ec4899)}
+.track-icon{font-size:2rem;margin-bottom:12px}
+.track-title{font-family:'Unbounded',sans-serif;font-size:.9rem;font-weight:600;margin-bottom:4px}
+.track-desc{font-size:.82rem;color:var(--dim);margin-bottom:16px}
+.track ul{list-style:none;padding:0}
+.track li{padding:5px 0;font-size:.83rem;color:var(--dim);position:relative;padding-left:20px}
+.track li::before{content:'';position:absolute;left:0;top:12px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.track-voice li::before{background:var(--gold)}
+.track-cold li::before{background:#8b5cf6}
 
-.hero-sub {
-  font-size: 18px;
-  color: var(--text2);
-  max-width: 560px;
-  margin: 0 auto;
-}
+/* STATS ROW */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}
+.stat{background:var(--card);border-radius:12px;padding:18px;text-align:center;border:1px solid var(--border)}
+.stat-value{font-family:'Unbounded',sans-serif;font-size:1.6rem;font-weight:700;color:var(--accent);line-height:1.2}
+.stat-label{font-size:.72rem;color:var(--dim);text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
 
-.hero-client {
-  margin-top: 32px;
-  padding: 16px 24px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  display: inline-block;
-  font-size: 14px;
-  color: var(--text2);
-}
+/* TABLE */
+table{width:100%;border-collapse:collapse;margin:16px 0 24px;font-size:.88rem}
+th{text-align:left;padding:10px 14px;background:var(--card);color:var(--dim);font-weight:500;font-size:.75rem;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--border)}
+td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+tr:last-child td{border-bottom:none}
 
-.hero-client strong { color: var(--text); }
-
-/* SECTION */
-.section {
-  margin-top: 48px;
-}
-
-.section-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 24px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--border);
-}
-
-.section-num {
-  width: 32px;
-  height: 32px;
-  background: var(--green-dim);
-  border: 1px solid rgba(63,185,80,0.3);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--green);
-  flex-shrink: 0;
-}
-
-.section-header h2 {
-  font-size: 22px;
-  font-weight: 700;
-}
-
-/* PROBLEM BLOCK */
-.problem-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-@media (max-width: 600px) {
-  .problem-grid { grid-template-columns: 1fr; }
-}
-
-.problem-card {
-  padding: 20px;
-  background: var(--red-dim);
-  border: 1px solid rgba(248,81,73,0.2);
-  border-radius: 12px;
-}
-
-.problem-card .icon {
-  font-size: 24px;
-  margin-bottom: 8px;
-}
-
-.problem-card h4 {
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: var(--red);
-}
-
-.problem-card p {
-  font-size: 13px;
-  color: var(--text2);
-  line-height: 1.5;
-}
-
-/* SOLUTION CARD */
-.solution-card {
-  padding: 24px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  margin-bottom: 16px;
-  transition: border-color 0.2s;
-}
-
-.solution-card:hover {
-  border-color: rgba(63,185,80,0.3);
-}
-
-.solution-card h3 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.solution-card .subtitle {
-  font-size: 13px;
-  color: var(--text2);
-  margin-bottom: 16px;
-}
-
-.feature-list {
-  list-style: none;
-}
-
-.feature-list li {
-  padding: 8px 0;
-  font-size: 14px;
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  border-bottom: 1px solid rgba(42,52,65,0.5);
-}
-
-.feature-list li:last-child { border-bottom: none; }
-
-.feature-list .check {
-  color: var(--green);
-  font-weight: 700;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
-.feature-list .desc {
-  color: var(--text2);
-  font-size: 12px;
-  margin-top: 2px;
-}
-
-/* COMPARE TABLE */
-.compare {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 16px;
-}
-
-.compare th, .compare td {
-  padding: 12px 16px;
-  text-align: left;
-  font-size: 14px;
-  border-bottom: 1px solid var(--border);
-}
-
-.compare th {
-  background: var(--surface2);
-  font-weight: 600;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--text2);
-}
-
-.compare .old {
-  color: var(--red);
-  text-decoration: line-through;
-  opacity: 0.7;
-}
-
-.compare .new {
-  color: var(--green);
-  font-weight: 600;
-}
-
-.compare tr:hover td {
-  background: rgba(63,185,80,0.03);
-}
-
-/* API BLOCK */
-.api-card {
-  padding: 20px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  margin-bottom: 12px;
-}
-
-.api-card h4 {
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 4px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.api-card .tag {
-  display: inline-block;
-  padding: 2px 8px;
-  border-radius: 6px;
-  font-size: 11px;
-  font-weight: 600;
-}
-
-.tag-required {
-  background: var(--red-dim);
-  color: var(--red);
-  border: 1px solid rgba(248,81,73,0.2);
-}
-
-.tag-optional {
-  background: var(--blue-dim);
-  color: var(--blue);
-  border: 1px solid rgba(88,166,255,0.2);
-}
-
-.tag-our {
-  background: var(--green-dim);
-  color: var(--green);
-  border: 1px solid rgba(63,185,80,0.2);
-}
-
-.api-card p {
-  font-size: 13px;
-  color: var(--text2);
-  margin-top: 6px;
-}
-
-.api-card .how {
-  margin-top: 10px;
-  padding: 10px 14px;
-  background: var(--surface2);
-  border-radius: 8px;
-  font-size: 12px;
-  color: var(--text2);
-}
-
-.api-card .how strong {
-  color: var(--text);
-}
-
-/* PRICING */
-.price-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 16px;
-}
-
-@media (max-width: 700px) {
-  .price-grid { grid-template-columns: 1fr; }
-}
-
-.price-card {
-  padding: 28px 20px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.price-card.recommended {
-  border-color: var(--green);
-  box-shadow: 0 0 30px rgba(63,185,80,0.1);
-}
-
-.price-card.recommended::before {
-  content: 'Рекомендуем';
-  position: absolute;
-  top: -11px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--green);
-  color: #000;
-  padding: 3px 14px;
-  border-radius: 10px;
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.price-card h3 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.price-card .price {
-  font-size: 32px;
-  font-weight: 800;
-  color: var(--green);
-  margin: 12px 0;
-}
-
-.price-card .price small {
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--text2);
-}
-
-.price-card .includes {
-  list-style: none;
-  flex-grow: 1;
-}
-
-.price-card .includes li {
-  padding: 6px 0;
-  font-size: 13px;
-  color: var(--text2);
-  display: flex;
-  gap: 8px;
-}
-
-.price-card .includes li .ch { color: var(--green); flex-shrink: 0; }
-.price-card .includes li.no .ch { color: var(--text2); opacity: 0.3; }
-.price-card .includes li.no { opacity: 0.4; }
+/* TIERS */
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0}
+.tier{background:var(--card);border-radius:16px;padding:24px;border:1px solid var(--border);transition:border-color .3s;position:relative}
+.tier-mid{border-color:var(--accent)}
+.tier-name{font-family:'Unbounded',sans-serif;font-size:.85rem;font-weight:600;margin-bottom:4px}
+.tier-price{font-size:1.7rem;font-weight:700;color:var(--accent);margin:8px 0 2px}
+.tier-price span{font-size:.85rem;color:var(--dim);font-weight:400}
+.tier-period{font-size:.78rem;color:var(--dim);margin-bottom:16px}
+.tier-includes{font-size:.72rem;text-transform:uppercase;letter-spacing:1px;color:var(--dim);margin-bottom:8px;font-weight:600}
+.tier ul{list-style:none;padding:0}
+.tier li{padding:5px 0;font-size:.82rem;color:var(--dim);position:relative;padding-left:20px}
+.tier li::before{content:'✓';position:absolute;left:0;color:var(--accent);font-weight:700;font-size:.85rem}
+.tier li.no::before{content:'—';color:#555}
+.tier li.no{opacity:.5}
 
 /* TIMELINE */
-.timeline {
-  position: relative;
-  padding-left: 32px;
-}
+.timeline-phases{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+.phase{background:var(--card);border-radius:12px;padding:16px;border-top:3px solid var(--border)}
+.phase.p1{border-top-color:var(--accent)}
+.phase.p2{border-top-color:var(--gold)}
+.phase.p3{border-top-color:#8b5cf6}
+.phase.p4{border-top-color:var(--blue)}
+.phase-week{font-size:.68rem;text-transform:uppercase;letter-spacing:1px;color:var(--dim);margin-bottom:6px}
+.phase-name{font-size:.85rem;font-weight:600;color:var(--text);margin-bottom:6px}
+.phase-desc{font-size:.75rem;color:var(--dim);line-height:1.5}
 
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 11px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--border);
-}
+/* LISTS */
+ul.checks{list-style:none;padding:0}
+ul.checks li{padding:7px 0;padding-left:24px;position:relative;color:var(--dim);font-size:.9rem}
+ul.checks li::before{content:'✓';position:absolute;left:0;color:var(--accent);font-weight:700}
+ul.excludes{list-style:none;padding:0}
+ul.excludes li{padding:7px 0;padding-left:24px;position:relative;color:var(--dim);font-size:.9rem}
+ul.excludes li::before{content:'✕';position:absolute;left:0;color:var(--red);font-weight:700}
 
-.timeline-item {
-  position: relative;
-  padding-bottom: 24px;
-}
-
-.timeline-item:last-child { padding-bottom: 0; }
-
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -25px;
-  top: 4px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--green);
-  border: 3px solid var(--bg);
-}
-
-.timeline-item h4 {
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.timeline-item .days {
-  font-size: 12px;
-  color: var(--green);
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-
-.timeline-item p {
-  font-size: 13px;
-  color: var(--text2);
-}
-
-/* COSTS TABLE */
-.costs-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 16px;
-}
-
-.costs-table th, .costs-table td {
-  padding: 10px 14px;
-  text-align: left;
-  font-size: 13px;
-  border-bottom: 1px solid var(--border);
-}
-
-.costs-table th {
-  background: var(--surface2);
-  font-weight: 600;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--text2);
-}
-
-.costs-table .free {
-  color: var(--green);
-  font-weight: 600;
-}
+/* STEPS */
+.steps{counter-reset:step}
+.step{counter-increment:step;position:relative;padding-left:48px;margin-bottom:20px}
+.step::before{content:counter(step);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--accent-dim);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem}
 
 /* ROI */
-.roi-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 16px;
-  margin-top: 16px;
-}
+.roi-grid{display:grid;grid-template-columns:1fr 40px 1fr;gap:0;align-items:center;margin:20px 0}
+.roi-box{background:var(--card);border-radius:14px;padding:24px;border:1px solid var(--border)}
+.roi-arrow{text-align:center;font-size:1.5rem;color:var(--accent)}
+.roi-title{font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim);margin-bottom:12px;font-weight:600}
+.roi-line{display:flex;justify-content:space-between;padding:6px 0;font-size:.85rem}
+.roi-line .label{color:var(--dim)}
+.roi-line .val{color:var(--text);font-weight:600}
+.roi-line .val.accent{color:var(--accent)}
+.roi-line .val.red{color:var(--red)}
+.roi-line .val.gold{color:var(--gold)}
 
-@media (max-width: 600px) {
-  .roi-grid { grid-template-columns: 1fr; }
-}
+/* INTEGRATION */
+.integrations{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+.integ{background:var(--card);border-radius:10px;padding:14px;text-align:center;border:1px solid var(--border)}
+.integ-icon{font-size:1.5rem;margin-bottom:6px}
+.integ-name{font-size:.82rem;font-weight:600;color:var(--text)}
+.integ-desc{font-size:.7rem;color:var(--dim);margin-top:2px}
 
-.roi-card {
-  padding: 20px;
-  background: var(--green-dim);
-  border: 1px solid rgba(63,185,80,0.2);
-  border-radius: 12px;
-  text-align: center;
-}
+/* FOOTER */
+.footer{text-align:center;margin-top:60px;padding-top:24px;border-top:1px solid var(--border)}
+.footer .contact{font-size:1.1rem;font-weight:600;color:var(--accent);margin:8px 0}
 
-.roi-card .num {
-  font-size: 32px;
-  font-weight: 800;
-  color: var(--green);
-}
-
-.roi-card p {
-  font-size: 13px;
-  color: var(--text2);
-  margin-top: 4px;
-}
-
-/* VOICE AI */
-.voice-flow {
-  display: flex;
-  gap: 8px;
-  margin-top: 16px;
-  flex-wrap: wrap;
-}
-
-.voice-step {
-  flex: 1;
-  min-width: 140px;
-  padding: 16px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  text-align: center;
-  position: relative;
-}
-
-.voice-step::after {
-  content: '→';
-  position: absolute;
-  right: -14px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--text2);
-  font-size: 18px;
-}
-
-.voice-step:last-child::after { display: none; }
-
-.voice-step .icon { font-size: 28px; margin-bottom: 6px; }
-.voice-step h5 { font-size: 13px; font-weight: 600; }
-.voice-step p { font-size: 11px; color: var(--text2); margin-top: 4px; }
-
-/* CTA */
-.cta {
-  text-align: center;
-  padding: 48px 0;
-  margin-top: 40px;
-  border-top: 1px solid var(--border);
-}
-
-.cta h2 {
-  font-size: 28px;
-  font-weight: 800;
-  margin-bottom: 12px;
-}
-
-.cta p {
-  color: var(--text2);
-  margin-bottom: 24px;
-}
-
-.cta-btn {
-  display: inline-block;
-  padding: 14px 36px;
-  background: var(--green);
-  color: #000;
-  font-weight: 700;
-  font-size: 16px;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-
-.cta-btn:hover {
-  box-shadow: 0 0 30px rgba(63,185,80,0.3);
-  transform: translateY(-2px);
-}
-
-.footer-note {
-  text-align: center;
-  padding: 24px 0 40px;
-  font-size: 12px;
-  color: var(--text2);
-  opacity: 0.5;
-}
-
-/* EXTRAS */
-.highlight-box {
-  padding: 20px 24px;
-  background: var(--gold-dim);
-  border: 1px solid rgba(212,168,83,0.2);
-  border-radius: 12px;
-  margin-top: 16px;
-}
-
-.highlight-box h4 {
-  color: var(--gold);
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.highlight-box p {
-  font-size: 13px;
-  color: var(--text2);
-}
-
-.info-box {
-  padding: 16px 20px;
-  background: var(--blue-dim);
-  border: 1px solid rgba(88,166,255,0.2);
-  border-radius: 10px;
-  margin-top: 12px;
-  font-size: 13px;
-  color: var(--text2);
-}
-
-.info-box strong { color: var(--blue); }
-
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 16px;
-}
-
-@media (max-width: 600px) {
-  .two-col { grid-template-columns: 1fr; }
-  .voice-flow { flex-direction: column; }
-  .voice-step::after { display: none; }
+/* RESPONSIVE */
+@media(max-width:700px){
+  .tiers,.solution-track,.problems,.timeline-phases{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .integrations{grid-template-columns:repeat(2,1fr)}
+  .roi-grid{grid-template-columns:1fr;gap:12px}
+  .roi-arrow{transform:rotate(90deg)}
+  .cover .meta{flex-direction:column;gap:16px}
 }
 </style>
 </head>
 <body>
 
-<div class="container">
-
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-badge">Коммерческое предложение</div>
-  <h1>Автоматизация для <span>«Виктории»</span></h1>
-  <p class="hero-sub">Telegram Mini App, голосовой AI-агент и система холодных звонков для бильярдного клуба и ресторана</p>
-  <div class="hero-client">
-    Подготовлено для: <strong>Надежда</strong> &nbsp;·&nbsp; Бильярдный клуб «Виктория», Одинцово &nbsp;·&nbsp; Апрель 2026
-  </div>
-</div>
-
-<!-- 1. ПРОБЛЕМА -->
-<div class="section">
-  <div class="section-header">
-    <div class="section-num">1</div>
-    <h2>Текущие проблемы</h2>
-  </div>
-
-  <div class="problem-grid">
-    <div class="problem-card">
-      <div class="icon">📞</div>
-      <h4>25-60 звонков в день вручную</h4>
-      <p>Администратор тратит 3-5 часов на телефоне. Пропущенные звонки = потерянные клиенты. В пиковые часы линия занята.</p>
+<!-- COVER -->
+<div class="cover">
+  <div class="logo">SNEZHKO AI</div>
+  <h1>Коммерческое предложение</h1>
+  <div class="subtitle">Автоматизация бронирования и клиентского сервиса для бильярдного клуба и рестобара</div>
+  <div class="meta">
+    <div class="meta-item">
+      <div class="meta-label">Клиент</div>
+      <div class="meta-value">Рестобар Виктория</div>
     </div>
-    <div class="problem-card">
-      <div class="icon">😤</div>
-      <h4>Человеческий фактор</h4>
-      <p>Усталость, плохое настроение, грубость, забывчивость. Администратор может нахамить, забыть перезвонить, неправильно записать бронь.</p>
+    <div class="meta-item">
+      <div class="meta-label">Дата</div>
+      <div class="meta-value">30 марта 2026</div>
     </div>
-    <div class="problem-card">
-      <div class="icon">🕐</div>
-      <h4>Нет бронирования 24/7</h4>
-      <p>Клиент хочет забронировать в 23:00 — никто не ответит. Утром он уже ушёл к конкурентам.</p>
-    </div>
-    <div class="problem-card">
-      <div class="icon">📉</div>
-      <h4>Нет системы лояльности в цифре</h4>
-      <p>Бонусные карты теряются. Нет автоматического кешбэка. Клиент не видит свой баланс и не возвращается.</p>
+    <div class="meta-item">
+      <div class="meta-label">Действительно до</div>
+      <div class="meta-value">14 апреля 2026</div>
     </div>
   </div>
 </div>
 
-<!-- 2. РЕШЕНИЕ: MINI APP -->
-<div class="section">
-  <div class="section-header">
-    <div class="section-num">2</div>
-    <h2>Решение: Telegram Mini App</h2>
+<!-- 1. СИТУАЦИЯ -->
+<h2><span class="num">01</span> Текущая ситуация</h2>
+<p>Бильярдный клуб и рестобар на бульваре Любанова-Селова, 5. Рядом два крупных ЖК. Система бронирования Resta Place, CRM в amoCRM. С марта работает внешний колл-центр (мультицентр, 24/7).</p>
+
+<div class="stats">
+  <div class="stat">
+    <div class="stat-value">25-60</div>
+    <div class="stat-label">звонков / день</div>
   </div>
+  <div class="stat">
+    <div class="stat-value">80%</div>
+    <div class="stat-label">простое бронирование</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">3-5 мин</div>
+    <div class="stat-label">длительность звонка</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">30 сек</div>
+    <div class="stat-label">целевое время</div>
+  </div>
+</div>
 
-  <p style="color: var(--text2); margin-bottom: 20px;">
-    Полноценное приложение внутри Telegram. Клиенту не нужно ничего скачивать — открывает бота и бронирует стол в 3 клика.
-  </p>
+<h3>Проблемы с колл-центром</h3>
+<div class="problems">
+  <div class="problem">
+    <div class="label">Недозвоны</div>
+    <div class="desc">Клиенты ждут по 4 минуты на линии, часть вешает трубку не дождавшись</div>
+  </div>
+  <div class="problem">
+    <div class="label">Задвоения броней</div>
+    <div class="desc">Разные операторы не видят чужих бронирований, создают дубли</div>
+  </div>
+  <div class="problem">
+    <div class="label">Ошибки операторов</div>
+    <div class="desc">Бронируют только на 1 час, не учитывают правила выходных дней</div>
+  </div>
+  <div class="problem">
+    <div class="label">Негатив клиентов</div>
+    <div class="desc">Плохая интонация операторов, жалобы от постоянных гостей</div>
+  </div>
+</div>
 
-  <a href="https://serenkiy-commits.github.io/viktoria-demo/" target="_blank" style="display: inline-block; padding: 10px 20px; background: var(--green-dim); border: 1px solid rgba(63,185,80,0.3); border-radius: 10px; color: var(--green); text-decoration: none; font-weight: 600; font-size: 14px; margin-bottom: 20px;">
-    Смотреть рабочий прототип →
-  </a>
+<!-- 2. РЕШЕНИЕ -->
+<h2><span class="num">02</span> Предлагаемое решение</h2>
+<p>Два параллельных трека, закрывающих разные сценарии взаимодействия с клиентами:</p>
 
-  <div class="solution-card">
-    <h3>🎱 Бронирование столов</h3>
-    <div class="subtitle">Бильярд и ресторан в одном приложении</div>
-    <ul class="feature-list">
-      <li><span class="check">✓</span><div>Интерактивный план зала — клиент видит расположение столов и выбирает нужный<div class="desc">SVG-карта с реальной планировкой вашего заведения. Свободные столы зелёные, занятые — красные.</div></div></li>
-      <li><span class="check">✓</span><div>Выбор даты, времени и длительности<div class="desc">Слоты формируются автоматически по вашему расписанию. Нельзя забронировать занятый стол.</div></div></li>
-      <li><span class="check">✓</span><div>Динамические тарифы<div class="desc">Дневной, вечерний, выходной — цена меняется автоматически. Клиент сразу видит итоговую сумму.</div></div></li>
-      <li><span class="check">✓</span><div>Онлайн-оплата депозита<div class="desc">Оплата через ЮKassa прямо в Mini App. Деньги на вашем счёте. Снижает no-show на 70%.</div></div></li>
-      <li><span class="check">✓</span><div>Перенос, продление и отмена брони<div class="desc">Клиент сам управляет бронью. Администратору не нужно отвечать на "можно перенести на час позже?"</div></div></li>
+<div class="solution-track">
+  <div class="track track-app">
+    <div class="track-icon">📱</div>
+    <div class="track-title">Мобильное приложение</div>
+    <div class="track-desc">Для постоянных клиентов и прямого трафика</div>
+    <ul>
+      <li>Бронирование бильярда и столов ресторана</li>
+      <li>Выбор стола, даты, времени в реальном времени</li>
+      <li>Онлайн-оплата депозитов (YooKassa)</li>
+      <li>Система лояльности (интеграция Luna)</li>
+      <li>Чаевые сотрудникам</li>
+      <li>Push-уведомления (замена SMS)</li>
+      <li>Оценка качества обслуживания</li>
+      <li>История посещений и любимые столы</li>
     </ul>
   </div>
-
-  <div class="solution-card">
-    <h3>⭐ Программа лояльности</h3>
-    <div class="subtitle">Интеграция с Luna</div>
-    <ul class="feature-list">
-      <li><span class="check">✓</span><div>Автоматический кешбэк за каждый визит<div class="desc">7-10% возвращается бонусами. Клиент видит начисление в личном кабинете мгновенно.</div></div></li>
-      <li><span class="check">✓</span><div>Уровни лояльности с прогресс-баром<div class="desc">Уровень 1 → 2 → 3. Чем больше тратит — тем выше кешбэк. Мотивация возвращаться.</div></div></li>
-      <li><span class="check">✓</span><div>Списание бонусов при оплате<div class="desc">До 20% от счёта можно оплатить бонусами. Клиент чувствует выгоду.</div></div></li>
-      <li><span class="check">✓</span><div>История всех начислений и списаний<div class="desc">Полная прозрачность. Клиент видит за что получил и на что потратил бонусы.</div></div></li>
-    </ul>
-  </div>
-
-  <div class="solution-card">
-    <h3>💬 AI-модерация отзывов</h3>
-    <div class="subtitle">Автоматическая обработка и публикация</div>
-    <ul class="feature-list">
-      <li><span class="check">✓</span><div>Клиент пишет отзыв прямо в Mini App<div class="desc">Оценка от 1 до 5 звёзд + текстовый отзыв. Никуда уходить не нужно.</div></div></li>
-      <li><span class="check">✓</span><div>AI проверяет отзыв: спам, мат, запрещёнка<div class="desc">Нецензурные отзывы не публикуются. Спам и реклама блокируются автоматически.</div></div></li>
-      <li><span class="check">✓</span><div>AI предлагает улучшенную версию текста<div class="desc">Если отзыв написан коряво, AI предложит более грамотный вариант. Клиент выбирает сам.</div></div></li>
-      <li><span class="check">✓</span><div>Автоматический ответ от заведения<div class="desc">AI генерирует благодарный ответ на позитивные отзывы. Негативные — алерт администратору для ручной обработки.</div></div></li>
-    </ul>
-  </div>
-
-  <div class="solution-card">
-    <h3>💰 Чаевые</h3>
-    <div class="subtitle">Безналичные чаевые сотрудникам</div>
-    <ul class="feature-list">
-      <li><span class="check">✓</span><div>Быстрые суммы: 100₽, 200₽, 500₽ или произвольная<div class="desc">Клиент оставляет чаевые в один клик конкретному сотруднику.</div></div></li>
-      <li><span class="check">✓</span><div>Карточки сотрудников с фото и должностью<div class="desc">Бармен, официант, маркер зала, кальянщик — каждый получает свои чаевые.</div></div></li>
-    </ul>
-  </div>
-
-  <div class="solution-card">
-    <h3>📋 Админ-панель</h3>
-    <div class="subtitle">Управление для администратора</div>
-    <ul class="feature-list">
-      <li><span class="check">✓</span><div>Все брони в одном месте с фильтрами по дате и статусу</div></li>
-      <li><span class="check">✓</span><div>Статистика загрузки столов (какие дни и часы самые популярные)</div></li>
-      <li><span class="check">✓</span><div>Push-рассылки: акции, спецпредложения, напоминания</div></li>
-      <li><span class="check">✓</span><div>Клиентская база: контакты, история, сумма потраченного</div></li>
+  <div class="track track-voice">
+    <div class="track-icon">🤖</div>
+    <div class="track-title">Голосовой AI-агент</div>
+    <div class="track-desc">Для звонящих с Яндекс.Карт и новых клиентов</div>
+    <ul>
+      <li>Приём 100% звонков без ожидания</li>
+      <li>Бронирование за 30 секунд через Resta Place</li>
+      <li>Перенос, продление, отмена брони</li>
+      <li>Автоматический расчёт тарифа и депозита</li>
+      <li>Голос максимально близкий к живому</li>
+      <li>Перевод на менеджера (банкеты, нестандарт)</li>
+      <li>Работа 24/7, без выходных и перерывов</li>
+      <li>Запись всех разговоров в amoCRM</li>
     </ul>
   </div>
 </div>
 
-<!-- 3. VOICE AI -->
-<div class="section">
-  <div class="section-header">
-    <div class="section-num">3</div>
-    <h2>Голосовой AI-агент</h2>
+<!-- 3. ИНТЕГРАЦИИ -->
+<h2><span class="num">03</span> Интеграции</h2>
+<p>Все компоненты связаны с вашими текущими системами:</p>
+
+<div class="integrations">
+  <div class="integ">
+    <div class="integ-icon">📋</div>
+    <div class="integ-name">Resta Place</div>
+    <div class="integ-desc">Бронирование, тарифы, столы</div>
   </div>
-
-  <p style="color: var(--text2); margin-bottom: 16px;">
-    AI-бот отвечает на звонки вместо администратора. Работает 24 часа, 7 дней в неделю. Не устаёт, не грубит, не забывает.
-  </p>
-
-  <div class="voice-flow">
-    <div class="voice-step">
-      <div class="icon">📞</div>
-      <h5>Входящий звонок</h5>
-      <p>Клиент звонит на ваш номер</p>
-    </div>
-    <div class="voice-step">
-      <div class="icon">🤖</div>
-      <h5>AI отвечает</h5>
-      <p>Естественная речь, понимает контекст</p>
-    </div>
-    <div class="voice-step">
-      <div class="icon">📅</div>
-      <h5>Бронирует</h5>
-      <p>Проверяет свободные столы, записывает</p>
-    </div>
-    <div class="voice-step">
-      <div class="icon">✅</div>
-      <h5>Подтверждение</h5>
-      <p>SMS или Telegram с деталями брони</p>
-    </div>
+  <div class="integ">
+    <div class="integ-icon">👥</div>
+    <div class="integ-name">amoCRM</div>
+    <div class="integ-desc">Карточки клиентов, история</div>
   </div>
-
-  <div class="highlight-box" style="margin-top: 20px;">
-    <h4>Чем AI лучше администратора на телефоне?</h4>
+  <div class="integ">
+    <div class="integ-icon">💳</div>
+    <div class="integ-name">YooKassa</div>
+    <div class="integ-desc">Онлайн-оплата депозитов</div>
   </div>
+  <div class="integ">
+    <div class="integ-icon">⭐</div>
+    <div class="integ-name">Luna</div>
+    <div class="integ-desc">Программа лояльности</div>
+  </div>
+</div>
 
-  <table class="compare">
-    <thead>
-      <tr>
-        <th>Параметр</th>
-        <th>Администратор</th>
-        <th>AI-агент</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Время работы</td>
-        <td class="old">10:00 — 23:00</td>
-        <td class="new">24/7, без перерывов</td>
-      </tr>
-      <tr>
-        <td>Одновременных звонков</td>
-        <td class="old">1</td>
-        <td class="new">Неограниченно</td>
-      </tr>
-      <tr>
-        <td>Настроение</td>
-        <td class="old">Зависит от дня</td>
-        <td class="new">Всегда вежливый, стабильный</td>
-      </tr>
-      <tr>
-        <td>Ошибки в бронировании</td>
-        <td class="old">Бывают</td>
-        <td class="new">Проверяет данные автоматически</td>
-      </tr>
-      <tr>
-        <td>Зарплата</td>
-        <td class="old">50 000+ ₽/мес</td>
-        <td class="new">~3 000 ₽/мес за API</td>
-      </tr>
-      <tr>
-        <td>Обучение новых сотрудников</td>
-        <td class="old">1-2 недели</td>
-        <td class="new">Не нужно</td>
-      </tr>
-    </tbody>
-  </table>
+<!-- 4. ВАРИАНТЫ -->
+<h2><span class="num">04</span> Варианты сотрудничества</h2>
 
-  <div class="solution-card" style="margin-top: 20px;">
-    <h3>Как это работает технически</h3>
-    <ul class="feature-list">
-      <li><span class="check">✓</span><div>AI обучен на записях реальных звонков вашего клуба<div class="desc">Мы берём ваши записи разговоров и обучаем бота отвечать так, как отвечает лучший администратор. Знает меню, цены, акции, правила.</div></div></li>
-      <li><span class="check">✓</span><div>Распознавание речи в реальном времени (Whisper / Deepgram)<div class="desc">Клиент говорит голосом — AI понимает и отвечает голосом. Задержка менее 1 секунды.</div></div></li>
-      <li><span class="check">✓</span><div>Интеграция с Resta Place<div class="desc">AI проверяет свободные столы в реальном времени и создаёт бронь напрямую в вашей системе.</div></div></li>
-      <li><span class="check">✓</span><div>Переключение на живого оператора<div class="desc">Если вопрос сложный или клиент просит — AI переводит звонок на администратора. Ничего не теряется.</div></div></li>
-      <li><span class="check">✓</span><div>Запись и транскрипция всех звонков<div class="desc">Каждый разговор записывается и расшифровывается в текст. Можете проверить качество в любой момент.</div></div></li>
+<div class="tiers">
+  <div class="tier">
+    <div class="badge badge-accent" style="margin-bottom:10px">Быстрый старт</div>
+    <div class="tier-name">Голосовой AI-агент</div>
+    <div class="tier-price">150 000 ₽</div>
+    <div class="tier-period">3-4 недели</div>
+    <div class="tier-includes">Что входит</div>
+    <ul>
+      <li>AI-агент на входящие звонки</li>
+      <li>Интеграция с Resta Place API</li>
+      <li>Бронирование, перенос, отмена</li>
+      <li>Расчёт тарифов и депозитов</li>
+      <li>Перевод на менеджера</li>
+      <li>Запись в amoCRM</li>
+      <li class="no">Мобильное приложение</li>
+      <li class="no">Система лояльности</li>
+      <li class="no">Холодные обзвоны</li>
+    </ul>
+  </div>
+  <div class="tier tier-mid">
+    <div class="badge badge-gold" style="margin-bottom:10px">Оптимальный</div>
+    <div class="tier-name">Агент + Приложение</div>
+    <div class="tier-price">350 000 ₽</div>
+    <div class="tier-period">8-10 недель</div>
+    <div class="tier-includes">Что входит</div>
+    <ul>
+      <li>Всё из тарифа "Быстрый старт"</li>
+      <li>Мобильное приложение (iOS + Android)</li>
+      <li>Бронирование бильярда и ресторана</li>
+      <li>Оплата депозитов через YooKassa</li>
+      <li>Push-уведомления (замена SMS)</li>
+      <li>Оценка качества обслуживания</li>
+      <li>Чаевые сотрудникам</li>
+      <li class="no">Система лояльности Luna</li>
+      <li class="no">Холодные обзвоны</li>
+    </ul>
+  </div>
+  <div class="tier">
+    <div class="badge badge-blue" style="margin-bottom:10px">Полный пакет</div>
+    <div class="tier-name">Всё включено</div>
+    <div class="tier-price">550 000 ₽</div>
+    <div class="tier-period">12-14 недель</div>
+    <div class="tier-includes">Что входит</div>
+    <ul>
+      <li>Всё из тарифа "Оптимальный"</li>
+      <li>Интеграция Luna (лояльность)</li>
+      <li>История посещений, любимые столы</li>
+      <li>Холодные обзвоны остывшей базы</li>
+      <li>Таргет на ЖК рядом с клубом</li>
+      <li>A/B тестирование скриптов</li>
+      <li>Аналитический дашборд</li>
+      <li>Расширенная поддержка 2 месяца</li>
+      <li>Обучение персонала</li>
     </ul>
   </div>
 </div>
 
-<!-- 4. ХОЛОДНЫЕ ЗВОНКИ -->
-<div class="section">
-  <div class="section-header">
-    <div class="section-num">4</div>
-    <h2>AI-система холодных звонков</h2>
+<!-- 5. ЭКОНОМИКА -->
+<h2><span class="num">05</span> Экономический эффект</h2>
+
+<div class="roi-grid">
+  <div class="roi-box">
+    <div class="roi-title">Сейчас (колл-центр)</div>
+    <div class="roi-line"><span class="label">Стоимость колл-центра</span><span class="val red">~50 000 ₽/мес</span></div>
+    <div class="roi-line"><span class="label">Потерянные клиенты (недозвоны)</span><span class="val red">~30 000 ₽/мес</span></div>
+    <div class="roi-line"><span class="label">Задвоения и ошибки</span><span class="val red">~15 000 ₽/мес</span></div>
+    <div class="roi-line"><span class="label">Негатив и отток</span><span class="val red">сложно оценить</span></div>
+    <div class="roi-line" style="border-top:1px solid var(--border);margin-top:8px;padding-top:8px"><span class="label"><strong>Итого потери</strong></span><span class="val red">~95 000 ₽/мес</span></div>
   </div>
-
-  <p style="color: var(--text2); margin-bottom: 16px;">
-    Автоматический обзвон базы клиентов: приглашения на мероприятия, напоминания, акции. AI звонит по списку и ведёт естественный диалог.
-  </p>
-
-  <div class="solution-card">
-    <ul class="feature-list">
-      <li><span class="check">✓</span><div>Обзвон по базе клиентов с персонализацией<div class="desc">"Иван, вы давно не были у нас. В эту пятницу скидка 20% на бильярд — забронировать?"</div></div></li>
-      <li><span class="check">✓</span><div>Приглашения на мероприятия и турниры<div class="desc">Загружаете список номеров и текст — AI обзванивает и приглашает.</div></div></li>
-      <li><span class="check">✓</span><div>Сбор обратной связи после визита<div class="desc">"Здравствуйте, вы вчера были у нас. Всё ли понравилось? Есть пожелания?"</div></div></li>
-      <li><span class="check">✓</span><div>Отчёт по каждому звонку<div class="desc">Кому звонили, ответили или нет, итог разговора, запись. Всё в таблице.</div></div></li>
-    </ul>
-  </div>
-</div>
-
-<!-- 5. ЧТО НУЖНО ОТ КЛИЕНТА -->
-<div class="section">
-  <div class="section-header">
-    <div class="section-num">5</div>
-    <h2>Что потребуется от вас</h2>
-  </div>
-
-  <div class="api-card">
-    <h4>Resta Place API <span class="tag tag-required">Обязательно</span></h4>
-    <p>Система управления бронированиями. Через API мы получаем свободные слоты, создаём и отменяем брони.</p>
-    <div class="how"><strong>Как получить:</strong> Запросите у вашего менеджера Resta Place ключ API и техническую документацию. Скажите, что подключаете Telegram Mini App для онлайн-бронирования.</div>
-  </div>
-
-  <div class="api-card">
-    <h4>Luna API <span class="tag tag-required">Обязательно для лояльности</span></h4>
-    <p>Система лояльности. Через API начисляем и списываем бонусы, получаем баланс клиента.</p>
-    <div class="how"><strong>Как получить:</strong> Запросите у менеджера Luna API-ключ и документацию. Укажите, что нужен доступ к начислению/списанию бонусов и чтению баланса.</div>
-  </div>
-
-  <div class="api-card">
-    <h4>ЮKassa (ЮMoney) <span class="tag tag-required">Обязательно для оплат</span></h4>
-    <p>Приём платежей: депозиты за бронирование, оплата чаевых. Деньги поступают напрямую на ваш расчётный счёт.</p>
-    <div class="how"><strong>Как получить:</strong> Зарегистрируйтесь на yookassa.ru от юридического лица. После модерации (1-3 дня) получите shopId и секретный ключ. Мы поможем с настройкой.</div>
-  </div>
-
-  <div class="api-card">
-    <h4>amoCRM API <span class="tag tag-optional">Опционально</span></h4>
-    <p>Если хотите, чтобы все клиенты и брони автоматически попадали в вашу CRM-систему.</p>
-    <div class="how"><strong>Как получить:</strong> В настройках amoCRM → Интеграции → создать интеграцию → скопировать ключ API.</div>
-  </div>
-
-  <div class="api-card">
-    <h4>Записи звонков <span class="tag tag-required">Для Voice AI</span></h4>
-    <p>10-20 записей реальных разговоров администратора с клиентами. На их основе AI научится отвечать в стиле вашего клуба.</p>
-    <div class="how"><strong>Как подготовить:</strong> Экспортируйте записи из вашей АТС или запишите 10-20 типичных разговоров (бронирование, вопросы по ценам, отмена). Принимаем mp3, wav, ogg.</div>
-  </div>
-
-  <div class="api-card">
-    <h4>Информация о заведении <span class="tag tag-required">Обязательно</span></h4>
-    <p>Нужна для настройки Mini App и обучения AI-агента.</p>
-    <div class="how">
-      <strong>Список:</strong><br>
-      · Количество и типы бильярдных столов (пул, пирамида, VIP)<br>
-      · Количество ресторанных столов и вместимость каждого<br>
-      · Расписание работы (будни / выходные)<br>
-      · Прайс-лист (тарифы по времени суток и дням)<br>
-      · Условия депозита (сумма, когда требуется, правила отмены)<br>
-      · Условия программы лояльности (% кешбэка, уровни)<br>
-      · Логотип, фирменные цвета<br>
-      · Фотографии интерьера (для Mini App)<br>
-      · Актуальное меню ресторана
-    </div>
-  </div>
-
-  <div class="api-card">
-    <h4>Telegram Bot <span class="tag tag-our">Создаём мы</span></h4>
-    <p>Telegram-бот, на котором работает Mini App. Создаём вместе через @BotFather за 5 минут.</p>
-  </div>
-
-  <div class="api-card">
-    <h4>Сервер (VPS) <span class="tag tag-our">Предоставляем мы</span></h4>
-    <p>Сервер, на котором работает Mini App, база данных и AI-агент. Мы разворачиваем и настраиваем.</p>
+  <div class="roi-arrow">→</div>
+  <div class="roi-box">
+    <div class="roi-title">После внедрения</div>
+    <div class="roi-line"><span class="label">AI-агент (обслуживание)</span><span class="val accent">~15 000 ₽/мес</span></div>
+    <div class="roi-line"><span class="label">Потерянные клиенты</span><span class="val accent">~0</span></div>
+    <div class="roi-line"><span class="label">Задвоения</span><span class="val accent">исключены</span></div>
+    <div class="roi-line"><span class="label">Рост повторных визитов (лояльность)</span><span class="val gold">+15-20%</span></div>
+    <div class="roi-line" style="border-top:1px solid var(--border);margin-top:8px;padding-top:8px"><span class="label"><strong>Экономия</strong></span><span class="val accent">~80 000 ₽/мес</span></div>
   </div>
 </div>
 
-<!-- 6. ЕЖЕМЕСЯЧНЫЕ РАСХОДЫ -->
-<div class="section">
-  <div class="section-header">
-    <div class="section-num">6</div>
-    <h2>Ежемесячные расходы после запуска</h2>
+<div class="card">
+  <p style="text-align:center;margin:0"><strong style="color:var(--accent);font-size:1.1rem">Окупаемость тарифа "Быстрый старт": 2 месяца</strong><br>
+  <span style="color:var(--dim);font-size:.85rem">При экономии ~80 000 ₽/мес вложения 150 000 ₽ окупаются менее чем за 2 месяца</span></p>
+</div>
+
+<!-- 6. ГРАФИК -->
+<h2><span class="num">06</span> График реализации</h2>
+<p>Пример для тарифа "Оптимальный" (агент + приложение):</p>
+
+<div class="timeline-phases">
+  <div class="phase p1">
+    <div class="phase-week">Недели 1-3</div>
+    <div class="phase-name">AI-агент</div>
+    <div class="phase-desc">Разработка голосового бота, интеграция Resta Place, тестирование на записях звонков</div>
   </div>
-
-  <p style="color: var(--text2); margin-bottom: 12px;">
-    После разработки Mini App нужно оплачивать только хостинг и API. Вот реальные цифры:
-  </p>
-
-  <table class="costs-table">
-    <thead>
-      <tr>
-        <th>Статья</th>
-        <th>Стоимость/мес</th>
-        <th>Комментарий</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>VPS-сервер</td>
-        <td>800 — 1 500 ₽</td>
-        <td>2 CPU, 4 GB RAM. Хватает с запасом.</td>
-      </tr>
-      <tr>
-        <td>ЮKassa комиссия</td>
-        <td>3.5% от оборота</td>
-        <td>Списывается автоматически с каждого платежа</td>
-      </tr>
-      <tr>
-        <td>OpenAI API (отзывы, AI-агент)</td>
-        <td>1 000 — 3 000 ₽</td>
-        <td>Зависит от количества звонков и отзывов</td>
-      </tr>
-      <tr>
-        <td>Телефония (Voice AI)</td>
-        <td>1 500 — 3 000 ₽</td>
-        <td>SIP-провайдер для приёма звонков</td>
-      </tr>
-      <tr>
-        <td>Telegram Bot API</td>
-        <td class="free">Бесплатно</td>
-        <td>Telegram не берёт деньги за API</td>
-      </tr>
-      <tr>
-        <td>Resta Place API</td>
-        <td class="free">Входит в подписку</td>
-        <td>Если у вас уже есть подписка Resta Place</td>
-      </tr>
-      <tr>
-        <td>Luna API</td>
-        <td class="free">Входит в подписку</td>
-        <td>Если у вас уже есть подписка Luna</td>
-      </tr>
-      <tr style="font-weight: 600;">
-        <td>Итого (Mini App)</td>
-        <td>~2 000 ₽/мес</td>
-        <td>Без Voice AI</td>
-      </tr>
-      <tr style="font-weight: 600;">
-        <td>Итого (Mini App + Voice AI)</td>
-        <td>~5 000 — 8 000 ₽/мес</td>
-        <td>С голосовым агентом</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="info-box">
-    <strong>Для сравнения:</strong> один администратор на телефоне — от 50 000 ₽/мес. AI-агент обходится в 10-15 раз дешевле и работает без выходных.
+  <div class="phase p2">
+    <div class="phase-week">Неделя 4</div>
+    <div class="phase-name">Запуск агента</div>
+    <div class="phase-desc">Пилот на реальных звонках, параллельно с колл-центром, донастройка</div>
+  </div>
+  <div class="phase p3">
+    <div class="phase-week">Недели 5-8</div>
+    <div class="phase-name">Приложение</div>
+    <div class="phase-desc">Разработка мобильного приложения, интеграция YooKassa, push-уведомления</div>
+  </div>
+  <div class="phase p4">
+    <div class="phase-week">Недели 9-10</div>
+    <div class="phase-name">Тестирование</div>
+    <div class="phase-desc">Тестирование с реальными гостями, публикация в App Store и Google Play</div>
   </div>
 </div>
 
-<!-- 7. СРОКИ -->
-<div class="section">
-  <div class="section-header">
-    <div class="section-num">7</div>
-    <h2>Сроки реализации</h2>
-  </div>
-
-  <p style="color: var(--text2); margin-bottom: 20px;">
-    Отсчёт начинается после получения всех доступов (API-ключи, информация о заведении).
-  </p>
-
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="days">Дни 1-5</div>
-      <h4>Подключение API и архитектура</h4>
-      <p>Настройка сервера, базы данных, подключение Resta Place, Luna, ЮKassa. Создание Telegram-бота.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="days">Дни 6-12</div>
-      <h4>Mini App: бронирование и оплата</h4>
-      <p>Интерактивный план зала, выбор столов, форма бронирования, динамические тарифы, оплата депозита.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="days">Дни 13-16</div>
-      <h4>Лояльность, отзывы, чаевые</h4>
-      <p>Личный кабинет, бонусная программа, AI-модерация отзывов, система чаевых.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="days">Дни 17-19</div>
-      <h4>Админ-панель и рассылки</h4>
-      <p>Панель управления бронями, статистика, push-рассылки с акциями.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="days">Дни 20-21</div>
-      <h4>Тестирование и запуск</h4>
-      <p>Полное тестирование, правки, деплой на боевой сервер, обучение персонала.</p>
-    </div>
-  </div>
-
-  <div class="info-box" style="margin-top: 20px;">
-    <strong>Voice AI-агент:</strong> +2 недели после запуска Mini App. Нужно время на обучение модели на ваших записях звонков.<br>
-    <strong>Холодные звонки:</strong> +1 неделя после Voice AI.
-  </div>
+<div class="card">
+  <h3>Контрольные точки</h3>
+  <ul class="checks">
+    <li><strong>Неделя 3:</strong> AI-агент готов к пилоту, демо на тестовых звонках</li>
+    <li><strong>Неделя 4:</strong> Агент работает параллельно с колл-центром</li>
+    <li><strong>Неделя 6:</strong> Первая версия приложения (внутреннее тестирование)</li>
+    <li><strong>Неделя 8:</strong> Бета-версия приложения для постоянных гостей</li>
+    <li><strong>Неделя 10:</strong> Полный запуск, отключение колл-центра</li>
+  </ul>
 </div>
 
-<!-- 8. СТОИМОСТЬ -->
-<div class="section">
-  <div class="section-header">
-    <div class="section-num">8</div>
-    <h2>Стоимость</h2>
-  </div>
+<!-- 7. УСЛОВИЯ -->
+<h2><span class="num">07</span> Условия работы</h2>
 
-  <div class="price-grid">
-    <div class="price-card">
-      <h3>Базовый</h3>
-      <p style="color: var(--text2); font-size: 13px;">Mini App с бронированием</p>
-      <div class="price">130 000 <small>₽</small></div>
-      <ul class="includes">
-        <li><span class="ch">✓</span> Бронирование столов</li>
-        <li><span class="ch">✓</span> Интеграция Resta Place</li>
-        <li><span class="ch">✓</span> Оплата депозитов (ЮKassa)</li>
-        <li><span class="ch">✓</span> Личный кабинет гостя</li>
-        <li><span class="ch">✓</span> Push-уведомления</li>
-        <li><span class="ch">✓</span> Telegram-бот</li>
-        <li class="no"><span class="ch">—</span> Программа лояльности</li>
-        <li class="no"><span class="ch">—</span> AI-модерация отзывов</li>
-        <li class="no"><span class="ch">—</span> Админ-панель</li>
-        <li class="no"><span class="ch">—</span> Голосовой AI</li>
-      </ul>
-    </div>
-
-    <div class="price-card recommended">
-      <h3>Стандарт</h3>
-      <p style="color: var(--text2); font-size: 13px;">Mini App + лояльность + админка</p>
-      <div class="price">160 000 <small>₽</small></div>
-      <ul class="includes">
-        <li><span class="ch">✓</span> Всё из «Базового»</li>
-        <li><span class="ch">✓</span> Программа лояльности (Luna)</li>
-        <li><span class="ch">✓</span> Бонусный счёт и кешбэк</li>
-        <li><span class="ch">✓</span> AI-модерация отзывов</li>
-        <li><span class="ch">✓</span> Система чаевых</li>
-        <li><span class="ch">✓</span> Админ-панель</li>
-        <li><span class="ch">✓</span> Интеграция amoCRM</li>
-        <li><span class="ch">✓</span> Меню ресторана</li>
-        <li><span class="ch">✓</span> Push-рассылки с акциями</li>
-        <li class="no"><span class="ch">—</span> Голосовой AI</li>
-      </ul>
-    </div>
-
-    <div class="price-card">
-      <h3>Полный</h3>
-      <p style="color: var(--text2); font-size: 13px;">Mini App + Voice AI</p>
-      <div class="price">290 000 <small>₽</small></div>
-      <ul class="includes">
-        <li><span class="ch">✓</span> Всё из «Стандарт»</li>
-        <li><span class="ch">✓</span> Голосовой AI-агент 24/7</li>
-        <li><span class="ch">✓</span> Приём звонков без оператора</li>
-        <li><span class="ch">✓</span> Бронирование голосом</li>
-        <li><span class="ch">✓</span> Обучение на ваших записях</li>
-        <li><span class="ch">✓</span> Переключение на оператора</li>
-        <li><span class="ch">✓</span> Транскрипция звонков</li>
-        <li><span class="ch">✓</span> Аналитика звонков</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="highlight-box">
-    <h4>Дополнительные услуги</h4>
-    <p style="margin-top: 8px;">
-      AI-система холодных звонков (обзвон базы, приглашения, акции) — <strong style="color: var(--gold);">50 000 — 70 000 ₽</strong><br>
-      Ежемесячное обслуживание и доработки — <strong style="color: var(--gold);">15 000 ₽/мес</strong>
-    </p>
-  </div>
+<div class="card">
+  <h3>Оплата</h3>
+  <p style="font-size:1.05rem;margin:0"><strong>40%</strong> предоплата перед началом работ<br>
+  <strong>30%</strong> после запуска AI-агента (контрольная точка)<br>
+  <strong>30%</strong> после полной сдачи проекта</p>
 </div>
 
-<!-- 9. УСЛОВИЯ -->
-<div class="section">
-  <div class="section-header">
-    <div class="section-num">9</div>
-    <h2>Условия работы</h2>
-  </div>
+<h3>Что входит</h3>
+<ul class="checks">
+  <li>Полная разработка и настройка выбранных модулей</li>
+  <li>Интеграция со всеми текущими системами (Resta Place, amoCRM, YooKassa, Luna)</li>
+  <li>Обучение голосового агента на ваших записях разговоров</li>
+  <li>Тестирование на реальных сценариях</li>
+  <li>Поддержка 1 месяц после запуска (баг-фиксы, донастройка)</li>
+  <li>Обучение персонала по работе с системой</li>
+</ul>
 
-  <div class="two-col">
-    <div class="solution-card">
-      <h3>Оплата</h3>
-      <ul class="feature-list">
-        <li><span class="check">50%</span> Предоплата для начала работ</li>
-        <li><span class="check">50%</span> После сдачи и запуска проекта</li>
-      </ul>
-    </div>
-    <div class="solution-card">
-      <h3>Гарантии</h3>
-      <ul class="feature-list">
-        <li><span class="check">✓</span> 1 месяц бесплатной техподдержки</li>
-        <li><span class="check">✓</span> Все исходники передаются вам</li>
-        <li><span class="check">✓</span> Правки в рамках ТЗ — бесплатно</li>
-      </ul>
-    </div>
-  </div>
+<h3>Что НЕ входит</h3>
+<ul class="excludes">
+  <li>Стоимость телефонии и SIP-тракта (оплачивается отдельно)</li>
+  <li>Комиссии YooKassa за транзакции</li>
+  <li>Оплата аккаунтов разработчика App Store / Google Play</li>
+  <li>Изменение дизайна и функционала Resta Place</li>
+  <li>Работы по SEO и продвижению в поисковых системах</li>
+</ul>
+
+<h3>Что потребуется от вас</h3>
+<ul class="checks">
+  <li>Доступ к API Resta Place (ключи, документация)</li>
+  <li>Доступ к amoCRM и записям разговоров колл-центра</li>
+  <li>Реквизиты YooKassa / Money Service</li>
+  <li>Доступ к Luna (программа лояльности)</li>
+  <li>Обратная связь в течение 2 рабочих дней на промежуточных этапах</li>
+  <li>Тестовые сценарии бронирования (типичные запросы гостей)</li>
+</ul>
+
+<!-- 8. ПОЧЕМУ МЫ -->
+<h2><span class="num">08</span> Почему Snezhko AI</h2>
+
+<div class="card">
+  <ul class="checks">
+    <li><strong>Специализация на AI-автоматизации:</strong> голосовые агенты, интеллектуальные боты, интеграции с CRM</li>
+    <li><strong>Один исполнитель:</strong> без передачи между командами, быстрая коммуникация, полная ответственность</li>
+    <li><strong>Фиксированная стоимость:</strong> никаких доплат за часы или "непредвиденные сложности"</li>
+    <li><strong>Поэтапная сдача:</strong> платите только после подтверждения каждого этапа</li>
+    <li><strong>Быстрый результат:</strong> AI-агент работает уже через 3-4 недели, не нужно ждать полный цикл</li>
+  </ul>
 </div>
 
-<!-- 10. ROI -->
-<div class="section">
-  <div class="section-header">
-    <div class="section-num">10</div>
-    <h2>Окупаемость</h2>
-  </div>
-
-  <div class="roi-grid">
-    <div class="roi-card">
-      <div class="num">70%</div>
-      <p>Снижение no-show за счёт депозитов</p>
-    </div>
-    <div class="roi-card">
-      <div class="num">24/7</div>
-      <p>Бронирование без участия администратора</p>
-    </div>
-    <div class="roi-card">
-      <div class="num">3 мес</div>
-      <p>Срок окупаемости при 25+ обращениях/день</p>
-    </div>
-  </div>
-
-  <div class="highlight-box" style="margin-top: 20px;">
-    <h4>Расчёт</h4>
-    <p>
-      Администратор на телефоне: 50 000 ₽/мес = 600 000 ₽/год<br>
-      AI-агент (полный пакет): 290 000 ₽ разово + ~6 000 ₽/мес = 362 000 ₽ за первый год<br><br>
-      <strong style="color: var(--gold);">Экономия за первый год: ~238 000 ₽</strong><br>
-      <strong style="color: var(--gold);">Со второго года: экономия ~528 000 ₽/год</strong>
-    </p>
-  </div>
+<!-- 9. СЛЕДУЮЩИЕ ШАГИ -->
+<h2><span class="num">09</span> Следующие шаги</h2>
+<div class="steps">
+  <div class="step"><strong>Обсудить предложение</strong><br><span style="color:var(--dim)">Выбрать вариант, уточнить детали и приоритеты</span></div>
+  <div class="step"><strong>Предоставить доступы</strong><br><span style="color:var(--dim)">API Resta Place, amoCRM, записи разговоров, Luna</span></div>
+  <div class="step"><strong>Согласовать договор и оплату</strong><br><span style="color:var(--dim)">Зафиксировать условия, внести предоплату 40%</span></div>
+  <div class="step"><strong>Старт разработки</strong><br><span style="color:var(--dim)">В течение 48 часов после получения доступов</span></div>
+  <div class="step"><strong>Пилот AI-агента</strong><br><span style="color:var(--dim)">Через 3-4 недели: тестовый запуск параллельно с колл-центром</span></div>
 </div>
 
-<!-- CTA -->
-<div class="cta">
-  <h2>Готовы начать?</h2>
-  <p>Рабочий прототип уже есть. Осталось подключить ваши API и запустить.</p>
-  <a href="https://serenkiy-commits.github.io/viktoria-demo/" target="_blank" class="cta-btn">Смотреть прототип</a>
+<!-- FOOTER -->
+<div class="footer">
+  <div style="font-family:'Unbounded',sans-serif;font-size:1.2rem;font-weight:700;color:var(--accent)">SNEZHKO AI</div>
+  <div class="contact">Telegram: @snezhko_sergey</div>
+  <p style="font-size:.8rem;color:var(--dim);margin-top:12px">Предложение действительно до 14.04.2026</p>
 </div>
 
-<div class="footer-note">
-  © 2026 · snezhko.ru · AI-автоматизация для бизнеса
-</div>
-
-</div>
 </body>
 </html>
