@@ -458,13 +458,14 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center}
     <h2>Политика обработки персональных данных</h2>
 
     <p><strong>1. Общие положения</strong></p>
-    <p>Настоящая Политика обработки персональных данных (далее — Политика) действует в отношении всех персональных данных, которые Оператор может получить от Пользователя во время использования сайта snezhko.ai (далее — Сайт).</p>
+    <p>Настоящая Политика обработки персональных данных (далее — Политика) действует в отношении всех персональных данных, которые Оператор может получить от Пользователя во время использования сайта snezhko.ru (далее — Сайт).</p>
 
     <p><strong>2. Оператор персональных данных</strong></p>
     <p>ИП Снежко Сергей Андреевич<br>
     ИНН: 010604113677<br>
     ОГРНИП: 321010500006225<br>
-    Контакт: <a href="https://t.me/snezhko_sergey" target="_blank" style="color:var(--amber)">@snezhko_sergey</a> (Telegram)</p>
+    Контакт: <a href="https://t.me/snezhko_sergey" target="_blank" style="color:var(--amber)">@snezhko_sergey</a> (Telegram)<br>
+    Email по вопросам ПД: snezhko.ai@yandex.ru</p>
 
     <p><strong>3. Персональные данные, подлежащие обработке</strong></p>
     <p>Оператор обрабатывает следующие данные, предоставленные Пользователем через форму заявки на Сайте:</p>
@@ -503,10 +504,18 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center}
   </div>
 </div>
 
+<!-- COOKIE BANNER -->
+<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9998;background:var(--card);border-top:1px solid var(--amber-dim);padding:16px 24px;font-size:14px;color:var(--text-dim)">
+  <div style="max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+    <span>Этот сайт использует cookie для улучшения работы. Продолжая использование, вы соглашаетесь с <a href="#" id="cookiePrivacy" style="color:var(--amber);text-decoration:underline">политикой обработки данных</a>.</span>
+    <button id="cookieAccept" style="background:var(--amber);color:var(--bg);border:none;padding:8px 24px;border-radius:var(--r);font-family:var(--font-body);font-weight:600;cursor:pointer;white-space:nowrap">Принять</button>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
-    <div class="foot-left">&copy; 2026 Snezhko AI</div>
+    <div class="foot-left">&copy; 2026 Snezhko AI &nbsp;|&nbsp; <a href="#" id="footerPrivacy" style="color:var(--text-dim);text-decoration:underline">Политика конфиденциальности</a> &nbsp;|&nbsp; ИП Снежко С.А. ИНН 010604113677</div>
     <a href="https://t.me/snezhko_sergey" class="foot-tg" target="_blank">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
       Telegram
@@ -585,6 +594,27 @@ document.getElementById('closePrivacy').addEventListener('click', () => {
 });
 document.getElementById('privacyModal').addEventListener('click', (e) => {
   if (e.target === e.currentTarget) e.currentTarget.classList.remove('active');
+});
+
+// Footer privacy link
+document.getElementById('footerPrivacy').addEventListener('click', (e) => {
+  e.preventDefault();
+  document.getElementById('privacyModal').classList.add('active');
+});
+
+// Cookie privacy link
+document.getElementById('cookiePrivacy').addEventListener('click', (e) => {
+  e.preventDefault();
+  document.getElementById('privacyModal').classList.add('active');
+});
+
+// Cookie banner
+if (!localStorage.getItem('cookieAccepted')) {
+  document.getElementById('cookieBanner').style.display = 'block';
+}
+document.getElementById('cookieAccept').addEventListener('click', () => {
+  localStorage.setItem('cookieAccepted', '1');
+  document.getElementById('cookieBanner').style.display = 'none';
 });
 </script>
 </body>
