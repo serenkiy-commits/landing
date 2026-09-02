@@ -95,30 +95,42 @@
     function ukidsPartnerUrl() {
       var dest = new URL(UKIDS_PARTNER);
       try {
-        new URLSearchParams(location.search).forEach(function (value, key) {
+        var src = new URLSearchParams(location.search);
+        src.forEach(function (value, key) {
           var k = String(key || "");
           if (!k) return;
           var pass = /^utm_/i.test(k) || /^(yclid|gclid|gbraid|wbraid|ysclid|ymclid|yadclid|from)$/i.test(k) || /^\{.+\}$/.test(k);
           if (pass) dest.searchParams.set(k, value);
         });
+        var clickId = src.get("yclid") || src.get("ymclid") || "";
+        var utmTerm = src.get("utm_term") || "";
+        if (clickId) dest.searchParams.set("sub1", clickId);
+        if (utmTerm) dest.searchParams.set("sub2", utmTerm);
       } catch (err) {}
       return dest.toString();
     }
-    function ukidsGoLead(ev) {
+    function ukidsGoPartner(ev) {
       if (ev) {
         ev.preventDefault();
         ev.stopPropagation();
         if (ev.stopImmediatePropagation) ev.stopImmediatePropagation();
       }
-      if (typeof ym === "function") ym(112187050, "reachGoal", "ukids_lead");
       location.href = ukidsPartnerUrl();
       return false;
     }
+    function ukidsBind() {
+      var url = ukidsPartnerUrl();
+      document.querySelectorAll("a,area").forEach(function (a) {
+        a.setAttribute("href", url);
+      });
+    }
     document.addEventListener("click", function (e) {
       var node = e.target && e.target.closest && e.target.closest("a,button,[role=button]");
-      if (node) ukidsGoLead(e);
+      if (node) ukidsGoPartner(e);
     }, true);
-    document.addEventListener("submit", function (e) { ukidsGoLead(e); }, true);
+    document.addEventListener("submit", function (e) { ukidsGoPartner(e); }, true);
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", ukidsBind);
+    else ukidsBind();
   </script>
 </body>
 </html>
