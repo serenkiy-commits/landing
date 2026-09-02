@@ -1,335 +1,265 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0B0B0D">
-  <meta name="format-detection" content="telephone=no">
-  <title>AI.ЦЕХ — скидка −10%. Свой AI-сервис за 8 недель</title>
-  <meta name="description" content="Программа AI.ЦЕХ Никиты Велса, осень 2026. Не пишешь код — собери свой AI-сервис и агентов в бизнесе за 8 недель. Claude Code, без программирования. Скидка −10%.">
-  <meta property="og:title" content="AI.ЦЕХ — свой AI-сервис за 8 недель">
-  <meta property="og:description" content="Никита Велс. Claude Code, без программирования. Скидка −10% на поток осень 2026.">
-  <meta property="og:image" content="aiceh-banner-16x9.png">
-  <meta property="og:locale" content="ru_RU">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B0B0D'/%3E%3Cpath d='M16 6l3.2 7.4L27 16l-7.8 2.6L16 26l-3.2-7.4L5 16l7.8-2.6z' fill='%23F4652A'/%3E%3C/svg%3E">
-  <link rel="preload" as="image" href="nick.jpg" fetchpriority="high">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0B0B0D;
-      --ink: #F4F1EA;
-      --muted: #B6B2AA;
-      --acc: #F4652A;
-      --acc-hover: #FF7A40;
-      --btn-ink: #140A06;
-      --safe-t: env(safe-area-inset-top, 0px);
-      --safe-b: env(safe-area-inset-bottom, 0px);
-    }
+<!doctype html>
+<html lang="ru" class="dark">
+  <head>
+    <base href="/aiceh/">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      ИКОНКА САЙТА (24.08.2026). Во вкладке висела ФИОЛЕТОВАЯ молния — цвет
+      остался от макета и не совпадал с сайтом ни в одном тоне. Правка владельца
+      была про цвет, и только про него: «я просил оранжевую молнию». Форма знака
+      прежняя, перекрашены четыре роли — разбор в комментарии внутри
+      `public/favicon.svg` (там же про снятый display-p3, из-за которого
+      перекраска одного hex ничего бы не изменила на макбуке).
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      ТРИ ФАЙЛА, А НЕ ОДИН. SVG понимают не все: часть браузеров и почтовых
+      клиентов молча идут за `/aiceh/favicon.ico` (его в `public/` не было вовсе, и
+      они получали 404 с иконкой по умолчанию), iOS для ярлыка на домашнем
+      экране берёт `apple-touch-icon.png`. Порядок строк важен: браузер с
+      поддержкой SVG выбирает его, остальные откатываются на ICO.
 
-    html, body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: Onest, "Segoe UI", system-ui, -apple-system, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
+      `?v=` ОБЯЗАТЕЛЕН — это то же правило, что MEDIA_REV и SERVICES_REV.
+      Файлы из `public/` Vite не хеширует, имя не изменилось, а иконку браузер
+      кэширует особенно упрямо: без метки владелец продолжил бы видеть молнию
+      и завёл бы правку «не заменилось» — ровно как вышло с кадром клуба
+      19.08. Меняем иконку — поднимаем цифру во всех трёх строках.
+    -->
+    <link rel="icon" href="/aiceh/favicon.ico?v=3" sizes="32x32" />
+    <link rel="icon" type="image/svg+xml" href="/aiceh/favicon.svg?v=3" />
+    <link rel="apple-touch-icon" href="/aiceh/apple-touch-icon.png?v=3" />
+    <!-- Заголовок и описание держим синхронно с meta.title / hero в src/content.json -->
+    <title>AI.ЦЕХ — За 8 недель вы соберёте свой сервис — сами</title>
+    <meta
+      name="description"
+      content="AI.ЦЕХ — практическая программа Никиты Велса: за 8 недель вы соберёте не пять учебных систем, а одну свою, которая закрывает ваши задачи, — веб-сервис, агенты, автоматизация. На Claude Code, без программирования."
+    />
 
-    body { min-height: 100vh; min-height: 100dvh; }
+    <!--
+      ПРЕВЬЮ ССЫЛКИ В МЕССЕНДЖЕРАХ (20.08.2026, предзапусковый аудит).
 
-    a { color: inherit; }
+      До этого не было ни одного тега `og:`, и ссылка на сайт разворачивалась в
+      Telegram и WhatsApp голым адресом — без картинки, заголовка и описания. Для
+      проекта, у которого мессенджеры основной канал, это прямая потеря переходов на
+      самом дешёвом трафике.
 
-    .hero {
-      position: relative;
-      isolation: isolate;
-      min-height: 100vh;
-      min-height: 100dvh;
-      min-height: 100svh;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
+      Адрес подставляется при сборке (`VITE_SITE_URL`, значение по умолчанию — в
+      `.env`). Абсолютный адрес обязателен: краулеры мессенджеров не исполняют JS и
+      не умеют достраивать относительные пути. При переезде на боевой домен меняется
+      одна переменная, а не пять тегов.
 
-    .hero-photo {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: right center;
-      z-index: 0;
-      pointer-events: none;
-      user-select: none;
-    }
+      КАРТИНКА — СНИМОК ПЕРВОГО ЭКРАНА (24.08.2026). Правка владельца: «только
+      скрин с hero». До этого `og.jpg` был отдельной карточкой — тот же кадр и те
+      же шрифты, но собранные заново; в превью она читалась крупнее, зато
+      показывала не сайт, а вёрстку по его мотивам. Теперь это снимок боевой
+      страницы, снятый в окне ровно 1200×630 при двойной плотности и уменьшенный
+      вдвое: на 1200px в кадр помещается шапка, заголовок, подзаголовок и кнопка
+      заявки, а гигантское слово-подложка остаётся полоской по нижнему краю.
+      Снимать шире нельзя — на 1440px заголовок занимает меньшую долю кадра и в
+      ленте Telegram мельчает.
 
-    .hero-shade {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      pointer-events: none;
-      background:
-        linear-gradient(180deg, rgba(11,11,13,.72) 0%, rgba(11,11,13,.42) 38%, rgba(11,11,13,.88) 100%),
-        linear-gradient(90deg, #0B0B0D 0%, rgba(11,11,13,.78) 42%, rgba(11,11,13,.18) 72%, transparent 100%);
-    }
+      ЦЕНА РЕШЕНИЯ, О КОТОРОЙ НАДО ПОМНИТЬ: карточка теперь устаревает вместе с
+      первым экраном. Меняется заголовок, кнопка или кадр Никиты — снимок надо
+      переснять, иначе в мессенджерах поедет прошлая версия сайта.
 
-    .hero-glow {
-      position: absolute;
-      right: -12%;
-      top: 8%;
-      width: 70%;
-      height: 80%;
-      z-index: 1;
-      pointer-events: none;
-      background: radial-gradient(ellipse at 70% 40%, rgba(244,101,42,.28) 0%, transparent 58%);
-    }
+      `?v=` У КАРТИНКИ — не украшение. Имя файла не меняется, а Telegram и
+      WhatsApp держат картинку у себя. Без метки они продолжат отдавать
+      предыдущую карточку. Меняем `og.jpg` — поднимаем цифру в обеих строках
+      (`og:image` и `twitter:image`).
 
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 1.5rem;
-      width: min(1120px, 100%);
-      margin: 0 auto;
-      padding: calc(18px + var(--safe-t)) 20px calc(20px + var(--safe-b));
-    }
+      ЧЕГО МЕТКА НЕ ЧИНИТ: Telegram кэширует ещё и саму страницу, по её адресу.
+      Если ссылку уже отправляли и превью не показалось, новых тегов он не
+      увидит, сколько ни меняй файл, — кэш снимается только вручную, отправкой
+      адреса боту @WebpageBot. Именно так и вышло 22.08: Никита кинул ссылку в
+      чат, когда на сайте ещё стоял `X-Robots-Tag: noindex`, краулер честно
+      отказался строить превью, и этот отказ у него сохранился.
+    -->
+    <link rel="canonical" href="https://snezhko.ru/aiceh/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AI.ЦЕХ" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:url" content="https://snezhko.ru/aiceh/" />
+    <meta property="og:title" content="AI.ЦЕХ — за 8 недель вы соберёте свой сервис — сами" />
+    <meta
+      property="og:description"
+      content="Не пять учебных систем — одну свою, которая закрывает ваши задачи. Программа Никиты Велса на Claude Code: 9 блоков, 65 тем, проект в каждом блоке."
+    />
+    <meta property="og:image" content="https://snezhko.ru/aiceh/og.jpg?v=2" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="AI.ЦЕХ — за 8 недель вы соберёте свой сервис сами" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AI.ЦЕХ — за 8 недель вы соберёте свой сервис — сами" />
+    <meta
+      name="twitter:description"
+      content="Не пять учебных систем — одну свою, которая закрывает ваши задачи. Программа Никиты Велса на Claude Code."
+    />
+    <meta name="twitter:image" content="https://snezhko.ru/aiceh/og.jpg?v=2" />
+    <meta name="theme-color" content="#0F0F12" />
+    <!--
+      ГАРНИТУРЫ ТЕПЕРЬ СВОИ (21.08.2026). Тег <link> на Google Fonts и два
+      preconnect сняты: файлы лежат у нас и подключаются из src/fonts.css, а
+      сборщик подставляет им базу и хеш. Что это дало по замеру: минус два чужих
+      домена с отдельными DNS и TLS на канале с задержкой 300 мс, меньше скачков
+      вёрстки при подмене шрифта и никакой передачи IP посетителя за границу.
+    -->
 
-    .top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
+    <!--
+      Первый экран: кадр «мой кадр» — значение DEFAULT_PREFS в
+      src/variants/proto/full/bg-prefs.ts, он же LCP страницы.
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+      `imagesrcset` обязателен и повторяет набор из разметки. Без него телефон качал
+      кадр ДВАЖДЫ: предзагрузка тянула широкий файл на 74 КБ, а сама картинка по
+      своему `srcset` брала половинный на 28 КБ — сто килобайт лишнего трафика на
+      первом же экране ровно там, где канал самый узкий.
 
-    .disc {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--acc);
-      color: #fff;
-      font-weight: 800;
-      font-size: 14px;
-      letter-spacing: .04em;
-      padding: 6px 10px;
-      border-radius: 8px;
-      line-height: 1;
-    }
-
-    .kicker {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .kicker b { color: var(--acc); font-weight: 800; }
-
-    .copy { max-width: 38rem; }
-
-    .who {
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: var(--ink);
-      margin-bottom: .45rem;
-    }
-
-    .stats {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px 0;
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 500;
-      line-height: 1.45;
-      margin-bottom: 1.15rem;
-    }
-    .stats span { white-space: nowrap; }
-    .stats span + span::before {
-      content: "·";
-      margin: 0 .55em;
-      color: #6e6a64;
-    }
-
-    h1 {
-      font-size: clamp(1.85rem, 8.4vw, 3.35rem);
-      font-weight: 800;
-      line-height: 1.08;
-      letter-spacing: -.035em;
-      color: var(--ink);
-      margin-bottom: .85rem;
-    }
-    h1 .acc { color: var(--acc); }
-
-    .lead {
-      font-size: clamp(1.05rem, 3.6vw, 1.28rem);
-      line-height: 1.4;
-      color: var(--ink);
-      font-weight: 500;
-      max-width: 28rem;
-      margin-bottom: .55rem;
-    }
-
-    .sub {
-      font-size: 15px;
-      line-height: 1.45;
-      color: var(--muted);
-      font-weight: 500;
-      margin-bottom: 1.35rem;
-    }
-
-    .cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      max-width: 360px;
-      min-height: 56px;
-      padding: 14px 22px;
-      background: var(--acc);
-      color: var(--btn-ink);
-      font-size: 1.12rem;
-      font-weight: 800;
-      letter-spacing: -.01em;
-      text-decoration: none;
-      border-radius: 12px;
-      box-shadow: 0 10px 28px rgba(244,101,42,.32);
-      transition: background .15s ease, transform .15s ease;
-    }
-    .cta:hover { background: var(--acc-hover); }
-    .cta:active { transform: translateY(1px); }
-
-    .foot {
-      margin-top: .9rem;
-      font-size: 13px;
-      color: #8F8B84;
-      font-weight: 500;
-    }
-
-    @media (min-width: 768px) {
-      .hero-photo {
-        left: 38%;
-        width: 62%;
-        object-position: right center;
-      }
-      .hero-shade {
-        background:
-          linear-gradient(90deg, #0B0B0D 0%, #0B0B0D 36%, rgba(11,11,13,.55) 58%, rgba(11,11,13,.08) 78%, transparent 100%),
-          linear-gradient(180deg, rgba(11,11,13,.35) 0%, transparent 40%, rgba(11,11,13,.55) 100%);
-      }
-      .hero-inner {
-        padding: calc(28px + var(--safe-t)) 40px calc(32px + var(--safe-b));
-        justify-content: center;
-        gap: 2.4rem;
-      }
-      .copy { max-width: 36rem; }
-      h1 { font-size: clamp(2.6rem, 4.6vw, 4.15rem); }
-      .cta { width: auto; min-width: 280px; padding: 16px 28px; }
-      .who { font-size: 14px; }
-      .stats { font-size: 15px; }
-    }
-
-    @media (min-width: 1100px) {
-      .hero-photo { left: 44%; width: 56%; }
-    }
-  </style>
-</head>
-<body>
-  <main class="hero">
-    <img class="hero-photo" src="nick.jpg" alt="Никита Велс" width="1920" height="1080" fetchpriority="high">
-    <div class="hero-glow" aria-hidden="true"></div>
-    <div class="hero-shade" aria-hidden="true"></div>
-    <div class="hero-inner">
-      <div class="top">
-        <div class="brand">
-          <span class="disc">−10%</span>
-          <span class="kicker">AI.ЦЕХ · <b>осень 2026</b></span>
-        </div>
-      </div>
-      <div class="copy">
-        <p class="who">Никита Велс</p>
-        <p class="stats">
-          <span>30К Telegram</span>
-          <span>15К YouTube</span>
-          <span>200+ AI-систем</span>
-          <span>217 бизнесов</span>
-        </p>
-        <h1>Не пишешь код — собери свой AI-сервис <span class="acc">за 8 недель</span></h1>
-        <p class="lead">Нужны агенты в бизнесе, а не ещё один чат с ChatGPT.</p>
-        <p class="sub">Claude Code. Без программирования. Сам соберёшь свой сервис на потоке AI.ЦЕХ.</p>
-        <a class="cta" href="https://platform.nickvels.ru/ref/sertifikat?cert=RwL6uyd4W3l7">Получить скидку</a>
-        <p class="foot">AI.ЦЕХ · практика Claude Code · без программирования</p>
-      </div>
-    </div>
-  </main>
-
-  <script>
-    /* Вставьте сюда id счётчика Яндекс Метрики (число из кабинета). Пока 0 — тег не грузится. */
-    var COUNTER_ID = 112187050;
-
-    (function () {
-      if (!(COUNTER_ID > 0)) return;
-
-      (function (m, e, t, r, i, k, a) {
-        m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
-        m[i].l = 1 * new Date();
-        for (var j = 0; j < document.scripts.length; j++) {
-          if (document.scripts[j].src === r) { return; }
-        }
-        k = e.createElement(t); a = e.getElementsByTagName(t)[0];
-        k.async = 1; k.src = r; a.parentNode.insertBefore(k, a);
-      })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
-
-      ym(COUNTER_ID, 'init', {
-        clickmap: true,
-        trackLinks: true,
-        accurateTrackBounce: true
+      Подложка «угли» отсюда убрана: она показывается только в режиме «без кадра»,
+      которого нет в значениях по умолчанию, — предзагрузка тратила трафик впустую.
+    -->
+    <link
+      rel="preload"
+      as="image"
+      href="/aiceh/media/proto/full/hero/hero-vert.webp"
+      imagesrcset="/aiceh/media/proto/full/hero/hero-vert@1280.webp 1280w, /aiceh/media/proto/full/hero/hero-vert.webp 2048w"
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
+    <script type="module" crossorigin src="/aiceh/assets/index-rnIkJbFx.js"></script>
+    <link rel="stylesheet" crossorigin href="/aiceh/assets/index-D7M5g9Y8.css">
+  </head>
+  <body>
+    <div id="root"></div>
+<style id="aiceh-lock">
+  a[href*="t.me"],
+  a[href*="telegram.me"],
+  a[href*="telegram.org"],
+  a[href*="wa.me"],
+  a[href*="whatsapp"],
+  a[aria-label*="Telegram" i],
+  a[aria-label*="WhatsApp" i],
+  a[aria-label*="Задать вопрос" i],
+  #apply form,
+  #apply input,
+  #apply textarea,
+  #apply select,
+  #apply label,
+  #apply button[type="submit"] {
+    display: none !important;
+  }
+</style>
+<script>
+  var COUNTER_ID = 112187050;
+  (function () {
+    if (!(COUNTER_ID > 0)) return;
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t); a = e.getElementsByTagName(t)[0];
+      k.async = 1; k.src = r; a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(COUNTER_ID, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  })();
+  function aicehCertUrl() {
+    var dest = new URL("https://platform.nickvels.ru/ref/sertifikat?cert=RwL6uyd4W3l7");
+    try {
+      new URLSearchParams(location.search).forEach(function (value, key) {
+        var k = String(key || "");
+        if (!k || k.toLowerCase() === "cert") return;
+        var pass = /^utm_/i.test(k) || /^(yclid|gclid|gbraid|wbraid|ysclid|ymclid|yadclid|from)$/i.test(k) || /^\{.+\}$/.test(k);
+        if (pass) dest.searchParams.set(k, value);
       });
-    })();
-
-    document.addEventListener('click', function (e) {
-      var a = e.target.closest && e.target.closest('a[href*="platform.nickvels.ru"]');
-      if (!a) return;
-
-      if (typeof ym === 'function' && COUNTER_ID > 0) {
-        ym(COUNTER_ID, 'reachGoal', 'lead');
+    } catch (err) {}
+    if (!dest.searchParams.get("cert")) dest.searchParams.set("cert", "RwL6uyd4W3l7");
+    return dest.toString();
+  }
+  function aicehGoLead(ev) {
+    if (ev) {
+      ev.preventDefault();
+      ev.stopPropagation();
+      if (ev.stopImmediatePropagation) ev.stopImmediatePropagation();
+    }
+    if (typeof ym === "function") ym(112187050,'reachGoal','lead');
+    location.href = aicehCertUrl();
+    return false;
+  }
+  var AICEH_LEAD_RE = /оставить заявку|отправить заявку|пройти личный отбор|хочу на программу|узнать,\s*подойд[её]т ли мне|задать вопрос|открыть telegram|менеджер напишет/i;
+  var AICEH_LEAK_RE = /t\.me|telegram\.me|telegram\.org|wa\.me|whatsapp|nick9267|4JPA37amFGJlNjJi|FT5KCVMF4YCOE1/i;
+  function aicehHrefOf(node) {
+    if (!node) return "";
+    return ((node.getAttribute && node.getAttribute("href")) || node.href || "") + "";
+  }
+  function aicehIsLead(el) {
+    if (!el || !el.closest) return null;
+    var node = el.closest("a,button,input,[role=button],label");
+    if (!node) return null;
+    var text = ((node.textContent || node.value || node.getAttribute && node.getAttribute("aria-label") || "") + "").replace(/\s+/g, " ").trim();
+    var href = aicehHrefOf(node);
+    if (AICEH_LEAK_RE.test(href) || AICEH_LEAK_RE.test(text)) return node;
+    if (AICEH_LEAD_RE.test(text)) return node;
+    if (/#apply/i.test(href)) return node;
+    if (node.closest && node.closest("form") && ((node.getAttribute && node.getAttribute("type")) === "submit" || node.type === "submit")) return node;
+    return null;
+  }
+  function aicehScrub() {
+    document.querySelectorAll("a[href],area[href]").forEach(function (a) {
+      var href = aicehHrefOf(a);
+      if (AICEH_LEAK_RE.test(href)) {
+        a.setAttribute("href", aicehCertUrl());
+        a.removeAttribute("target");
+        a.style.display = "none";
       }
-
-      try {
-        var dest = new URL(a.getAttribute('href'), location.href);
-        var incoming = new URLSearchParams(location.search);
-        incoming.forEach(function (value, key) {
-          var k = String(key || '');
-          if (!k || k.toLowerCase() === 'cert') return;
-          var pass =
-            /^utm_/i.test(k) ||
-            /^(yclid|gclid|gbraid|wbraid|ysclid|ymclid|yadclid|from)$/i.test(k) ||
-            /^\{.+\}$/.test(k) ||
-            /^(campaign_id|ad_id|keyword|banner_id|phrase_id|gbid|adtarget_id)$/i.test(k);
-          if (pass) dest.searchParams.set(k, value);
-        });
-        if (!dest.searchParams.get('cert')) {
-          dest.searchParams.set('cert', 'RwL6uyd4W3l7');
+      var label = ((a.getAttribute("aria-label") || a.textContent || "") + "");
+      if (/задать вопрос|telegram|whatsapp/i.test(label) && !/telegram-бот|телеграм-бот|бот —|бот в/i.test(label)) {
+        if (AICEH_LEAK_RE.test(href) || /задать вопрос/i.test(label) || /^telegram$|^whatsapp$/i.test(label.trim())) {
+          a.style.display = "none";
         }
-        a.setAttribute('href', dest.toString());
-      } catch (err) { /* leave original href */ }
-    }, true);
-  </script>
-  <!-- noscript-пиксель Метрики: после подстановки COUNTER_ID можно добавить
-       <noscript><div><img src="https://mc.yandex.ru/watch/ID" style="position:absolute;left:-9999px" alt=""></div></noscript>
-  -->
+      }
+    });
+    var apply = document.getElementById("apply");
+    if (apply) {
+      apply.querySelectorAll("form,input,textarea,select,label").forEach(function (n) { n.style.display = "none"; });
+      apply.querySelectorAll("p,span,div").forEach(function (n) {
+        var t = (n.textContent || "").replace(/\s+/g, " ").trim();
+        if (/напишет вам в telegram|открыть telegram|ник в telegram|отправить заявку|соглашаетесь на обработку/i.test(t) && t.length < 280) {
+          n.style.display = "none";
+        }
+      });
+      if (!apply.querySelector("[data-aiceh-partner]")) {
+        var btn = document.createElement("a");
+        btn.setAttribute("data-aiceh-partner", "1");
+        btn.textContent = "Оставить заявку";
+        btn.href = aicehCertUrl();
+        btn.className = "inline-flex min-h-[56px] items-center justify-center px-8 text-[15px] font-black uppercase";
+        btn.style.cssText = "background:var(--acc,#F4652A);color:#160801;border-radius:12px;text-decoration:none;margin-top:1rem";
+        apply.appendChild(btn);
+      }
+    }
+  }
+  document.addEventListener("click", function (e) {
+    if (aicehIsLead(e.target)) aicehGoLead(e);
+  }, true);
+  document.addEventListener("auxclick", function (e) {
+    if (aicehIsLead(e.target)) aicehGoLead(e);
+  }, true);
+  document.addEventListener("submit", function (e) {
+    aicehGoLead(e);
+  }, true);
+  var _open = window.open;
+  window.open = function (url) {
+    var u = url == null ? "" : String(url);
+    if (AICEH_LEAK_RE.test(u)) {
+      if (typeof ym === "function") ym(112187050,'reachGoal','lead');
+      location.href = aicehCertUrl();
+      return null;
+    }
+    return _open.apply(this, arguments);
+  };
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", aicehScrub);
+  } else {
+    aicehScrub();
+  }
+  new MutationObserver(aicehScrub).observe(document.documentElement, { childList: true, subtree: true });
+</script>
+
 </body>
 </html>
