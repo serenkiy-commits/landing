@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Помогите ребенку-одиночке стать своим в компаниях и найти друзей</title>
+  <link rel="canonical" href="https://snezhko.ru/ukids/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://snezhko.ru/ukids/" />
+  <meta property="og:title" content="Помогите ребенку-одиночке стать своим в компаниях и найти друзей" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta name="description" content="Бесплатный онлайн-семинар с педагогом-психологом для родителей детей 6–15 лет. Неделя обучения в Ukids в подарок." />
+  <script>
+    var COUNTER_ID = 112187050;
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t); a = e.getElementsByTagName(t)[0];
+      k.async = 1; k.src = r; a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(COUNTER_ID, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+  <style>
+    :root { --bg:#0f3d36; --card:#116256; --gold:#dfc789; --text:#f7f1e4; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      background: radial-gradient(1200px 600px at 20% -10%, #1a6b5c 0%, var(--bg) 55%, #0a2a25 100%);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+    main {
+      width: min(720px, 100%);
+      background: var(--card);
+      border-radius: 28px;
+      padding: 40px 32px 36px;
+      box-shadow: 0 24px 60px rgba(0,0,0,.28);
+    }
+    .eyebrow {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 14px;
+    }
+    h1 {
+      margin: 0 0 20px;
+      font-size: clamp(28px, 5vw, 40px);
+      line-height: 1.2;
+      font-weight: 700;
+    }
+    p { margin: 0 0 14px; font-size: 18px; line-height: 1.5; }
+    .gift {
+      margin: 22px 0 28px;
+      padding: 14px 16px;
+      border: 1px solid rgba(223,199,137,.45);
+      border-radius: 14px;
+      color: var(--gold);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+    }
+    a.cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      padding: 0 28px;
+      background: var(--gold);
+      color: #116256;
+      text-decoration: none;
+      border-radius: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+    }
+    a.cta:hover { filter: brightness(1.05); }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Онлайн-семинар · 60 минут</p>
+    <h1>Помогите ребенку-одиночке стать своим в компаниях и найти друзей</h1>
+    <p>Бесплатный онлайн-семинар с педагогом-психологом. Для родителей детей 6–15 лет.</p>
+    <p class="gift">Подарок каждому участнику: неделя обучения в Ukids</p>
+    <a class="cta" data-ukids-partner="1" href="https://online-u4eba.ru/2771570">Записаться на семинар</a>
+  </main>
+  <script>
+    var UKIDS_PARTNER = "https://online-u4eba.ru/2771570";
+    function ukidsPartnerUrl() {
+      var dest = new URL(UKIDS_PARTNER);
+      try {
+        new URLSearchParams(location.search).forEach(function (value, key) {
+          var k = String(key || "");
+          if (!k) return;
+          var pass = /^utm_/i.test(k) || /^(yclid|gclid|gbraid|wbraid|ysclid|ymclid|yadclid|from)$/i.test(k) || /^\{.+\}$/.test(k);
+          if (pass) dest.searchParams.set(k, value);
+        });
+      } catch (err) {}
+      return dest.toString();
+    }
+    function ukidsGoLead(ev) {
+      if (ev) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        if (ev.stopImmediatePropagation) ev.stopImmediatePropagation();
+      }
+      if (typeof ym === "function") ym(112187050, "reachGoal", "ukids_lead");
+      location.href = ukidsPartnerUrl();
+      return false;
+    }
+    document.addEventListener("click", function (e) {
+      var node = e.target && e.target.closest && e.target.closest("a,button,[role=button]");
+      if (node) ukidsGoLead(e);
+    }, true);
+    document.addEventListener("submit", function (e) { ukidsGoLead(e); }, true);
+  </script>
+</body>
+</html>
