@@ -145,6 +145,19 @@
   #apply button[type="submit"] {
     display: none !important;
   }
+  /* Single centered partner CTA — no two-column «или / Telegram» leftover */
+  #apply.aiceh-single-cta > div.relative:not(.pointer-events-none) {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  #apply.aiceh-single-cta a[data-aiceh-partner] {
+    display: inline-flex !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 </style>
 <script>
   var COUNTER_ID = 112187050;
@@ -216,22 +229,66 @@
     });
     var apply = document.getElementById("apply");
     if (apply) {
-      apply.querySelectorAll("form,input,textarea,select,label").forEach(function (n) { n.style.display = "none"; });
-      apply.querySelectorAll("p,span,div").forEach(function (n) {
+      apply.classList.add("aiceh-single-cta");
+      apply.querySelectorAll("form,input,textarea,select,label").forEach(function (n) {
+        n.style.setProperty("display", "none", "important");
+      });
+      var ctas = [];
+      apply.querySelectorAll("a,button,[role=button]").forEach(function (n) {
+        var t = ((n.textContent || n.value || "") + "").replace(/\s+/g, " ").trim();
+        if (/оставить заявку/i.test(t)) ctas.push(n);
+      });
+      var keep = null;
+      if (ctas.length) {
+        for (var i = 0; i < ctas.length; i++) {
+          if (!ctas[i].getAttribute("data-aiceh-partner")) { keep = ctas[i]; break; }
+        }
+        if (!keep) keep = ctas[0];
+        ctas.forEach(function (n) {
+          if (n !== keep) n.style.setProperty("display", "none", "important");
+        });
+        keep.setAttribute("data-aiceh-partner", "1");
+        if (keep.tagName === "A") {
+          keep.setAttribute("href", aicehCertUrl());
+          keep.removeAttribute("target");
+        }
+      } else if (!apply.querySelector("[data-aiceh-partner]")) {
+        keep = document.createElement("a");
+        keep.setAttribute("data-aiceh-partner", "1");
+        keep.textContent = "Оставить заявку";
+        keep.href = aicehCertUrl();
+        keep.className = "inline-flex min-h-[56px] items-center justify-center px-8 text-[15px] font-black uppercase";
+        keep.style.cssText = "background:var(--acc,#F4652A);color:#160801;border-radius:12px;text-decoration:none;margin-top:1rem";
+        apply.appendChild(keep);
+      }
+      apply.querySelectorAll("p,span,div,a,button").forEach(function (n) {
+        if (n.getAttribute && n.getAttribute("data-aiceh-partner")) return;
+        if (n.querySelector && n.querySelector("[data-aiceh-partner]")) return;
         var t = (n.textContent || "").replace(/\s+/g, " ").trim();
-        if (/напишет вам в telegram|открыть telegram|ник в telegram|отправить заявку|соглашаетесь на обработку/i.test(t) && t.length < 280) {
-          n.style.display = "none";
+        if (!t) return;
+        var hideExactOr = /^или$/i.test(t);
+        var hideCopy = /не готовы оставлять телефон|задать вопрос в telegram|напишет вам в telegram|открыть telegram|ник в telegram|отправить заявку|соглашаетесь на обработку/i.test(t);
+        if ((hideExactOr || hideCopy) && t.length <= 800) {
+          n.style.setProperty("display", "none", "important");
         }
       });
-      if (!apply.querySelector("[data-aiceh-partner]")) {
-        var btn = document.createElement("a");
-        btn.setAttribute("data-aiceh-partner", "1");
-        btn.textContent = "Оставить заявку";
-        btn.href = aicehCertUrl();
-        btn.className = "inline-flex min-h-[56px] items-center justify-center px-8 text-[15px] font-black uppercase";
-        btn.style.cssText = "background:var(--acc,#F4652A);color:#160801;border-radius:12px;text-decoration:none;margin-top:1rem";
-        apply.appendChild(btn);
-      }
+      var empty = Array.prototype.slice.call(apply.querySelectorAll("div,p,span"));
+      empty.reverse().forEach(function (n) {
+        if (n.id === "apply") return;
+        if (n.getAttribute && n.getAttribute("data-aiceh-partner")) return;
+        if (n.querySelector && n.querySelector("[data-aiceh-partner]")) return;
+        var visible = ((n.innerText || "") + "").replace(/\s+/g, " ").trim();
+        if (!visible) n.style.setProperty("display", "none", "important");
+      });
+      Array.prototype.forEach.call(apply.children, function (n) {
+        if (!n || n.tagName !== "DIV") return;
+        if (n.getAttribute("aria-hidden") === "true" || (n.classList && n.classList.contains("pointer-events-none"))) return;
+        n.style.display = "flex";
+        n.style.flexDirection = "column";
+        n.style.alignItems = "center";
+        n.style.justifyContent = "center";
+        n.style.textAlign = "center";
+      });
     }
   }
   document.addEventListener("click", function (e) {
