@@ -27,28 +27,39 @@ aria-label="Закрыть диалоговое окно"> <svg role="presentati
   height:auto !important;
 }
 @media screen and (min-width:960px) and (max-width:1199px){
-  #rec890501980 .t396__artboard{
-    overflow:hidden !important;
-    background-color:#ffffff !important;
-  }
-  #rec890501980 .t396__carrier{
-    background-color:transparent !important;
-  }
-  #rec890501980 .tn-elem[data-elem-id="1729416677195"],
-  #rec890501980 .tn-elem[data-elem-id="1729416677195"] .tn-atom{
-    overflow:visible !important;
-    height:auto !important;
+  #rec890501980 .t396__artboard,
+  #rec890501980 .t396__filter,
+  #rec890501980 .t396__carrier{ height:980px !important; }
+  #rec890501980 .tn-elem[data-elem-id="1729416677195"]{
+    width:220px !important;
+    min-height:40px !important;
   }
   #rec890501980 .tn-elem[data-elem-id="1729417143315"]{
-    height:auto !important;
-    min-height:200px !important;
-    overflow:visible !important;
+    min-height:220px !important;
+    padding-bottom:16px !important;
+    box-sizing:content-box !important;
   }
   #rec890501980 .tn-elem[data-elem-id="1729417428852"],
   #rec890501980 .tn-elem[data-elem-id="1729417428852"] .tn-atom{
     height:auto !important;
     overflow:visible !important;
   }
+  #rec890501980 .tn-elem[data-elem-id="1729417428852"]{ top:260px !important; }
+  #rec890501980 .tn-elem[data-elem-id="1729417389440"]{ top:260px !important; }
+  #rec890501980 .tn-elem[data-elem-id="1734932490198"],
+  #rec890501980 .tn-elem[data-elem-id="1734932490217"],
+  #rec890501980 .tn-elem[data-elem-id="1734932490204"],
+  #rec890501980 .tn-elem[data-elem-id="1734932490213"],
+  #rec890501980 .tn-elem[data-elem-id="1768890679527000003"],
+  #rec890501980 .tn-elem[data-elem-id="1768890679527000004"]{ top:400px !important; }
+  #rec890501980 .tn-elem[data-elem-id="1748436364823"]{ top:460px !important; }
+  #rec890501980 .tn-elem[data-elem-id="1729417591747"]{ top:520px !important; }
+  #rec890501980 .tn-elem[data-elem-id="1721859478893"],
+  #rec890501980 .tn-elem[data-elem-id="1729417856752"]{ top:640px !important; }
+  #rec890501980 .tn-elem[data-elem-id="1721859478900"],
+  #rec890501980 .tn-elem[data-elem-id="1721942389276"],
+  #rec890501980 .tn-elem[data-elem-id="1729417856754"],
+  #rec890501980 .tn-elem[data-elem-id="1721942389160"]{ top:659px !important; }
 }
 @media screen and (min-width:1200px) and (max-width:1439px){
   #rec890501980 .t396__artboard,
@@ -484,9 +495,7 @@ window.tildastatscroll='yes';(function(d,w,k,o,g) {var n=d.getElementsByTagName(
   }
   function ukidsSetTop(el, top) {
     if (!el) return;
-    var y = Math.round(top);
-    el.style.setProperty("top", y + "px", "important");
-    if (ukidsIs960()) el.setAttribute("data-field-top-res-960-value", String(y));
+    el.style.setProperty("top", Math.round(top) + "px", "important");
   }
   function ukidsLayTop(el) { return el ? el.offsetTop : 0; }
   function ukidsLayBottom(el) {
@@ -515,53 +524,38 @@ window.tildastatscroll='yes';(function(d,w,k,o,g) {var n=d.getElementsByTagName(
     if (tag && rec.offsetWidth >= 960) {
       tag.style.setProperty("height", "auto", "important");
       tag.style.setProperty("overflow", "visible", "important");
-      var needH1 = (ukidsIs960() ? ukidsLayBottom(tag) : ukidsBox(tag, art).bottom) + 12;
-      var h1Top = ukidsIs960() ? ukidsLayTop(h1) : ukidsBox(h1, art).top;
-      if (h1Top < needH1) ukidsSetTop(h1, needH1);
+      var needH1 = ukidsBox(tag, art).bottom + 12;
+      if (ukidsBox(h1, art).top < needH1) ukidsSetTop(h1, needH1);
     }
-    var giftTop = ukidsIs960() ? ukidsLayBottom(h1) + 16 : ukidsBox(h1, art).bottom + 18;
+    var giftTop = ukidsBox(h1, art).bottom + 18;
     ukidsSetTop(icon, giftTop);
     ukidsSetTop(sub, giftTop);
     sub.style.setProperty("height", "auto", "important");
     sub.style.setProperty("overflow", "visible", "important");
-    var subAtom = sub.querySelector(".tn-atom") || sub;
-    subAtom.style.setProperty("height", "auto", "important");
-    if (ukidsIs960()) ukidsSetTop(icon, ukidsLayTop(sub) || giftTop);
-    var giftBottom = Math.max(ukidsLayBottom(icon), ukidsLayBottom(sub), ukidsLayBottom(subAtom)) + (ukidsIs960() ? 16 : 28);
+    var giftBottom = Math.max(ukidsBox(icon, art).bottom, ukidsBox(sub, art).bottom) + 16;
     ["1734932490198","1734932490217","1734932490204","1734932490213","1768890679527000003","1768890679527000004"].forEach(function (id) {
       var el = rec.querySelector('[data-elem-id="' + id + '"]');
       if (!el) return;
-      if (ukidsIs960() || ukidsLayTop(el) < giftBottom) ukidsSetTop(el, giftBottom);
+      if (ukidsBox(el, art).top < giftBottom) ukidsSetTop(el, giftBottom);
     });
-    if (ukidsIs960()) ukidsSetTop(icon, ukidsLayTop(sub));
     var btn = rec.querySelector('[data-elem-id="1734932490198"]');
     var legal = rec.querySelector('[data-elem-id="1748436364823"]');
     if (btn && legal) {
-      var need = (ukidsIs960() ? ukidsLayBottom(btn) : ukidsBox(btn, art).bottom) + 8;
-      var legalTop = ukidsIs960() ? ukidsLayTop(legal) : ukidsBox(legal, art).top;
-      if (ukidsIs960() || legalTop < need) ukidsSetTop(legal, need);
+      var need = ukidsBox(btn, art).bottom + 8;
+      if (ukidsBox(legal, art).top < need) ukidsSetTop(legal, need);
     }
     var msg = rec.querySelector('[data-elem-id="1729417591747"]');
     if (msg) {
       msg.style.setProperty("height", "auto", "important");
-      var below = legal
-        ? ((ukidsIs960() ? ukidsLayBottom(legal) : ukidsBox(legal, art).bottom) + 16)
-        : giftBottom + 70;
-      var msgTop = ukidsIs960() ? ukidsLayTop(msg) : ukidsBox(msg, art).top;
-      if (ukidsIs960() || msgTop < below) ukidsSetTop(msg, below);
-      var cardTop = (ukidsIs960() ? ukidsLayBottom(msg) : ukidsBox(msg, art).bottom) + 18;
+      var below = legal ? ukidsBox(legal, art).bottom + 16 : giftBottom + 70;
+      if (ukidsBox(msg, art).top < below) ukidsSetTop(msg, below);
+      var cardTop = ukidsBox(msg, art).bottom + 18;
       ["1721859478893","1721859478900","1721942389276","1729417856752","1729417856754","1721942389160"].forEach(function (id) {
         var el = rec.querySelector('[data-elem-id="' + id + '"]');
         if (!el) return;
-        var elTop = ukidsIs960() ? ukidsLayTop(el) : ukidsBox(el, art).top;
-        if (ukidsIs960() || elTop < cardTop) ukidsSetTop(el, cardTop);
+        if (ukidsBox(el, art).top < cardTop) ukidsSetTop(el, cardTop);
       });
     }
-    ukidsFitHeroArtboard(rec, art);
-  }
-
-  function ukidsFitHeroArtboard(rec, art) {
-    if (!rec || !art) return;
     var maxB = 0;
     rec.querySelectorAll(".t396__elem").forEach(function (el) {
       if (el.offsetWidth < 2 || el.offsetHeight < 2) return;
@@ -569,18 +563,12 @@ window.tildastatscroll='yes';(function(d,w,k,o,g) {var n=d.getElementsByTagName(
       var b = el.offsetTop + el.offsetHeight;
       if (b > maxB) maxB = b;
     });
-    if (maxB < 80) return;
-    var next = Math.ceil(maxB + 24);
-    var apply = ukidsIs960() || next > art.clientHeight;
-    if (!apply) return;
-    [art, rec.querySelector(".t396__filter"), rec.querySelector(".t396__carrier")].forEach(function (n) {
-      if (!n) return;
-      if (ukidsIs960()) {
-        n.style.removeProperty("--initial-scale-height");
-        n.style.setProperty("--initial-scale-height", next + "px");
-      }
-      n.style.setProperty("height", next + "px", "important");
-    });
+    if (maxB + 28 > art.clientHeight) {
+      var hh = Math.ceil(maxB + 28) + "px";
+      [art, rec.querySelector(".t396__filter"), rec.querySelector(".t396__carrier")].forEach(function (n) {
+        if (n) n.style.setProperty("height", hh, "important");
+      });
+    }
   }
 
   function ukidsGrowArtboard(rec, art) {
@@ -672,7 +660,7 @@ window.tildastatscroll='yes';(function(d,w,k,o,g) {var n=d.getElementsByTagName(
   else ukidsHookT396();
   function ukidsScheduleHeroFix() {
     ukidsFixAllOverlaps();
-    [80, 250, 700, 1400, 2200].forEach(function (t) { setTimeout(ukidsFixAllOverlaps, t); });
+    [80, 250, 700, 1400].forEach(function (t) { setTimeout(ukidsFixAllOverlaps, t); });
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", ukidsScheduleHeroFix);
   else ukidsScheduleHeroFix();
