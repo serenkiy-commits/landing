@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ru" class="dark">
+  <head>
+    <base href="/aiceh/">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      ИКОНКА САЙТА (24.08.2026). Во вкладке висела ФИОЛЕТОВАЯ молния — цвет
+      остался от макета и не совпадал с сайтом ни в одном тоне. Правка владельца
+      была про цвет, и только про него: «я просил оранжевую молнию». Форма знака
+      прежняя, перекрашены четыре роли — разбор в комментарии внутри
+      `public/favicon.svg` (там же про снятый display-p3, из-за которого
+      перекраска одного hex ничего бы не изменила на макбуке).
+
+      ТРИ ФАЙЛА, А НЕ ОДИН. SVG понимают не все: часть браузеров и почтовых
+      клиентов молча идут за `/aiceh/favicon.ico` (его в `public/` не было вовсе, и
+      они получали 404 с иконкой по умолчанию), iOS для ярлыка на домашнем
+      экране берёт `apple-touch-icon.png`. Порядок строк важен: браузер с
+      поддержкой SVG выбирает его, остальные откатываются на ICO.
+
+      `?v=` ОБЯЗАТЕЛЕН — это то же правило, что MEDIA_REV и SERVICES_REV.
+      Файлы из `public/` Vite не хеширует, имя не изменилось, а иконку браузер
+      кэширует особенно упрямо: без метки владелец продолжил бы видеть молнию
+      и завёл бы правку «не заменилось» — ровно как вышло с кадром клуба
+      19.08. Меняем иконку — поднимаем цифру во всех трёх строках.
+    -->
+    <link rel="icon" href="/aiceh/favicon.ico?v=3" sizes="32x32" />
+    <link rel="icon" type="image/svg+xml" href="/aiceh/favicon.svg?v=3" />
+    <link rel="apple-touch-icon" href="/aiceh/apple-touch-icon.png?v=3" />
+    <!-- Заголовок и описание держим синхронно с meta.title / hero в src/content.json -->
+    <title>AI.ЦЕХ — За 8 недель вы соберёте свой сервис — сами</title>
+    <meta
+      name="description"
+      content="AI.ЦЕХ — практическая программа Никиты Велса: за 8 недель вы соберёте не пять учебных систем, а одну свою, которая закрывает ваши задачи, — веб-сервис, агенты, автоматизация. На Claude Code, без программирования."
+    />
+
+    <!--
+      ПРЕВЬЮ ССЫЛКИ В МЕССЕНДЖЕРАХ (20.08.2026, предзапусковый аудит).
+
+      До этого не было ни одного тега `og:`, и ссылка на сайт разворачивалась в
+      Telegram и WhatsApp голым адресом — без картинки, заголовка и описания. Для
+      проекта, у которого мессенджеры основной канал, это прямая потеря переходов на
+      самом дешёвом трафике.
+
+      Адрес подставляется при сборке (`VITE_SITE_URL`, значение по умолчанию — в
+      `.env`). Абсолютный адрес обязателен: краулеры мессенджеров не исполняют JS и
+      не умеют достраивать относительные пути. При переезде на боевой домен меняется
+      одна переменная, а не пять тегов.
+
+      КАРТИНКА — СНИМОК ПЕРВОГО ЭКРАНА (24.08.2026). Правка владельца: «только
+      скрин с hero». До этого `og.jpg` был отдельной карточкой — тот же кадр и те
+      же шрифты, но собранные заново; в превью она читалась крупнее, зато
+      показывала не сайт, а вёрстку по его мотивам. Теперь это снимок боевой
+      страницы, снятый в окне ровно 1200×630 при двойной плотности и уменьшенный
+      вдвое: на 1200px в кадр помещается шапка, заголовок, подзаголовок и кнопка
+      заявки, а гигантское слово-подложка остаётся полоской по нижнему краю.
+      Снимать шире нельзя — на 1440px заголовок занимает меньшую долю кадра и в
+      ленте Telegram мельчает.
+
+      ЦЕНА РЕШЕНИЯ, О КОТОРОЙ НАДО ПОМНИТЬ: карточка теперь устаревает вместе с
+      первым экраном. Меняется заголовок, кнопка или кадр Никиты — снимок надо
+      переснять, иначе в мессенджерах поедет прошлая версия сайта.
+
+      `?v=` У КАРТИНКИ — не украшение. Имя файла не меняется, а Telegram и
+      WhatsApp держат картинку у себя. Без метки они продолжат отдавать
+      предыдущую карточку. Меняем `og.jpg` — поднимаем цифру в обеих строках
+      (`og:image` и `twitter:image`).
+
+      ЧЕГО МЕТКА НЕ ЧИНИТ: Telegram кэширует ещё и саму страницу, по её адресу.
+      Если ссылку уже отправляли и превью не показалось, новых тегов он не
+      увидит, сколько ни меняй файл, — кэш снимается только вручную, отправкой
+      адреса боту @WebpageBot. Именно так и вышло 22.08: Никита кинул ссылку в
+      чат, когда на сайте ещё стоял `X-Robots-Tag: noindex`, краулер честно
+      отказался строить превью, и этот отказ у него сохранился.
+    -->
+    <link rel="canonical" href="https://snezhko.ru/aiceh/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AI.ЦЕХ" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:url" content="https://snezhko.ru/aiceh/" />
+    <meta property="og:title" content="AI.ЦЕХ — за 8 недель вы соберёте свой сервис — сами" />
+    <meta
+      property="og:description"
+      content="Не пять учебных систем — одну свою, которая закрывает ваши задачи. Программа Никиты Велса на Claude Code: 9 блоков, 65 тем, проект в каждом блоке."
+    />
+    <meta property="og:image" content="https://snezhko.ru/aiceh/og.jpg?v=2" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="AI.ЦЕХ — за 8 недель вы соберёте свой сервис сами" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AI.ЦЕХ — за 8 недель вы соберёте свой сервис — сами" />
+    <meta
+      name="twitter:description"
+      content="Не пять учебных систем — одну свою, которая закрывает ваши задачи. Программа Никиты Велса на Claude Code."
+    />
+    <meta name="twitter:image" content="https://snezhko.ru/aiceh/og.jpg?v=2" />
+    <meta name="theme-color" content="#0F0F12" />
+    <!--
+      ГАРНИТУРЫ ТЕПЕРЬ СВОИ (21.08.2026). Тег <link> на Google Fonts и два
+      preconnect сняты: файлы лежат у нас и подключаются из src/fonts.css, а
+      сборщик подставляет им базу и хеш. Что это дало по замеру: минус два чужих
+      домена с отдельными DNS и TLS на канале с задержкой 300 мс, меньше скачков
+      вёрстки при подмене шрифта и никакой передачи IP посетителя за границу.
+    -->
+
+    <!--
+      Первый экран: кадр «мой кадр» — значение DEFAULT_PREFS в
+      src/variants/proto/full/bg-prefs.ts, он же LCP страницы.
+
+      `imagesrcset` обязателен и повторяет набор из разметки. Без него телефон качал
+      кадр ДВАЖДЫ: предзагрузка тянула широкий файл на 74 КБ, а сама картинка по
+      своему `srcset` брала половинный на 28 КБ — сто килобайт лишнего трафика на
+      первом же экране ровно там, где канал самый узкий.
+
+      Подложка «угли» отсюда убрана: она показывается только в режиме «без кадра»,
+      которого нет в значениях по умолчанию, — предзагрузка тратила трафик впустую.
+    -->
+    <link
+      rel="preload"
+      as="image"
+      href="/aiceh/media/proto/full/hero/hero-vert.webp"
+      imagesrcset="/aiceh/media/proto/full/hero/hero-vert@1280.webp 1280w, /aiceh/media/proto/full/hero/hero-vert.webp 2048w"
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
+    <script type="module" crossorigin src="/aiceh/assets/index-rnIkJbFx.js"></script>
+    <link rel="stylesheet" crossorigin href="/aiceh/assets/index-D7M5g9Y8.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  
+<script>
+  var COUNTER_ID = 112187050;
+  (function () {
+    if (!(COUNTER_ID > 0)) return;
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t); a = e.getElementsByTagName(t)[0];
+      k.async = 1; k.src = r; a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(COUNTER_ID, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  })();
+  function aicehCertUrl() {
+    var dest = new URL("https://platform.nickvels.ru/ref/sertifikat?cert=RwL6uyd4W3l7");
+    try {
+      new URLSearchParams(location.search).forEach(function (value, key) {
+        var k = String(key || "");
+        if (!k || k.toLowerCase() === "cert") return;
+        var pass = /^utm_/i.test(k) || /^(yclid|gclid|gbraid|wbraid|ysclid|ymclid|yadclid|from)$/i.test(k) || /^\{.+\}$/.test(k);
+        if (pass) dest.searchParams.set(k, value);
+      });
+    } catch (err) {}
+    if (!dest.searchParams.get("cert")) dest.searchParams.set("cert", "RwL6uyd4W3l7");
+    return dest.toString();
+  }
+  function aicehGoLead(ev) {
+    if (ev) { ev.preventDefault(); ev.stopPropagation(); if (ev.stopImmediatePropagation) ev.stopImmediatePropagation(); }
+    if (typeof ym === "function" && COUNTER_ID > 0) ym(COUNTER_ID, "reachGoal", "lead");
+    location.href = aicehCertUrl();
+    return false;
+  }
+  function aicehIsLead(el) {
+    if (!el || !el.closest) return null;
+    var node = el.closest("a,button,input,[role=button]");
+    if (!node) return null;
+    var text = ((node.textContent || node.value || "") + "").replace(/\s+/g, " ").trim().toLowerCase();
+    var href = (node.getAttribute && (node.getAttribute("href") || "")) || "";
+    if (/оставить заявку/.test(text)) return node;
+    if (/узнать,\s*подойд[её]т ли мне/.test(text)) return node;
+    if (/#apply/.test(href)) return node;
+    if (node.closest && node.closest("form") && ((node.getAttribute && node.getAttribute("type")) === "submit" || node.type === "submit")) return node;
+    return null;
+  }
+  document.addEventListener("click", function (e) {
+    if (aicehIsLead(e.target)) aicehGoLead(e);
+  }, true);
+  document.addEventListener("submit", function (e) {
+    aicehGoLead(e);
+  }, true);
+</script>
+
+</body>
+</html>
