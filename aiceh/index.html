@@ -128,7 +128,24 @@
   </head>
   <body>
     <div id="root"></div>
-  
+<style id="aiceh-lock">
+  a[href*="t.me"],
+  a[href*="telegram.me"],
+  a[href*="telegram.org"],
+  a[href*="wa.me"],
+  a[href*="whatsapp"],
+  a[aria-label*="Telegram" i],
+  a[aria-label*="WhatsApp" i],
+  a[aria-label*="Задать вопрос" i],
+  #apply form,
+  #apply input,
+  #apply textarea,
+  #apply select,
+  #apply label,
+  #apply button[type="submit"] {
+    display: none !important;
+  }
+</style>
 <script>
   var COUNTER_ID = 112187050;
   (function () {
@@ -155,29 +172,93 @@
     return dest.toString();
   }
   function aicehGoLead(ev) {
-    if (ev) { ev.preventDefault(); ev.stopPropagation(); if (ev.stopImmediatePropagation) ev.stopImmediatePropagation(); }
+    if (ev) {
+      ev.preventDefault();
+      ev.stopPropagation();
+      if (ev.stopImmediatePropagation) ev.stopImmediatePropagation();
+    }
     if (typeof ym === "function") ym(112187050,'reachGoal','lead');
     location.href = aicehCertUrl();
     return false;
   }
+  var AICEH_LEAD_RE = /оставить заявку|отправить заявку|пройти личный отбор|хочу на программу|узнать,\s*подойд[её]т ли мне|задать вопрос|открыть telegram|менеджер напишет/i;
+  var AICEH_LEAK_RE = /t\.me|telegram\.me|telegram\.org|wa\.me|whatsapp|nick9267|4JPA37amFGJlNjJi|FT5KCVMF4YCOE1/i;
+  function aicehHrefOf(node) {
+    if (!node) return "";
+    return ((node.getAttribute && node.getAttribute("href")) || node.href || "") + "";
+  }
   function aicehIsLead(el) {
     if (!el || !el.closest) return null;
-    var node = el.closest("a,button,input,[role=button]");
+    var node = el.closest("a,button,input,[role=button],label");
     if (!node) return null;
-    var text = ((node.textContent || node.value || "") + "").replace(/\s+/g, " ").trim().toLowerCase();
-    var href = (node.getAttribute && (node.getAttribute("href") || "")) || "";
-    if (/оставить заявку/.test(text)) return node;
-    if (/узнать,\s*подойд[её]т ли мне/.test(text)) return node;
-    if (/#apply/.test(href)) return node;
+    var text = ((node.textContent || node.value || node.getAttribute && node.getAttribute("aria-label") || "") + "").replace(/\s+/g, " ").trim();
+    var href = aicehHrefOf(node);
+    if (AICEH_LEAK_RE.test(href) || AICEH_LEAK_RE.test(text)) return node;
+    if (AICEH_LEAD_RE.test(text)) return node;
+    if (/#apply/i.test(href)) return node;
     if (node.closest && node.closest("form") && ((node.getAttribute && node.getAttribute("type")) === "submit" || node.type === "submit")) return node;
     return null;
   }
+  function aicehScrub() {
+    document.querySelectorAll("a[href],area[href]").forEach(function (a) {
+      var href = aicehHrefOf(a);
+      if (AICEH_LEAK_RE.test(href)) {
+        a.setAttribute("href", aicehCertUrl());
+        a.removeAttribute("target");
+        a.style.display = "none";
+      }
+      var label = ((a.getAttribute("aria-label") || a.textContent || "") + "");
+      if (/задать вопрос|telegram|whatsapp/i.test(label) && !/telegram-бот|телеграм-бот|бот —|бот в/i.test(label)) {
+        if (AICEH_LEAK_RE.test(href) || /задать вопрос/i.test(label) || /^telegram$|^whatsapp$/i.test(label.trim())) {
+          a.style.display = "none";
+        }
+      }
+    });
+    var apply = document.getElementById("apply");
+    if (apply) {
+      apply.querySelectorAll("form,input,textarea,select,label").forEach(function (n) { n.style.display = "none"; });
+      apply.querySelectorAll("p,span,div").forEach(function (n) {
+        var t = (n.textContent || "").replace(/\s+/g, " ").trim();
+        if (/напишет вам в telegram|открыть telegram|ник в telegram|отправить заявку|соглашаетесь на обработку/i.test(t) && t.length < 280) {
+          n.style.display = "none";
+        }
+      });
+      if (!apply.querySelector("[data-aiceh-partner]")) {
+        var btn = document.createElement("a");
+        btn.setAttribute("data-aiceh-partner", "1");
+        btn.textContent = "Оставить заявку";
+        btn.href = aicehCertUrl();
+        btn.className = "inline-flex min-h-[56px] items-center justify-center px-8 text-[15px] font-black uppercase";
+        btn.style.cssText = "background:var(--acc,#F4652A);color:#160801;border-radius:12px;text-decoration:none;margin-top:1rem";
+        apply.appendChild(btn);
+      }
+    }
+  }
   document.addEventListener("click", function (e) {
+    if (aicehIsLead(e.target)) aicehGoLead(e);
+  }, true);
+  document.addEventListener("auxclick", function (e) {
     if (aicehIsLead(e.target)) aicehGoLead(e);
   }, true);
   document.addEventListener("submit", function (e) {
     aicehGoLead(e);
   }, true);
+  var _open = window.open;
+  window.open = function (url) {
+    var u = url == null ? "" : String(url);
+    if (AICEH_LEAK_RE.test(u)) {
+      if (typeof ym === "function") ym(112187050,'reachGoal','lead');
+      location.href = aicehCertUrl();
+      return null;
+    }
+    return _open.apply(this, arguments);
+  };
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", aicehScrub);
+  } else {
+    aicehScrub();
+  }
+  new MutationObserver(aicehScrub).observe(document.documentElement, { childList: true, subtree: true });
 </script>
 
 </body>
