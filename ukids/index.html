@@ -734,12 +734,11 @@ window.tildastatscroll='yes';(function(d,w,k,o,g) {var n=d.getElementsByTagName(
       });
     }
     if (green) {
-      var needH = Math.max(
-        ukidsLayBottom(btn),
-        ukidsLayBottom(week),
-        hint ? ukidsLayBottom(hint) : 0,
-        label ? ukidsLayBottom(label) : 0
-      ) - ukidsLayTop(green) + 24;
+      var floor = Math.max(ukidsLayBottom(btn), ukidsLayBottom(week));
+      if (ukidsIs960()) {
+        floor = Math.max(floor, hint ? ukidsLayBottom(hint) : 0, label ? ukidsLayBottom(label) : 0);
+      }
+      var needH = floor - ukidsLayTop(green) + 24;
       if (needH > 80) green.style.setProperty("height", Math.round(needH) + "px", "important");
     }
     ukidsGrowArtboard(rec, art);
