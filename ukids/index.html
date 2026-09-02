@@ -30,7 +30,7 @@ aria-label="Закрыть диалоговое окно"> <svg role="presentati
   #rec890501980 .t396__artboard,
   #rec890501980 .t396__filter,
   #rec890501980 .t396__carrier{
-    height:700px !important;
+    height:780px !important;
   }
   #rec890501980 .t396__artboard{
     overflow:hidden !important;
@@ -47,17 +47,17 @@ aria-label="Закрыть диалоговое окно"> <svg role="presentati
     overflow:visible !important;
   }
   #rec890501980 .tn-elem[data-elem-id="1741710817470"]{
-    height:660px !important;
+    height:760px !important;
     overflow:hidden !important;
   }
   #rec890501980 .tn-elem[data-elem-id="1748436364823"]{ top:458px !important; }
   #rec890501980 .tn-elem[data-elem-id="1729417591747"]{ top:490px !important; }
   #rec890501980 .tn-elem[data-elem-id="1721859478893"],
-  #rec890501980 .tn-elem[data-elem-id="1729417856752"]{ top:560px !important; }
+  #rec890501980 .tn-elem[data-elem-id="1729417856752"]{ top:660px !important; }
   #rec890501980 .tn-elem[data-elem-id="1721859478900"],
   #rec890501980 .tn-elem[data-elem-id="1721942389276"],
   #rec890501980 .tn-elem[data-elem-id="1729417856754"],
-  #rec890501980 .tn-elem[data-elem-id="1721942389160"]{ top:579px !important; }
+  #rec890501980 .tn-elem[data-elem-id="1721942389160"]{ top:679px !important; }
   #rec890501980 .tn-elem[data-elem-id="1721859478893"],
   #rec890501980 .tn-elem[data-elem-id="1721859478900"],
   #rec890501980 .tn-elem[data-elem-id="1721942389276"],
@@ -590,12 +590,14 @@ window.tildastatscroll='yes';(function(d,w,k,o,g) {var n=d.getElementsByTagName(
         ? ((ukidsIs960() ? ukidsLayBottom(legal) : ukidsBox(legal, art).bottom) + (ukidsIs960() ? 28 : 16))
         : giftBottom + 70;
       if (ukidsIs960() || ukidsBox(msg, art).top < below) ukidsSetTop(msg, below);
-      var cardTop = (ukidsIs960() ? ukidsLayBottom(msg) : ukidsBox(msg, art).bottom) + 18;
-      ["1721859478893","1721859478900","1721942389276","1729417856752","1729417856754","1721942389160"].forEach(function (id) {
-        var el = rec.querySelector('[data-elem-id="' + id + '"]');
-        if (!el) return;
-        if (ukidsIs960() || ukidsBox(el, art).top < cardTop) ukidsSetTop(el, cardTop);
-      });
+      if (!ukidsIs960()) {
+        var cardTop = ukidsBox(msg, art).bottom + 18;
+        ["1721859478893","1721859478900","1721942389276","1729417856752","1729417856754","1721942389160"].forEach(function (id) {
+          var el = rec.querySelector('[data-elem-id="' + id + '"]');
+          if (!el) return;
+          if (ukidsBox(el, art).top < cardTop) ukidsSetTop(el, cardTop);
+        });
+      }
     }
     if (ukidsIs960()) ukidsPackHero960(rec, art, btn, legal);
     else {
@@ -620,10 +622,24 @@ window.tildastatscroll='yes';(function(d,w,k,o,g) {var n=d.getElementsByTagName(
     var photo = rec.querySelector('[data-elem-id="1729436857613"]');
     var cardBgs = ["1721859478893", "1729417856752"];
     var cardCopy = ["1721859478900", "1721942389276", "1729417856754", "1721942389160"];
+    var messengerBottom = 0;
+    ["1734932490198","1734932490217","1734932490204","1734932490213","1768890679527000003","1768890679527000004"].forEach(function (id) {
+      var el = rec.querySelector('[data-elem-id="' + id + '"]');
+      var b = ukidsLayBottom(el);
+      if (b > messengerBottom) messengerBottom = b;
+    });
+    var photoBottom = 0;
+    if (photo) {
+      var img = photo.querySelector("img");
+      var ph = Math.max(photo.offsetHeight || 0, img && img.offsetHeight || 0, 201);
+      photoBottom = (photo.offsetTop || 284) + ph;
+    }
     var cardTop = Math.max(
+      messengerBottom + 20,
+      legal ? ukidsLayBottom(legal) + 16 : 0,
       msg ? ukidsLayBottom(msg) + 16 : 0,
-      photo ? ukidsLayBottom(photo) + 12 : 0,
-      legal ? ukidsLayBottom(legal) + 56 : 0
+      photoBottom + 16,
+      660
     );
     cardBgs.forEach(function (id) {
       var el = rec.querySelector('[data-elem-id="' + id + '"]');
