@@ -550,7 +550,7 @@ document.getElementById('leadForm').addEventListener('submit', async (e) => {
   btn.textContent = 'Отправляем...';
 
   try {
-    await fetch('https://serenkiy.store/webhook/lead-form', {
+    await fetch('https://n8n.snezhko.store/webhook/lead-form', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ task, telegram, name, timestamp: new Date().toISOString() })

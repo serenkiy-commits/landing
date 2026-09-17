@@ -920,6 +920,10 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center}
             </label>
           </div>
           <button type="submit" class="form-submit"><span style="position:relative;z-index:1">Получить КП бесплатно</span></button>
+          <div id="formError" role="alert" style="display:none;margin-top:12px;color:#e74c3c;font-size:14px;line-height:1.5">
+            Не удалось отправить заявку. Попробуйте ещё раз или
+            <a href="https://t.me/snezhko_sergey" target="_blank" rel="noopener" style="color:var(--amber)">напишите в Telegram</a>.
+          </div>
           <p class="form-note">Бесплатная консультация. Без спама.</p>
         </form>
         <div class="form-success" id="formSuccess">
@@ -1330,17 +1334,31 @@ document.getElementById('leadForm').addEventListener('submit', async (e) => {
   if (!name) { fErr(form.querySelector('[name=name]'), 'Укажите имя'); err = true; }
   if (!consent.checked) { consent.parentElement.querySelector('.consent-check').style.borderColor = '#e74c3c'; err = true; consent.addEventListener('change', () => { consent.parentElement.querySelector('.consent-check').style.borderColor = ''; }, { once: true }); }
   if (err) return;
+  const formError = document.getElementById('formError');
+  if (formError) formError.style.display = 'none';
   btn.disabled = true;
-  btn.querySelector('span').textContent = 'Отправляем...';
+  const btnLabel = btn.querySelector('span');
+  if (btnLabel) btnLabel.textContent = 'Отправляем...';
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 15000);
   try {
-    await fetch('https://serenkiy.store/webhook/lead-form', {
+    const response = await fetch('https://n8n.snezhko.store/webhook/lead-form', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
+      signal: controller.signal,
       body: JSON.stringify({ task, telegram, name, timestamp: new Date().toISOString() })
     });
-  } catch (_) {}
-  form.style.display = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
+    if (!response.ok) throw new Error('Lead webhook HTTP ' + response.status);
+    form.style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  } catch (error) {
+    console.error('Lead submission failed', error);
+    if (formError) formError.style.display = 'block';
+    btn.disabled = false;
+    if (btnLabel) btnLabel.textContent = 'Попробовать ещё раз';
+  } finally {
+    clearTimeout(timeoutId);
+  }
 });
 
 function fErr(input, msg) {
