@@ -318,8 +318,9 @@
   new MutationObserver(aicehScrub).observe(document.documentElement, { childList: true, subtree: true });
 </script>
 <style id="aiceh-x-mark">
+  html, body { position: relative; }
   a#aiceh-x {
-    position: fixed;
+    position: absolute;
     left: 2px;
     bottom: calc(2px + env(safe-area-inset-bottom));
     z-index: 60;
@@ -329,15 +330,15 @@
     padding: 4px;
     box-sizing: content-box;
     color: #9a9aa1;
-    opacity: 0.3;
+    opacity: 0.16;
     line-height: 0;
     text-decoration: none;
   }
   a#aiceh-x:hover {
-    opacity: 0.48;
+    opacity: 0.3;
   }
   a#aiceh-x:focus-visible {
-    opacity: 0.55;
+    opacity: 0.35;
     outline: 1px solid rgba(255, 255, 255, 0.35);
     outline-offset: 2px;
   }
