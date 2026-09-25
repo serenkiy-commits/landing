@@ -317,6 +317,41 @@
   }
   new MutationObserver(aicehScrub).observe(document.documentElement, { childList: true, subtree: true });
 </script>
+<style id="aiceh-x-mark">
+  a#aiceh-x {
+    position: fixed;
+    left: 12px;
+    bottom: calc(10px + env(safe-area-inset-bottom));
+    z-index: 60;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+    box-sizing: content-box;
+    color: #9a9aa1;
+    opacity: 0.3;
+    line-height: 0;
+    text-decoration: none;
+  }
+  a#aiceh-x:hover {
+    opacity: 0.48;
+  }
+  a#aiceh-x:focus-visible {
+    opacity: 0.55;
+    outline: 1px solid rgba(255, 255, 255, 0.35);
+    outline-offset: 2px;
+  }
+  a#aiceh-x svg {
+    display: block;
+    width: 15px;
+    height: 15px;
+  }
+</style>
+<a id="aiceh-x" href="https://vk.ru/club226261628" target="_blank" rel="noopener noreferrer" aria-label="X">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.727-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+  </svg>
+</a>
 
 </body>
 </html>
