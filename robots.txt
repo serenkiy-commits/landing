@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /go/
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid&gclid&subid&erid
+Sitemap: https://snezhko.ru/sitemap.xml
