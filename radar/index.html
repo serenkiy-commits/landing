@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>GitHub Radar | AI-находки: канал в MAX для разработчиков и AI-практиков</title>
+  <meta name="description" content="Ежедневные разборы свежих open-source репозиториев GitHub в мессенджере MAX: AI-агенты, Claude Code, Codex, Rust-утилиты, WebGPU и инструменты автоматизации." />
+  <link rel="canonical" href="https://snezhko.ru/radar/" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://snezhko.ru/radar/" />
+  <meta property="og:title" content="GitHub Radar | AI-находки в MAX" />
+  <meta property="og:description" content="Свежие репозитории GitHub с разбором за 1 минуту: что внутри, какую задачу решает и как запустить." />
+  <meta property="og:image" content="https://i.oneme.ru/i?r=BTFjO43w8Yr1OSJ4tcurq5HiXb_Teb7l5cpc5lyoxP_Is_y4ePJqkr65xxKnGpLOYvo" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f6f8fa;
+      --border: #d0d7de;
+      --text: #1f2328;
+      --muted: #59636e;
+      --accent: #0969da;
+      --accent-hover: #0550ae;
+      --badge-bg: #ddf4ff;
+      --badge-text: #0969da;
+      --star-bg: #fff8c5;
+      --star-text: #9a6700;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 20px 16px 48px;
+    }
+    .hero {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 20px;
+      margin-bottom: 24px;
+    }
+    .channel-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+      flex-shrink: 0;
+      background: #0d1117;
+    }
+    .channel-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .badge {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 12px;
+      font-weight: 600;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+    .channel-name {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.25;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.28;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    .lead {
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+    .benefits {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+    .benefits li {
+      position: relative;
+      padding-left: 26px;
+      font-size: 15px;
+      color: var(--text);
+    }
+    .benefits li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+    .cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 54px;
+      padding: 14px 20px;
+      background: linear-gradient(135deg, #0077ff 0%, #6e00ff 100%);
+      color: #ffffff;
+      font-size: 17px;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 12px;
+      text-align: center;
+      transition: opacity 0.15s ease, transform 0.1s ease;
+      box-shadow: 0 4px 14px rgba(0, 119, 255, 0.28);
+    }
+    .cta-btn:hover {
+      opacity: 0.94;
+    }
+    .cta-btn:active {
+      transform: translateY(1px);
+    }
+    .cta-note {
+      margin-top: 8px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .section-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+    .posts {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .post-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 16px;
+      background: var(--bg);
+    }
+    .post-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .repo-name {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .stars {
+      font-size: 12px;
+      font-weight: 600;
+      background: var(--star-bg);
+      color: var(--star-text);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+    .post-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .post-body {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .post-who {
+      font-size: 13px;
+      color: var(--text);
+      background: var(--surface);
+      padding: 8px 10px;
+      border-radius: 8px;
+    }
+    .bottom-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+    }
+    .bottom-box p {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+    .footer {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="channel-head">
+        <img
+          class="avatar"
+          src="https://i.oneme.ru/i?r=BTFjO43w8Yr1OSJ4tcurq5HiXb_Teb7l5cpc5lyoxP_Is_y4ePJqkr65xxKnGpLOYvo"
+          alt="GitHub Radar | AI-находки"
+          width="60"
+          height="60"
+        />
+        <div class="channel-meta">
+          <span class="badge">Канал в мессенджере MAX</span>
+          <div class="channel-name">GitHub Radar | AI-находки</div>
+        </div>
+      </div>
+
+      <h1>Ежедневный радар свежих GitHub-репозиториев по ИИ и разработке</h1>
+      <p class="lead">
+        Находим новые открытые проекты, которые набирают сотни звёзд за первые дни, и за 1 минуту разбираем на русском языке: что внутри, зачем нужно и как применить в работе.
+      </p>
+
+      <ul class="benefits">
+        <li>Инструменты для Claude Code, Codex, локальных LLM и мультиагентной разработки</li>
+        <li>Только живой open-source (MIT, Apache, AGPL) с готовыми релизами и кодом без воды</li>
+        <li>Формат короткой выжимки: «Что это», «Зачем смотреть», «Кому подойдёт» и статус проекта</li>
+      </ul>
+
+      <a
+        class="cta-btn"
+        data-max-cta="hero"
+        href="https://max.ru/id10604113677_biz"
+      >
+        Перейти в канал в MAX бесплатно
+      </a>
+      <div class="cta-note">Откроется в приложении MAX или в браузере за 1 клик</div>
+    </section>
+
+    <h2 class="section-title">Примеры свежих разборов в канале</h2>
+    <section class="posts">
+      <article class="post-card">
+        <div class="post-top">
+          <span class="repo-name">dominikmartn/harp</span>
+          <span class="stars">~580 ★ за 2 дня · AGPL-3.0</span>
+        </div>
+        <div class="post-title">Пульт управления для параллельных сессий Claude Code и Codex</div>
+        <p class="post-body">
+          Форк терминала Warp с боковой панелью для долгоиграющих кодинг-агентов. Сразу видно статус каждой сессии (работает, ждёт ответа или завершила задачу) и кольца лимитов 5-часового и недельного окна из локальных логов.
+        </p>
+        <div class="post-who">
+          <strong>Кому:</strong> разработчикам, которые запускают 5 и более ИИ-агентов одновременно и хотят контролировать их в одном окне.
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-top">
+          <span class="repo-name">kividbio/kividb</span>
+          <span class="stars">~430 ★ за неделю · Rust</span>
+        </div>
+        <div class="post-title">Многопоточная замена Redis и Valkey со встроенным векторным поиском</div>
+        <p class="post-body">
+          Работает по стандартному протоколу RESP2/RESP3 без правок клиентов, распределяет команды по всем ядрам процессора и включает полнотекстовый и векторный индекс HNSW для AI-приложений.
+        </p>
+        <div class="post-who">
+          <strong>Кому:</strong> бэкендерам и создателям AI-сервисов, которым нужен быстрый кэш и векторный поиск в одном контейнере Docker.
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-top">
+          <span class="repo-name">opentrap/opentrap</span>
+          <span class="stars">~350 ★ за 3 дня · AppSec</span>
+        </div>
+        <div class="post-title">Бесплатный перехватывающий прокси для проверки безопасности веб-приложений</div>
+        <p class="post-body">
+          Привычный интерфейс уровня Burp Suite поверх движка OWASP ZAP: Repeater, Intruder, краулер и автопоиск инъекций, XSS и утечек с готовым доказательством в одном окне без платной лицензии.
+        </p>
+        <div class="post-who">
+          <strong>Кому:</strong> разработчикам, тестировщикам и инженерам безопасности для быстрой самопроверки сайтов и API.
+        </div>
+      </article>
+    </section>
+
+    <section class="bottom-box">
+      <p>Подпишитесь на «GitHub Radar | AI-находки» в MAX, чтобы не пропускать новые инструменты</p>
+      <a
+        class="cta-btn"
+        data-max-cta="bottom"
+        href="https://max.ru/id10604113677_biz"
+      >
+        Читать разборы в MAX
+      </a>
+    </section>
+
+    <footer class="footer">
+      Информационный канал об открытом ПО и ИИ-инструментах · snezhko.ru
+    </footer>
+  </main>
+
+  <script>
+    var COUNTER_ID = 112187050;
+    var DEFAULT_MAX_URL = "https://max.ru/id10604113677_biz";
+
+    (function () {
+      (function (m, e, t, r, i, k, a) {
+        m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+        m[i].l = 1 * new Date();
+        k = e.createElement(t); a = e.getElementsByTagName(t)[0];
+        k.async = 1; k.src = r; a.parentNode.insertBefore(k, a);
+      })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+      ym(COUNTER_ID, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true
+      });
+    })();
+
+    function buildMaxUrl() {
+      var target = new URL(DEFAULT_MAX_URL);
+      try {
+        var params = new URLSearchParams(location.search);
+        params.forEach(function (val, key) {
+          if (/^(utm_|yclid|from|sub)/i.test(key)) {
+            target.searchParams.set(key, val);
+          }
+        });
+      } catch (e) {}
+      return target.toString();
+    }
+
+    function initCtaLinks() {
+      var finalHref = buildMaxUrl();
+      var links = document.querySelectorAll("a[data-max-cta]");
+      links.forEach(function (link) {
+        link.setAttribute("href", finalHref);
+        link.addEventListener("click", function (ev) {
+          ev.preventDefault();
+          var dest = link.getAttribute("href") || finalHref;
+          var navigated = false;
+          function go() {
+            if (navigated) return;
+            navigated = true;
+            location.href = dest;
+          }
+          setTimeout(go, 250);
+          try {
+            if (typeof ym === "function") {
+              ym(COUNTER_ID, "reachGoal", "max_radar_sub", { cta: link.getAttribute("data-max-cta") }, go);
+            } else {
+              go();
+            }
+          } catch (err) {
+            go();
+          }
+        });
+      });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initCtaLinks);
+    } else {
+      initCtaLinks();
+    }
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/112187050" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+</body>
+</html>
