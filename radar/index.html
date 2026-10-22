@@ -223,12 +223,10 @@
     .hero {
       position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 1.02fr) minmax(440px, 0.98fr);
-      align-items: center;
-      min-height: calc(100vh - 78px);
-      min-height: calc(100svh - 78px);
-      gap: clamp(42px, 6vw, 86px);
-      padding: 52px 0 86px;
+      grid-template-columns: minmax(0, 1.04fr) minmax(420px, 0.96fr);
+      align-items: start;
+      gap: clamp(32px, 4.5vw, 64px);
+      padding: 28px 0 72px;
     }
 
     .hero::before {
@@ -335,12 +333,12 @@
 
     h1 {
       max-width: 760px;
-      margin-bottom: 22px;
+      margin-bottom: 18px;
       font-family: var(--display);
-      font-size: clamp(40px, 5vw, 68px);
+      font-size: clamp(28px, 2.85vw, 42px);
       font-weight: 800;
-      line-height: 1.03;
-      letter-spacing: -0.045em;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
       text-wrap: balance;
     }
 
@@ -2045,6 +2043,11 @@
         context.beginPath();
         context.arc(x, y, selected ? 14 + pulse : 9 + pulse, 0, Math.PI * 2);
         context.stroke();
+        context.shadowBlur = 0;
+        context.font = (selected ? "700 " : "500 ") + "11px 'JetBrains Mono', monospace";
+        context.fillStyle = selected ? "#f2a904" : "rgba(219, 232, 248, 0.78)";
+        var shortName = repo.name.split("/")[1];
+        context.fillText(shortName, x + (selected ? 18 : 13), y + 4);
         context.restore();
       });
 
