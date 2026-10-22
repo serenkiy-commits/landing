@@ -5,16 +5,180 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#06080F">
   <meta name="robots" content="index, follow">
-  <title>GitHub Radar | AI-находки: свежие репозитории в MAX</title>
-  <meta name="description" content="GitHub Radar в MAX: короткие разборы свежих AI-инструментов, Rust-проектов, WebGPU, безопасности и Linux с проверкой лицензий и способов запуска.">
+  <title>GitHub Radar | AI-находки: обзоры свежих репозиториев GitHub, Claude Code и Codex в MAX</title>
+  <meta name="description" content="Канал GitHub Radar в MAX: ежедневные обзоры свежих репозиториев GitHub, инструментов для Claude Code и Codex, open-source AI, Rust и WebGPU за 1 минуту с проверкой лицензий и запуска.">
   <link rel="canonical" href="https://snezhko.ru/radar/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Snezhko AI">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://snezhko.ru/radar/">
-  <meta property="og:title" content="GitHub Radar | AI-находки в MAX">
-  <meta property="og:description" content="Свежие репозитории GitHub с разбором за 1 минуту: суть, польза, лицензия и быстрый запуск.">
-  <meta property="og:image" content="https://i.oneme.ru/i?r=BTFjO43w8Yr1OSJ4tcurq5HiXb_Teb7l5cpc5lyoxP_Is_y4ePJqkr65xxKnGpLOYvo">
+  <meta property="og:title" content="GitHub Radar | AI-находки: свежие репозитории GitHub в MAX">
+  <meta property="og:description" content="Ежедневные разборы свежих репозиториев GitHub за 1 минуту: Claude Code, Codex, open-source AI, Rust и WebGPU с проверкой лицензии и запуска.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="GitHub Radar — обзоры свежих AI-репозиториев GitHub в MAX">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GitHub Radar | AI-находки: свежие репозитории GitHub в MAX">
+  <meta name="twitter:description" content="Ежедневные разборы свежих репозиториев GitHub за 1 минуту: Claude Code, Codex, open-source AI, Rust и WebGPU.">
+  <meta name="twitter:image" content="https://snezhko.ru/radar/og-radar.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://snezhko.ru/#website",
+      "url": "https://snezhko.ru/",
+      "name": "Snezhko AI",
+      "inLanguage": "ru",
+      "publisher": {
+        "@id": "https://snezhko.ru/#organization"
+      }
+    },
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://snezhko.ru/#organization",
+      "name": "Snezhko AI",
+      "legalName": "ИП Снежко Сергей Андреевич",
+      "url": "https://snezhko.ru/",
+      "email": "i@ssnezhko.ru",
+      "taxID": "010604113677",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "ОГРНИП",
+        "value": "321010500006225"
+      },
+      "sameAs": [
+        "https://t.me/snezhko_sergey",
+        "https://max.ru/id10604113677_biz"
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://snezhko.ru/radar/#webpage",
+      "url": "https://snezhko.ru/radar/",
+      "name": "GitHub Radar | AI-находки: обзоры свежих репозиториев GitHub, Claude Code и Codex в MAX",
+      "description": "Канал GitHub Radar в MAX: ежедневные обзоры свежих репозиториев GitHub, инструментов для Claude Code и Codex, Rust, WebGPU и Linux за 1 минуту с проверкой лицензий и быстрого запуска.",
+      "inLanguage": "ru",
+      "isPartOf": {
+        "@id": "https://snezhko.ru/#website"
+      },
+      "about": {
+        "@id": "https://snezhko.ru/#organization"
+      },
+      "publisher": {
+        "@id": "https://snezhko.ru/#organization"
+      },
+      "datePublished": "2026-10-22T18:00:00+03:00",
+      "dateModified": "2026-10-23T00:20:00+03:00",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://snezhko.ru/radar/og-radar.png",
+        "width": 1200,
+        "height": 630
+      },
+      "breadcrumb": {
+        "@id": "https://snezhko.ru/radar/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://snezhko.ru/radar/#repo-list"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://snezhko.ru/radar/#repo-list",
+      "name": "Свежие разборы репозиториев в GitHub Radar",
+      "numberOfItems": 5,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "dominikmartn/harp — Пульт управления для параллельных сессий Claude Code и Codex",
+            "description": "Интерфейс на базе Warp для управления несколькими кодинг агентами из одного окна. Показывает статусы сессий и кольца лимитов 5 часового и недельного окна из локальных логов.",
+            "programmingLanguage": "macOS / Tmux",
+            "license": "https://spdx.org/licenses/AGPL-3.0-only.html",
+            "url": "https://snezhko.ru/radar/#agents"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "kividbio/kividb — Замена Redis и Valkey на всех ядрах",
+            "description": "Многопоточная база с совместимостью RESP2 и RESP3 в Docker: около 21 млн GET в секунду, HNSW поиск и полнотекстовый индекс в одном сервисе.",
+            "programmingLanguage": "Rust / Docker",
+            "license": "https://spdx.org/licenses/AGPL-3.0-only.html",
+            "url": "https://snezhko.ru/radar/#posts"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "Noniv/web-ocean — Физический океан в браузере без Three.js",
+            "description": "Компактный рендер океана на чистом WebGPU с интерактивной камерой: FFT симуляция Тессендорфа на 6 каскадов и свободный полёт камеры на WASD.",
+            "programmingLanguage": "WebGPU",
+            "license": "https://spdx.org/licenses/MIT.html",
+            "url": "https://snezhko.ru/radar/#posts"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "opentrap/opentrap — Свободный перехватывающий прокси уровня Burp Suite",
+            "description": "Прокси для AppSec в одном AppImage поверх OWASP ZAP: автокраулер находит уязвимости и сохраняет доказательства для проверки веб приложений и API.",
+            "programmingLanguage": "AppSec / OWASP ZAP",
+            "license": "https://spdx.org/licenses/AGPL-3.0-only.html",
+            "url": "https://snezhko.ru/radar/#posts"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "t4t5/owly — AirDrop между iPhone и обычным Linux ноутбуком",
+            "description": "Реализация обмена файлами через протокол AWDL без компьютера Apple с поддержкой карт Intel, MediaTek и Realtek.",
+            "programmingLanguage": "Rust / Linux",
+            "license": "https://spdx.org/licenses/MIT.html",
+            "url": "https://snezhko.ru/radar/#posts"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://snezhko.ru/radar/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Snezhko AI",
+          "item": "https://snezhko.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "GitHub Radar | AI-находки",
+          "item": "https://snezhko.ru/radar/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Onest:wght@400;500;600;700;800&family=Unbounded:wght@600;700;800&display=swap" rel="stylesheet">
@@ -207,6 +371,10 @@
     }
 
     .top-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 6px 10px;
       color: #bac7d9;
       font-size: 14px;
       font-weight: 600;
@@ -434,7 +602,7 @@
     }
 
     .trust {
-      color: #76869c;
+      color: #8b9bb4;
       font-family: var(--mono);
       font-size: 11px;
       line-height: 1.45;
@@ -452,20 +620,20 @@
 
     .switch-buttons {
       display: flex;
-      gap: 5px;
-      padding: 5px;
+      gap: 8px;
+      padding: 6px;
       border: 1px solid var(--line);
       border-radius: 999px;
       background: rgba(5, 8, 15, 0.7);
     }
 
     .switch-button {
-      min-width: 42px;
-      min-height: 38px;
+      min-width: 44px;
+      min-height: 44px;
       border: 0;
       border-radius: 999px;
       cursor: pointer;
-      color: #78879a;
+      color: #8b9bb4;
       background: transparent;
       font-family: var(--mono);
       font-size: 12px;
@@ -519,7 +687,7 @@
       justify-content: space-between;
       margin-bottom: 13px;
       gap: 12px;
-      color: #76869a;
+      color: #8b9bb4;
       font-family: var(--mono);
       font-size: 10px;
       letter-spacing: 0.04em;
@@ -563,7 +731,7 @@
       position: absolute;
       top: 12px;
       left: 14px;
-      color: rgba(125, 243, 250, 0.54);
+      color: #7df3fa;
       font-size: 9px;
       pointer-events: none;
     }
@@ -572,7 +740,7 @@
       position: absolute;
       right: 14px;
       bottom: 11px;
-      color: rgba(131, 248, 202, 0.64);
+      color: #83f8ca;
       font-family: var(--mono);
       font-size: 9px;
       pointer-events: none;
@@ -580,7 +748,7 @@
 
     .repo-tabs {
       display: flex;
-      gap: 7px;
+      gap: 8px;
       margin: 12px 0;
       overflow-x: auto;
       scrollbar-width: none;
@@ -592,10 +760,10 @@
 
     .repo-tab {
       flex: 0 0 auto;
-      min-height: 36px;
+      min-height: 44px;
       border: 1px solid var(--line);
       border-radius: 999px;
-      padding: 7px 11px;
+      padding: 8px 14px;
       cursor: pointer;
       color: #7f8fa4;
       background: rgba(255, 255, 255, 0.025);
@@ -668,7 +836,7 @@
     .signal-label {
       display: block;
       margin-bottom: 3px;
-      color: #62738a;
+      color: #8b9bb4;
       font-size: 9px;
       text-transform: uppercase;
     }
@@ -731,7 +899,7 @@
 
     .filter-button {
       flex: 0 0 auto;
-      min-height: 43px;
+      min-height: 44px;
       border: 1px solid var(--line);
       border-radius: 999px;
       padding: 9px 15px;
@@ -1006,7 +1174,7 @@
     }
 
     .step-status {
-      color: #64758d;
+      color: #8b9bb4;
       font-family: var(--mono);
       font-size: 10px;
     }
@@ -1093,20 +1261,126 @@
 
     .join-note {
       margin-top: 11px;
-      color: #74859a;
+      color: #8b9bb4;
       font-family: var(--mono);
       font-size: 10px;
       text-align: center;
     }
 
+    .breadcrumbs {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      color: #8b9bb4;
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+
+    .breadcrumbs a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 4px 6px;
+      color: #bac7d9;
+      text-decoration: none;
+    }
+
+    .breadcrumbs a:hover {
+      color: var(--cyan);
+      text-decoration: underline;
+    }
+
+    .updated-badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 4px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #9ba9bd;
+      background: rgba(12, 17, 29, 0.65);
+    }
+
     .footer {
       display: flex;
+      flex-wrap: wrap;
+      align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      padding: 27px 0 38px;
+      gap: 16px 24px;
+      padding: 28px 0 42px;
       border-top: 1px solid var(--line);
-      color: #617188;
+      color: #8b9bb4;
       font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .footer-legal,
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 16px;
+    }
+
+    .footer a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 4px 6px;
+      color: #bac7d9;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .footer a:hover {
+      color: var(--cyan);
+    }
+
+    .cookie-banner {
+      position: fixed;
+      z-index: 55;
+      right: 16px;
+      bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      max-width: 520px;
+      padding: 12px 16px;
+      border: 1px solid rgba(0, 240, 255, 0.28);
+      border-radius: 16px;
+      color: #dbe8f8;
+      background: rgba(8, 12, 21, 0.95);
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(14px);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .cookie-banner[hidden] {
+      display: none !important;
+    }
+
+    .cookie-banner a {
+      color: var(--cyan);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .cookie-accept {
+      flex: 0 0 auto;
+      min-width: 88px;
+      min-height: 44px;
+      border: 1px solid rgba(0, 240, 255, 0.45);
+      border-radius: 12px;
+      padding: 8px 14px;
+      cursor: pointer;
+      color: #031114;
+      background: var(--cyan);
+      font-family: var(--body);
+      font-size: 12px;
+      font-weight: 800;
     }
 
     .mobile-bar {
@@ -1347,7 +1621,7 @@
       }
 
       .radar-console {
-        margin-inline: -4px;
+        margin-inline: 0;
         padding: 11px;
         border-radius: 22px;
       }
@@ -1435,7 +1709,15 @@
 
       .footer {
         flex-direction: column;
-        padding-bottom: 102px;
+        align-items: flex-start;
+        padding-bottom: 112px;
+      }
+
+      .cookie-banner {
+        right: 12px;
+        left: 12px;
+        bottom: calc(84px + env(safe-area-inset-bottom));
+        max-width: none;
       }
     }
 
@@ -1467,9 +1749,15 @@
   <main>
     <section class="shell hero" id="top">
       <div class="hero-copy">
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+          <a href="https://snezhko.ru/">Snezhko AI</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">GitHub Radar</span>
+          <span class="updated-badge">Обновлено: <time datetime="2026-10-23">23.10.2026</time></span>
+        </nav>
         <div class="channel-row">
           <div class="avatar-wrap">
-            <img src="https://i.oneme.ru/i?r=BTFjO43w8Yr1OSJ4tcurq5HiXb_Teb7l5cpc5lyoxP_Is_y4ePJqkr65xxKnGpLOYvo" alt="Аватар канала GitHub Radar | AI-находки" width="78" height="78">
+            <img src="/radar/github-radar-avatar.jpg" alt="Логотип канала GitHub Radar | AI-находки в MAX" width="78" height="78" fetchpriority="high" decoding="async">
             <span class="live-dot" aria-hidden="true"></span>
           </div>
           <div class="channel-copy">
@@ -1478,8 +1766,8 @@
           </div>
         </div>
 
-        <h1>GitHub Radar: свежие AI-находки <span class="cyan">раньше, чем о них напишут в новостях</span></h1>
-        <p class="lead">За 1 минуту узнаете, какой репозиторий реально стоит открыть, как его запустить и можно ли безопасно брать в работу.</p>
+        <h1>GitHub Radar: обзоры свежих репозиториев GitHub и <span class="cyan">AI-находок раньше новостей</span></h1>
+        <p class="lead">Ежедневные разборы open-source инструментов для Claude Code, Codex, Rust и WebGPU: за 1 минуту узнаете суть проекта, лицензию и способ быстрого запуска.</p>
 
         <div class="benefit-grid" aria-label="Преимущества канала">
           <div class="benefit">
@@ -1780,9 +2068,21 @@
   </main>
 
   <footer class="shell footer">
-    <span>GitHub Radar | AI-находки</span>
-    <span>snezhko.ru · независимый канал об открытом ПО</span>
+    <div class="footer-legal">
+      <span>© 2026 Snezhko AI · GitHub Radar | AI-находки</span>
+      <span>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</span>
+    </div>
+    <div class="footer-links">
+      <a href="https://snezhko.ru/">Главная</a>
+      <a href="https://snezhko.ru/privacy/">Политика конфиденциальности</a>
+      <a href="mailto:i@ssnezhko.ru">i@ssnezhko.ru</a>
+    </div>
   </footer>
+
+  <div class="cookie-banner" id="cookieBanner" role="region" aria-label="Уведомление об использовании cookies" hidden>
+    <span>Сайт использует технические cookies и Яндекс.Метрику для анализа посещаемости согласно <a href="https://snezhko.ru/privacy/">Политике конфиденциальности</a>.</span>
+    <button class="cookie-accept" id="cookieAccept" type="button">Понятно</button>
+  </div>
 
   <div class="mobile-bar" id="mobileBar">
     <div class="mobile-bar-copy"><span>СИГНАЛ АКТИВЕН</span>GitHub Radar в MAX</div>
@@ -2086,14 +2386,28 @@
       mobileBar.classList.toggle("is-visible", window.scrollY > 520 && joinTop > window.innerHeight * 0.35);
     }
 
+    function initCookieBanner() {
+      var banner = document.getElementById("cookieBanner");
+      var acceptBtn = document.getElementById("cookieAccept");
+      if (!banner || !acceptBtn) return;
+      try {
+        if (localStorage.getItem("snezhko_cookie_ok") === "1") return;
+      } catch (e) {}
+      banner.hidden = false;
+      acceptBtn.addEventListener("click", function () {
+        banner.hidden = true;
+        try {
+          localStorage.setItem("snezhko_cookie_ok", "1");
+        } catch (e) {}
+      });
+    }
+
     window.addEventListener("scroll", updateMobileBar, { passive: true });
     window.addEventListener("resize", resizeRadar);
     resizeRadar();
     updateMobileBar();
     initCtaLinks();
+    initCookieBanner();
   </script>
-  <noscript>
-    <div><img src="https://mc.yandex.ru/watch/112187050" style="position:absolute; left:-9999px;" alt=""></div>
-  </noscript>
 </body>
 </html>
