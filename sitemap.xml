@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://snezhko.ru/</loc>
-  </url>
-  <url>
-    <loc>https://snezhko.ru/privacy/</loc>
-  </url>
+  <url><loc>https://snezhko.ru/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://snezhko.ru/uslugi/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://snezhko.ru/uslugi/telegram-boty/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://snezhko.ru/uslugi/golosovye-agenty/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://snezhko.ru/uslugi/avtomatizatsiya-marketpleysov/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://snezhko.ru/uslugi/n8n-crm/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://snezhko.ru/uslugi/telegram-mini-apps/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://snezhko.ru/uslugi/ai-kontent-zavod/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://snezhko.ru/uslugi/sozdanie-saytov-ai/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://snezhko.ru/uslugi/openclaw/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://snezhko.ru/uslugi/claudeclaw/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://snezhko.ru/blog/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://snezhko.ru/blog/avtomatizatsiya-wildberries-ozon-ai/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://snezhko.ru/blog/kak-vnedrit-ai-agenta-v-otdel-prodazh-n8n-crm/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://snezhko.ru/blog/skolko-stoit-razrabotka-telegram-bota-mini-app-2026/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://snezhko.ru/privacy/</loc><lastmod>2026-10-22</lastmod></url>
 </urlset>
