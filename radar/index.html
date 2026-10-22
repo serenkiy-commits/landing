@@ -1,371 +1,1879 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex, nofollow" />
-  <title>GitHub Radar | AI-находки: канал в MAX для разработчиков и AI-практиков</title>
-  <meta name="description" content="Ежедневные разборы свежих open-source репозиториев GitHub в мессенджере MAX: AI-агенты, Claude Code, Codex, Rust-утилиты, WebGPU и инструменты автоматизации." />
-  <link rel="canonical" href="https://snezhko.ru/radar/" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://snezhko.ru/radar/" />
-  <meta property="og:title" content="GitHub Radar | AI-находки в MAX" />
-  <meta property="og:description" content="Свежие репозитории GitHub с разбором за 1 минуту: что внутри, какую задачу решает и как запустить." />
-  <meta property="og:image" content="https://i.oneme.ru/i?r=BTFjO43w8Yr1OSJ4tcurq5HiXb_Teb7l5cpc5lyoxP_Is_y4ePJqkr65xxKnGpLOYvo" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>GitHub Radar | AI-находки: свежие репозитории в MAX</title>
+  <meta name="description" content="GitHub Radar в MAX: короткие разборы свежих AI-инструментов, Rust-проектов, WebGPU, безопасности и Linux с проверкой лицензий и способов запуска.">
+  <link rel="canonical" href="https://snezhko.ru/radar/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://snezhko.ru/radar/">
+  <meta property="og:title" content="GitHub Radar | AI-находки в MAX">
+  <meta property="og:description" content="Свежие репозитории GitHub с разбором за 1 минуту: суть, польза, лицензия и быстрый запуск.">
+  <meta property="og:image" content="https://i.oneme.ru/i?r=BTFjO43w8Yr1OSJ4tcurq5HiXb_Teb7l5cpc5lyoxP_Is_y4ePJqkr65xxKnGpLOYvo">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Onest:wght@400;500;600;700;800&family=Unbounded:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #ffffff;
-      --surface: #f6f8fa;
-      --border: #d0d7de;
-      --text: #1f2328;
-      --muted: #59636e;
-      --accent: #0969da;
-      --accent-hover: #0550ae;
-      --badge-bg: #ddf4ff;
-      --badge-text: #0969da;
-      --star-bg: #fff8c5;
-      --star-text: #9a6700;
+      --bg: #06080f;
+      --bg-soft: #090d17;
+      --surface: rgba(14, 19, 32, 0.78);
+      --surface-strong: rgba(17, 24, 39, 0.94);
+      --line: rgba(139, 168, 205, 0.16);
+      --line-bright: rgba(0, 240, 255, 0.38);
+      --text: #f2f7ff;
+      --muted: #9ba9bd;
+      --cyan: #00f0ff;
+      --green: #10b981;
+      --amber: #f2a904;
+      --blue: #0077ff;
+      --violet: #7c3aed;
+      --danger: #ff5f7a;
+      --display: "Unbounded", sans-serif;
+      --body: "Onest", sans-serif;
+      --mono: "JetBrains Mono", monospace;
+      --radius-lg: 30px;
+      --radius-md: 20px;
+      --radius-sm: 13px;
+      --ease: cubic-bezier(.2, .75, .2, 1);
     }
+
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
+
+    html {
+      scroll-behavior: smooth;
+      scrollbar-color: var(--cyan) #080b13;
+      scrollbar-width: thin;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
+      margin: 0;
+      min-width: 320px;
+      overflow-x: hidden;
       color: var(--text);
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-    }
-    .wrap {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 20px 16px 48px;
-    }
-    .hero {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px 20px;
-      margin-bottom: 24px;
-    }
-    .channel-head {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 16px;
-    }
-    .avatar {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--accent);
-      flex-shrink: 0;
-      background: #0d1117;
-    }
-    .channel-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .badge {
-      display: inline-block;
-      align-self: flex-start;
-      font-size: 12px;
-      font-weight: 600;
-      background: var(--badge-bg);
-      color: var(--badge-text);
-      padding: 2px 8px;
-      border-radius: 999px;
-    }
-    .channel-name {
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--text);
-      line-height: 1.25;
-    }
-    h1 {
-      font-size: 24px;
-      font-weight: 800;
-      line-height: 1.28;
-      margin-bottom: 12px;
-      color: var(--text);
-    }
-    .lead {
+      background:
+        radial-gradient(circle at 18% 8%, rgba(0, 119, 255, 0.14), transparent 28rem),
+        radial-gradient(circle at 82% 16%, rgba(16, 185, 129, 0.1), transparent 24rem),
+        var(--bg);
+      font-family: var(--body);
       font-size: 16px;
-      color: var(--muted);
-      margin-bottom: 18px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
-    .benefits {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 22px;
+
+    body::before {
+      position: fixed;
+      z-index: -2;
+      inset: 0;
+      content: "";
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(0, 240, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 240, 255, 0.035) 1px, transparent 1px);
+      background-size: 52px 52px;
+      mask-image: linear-gradient(to bottom, #000 0%, transparent 78%);
     }
-    .benefits li {
+
+    body::after {
+      position: fixed;
+      z-index: 60;
+      inset: 0;
+      content: "";
+      opacity: 0.045;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+    }
+
+    ::selection {
+      color: #00181b;
+      background: var(--cyan);
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #080b13;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border: 2px solid #080b13;
+      border-radius: 999px;
+      background: linear-gradient(var(--cyan), var(--blue));
+    }
+
+    button,
+    a {
+      font: inherit;
+    }
+
+    button {
+      color: inherit;
+    }
+
+    button,
+    [role="button"],
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:focus-visible,
+    a:focus-visible {
+      outline: 3px solid var(--cyan);
+      outline-offset: 4px;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img,
+    svg,
+    canvas {
+      display: block;
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .mono,
+    .repo-name,
+    .repo-meta,
+    .radar-coord,
+    .signal-value,
+    .metric-value,
+    .license {
+      font-family: var(--mono);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .topbar {
       position: relative;
-      padding-left: 26px;
-      font-size: 15px;
-      color: var(--text);
-    }
-    .benefits li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--accent);
-      font-weight: 800;
-    }
-    .cta-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      min-height: 54px;
-      padding: 14px 20px;
-      background: linear-gradient(135deg, #0077ff 0%, #6e00ff 100%);
-      color: #ffffff;
-      font-size: 17px;
-      font-weight: 700;
-      text-decoration: none;
-      border-radius: 12px;
-      text-align: center;
-      transition: opacity 0.15s ease, transform 0.1s ease;
-      box-shadow: 0 4px 14px rgba(0, 119, 255, 0.28);
-    }
-    .cta-btn:hover {
-      opacity: 0.94;
-    }
-    .cta-btn:active {
-      transform: translateY(1px);
-    }
-    .cta-note {
-      margin-top: 8px;
-      text-align: center;
-      font-size: 13px;
-      color: var(--muted);
-    }
-    .section-title {
-      font-size: 18px;
-      font-weight: 800;
-      margin-bottom: 14px;
-      color: var(--text);
-    }
-    .posts {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-bottom: 24px;
-    }
-    .post-card {
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px 16px;
-      background: var(--bg);
-    }
-    .post-top {
+      z-index: 20;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 8px;
-      flex-wrap: wrap;
+      min-height: 78px;
+      gap: 20px;
     }
-    .repo-name {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 15px;
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      color: #fff;
+      font-family: var(--display);
+      font-size: 13px;
       font-weight: 700;
-      color: var(--accent);
+      letter-spacing: -0.02em;
+      text-decoration: none;
     }
-    .stars {
+
+    .brand-mark {
+      position: relative;
+      width: 33px;
+      height: 33px;
+      border: 1px solid rgba(0, 240, 255, 0.5);
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, var(--green) 0 2px, transparent 3px),
+        conic-gradient(from 20deg, transparent, rgba(0, 240, 255, 0.55), transparent 38%);
+      box-shadow: 0 0 24px rgba(0, 240, 255, 0.2);
+    }
+
+    .brand-mark::before,
+    .brand-mark::after {
+      position: absolute;
+      inset: 6px;
+      content: "";
+      border: 1px solid rgba(0, 240, 255, 0.24);
+      border-radius: 50%;
+    }
+
+    .brand-mark::after {
+      inset: 14px;
+      background: var(--cyan);
+    }
+
+    .top-link {
+      color: #bac7d9;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      text-underline-offset: 4px;
+      transition: color 180ms ease;
+    }
+
+    .top-link:hover {
+      color: var(--cyan);
+      text-decoration: underline;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(440px, 0.98fr);
+      align-items: center;
+      min-height: calc(100vh - 78px);
+      min-height: calc(100svh - 78px);
+      gap: clamp(42px, 6vw, 86px);
+      padding: 52px 0 86px;
+    }
+
+    .hero::before {
+      position: absolute;
+      z-index: -1;
+      top: 4%;
+      right: -14%;
+      width: 56%;
+      aspect-ratio: 1;
+      content: "";
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 240, 255, 0.09), transparent 68%);
+      filter: blur(20px);
+    }
+
+    .channel-row {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      margin-bottom: 28px;
+    }
+
+    .avatar-wrap {
+      position: relative;
+      flex: 0 0 auto;
+      width: 78px;
+      height: 78px;
+      padding: 5px;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, var(--cyan), transparent 24%, var(--green) 45%, transparent 70%, var(--blue));
+      box-shadow: 0 0 35px rgba(0, 240, 255, 0.24);
+      animation: ring-turn 9s linear infinite;
+    }
+
+    .avatar-wrap::before {
+      position: absolute;
+      inset: -7px;
+      content: "";
+      border: 1px dashed rgba(0, 240, 255, 0.28);
+      border-radius: 50%;
+    }
+
+    .avatar-wrap img {
+      width: 100%;
+      height: 100%;
+      border: 3px solid #090c14;
+      border-radius: 50%;
+      object-fit: cover;
+      animation: ring-counter 9s linear infinite;
+    }
+
+    .live-dot {
+      position: absolute;
+      z-index: 2;
+      right: 2px;
+      bottom: 7px;
+      width: 15px;
+      height: 15px;
+      border: 3px solid var(--bg);
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
+      animation: live-pulse 2s infinite;
+    }
+
+    .channel-copy {
+      min-width: 0;
+    }
+
+    .live-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 4px;
+      color: #83f8ca;
+      font-family: var(--mono);
       font-size: 12px;
       font-weight: 600;
-      background: var(--star-bg);
-      color: var(--star-text);
-      padding: 2px 8px;
-      border-radius: 999px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
     }
-    .post-title {
+
+    .live-label::before {
+      width: 6px;
+      height: 6px;
+      content: "";
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 10px var(--green);
+    }
+
+    .channel-title {
+      color: #dbe8f8;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 22px;
+      font-family: var(--display);
+      font-size: clamp(40px, 5vw, 68px);
+      font-weight: 800;
+      line-height: 1.03;
+      letter-spacing: -0.045em;
+      text-wrap: balance;
+    }
+
+    .cyan {
+      color: var(--cyan);
+      text-shadow: 0 0 28px rgba(0, 240, 255, 0.27);
+    }
+
+    .lead {
+      max-width: 650px;
+      margin-bottom: 28px;
+      color: #b6c3d5;
+      font-size: clamp(18px, 2vw, 21px);
+      line-height: 1.55;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .benefit {
+      display: grid;
+      grid-template-columns: 33px 1fr;
+      align-items: center;
+      min-height: 74px;
+      gap: 10px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      color: #c9d6e7;
+      background: rgba(12, 17, 29, 0.68);
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .benefit svg {
+      width: 29px;
+      color: var(--cyan);
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .cta {
+      position: relative;
+      isolation: isolate;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 58px;
+      gap: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      padding: 15px 22px;
+      color: #fff;
+      background: linear-gradient(120deg, var(--blue), var(--violet));
+      box-shadow: 0 15px 38px rgba(36, 78, 255, 0.28), inset 0 1px rgba(255, 255, 255, 0.25);
+      font-weight: 800;
+      line-height: 1.2;
+      text-align: center;
+      text-decoration: none;
+      transition: transform 220ms var(--ease), box-shadow 220ms var(--ease);
+    }
+
+    .cta::before {
+      position: absolute;
+      z-index: -1;
+      inset: -50% auto -50% -35%;
+      width: 28%;
+      content: "";
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+      transform: skewX(-18deg);
+      animation: button-shine 4.6s ease-in-out infinite;
+    }
+
+    .cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 19px 50px rgba(36, 78, 255, 0.42), inset 0 1px rgba(255, 255, 255, 0.3);
+    }
+
+    .cta svg {
+      width: 20px;
+      flex: 0 0 auto;
+    }
+
+    .trust {
+      color: #76869c;
+      font-family: var(--mono);
+      font-size: 11px;
+      line-height: 1.45;
+    }
+
+    .preview-switch {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 15px;
+      max-width: 610px;
+      padding-top: 21px;
+      border-top: 1px solid var(--line);
+    }
+
+    .switch-buttons {
+      display: flex;
+      gap: 5px;
+      padding: 5px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(5, 8, 15, 0.7);
+    }
+
+    .switch-button {
+      min-width: 42px;
+      min-height: 38px;
+      border: 0;
+      border-radius: 999px;
+      cursor: pointer;
+      color: #78879a;
+      background: transparent;
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 700;
+      transition: color 180ms ease, background 180ms ease;
+    }
+
+    .switch-button[aria-selected="true"] {
+      color: #031114;
+      background: var(--cyan);
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+    }
+
+    .switch-copy {
+      min-height: 47px;
+      color: #92a2b8;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .switch-copy strong {
+      display: block;
+      color: #eef7ff;
+      font-size: 14px;
+    }
+
+    .radar-console {
+      position: relative;
+      min-width: 0;
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      background: linear-gradient(155deg, rgba(16, 24, 39, 0.92), rgba(6, 10, 18, 0.96));
+      box-shadow: 0 34px 90px rgba(0, 0, 0, 0.44), inset 0 1px rgba(255, 255, 255, 0.05);
+    }
+
+    .radar-console::before {
+      position: absolute;
+      z-index: -1;
+      inset: -1px;
+      content: "";
+      border-radius: inherit;
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.45), transparent 35%, transparent 65%, rgba(124, 58, 237, 0.4));
+      filter: blur(14px);
+      opacity: 0.4;
+    }
+
+    .console-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 13px;
+      gap: 12px;
+      color: #76869a;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .console-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #83f8ca;
+    }
+
+    .console-status::before {
+      width: 7px;
+      height: 7px;
+      content: "";
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 12px var(--green);
+    }
+
+    .radar-frame {
+      position: relative;
+      aspect-ratio: 1.25;
+      overflow: hidden;
+      border: 1px solid rgba(0, 240, 255, 0.18);
+      border-radius: 21px;
+      background:
+        radial-gradient(circle at center, rgba(0, 240, 255, 0.07), transparent 60%),
+        #050b11;
+      cursor: crosshair;
+    }
+
+    #radarCanvas {
+      width: 100%;
+      height: 100%;
+    }
+
+    .radar-coord {
+      position: absolute;
+      top: 12px;
+      left: 14px;
+      color: rgba(125, 243, 250, 0.54);
+      font-size: 9px;
+      pointer-events: none;
+    }
+
+    .scan-label {
+      position: absolute;
+      right: 14px;
+      bottom: 11px;
+      color: rgba(131, 248, 202, 0.64);
+      font-family: var(--mono);
+      font-size: 9px;
+      pointer-events: none;
+    }
+
+    .repo-tabs {
+      display: flex;
+      gap: 7px;
+      margin: 12px 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .repo-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .repo-tab {
+      flex: 0 0 auto;
+      min-height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 11px;
+      cursor: pointer;
+      color: #7f8fa4;
+      background: rgba(255, 255, 255, 0.025);
+      font-family: var(--mono);
+      font-size: 10px;
+      transition: border-color 180ms ease, color 180ms ease, background 180ms ease;
+    }
+
+    .repo-tab[aria-selected="true"] {
+      border-color: rgba(0, 240, 255, 0.5);
+      color: var(--cyan);
+      background: rgba(0, 240, 255, 0.08);
+    }
+
+    .intercept-card {
+      min-height: 210px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      background: rgba(9, 14, 24, 0.82);
+    }
+
+    .intercept-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .repo-name {
+      color: var(--cyan);
+      font-size: 14px;
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+
+    .license {
+      flex: 0 0 auto;
+      border: 1px solid rgba(16, 185, 129, 0.28);
+      border-radius: 999px;
+      padding: 4px 8px;
+      color: #83f8ca;
+      background: rgba(16, 185, 129, 0.08);
+      font-size: 9px;
+    }
+
+    .intercept-title {
+      margin-bottom: 15px;
+      color: #eef6ff;
       font-size: 16px;
       font-weight: 700;
-      margin-bottom: 8px;
-      color: var(--text);
+      line-height: 1.38;
     }
-    .post-body {
-      font-size: 14px;
-      color: var(--muted);
-      margin-bottom: 8px;
+
+    .telemetry {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 15px;
     }
-    .post-who {
-      font-size: 13px;
-      color: var(--text);
-      background: var(--surface);
-      padding: 8px 10px;
-      border-radius: 8px;
+
+    .signal {
+      padding: 9px;
+      border: 1px solid rgba(139, 168, 205, 0.1);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.02);
     }
-    .bottom-box {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 20px;
-      text-align: center;
+
+    .signal-label {
+      display: block;
+      margin-bottom: 3px;
+      color: #62738a;
+      font-size: 9px;
+      text-transform: uppercase;
     }
-    .bottom-box p {
-      font-size: 15px;
-      font-weight: 600;
-      margin-bottom: 14px;
-      color: var(--text);
+
+    .signal-value {
+      color: var(--amber);
+      font-size: 11px;
+      font-weight: 700;
     }
-    .footer {
-      margin-top: 28px;
-      text-align: center;
+
+    .verdict {
+      margin: 0;
+      color: #9eacc0;
       font-size: 12px;
-      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .section {
+      position: relative;
+      padding: 110px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(280px, 0.4fr);
+      align-items: end;
+      gap: 38px;
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      max-width: 850px;
+      margin-bottom: 0;
+      font-family: var(--display);
+      font-size: clamp(30px, 4.4vw, 52px);
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      text-wrap: balance;
+    }
+
+    .section-intro {
+      margin: 0;
+      color: #93a3b8;
+      font-size: 16px;
+      line-height: 1.62;
+    }
+
+    .filters {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 26px;
+      overflow-x: auto;
+      padding: 3px 3px 10px;
+      scrollbar-width: none;
+    }
+
+    .filters::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter-button {
+      flex: 0 0 auto;
+      min-height: 43px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 9px 15px;
+      cursor: pointer;
+      color: #91a0b3;
+      background: rgba(10, 15, 25, 0.7);
+      font-size: 13px;
+      font-weight: 700;
+      transition: color 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .filter-button:hover {
+      border-color: rgba(0, 240, 255, 0.38);
+      color: #fff;
+    }
+
+    .filter-button[aria-pressed="true"] {
+      border-color: var(--cyan);
+      color: #031114;
+      background: var(--cyan);
+      box-shadow: 0 0 26px rgba(0, 240, 255, 0.2);
+    }
+
+    .post-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .post-card {
+      --mouse-x: 50%;
+      --mouse-y: 50%;
+      position: relative;
+      grid-column: span 6;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 25px;
+      background: var(--surface);
+      box-shadow: 0 18px 52px rgba(0, 0, 0, 0.18);
+      transition: opacity 280ms ease, transform 280ms var(--ease), border-color 220ms ease;
+    }
+
+    .post-card:first-child,
+    .post-card:last-child {
+      grid-column: span 7;
+    }
+
+    .post-card:nth-child(2),
+    .post-card:nth-child(4) {
+      grid-column: span 5;
+    }
+
+    .post-card::before {
+      position: absolute;
+      inset: 0;
+      content: "";
+      pointer-events: none;
+      background: radial-gradient(420px circle at var(--mouse-x) var(--mouse-y), rgba(0, 240, 255, 0.11), transparent 42%);
+      opacity: 0;
+      transition: opacity 220ms ease;
+    }
+
+    .post-card:hover {
+      border-color: rgba(0, 240, 255, 0.26);
+      transform: translateY(-4px);
+    }
+
+    .post-card:hover::before {
+      opacity: 1;
+    }
+
+    .post-card.is-hidden {
+      display: none;
+    }
+
+    .post-top {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 17px;
+    }
+
+    .repo-meta {
+      color: var(--amber);
+      font-size: 10px;
+      line-height: 1.45;
+      text-align: right;
+    }
+
+    .post-card h3 {
+      position: relative;
+      margin-bottom: 20px;
+      font-family: var(--display);
+      font-size: clamp(18px, 2.2vw, 25px);
+      line-height: 1.3;
+      letter-spacing: -0.025em;
+    }
+
+    .post-structure {
+      position: relative;
+      display: grid;
+      gap: 13px;
+      margin: 0 0 22px;
+    }
+
+    .post-line {
+      display: grid;
+      grid-template-columns: 116px 1fr;
+      gap: 13px;
+      padding-top: 13px;
+      border-top: 1px solid rgba(139, 168, 205, 0.12);
+    }
+
+    .post-line dt {
+      color: #edf6ff;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .post-line dd {
+      margin: 0;
+      color: #91a1b6;
+      font-size: 13px;
+      line-height: 1.57;
+    }
+
+    .card-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      gap: 8px;
+      color: #b9c9dc;
+      font-size: 13px;
+      font-weight: 800;
+      text-decoration: none;
+      text-underline-offset: 4px;
+      transition: color 180ms ease;
+    }
+
+    .card-link:hover {
+      color: var(--cyan);
+      text-decoration: underline;
+    }
+
+    .card-link svg {
+      width: 18px;
+    }
+
+    .process-section {
+      overflow: hidden;
+      border-block: 1px solid var(--line);
+      background:
+        linear-gradient(120deg, rgba(0, 119, 255, 0.07), transparent 36%),
+        linear-gradient(300deg, rgba(16, 185, 129, 0.05), transparent 38%),
+        rgba(7, 11, 19, 0.58);
+    }
+
+    .process-layout {
+      display: grid;
+      grid-template-columns: minmax(290px, 0.72fr) minmax(0, 1.28fr);
+      align-items: center;
+      gap: clamp(40px, 8vw, 100px);
+    }
+
+    .process-copy p {
+      max-width: 550px;
+      margin: 21px 0 26px;
+      color: #9cabc0;
+      font-size: 17px;
+    }
+
+    .saving {
+      display: flex;
+      align-items: baseline;
+      gap: 11px;
+      color: #fff;
+    }
+
+    .saving strong {
+      color: var(--cyan);
+      font-family: var(--display);
+      font-size: clamp(44px, 7vw, 86px);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .saving span {
+      max-width: 170px;
+      color: #8393a9;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .process-panel {
+      position: relative;
+      min-height: 500px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      background: rgba(10, 15, 26, 0.82);
+      box-shadow: 0 25px 75px rgba(0, 0, 0, 0.32);
+    }
+
+    .process-line {
+      position: absolute;
+      top: 87px;
+      bottom: 91px;
+      left: 49px;
+      width: 1px;
+      background: linear-gradient(var(--cyan), var(--green));
+      box-shadow: 0 0 14px rgba(0, 240, 255, 0.45);
+    }
+
+    .process-step {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 51px 1fr auto;
+      align-items: center;
+      width: 100%;
+      min-height: 96px;
+      gap: 16px;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      padding: 13px 4px;
+      cursor: pointer;
+      text-align: left;
+      background: transparent;
+    }
+
+    .process-step:last-of-type {
+      border-bottom: 0;
+    }
+
+    .step-icon {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      border-radius: 50%;
+      color: var(--cyan);
+      background: #09111b;
+      transition: color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+    }
+
+    .step-icon svg {
+      width: 21px;
+    }
+
+    .process-step[aria-pressed="true"] .step-icon {
+      color: #021214;
+      background: var(--cyan);
+      box-shadow: 0 0 28px rgba(0, 240, 255, 0.28);
+    }
+
+    .step-text strong {
+      display: block;
+      margin-bottom: 3px;
+      color: #edf6ff;
+      font-size: 15px;
+    }
+
+    .step-text span {
+      color: #7f90a7;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .step-status {
+      color: #64758d;
+      font-family: var(--mono);
+      font-size: 10px;
+    }
+
+    .process-step[aria-pressed="true"] .step-status {
+      color: #83f8ca;
+    }
+
+    .process-result {
+      min-height: 66px;
+      margin-top: 16px;
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      border-radius: 14px;
+      padding: 13px 15px;
+      color: #9eb0c4;
+      background: rgba(16, 185, 129, 0.06);
+      font-size: 12px;
+      line-height: 1.48;
+    }
+
+    .process-result strong {
+      color: #83f8ca;
+    }
+
+    .join {
+      padding: 120px 0 130px;
+    }
+
+    .join-box {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 40px;
+      min-height: 330px;
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      border-radius: 36px;
+      padding: clamp(30px, 6vw, 72px);
+      background:
+        radial-gradient(circle at 12% 120%, rgba(0, 240, 255, 0.18), transparent 45%),
+        linear-gradient(125deg, rgba(15, 23, 42, 0.98), rgba(10, 13, 28, 0.95));
+      box-shadow: 0 35px 100px rgba(0, 0, 0, 0.35);
+    }
+
+    .join-box::before {
+      position: absolute;
+      z-index: -1;
+      top: -55%;
+      right: -8%;
+      width: 500px;
+      aspect-ratio: 1;
+      content: "";
+      border: 1px solid rgba(0, 240, 255, 0.18);
+      border-radius: 50%;
+      background:
+        repeating-radial-gradient(circle, transparent 0 37px, rgba(0, 240, 255, 0.07) 38px 39px),
+        conic-gradient(from 220deg, transparent, rgba(0, 240, 255, 0.15), transparent 31%);
+      animation: ring-turn 18s linear infinite;
+    }
+
+    .join-box h2 {
+      max-width: 720px;
+      margin-bottom: 18px;
+    }
+
+    .join-box p {
+      max-width: 640px;
+      margin-bottom: 0;
+      color: #99a9bd;
+      font-size: 17px;
+    }
+
+    .join-action {
+      position: relative;
+      z-index: 2;
+      width: min(100%, 310px);
+    }
+
+    .join-action .cta {
+      width: 100%;
+    }
+
+    .join-note {
+      margin-top: 11px;
+      color: #74859a;
+      font-family: var(--mono);
+      font-size: 10px;
+      text-align: center;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 27px 0 38px;
+      border-top: 1px solid var(--line);
+      color: #617188;
+      font-size: 12px;
+    }
+
+    .mobile-bar {
+      position: fixed;
+      z-index: 50;
+      right: 12px;
+      bottom: calc(12px + env(safe-area-inset-bottom));
+      left: 12px;
+      display: none;
+      align-items: center;
+      gap: 12px;
+      padding: 10px;
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      border-radius: 18px;
+      background: rgba(8, 12, 21, 0.92);
+      box-shadow: 0 18px 58px rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(18px);
+      transform: translateY(135%);
+      transition: transform 300ms var(--ease);
+    }
+
+    .mobile-bar.is-visible {
+      transform: translateY(0);
+    }
+
+    .mobile-bar-copy {
+      min-width: 0;
+      flex: 1;
+      padding-left: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .mobile-bar-copy span {
+      display: block;
+      color: var(--green);
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 600;
+    }
+
+    .mobile-bar .cta {
+      min-height: 47px;
+      padding: 11px 15px;
+      border-radius: 13px;
+      font-size: 12px;
+    }
+
+    @keyframes ring-turn {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes ring-counter {
+      to { transform: rotate(-360deg); }
+    }
+
+    @keyframes live-pulse {
+      70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+
+    @keyframes button-shine {
+      0%, 55% { left: -35%; }
+      82%, 100% { left: 125%; }
+    }
+
+    @media (max-width: 1040px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        gap: 24px;
+        padding: 30px 0 70px;
+      }
+
+      .hero-copy {
+        display: contents;
+      }
+
+      .channel-row {
+        order: 1;
+        margin-bottom: 15px;
+      }
+
+      h1 {
+        order: 2;
+        font-size: clamp(38px, 5.2vw, 58px);
+        margin-bottom: 15px;
+      }
+
+      .lead {
+        order: 3;
+        margin-bottom: 19px;
+      }
+
+      .hero-actions {
+        order: 4;
+        margin-bottom: 17px;
+      }
+
+      .benefit-grid {
+        order: 5;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-bottom: 13px;
+      }
+
+      .benefit {
+        min-height: 58px;
+      }
+
+      .preview-switch {
+        order: 6;
+      }
+
+      .radar-console {
+        order: 7;
+        width: min(100%, 720px);
+        margin: 10px auto 0;
+      }
+
+      .section-head {
+        grid-template-columns: 1fr;
+      }
+
+      .join-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .shell {
+        width: min(100% - 28px, 680px);
+      }
+
+      .topbar {
+        min-height: 66px;
+      }
+
+      .top-link {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 30px 0 70px;
+      }
+
+      .hero-copy {
+        display: contents;
+      }
+
+      .channel-row {
+        order: 1;
+        margin-bottom: 15px;
+      }
+
+      h1 {
+        order: 2;
+        margin-bottom: 15px;
+      }
+
+      .lead {
+        order: 3;
+        margin-bottom: 19px;
+        font-size: 17px;
+      }
+
+      .hero-actions {
+        order: 4;
+        margin-bottom: 17px;
+      }
+
+      .benefit-grid {
+        order: 5;
+        grid-template-columns: repeat(3, 1fr);
+        margin-bottom: 13px;
+      }
+
+      .preview-switch {
+        order: 6;
+      }
+
+      .radar-console {
+        order: 7;
+        margin-top: 10px;
+      }
+
+      .post-card,
+      .post-card:first-child,
+      .post-card:last-child,
+      .post-card:nth-child(2),
+      .post-card:nth-child(4) {
+        grid-column: span 12;
+      }
+
+      .process-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .mobile-bar {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 16px;
+      }
+
+      .brand {
+        font-size: 11px;
+      }
+
+      .brand-mark {
+        width: 29px;
+        height: 29px;
+      }
+
+      .hero {
+        gap: 21px;
+        padding-top: 16px;
+      }
+
+      .avatar-wrap {
+        width: 58px;
+        height: 58px;
+      }
+
+      .channel-row {
+        gap: 13px;
+      }
+
+      .live-label {
+        font-size: 10px;
+      }
+
+      .channel-title {
+        font-size: 14px;
+      }
+
+      h1 {
+        font-size: clamp(33px, 10.4vw, 46px);
+        line-height: 1.04;
+        letter-spacing: -0.05em;
+      }
+
+      .lead {
+        line-height: 1.48;
+      }
+
+      .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .hero-actions .cta {
+        width: 100%;
+        min-height: 60px;
+      }
+
+      .trust {
+        text-align: center;
+      }
+
+      .benefit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefit {
+        grid-template-columns: 29px 1fr;
+        min-height: 51px;
+        padding: 9px 11px;
+      }
+
+      .benefit svg {
+        width: 25px;
+      }
+
+      .preview-switch {
+        grid-template-columns: 1fr;
+      }
+
+      .radar-console {
+        margin-inline: -4px;
+        padding: 11px;
+        border-radius: 22px;
+      }
+
+      .radar-frame {
+        aspect-ratio: 1.08;
+      }
+
+      .intercept-card {
+        min-height: 230px;
+        padding: 15px;
+      }
+
+      .telemetry {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      h2 {
+        font-size: clamp(29px, 8vw, 39px);
+      }
+
+      .section-head {
+        gap: 17px;
+        margin-bottom: 27px;
+      }
+
+      .post-card {
+        padding: 20px 17px;
+      }
+
+      .post-top {
+        flex-direction: column;
+      }
+
+      .repo-meta {
+        text-align: left;
+      }
+
+      .post-line {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .process-panel {
+        min-height: auto;
+        padding: 14px;
+      }
+
+      .process-line {
+        left: 36px;
+      }
+
+      .process-step {
+        grid-template-columns: 43px 1fr;
+        gap: 9px;
+      }
+
+      .step-status {
+        display: none;
+      }
+
+      .step-icon {
+        width: 39px;
+        height: 39px;
+      }
+
+      .join {
+        padding: 84px 0 115px;
+      }
+
+      .join-box {
+        min-height: 0;
+        gap: 27px;
+        border-radius: 25px;
+        padding: 30px 20px;
+      }
+
+      .join-action {
+        width: 100%;
+      }
+
+      .footer {
+        flex-direction: column;
+        padding-bottom: 102px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
     }
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <section class="hero" id="top">
-      <div class="channel-head">
-        <img
-          class="avatar"
-          src="https://i.oneme.ru/i?r=BTFjO43w8Yr1OSJ4tcurq5HiXb_Teb7l5cpc5lyoxP_Is_y4ePJqkr65xxKnGpLOYvo"
-          alt="GitHub Radar | AI-находки"
-          width="60"
-          height="60"
-        />
-        <div class="channel-meta">
-          <span class="badge">Канал в мессенджере MAX</span>
-          <div class="channel-name">GitHub Radar | AI-находки</div>
+  <header class="shell topbar">
+    <a class="brand" href="#top" aria-label="GitHub Radar: к началу страницы">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>GITHUB RADAR</span>
+    </a>
+    <a class="top-link" href="#posts">Смотреть свежие находки</a>
+  </header>
+
+  <main>
+    <section class="shell hero" id="top">
+      <div class="hero-copy">
+        <div class="channel-row">
+          <div class="avatar-wrap">
+            <img src="https://i.oneme.ru/i?r=BTFjO43w8Yr1OSJ4tcurq5HiXb_Teb7l5cpc5lyoxP_Is_y4ePJqkr65xxKnGpLOYvo" alt="Аватар канала GitHub Radar | AI-находки" width="78" height="78">
+            <span class="live-dot" aria-hidden="true"></span>
+          </div>
+          <div class="channel-copy">
+            <div class="live-label">Эфир в MAX</div>
+            <div class="channel-title">GitHub Radar | AI-находки</div>
+          </div>
+        </div>
+
+        <h1>GitHub Radar: свежие AI-находки <span class="cyan">раньше, чем о них напишут в новостях</span></h1>
+        <p class="lead">За 1 минуту узнаете, какой репозиторий реально стоит открыть, как его запустить и можно ли безопасно брать в работу.</p>
+
+        <div class="benefit-grid" aria-label="Преимущества канала">
+          <div class="benefit">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <circle cx="16" cy="16" r="11" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M16 5v11l7 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="16" cy="16" r="2.5" fill="currentColor"/>
+            </svg>
+            <span>Новые сигналы каждый день</span>
+          </div>
+          <div class="benefit">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <path d="M8 14.5 4.5 18 8 21.5M24 14.5l3.5 3.5-3.5 3.5M18.5 7 13 25" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Только рабочий open source</span>
+          </div>
+          <div class="benefit">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <path d="m16 4 3.2 7.2 7.8.8-5.8 5.3 1.6 7.7-6.8-3.9L9.2 25l1.6-7.7L5 12l7.8-.8L16 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+            <span>Лицензия и запуск проверены</span>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="cta" data-max-cta="hero" href="https://max.ru/id10604113677_biz">
+            <span>Перейти в канал в MAX бесплатно</span>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <span class="trust">Без регистрации на сайте<br>Откроется сразу в MAX</span>
+        </div>
+
+        <div class="preview-switch">
+          <div class="switch-buttons" role="tablist" aria-label="Предпросмотр ценности">
+            <button class="switch-button" type="button" role="tab" aria-selected="true" data-preview="0">01</button>
+            <button class="switch-button" type="button" role="tab" aria-selected="false" data-preview="1">02</button>
+            <button class="switch-button" type="button" role="tab" aria-selected="false" data-preview="2">03</button>
+          </div>
+          <div class="switch-copy" id="previewCopy" aria-live="polite">
+            <strong>Сразу понятно, что это</strong>
+            Короткая суть проекта без пересказа README.
+          </div>
         </div>
       </div>
 
-      <h1>Ежедневный радар свежих GitHub-репозиториев по ИИ и разработке</h1>
-      <p class="lead">
-        Находим новые открытые проекты, которые набирают сотни звёзд за первые дни, и за 1 минуту разбираем на русском языке: что внутри, зачем нужно и как применить в работе.
-      </p>
-
-      <ul class="benefits">
-        <li>Инструменты для Claude Code, Codex, локальных LLM и мультиагентной разработки</li>
-        <li>Только живой open-source (MIT, Apache, AGPL) с готовыми релизами и кодом без воды</li>
-        <li>Формат короткой выжимки: «Что это», «Зачем смотреть», «Кому подойдёт» и статус проекта</li>
-      </ul>
-
-      <a
-        class="cta-btn"
-        data-max-cta="hero"
-        href="https://max.ru/id10604113677_biz"
-      >
-        Перейти в канал в MAX бесплатно
-      </a>
-      <div class="cta-note">Откроется в приложении MAX или в браузере за 1 клик</div>
+      <div class="radar-console" aria-label="Интерактивный радар репозиториев">
+        <div class="console-top">
+          <span>RADAR NODE · SNEZHKO.RU</span>
+          <span class="console-status">Сканирование</span>
+        </div>
+        <div class="radar-frame">
+          <canvas id="radarCanvas" aria-label="Радар с пятью активными репозиториями"></canvas>
+          <span class="radar-coord">55.7558N · 37.6173E</span>
+          <span class="scan-label">SIGNAL LOCKED · 5 TARGETS</span>
+        </div>
+        <div class="repo-tabs" role="tablist" aria-label="Выбор репозитория">
+          <button class="repo-tab" type="button" role="tab" aria-selected="true" data-repo="0">harp</button>
+          <button class="repo-tab" type="button" role="tab" aria-selected="false" data-repo="1">kividb</button>
+          <button class="repo-tab" type="button" role="tab" aria-selected="false" data-repo="2">opentrap</button>
+          <button class="repo-tab" type="button" role="tab" aria-selected="false" data-repo="3">web-ocean</button>
+          <button class="repo-tab" type="button" role="tab" aria-selected="false" data-repo="4">owly</button>
+        </div>
+        <article class="intercept-card" aria-live="polite">
+          <div class="intercept-head">
+            <span class="repo-name" id="radarRepo">dominikmartn/harp</span>
+            <span class="license" id="radarLicense">AGPL-3.0</span>
+          </div>
+          <div class="intercept-title" id="radarTitle">Пульт для параллельных сессий Claude Code и Codex</div>
+          <div class="telemetry">
+            <div class="signal">
+              <span class="signal-label">Звёзды</span>
+              <span class="signal-value" id="radarStars">~580 ★</span>
+            </div>
+            <div class="signal">
+              <span class="signal-label">Скорость</span>
+              <span class="signal-value" id="radarGrowth">2 дня</span>
+            </div>
+            <div class="signal">
+              <span class="signal-label">Стек</span>
+              <span class="signal-value" id="radarLang">macOS / Tmux</span>
+            </div>
+          </div>
+          <p class="verdict" id="radarVerdict">Сигнал сильный: полезно тем, кто одновременно ведёт несколько кодинг агентов и хочет видеть лимиты в одном окне.</p>
+        </article>
+      </div>
     </section>
 
-    <h2 class="section-title">Примеры свежих разборов в канале</h2>
-    <section class="posts" id="posts">
-      <article class="post-card" id="agents">
-        <div class="post-top">
-          <span class="repo-name">dominikmartn/harp</span>
-          <span class="stars">~580 ★ за 2 дня · AGPL-3.0</span>
-        </div>
-        <div class="post-title">Пульт управления для параллельных сессий Claude Code и Codex</div>
-        <p class="post-body">
-          Форк терминала Warp с боковой панелью для долгоиграющих кодинг-агентов. Сразу видно статус каждой сессии (работает, ждёт ответа или завершила задачу) и кольца лимитов 5-часового и недельного окна из локальных логов.
-        </p>
-        <div class="post-who">
-          <strong>Кому:</strong> разработчикам, которые запускают 5 и более ИИ-агентов одновременно и хотят контролировать их в одном окне.
-        </div>
-      </article>
+    <section class="section shell" id="posts">
+      <div class="section-head">
+        <h2>Не список ссылок. <span class="cyan">Готовая разведка</span> по каждому проекту.</h2>
+        <p class="section-intro">Фильтруйте находки по своей задаче. В каждой карточке есть суть, практическая ценность и честный ответ, кому проект пригодится.</p>
+      </div>
 
-      <article class="post-card">
-        <div class="post-top">
-          <span class="repo-name">kividbio/kividb</span>
-          <span class="stars">~430 ★ за неделю · Rust</span>
-        </div>
-        <div class="post-title">Многопоточная замена Redis и Valkey со встроенным векторным поиском</div>
-        <p class="post-body">
-          Работает по стандартному протоколу RESP2/RESP3 без правок клиентов, распределяет команды по всем ядрам процессора и включает полнотекстовый и векторный индекс HNSW для AI-приложений.
-        </p>
-        <div class="post-who">
-          <strong>Кому:</strong> бэкендерам и создателям AI-сервисов, которым нужен быстрый кэш и векторный поиск в одном контейнере Docker.
-        </div>
-      </article>
+      <div class="filters" role="group" aria-label="Фильтр находок">
+        <button class="filter-button" type="button" aria-pressed="true" data-filter="all">Все находки</button>
+        <button class="filter-button" type="button" aria-pressed="false" data-filter="agents">Claude Code / Codex</button>
+        <button class="filter-button" type="button" aria-pressed="false" data-filter="rust">Rust и базы</button>
+        <button class="filter-button" type="button" aria-pressed="false" data-filter="webgpu">WebGPU и графика</button>
+        <button class="filter-button" type="button" aria-pressed="false" data-filter="security">Безопасность и Linux</button>
+      </div>
 
-      <article class="post-card">
-        <div class="post-top">
-          <span class="repo-name">opentrap/opentrap</span>
-          <span class="stars">~350 ★ за 3 дня · AppSec</span>
-        </div>
-        <div class="post-title">Бесплатный перехватывающий прокси для проверки безопасности веб-приложений</div>
-        <p class="post-body">
-          Привычный интерфейс уровня Burp Suite поверх движка OWASP ZAP: Repeater, Intruder, краулер и автопоиск инъекций, XSS и утечек с готовым доказательством в одном окне без платной лицензии.
-        </p>
-        <div class="post-who">
-          <strong>Кому:</strong> разработчикам, тестировщикам и инженерам безопасности для быстрой самопроверки сайтов и API.
-        </div>
-      </article>
+      <div class="post-grid">
+        <article class="post-card" id="agents" data-category="agents">
+          <div class="post-top">
+            <span class="repo-name">dominikmartn/harp</span>
+            <span class="repo-meta">~580 ★ · 2 дня · AGPL-3.0<br>macOS / Tmux</span>
+          </div>
+          <h3>Пульт управления для параллельных сессий Claude Code и Codex</h3>
+          <dl class="post-structure">
+            <div class="post-line">
+              <dt>Что это</dt>
+              <dd>Интерфейс на базе Warp для управления несколькими кодинг агентами из одного окна.</dd>
+            </div>
+            <div class="post-line">
+              <dt>Зачем смотреть</dt>
+              <dd>Показывает статусы сессий и кольца лимитов 5 часового и недельного окна из локальных логов.</dd>
+            </div>
+            <div class="post-line">
+              <dt>Кому подойдёт</dt>
+              <dd>Разработчикам, которые одновременно запускают Claude Code, Codex и фоновые задачи.</dd>
+            </div>
+          </dl>
+          <a class="card-link" data-max-cta="post_harp" href="https://max.ru/id10604113677_biz">
+            Читать такие разборы в MAX
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </article>
+
+        <article class="post-card" data-category="rust">
+          <div class="post-top">
+            <span class="repo-name">kividbio/kividb</span>
+            <span class="repo-meta">~430 ★ · неделя · AGPL-3.0<br>Rust / Docker</span>
+          </div>
+          <h3>Замена Redis и Valkey на всех ядрах</h3>
+          <dl class="post-structure">
+            <div class="post-line">
+              <dt>Что это</dt>
+              <dd>Многопоточная база с совместимостью RESP2 и RESP3, которую можно поднять в Docker.</dd>
+            </div>
+            <div class="post-line">
+              <dt>Зачем смотреть</dt>
+              <dd>Около 21 млн GET в секунду, HNSW поиск и полнотекстовый индекс в одном сервисе.</dd>
+            </div>
+            <div class="post-line">
+              <dt>Кому подойдёт</dt>
+              <dd>Командам AI сервисов, которым нужны быстрый кэш, векторы и поиск без зоопарка систем.</dd>
+            </div>
+          </dl>
+          <a class="card-link" data-max-cta="post_kividb" href="https://max.ru/id10604113677_biz">
+            Читать такие разборы в MAX
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </article>
+
+        <article class="post-card" data-category="webgpu">
+          <div class="post-top">
+            <span class="repo-name">Noniv/web-ocean</span>
+            <span class="repo-meta">~870 ★ · неделя · MIT<br>WebGPU / 61 КБ</span>
+          </div>
+          <h3>Физический океан в браузере без Three.js</h3>
+          <dl class="post-structure">
+            <div class="post-line">
+              <dt>Что это</dt>
+              <dd>Компактный рендер океана на чистом WebGPU с интерактивной камерой.</dd>
+            </div>
+            <div class="post-line">
+              <dt>Зачем смотреть</dt>
+              <dd>FFT симуляция Тессендорфа на 6 каскадов и свободный полёт камеры на WASD.</dd>
+            </div>
+            <div class="post-line">
+              <dt>Кому подойдёт</dt>
+              <dd>Frontend и graphics инженерам, которые изучают WebGPU на настоящем проекте.</dd>
+            </div>
+          </dl>
+          <a class="card-link" data-max-cta="post_ocean" href="https://max.ru/id10604113677_biz">
+            Читать такие разборы в MAX
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </article>
+
+        <article class="post-card" data-category="security">
+          <div class="post-top">
+            <span class="repo-name">opentrap/opentrap</span>
+            <span class="repo-meta">~350 ★ · 3 дня · AGPL-3.0<br>AppSec / OWASP ZAP</span>
+          </div>
+          <h3>Свободный перехватывающий прокси уровня Burp Suite</h3>
+          <dl class="post-structure">
+            <div class="post-line">
+              <dt>Что это</dt>
+              <dd>Прокси для AppSec в одном AppImage с привычными инструментами ручной проверки.</dd>
+            </div>
+            <div class="post-line">
+              <dt>Зачем смотреть</dt>
+              <dd>Автокраулер находит уязвимости и сохраняет доказательства, движок работает поверх OWASP ZAP.</dd>
+            </div>
+            <div class="post-line">
+              <dt>Кому подойдёт</dt>
+              <dd>Разработчикам и инженерам безопасности для самопроверки веб приложений и API.</dd>
+            </div>
+          </dl>
+          <a class="card-link" data-max-cta="post_opentrap" href="https://max.ru/id10604113677_biz">
+            Читать такие разборы в MAX
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </article>
+
+        <article class="post-card" data-category="security rust">
+          <div class="post-top">
+            <span class="repo-name">t4t5/owly</span>
+            <span class="repo-meta">~2900 ★ · 2 недели · MIT<br>Rust / Linux</span>
+          </div>
+          <h3>AirDrop между iPhone и обычным Linux ноутбуком</h3>
+          <dl class="post-structure">
+            <div class="post-line">
+              <dt>Что это</dt>
+              <dd>Реализация обмена файлами через протокол AWDL без компьютера Apple.</dd>
+            </div>
+            <div class="post-line">
+              <dt>Зачем смотреть</dt>
+              <dd>Поддерживает карты Intel, MediaTek и Realtek, проект уже собрал сильный интерес сообщества.</dd>
+            </div>
+            <div class="post-line">
+              <dt>Кому подойдёт</dt>
+              <dd>Пользователям Linux и разработчикам сетевых утилит, которым нужен удобный обмен с iPhone.</dd>
+            </div>
+          </dl>
+          <a class="card-link" data-max-cta="post_owly" href="https://max.ru/id10604113677_biz">
+            Читать такие разборы в MAX
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </article>
+      </div>
     </section>
 
-    <section class="bottom-box" id="join">
-      <p>Подпишитесь на «GitHub Radar | AI-находки» в MAX, чтобы не пропускать новые инструменты</p>
-      <a
-        class="cta-btn"
-        data-max-cta="bottom"
-        href="https://max.ru/id10604113677_biz"
-      >
-        Читать разборы в MAX
-      </a>
+    <section class="section process-section">
+      <div class="shell process-layout">
+        <div class="process-copy">
+          <h2>1 минута чтения экономит <span class="cyan">час поиска</span></h2>
+          <p>GitHub Trending показывает рост. Радар отвечает на главный вопрос: стоит ли тратить время именно на этот проект.</p>
+          <div class="saving">
+            <strong>60×</strong>
+            <span>быстрее от сигнала до решения</span>
+          </div>
+        </div>
+
+        <div class="process-panel">
+          <div class="process-line" aria-hidden="true"></div>
+          <button class="process-step" type="button" aria-pressed="true" data-result="Проверяем не только число звёзд, но и скорость роста. Так видно живой интерес, а не накопленную популярность.">
+            <span class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 18 9 13l3 3 8-9M15 7h5v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="step-text"><strong>Ловим ускорение</strong><span>Рост звёзд, темп, активность сообщества</span></span>
+            <span class="step-status">ACTIVE</span>
+          </button>
+          <button class="process-step" type="button" aria-pressed="false" data-result="Открываем код, README, релизы и issues. Пустая обёртка без самостоятельной ценности не проходит фильтр.">
+            <span class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18-6-6 6-6M15 6l6 6-6 6M14 3l-4 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="step-text"><strong>Отсекаем обёртки</strong><span>Код, релизы, история изменений, issues</span></span>
+            <span class="step-status">CHECK</span>
+          </button>
+          <button class="process-step" type="button" aria-pressed="false" data-result="Лицензия определяет, можно ли использовать проект в коммерческой разработке и какие обязательства появятся.">
+            <span class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 5 6v5c0 4.6 2.7 8.1 7 10 4.3-1.9 7-5.4 7-10V6l-7-3Z" stroke="currentColor" stroke-width="1.8"/><path d="m9 12 2 2 4-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="step-text"><strong>Проверяем лицензию</strong><span>MIT, Apache, GPL, AGPL и ограничения</span></span>
+            <span class="step-status">LEGAL</span>
+          </button>
+          <button class="process-step" type="button" aria-pressed="false" data-result="Ищем готовый бинарник, AppImage, Docker образ или понятную команду сборки. Эксперимент без запуска помечаем честно.">
+            <span class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16v14H4zM4 9h16M8 7h.01M11 7h.01M7 13l2 2-2 2M12 17h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="step-text"><strong>Ищем быстрый запуск</strong><span>Бинарник, Docker, AppImage или сборка</span></span>
+            <span class="step-status">READY</span>
+          </button>
+          <div class="process-result" id="processResult" aria-live="polite"><strong>Сейчас:</strong> Проверяем не только число звёзд, но и скорость роста. Так видно живой интерес, а не накопленную популярность.</div>
+        </div>
+      </div>
     </section>
 
-    <footer class="footer">
-      Информационный канал об открытом ПО и ИИ-инструментах · snezhko.ru
-    </footer>
+    <section class="join shell" id="join">
+      <div class="join-box">
+        <div>
+          <h2>Подключайтесь к <span class="cyan">радару</span>, пока сигнал свежий</h2>
+          <p>Новые AI-инструменты, базы, графика и безопасность. Коротко, по-русски, с практическим вердиктом.</p>
+        </div>
+        <div class="join-action">
+          <a class="cta" data-max-cta="bottom" href="https://max.ru/id10604113677_biz">
+            <span>Открыть GitHub Radar в MAX</span>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="join-note">Бесплатно · без спама · только находки</div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <script>
-    var COUNTER_ID = 112187050;
-    var DEFAULT_MAX_URL = "https://max.ru/id10604113677_biz";
+  <footer class="shell footer">
+    <span>GitHub Radar | AI-находки</span>
+    <span>snezhko.ru · независимый канал об открытом ПО</span>
+  </footer>
 
-    (function () {
-      (function (m, e, t, r, i, k, a) {
-        m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
-        m[i].l = 1 * new Date();
-        k = e.createElement(t); a = e.getElementsByTagName(t)[0];
-        k.async = 1; k.src = r; a.parentNode.insertBefore(k, a);
-      })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-      ym(COUNTER_ID, "init", {
-        clickmap: true,
-        trackLinks: true,
-        accurateTrackBounce: true
-      });
-    })();
+  <div class="mobile-bar" id="mobileBar">
+    <div class="mobile-bar-copy"><span>СИГНАЛ АКТИВЕН</span>GitHub Radar в MAX</div>
+    <a class="cta" data-max-cta="mobile_sticky" href="https://max.ru/id10604113677_biz">Открыть канал</a>
+  </div>
+
+  <script>
+    var DEFAULT_MAX_URL = "https://max.ru/id10604113677_biz";
+    var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(112187050, "init", {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true
+    });
 
     function buildMaxUrl() {
       var target = new URL(DEFAULT_MAX_URL);
       try {
         var params = new URLSearchParams(location.search);
-        params.forEach(function (val, key) {
+        params.forEach(function (value, key) {
           if (/^(utm_|yclid|from|sub)/i.test(key)) {
-            target.searchParams.set(key, val);
+            target.searchParams.set(key, value);
           }
         });
-      } catch (e) {}
+      } catch (error) {}
       return target.toString();
     }
 
     function initCtaLinks() {
       var finalHref = buildMaxUrl();
-      var links = document.querySelectorAll("a[data-max-cta]");
-      links.forEach(function (link) {
+      document.querySelectorAll("a[data-max-cta]").forEach(function (link) {
         link.setAttribute("href", finalHref);
-        link.addEventListener("click", function (ev) {
-          ev.preventDefault();
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
           var dest = link.getAttribute("href") || finalHref;
           var navigated = false;
           function go() {
@@ -376,25 +1884,257 @@
           setTimeout(go, 250);
           try {
             if (typeof ym === "function") {
-              ym(COUNTER_ID, "reachGoal", "max_radar_sub", { cta: link.getAttribute("data-max-cta") }, go);
+              ym(112187050, "reachGoal", "max_radar_sub", { cta: link.getAttribute("data-max-cta") }, go);
             } else {
               go();
             }
-          } catch (err) {
+          } catch (error) {
             go();
           }
         });
       });
     }
 
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", initCtaLinks);
-    } else {
-      initCtaLinks();
+    var repos = [
+      {
+        name: "dominikmartn/harp",
+        license: "AGPL-3.0",
+        title: "Пульт для параллельных сессий Claude Code и Codex",
+        stars: "~580 ★",
+        growth: "2 дня",
+        lang: "macOS / Tmux",
+        verdict: "Сигнал сильный: полезно тем, кто одновременно ведёт несколько кодинг агентов и хочет видеть лимиты в одном окне.",
+        point: [0.27, 0.32]
+      },
+      {
+        name: "kividbio/kividb",
+        license: "AGPL-3.0",
+        title: "Многопоточная база с векторным и полнотекстовым поиском",
+        stars: "~430 ★",
+        growth: "7 дней",
+        lang: "Rust / Docker",
+        verdict: "Сигнал перспективный: совместимость с Redis и около 21 млн GET в секунду делают проект интересным для AI инфраструктуры.",
+        point: [0.7, 0.27]
+      },
+      {
+        name: "opentrap/opentrap",
+        license: "AGPL-3.0",
+        title: "Свободный AppSec прокси на движке OWASP ZAP",
+        stars: "~350 ★",
+        growth: "3 дня",
+        lang: "AppSec / Java",
+        verdict: "Сигнал практичный: один AppImage даёт прокси, краулер и автоматический поиск уязвимостей с доказательствами.",
+        point: [0.73, 0.67]
+      },
+      {
+        name: "Noniv/web-ocean",
+        license: "MIT",
+        title: "Физический океан на чистом WebGPU без Three.js",
+        stars: "~870 ★",
+        growth: "7 дней",
+        lang: "WebGPU / 61 КБ",
+        verdict: "Сигнал визуальный: компактная реализация показывает FFT симуляцию Тессендорфа на 6 каскадов прямо в браузере.",
+        point: [0.38, 0.73]
+      },
+      {
+        name: "t4t5/owly",
+        license: "MIT",
+        title: "AirDrop между iPhone и Linux через AWDL",
+        stars: "~2900 ★",
+        growth: "14 дней",
+        lang: "Rust / Linux",
+        verdict: "Сигнал массовый: проект переносит удобный обмен файлами на обычные Linux ноутбуки с картами Intel, MediaTek и Realtek.",
+        point: [0.48, 0.45]
+      }
+    ];
+
+    var activeRepo = 0;
+    var canvas = document.getElementById("radarCanvas");
+    var context = canvas.getContext("2d");
+    var radarFrame = canvas.parentElement;
+    var startTime = performance.now();
+
+    function setRepo(index) {
+      activeRepo = index;
+      var repo = repos[index];
+      document.getElementById("radarRepo").textContent = repo.name;
+      document.getElementById("radarLicense").textContent = repo.license;
+      document.getElementById("radarTitle").textContent = repo.title;
+      document.getElementById("radarStars").textContent = repo.stars;
+      document.getElementById("radarGrowth").textContent = repo.growth;
+      document.getElementById("radarLang").textContent = repo.lang;
+      document.getElementById("radarVerdict").textContent = repo.verdict;
+      document.querySelectorAll(".repo-tab").forEach(function (tab, tabIndex) {
+        tab.setAttribute("aria-selected", tabIndex === index ? "true" : "false");
+      });
+      drawRadar(performance.now());
     }
+
+    function resizeRadar() {
+      var rect = radarFrame.getBoundingClientRect();
+      var ratio = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.round(rect.width * ratio);
+      canvas.height = Math.round(rect.height * ratio);
+      canvas.style.width = rect.width + "px";
+      canvas.style.height = rect.height + "px";
+      context.setTransform(ratio, 0, 0, ratio, 0, 0);
+      drawRadar(performance.now());
+    }
+
+    function drawRadar(now) {
+      var width = canvas.clientWidth;
+      var height = canvas.clientHeight;
+      if (!width || !height) return;
+      var cx = width / 2;
+      var cy = height / 2;
+      var radius = Math.min(width, height) * 0.41;
+      var elapsed = reducedMotion ? 0.22 : (now - startTime) / 5200;
+      var angle = elapsed * Math.PI * 2;
+
+      context.clearRect(0, 0, width, height);
+
+      context.save();
+      context.translate(cx, cy);
+      context.strokeStyle = "rgba(0, 240, 255, 0.16)";
+      context.lineWidth = 1;
+      [0.25, 0.5, 0.75, 1].forEach(function (step) {
+        context.beginPath();
+        context.arc(0, 0, radius * step, 0, Math.PI * 2);
+        context.stroke();
+      });
+      context.beginPath();
+      context.moveTo(-radius, 0);
+      context.lineTo(radius, 0);
+      context.moveTo(0, -radius);
+      context.lineTo(0, radius);
+      context.stroke();
+
+      var gradient = context.createConicGradient(angle - 0.72, 0, 0);
+      gradient.addColorStop(0, "rgba(0, 240, 255, 0)");
+      gradient.addColorStop(0.1, "rgba(0, 240, 255, 0.24)");
+      gradient.addColorStop(0.14, "rgba(0, 240, 255, 0.03)");
+      gradient.addColorStop(1, "rgba(0, 240, 255, 0)");
+      context.fillStyle = gradient;
+      context.beginPath();
+      context.arc(0, 0, radius, 0, Math.PI * 2);
+      context.fill();
+
+      context.strokeStyle = "rgba(0, 240, 255, 0.76)";
+      context.shadowColor = "#00f0ff";
+      context.shadowBlur = 10;
+      context.beginPath();
+      context.moveTo(0, 0);
+      context.lineTo(Math.cos(angle) * radius, Math.sin(angle) * radius);
+      context.stroke();
+      context.restore();
+
+      repos.forEach(function (repo, index) {
+        var x = repo.point[0] * width;
+        var y = repo.point[1] * height;
+        var selected = index === activeRepo;
+        var pulse = reducedMotion ? 0 : Math.sin(now / 360 + index) * 2;
+        context.save();
+        context.shadowColor = selected ? "#f2a904" : "#10b981";
+        context.shadowBlur = selected ? 22 : 13;
+        context.fillStyle = selected ? "#f2a904" : "#10b981";
+        context.beginPath();
+        context.arc(x, y, (selected ? 5.5 : 3.5) + pulse * 0.18, 0, Math.PI * 2);
+        context.fill();
+        context.strokeStyle = selected ? "rgba(242,169,4,.4)" : "rgba(16,185,129,.26)";
+        context.lineWidth = 1;
+        context.beginPath();
+        context.arc(x, y, selected ? 14 + pulse : 9 + pulse, 0, Math.PI * 2);
+        context.stroke();
+        context.restore();
+      });
+
+      if (!reducedMotion) requestAnimationFrame(drawRadar);
+    }
+
+    canvas.addEventListener("click", function (event) {
+      var rect = canvas.getBoundingClientRect();
+      var x = event.clientX - rect.left;
+      var y = event.clientY - rect.top;
+      var nearest = 0;
+      var nearestDistance = Infinity;
+      repos.forEach(function (repo, index) {
+        var dx = x - repo.point[0] * rect.width;
+        var dy = y - repo.point[1] * rect.height;
+        var distance = Math.sqrt(dx * dx + dy * dy);
+        if (distance < nearestDistance) {
+          nearestDistance = distance;
+          nearest = index;
+        }
+      });
+      if (nearestDistance < 48) setRepo(nearest);
+    });
+
+    document.querySelectorAll(".repo-tab").forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        setRepo(Number(tab.getAttribute("data-repo")));
+      });
+    });
+
+    var previewItems = [
+      ["Сразу понятно, что это", "Короткая суть проекта без пересказа README."],
+      ["Видна практическая ценность", "Не только функции, но и сценарий применения в работе."],
+      ["Понятен риск внедрения", "Лицензия, способ запуска и зрелость проекта уже проверены."]
+    ];
+
+    document.querySelectorAll(".switch-button").forEach(function (button) {
+      button.addEventListener("click", function () {
+        var index = Number(button.getAttribute("data-preview"));
+        document.querySelectorAll(".switch-button").forEach(function (item) {
+          item.setAttribute("aria-selected", item === button ? "true" : "false");
+        });
+        document.getElementById("previewCopy").innerHTML = "<strong>" + previewItems[index][0] + "</strong>" + previewItems[index][1];
+      });
+    });
+
+    document.querySelectorAll(".filter-button").forEach(function (button) {
+      button.addEventListener("click", function () {
+        var filter = button.getAttribute("data-filter");
+        document.querySelectorAll(".filter-button").forEach(function (item) {
+          item.setAttribute("aria-pressed", item === button ? "true" : "false");
+        });
+        document.querySelectorAll(".post-card").forEach(function (card) {
+          var categories = card.getAttribute("data-category").split(" ");
+          card.classList.toggle("is-hidden", filter !== "all" && categories.indexOf(filter) === -1);
+        });
+      });
+    });
+
+    document.querySelectorAll(".post-card").forEach(function (card) {
+      card.addEventListener("pointermove", function (event) {
+        var rect = card.getBoundingClientRect();
+        card.style.setProperty("--mouse-x", event.clientX - rect.left + "px");
+        card.style.setProperty("--mouse-y", event.clientY - rect.top + "px");
+      });
+    });
+
+    document.querySelectorAll(".process-step").forEach(function (step) {
+      step.addEventListener("click", function () {
+        document.querySelectorAll(".process-step").forEach(function (item) {
+          item.setAttribute("aria-pressed", item === step ? "true" : "false");
+        });
+        document.getElementById("processResult").innerHTML = "<strong>Сейчас:</strong> " + step.getAttribute("data-result");
+      });
+    });
+
+    var mobileBar = document.getElementById("mobileBar");
+    function updateMobileBar() {
+      var joinTop = document.getElementById("join").getBoundingClientRect().top;
+      mobileBar.classList.toggle("is-visible", window.scrollY > 520 && joinTop > window.innerHeight * 0.35);
+    }
+
+    window.addEventListener("scroll", updateMobileBar, { passive: true });
+    window.addEventListener("resize", resizeRadar);
+    resizeRadar();
+    updateMobileBar();
+    initCtaLinks();
   </script>
   <noscript>
-    <div><img src="https://mc.yandex.ru/watch/112187050" style="position:absolute; left:-9999px;" alt="" /></div>
+    <div><img src="https://mc.yandex.ru/watch/112187050" style="position:absolute; left:-9999px;" alt=""></div>
   </noscript>
 </body>
 </html>
