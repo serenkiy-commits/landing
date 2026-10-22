@@ -154,6 +154,10 @@ nav .wrap{min-height:76px;display:flex;align-items:center;justify-content:space-
 .svc-stack{font-size:12px;color:var(--text);padding:10px 0;margin-top:auto}
 .svc-actions{display:grid;gap:8px;margin-top:10px}
 .svc-link,.svc-order-btn{font-size:13px;padding:10px 12px;min-height:44px;text-align:center}
+.service-filters{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.service-filter{background:var(--card);border:1px solid var(--line-soft);font-size:13px}
+.service-filter[aria-pressed="true"]{background:var(--amber);border-color:var(--amber);color:#050505}
+.service-cluster[hidden]{display:none}
 .all-services{margin-top:28px}
 
 .fact-ribbon{border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);background:var(--card);padding:8px 12px}
@@ -341,8 +345,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:28px;align-items:fle
   <div class="wrap">
     <h2 class="section-title">Навигатор по бизнес-направлениям</h2>
     <p class="section-intro">Выберите задачу, изучите архитектуру решения и передайте контекст в заявку без повторного описания.</p>
+    <div class="service-filters" aria-label="Фильтр услуг">
+      <button class="service-filter" type="button" data-service-filter="all" aria-pressed="true">Все направления</button>
+      <button class="service-filter" type="button" data-service-filter="sales" aria-pressed="false">Продажи и сервис</button>
+      <button class="service-filter" type="button" data-service-filter="market" aria-pressed="false">WB и Ozon</button>
+      <button class="service-filter" type="button" data-service-filter="operations" aria-pressed="false">CRM и агенты</button>
+      <button class="service-filter" type="button" data-service-filter="content" aria-pressed="false">Контент и сайты</button>
+    </div>
 
-    <div class="service-cluster">
+    <div class="service-cluster" data-service-cluster="sales">
       <div class="cluster-head"><h3>Продажи и клиентский сервис 24/7</h3><p>Приём обращения, квалификация, запись, оплата и передача менеджеру.</p></div>
       <div class="svc-grid">
         <article class="svc-card">
@@ -366,7 +377,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:28px;align-items:fle
       </div>
     </div>
 
-    <div class="service-cluster">
+    <div class="service-cluster" data-service-cluster="market">
       <div class="cluster-head"><h3>Маркетплейсы WB / Ozon и аналитика</h3><p>Сбор показателей, контроль рекламы, контент карточек и отчёты для селлера.</p></div>
       <div class="svc-grid">
         <article class="svc-card">
@@ -378,7 +389,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:28px;align-items:fle
       </div>
     </div>
 
-    <div class="service-cluster">
+    <div class="service-cluster" data-service-cluster="operations">
       <div class="cluster-head"><h3>Операции, CRM и ИИ-агенты</h3><p>Связь разрозненных систем, выполнение регламентов и контроль через Telegram.</p></div>
       <div class="svc-grid">
         <article class="svc-card">
@@ -402,7 +413,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:28px;align-items:fle
       </div>
     </div>
 
-    <div class="service-cluster">
+    <div class="service-cluster" data-service-cluster="content">
       <div class="cluster-head"><h3>Контент-заводы и AI-сайты</h3><p>Производство, публикация и измерение контента в управляемом конвейере.</p></div>
       <div class="svc-grid">
         <article class="svc-card">
@@ -629,6 +640,18 @@ function selectScenario(button) {
   document.getElementById('param-safety').textContent = data.safety;
   document.getElementById('param-output').textContent = data.output;
 }
+
+const serviceFilters = [...document.querySelectorAll('[data-service-filter]')];
+const serviceClusters = [...document.querySelectorAll('[data-service-cluster]')];
+serviceFilters.forEach(button => {
+  button.addEventListener('click', () => {
+    const selected = button.dataset.serviceFilter;
+    serviceFilters.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    serviceClusters.forEach(cluster => {
+      cluster.hidden = selected !== 'all' && cluster.dataset.serviceCluster !== selected;
+    });
+  });
+});
 
 document.querySelectorAll('.svc-order-btn').forEach(link => {
   link.addEventListener('click', () => {
