@@ -212,6 +212,7 @@
     }
 
     html {
+      overflow-x: clip;
       scroll-behavior: smooth;
       scrollbar-color: var(--cyan) #080b13;
       scrollbar-width: thin;
@@ -220,7 +221,7 @@
     body {
       margin: 0;
       min-width: 320px;
-      overflow-x: hidden;
+      overflow-x: clip;
       color: var(--text);
       background:
         radial-gradient(circle at 18% 8%, rgba(0, 119, 255, 0.14), transparent 28rem),
@@ -335,6 +336,8 @@
     .brand {
       display: inline-flex;
       align-items: center;
+      min-height: 44px;
+      padding: 4px 0;
       gap: 11px;
       color: #fff;
       font-family: var(--display);
@@ -401,7 +404,7 @@
       position: absolute;
       z-index: -1;
       top: 4%;
-      right: -14%;
+      right: 0;
       width: 56%;
       aspect-ratio: 1;
       content: "";
@@ -1208,7 +1211,7 @@
       isolation: isolate;
       overflow: hidden;
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: minmax(0, 1fr) auto;
       align-items: center;
       gap: 40px;
       min-height: 330px;
@@ -1363,6 +1366,10 @@
     }
 
     .cookie-banner a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 4px 2px;
       color: var(--cyan);
       text-decoration: underline;
       text-underline-offset: 3px;
@@ -1579,9 +1586,10 @@
       }
 
       h1 {
-        font-size: clamp(33px, 10.4vw, 46px);
-        line-height: 1.04;
-        letter-spacing: -0.05em;
+        font-size: clamp(25px, 8vw, 40px);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+        overflow-wrap: break-word;
       }
 
       .lead {
@@ -1644,7 +1652,8 @@
       }
 
       h2 {
-        font-size: clamp(29px, 8vw, 39px);
+        font-size: clamp(24px, 7.2vw, 36px);
+        overflow-wrap: break-word;
       }
 
       .section-head {
