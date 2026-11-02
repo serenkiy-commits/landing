@@ -56,6 +56,7 @@
       },
       "sameAs": [
         "https://t.me/snezhko_sergey",
+        "https://t.me/snezhko_ai",
         "https://max.ru/id10604113677_biz"
       ]
     },
@@ -76,7 +77,7 @@
         "@id": "https://snezhko.ru/#organization"
       },
       "datePublished": "2026-10-22T18:00:00+03:00",
-      "dateModified": "2026-10-23T00:20:00+03:00",
+      "dateModified": "2026-11-02T16:40:00+03:00",
       "primaryImageOfPage": {
         "@type": "ImageObject",
         "url": "https://snezhko.ru/radar/og-radar.png",
@@ -94,7 +95,7 @@
       "@type": "ItemList",
       "@id": "https://snezhko.ru/radar/#repo-list",
       "name": "Свежие разборы репозиториев в GitHub Radar",
-      "numberOfItems": 5,
+      "numberOfItems": 9,
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -154,6 +155,54 @@
             "programmingLanguage": "Rust / Linux",
             "license": "https://spdx.org/licenses/MIT.html",
             "url": "https://snezhko.ru/radar/#posts"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "code-yeongyu/lazycodex",
+            "description": "Harness для сложных кодовых баз внутри Codex: память проекта, план, выполнение и проверка завершения. MIT, TypeScript, 3865 звёзд на 2 ноября 2026.",
+            "programmingLanguage": "TypeScript",
+            "license": "https://spdx.org/licenses/MIT.html",
+            "url": "https://snezhko.ru/radar/#lazycodex"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "agentclientprotocol/claude-agent-acp",
+            "description": "Мост от Claude Agent SDK к любому клиенту Agent Client Protocol. Apache-2.0, TypeScript, 2717 звёзд на 2 ноября 2026.",
+            "programmingLanguage": "TypeScript",
+            "license": "https://spdx.org/licenses/Apache-2.0.html",
+            "url": "https://snezhko.ru/radar/#claude-agent-acp"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "yym68686/uni-api",
+            "description": "Rust-шлюз к нескольким LLM API с приведением к формату OpenAI и балансировкой. Apache-2.0, 1271 звезда на 2 ноября 2026.",
+            "programmingLanguage": "Rust",
+            "license": "https://spdx.org/licenses/Apache-2.0.html",
+            "url": "https://snezhko.ru/radar/#uni-api"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "entireio/cli",
+            "description": "CLI на Go сохраняет сессии ИИ-агента в Git рядом с коммитами. MIT, 5290 звёзд на 2 ноября 2026.",
+            "programmingLanguage": "Go",
+            "license": "https://spdx.org/licenses/MIT.html",
+            "url": "https://snezhko.ru/radar/#entire"
           }
         }
       ]
@@ -610,6 +659,47 @@
       line-height: 1.45;
     }
 
+    .channel-links,
+    .card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+    }
+
+    .channel-links {
+      margin-top: 12px;
+    }
+
+    .cta-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 16px;
+      border: 1px solid rgba(0, 240, 255, 0.35);
+      border-radius: 14px;
+      color: #d7f7ff;
+      background: rgba(0, 240, 255, 0.06);
+      font-weight: 800;
+      line-height: 1.2;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .cta-ghost:hover {
+      border-color: rgba(0, 240, 255, 0.7);
+      color: #fff;
+    }
+
+    .join-action .channel-links {
+      flex-direction: column;
+    }
+
+    .join-action .cta-ghost,
+    .join-action .channel-links .cta {
+      width: 100%;
+    }
+
     .preview-switch {
       display: grid;
       grid-template-columns: auto 1fr;
@@ -945,9 +1035,16 @@
       transition: opacity 280ms ease, transform 280ms var(--ease), border-color 220ms ease;
     }
 
-    .post-card:first-child,
-    .post-card:last-child {
+    .post-card:first-child {
       grid-column: span 7;
+    }
+
+    .post-card:nth-child(n + 5) {
+      grid-column: span 6;
+    }
+
+    .post-card:last-child:nth-child(odd) {
+      grid-column: span 12;
     }
 
     .post-card:nth-child(2),
@@ -1535,7 +1632,9 @@
       .post-card:first-child,
       .post-card:last-child,
       .post-card:nth-child(2),
-      .post-card:nth-child(4) {
+      .post-card:nth-child(4),
+      .post-card:nth-child(n + 5),
+      .post-card:last-child:nth-child(odd) {
         grid-column: span 12;
       }
 
@@ -1761,7 +1860,7 @@
           <a href="https://snezhko.ru/">Snezhko AI</a>
           <span aria-hidden="true">/</span>
           <span aria-current="page">GitHub Radar</span>
-          <span class="updated-badge">Обновлено: <time datetime="2026-10-23">23.10.2026</time></span>
+          <span class="updated-badge">Обновлено: <time datetime="2026-11-02">02.11.2026</time></span>
         </nav>
         <div class="channel-row">
           <div class="avatar-wrap">
@@ -1809,6 +1908,10 @@
           </a>
           <span class="trust">Без регистрации на сайте<br>Откроется сразу в MAX</span>
         </div>
+        <div class="channel-links" aria-label="Каналы и чат">
+          <a class="cta-ghost" href="https://t.me/snezhko_ai" target="_blank" rel="noopener">Telegram</a>
+          <a class="cta-ghost" href="https://t.me/snezhko_sergey" target="_blank" rel="noopener">Чат</a>
+        </div>
 
         <div class="preview-switch">
           <div class="switch-buttons" role="tablist" aria-label="Предпросмотр ценности">
@@ -1829,9 +1932,9 @@
           <span class="console-status">Сканирование</span>
         </div>
         <div class="radar-frame">
-          <canvas id="radarCanvas" aria-label="Радар с пятью активными репозиториями"></canvas>
+          <canvas id="radarCanvas" aria-label="Радар с девятью активными репозиториями"></canvas>
           <span class="radar-coord">55.7558N · 37.6173E</span>
-          <span class="scan-label">SIGNAL LOCKED · 5 TARGETS</span>
+          <span class="scan-label">SIGNAL LOCKED · 9 TARGETS</span>
         </div>
         <div class="repo-tabs" role="tablist" aria-label="Выбор репозитория">
           <button class="repo-tab" type="button" role="tab" aria-selected="true" data-repo="0">harp</button>
@@ -1839,6 +1942,10 @@
           <button class="repo-tab" type="button" role="tab" aria-selected="false" data-repo="2">opentrap</button>
           <button class="repo-tab" type="button" role="tab" aria-selected="false" data-repo="3">web-ocean</button>
           <button class="repo-tab" type="button" role="tab" aria-selected="false" data-repo="4">owly</button>
+          <button class="repo-tab" type="button" role="tab" aria-selected="false" data-repo="5">lazycodex</button>
+          <button class="repo-tab" type="button" role="tab" aria-selected="false" data-repo="6">acp</button>
+          <button class="repo-tab" type="button" role="tab" aria-selected="false" data-repo="7">uni-api</button>
+          <button class="repo-tab" type="button" role="tab" aria-selected="false" data-repo="8">entire</button>
         </div>
         <article class="intercept-card" aria-live="polite">
           <div class="intercept-head">
@@ -1849,11 +1956,11 @@
           <div class="telemetry">
             <div class="signal">
               <span class="signal-label">Звёзды</span>
-              <span class="signal-value" id="radarStars">~580 ★</span>
+              <span class="signal-value" id="radarStars">701 ★</span>
             </div>
             <div class="signal">
               <span class="signal-label">Скорость</span>
-              <span class="signal-value" id="radarGrowth">2 дня</span>
+              <span class="signal-value" id="radarGrowth">29.10</span>
             </div>
             <div class="signal">
               <span class="signal-label">Стек</span>
@@ -1883,7 +1990,7 @@
         <article class="post-card" id="agents" data-category="agents">
           <div class="post-top">
             <span class="repo-name">dominikmartn/harp</span>
-            <span class="repo-meta">~580 ★ · 2 дня · AGPL-3.0<br>macOS / Tmux</span>
+            <span class="repo-meta">701 ★ · 29.10 · AGPL-3.0<br>macOS / Tmux</span>
           </div>
           <h3>Пульт управления для параллельных сессий Claude Code и Codex</h3>
           <dl class="post-structure">
@@ -1900,16 +2007,17 @@
               <dd>Разработчикам, которые одновременно запускают Claude Code, Codex и фоновые задачи.</dd>
             </div>
           </dl>
-          <a class="card-link" data-max-cta="post_harp" href="https://max.ru/id10604113677_biz">
-            Читать такие разборы в MAX
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+          <div class="card-links">
+            <a class="card-link" data-max-cta="post_harp" href="https://max.ru/id10604113677_biz">Читать в MAX</a>
+            <a class="card-link" href="https://t.me/snezhko_ai" target="_blank" rel="noopener">В Telegram</a>
+            <a class="card-link" href="https://t.me/snezhko_sergey" target="_blank" rel="noopener">В чат</a>
+          </div>
         </article>
 
         <article class="post-card" data-category="rust">
           <div class="post-top">
             <span class="repo-name">kividbio/kividb</span>
-            <span class="repo-meta">~430 ★ · неделя · AGPL-3.0<br>Rust / Docker</span>
+            <span class="repo-meta">1040 ★ · 02.11 · AGPL-3.0<br>Rust / Docker</span>
           </div>
           <h3>Замена Redis и Valkey на всех ядрах</h3>
           <dl class="post-structure">
@@ -1926,16 +2034,17 @@
               <dd>Командам AI сервисов, которым нужны быстрый кэш, векторы и поиск без зоопарка систем.</dd>
             </div>
           </dl>
-          <a class="card-link" data-max-cta="post_kividb" href="https://max.ru/id10604113677_biz">
-            Читать такие разборы в MAX
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+          <div class="card-links">
+            <a class="card-link" data-max-cta="post_kividb" href="https://max.ru/id10604113677_biz">Читать в MAX</a>
+            <a class="card-link" href="https://t.me/snezhko_ai" target="_blank" rel="noopener">В Telegram</a>
+            <a class="card-link" href="https://t.me/snezhko_sergey" target="_blank" rel="noopener">В чат</a>
+          </div>
         </article>
 
         <article class="post-card" data-category="webgpu">
           <div class="post-top">
             <span class="repo-name">Noniv/web-ocean</span>
-            <span class="repo-meta">~870 ★ · неделя · MIT<br>WebGPU / 61 КБ</span>
+            <span class="repo-meta">973 ★ · 17.10 · MIT<br>WebGPU / 61 КБ</span>
           </div>
           <h3>Физический океан в браузере без Three.js</h3>
           <dl class="post-structure">
@@ -1952,16 +2061,17 @@
               <dd>Frontend и graphics инженерам, которые изучают WebGPU на настоящем проекте.</dd>
             </div>
           </dl>
-          <a class="card-link" data-max-cta="post_ocean" href="https://max.ru/id10604113677_biz">
-            Читать такие разборы в MAX
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+          <div class="card-links">
+            <a class="card-link" data-max-cta="post_ocean" href="https://max.ru/id10604113677_biz">Читать в MAX</a>
+            <a class="card-link" href="https://t.me/snezhko_ai" target="_blank" rel="noopener">В Telegram</a>
+            <a class="card-link" href="https://t.me/snezhko_sergey" target="_blank" rel="noopener">В чат</a>
+          </div>
         </article>
 
         <article class="post-card" data-category="security">
           <div class="post-top">
             <span class="repo-name">opentrap/opentrap</span>
-            <span class="repo-meta">~350 ★ · 3 дня · AGPL-3.0<br>AppSec / OWASP ZAP</span>
+            <span class="repo-meta">774 ★ · 31.10 · AGPL-3.0<br>AppSec / OWASP ZAP</span>
           </div>
           <h3>Свободный перехватывающий прокси уровня Burp Suite</h3>
           <dl class="post-structure">
@@ -1978,16 +2088,17 @@
               <dd>Разработчикам и инженерам безопасности для самопроверки веб приложений и API.</dd>
             </div>
           </dl>
-          <a class="card-link" data-max-cta="post_opentrap" href="https://max.ru/id10604113677_biz">
-            Читать такие разборы в MAX
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+          <div class="card-links">
+            <a class="card-link" data-max-cta="post_opentrap" href="https://max.ru/id10604113677_biz">Читать в MAX</a>
+            <a class="card-link" href="https://t.me/snezhko_ai" target="_blank" rel="noopener">В Telegram</a>
+            <a class="card-link" href="https://t.me/snezhko_sergey" target="_blank" rel="noopener">В чат</a>
+          </div>
         </article>
 
         <article class="post-card" data-category="security rust">
           <div class="post-top">
             <span class="repo-name">t4t5/owly</span>
-            <span class="repo-meta">~2900 ★ · 2 недели · MIT<br>Rust / Linux</span>
+            <span class="repo-meta">3243 ★ · 31.10 · MIT<br>Rust / Linux</span>
           </div>
           <h3>AirDrop между iPhone и обычным Linux ноутбуком</h3>
           <dl class="post-structure">
@@ -2004,12 +2115,129 @@
               <dd>Пользователям Linux и разработчикам сетевых утилит, которым нужен удобный обмен с iPhone.</dd>
             </div>
           </dl>
-          <a class="card-link" data-max-cta="post_owly" href="https://max.ru/id10604113677_biz">
-            Читать такие разборы в MAX
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+          <div class="card-links">
+            <a class="card-link" data-max-cta="post_owly" href="https://max.ru/id10604113677_biz">Читать в MAX</a>
+            <a class="card-link" href="https://t.me/snezhko_ai" target="_blank" rel="noopener">В Telegram</a>
+            <a class="card-link" href="https://t.me/snezhko_sergey" target="_blank" rel="noopener">В чат</a>
+          </div>
+        </article>
+
+        <article class="post-card" id="lazycodex" data-category="agents">
+          <div class="post-top">
+            <span class="repo-name">code-yeongyu/lazycodex</span>
+            <span class="repo-meta">3865 ★ · 02.11 · MIT<br>TypeScript / Codex</span>
+          </div>
+          <h3>Память, план и проверка завершения внутри Codex</h3>
+          <dl class="post-structure">
+            <div class="post-line">
+              <dt>Что это</dt>
+              <dd>Harness для сложных кодовых баз: память проекта, план, выполнение и проверка завершения внутри Codex.</dd>
+            </div>
+            <div class="post-line">
+              <dt>Зачем смотреть</dt>
+              <dd>MIT, TypeScript. На 2 ноября 2026 у репозитория 3865 звёзд, последний push в этот же день.</dd>
+            </div>
+            <div class="post-line">
+              <dt>Кому подойдёт</dt>
+              <dd>Тем, кто ведёт длинные задачи в Codex и хочет отдельный контур плана и проверки.</dd>
+            </div>
+          </dl>
+          <div class="card-links">
+            <a class="card-link" data-max-cta="post_lazycodex" href="https://max.ru/id10604113677_biz">Читать в MAX</a>
+            <a class="card-link" href="https://t.me/snezhko_ai" target="_blank" rel="noopener">В Telegram</a>
+            <a class="card-link" href="https://t.me/snezhko_sergey" target="_blank" rel="noopener">В чат</a>
+          </div>
+        </article>
+
+        <article class="post-card" id="claude-agent-acp" data-category="agents">
+          <div class="post-top">
+            <span class="repo-name">agentclientprotocol/claude-agent-acp</span>
+            <span class="repo-meta">2717 ★ · 02.11 · Apache-2.0<br>TypeScript / ACP</span>
+          </div>
+          <h3>Claude Agent SDK из любого клиента ACP</h3>
+          <dl class="post-structure">
+            <div class="post-line">
+              <dt>Что это</dt>
+              <dd>Мост, чтобы Claude Agent SDK открывался из клиента протокола Agent Client Protocol.</dd>
+            </div>
+            <div class="post-line">
+              <dt>Зачем смотреть</dt>
+              <dd>Apache-2.0, TypeScript. 2717 звёзд и push 2 ноября 2026.</dd>
+            </div>
+            <div class="post-line">
+              <dt>Кому подойдёт</dt>
+              <dd>Тем, кто подключает Claude к своему редактору, а не держит агента в одном окне.</dd>
+            </div>
+          </dl>
+          <div class="card-links">
+            <a class="card-link" data-max-cta="post_acp" href="https://max.ru/id10604113677_biz">Читать в MAX</a>
+            <a class="card-link" href="https://t.me/snezhko_ai" target="_blank" rel="noopener">В Telegram</a>
+            <a class="card-link" href="https://t.me/snezhko_sergey" target="_blank" rel="noopener">В чат</a>
+          </div>
+        </article>
+
+        <article class="post-card" id="uni-api" data-category="rust">
+          <div class="post-top">
+            <span class="repo-name">yym68686/uni-api</span>
+            <span class="repo-meta">1271 ★ · 02.11 · Apache-2.0<br>Rust</span>
+          </div>
+          <h3>Один шлюз к нескольким LLM API</h3>
+          <dl class="post-structure">
+            <div class="post-line">
+              <dt>Что это</dt>
+              <dd>Rust-сервис сводит несколько LLM API к формату OpenAI и умеет балансировку. В описании названы OpenAI, Anthropic, DeepBricks, OpenRouter, Gemini и Vertex.</dd>
+            </div>
+            <div class="post-line">
+              <dt>Зачем смотреть</dt>
+              <dd>Apache-2.0, Rust. 1271 звезда, push 2 ноября 2026.</dd>
+            </div>
+            <div class="post-line">
+              <dt>Кому подойдёт</dt>
+              <dd>Тем, кто держит несколько провайдеров моделей и хочет один клиентский формат.</dd>
+            </div>
+          </dl>
+          <div class="card-links">
+            <a class="card-link" data-max-cta="post_uniapi" href="https://max.ru/id10604113677_biz">Читать в MAX</a>
+            <a class="card-link" href="https://t.me/snezhko_ai" target="_blank" rel="noopener">В Telegram</a>
+            <a class="card-link" href="https://t.me/snezhko_sergey" target="_blank" rel="noopener">В чат</a>
+          </div>
+        </article>
+
+        <article class="post-card" id="entire" data-category="agents">
+          <div class="post-top">
+            <span class="repo-name">entireio/cli</span>
+            <span class="repo-meta">5290 ★ · 02.11 · MIT<br>Go / Git</span>
+          </div>
+          <h3>Сессии ИИ-агента рядом с коммитами Git</h3>
+          <dl class="post-structure">
+            <div class="post-line">
+              <dt>Что это</dt>
+              <dd>CLI на Go цепляется к Git и сохраняет сессии ИИ-агента рядом с коммитами.</dd>
+            </div>
+            <div class="post-line">
+              <dt>Зачем смотреть</dt>
+              <dd>MIT, Go. 5290 звёзд, push 2 ноября 2026.</dd>
+            </div>
+            <div class="post-line">
+              <dt>Кому подойдёт</dt>
+              <dd>Командам, которым нужно потом найти, какой сессией агента собран конкретный коммит.</dd>
+            </div>
+          </dl>
+          <div class="card-links">
+            <a class="card-link" data-max-cta="post_entire" href="https://max.ru/id10604113677_biz">Читать в MAX</a>
+            <a class="card-link" href="https://t.me/snezhko_ai" target="_blank" rel="noopener">В Telegram</a>
+            <a class="card-link" href="https://t.me/snezhko_sergey" target="_blank" rel="noopener">В чат</a>
+          </div>
         </article>
       </div>
+    </section>
+
+    <section class="section shell" id="journal">
+      <div class="section-head">
+        <h2>Выпуск <span class="cyan">2 ноября 2026</span></h2>
+        <p class="section-intro">Отдельная страница для поиска: четыре репозитория с push в этот день. Лицензия и число звёзд сняты с GitHub 2 ноября 2026.</p>
+      </div>
+      <a class="cta" href="/radar/blog/2026-11-02-codex-claude-git/">Читать выпуск</a>
     </section>
 
     <section class="section process-section">
@@ -2069,6 +2297,10 @@
             <span>Открыть GitHub Radar в MAX</span>
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
+          <div class="channel-links" aria-label="Каналы и чат">
+            <a class="cta-ghost" href="https://t.me/snezhko_ai" target="_blank" rel="noopener">Telegram</a>
+            <a class="cta-ghost" href="https://t.me/snezhko_sergey" target="_blank" rel="noopener">Чат</a>
+          </div>
           <div class="join-note">Бесплатно · без спама · только находки</div>
         </div>
       </div>
@@ -2083,6 +2315,8 @@
     <div class="footer-links">
       <a href="https://snezhko.ru/">Главная</a>
       <a href="https://snezhko.ru/privacy/">Политика конфиденциальности</a>
+      <a href="https://t.me/snezhko_ai" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://t.me/snezhko_sergey" target="_blank" rel="noopener">Чат</a>
       <a href="mailto:i@ssnezhko.ru">i@ssnezhko.ru</a>
     </div>
   </footer>
@@ -2162,8 +2396,8 @@
         name: "dominikmartn/harp",
         license: "AGPL-3.0",
         title: "Пульт для параллельных сессий Claude Code и Codex",
-        stars: "~580 ★",
-        growth: "2 дня",
+        stars: "701 ★",
+        growth: "29.10",
         lang: "macOS / Tmux",
         verdict: "Сигнал сильный: полезно тем, кто одновременно ведёт несколько кодинг агентов и хочет видеть лимиты в одном окне.",
         point: [0.27, 0.32]
@@ -2172,8 +2406,8 @@
         name: "kividbio/kividb",
         license: "AGPL-3.0",
         title: "Многопоточная база с векторным и полнотекстовым поиском",
-        stars: "~430 ★",
-        growth: "7 дней",
+        stars: "1040 ★",
+        growth: "02.11",
         lang: "Rust / Docker",
         verdict: "Сигнал перспективный: совместимость с Redis и около 21 млн GET в секунду делают проект интересным для AI инфраструктуры.",
         point: [0.7, 0.27]
@@ -2182,8 +2416,8 @@
         name: "opentrap/opentrap",
         license: "AGPL-3.0",
         title: "Свободный AppSec прокси на движке OWASP ZAP",
-        stars: "~350 ★",
-        growth: "3 дня",
+        stars: "774 ★",
+        growth: "31.10",
         lang: "AppSec / Java",
         verdict: "Сигнал практичный: один AppImage даёт прокси, краулер и автоматический поиск уязвимостей с доказательствами.",
         point: [0.73, 0.67]
@@ -2192,8 +2426,8 @@
         name: "Noniv/web-ocean",
         license: "MIT",
         title: "Физический океан на чистом WebGPU без Three.js",
-        stars: "~870 ★",
-        growth: "7 дней",
+        stars: "973 ★",
+        growth: "17.10",
         lang: "WebGPU / 61 КБ",
         verdict: "Сигнал визуальный: компактная реализация показывает FFT симуляцию Тессендорфа на 6 каскадов прямо в браузере.",
         point: [0.38, 0.73]
@@ -2202,11 +2436,51 @@
         name: "t4t5/owly",
         license: "MIT",
         title: "AirDrop между iPhone и Linux через AWDL",
-        stars: "~2900 ★",
-        growth: "14 дней",
+        stars: "3243 ★",
+        growth: "31.10",
         lang: "Rust / Linux",
         verdict: "Сигнал массовый: проект переносит удобный обмен файлами на обычные Linux ноутбуки с картами Intel, MediaTek и Realtek.",
         point: [0.48, 0.45]
+      },
+      {
+        name: "code-yeongyu/lazycodex",
+        license: "MIT",
+        title: "Память, план и проверка завершения внутри Codex",
+        stars: "3865 ★",
+        growth: "02.11",
+        lang: "TypeScript",
+        verdict: "Сигнал рабочий: harness для длинных задач в Codex. Лицензия MIT, 3865 звёзд, push 2 ноября 2026.",
+        point: [0.18, 0.58]
+      },
+      {
+        name: "agentclientprotocol/claude-agent-acp",
+        license: "Apache-2.0",
+        title: "Claude Agent SDK из любого клиента ACP",
+        stars: "2717 ★",
+        growth: "02.11",
+        lang: "TypeScript",
+        verdict: "Сигнал стыковочный: Claude Agent SDK открывается в клиентах Agent Client Protocol. Apache-2.0, 2717 звёзд.",
+        point: [0.62, 0.5]
+      },
+      {
+        name: "yym68686/uni-api",
+        license: "Apache-2.0",
+        title: "Один шлюз к нескольким LLM API",
+        stars: "1271 ★",
+        growth: "02.11",
+        lang: "Rust",
+        verdict: "Сигнал инфраструктурный: Rust-шлюз приводит разные LLM API к формату OpenAI. Apache-2.0, 1271 звезда.",
+        point: [0.84, 0.4]
+      },
+      {
+        name: "entireio/cli",
+        license: "MIT",
+        title: "Сессии ИИ-агента рядом с коммитами Git",
+        stars: "5290 ★",
+        growth: "02.11",
+        lang: "Go",
+        verdict: "Сигнал командный: CLI сохраняет сессии агента в истории Git. MIT, 5290 звёзд, push 2 ноября 2026.",
+        point: [0.55, 0.8]
       }
     ];
 
