@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Находки для дома и гаджеты | WB, Ozon, Маркет</title>
+  <meta name="description" content="Честные видеообзоры полезных товаров для дома, кухни и авто с Маркета, WB и Ozon. Прямые ссылки и артикулы в каждом посте.">
+  <meta property="og:title" content="Находки для дома и гаджеты | WB, Ozon, Маркет">
+  <meta property="og:description" content="Выбирайте удобную площадку: Telegram, MAX или ВКонтакте. Прямые ссылки и коды товаров под каждым роликом.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://snezhko.ru/nahodki/">
+  <style>
+    :root {
+      --bg-inner: #5c26a4;
+      --bg-outer: #120826;
+      --gold: #ffce54;
+      --gold-dark: #f5b623;
+      --purple-dark: #1c0a34;
+      --card-bg: rgba(34, 14, 64, 0.78);
+      --card-border: rgba(255, 206, 84, 0.35);
+      --text: #ffffff;
+      --muted: rgba(255, 255, 255, 0.82);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    body {
+      min-height: 100dvh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 50% 18%, rgba(255, 196, 68, 0.22) 0%, rgba(255, 196, 68, 0) 55%),
+        radial-gradient(circle at 50% 35%, var(--bg-inner) 0%, var(--bg-outer) 78%);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px 36px;
+    }
+    .wrap {
+      width: 100%;
+      max-width: 420px;
+      background: var(--card-bg);
+      border: 1.5px solid var(--card-border);
+      border-radius: 28px;
+      padding: 28px 22px 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55), 0 0 40px rgba(92, 38, 164, 0.4);
+      backdrop-filter: blur(14px);
+      text-align: center;
+    }
+    .avatar {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 35%, #6a2ec0, #180a30);
+      border: 3px solid var(--gold);
+      box-shadow: 0 8px 28px rgba(255, 206, 84, 0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .avatar svg { width: 52px; height: 52px; }
+    .pill {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--purple-dark);
+      font-weight: 800;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 23px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+    .sub-gold {
+      color: var(--gold);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .desc {
+      font-size: 14px;
+      line-height: 1.45;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 16px 18px;
+      border-radius: 18px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      transition: transform 0.14s ease, box-shadow 0.14s ease;
+      cursor: pointer;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn-left {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      text-align: left;
+    }
+    .btn-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .btn-title { display: block; font-size: 16px; font-weight: 800; }
+    .btn-hint { display: block; font-size: 12px; font-weight: 500; opacity: 0.85; margin-top: 2px; }
+    .btn-arrow { font-size: 20px; font-weight: 800; opacity: 0.9; }
+
+    .btn-tg {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      color: var(--purple-dark);
+      box-shadow: 0 8px 24px rgba(255, 206, 84, 0.32);
+    }
+    .btn-tg .btn-icon { background: rgba(28, 10, 52, 0.12); color: var(--purple-dark); }
+
+    .btn-max {
+      background: linear-gradient(135deg, #7b3fe4 0%, #5120a8 100%);
+      color: #ffffff;
+      border: 1.5px solid rgba(255, 206, 84, 0.42);
+      box-shadow: 0 8px 22px rgba(81, 32, 168, 0.45);
+    }
+    .btn-max .btn-icon { background: rgba(255, 255, 255, 0.15); color: var(--gold); }
+
+    .btn-vk {
+      background: rgba(255, 255, 255, 0.09);
+      color: #ffffff;
+      border: 1.5px solid rgba(255, 255, 255, 0.22);
+    }
+    .btn-vk .btn-icon { background: rgba(0, 119, 255, 0.25); color: #5ca8ff; }
+
+    .footer {
+      margin-top: 18px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="avatar" aria-hidden="true">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22 22V18C22 12.477 26.477 8 32 8C37.523 8 42 12.477 42 18V22" stroke="#FFCE54" stroke-width="4.5" stroke-linecap="round"/>
+        <rect x="12" y="20" width="40" height="34" rx="9" fill="#FFCE54"/>
+        <path d="M32 27L34.9 33.2L41.7 34.1L36.7 38.8L38 45.5L32 42.2L26 45.5L27.3 38.8L22.3 34.1L29.1 33.2L32 27Z" fill="#220E40"/>
+      </svg>
+    </div>
+    <span class="pill">WB • OZON • МАРКЕТ</span>
+    <h1>Находки для дома и гаджеты</h1>
+    <div class="sub-gold">Честные обзоры и прямые ссылки</div>
+    <p class="desc">Выберите удобную соцсеть. Под каждым видео уже стоит готовая ссылка на карточку товара и код для быстрого поиска.</p>
+
+    <div class="buttons">
+      <a class="btn btn-tg" id="tg-btn" href="https://nahodki_dom_gadget.t.me" onclick="openTg(event)">
+        <span class="btn-left">
+          <span class="btn-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.4c.3-1.3-.9-2.3-2.1-1.8L2.6 9.3c-1.3.5-1.3 2.4.1 2.8l4.4 1.4 1.7 5.3c.4 1.2 1.9 1.5 2.8.6l2.5-2.5 4.6 3.4c1.1.8 2.6.2 2.9-1.1l.3-14.8zM8.3 12.9l8.6-5.3c.2-.1.4.2.2.3l-7.1 6.4-.3 3.2-1.4-4.6z"/></svg>
+          </span>
+          <span>
+            <span class="btn-title">Открыть в Telegram</span>
+            <span class="btn-hint">Канал с артикулами и поиском по коду</span>
+          </span>
+        </span>
+        <span class="btn-arrow">›</span>
+      </a>
+
+      <a class="btn btn-max" href="https://max.ru/channel_nahodki_dom_gadget" target="_blank" rel="noopener">
+        <span class="btn-left">
+          <span class="btn-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.7 1.33 5.12 3.44 6.77L4.5 22l4.66-1.86c.91.23 1.86.36 2.84.36 5.52 0 10-4.03 10-9S17.52 2 12 2zm1.1 12.6l-2.6-2.8-5 2.8 5.5-5.8 2.6 2.8 5-2.8-5.5 5.8z"/></svg>
+          </span>
+          <span>
+            <span class="btn-title">Канал в MAX</span>
+            <span class="btn-hint">Обзоры и прямые ссылки без VPN</span>
+          </span>
+        </span>
+        <span class="btn-arrow">›</span>
+      </a>
+
+      <a class="btn btn-vk" href="https://vk.ru/nahodki_dom_gadget" target="_blank" rel="noopener">
+        <span class="btn-left">
+          <span class="btn-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.8 17.5c-5.5 0-8.6-3.8-8.7-10h2.7c.1 4.6 2.1 6.5 3.7 6.9V7.5h2.6v3.9c1.6-.2 3.2-2 3.8-3.9h2.6c-.4 2.5-2.2 4.3-3.5 5.1 1.3.6 3.3 2.2 4.1 4.9h-2.8c-.6-1.9-2.1-3.4-4.1-3.6v3.6h-.4z"/></svg>
+          </span>
+          <span>
+            <span class="btn-title">Сообщество ВКонтакте</span>
+            <span class="btn-hint">VK Клипы и подборки находок</span>
+          </span>
+        </span>
+        <span class="btn-arrow">›</span>
+      </a>
+    </div>
+
+    <div class="footer">Нажмите на удобную кнопку, чтобы открыть приложение</div>
+  </main>
+
+  <script>
+    function openTg(e) {
+      e.preventDefault();
+      window.location.href = "tg://resolve?domain=nahodki_dom_gadget";
+      setTimeout(function () {
+        window.location.href = "https://t.me/nahodki_dom_gadget";
+      }, 400);
+    }
+  </script>
+</body>
+</html>
