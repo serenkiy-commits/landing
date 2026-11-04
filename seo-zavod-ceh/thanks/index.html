@@ -20,5 +20,29 @@
     <p>Статус участия и доступ к материалам «Цеха» можно проверить у организатора. Здесь вы можете вернуться к разбору о работе с SEO-статьями.</p>
     <a href="../">Вернуться к статье</a>
   </main>
+  <script>
+    (() => {
+      // This measures a return after an outbound click, not a paid membership.
+      if (location.href !== 'https://snezhko.ru/seo-zavod-ceh/thanks/?thanks=87654') return;
+      const maxAge = 30 * 60 * 1000;
+      try {
+        if (sessionStorage.getItem('ceh.thanks.viewed')) return;
+        const clickedAt = Number(sessionStorage.getItem('ceh.join.clickedAt'));
+        const age = Date.now() - clickedAt;
+        if (!(clickedAt > 0 && age >= 0 && age <= maxAge)) return;
+        sessionStorage.setItem('ceh.thanks.viewed', '1');
+        sessionStorage.removeItem('ceh.join.clickedAt');
+      } catch { return; }
+
+      window.ym = window.ym || function () { (window.ym.a = window.ym.a || []).push(arguments); };
+      window.ym.l = window.ym.l || Date.now();
+      const tag = document.createElement('script');
+      tag.src = 'https://mc.yandex.ru/metrika/tag.js';
+      tag.async = true;
+      document.head.appendChild(tag);
+      // Normal init records this one pageview for the exact-URL goal.
+      window.ym(112187050, 'init', {webvisor: false, clickmap: false, trackLinks: false});
+    })();
+  </script>
 </body>
 </html>

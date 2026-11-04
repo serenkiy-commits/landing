@@ -62,7 +62,7 @@
   <footer>Snezhko AI · Практика для владельцев сайтов</footer>
   <script>
     const CEH_METRIKA_COUNTER = 112187050; // snezhko.ru
-    if (location.hostname === 'snezhko.ru' || location.hostname === 'www.snezhko.ru') {
+    if (location.origin === 'https://snezhko.ru') {
       window.ym = window.ym || function () { (window.ym.a = window.ym.a || []).push(arguments); };
       window.ym.l = window.ym.l || Date.now();
       if (!document.querySelector('script[src^="https://mc.yandex.ru/metrika/tag.js"]')) {
@@ -73,6 +73,7 @@
       }
       window.ym(CEH_METRIKA_COUNTER, 'init', {trackLinks: true, accurateTrackBounce: true});
       document.getElementById('join').addEventListener('click', function (event) {
+        try { sessionStorage.setItem('ceh.join.clickedAt', String(Date.now())); } catch { /* Link still works without browser storage. */ }
         const sameTab = event.button === 0 && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey;
         if (!sameTab) { window.ym(CEH_METRIKA_COUNTER, 'reachGoal', 'ceh_join_click'); return; }
         event.preventDefault();
