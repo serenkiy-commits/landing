@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Agent Autoloop, Reason Network, blaze и Reylo: день 5 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор agent-autoloop, reason-network, blaze и reylo. Звёзды, лицензии и дата push сняты с GitHub 5 ноября 2026. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-05-midday-agent-dev-tools/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-05-midday-agent-dev-tools/">
+  <meta property="og:title" content="Инструменты для агентов и разработки: дневной выпуск 5 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Инструменты для агентов и разработки: дневной выпуск 5 ноября 2026",
+        "datePublished": "2026-11-05",
+        "dateModified": "2026-11-05",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-05-midday-agent-dev-tools/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {
+          "@type": "Person",
+          "name": "Сергей Снежко",
+          "url": "https://snezhko.ru/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Snezhko AI",
+          "url": "https://snezhko.ru/"
+        },
+        "description": "Разбор agent-autoloop, reason-network, blaze и reylo по данным GitHub API на 5 ноября 2026."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Откуда взяты звёзды и лицензии?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "С публичного API GitHub 5 ноября 2026. Это снимок на эту дату, не прогноз роста."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Где выходят следующие выпуски?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "5 ноября 2026, день", "item": "https://snezhko.ru/radar/blog/2026-11-05-midday-agent-dev-tools/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">5 ноября 2026, день · Сергей Снежко · снимок GitHub API</p>
+    <h1>Дневной выпуск 5 ноября 2026: агенты и инструменты разработки</h1>
+    <p>5 ноября 2026 у четырёх открытых репозиториев был свежий push. В карточке описание проекта, лицензия, основной язык, число звёзд и дата push. Звёзды меняются. Этот текст фиксирует день замера.</p>
+
+    <h2>Снимок на 5 ноября 2026</h2>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Язык</th><th>Лицензия</th><th>Звёзды</th><th>Последний push</th><th>Ссылка</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>KKKKhazix/agent-autoloop</td><td>TypeScript</td><td>MIT</td><td>2900</td><td>2026-11-05</td><td><a href="https://github.com/KKKKhazix/agent-autoloop">GitHub</a></td></tr>
+        <tr><td>reason-machines/reason-network</td><td>Rust</td><td>Apache-2.0</td><td>1516</td><td>2026-11-05</td><td><a href="https://github.com/reason-machines/reason-network">GitHub</a></td></tr>
+        <tr><td>indexable-inc/blaze</td><td>Rust</td><td>Apache-2.0</td><td>1991</td><td>2026-11-05</td><td><a href="https://github.com/indexable-inc/blaze">GitHub</a></td></tr>
+        <tr><td>colinhacks/reylo</td><td>Rust</td><td>MIT</td><td>1503</td><td>2026-11-05</td><td><a href="https://github.com/colinhacks/reylo">GitHub</a></td></tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>, запрос 5 ноября 2026. Архивными эти четыре репозитория на момент запроса не были. Даты создания в порядке строк: 3 ноября 2026, 16 октября 2026, 19 октября 2026, 21 октября 2026. Время push в API: 2026-11-05T06:22:46Z, 2026-11-05T05:44:46Z, 2026-11-05T07:22:20Z и 2026-11-05T07:11:21Z.</p>
+
+    <h2>agent-autoloop: агент работает в фоне и зовёт вас только за решением</h2>
+    <p>Описание <a href="https://github.com/KKKKhazix/agent-autoloop">KKKKhazix/agent-autoloop</a> на китайском: командный агент в фоне сам берёт задачи и доводит их до конца, а карточку присылает только когда нужно решение человека. В README это лёгкая «средняя прослойка» для автоматизации. Ядро планирует задачи без внешних зависимостей, а источники событий, агенты, каналы уведомлений и выкладка кода сделаны сменными плагинами. Запускается одной командой на Mac или Linux, нужны Node 24, Git, curl и уже авторизованный командный агент, например Claude Code или Codex. Для вопросов к человеку README называет Feishu, DingTalk, WeCom, Slack, Discord и уведомление на рабочем столе. Версия для Windows в README помечена как «待定», то есть пока не готова. Лицензия MIT, TypeScript, 2900 звёзд, push 5 ноября 2026.</p>
+    <p>Репозиторий создан 3 ноября 2026, то есть ему два дня. Как он ведёт себя на длинных задачах, в карточке не измерено: это проверяют командой <code>agent-autoloop try</code> из README.</p>
+
+    <h2>reason-network: агенты разных людей переписываются между собой</h2>
+    <p>Описание <a href="https://github.com/reason-machines/reason-network">reason-machines/reason-network</a>: агенты для кода в команде общаются друг с другом. Проект ставит на компьютер небольшой демон. В README заявлены сквозное шифрование и связь напрямую между компьютерами. Агентам даны инструменты <code>list_team</code>, <code>send_message</code>, <code>message_status</code> и <code>ask_user</code> под MCP-сервером <code>reason-network</code>. Среди совместимых агентов README называет Claude Code, Codex, Cursor, Gemini CLI, Copilot CLI, opencode и другие. Для облачных ассистентов указан отдельный MCP-сервер. Чтобы войти в сеть, нужен аккаунт Reason. Лицензия Apache-2.0, Rust, 1516 звёзд, push 5 ноября 2026.</p>
+    <p>Если у вас несколько агентов на разных машинах, смотреть стоит на раздел «Get started» в README. Насколько это удобно в вашей команде, видно только после установки.</p>
+
+    <h2>blaze: пересборка Rust за миллисекунды</h2>
+    <p>Описание <a href="https://github.com/indexable-inc/blaze">indexable-inc/blaze</a>: инкрементальные сборки Rust до 92 раз быстрее, чем cargo и rustc. Команды <code>blaze build</code>, <code>check</code>, <code>run</code>, <code>test</code> и <code>bench</code> работают как у cargo. Демон остаётся запущенным и после правки пересобирает только изменённое. В README приведена таблица замеров для Linux x86-64: у ripgrep 508 мс у cargo против 56 мс у blaze, у bun 9,11 с против 451 мс. Там же оговорка: эти числа относятся к первой версии blaze, а вторая ещё не измерялась. Поддерживаются macOS на Apple silicon и Linux. Лицензия Apache-2.0, Rust, 1991 звезда, push 5 ноября 2026.</p>
+    <p>Цифры скорости взяты из README автора, мы их не перемерили. На своём проекте результат может отличаться.</p>
+
+    <h2>reylo: .sql-файлы как типизированные импорты TypeScript</h2>
+    <p><a href="https://github.com/colinhacks/reylo">colinhacks/reylo</a> позволяет импортировать <code>.sql</code>-файлы в TypeScript с полным выводом типов и без генерации кода. Типы запроса следуют за SQL и проверяются по схеме вашей dev-базы, поэтому опечатка в названии столбца становится ошибкой типов. По README поддержаны Postgres, MySQL, SQLite и DuckDB (в превью), а драйвер можно взять свой, например <code>pg</code>, postgres.js, <code>mysql2</code> или <code>better-sqlite3</code>. Проект опирается на «content mappers» из TypeScript 7.1, который на момент README в бета-версии, и требует Node 24 и запущенную dev-базу. Лицензия MIT, по API основной язык Rust, 1503 звезды, push 5 ноября 2026.</p>
+    <p>Из-за беты TypeScript 7.1 перед использованием в рабочем проекте стоит отдельно проверить совместимость.</p>
+
+    <h2>Что из этого следует</h2>
+    <p>Два репозитория про то, как агенты работают в фоне и общаются между собой. Два других про скорость и точность обычной разработки на Rust и TypeScript. Общее проверяемое: открытый код и push 5 ноября 2026. Число звёзд показывает интерес на дату замера, не качество кода и не безопасность зависимости.</p>
+    <p>Перед внедрением перечитайте лицензию на странице репозитория: у двух проектов MIT, у двух Apache-2.0.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub 5 ноября 2026. Это снимок на эту дату, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a> · <a href="https://vk.ru/club226261628">ВК</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
