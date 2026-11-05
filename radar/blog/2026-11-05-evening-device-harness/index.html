@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>agent-device, Argent, OpenHarness и Collie: вечер 5 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор agent-device, argent, openharness и collie. Звёзды, лицензии и дата push сняты с GitHub 5 ноября 2026. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-05-evening-device-harness/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-05-evening-device-harness/">
+  <meta property="og:title" content="Устройства и командный центр агентов: вечерний выпуск 5 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Устройства и командный центр агентов: вечерний выпуск 5 ноября 2026",
+        "datePublished": "2026-11-05",
+        "dateModified": "2026-11-05",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-05-evening-device-harness/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {
+          "@type": "Person",
+          "name": "Сергей Снежко",
+          "url": "https://snezhko.ru/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Snezhko AI",
+          "url": "https://snezhko.ru/"
+        },
+        "description": "Разбор agent-device, argent, openharness и collie по данным GitHub API на 5 ноября 2026."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Откуда взяты звёзды и лицензии?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "С публичного API GitHub 5 ноября 2026. Это снимок на эту дату, не прогноз роста."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Где выходят следующие выпуски?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "5 ноября 2026, вечер", "item": "https://snezhko.ru/radar/blog/2026-11-05-evening-device-harness/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">5 ноября 2026, вечер · Сергей Снежко · снимок GitHub API</p>
+    <h1>Вечерний выпуск 5 ноября 2026: устройства и командный центр агентов</h1>
+    <p>5 ноября 2026 у четырёх открытых репозиториев был свежий push. В карточке описание проекта, лицензия, основной язык, число звёзд и дата push. Звёзды меняются. Этот текст фиксирует день замера.</p>
+
+    <h2>Снимок на 5 ноября 2026</h2>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Язык</th><th>Лицензия</th><th>Звёзды</th><th>Последний push</th><th>Ссылка</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>callstack/agent-device</td><td>TypeScript</td><td>MIT</td><td>5277</td><td>2026-11-05</td><td><a href="https://github.com/callstack/agent-device">GitHub</a></td></tr>
+        <tr><td>software-mansion/argent</td><td>TypeScript</td><td>Apache-2.0</td><td>3163</td><td>2026-11-05</td><td><a href="https://github.com/software-mansion/argent">GitHub</a></td></tr>
+        <tr><td>AltanS/collie</td><td>TypeScript</td><td>MIT</td><td>1584</td><td>2026-11-05</td><td><a href="https://github.com/AltanS/collie">GitHub</a></td></tr>
+        <tr><td>autonomous-ai/openharness</td><td>TypeScript</td><td>MIT</td><td>1427</td><td>2026-11-05</td><td><a href="https://github.com/autonomous-ai/openharness">GitHub</a></td></tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>, запрос 5 ноября 2026. Архивными эти четыре репозитория на момент запроса не были. Даты создания в порядке строк: 30 января 2026, 23 февраля 2026, 28 июня 2026, 4 августа 2026. Время push в API: 2026-11-05T18:03:51Z, 2026-11-05T17:59:51Z, 2026-11-05T18:04:12Z и 2026-11-05T18:07:49Z.</p>
+
+    <h2>agent-device: слой устройств для агента, который пишет код</h2>
+    <p>Описание <a href="https://github.com/callstack/agent-device">callstack/agent-device</a>: открытый слой устройств для ИИ-агентов, которые пишут код. Через CLI, встроенный MCP-сервер или типизированный Node.js API агент управляет приложениями на мобильных, вебе, ТВ и десктопе — на устройствах и симуляторах, локально или в облаке. В README перечислены iOS, Android, HarmonyOS, tvOS, Android TV, Fire TV, Amazon Vega OS TV, web, macOS и Linux. Агент читает снимки accessibility вместо одних скриншотов, действует по refs и селекторам и сохраняет доказательства для проверки. Лицензия MIT, TypeScript, 5277 звёзд, push 5 ноября 2026.</p>
+    <p>Сайт проекта: <a href="https://agent-device.dev">agent-device.dev</a>. Насколько слой закрывает ваш стек устройств, видно только после установки и прогона на своём приложении.</p>
+
+    <h2>argent: ассистент жмёт кнопки на симуляторе и профилирует экран</h2>
+    <p><a href="https://github.com/software-mansion/argent">software-mansion/argent</a> даёт ассистенту прямое управление симуляторами iOS, эмуляторами и устройствами Android, ТВ (Apple TV, Android TV, Fire TV) и приложениями Electron/Chromium. В README заявлены тапы, свайпы, жесты, ввод, аппаратные кнопки, D-pad на ТВ, мышь и клавиатура на десктопе; запись пути как e2e и повтор; визуальная регрессия; профилирование через Hermes, React DevTools, Xcode Instruments и Perfetto; логи и сеть. Запуск из README: <code>npx @swmansion/argent@latest init</code>. Лицензия Apache-2.0, TypeScript, 3163 звезды, push 5 ноября 2026.</p>
+    <p>Сайт: <a href="https://argent.swmansion.com">argent.swmansion.com</a>. Совместимость с вашим React Native или нативным проектом нужно проверять отдельно по документации.</p>
+
+    <h2>collie: Claude Code и Codex с телефона через PWA</h2>
+    <p><a href="https://github.com/AltanS/collie">AltanS/collie</a> — открытый мобильный клиент для Herdr (с экспериментальной поддержкой herdr-core, tmux и zellij). Это self-hosted PWA: с iPhone или Android открываете URL и отвечаете агенту с мобильной клавиатуры. В README названы Claude Code, Codex и OpenCode. По умолчанию сервис отдают через Tailscale; голос и push описаны в docs репозитория. Лицензия MIT, TypeScript, 1584 звезды, push 5 ноября 2026.</p>
+    <p>Демо и сайт: <a href="https://colliepwa.dev">colliepwa.dev</a>. Нужен свой инстанс и доступ к терминальному мультиплексеру — без этого клиент не к чему подключить.</p>
+
+    <h2>openharness: один командный центр для агентов на разных машинах</h2>
+    <p>Описание <a href="https://github.com/autonomous-ai/openharness">autonomous-ai/openharness</a>: харнес для coding-агентов и не только. В README рядом названы Claude Code, Codex, Cursor, OpenCode, Devin, Amp, Copilot и ещё семь клиентов; машины (ноутбук, домашний сервер, GPU-бокс) связывают паролем без SSH-ключей, Tailscale и проброса портов. Дальше заявлена работа за пределами кода: CAD, схемы, роботы, игры и музыка. Есть desktop-приложение со ссылкой на загрузку в README. Лицензия MIT, TypeScript, 1427 звёзд, push 5 ноября 2026.</p>
+    <p>Сайт: <a href="https://www.autonomous.ai/harness">autonomous.ai/harness</a>. Список поддерживаемых агентов и сценарий «beyond code» стоит сверять с актуальным README перед установкой.</p>
+
+    <h2>Что из этого следует</h2>
+    <p>Два репозитория про управление устройствами и проверку UI агентом. Два других — про доступ к агентам с телефона и единый пульт на нескольких машинах. Общее проверяемое: открытый код и push 5 ноября 2026. Число звёзд показывает интерес на дату замера, не качество кода и не безопасность зависимости.</p>
+    <p>Перед внедрением перечитайте лицензию на странице репозитория: у трёх проектов MIT, у одного Apache-2.0.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub 5 ноября 2026. Это снимок на эту дату, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a> · <a href="https://vk.ru/club226261628">ВК</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
