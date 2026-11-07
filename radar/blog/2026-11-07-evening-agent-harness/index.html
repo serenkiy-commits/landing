@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Обвязка агентов: SPACE, TokenEconomizer, LearnHarness и OpenQodex, вечер 7 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор perplexityai/SPACE, microsoft/TokenEconomizer, amosblomqvist/learnharness и openqodex/openqodex. Звёзды, лицензии и дата push сняты с GitHub 7 ноября 2026. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-07-evening-agent-harness/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-07-evening-agent-harness/">
+  <meta property="og:title" content="Обвязка агентов: вечерний выпуск 7 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Обвязка агентов: вечерний выпуск 7 ноября 2026",
+        "datePublished": "2026-11-07",
+        "dateModified": "2026-11-07",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-07-evening-agent-harness/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {
+          "@type": "Person",
+          "name": "Сергей Снежко",
+          "url": "https://snezhko.ru/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Snezhko AI",
+          "url": "https://snezhko.ru/"
+        },
+        "description": "Разбор SPACE, TokenEconomizer, LearnHarness и OpenQodex по данным GitHub API на 7 ноября 2026."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Откуда взяты звёзды и лицензии?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "С публичного API GitHub 7 ноября 2026. Это снимок на эту дату, не прогноз роста."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Где выходят следующие выпуски?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "7 ноября 2026, вечер", "item": "https://snezhko.ru/radar/blog/2026-11-07-evening-agent-harness/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">7 ноября 2026, вечер · Сергей Снежко · снимок GitHub API</p>
+    <h1>Вечерний выпуск 7 ноября 2026: обвязка агентов — песочница, стоимость, обучение и ревью</h1>
+    <p>Четыре открытых репозитория про то, что окружает coding-агента: где выполнять его код, как снизить расход токенов по опыту прошлых сессий, как учить человека через агента и как отдельно проверять правки до push. У трёх был push 7 ноября 2026 по UTC, у TokenEconomizer — 6 ноября. В карточке описание, лицензия, основной язык, число звёзд и дата push на момент замера.</p>
+
+    <h2>Снимок на 7 ноября 2026</h2>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Язык</th><th>Лицензия</th><th>Звёзды</th><th>Последний push</th><th>Ссылка</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>perplexityai/SPACE</td>
+          <td>Rust</td>
+          <td>Apache-2.0</td>
+          <td>2076</td>
+          <td>2026-11-07</td>
+          <td><a href="https://github.com/perplexityai/SPACE">GitHub</a></td>
+        </tr>
+        <tr>
+          <td>microsoft/TokenEconomizer</td>
+          <td>Python</td>
+          <td>Apache-2.0</td>
+          <td>4941</td>
+          <td>2026-11-06</td>
+          <td><a href="https://github.com/microsoft/TokenEconomizer">GitHub</a></td>
+        </tr>
+        <tr>
+          <td>amosblomqvist/learnharness</td>
+          <td>TypeScript</td>
+          <td>AGPL-3.0</td>
+          <td>6104</td>
+          <td>2026-11-07</td>
+          <td><a href="https://github.com/amosblomqvist/learnharness">GitHub</a></td>
+        </tr>
+        <tr>
+          <td>openqodex/openqodex</td>
+          <td>TypeScript</td>
+          <td>Apache-2.0</td>
+          <td>1075</td>
+          <td>2026-11-07</td>
+          <td><a href="https://github.com/openqodex/openqodex">GitHub</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>, запрос 7 ноября 2026 около 21:10 по Москве. Архивными эти четыре репозитория на момент запроса не были. Даты создания в порядке строк: 1 октября, 13 октября, 16 октября и 2 октября 2026. Время push в API: 2026-11-07T18:04:15Z, 2026-11-06T20:41:57Z, 2026-11-07T07:50:13Z и 2026-11-07T10:26:51Z.</p>
+
+    <h2>SPACE: песочницы на Firecracker для агентного кода</h2>
+    <p><a href="https://github.com/perplexityai/SPACE">perplexityai/SPACE</a> — Sandboxed Platform for Agentic Code Execution от Perplexity. Это платформа песочниц на микро-ВМ Firecracker: приложение через HTTP API создаёт Linux-окружение по шаблону, запускает команды, читает вывод и управляет жизненным циклом (pause, suspend, удаление). Вывод команды идёт по отдельному data-plane с токеном сессии. В документации есть развёртывание в Kind, архитектура без Kubernetes, operator CLI и обёртка совместимости с E2B Python SDK. Лицензия Apache-2.0, основной язык Rust, 2076 звёзд, push 7 ноября 2026. Документация: <a href="https://space.docs.perplexity.ai/guide/index.html">space.docs.perplexity.ai</a>.</p>
+    <p>Смотреть тем, кто строит свой сервис с агентами и нуждается в изолированном выполнении чужого кода, а не в локальной политике на одном хосте.</p>
+
+    <h2>TokenEconomizer: контроль стоимости без смены агента</h2>
+    <p><a href="https://github.com/microsoft/TokenEconomizer">microsoft/TokenEconomizer</a> — открытый проект Microsoft Research и UC Berkeley: black-box контроль стоимости coding-агентов по опыту прошлых сессий в том же репозитории. Три механизма в README: micro-skills (запоминают, как устроен репозиторий), pruning инструментов (убирают то, чем в этом репо не пользуются) и вмешательство при зацикливании на одной ошибке. Работает с Claude Code, Codex, GitHub Copilot CLI и Pi без замены самого агента. Авторы публикуют измерения на задачах SWE-Bench и ссылку на arXiv; в этом выпуске цифры с их стенда не перепроверялись. Лицензия Apache-2.0, Python, 4941 звезда, push 6 ноября 2026. Страница проекта: <a href="https://tokeneconomizer.github.io">tokeneconomizer.github.io</a>.</p>
+    <p>Полезно, если агент часто ходит в одни и те же репозитории и счёт за токены растёт из‑за повторов и лишних инструментов.</p>
+
+    <h2>LearnHarness: обвязка агента для обучения</h2>
+    <p><a href="https://github.com/amosblomqvist/learnharness">amosblomqvist/learnharness</a> — десктопная обвязка, в которой агент измеряет текущее понимание, строит карту зависимостей до цели, учит по шагам и даёт практику. Знания копятся в графе утверждений и цепочек рассуждений между сессиями; можно прикладывать файлы с диска. Есть сборки для macOS (Apple Silicon) и Windows. Лицензия AGPL-3.0, TypeScript, 6104 звезды, push 7 ноября 2026. Сайт: <a href="https://learnharness.ai">learnharness.ai</a>.</p>
+    <p>Это не coding-агент для репозитория, а учебный контур вокруг агента. AGPL-3.0 стоит учесть, если планируете встраивать код в свой продукт.</p>
+
+    <h2>OpenQodex: отдельное ревью правок агента до push</h2>
+    <p><a href="https://github.com/openqodex/openqodex">openqodex/openqodex</a> — открытый AI code review для coding-агентов. Отдельный ревьюер проверяет незапушенные коммиты и незакоммиченные правки: сначала сканеры без модели (в том числе gitleaks, semgrep, osv.dev по lockfile), затем finder- и verifier-сессии на Claude Code или Codex с проверкой цитат скриптами. По умолчанию агент, который написал код, его не ревьюит. Ставится через <code>npx openqodex init</code>, свой аккаунт сервиса не нужен. Поддерживаются Claude Code, Codex, Cursor и Cline. Лицензия Apache-2.0, TypeScript, 1075 звёзд, push 7 ноября 2026. Сайт: <a href="https://openqodex.com">openqodex.com</a>.</p>
+    <p>Подходит как локальный gate перед push, когда агент пишет много диффов и нужен второй проход без отдельного SaaS-ключа.</p>
+
+    <h2>Что из этого следует</h2>
+    <p>SPACE отвечает на вопрос «где безопасно выполнять код агента». TokenEconomizer — «как дешевле гонять того же агента в знакомом репо». LearnHarness показывает обвязку агента вне кода: обучение человека. OpenQodex закрывает проверку результата до push. Число звёзд — интерес на 7 ноября 2026, не оценка качества и не аудит безопасности.</p>
+    <p>Лицензии: Apache-2.0 у SPACE, TokenEconomizer и OpenQodex; AGPL-3.0 у LearnHarness. У SPACE для продакшна нужен свой хостинг песочниц; у OpenQodex ревьюер опирается на уже установленный Claude Code или Codex.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub 7 ноября 2026. Это снимок на эту дату, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
