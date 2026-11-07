@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Десктоп и параллельные агенты: agent-desktop, worktrunk, auto-ontology и skills, утро 7 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор vercel-labs/agent-desktop, max-sixty/worktrunk, NVIDIA/auto-ontology и scenario-labs/skills. Звёзды, лицензии и дата push сняты с GitHub 7 ноября 2026. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-07-morning-agent-desktop/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-07-morning-agent-desktop/">
+  <meta property="og:title" content="Десктоп и параллельные агенты: утренний выпуск 7 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Десктоп и параллельные агенты: утренний выпуск 7 ноября 2026",
+        "datePublished": "2026-11-07",
+        "dateModified": "2026-11-07",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-07-morning-agent-desktop/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {
+          "@type": "Person",
+          "name": "Сергей Снежко",
+          "url": "https://snezhko.ru/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Snezhko AI",
+          "url": "https://snezhko.ru/"
+        },
+        "description": "Разбор agent-desktop, worktrunk, auto-ontology и skills по данным GitHub API на 7 ноября 2026."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Откуда взяты звёзды и лицензии?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "С публичного API GitHub 7 ноября 2026. Это снимок на эту дату, не прогноз роста."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Где выходят следующие выпуски?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "7 ноября 2026, утро", "item": "https://snezhko.ru/radar/blog/2026-11-07-morning-agent-desktop/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">7 ноября 2026, утро · Сергей Снежко · снимок GitHub API</p>
+    <h1>Утренний выпуск 7 ноября 2026: десктоп и параллельные агенты</h1>
+    <p>7 ноября 2026 у четырёх открытых репозиториев был свежий push (у двух — в этот же день по UTC, у двух — 6 ноября). В карточке описание проекта, лицензия, основной язык, число звёзд и дата push. Звёзды меняются. Этот текст фиксирует день замера.</p>
+
+    <h2>Снимок на 7 ноября 2026</h2>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Язык</th><th>Лицензия</th><th>Звёзды</th><th>Последний push</th><th>Ссылка</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>vercel-labs/agent-desktop</td>
+          <td>Rust</td>
+          <td>Apache-2.0</td>
+          <td>18186</td>
+          <td>2026-11-06</td>
+          <td><a href="https://github.com/vercel-labs/agent-desktop">GitHub</a></td>
+        </tr>
+        <tr>
+          <td>max-sixty/worktrunk</td>
+          <td>Rust</td>
+          <td>MIT / Apache-2.0</td>
+          <td>11814</td>
+          <td>2026-11-06</td>
+          <td><a href="https://github.com/max-sixty/worktrunk">GitHub</a></td>
+        </tr>
+        <tr>
+          <td>NVIDIA/auto-ontology</td>
+          <td>Python</td>
+          <td>Apache-2.0</td>
+          <td>9152</td>
+          <td>2026-11-06</td>
+          <td><a href="https://github.com/NVIDIA/auto-ontology">GitHub</a></td>
+        </tr>
+        <tr>
+          <td>scenario-labs/skills</td>
+          <td>Python</td>
+          <td>MIT</td>
+          <td>3415</td>
+          <td>2026-11-07</td>
+          <td><a href="https://github.com/scenario-labs/skills">GitHub</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>, запрос 7 ноября 2026. Архивными эти четыре репозитория на момент запроса не были. Даты создания в порядке строк: 19 февраля 2026, 17 октября 2025, 27 апреля 2026, 12 августа 2026. Время push в API: 2026-11-06T08:13:25Z, 2026-11-06T17:25:04Z, 2026-11-06T23:03:36Z и 2026-11-07T00:49:25Z. У worktrunk API отдаёт лицензию как Other; в файле LICENSE репозитория указана dual MIT и Apache-2.0.</p>
+
+    <h2>agent-desktop: computer use через дерево доступности</h2>
+    <p>Описание <a href="https://github.com/vercel-labs/agent-desktop">vercel-labs/agent-desktop</a>: Computer use CLI for AI agents. По смыслу репозитория и топиков это CLI, через который агент управляет десктопом по дереву доступности, без опоры на скриншоты и пиксели. В топиках названы macOS, MCP, accessibility и desktop-automation. Лицензия Apache-2.0, язык Rust, 18186 звёзд, push 6 ноября 2026.</p>
+    <p>Смотреть тем, кто подключает агентам работу с настольными приложениями. Насколько стабильно ходит конкретный UI на вашей машине, в этой карточке не измерялось: это смотрят в README и на своём стенде.</p>
+
+    <h2>worktrunk: git worktree под параллельных агентов</h2>
+    <p><a href="https://github.com/max-sixty/worktrunk">max-sixty/worktrunk</a> описан как CLI для управления Git worktree, рассчитанный на параллельные сценарии ИИ-агентов. В топиках указаны agents, claude-code, codex, git и worktrees. Сайт проекта: <a href="https://worktrunk.dev">worktrunk.dev</a>. Лицензия dual MIT / Apache-2.0 (по файлу LICENSE), язык Rust, 11814 звёзд, push 6 ноября 2026.</p>
+    <p>Практический смысл — когда несколько агентов правят один репозиторий и мешают друг другу в одной рабочей копии. Карточка не обещает, что любой агент «сам» выберет ветку: это инструмент worktree, а не оркестратор модели.</p>
+
+    <h2>auto-ontology: семантика и граф знаний для агентов</h2>
+    <p><a href="https://github.com/NVIDIA/auto-ontology">NVIDIA/auto-ontology</a> описан как Python-фреймворк для семантических, графовых слоёв рассуждения над данными: детерминированная генерация запросов, контекст и объяснимость для LLM и агентных сценариев. Лицензия Apache-2.0, Python, 9152 звезды, push 6 ноября 2026.</p>
+    <p>Это инфраструктура под text-to-SQL и аналитику, где ответы должны опираться на зафиксированные определения, а не на угадывание метрик. Скорость и точность на ваших данных в выпуске не проверялись.</p>
+
+    <h2>skills: медиа и 3D из coding-агента</h2>
+    <p><a href="https://github.com/scenario-labs/skills">scenario-labs/skills</a> описан как skills и MCP для картинок, видео, аудио и 3D: выбор модели, цена до траты, консистентность персонажей и бренда, плюс контуры под Blender, Maya, ZBrush, Unreal и Unity. В топиках есть claude-code, codex, mcp и agent-skills. Лицензия MIT, Python, 3415 звёзд, push 7 ноября 2026.</p>
+    <p>Подходит тем, кто гоняет продакшн-медиа через coding-агентов. Качество картинки и стоимость прогона зависят от выбранных моделей и ключей — в карточке этого нет.</p>
+
+    <h2>Что из этого следует</h2>
+    <p>Два репозитория про место агента (десктоп через accessibility и параллельные worktree). Два других — про смысл данных и медиа-конвейер. Общее проверяемое: открытый код, названная лицензия и свежий push на дату замера. Число звёзд показывает интерес на 7 ноября 2026, не качество кода и не безопасность зависимости.</p>
+    <p>Перед внедрением перечитайте лицензию на странице репозитория: Apache-2.0, MIT и dual MIT/Apache-2.0. AGPL среди этих четырёх нет.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub 7 ноября 2026. Это снимок на эту дату, не прогноз роста. У worktrunk SPDX в API — NOASSERTION; текст LICENSE в репозитории — dual MIT и Apache-2.0.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
