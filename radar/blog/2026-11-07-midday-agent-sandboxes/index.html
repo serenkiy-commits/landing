@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Песочницы и интерфейсы агентов: cloudroom, box, pomerado и affectui, полдень 7 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор davidondrej/cloudroom, strands-agents/box, Pomerado/pomerado и flohoeller/affectui. Звёзды, лицензии и дата push сняты с GitHub 7 ноября 2026. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-07-midday-agent-sandboxes/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-07-midday-agent-sandboxes/">
+  <meta property="og:title" content="Песочницы и интерфейсы агентов: полуденный выпуск 7 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Песочницы и интерфейсы агентов: полуденный выпуск 7 ноября 2026",
+        "datePublished": "2026-11-07",
+        "dateModified": "2026-11-07",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-07-midday-agent-sandboxes/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {
+          "@type": "Person",
+          "name": "Сергей Снежко",
+          "url": "https://snezhko.ru/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Snezhko AI",
+          "url": "https://snezhko.ru/"
+        },
+        "description": "Разбор cloudroom, box, pomerado и affectui по данным GitHub API на 7 ноября 2026."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Откуда взяты звёзды и лицензии?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "С публичного API GitHub 7 ноября 2026. Это снимок на эту дату, не прогноз роста."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Где выходят следующие выпуски?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "7 ноября 2026, полдень", "item": "https://snezhko.ru/radar/blog/2026-11-07-midday-agent-sandboxes/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">7 ноября 2026, полдень · Сергей Снежко · снимок GitHub API</p>
+    <h1>Полуденный выпуск 7 ноября 2026: песочницы и интерфейсы агентов</h1>
+    <p>У четырёх открытых репозиториев из этого выпуска был push 7 ноября 2026 по UTC. Тема — где и как запускать агента: облачные песочницы, изоляция с политиками доступа, подключение сайтов через MCP и готовый интерфейс для показа работы агента. В карточке описание, лицензия, основной язык, число звёзд и дата push на момент замера.</p>
+
+    <h2>Снимок на 7 ноября 2026</h2>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Язык</th><th>Лицензия</th><th>Звёзды</th><th>Последний push</th><th>Ссылка</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>davidondrej/cloudroom</td>
+          <td>TypeScript</td>
+          <td>Apache-2.0</td>
+          <td>1478</td>
+          <td>2026-11-07</td>
+          <td><a href="https://github.com/davidondrej/cloudroom">GitHub</a></td>
+        </tr>
+        <tr>
+          <td>strands-agents/box</td>
+          <td>Rust</td>
+          <td>Apache-2.0</td>
+          <td>499</td>
+          <td>2026-11-07</td>
+          <td><a href="https://github.com/strands-agents/box">GitHub</a></td>
+        </tr>
+        <tr>
+          <td>Pomerado/pomerado</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>1569</td>
+          <td>2026-11-07</td>
+          <td><a href="https://github.com/Pomerado/pomerado">GitHub</a></td>
+        </tr>
+        <tr>
+          <td>flohoeller/affectui</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>509</td>
+          <td>2026-11-07</td>
+          <td><a href="https://github.com/flohoeller/affectui">GitHub</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>, запрос 7 ноября 2026 около 11:10 по Москве. Архивными эти четыре репозитория на момент запроса не были. Даты создания в порядке строк: 17 сентября, 2 октября, 5 октября и 3 октября 2026. Время push в API: 2026-11-07T00:27:04Z, 2026-11-07T05:22:41Z, 2026-11-07T08:07:06Z и 2026-11-07T00:28:02Z.</p>
+
+    <h2>cloudroom: облачные сессии для любой coding-обвязки</h2>
+    <p>Описание <a href="https://github.com/davidondrej/cloudroom">davidondrej/cloudroom</a>: облачные агенты для любой обвязки. Claude Code, Codex, Pi и OpenCode запускаются своими CLI в изолированных песочницах, у каждой сессии своя Git-ветка, а живая сессия может переезжать между Mac и облаком. По README в репозитории три части: десктоп-приложение, сервис core на Rust (песочница, процесс, очередь, история, восстановление) и набор skills. Есть инструкция по self-host и HTTP API. Сайт: <a href="https://www.cloudroom.dev">cloudroom.dev</a>. Лицензия Apache-2.0, основной язык TypeScript, 1478 звёзд, push 7 ноября 2026.</p>
+    <p>Смотреть тем, у кого агенты должны работать, пока ноутбук спит, и кто не хочет привязываться к облаку одного вендора. Как переезд сессии ведёт себя на длинных задачах, в выпуске не проверялось.</p>
+
+    <h2>box: песочница с запретом по умолчанию</h2>
+    <p><a href="https://github.com/strands-agents/box">strands-agents/box</a> — открытый движок песочницы для ИИ-агентов от команды Strands. Он сочетает изоляцию средствами ОС с политиками на языке Dogwood: операции, которые проверяет движок, по умолчанию запрещены, разрешение даёт правило permit, а forbid его перекрывает. Секреты подставляются вне процесса агента. Доступ настраивается в <code>box.toml</code>, правила — в <code>policy.dw</code>; обвязку агента можно выбрать любую. Лицензия Apache-2.0, Rust, 499 звёзд, push 7 ноября 2026.</p>
+    <p>README помечает проект как preview: локальный запуск на Linux ARM64 и macOS на Apple silicon. Для продакшна на x86-серверах это пока не готовое решение — проверьте актуальный список платформ в репозитории.</p>
+
+    <h2>pomerado: сайт как MCP-интеграция</h2>
+    <p><a href="https://github.com/Pomerado/pomerado">Pomerado/pomerado</a> описан как способ превратить сайт в API или MCP-интеграцию, включая сайты без собственного API. По README интеграция строится по текстовому описанию задачи, без записи HAR, работает за логином и двухфакторной авторизацией, а затем вызывается агентом детерминированно, без computer use. Для сборки нужен ключ OpenAI и Node 24; сам агент может работать на любой модели. Лицензия MIT, TypeScript, 1569 звёзд, push 7 ноября 2026.</p>
+    <p>Полезно, когда агенту нужно регулярно ходить в веб-кабинет без API. Надёжность интеграции на конкретном сайте зависит от его вёрстки и защиты — это проверяют на своём стенде.</p>
+
+    <h2>affectui: React-компоненты для работы агента</h2>
+    <p><a href="https://github.com/flohoeller/affectui">flohoeller/affectui</a> — библиотека React-компонентов для того, что делают агенты: деревья агентов, вызовы инструментов, трейсы, передачи задач и подтверждения, плюс обычные элементы интерфейса. Каждый компонент — один файл <code>.tsx</code> со стилями внутри; ставится через shadcn CLI или через MCP-сервер из Claude Code, Cursor или Codex. Часть компонентов вынесена в платную Pro-версию и в репозиторий не входит. Лицензия MIT, TypeScript, 509 звёзд, push 7 ноября 2026. Сайт: <a href="https://www.affectui.com">affectui.com</a>.</p>
+    <p>Подходит тем, кто делает свой интерфейс для агентного продукта и не хочет рисовать карточки tool calls с нуля.</p>
+
+    <h2>Что из этого следует</h2>
+    <p>Два репозитория отвечают на вопрос «где запускать агента»: cloudroom выносит сессии в облако, box ограничивает агента на своей машине. Два других — про связь агента с внешним миром: pomerado подключает сайты через MCP, affectui показывает работу агента человеку. Число звёзд показывает интерес на 7 ноября 2026, не качество кода и не безопасность зависимости.</p>
+    <p>Лицензии: Apache-2.0 у cloudroom и box, MIT у pomerado и affectui. У affectui и pomerado есть платные облачные или Pro-части — перед внедрением проверьте, что именно входит в открытый код.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub 7 ноября 2026. Это снимок на эту дату, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
