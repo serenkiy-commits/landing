@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Агенты, телефон и GPU: Pinky, sand3d, vork и gputaskman, утро 9 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор DIYgod/pinky, Sandflow-ai/sand3d, voyager-so/vork и shanselman/gputaskman. Звёзды, лицензии и дата push сняты с GitHub 9 ноября 2026. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-09-morning-agent-gpu-3d/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-09-morning-agent-gpu-3d/">
+  <meta property="og:title" content="Агенты на телефоне, в 3D и на GPU: утренний выпуск 9 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Агенты на телефоне, в 3D и на GPU: утренний выпуск 9 ноября 2026",
+        "datePublished": "2026-11-09",
+        "dateModified": "2026-11-09",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-09-morning-agent-gpu-3d/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор Pinky, sand3d, vork и gputaskman по данным GitHub API на 9 ноября 2026."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub 9 ноября 2026. Это снимок на эту дату, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "9 ноября 2026, утро", "item": "https://snezhko.ru/radar/blog/2026-11-09-morning-agent-gpu-3d/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">9 ноября 2026, утро · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar — 9 ноября 2026, утренний выпуск: агенты на телефоне, в 3D и на GPU — Pinky, sand3d, vork, gputaskman</h1>
+    <p>Четыре открытых репозитория про то, чем агент работает руками и что видно со стороны: телефон под присмотром человека, 3D-модели короткими программами на Python, сцены и VFX на GPU без редактора и монитор видеопамяти, который показывает, чем занята карта. У Pinky и gputaskman последний push 9 ноября 2026, у vork — 7 ноября, у sand3d — 6 ноября. Даты push в этом выпуске — календарный день по Москве. В карточке описание, лицензия, основной язык, число звёзд и дата push. Число звёзд — снимок на момент публикации, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 9 ноября 2026</h2>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Язык</th><th>Лицензия</th><th>Звёзды</th><th>Последний push</th><th>Ссылка</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>DIYgod/pinky</td><td>Go</td><td>Apache-2.0</td><td>912</td><td>2026-11-09</td><td><a href="https://github.com/DIYgod/pinky">GitHub</a></td></tr>
+        <tr><td>Sandflow-ai/sand3d</td><td>HTML</td><td>Apache-2.0</td><td>1440</td><td>2026-11-06</td><td><a href="https://github.com/Sandflow-ai/sand3d">GitHub</a></td></tr>
+        <tr><td>voyager-so/vork</td><td>Rust</td><td>не определена API (своя preview-лицензия)</td><td>1151</td><td>2026-11-07</td><td><a href="https://github.com/voyager-so/vork">GitHub</a></td></tr>
+        <tr><td>shanselman/gputaskman</td><td>Python</td><td>MIT</td><td>1089</td><td>2026-11-09</td><td><a href="https://github.com/shanselman/gputaskman">GitHub</a></td></tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>, запрос 9 ноября 2026 около 06:10 по Москве. Архивными эти четыре репозитория на момент запроса не были. У sand3d основной язык API определяет как HTML, хотя сама библиотека — на Python: в репозитории много страниц документации. У vork API отдаёт лицензию как NOASSERTION — в репозитории лежит собственный текст «vork Preview License». Звёзды в таблице — снимок на это время: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>Pinky: агент управляет телефоном, а рискованные шаги ждут человека</h2>
+    <p><a href="https://github.com/DIYgod/pinky">DIYgod/pinky</a> в описании репозитория даёт AI-агентам пользоваться телефоном, с человеком в контуре. По README это приложение для macOS, Windows и Linux: через MCP любой агент — Claude Code, Claude Desktop, Codex, Cursor или скрипт — управляет настоящим iPhone или Android, а человек смотрит на компьютере, одобряет рискованные шаги, перехватывает управление и потом просматривает запись. Одобрения, по README, держит шлюз Pinky, а не инструкция агенту. Платежи по умолчанию ждут клика; в настройках можно поставить на ожидание отправку сообщений, заказы, удаления, звонки и другие действия. Банковские приложения, кошельки и менеджеры паролей агенту по умолчанию не видны, в поля пароля и одноразового кода он не печатает. На Android 13 и новее агент работает на скрытом втором экране. Android поддерживается с 10-й по 17-ю версию, iPhone — с iOS 17.4; ниже iOS 27 нужен вспомогательный WebDriverAgent, который ставится из Xcode. Лицензия Apache-2.0, основной язык Go, 912 звёзд, push 9 ноября 2026.</p>
+    <p>Смотреть тем, кто хочет отдать агенту телефон, но оставить за собой платежи и отправку. Оговорки из README: установщик для Windows пока не подписан, и SmartScreen может его остановить; работа на iPhone ниже iOS 27 авторами пока не проверялась на физическом телефоне. Запись шагов и скриншоты, по README, остаются на компьютере. Этот выпуск приложение не устанавливал.</p>
+
+    <h2>sand3d: 3D-модели короткими программами для LLM</h2>
+    <p><a href="https://github.com/Sandflow-ai/sand3d">Sandflow-ai/sand3d</a> — по описанию 3D-моделирование на Python, сделанное под LLM. README описывает библиотеку поверх Blender <code>bpy</code>: объект пишется как короткая программа из профилей, тел, правок, шарниров и сборок, а детали, рёбра и грани вызываются по имени, без вычисленных вручную координат. Один и тот же код, по README, собирает один и тот же меш бит в бит. Весь API, по словам авторов, укладывается примерно в 3600 токенов и рассчитан на то, чтобы положить его в системный промпт модели. Экспорт — GLB, URDF, USDA, OBJ и STL: от веба и игровых движков до ROS, MuJoCo и Isaac. Установка — <code>pip install sand3d</code>; нужен Python 3.13 или 3.11, для 3.12 колеса <code>bpy</code> нет. Сайт: <a href="https://sandflow.ai/sand3d/">sandflow.ai/sand3d</a>. Лицензия Apache-2.0, 1440 звёзд, push 6 ноября 2026.</p>
+    <p>Подходит, когда модель должна выдавать 3D-объект кодом, который потом читает человек: предметы, детали с шарнирами, модели для симуляторов роботов. Сравнение по токенам с Blender Python, CadQuery и FeatureScript — цифры авторов из README; в этом выпуске оно не повторялось.</p>
+
+    <h2>vork: headless-движок 3D и VFX, где сцену пишет агент</h2>
+    <p><a href="https://github.com/voyager-so/vork">voyager-so/vork</a> в описании — headless-движок 3D и VFX для агентов, research preview. По README агент пишет сцену кодом, рендерит её, смотрит на картинку и правит код — без редактора, который пришлось бы кликать. Движок на Rust и Slang, рендер на GPU через Vulkan и Metal; видеомодель для этого не нужна. Работа начинается с <code>vork init</code>, <code>vork render</code> и <code>vork help</code>. Для рендера README требует Apple Silicon или NVIDIA с поддержкой ray queries в Vulkan; писать сцены и читать справку можно без GPU, на своей Linux-машине с NVIDIA предлагается Docker-рантайм. Сайт: <a href="https://voyager.so/vork">voyager.so/vork</a>. Основной язык Rust, 1151 звезда, push 7 ноября 2026.</p>
+    <p>Главная оговорка — лицензия. Это не open source: текст «vork Preview License» называет проект source-available и разрешает бесплатное использование, в том числе коммерческое, на время research preview. Что будет после превью, в README не расписано. npm-пакеты, по README, пока кандидаты и не опубликованы. Этот выпуск движок не запускал.</p>
+
+    <h2>gputaskman: что именно занимает видеопамять</h2>
+    <p><a href="https://github.com/shanselman/gputaskman">shanselman/gputaskman</a> — диспетчер задач GPU для Windows, Linux и WSL: видеопамять и активность по процессам и разбор того, что загрузила LLM — веса модели, KV-кэш. README формулирует идею как <code>htop</code> для того, что внутри видеокарты: не только сколько памяти занято, но чем — весами, кэшем, браузером или композитором рабочего стола. Это терминальный интерфейс. NVIDIA поддерживается везде, AMD — на Windows и нативном Linux, есть раздел про macOS на Apple Silicon. Данные берутся из NVML, который идёт с драйвером NVIDIA, и из AMD ADL; ключ API, сессия администратора и загрузка моделей, по README, не нужны. Установка — <code>uv tool install gputaskman</code> или <code>pipx install gputaskman</code>, для Windows есть портативные ZIP. Лицензия MIT, Python, 1089 звёзд, push 9 ноября 2026.</p>
+    <p>Смотреть тем, кто гоняет локальные модели и не понимает, куда ушла видеопамять. Оговорка прямо в README: ПО ранее и экспериментальное, счётчики устройства и процессов — измерения, а классификация и разбивка по GGUF — оценки. Дамп видеопамяти инструмент не делает. Для контейнеров и арендованных GPU README описывает отдельный шаг сопоставления процессов.</p>
+
+    <h2>Что из этого следует</h2>
+    <p>Pinky ставит человека между агентом и телефоном: платежи и отправку можно оставить на ручном подтверждении. sand3d и vork дают агенту писать 3D кодом — первый собирает объекты для экспорта в движки и симуляторы, второй рендерит сцены и эффекты на GPU. gputaskman отвечает на вопрос, чем занята видеокарта, когда на ней крутится локальная модель. Число звёзд — снимок на 9 ноября 2026 около 06:10 по Москве, не оценка качества и не аудит безопасности.</p>
+    <p>Лицензии: Apache-2.0 у Pinky и sand3d, MIT у gputaskman. У vork собственная preview-лицензия, проект source-available, не open source — для коммерческого использования её стоит прочитать отдельно.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub 9 ноября 2026. Это снимок на эту дату, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
