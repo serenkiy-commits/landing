@@ -1,0 +1,354 @@
+/* ─────────────────────────────────────────────────────────────────────
+   Базовое оформление страницы статьи. Ставится как есть: страница сразу
+   выглядит опрятно, даже если дизайном никто не занимался.
+
+   Свой цвет — одна строка: --accent ниже. Больше ничего менять не нужно.
+
+   Что здесь сделано намеренно, а не «как получилось»:
+   · два семейства с ролями — Literata читает длинный текст, IBM Plex Sans
+     держит служебное (мета, таблица, оглавление, форма);
+   · два цвета — зелёный означает действие, глина метит рубрику и источники.
+     Акцент не размазан по всей странице, поэтому кнопка заметна;
+   · волосяные линии вместо рамок и теней. Заливка одна — у формы: она
+     единственная врезка другого назначения посреди чтения;
+   · оглавление на телефоне оказывается НАД текстом (см. .grid) — в разметке
+     оно стоит перед статьёй;
+   · разделитель — один токен --rule (плюс --rule-strong чуть плотнее для
+     мест «конец блока»), не больше трёх мест на странице статьи; акцентная
+     линия (--accent) — только у ОДНОГО блока, ниже это .toc. У h2/h3
+     border-top/border-bottom нет нигде — разделы разводит отступ (margin),
+     не рамка (см. комментарий у article h2 ниже);
+   · сетка «Читайте также» красит рамку у каждой карточки (.rel-card), а не
+     фон контейнера с узким gap: залитый gap красит и пустые ячейки, если
+     карточек меньше, чем колонок в сетке (см. .related ниже) — это разбор
+     `docs/Аудит-статьи-ironex_2026-09-08.md` §2 п.2/4, правила B1/D1/D2
+     будущего `article-check`.
+   ───────────────────────────────────────────────────────────────────── */
+
+:root{
+  --accent:#1d5b49;          /* ← ВАШ ЦВЕТ: ссылки, кнопка, активный пункт */
+  --accent-soft:#eef3f0;     /*   подложка формы, светлый оттенок акцента  */
+  --clay:#96521f;            /* только рубрика статьи и маркер источников  */
+  --ink:#1a1b18;
+  --ink-2:#3d423c;
+  --muted:#6a706a;
+  --paper:#fcfbf8;
+  --rule:#e5e3dc;
+  --rule-strong:#cfccc3;
+  --maxw:1140px;
+  --measure:68ch;            /* длина строки: длиннее — читать тяжелее */
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font:400 19px/1.72 Literata,Georgia,"Times New Roman",serif;
+  text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.ui{font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+/* Видимый фокус обязателен: без него интерфейс недоступен с клавиатуры. */
+a:focus-visible,button:focus-visible,summary:focus-visible,
+input:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+/* ── Шапка статьи ──────────────────────────────────────────────────── */
+.crumbs{font-size:14px;color:var(--muted);padding:26px 0 0}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--accent);text-decoration:underline}
+.crumbs span[aria-current]{color:var(--ink-2)}
+
+/* Рубрика — не «pill», а типографика: капитель с разрядкой. */
+.kind{display:block;margin:30px 0 12px;color:var(--clay);
+      font-size:13px;font-weight:600;letter-spacing:.09em;text-transform:uppercase}
+h1{font-size:clamp(32px,4.6vw,52px);line-height:1.08;letter-spacing:-.02em;
+   font-weight:700;margin:0 0 18px;max-width:23ch}
+.standfirst{font-size:clamp(20px,2.2vw,23px);line-height:1.5;color:var(--ink-2);
+            margin:0 0 34px;max-width:56ch}
+
+/* ── Байлайн ───────────────────────────────────────────────────────── */
+.byline{display:flex;gap:16px;align-items:center;
+        padding:18px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.ava{width:52px;height:52px;border-radius:50%;flex:0 0 52px;display:grid;place-items:center;
+     background:var(--accent-soft);color:var(--accent);font-weight:600;font-size:17px;
+     letter-spacing:.02em;overflow:hidden}
+.ava img{width:100%;height:100%;object-fit:cover;display:block}
+.byline__name{font-weight:600;font-size:17px;line-height:1.3}
+.byline__meta{font-size:14.5px;color:var(--muted);margin-top:3px}
+.byline__meta a{color:var(--muted)}
+.creds{display:flex;flex-wrap:wrap;gap:14px;margin:6px 0 0;padding:0;list-style:none;
+       font-size:13.5px;color:var(--muted)}
+.creds li{position:relative;padding-left:15px}
+.creds li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;
+                  border-radius:50%;background:var(--rule-strong)}
+
+/* ── Сетка. Оглавление стоит в разметке ПЕРЕД текстом: на узком экране оно
+      должно быть сверху, а не в подвале, куда никто не долистает.
+      На широком — раскладывается в правую колонку. ─────────────────── */
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 244px;gap:0 64px;
+      padding:38px 0 72px;align-items:start}
+.col-main{grid-column:1;grid-row:1;min-width:0}
+.col-side{grid-column:2;grid-row:1;position:sticky;top:28px}
+@media (max-width:920px){
+  .grid{grid-template-columns:1fr;gap:0;padding-top:26px}
+  .col-main{grid-column:1;grid-row:2}
+  .col-side{grid-column:1;grid-row:1;position:static;margin:0 0 30px}
+}
+
+/* Оглавление без рамки: слева линия в цвет акцента и капитель-заголовок.
+   Коробка тут не нужна — это навигация, а не карточка товара. Линия
+   именно в --accent, а не в серое --rule: сайдбар должен читаться как
+   часть бренда, а не как техническая деталь браузера по умолчанию. */
+.toc{border-left:3px solid var(--accent);padding:2px 0 2px 18px}
+.toc>summary{list-style:none;cursor:pointer;font-size:12px;font-weight:700;
+             letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.toc>summary::-webkit-details-marker{display:none}
+.toc ol{margin:14px 0 0;padding:0;list-style:none;font-size:15px;line-height:1.45}
+.toc li{margin:0 0 11px}
+.toc a{color:var(--ink-2);text-decoration:none;display:block}
+.toc a:hover{color:var(--accent)}
+.toc a.is-active{color:var(--accent);font-weight:500}
+
+/* ── Фото-заявка в начале статьи. Стоит ВНЕ <article>, поэтому не
+      зажата мерой чтения --measure и занимает всю ширину .col-main —
+      так же, как заголовок и standfirst выше. Это единственное место,
+      где ширина фото не совпадает с шириной текста: там, где страница
+      «начинается», взгляду нужен воздух шире колонки чтения.
+      ОПЦИОНАЛЬНО: только под настоящее фото объекта/процесса/результата.
+      Нет такого фото — не ставьте заглушку, уберите блок целиком (см. README). */
+.hero-figure{margin:8px 0 40px}
+.hero-figure img,.hero-figure svg{width:100%;height:auto;display:block;
+     border-radius:10px;aspect-ratio:16/9;object-fit:cover;background:var(--accent-soft)}
+.hero-figure figcaption{margin-top:12px}
+
+/* ── Тело статьи ───────────────────────────────────────────────────── */
+article{max-width:var(--measure)}
+article > p{margin:0 0 22px}
+.lead{font-size:21px;line-height:1.62;color:var(--ink);margin-bottom:28px}
+/* ПРАВИЛО (не менять по привычке): у h2/h3 НЕТ border-top/border-bottom и НЕТ
+   декоративного номера через ::before (никаких "01"/"02" капителью, никакого
+   uppercase-eyebrow над заголовком). Отбивку даёт margin выше — отступ, а не
+   линия и не метка. Ровно это сломано у ironex.tech: чёрная линия над каждым
+   h2 из border-top + отдельный counter "0N" из h2::before — три системы
+   нумерации на одной странице разом с TOC. Нумерация нужна — она живёт РОВНО
+   в одном месте: в .toc ниже (список без счётчика в разметке; если нужны
+   цифры — ставит их сам шаблонизатор строкой "N.", без ведущего нуля). */
+article h2{font-size:clamp(25px,3vw,31px);line-height:1.2;letter-spacing:-.01em;
+           font-weight:700;margin:52px 0 16px;scroll-margin-top:26px}
+article h3{font-size:21px;line-height:1.3;font-weight:600;margin:34px 0 10px}
+article ul,article ol{margin:0 0 22px;padding-left:22px}
+article li{margin:9px 0}
+/* Маркер в цвет акцента — единственное место, где список отличим от
+   стандартного браузерного списка. Дешёвая деталь, которая метит
+   бренд там, где взгляд и так уже смотрит (на начало строки). */
+article ul>li::marker{color:var(--accent)}
+article strong{font-weight:600}
+
+/* ── Врезка «Коротко»: сухой вывод статьи одним взглядом, для тех, кто
+      скроллит быстро. Бейдж НАЛЕЗАЕТ на верхний край блока — это и есть
+      «форма» страницы: не абстрактная декорация, а функциональная деталь
+      (метка типа контента), которая при этом даёт вёрстке фактуру.
+      Не дублирует .lead: lead — прямой ответ на запрос (для сниппета и
+      ИИ-цитаты), tldr — вывод по всей статье целиком (для читателя). */
+.tldr{position:relative;margin:8px 0 44px;padding:30px 28px 26px;
+      background:var(--accent-soft);border-radius:10px}
+.tldr__tag{position:absolute;top:-14px;left:26px;background:var(--accent);color:#fff;
+           font-family:"IBM Plex Sans",sans-serif;font-size:12px;font-weight:600;
+           letter-spacing:.08em;text-transform:uppercase;padding:7px 15px;
+           border-radius:5px}
+.tldr p{margin:10px 0 0;font-size:17.5px;line-height:1.6;color:var(--ink-2)}
+.tldr p:first-of-type{margin-top:8px}
+
+/* Настоящая таблица, а не div-карточки: список, свёрстанный див-ами,
+   красив и невидим — ни ИИ-движки, ни скор цитируемости не находят в нём
+   структуры. Линуем только по горизонтали: сетка из рамок утяжеляет. */
+.tbl{margin:0 0 26px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:16px;line-height:1.45}
+th,td{text-align:left;vertical-align:top;padding:12px 16px 12px 0;
+      border-bottom:1px solid var(--rule)}
+th{font-family:"IBM Plex Sans",sans-serif;font-size:13px;font-weight:600;color:var(--muted);
+   letter-spacing:.05em;text-transform:uppercase;border-bottom:1px solid var(--rule-strong);
+   padding-bottom:9px}
+td:first-child{font-weight:600;white-space:nowrap}
+td.num{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600;white-space:nowrap}
+
+/* Факт и мнение — разные врезки в потоке, не карточки и не лайтбокс.
+   Бейдж того же семейства, что у .tldr, чтобы страница не обрастала
+   третьим языком плашек. */
+.insert{position:relative;margin:8px 0 32px;padding:26px 24px 20px;
+        border-left:3px solid var(--accent);background:var(--accent-soft);
+        border-radius:0 8px 8px 0}
+.insert--opinion{border-left-color:var(--ink);background:transparent}
+.insert__tag{position:absolute;top:-11px;left:18px;background:var(--accent);color:#fff;
+             font-family:"IBM Plex Sans",sans-serif;font-size:11px;font-weight:600;
+             letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:4px}
+.insert--opinion .insert__tag{background:var(--ink)}
+.insert p{margin:8px 0 0;font-size:17px;line-height:1.55;color:var(--ink-2)}
+
+/* Врезка: самый цитируемый тезис раздела. Обычная цитата, не картинка
+   и не div — иначе текст перестаёт быть текстом для машины. */
+blockquote{margin:32px 0;padding:0;border:0}
+blockquote::before{content:"";display:block;width:44px;height:2px;background:var(--clay);
+                   margin-bottom:16px}
+blockquote p{margin:0;font-size:23px;line-height:1.42;letter-spacing:-.01em;color:var(--ink)}
+
+figure{margin:32px 0}
+figure svg,figure img{width:100%;height:auto;display:block}
+figure img{border-radius:6px}
+figcaption{font-family:"IBM Plex Sans",sans-serif;font-size:14px;color:var(--muted);
+           margin-top:12px;line-height:1.5}
+
+/* ── Форма внутри статьи ───────────────────────────────────────────── */
+.cta{margin:42px 0;padding:26px 28px;background:var(--accent-soft);border-radius:10px}
+.cta__title{font-size:21px;font-weight:700;line-height:1.3;margin-bottom:6px}
+.cta__sub{color:var(--ink-2);font-size:17px;margin-bottom:18px;max-width:46ch}
+.cta form{display:flex;flex-wrap:wrap;gap:10px;font-family:"IBM Plex Sans",sans-serif}
+.cta label.f{flex:1 1 190px;display:block}
+.cta label.f span{display:block;font-size:13px;color:var(--muted);margin-bottom:5px}
+.cta input[type=text],.cta input[type=tel]{width:100%;padding:12px 13px;background:#fff;
+     border:1px solid var(--rule-strong);border-radius:6px;font:inherit;font-size:16px;
+     color:var(--ink)}
+.cta input::placeholder{color:#9aa09a}
+.cta button{align-self:flex-end;padding:13px 26px;border:0;border-radius:6px;
+            background:var(--accent);color:#fff;font:inherit;font-size:16px;font-weight:600;
+            cursor:pointer}
+.cta button:hover{filter:brightness(.92)}
+.consent{flex:1 1 100%;font-family:"IBM Plex Sans",sans-serif;font-size:13.5px;
+         color:var(--muted);display:flex;gap:9px;align-items:flex-start;line-height:1.45;
+         margin-top:2px}
+.consent input{margin-top:3px;flex:0 0 auto}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* ── FAQ ───────────────────────────────────────────────────────────── */
+/* ПРАВИЛО: атрибут open стоит только у ПЕРВОГО <details> в разметке — так
+   читатель видит сразу, что блок сворачивается, а не листает пять открытых
+   ответов подряд. Остальные — без open (см. article.template.html: там это
+   написано кодом, двумя итерациями цикла, а не только этим комментарием). */
+.faq details{border-bottom:1px solid var(--rule);padding:16px 0}
+.faq details:first-of-type{border-top:1px solid var(--rule)}
+.faq summary{cursor:pointer;font-size:18px;font-weight:600;line-height:1.4;
+             list-style:none;display:flex;gap:12px;align-items:baseline}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"+";color:var(--accent);font-weight:600;flex:0 0 auto}
+.faq details[open] summary::before{content:"–"}
+.faq p{margin:12px 0 2px 24px;color:var(--ink-2);font-size:17.5px}
+
+/* ── Источники ─────────────────────────────────────────────────────── */
+.sources{list-style:none;padding:0;margin:0;font-size:16.5px}
+.sources li{padding-left:18px;position:relative;margin:0 0 12px;line-height:1.5}
+.sources li::before{content:"";position:absolute;left:0;top:.66em;width:8px;height:2px;
+                    background:var(--clay)}
+.sources .who{color:var(--muted);font-size:15px}
+
+/* ── Об авторе: не карточка, а раздел, отбитый линией. ─────────────── */
+.authorbox{display:flex;gap:22px;margin:56px 0 0;padding:26px 0 0;
+           border-top:1px solid var(--rule-strong)}
+.authorbox .ava{width:76px;height:76px;flex:0 0 76px;font-size:23px;border-radius:8px}
+.authorbox p{margin:8px 0 12px;font-size:17px;color:var(--ink-2)}
+
+/* ── Похожие статьи ────────────────────────────────────────────────
+   Карточки с обложками, а не список ссылок: текстовый перечень в конце
+   статьи взглядом пролистывают, и перелинковка остаётся в разметке, но не
+   в поведении читателя.
+
+   Колонки заданы ЧИСЛОМ, а не auto-fit: при двух карточках auto-fit
+   растягивает их на всю ширину, и блок выглядит поломанным.
+
+   ПРАВИЛО: число колонок завязано на класс-модификатор .related--N (N —
+   related.length, 1/2/3), который ставит шаблонизатор рядом с .related, —
+   не на голый брейкпоинт «до 640 — одна, дальше — две, дальше — три». Без
+   этого фиксированная сетка «2 колонки на планшете» при N=3 карточках даёт
+   сиротку в отдельном ряду — ровно баг ironex.tech (грид 2×2 на 3 карточки
+   с закрашенной подложкой; `docs/Аудит-статьи-ironex_2026-09-08.md` §2 п.2,
+   правило B1 будущего article-check). На < 640px всегда 1 колонка (B5) —
+   это правило от N не зависит и стоит первой строкой ниже. */
+.related{display:grid;grid-template-columns:1fr;gap:18px;margin:0}
+/* 1 карточка — широкая, во всю ширину колонки текста, а не сетка из одного
+   элемента (там нечего выравнивать по столбцам). */
+.related--1{grid-template-columns:1fr}
+@media (min-width:640px){
+  .related--2,.related--3{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:1000px){
+  .related--3{grid-template-columns:repeat(3,1fr)}
+}
+/* Хвост на планшете: 3 карточки в 2 колонках = последняя одна в третьем ряду.
+   Тянем её на всю ширину ряда — приём fillLastRow с Петровки
+   (~/Projects/petrovka-beauty/src/components/ui/Cards.tsx: fillLastRow(n, cols)),
+   а не оставляем рядом с ней пустую/закрашенную ячейку. */
+@media (min-width:640px) and (max-width:999px){
+  .related--3 .rel-card:last-child{grid-column:1 / -1}
+}
+
+/* Карточка — тоже <article>, поэтому снимаем с неё меру чтения: правило
+   article{max-width:--measure} выше писано для текста статьи, а не для карточки
+   в сетке. Без этой строки правка --measure тихо ломает ряд. */
+.rel-card{display:flex;flex-direction:column;max-width:none;background:#fff;
+          border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.rel-card:hover{border-color:var(--rule-strong)}
+/* Место под картинку зарезервировано пропорцией: без неё карточка
+   подпрыгивает на загрузке обложки — это CLS ровно там, где читатель
+   решает, идти ли дальше. */
+.rel-card__thumb{display:block;aspect-ratio:16/9;background:var(--accent-soft)}
+.rel-card__thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.rel-card__body{display:flex;flex-direction:column;gap:6px;padding:13px 14px 15px;flex:1}
+/* Глина метит рубрику — то же правило, что у .kind в шапке статьи. */
+.rel-card__cat{color:var(--clay);font-size:11.5px;font-weight:600;
+               letter-spacing:.08em;text-transform:uppercase}
+/* Обрезка в три строки: без неё карточки в ряду разной высоты и ряд рвётся. */
+.rel-card__title{color:var(--ink);text-decoration:none;font-size:16.5px;
+                 line-height:1.34;font-weight:600;
+                 display:-webkit-box;-webkit-box-orient:vertical;
+                 -webkit-line-clamp:3;line-clamp:3;overflow:hidden}
+.rel-card__title:hover{color:var(--accent)}
+
+/* ── Закрывающий баннер. Статья заканчивается не только «Читайте также» —
+   у читателя, который дошёл до конца, ещё раз спрашиваем прямо. Тёмная
+   заливка на всю ширину экрана отделяет его от чтения — явно закрывающий
+   блок страницы, а не ещё один абзац.
+   ОПЦИОНАЛЬНО, но по умолчанию — да: без него длинная статья кончается
+   тупиком именно там, где интерес читателя ещё высокий.
+   ⚠️ Разметка стоит ВНЕ .wrap, прямым потомком body — не переносите внутрь
+   <article>/.col-main. Внутри них «100vw» отсчитывается от их узкой
+   ширины (мера чтения 68ch), а не от экрана, и баннер обрезает и уводит
+   влево. Полная ширина здесь получается без вычислений именно потому,
+   что родитель уже сам во всю ширину body. */
+.cta-band{margin:64px 0 0;width:100%;
+          background:var(--ink);padding:52px 24px}
+.cta-band__inner{max-width:var(--maxw);margin:0 auto;display:flex;flex-wrap:wrap;
+                  gap:22px 32px;align-items:center;justify-content:space-between}
+.cta-band__title{color:#fff;font-size:clamp(22px,2.6vw,27px);font-weight:700;
+                  line-height:1.3;max-width:32ch}
+.cta-band__sub{color:#b7bcb2;font-size:16px;line-height:1.5;margin-top:6px;max-width:44ch}
+.cta-band__btn{flex:0 0 auto;display:inline-block;background:var(--accent);color:#fff;
+               font-family:"IBM Plex Sans",sans-serif;font-size:16px;font-weight:600;
+               text-decoration:none;padding:15px 28px;border-radius:6px;white-space:nowrap}
+.cta-band__btn:hover{filter:brightness(1.12)}
+
+@media (max-width:560px){
+  body{font-size:18px}
+  .wrap{padding:0 18px}
+  .cta{padding:22px 20px}
+  .cta button{width:100%}
+  .authorbox{gap:16px}
+  .authorbox .ava{width:56px;height:56px;flex:0 0 56px;font-size:18px}
+  .cta-band{padding:38px 20px}
+  .cta-band__btn{width:100%;text-align:center}
+}
+
+/* Движение только там, где оно что-то сообщает, и с уважением к настройке ОС. */
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+
+/* Чек-лист из фабрики (`- [ ]` в markdown). md_to_html / static_html и стартер
+   рендерят его как ul.checklist БЕЗ <input>: ни один шаблон чекбокс не рисует, а
+   голые «[ ]» в тексте — брак (аудит ironex 2026-09-08, правила F1/F2). Маркер —
+   галочка цветом акцента, вид как у обычного списка. */
+article .checklist { list-style: none; padding-left: 0; }
+article .checklist li { position: relative; padding-left: 1.6em; }
+article .checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 600; }
+article .checklist li.is-done { opacity: .7; }
