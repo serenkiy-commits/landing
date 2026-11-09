@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Веб-персонаж, иконки агента и бенчмарк сайтов, вечер 9 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор livliv-dev/player, kubai087/kubai-icons, drost-ai/tinker-ai-skill и TIGER-AI-Lab/WebsiteBench. Звёзды, лицензии и дата push сняты с GitHub 9 ноября 2026. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-09-evening-agent-skills-web/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-09-evening-agent-skills-web/">
+  <meta property="og:title" content="Веб-персонаж, иконки и бенчмарк сайтов: вечерний выпуск 9 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar 9 ноября 2026, вечер: веб-персонаж, иконки для агентов и бенчмарк сайтов",
+        "datePublished": "2026-11-09",
+        "dateModified": "2026-11-09",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-09-evening-agent-skills-web/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор player, kubai-icons, tinker-ai-skill и WebsiteBench по данным GitHub API на 9 ноября 2026."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub 9 ноября 2026 около 21:05 по Москве. Это снимок на эту дату, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "9 ноября 2026, вечер", "item": "https://snezhko.ru/radar/blog/2026-11-09-evening-agent-skills-web/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">9 ноября 2026, вечер · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar 9 ноября 2026, вечер: веб-персонаж, иконки для агентов и бенчмарк сайтов</h1>
+    <p>Четыре открытых репозитория: проигрыватель 2.5D-персонажа в браузере, скилл анимированных иконок, скилл дообучения модели на своих сессиях Claude Code и бенчмарк, где агент воссоздаёт сайт. У player и kubai-icons последний push 9 ноября 2026, у tinker-ai-skill и WebsiteBench — 7 ноября. В карточке — что делает репозиторий, язык, лицензия, число звёзд и время push. Число звёзд — снимок публичного API GitHub 9 ноября 2026 около 21:05 по Москве, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 9 ноября 2026</h2>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что делает</th><th>Язык</th><th>Лицензия</th><th>Звёзды</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/livliv-dev/player">livliv-dev/player</a></td>
+          <td>Лёгкий 2.5D-проигрыватель персонажа для веба с липсинком и трекингом лица</td>
+          <td>TypeScript</td>
+          <td>Apache-2.0</td>
+          <td>1388</td>
+          <td>2026-11-09 06:08 UTC</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/kubai087/kubai-icons">kubai087/kubai-icons</a></td>
+          <td>Скилл анимированных иконок для агентов и библиотека иконок</td>
+          <td>JavaScript</td>
+          <td>NOASSERTION в API, иконки по README — MIT</td>
+          <td>543</td>
+          <td>2026-11-09 17:14 UTC</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/drost-ai/tinker-ai-skill">drost-ai/tinker-ai-skill</a></td>
+          <td>Скилл дообучения агентной модели на сессиях Claude Code через Tinker</td>
+          <td>Python</td>
+          <td>MIT</td>
+          <td>283</td>
+          <td>2026-11-07 17:15 UTC</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/TIGER-AI-Lab/WebsiteBench">TIGER-AI-Lab/WebsiteBench</a></td>
+          <td>Бенчмарк: может ли агент воссоздать сайт через браузер</td>
+          <td>Python</td>
+          <td>Apache-2.0</td>
+          <td>156</td>
+          <td>2026-11-07 17:29 UTC</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>, запрос 9 ноября 2026 около 21:05 по Москве. Время push в таблице — как его отдал API, в UTC. Архивными эти четыре репозитория на момент запроса не были. У kubai-icons лицензия в API — NOASSERTION: автоматически она не определена; в README библиотека иконок заявлена как MIT. Звёзды в таблице — снимок на это время: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>player: 2.5D-персонаж в браузере</h2>
+    <p><a href="https://github.com/livliv-dev/player">livliv-dev/player</a> в описании — лёгкий 2.5D-проигрыватель персонажа для веба с липсинком и трекингом лица по вебкамере. По README это WebGL2 без зависимостей, ядро около 30 KB в gzip. Липсинк с микрофона, аудио или видео и трекинг лица по вебкамере через MediaPipe работают в браузере и грузятся по требованию. Один API проигрывает персонажей LivLiv, VRM и PNGTuber. В каталоге <code>characters/</code> 21 готовый персонаж. Демо: <a href="https://livliv-dev.github.io/player">livliv-dev.github.io/player</a>. Лицензия Apache-2.0, язык TypeScript, 1388 звёзд, push 9 ноября 2026 в 06:08 UTC. На момент запроса репозиторий не был архивным.</p>
+    <p>Смотреть тем, кому нужен персонаж на веб-странице: липсинк и лицо с камеры, три формата через один API. До подключения откройте демо и README. Трекинг лица и липсинк грузятся по требованию, отдельно от ядра. Лицензия Apache-2.0.</p>
+
+    <h2>kubai-icons: иконки одного стиля для агента и для вёрстки</h2>
+    <p><a href="https://github.com/kubai087/kubai-icons">kubai087/kubai-icons</a> — агентский скилл, который рисует анимированные иконки в одном стиле для Claude Code, Codex и других агентов. Рядом библиотека иконок для React, Vue, JS, web components и SVG. В README указано 2800+ иконок, в описании репозитория — 2600+. Сайт <a href="https://icons.kubai.design">icons.kubai.design</a> даёт поиск, перекраску и экспорт SVG и PNG. Язык JavaScript, 543 звезды, push 9 ноября 2026 в 17:14 UTC. На момент запроса репозиторий не был архивным.</p>
+    <p>Смотреть тем, кто просит агента рисовать иконки в одном стиле, и тем, кому нужен набор для React, Vue, JS, web components или SVG. Лицензия в API — NOASSERTION, автоматически она не определена; в README иконки заявлены как MIT. Перед использованием проверьте файл лицензии в репозитории: API и README расходятся. Расходится и число иконок: 2800+ в README и 2600+ в описании репозитория.</p>
+
+    <h2>tinker-ai-skill: дообучение на своих сессиях Claude Code</h2>
+    <p><a href="https://github.com/drost-ai/tinker-ai-skill">drost-ai/tinker-ai-skill</a> — Agent Skill для дообучения агентной модели на собственных сессиях Claude Code через Tinker (Thinking Machines). По описанию работает в Claude Code, Codex и OpenCode. По README скилл собирает SFT-датасет из сессий, учит LoRA на Tinker, мерджит и выдаёт GGUF для llama.cpp. Агент останавливается перед платными шагами. Авторы пишут, что так сделали свои модели Tess-4. Обучение платное: его считает Tinker. Лицензия MIT, язык Python, 283 звезды, push 7 ноября 2026 в 17:15 UTC. На момент запроса репозиторий не был архивным.</p>
+    <p>Смотреть тем, кто хочет получить GGUF для llama.cpp из своих сессий Claude Code и запускает Claude Code, Codex или OpenCode. До обучения учтите оплату Tinker. По README агент останавливается перед платными шагами.</p>
+
+    <h2>WebsiteBench: может ли агент воссоздать сайт</h2>
+    <p><a href="https://github.com/TIGER-AI-Lab/WebsiteBench">TIGER-AI-Lab/WebsiteBench</a> — бенчмарк о том, могут ли ИИ-агенты воссоздать сайт, исследуя его через браузер. Агент должен реверс-инжинирить full-stack копию продакшен-сайта по виду и поведению. По README в наборе 70 сайтов и 46 916 скрытых тест-кейсов. Датасет опубликован на Hugging Face и Harbor Hub, пакет на PyPI называется websitebench, лидерборд — на <a href="https://website-bench.com">website-bench.com</a>. Лицензия Apache-2.0, язык Python, 156 звёзд, push 7 ноября 2026 в 17:29 UTC. На момент запроса репозиторий не был архивным.</p>
+    <p>Смотреть тем, кто сравнивает агентов на задаче «открыть сайт и собрать похожую копию». Тест-кейсы в README названы скрытыми: это не открытый список ответов. Лицензия Apache-2.0. Пакет и лидерборд — отдельные адреса, их стоит сверить с README на день запуска.</p>
+
+    <h2>Что из этого следует</h2>
+    <p>Четыре репозитория закрывают разные задачи. player проигрывает 2.5D-персонажа в браузере: WebGL2, ядро около 30 KB в gzip, липсинк и трекинг лица по требованию, форматы LivLiv, VRM и PNGTuber, 21 персонаж в <code>characters/</code>. kubai-icons даёт скилл анимированных иконок для Claude Code, Codex и других агентов и библиотеку для React, Vue, JS, web components и SVG. tinker-ai-skill собирает SFT-датасет из сессий Claude Code и через платный Tinker выдаёт GGUF для llama.cpp. WebsiteBench проверяет, соберёт ли агент full-stack копию сайта по виду и поведению: 70 сайтов и 46 916 скрытых тест-кейсов. Число звёзд — снимок публичного API GitHub 9 ноября 2026 около 21:05 по Москве, не оценка качества и не аудит безопасности.</p>
+    <p>Лицензии: Apache-2.0 у player и WebsiteBench, MIT у tinker-ai-skill. У kubai-icons в API стоит NOASSERTION, в README иконки заявлены как MIT. Файл лицензии стоит открыть до использования.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub 9 ноября 2026 около 21:05 по Москве. Это снимок на эту дату, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
