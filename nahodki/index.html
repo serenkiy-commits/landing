@@ -1,230 +1,68 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!doctype html>
+<html lang="ru" data-metrika-counter="112187050">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Находки для дома и гаджеты | WB, Ozon, Маркет</title>
-  <meta name="description" content="Честные видеообзоры полезных товаров для дома, кухни и авто с Маркета, WB и Ozon. Прямые ссылки и артикулы в каждом посте.">
-  <meta property="og:title" content="Находки для дома и гаджеты | WB, Ozon, Маркет">
-  <meta property="og:description" content="Выбирайте удобную площадку: Telegram, MAX или ВКонтакте. Прямые ссылки и коды товаров под каждым роликом.">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f9ef83">
+  <title>Находки для дома и гаджеты — полезное в MAX</title>
+  <meta name="description" content="Находки для дома, кухни и авто с WB, Ozon и Яндекс Маркета. Посмотрите примеры и заходите в MAX за видеообзорами, ссылками и артикулами.">
+  <link rel="canonical" href="https://snezhko.ru/nahodki/">
   <meta property="og:type" content="website">
+  <meta property="og:title" content="Умные мелочи. Большая польза.">
+  <meta property="og:description" content="Полезные товары для дома, кухни и авто. Видеообзоры, ссылки и артикулы — в нашем канале MAX.">
   <meta property="og:url" content="https://snezhko.ru/nahodki/">
-  <style>
-    :root {
-      --bg-inner: #5c26a4;
-      --bg-outer: #120826;
-      --gold: #ffce54;
-      --gold-dark: #f5b623;
-      --purple-dark: #1c0a34;
-      --card-bg: rgba(34, 14, 64, 0.78);
-      --card-border: rgba(255, 206, 84, 0.35);
-      --text: #ffffff;
-      --muted: rgba(255, 255, 255, 0.82);
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-    body {
-      min-height: 100dvh;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
-      background:
-        radial-gradient(circle at 50% 18%, rgba(255, 196, 68, 0.22) 0%, rgba(255, 196, 68, 0) 55%),
-        radial-gradient(circle at 50% 35%, var(--bg-inner) 0%, var(--bg-outer) 78%);
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px 16px 36px;
-    }
-    .wrap {
-      width: 100%;
-      max-width: 420px;
-      background: var(--card-bg);
-      border: 1.5px solid var(--card-border);
-      border-radius: 28px;
-      padding: 28px 22px 24px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55), 0 0 40px rgba(92, 38, 164, 0.4);
-      backdrop-filter: blur(14px);
-      text-align: center;
-    }
-    .avatar {
-      width: 96px;
-      height: 96px;
-      margin: 0 auto 16px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 50% 35%, #6a2ec0, #180a30);
-      border: 3px solid var(--gold);
-      box-shadow: 0 8px 28px rgba(255, 206, 84, 0.28);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .avatar svg { width: 52px; height: 52px; }
-    .pill {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--purple-dark);
-      font-weight: 800;
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 6px 14px;
-      border-radius: 999px;
-      margin-bottom: 12px;
-    }
-    h1 {
-      font-size: 23px;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 6px;
-      letter-spacing: -0.01em;
-    }
-    .sub-gold {
-      color: var(--gold);
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-    .desc {
-      font-size: 14px;
-      line-height: 1.45;
-      color: var(--muted);
-      margin-bottom: 22px;
-    }
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .btn {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      padding: 16px 18px;
-      border-radius: 18px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 16px;
-      transition: transform 0.14s ease, box-shadow 0.14s ease;
-      cursor: pointer;
-    }
-    .btn:active { transform: scale(0.98); }
-    .btn-left {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      text-align: left;
-    }
-    .btn-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .btn-title { display: block; font-size: 16px; font-weight: 800; }
-    .btn-hint { display: block; font-size: 12px; font-weight: 500; opacity: 0.85; margin-top: 2px; }
-    .btn-arrow { font-size: 20px; font-weight: 800; opacity: 0.9; }
-
-    .btn-tg {
-      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
-      color: var(--purple-dark);
-      box-shadow: 0 8px 24px rgba(255, 206, 84, 0.32);
-    }
-    .btn-tg .btn-icon { background: rgba(28, 10, 52, 0.12); color: var(--purple-dark); }
-
-    .btn-max {
-      background: linear-gradient(135deg, #7b3fe4 0%, #5120a8 100%);
-      color: #ffffff;
-      border: 1.5px solid rgba(255, 206, 84, 0.42);
-      box-shadow: 0 8px 22px rgba(81, 32, 168, 0.45);
-    }
-    .btn-max .btn-icon { background: rgba(255, 255, 255, 0.15); color: var(--gold); }
-
-    .btn-vk {
-      background: rgba(255, 255, 255, 0.09);
-      color: #ffffff;
-      border: 1.5px solid rgba(255, 255, 255, 0.22);
-    }
-    .btn-vk .btn-icon { background: rgba(0, 119, 255, 0.25); color: #5ca8ff; }
-
-    .footer {
-      margin-top: 18px;
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.6);
-      line-height: 1.4;
-    }
-  </style>
+  <meta property="og:image" content="https://snezhko.ru/nahodki/assets/og.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/rubik-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+  <script src="analytics.js" defer></script>
 </head>
 <body>
-  <main class="wrap">
-    <div class="avatar" aria-hidden="true">
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M22 22V18C22 12.477 26.477 8 32 8C37.523 8 42 12.477 42 18V22" stroke="#FFCE54" stroke-width="4.5" stroke-linecap="round"/>
-        <rect x="12" y="20" width="40" height="34" rx="9" fill="#FFCE54"/>
-        <path d="M32 27L34.9 33.2L41.7 34.1L36.7 38.8L38 45.5L32 42.2L26 45.5L27.3 38.8L22.3 34.1L29.1 33.2L32 27Z" fill="#220E40"/>
-      </svg>
-    </div>
-    <span class="pill">WB • OZON • МАРКЕТ</span>
-    <h1>Находки для дома и гаджеты</h1>
-    <div class="sub-gold">Честные обзоры и прямые ссылки</div>
-    <p class="desc">Выберите удобную соцсеть. Под каждым видео уже стоит готовая ссылка на карточку товара и код для быстрого поиска.</p>
-
-    <div class="buttons">
-      <a class="btn btn-tg" id="tg-btn" href="https://nahodki_dom_gadget.t.me" onclick="openTg(event)">
-        <span class="btn-left">
-          <span class="btn-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.4c.3-1.3-.9-2.3-2.1-1.8L2.6 9.3c-1.3.5-1.3 2.4.1 2.8l4.4 1.4 1.7 5.3c.4 1.2 1.9 1.5 2.8.6l2.5-2.5 4.6 3.4c1.1.8 2.6.2 2.9-1.1l.3-14.8zM8.3 12.9l8.6-5.3c.2-.1.4.2.2.3l-7.1 6.4-.3 3.2-1.4-4.6z"/></svg>
-          </span>
-          <span>
-            <span class="btn-title">Открыть в Telegram</span>
-            <span class="btn-hint">Канал с артикулами и поиском по коду</span>
-          </span>
-        </span>
-        <span class="btn-arrow">›</span>
-      </a>
-
-      <a class="btn btn-max" href="https://max.ru/channel_nahodki_dom_gadget" target="_blank" rel="noopener">
-        <span class="btn-left">
-          <span class="btn-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.7 1.33 5.12 3.44 6.77L4.5 22l4.66-1.86c.91.23 1.86.36 2.84.36 5.52 0 10-4.03 10-9S17.52 2 12 2zm1.1 12.6l-2.6-2.8-5 2.8 5.5-5.8 2.6 2.8 5-2.8-5.5 5.8z"/></svg>
-          </span>
-          <span>
-            <span class="btn-title">Канал в MAX</span>
-            <span class="btn-hint">Обзоры и прямые ссылки без VPN</span>
-          </span>
-        </span>
-        <span class="btn-arrow">›</span>
-      </a>
-
-      <a class="btn btn-vk" href="https://vk.ru/nahodki_dom_gadget" target="_blank" rel="noopener">
-        <span class="btn-left">
-          <span class="btn-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.8 17.5c-5.5 0-8.6-3.8-8.7-10h2.7c.1 4.6 2.1 6.5 3.7 6.9V7.5h2.6v3.9c1.6-.2 3.2-2 3.8-3.9h2.6c-.4 2.5-2.2 4.3-3.5 5.1 1.3.6 3.3 2.2 4.1 4.9h-2.8c-.6-1.9-2.1-3.4-4.1-3.6v3.6h-.4z"/></svg>
-          </span>
-          <span>
-            <span class="btn-title">Сообщество ВКонтакте</span>
-            <span class="btn-hint">VK Клипы и подборки находок</span>
-          </span>
-        </span>
-        <span class="btn-arrow">›</span>
-      </a>
-    </div>
-
-    <div class="footer">Нажмите на удобную кнопку, чтобы открыть приложение</div>
-  </main>
-
-  <script>
-    function openTg(e) {
-      e.preventDefault();
-      window.location.href = "tg://resolve?domain=nahodki_dom_gadget";
-      setTimeout(function () {
-        window.location.href = "https://t.me/nahodki_dom_gadget";
-      }, 400);
-    }
-  </script>
+  <a class="skip" href="#finds">К находкам</a>
+  <svg class="svg-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="bag" viewBox="0 0 32 32"><path d="M10 11V9a6 6 0 0 1 12 0v2M7 11h18l2 17H5z"/><path d="m12 18 3 3 6-6"/></symbol><symbol id="play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7z"/></symbol></svg>
+  <main><div class="sunny">
+    <header class="site-header wrap">
+      <a class="brand" href="#" aria-label="Находки — наверх"><span class="brand-icon"><svg><use href="#bag"/></svg></span><span>находки<span class="brand-sub">для дома и гаджеты</span></span></a>
+      <nav aria-label="Основная навигация"><a href="#finds">Смотреть находки</a><a href="#channel">О канале</a></nav>
+      <a class="button button-small" href="https://max.ru/channel_nahodki_dom_gadget" data-max="header">Мы в MAX <svg><use href="#arrow"/></svg></a>
+    </header>
+      <section class="opening wrap" aria-labelledby="opening-title">
+        <div class="opening-copy">
+          <h1 id="opening-title">Умные мелочи.<br><span>Большая польза.</span></h1>
+          <div class="opening-action"><p>Для кухни, дома и авто.<br>Находим интересное —<br> показываем в деле.</p><a class="button" href="https://max.ru/channel_nahodki_dom_gadget" data-max="hero">Заглянуть в MAX <svg><use href="#arrow"/></svg></a><span class="action-note">Видеообзоры, ссылки и артикулы</span></div>
+        </div>
+        <div class="showcase" aria-label="Примеры видеообзоров канала">
+          <a class="cover cover-one" href="https://max.ru/channel_nahodki_dom_gadget" data-max="hero-mop" aria-label="Посмотреть обзор швабры в MAX"><img src="assets/product-12.jpg" width="720" height="1280" alt="Швабра Pragma Halbe с ведром — кадр из обзора" fetchpriority="high"><span class="cover-category">Для дома</span><span class="cover-caption">Чистый пол.<br>Сухие руки.</span><span class="play"><svg><use href="#play"/></svg></span></a>
+          <div class="showcase-note"><span>О, вот это<br>пригодится!</span><svg viewBox="0 0 110 80" aria-hidden="true"><path d="M8 12c52-20 86 8 69 49m-15-12 14 17 19-8"/></svg></div>
+          <a class="cover cover-two" href="https://max.ru/channel_nahodki_dom_gadget" data-max="hero-mill" aria-label="Посмотреть обзор мельницы в MAX"><img src="assets/product-13.jpg" width="720" height="1280" alt="Электрическая мельница REDMOND — кадр из обзора"><span class="cover-category">Для кухни</span><span class="cover-caption">Свежий помол.<br>Одно нажатие.</span><span class="play"><svg><use href="#play"/></svg></span></a>
+          <a class="cover cover-three" href="https://max.ru/channel_nahodki_dom_gadget" data-max="hero-brush" aria-label="Посмотреть обзор электрощётки в MAX"><img src="assets/product-18.jpg" width="720" height="1280" alt="Электрическая щётка для уборки — кадр из обзора"><span class="cover-category">Для уборки</span><span class="cover-caption">Пусть крутится<br>щётка.</span><span class="play"><svg><use href="#play"/></svg></span></a>
+        </div>
+        <div class="opening-bottom"><p>Маленькие помощники для обычной жизни</p><div class="marketplaces" aria-label="Товары с маркетплейсов"><span>WB</span><span>Ozon</span><span>Яндекс Маркет</span></div></div>
+      </section>
+  </div>
+      <section class="finds" id="finds" aria-labelledby="finds-title">
+        <div class="wrap">
+          <div class="section-head"><h2 id="finds-title">Листай. Находи.<br>Забирай идею.</h2><p>Несколько примеров из наших обзоров.<br>Полные видео и ссылки на товары — в MAX.</p></div>
+          <div class="filters" role="group" aria-label="Категории находок"><button type="button" class="filter active" data-filter="all" aria-pressed="true">Все находки</button><button type="button" class="filter" data-filter="home" aria-pressed="false">Дом и уборка</button><button type="button" class="filter" data-filter="kitchen" aria-pressed="false">Кухня</button><button type="button" class="filter" data-filter="auto" aria-pressed="false">Авто</button></div>
+          <p class="sr-only" id="filter-status" role="status" aria-live="polite"></p>
+          <div class="product-grid">
+            <article class="product" data-category="kitchen"><a class="product-photo photo-peach" href="https://max.ru/channel_nahodki_dom_gadget" data-max="find-oil" aria-label="Обзор распылителя масла в MAX"><img src="assets/product-20.jpg" width="720" height="1280" alt="Распылитель масла — кадр из видеообзора" loading="lazy"><span class="photo-label">Кухня</span><span class="photo-action"><svg><use href="#play"/></svg> Обзор в MAX</span></a><h3>Масло — лёгким облаком</h3><p>Стеклянный распылитель на 250 мл для масла, уксуса и соусов.</p></article>
+            <article class="product" data-category="home"><a class="product-photo photo-lilac" href="https://max.ru/channel_nahodki_dom_gadget" data-max="find-brush" aria-label="Обзор электрической щётки в MAX"><img src="assets/product-18.jpg" width="720" height="1280" alt="Аккумуляторная щётка для уборки — кадр из видео" loading="lazy"><span class="photo-label">Дом и уборка</span><span class="photo-action"><svg><use href="#play"/></svg> Обзор в MAX</span></a><h3>Щётка берёт обороты</h3><p>Аккумуляторная модель 9 в 1 с выдвижной ручкой.</p></article>
+            <article class="product" data-category="auto"><a class="product-photo photo-sky" href="https://max.ru/channel_nahodki_dom_gadget" data-max="find-holder" aria-label="Обзор автомобильного держателя в MAX"><img src="assets/product-19.jpg" width="720" height="1280" alt="Телефон на держателе в автомобиле — кадр из обзора" loading="lazy"><span class="photo-label">Авто</span><span class="photo-action"><svg><use href="#play"/></svg> Обзор в MAX</span></a><h3>Телефон на своём месте</h3><p>Магнитный держатель с вакуумной присоской и поворотом.</p></article>
+            <article class="product" data-category="kitchen"><a class="product-photo photo-yellow" href="https://max.ru/channel_nahodki_dom_gadget" data-max="find-mill" aria-label="Обзор мельницы REDMOND в MAX"><img src="assets/product-13.jpg" width="720" height="1280" alt="Мельница для специй REDMOND — кадр из обзора" loading="lazy"><span class="photo-label">Кухня</span><span class="photo-action"><svg><use href="#play"/></svg> Обзор в MAX</span></a><h3>Специи одним нажатием</h3><p>Электрическая мельница REDMOND с керамическими жерновами.</p></article>
+            <article class="product" data-category="home"><a class="product-photo photo-pink" href="https://max.ru/channel_nahodki_dom_gadget" data-max="find-mop" aria-label="Обзор швабры Pragma Halbe в MAX"><img src="assets/product-12.jpg" width="720" height="1280" alt="Швабра с отжимом и ведром Pragma Halbe — кадр из обзора" loading="lazy"><span class="photo-label">Дом и уборка</span><span class="photo-action"><svg><use href="#play"/></svg> Обзор в MAX</span></a><h3>Отжим без мокрых рук</h3><p>Швабра Pragma Halbe, ведро 9,2 л и две насадки из микрофибры.</p></article>
+            <article class="product" data-category="kitchen"><a class="product-photo photo-mint" href="https://max.ru/channel_nahodki_dom_gadget" data-max="find-vacuum" aria-label="Обзор вакууматора в MAX"><img src="assets/product-14.jpg" width="720" height="1280" alt="Вакуумная упаковка продуктов — кадр из обзора" loading="lazy"><span class="photo-label">Кухня</span><span class="photo-action"><svg><use href="#play"/></svg> Обзор в MAX</span></a><h3>Упаковать — и порядок</h3><p>Вакууматор с резаком и запайкой пакетов. В обзоре — как им пользоваться.</p></article>
+          </div>
+          <p class="gallery-note">На фото — кадры наших видео. Наличие и актуальную цену проверяйте по ссылке под обзором.</p>
+        </div>
+      </section>
+      <section class="channel" id="channel" aria-labelledby="channel-title"><div class="wrap channel-layout"><div><h2 id="channel-title">Меньше поисков.<br>Больше находок.</h2><p class="channel-intro">Здесь — только несколько примеров.<br>В канале — сами обзоры и всё,<br>чтобы найти понравившуюся вещь.</p><a class="button button-yellow" href="https://max.ru/channel_nahodki_dom_gadget" data-max="channel">Смотреть канал в MAX <svg><use href="#arrow"/></svg></a></div><div class="channel-points"><div><span>Видео в деле</span><p>Смотри, как устроен товар и как им пользоваться.</p></div><div><span>Ссылки и артикулы</span><p>Переходи к карточке товара из публикации.</p></div><div><span>Дом, кухня, авто</span><p>Выбирай то, что пригодится именно тебе.</p></div></div></div></section>
+      <section class="questions wrap" aria-labelledby="questions-title"><h2 id="questions-title">Пара вопросов</h2><div class="faq"><details><summary>Это магазин?<span aria-hidden="true">+</span></summary><p>Это канал с видеообзорами и подборками товаров. Покупки оформляются на маркетплейсах — по ссылкам из публикаций.</p></details><details><summary>Где посмотреть полный обзор?<span aria-hidden="true">+</span></summary><p>Нажми «Обзор в MAX», открой канал и найди нужный товар. Под видео находятся ссылка и артикул.</p></details><details><summary>Можно читать в другой соцсети?<span aria-hidden="true">+</span></summary><p>Да, находки есть также в <a href="https://t.me/nahodki_dom_gadget" target="_blank" rel="noopener">Telegram</a> и <a href="https://vk.ru/nahodki_dom_gadget" target="_blank" rel="noopener">ВКонтакте</a>.</p></details></div></section>
+      <section class="closing"><div class="wrap"><h2>Твоя следующая<br>находка — в MAX.</h2><a class="button" href="https://max.ru/channel_nahodki_dom_gadget" data-max="footer">Открыть и посмотреть <svg><use href="#arrow"/></svg></a><p>Понравится — подписывайся.</p></div></section>
+    </main>
+  <footer class="site-footer wrap"><a class="brand" href="#"><span class="brand-icon"><svg><use href="#bag"/></svg></span><span>находки<span class="brand-sub">для дома и гаджеты</span></span></a><div><a href="https://t.me/nahodki_dom_gadget" target="_blank" rel="noopener">Telegram</a><a href="https://vk.ru/nahodki_dom_gadget" target="_blank" rel="noopener">ВКонтакте</a><a href="/privacy/">Конфиденциальность</a></div><p>Независимая подборка. WB, Ozon и Яндекс Маркет — площадки, где продаются товары.</p></footer>
+  <div class="footer-utility"><a class="twitter-icon" href="https://x.com/snezhko_ai" target="_blank" rel="noopener noreferrer" aria-label="@snezhko_ai в Twitter" title="@snezhko_ai в Twitter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.95 4.57a9.83 9.83 0 0 1-2.83.78 4.94 4.94 0 0 0 2.16-2.72 9.92 9.92 0 0 1-3.13 1.2 4.92 4.92 0 0 0-8.39 4.48A13.98 13.98 0 0 1 1.61 3.16a4.92 4.92 0 0 0 1.52 6.56A4.9 4.9 0 0 1 .9 9.1v.06a4.92 4.92 0 0 0 3.95 4.83 4.94 4.94 0 0 1-2.22.08 4.93 4.93 0 0 0 4.6 3.42A9.87 9.87 0 0 1 0 19.52a13.91 13.91 0 0 0 7.55 2.21c9.06 0 14.01-7.5 14.01-14.01v-.64a10.02 10.02 0 0 0 2.46-2.55Z"/></svg></a></div>
+  <div class="mobile-cta"><span>Полные обзоры<br><strong>в нашем MAX</strong></span><a class="button button-small" href="https://max.ru/channel_nahodki_dom_gadget" data-max="mobile">Открыть канал <svg><use href="#arrow"/></svg></a></div>
 </body>
 </html>

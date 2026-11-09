@@ -1,0 +1,16 @@
+[
+  {
+    "file": "rubik-cyrillic.woff2",
+    "origin": "https://fonts.gstatic.com/s/rubik/v31/iJWKBXyIfDnIV7nFrXyi0A.woff2",
+    "family": "Rubik",
+    "provider": "Google Fonts",
+    "license": "SIL Open Font License 1.1"
+  },
+  {
+    "file": "rubik-latin.woff2",
+    "origin": "https://fonts.gstatic.com/s/rubik/v31/iJWKBXyIfDnIV7nBrXw.woff2",
+    "family": "Rubik",
+    "provider": "Google Fonts",
+    "license": "SIL Open Font License 1.1"
+  }
+]

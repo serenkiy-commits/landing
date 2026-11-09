@@ -1,0 +1,57 @@
+[
+  {
+    "file": "product-12.jpg",
+    "sourcePost": "https://t.me/nahodki_dom_gadget/12",
+    "frameSeconds": 2,
+    "width": 720,
+    "height": 1280
+  },
+  {
+    "file": "product-13.jpg",
+    "sourcePost": "https://t.me/nahodki_dom_gadget/13",
+    "frameSeconds": 2,
+    "width": 720,
+    "height": 1280
+  },
+  {
+    "file": "product-14.jpg",
+    "sourcePost": "https://t.me/nahodki_dom_gadget/14",
+    "frameSeconds": 8,
+    "width": 720,
+    "height": 1280
+  },
+  {
+    "file": "product-18.jpg",
+    "sourcePost": "https://t.me/nahodki_dom_gadget/18",
+    "frameSeconds": 8,
+    "width": 720,
+    "height": 1280
+  },
+  {
+    "file": "product-19.jpg",
+    "sourcePost": "https://t.me/nahodki_dom_gadget/19",
+    "frameSeconds": 8,
+    "width": 720,
+    "height": 1280
+  },
+  {
+    "file": "product-20.jpg",
+    "sourcePost": "https://t.me/nahodki_dom_gadget/20",
+    "frameSeconds": 8,
+    "width": 720,
+    "height": 1280
+  },
+  {
+    "file": "og.jpg",
+    "sourcePost": "https://t.me/nahodki_dom_gadget/20",
+    "frameSeconds": 8,
+    "width": 1200,
+    "height": 630,
+    "crop": [
+      80,
+      246,
+      990,
+      1114
+    ]
+  }
+]
