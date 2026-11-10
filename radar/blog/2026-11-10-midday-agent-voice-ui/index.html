@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Голосовой агент, UI на C, плеер и синтез: дневной выпуск 10 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор majorminorlabs/hermes-voice, yappologistic/CUI, egoist/mygo-music и jamesondh/chimera-vocal-synth. Звёзды, лицензии и дата push сняты с GitHub 10 ноября 2026. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-10-midday-agent-voice-ui/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-10-midday-agent-voice-ui/">
+  <meta property="og:title" content="Голосовой агент и UI: дневной выпуск 10 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar 10 ноября 2026, дневной выпуск: голосовой агент, UI на C, плеер с плагинами и синтез голоса",
+        "datePublished": "2026-11-10",
+        "dateModified": "2026-11-10",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-10-midday-agent-voice-ui/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор hermes-voice, CUI, mygo-music и chimera-vocal-synth по данным GitHub API на 10 ноября 2026."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub 10 ноября 2026 около 08:05 UTC (11:05 по Москве). Пометка снимка — на 10.11.2026. Это снимок на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "10 ноября 2026, день", "item": "https://snezhko.ru/radar/blog/2026-11-10-midday-agent-voice-ui/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">10 ноября 2026, день · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar 10 ноября 2026, дневной выпуск: голосовой агент, UI на C, плеер с плагинами и синтез голоса</h1>
+    <p>Четыре открытых репозитория про голос и интерфейс: разговор с профилем Hermes Agent через Home Assistant Assist на Echo, immediate-mode UI на C99, нативный музыкальный плеер на Go с плагинами и голосовой синтезатор на физическом моделировании в браузере. У hermes-voice и CUI последний push 10 ноября 2026, у mygo-music и chimera-vocal-synth — 9 ноября. В карточке — что делает репозиторий, язык, лицензия, число звёзд и дата push. Число звёзд — снимок публичного API GitHub на 10.11.2026, запрос около 08:05 UTC (11:05 по Москве), не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 10 ноября 2026</h2>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что делает</th><th>Язык</th><th>Лицензия</th><th>Звёзды (снимок выпуска)</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/majorminorlabs/hermes-voice">majorminorlabs/hermes-voice</a></td>
+          <td>Голос к профилю Hermes Agent через Home Assistant Assist на Echo с прошивкой echo-dot-assist</td>
+          <td>Python</td>
+          <td>MIT</td>
+          <td>631</td>
+          <td>2026-11-10</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/yappologistic/CUI">yappologistic/CUI</a></td>
+          <td>Immediate-mode UI на C99: библиотека сама рисует компоненты. В описании — около 150 компонентов, без зависимостей</td>
+          <td>C</td>
+          <td>MIT</td>
+          <td>782</td>
+          <td>2026-11-10</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/egoist/mygo-music">egoist/mygo-music</a></td>
+          <td>Нативный музыкальный плеер на Go через фреймворк MyGo, без WebView, расширяется плагинами</td>
+          <td>Go</td>
+          <td>AGPL-3.0</td>
+          <td>1151</td>
+          <td>2026-11-09</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/jamesondh/chimera-vocal-synth">jamesondh/chimera-vocal-synth</a></td>
+          <td>Голосовой синтезатор на физическом моделировании в браузере: Rust → WebAssembly, без сэмплов</td>
+          <td>Rust</td>
+          <td>MIT</td>
+          <td>1342</td>
+          <td>2026-11-09</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>, запрос 10 ноября 2026 около 08:05 UTC (11:05 по Москве). Дата push в таблице — день из этого снимка. Архивными эти четыре репозитория на момент запроса не были. Звёзды в таблице — снимок на 10.11.2026: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>hermes-voice: голос к профилю Hermes Agent с Echo</h2>
+    <p><a href="https://github.com/majorminorlabs/hermes-voice">majorminorlabs/hermes-voice</a> в описании — разговор с профилем Hermes Agent через Home Assistant Assist. По README с профилем Hermes Agent (NousResearch) говорят голосом через Home Assistant Assist на старом Amazon Echo с прошивкой echo-dot-assist. Прошивка заменяет клиент Alexa и сохраняет Fire OS и аудиообработку Echo. На Echo Show экран показывает распознанную фразу, ответ по мере генерации, используемые инструменты Hermes и фоновую работу. Экран — веб-страница, его можно кастомизировать. Лицензия MIT, язык Python, 631 звезда на 10.11.2026, push 2026-11-10T07:06Z. Репозиторий создан 5 ноября 2026. На момент запроса не был архивным.</p>
+    <p>Смотреть тем, кто хочет говорить с профилем Hermes Agent с колонки Echo через Home Assistant Assist. Перед покупкой б/у Echo README просит проверять модель и версию Fire OS: обновление Amazon может блокировать разблокировку. Команд установки в фактах этого выпуска нет. Прошивку выпуск не ставил.</p>
+
+    <h2>CUI: компоненты интерфейса на C99</h2>
+    <p><a href="https://github.com/yappologistic/CUI">yappologistic/CUI</a> в описании — нативные UI-компоненты для C: около 150 компонентов, spring-анимации и полная поддержка клавиатуры. Платформы в описании — Windows, macOS и Linux, зависимостей нет. По README это immediate-mode UI-библиотека на C99: библиотека сама рисует компоненты, а экран описывается вызовами функций каждый кадр. Есть живой сайт, getting started, tutorial и релизы. Лицензия MIT, язык C, 782 звезды на 10.11.2026, push 2026-11-10T03:44Z. Репозиторий создан 5 ноября 2026. На момент запроса не был архивным.</p>
+    <p>Смотреть тем, кто пишет интерфейс на C под Windows, macOS и Linux и описывает экран вызовами функций на каждый кадр. Адрес живого сайта и команды сборки в фактах этого выпуска не указаны. Библиотеку выпуск не собирал.</p>
+
+    <h2>mygo-music: плеер на Go с плагинами</h2>
+    <p><a href="https://github.com/egoist/mygo-music">egoist/mygo-music</a> в описании — нативный музыкальный плеер, расширяемый плагинами. По README это десктоп на Go через фреймворк MyGo, без WebView. Локальные файлы: MP3, FLAC, Ogg Vorbis, WAV, а также ALAC, FLAC и AAC в .m4a и .aac. Есть теги, обложки и .lrc-лирика, плейлисты, поиск и очередь. Есть notch-плеер на macOS, трей и медиаклавиши. Есть нормализация громкости. Субтитры подкастов считаются на устройстве через sherpa-onnx и Qwen3-ASR. Плагины добавляют аккаунты, каталоги, подкасты, станции и страницы. Лицензия AGPL-3.0, язык Go, 1151 звезда на 10.11.2026, push 2026-11-09T11:19Z. Репозиторий создан 4 ноября 2026. На момент запроса не был архивным.</p>
+    <p>Смотреть тем, кто хочет локальный плеер на Go и отдельные плагины под аккаунты, каталоги, подкасты, станции и страницы. Сборка в README: <code>go tool mygo dev</code> и <code>go tool mygo build</code>. Плеер в этом выпуске не собирался.</p>
+
+    <h2>chimera-vocal-synth: синтез из модели дыхательных путей</h2>
+    <p><a href="https://github.com/jamesondh/chimera-vocal-synth">jamesondh/chimera-vocal-synth</a> в описании на GitHub — the ultimate vocal synthesizer: sing, speak, beatbox. По README это голосовой синтезатор на физическом моделировании в браузере: звук получается из симуляции дыхательных путей (лёгкие, связки или сиринкс, разветвлённый вокальный тракт, губы, нос), без сэмплов. Движок на Rust собирается в WebAssembly и работает в AudioWorklet. Тот же код запускается нативно для тестов и CLI <code>chimera</code>. Режимы в README: Play (двигать язык, губы и челюсть в разрезе головы, Web MIDI), Speak (английский текст через CMUdict или IPA), Sing (piano roll с лирикой), Beatbox (пэды и секвенсор), Bestiary (певчая птица, тюлень, аллигатор, слон). Лицензия MIT, язык Rust, 1342 звезды на 10.11.2026, push 2026-11-09T15:47Z. Репозиторий создан 5 ноября 2026. На момент запроса не был архивным.</p>
+    <p>Смотреть тем, кто хочет синтез голоса в браузере из модели дыхательных путей, без сэмплов. Запуск в README: Rust с таргетом <code>wasm32-unknown-unknown</code> и Bun, затем <code>bun install</code> и <code>bun run dev</code>. Нужен secure context — localhost или HTTPS. Синтезатор в этом выпуске не запускался.</p>
+
+    <h2>Что из этого следует</h2>
+    <p>Четыре репозитория закрывают разные задачи голоса и интерфейса. hermes-voice даёт голос к профилю Hermes Agent через Home Assistant Assist на старом Echo с прошивкой echo-dot-assist: клиент Alexa заменён, Fire OS и аудиообработка Echo остаются. CUI — immediate-mode UI-библиотека на C99 для Windows, macOS и Linux, без зависимостей; в описании указано около 150 компонентов. mygo-music — нативный плеер на Go через MyGo, без WebView: локальные файлы, очередь и плагины для аккаунтов, каталогов, подкастов, станций и страниц. chimera-vocal-synth считает звук из модели дыхательных путей в браузере: движок на Rust уходит в WebAssembly и в AudioWorklet, тот же код есть у CLI <code>chimera</code>. Число звёзд — снимок публичного API GitHub на 10.11.2026, около 08:05 UTC, не оценка качества и не аудит безопасности.</p>
+    <p>Лицензии: MIT у hermes-voice, CUI и chimera-vocal-synth, AGPL-3.0 у mygo-music.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub 10 ноября 2026 около 08:05 UTC (11:05 по Москве). Пометка снимка — на 10.11.2026. Это снимок на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
