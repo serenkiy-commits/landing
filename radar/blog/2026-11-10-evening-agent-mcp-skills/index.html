@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Метрика через MCP, SRE-harness, 3D-скульпт и STE100, вечер 10 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор DevCrabs-Inc/yandex-metrika-mcp, rainyZhou2/SreAgentHarness, gokayfem/image-to-sculpt и Dodaios/ste80-humanizer. Звёзды, лицензии и дата push сняты с GitHub 10 ноября 2026. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-10-evening-agent-mcp-skills/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-10-evening-agent-mcp-skills/">
+  <meta property="og:title" content="Метрика через MCP и навыки агента: вечерний выпуск 10 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar 10 ноября 2026, вечер: Метрика через MCP, SRE-harness, 3D-скульпт и STE100",
+        "datePublished": "2026-11-10",
+        "dateModified": "2026-11-10",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-10-evening-agent-mcp-skills/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор yandex-metrika-mcp, SreAgentHarness, image-to-sculpt и ste80-humanizer по данным GitHub API на 10 ноября 2026."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 10.11.2026, 21:05 МСК. Это снимок на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "10 ноября 2026, вечер", "item": "https://snezhko.ru/radar/blog/2026-11-10-evening-agent-mcp-skills/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">10 ноября 2026, вечер · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar — 10 ноября 2026, вечер</h1>
+    <p>Четыре открытых репозитория: read-only MCP-сервер для Яндекс Метрики, self-hosted мультитенантный harness для диагностики SRE-инцидентов и два skill для кодинг-агентов — одно изображение в 3D-скульпт и переписывание текста ближе к ASD-STE100. У yandex-metrika-mcp, SreAgentHarness и ste80-humanizer последний push 10 ноября 2026, у image-to-sculpt — 8 ноября 2026, 21:35 UTC (09.11 00:35 МСК). В карточке — что делает репозиторий, язык, лицензия, число звёзд и время push. Число звёзд — данные GitHub API на 10.11.2026, 21:05 МСК, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 10 ноября 2026</h2>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что делает</th><th>Язык</th><th>Лицензия</th><th>Звёзды</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/DevCrabs-Inc/yandex-metrika-mcp">DevCrabs-Inc/yandex-metrika-mcp</a></td>
+          <td>Read-only MCP-сервер для Яндекс Метрики: проверяемые отчёты, сравнение периодов, временные ряды и экспорт</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>127</td>
+          <td>2026-11-10 13:08 UTC (16:08 МСК)</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/rainyZhou2/SreAgentHarness">rainyZhou2/SreAgentHarness</a></td>
+          <td>Self-hosted мультитенантный агентный harness для диагностики SRE-инцидентов</td>
+          <td>Go</td>
+          <td>не указана</td>
+          <td>103</td>
+          <td>2026-11-10 14:19 UTC (17:19 МСК)</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/gokayfem/image-to-sculpt">gokayfem/image-to-sculpt</a></td>
+          <td>Skill для кодинг-агентов: одно изображение в 3D-скульпт, сверяемый с исходником</td>
+          <td>Python</td>
+          <td>MIT</td>
+          <td>226</td>
+          <td>2026-11-08 21:35 UTC (09.11 00:35 МСК)</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/Dodaios/ste80-humanizer">Dodaios/ste80-humanizer</a></td>
+          <td>Agent skill: убирает признаки ИИ-текста и переписывает текст ближе к ASD-STE100</td>
+          <td>Python</td>
+          <td>MIT</td>
+          <td>278</td>
+          <td>2026-11-10 08:52 UTC (11:52 МСК)</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Данные GitHub API на 10.11.2026, 21:05 МСК. Время push — как в этом снимке, в UTC и по Москве. Архивными эти четыре репозитория на момент запроса не были. У SreAgentHarness лицензия не указана: без лицензии — права на использование не определены. Звёзды в таблице — снимок на 10.11.2026, 21:05 МСК: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>yandex-metrika-mcp: отчёты Метрики через MCP</h2>
+    <p><a href="https://github.com/DevCrabs-Inc/yandex-metrika-mcp">DevCrabs-Inc/yandex-metrika-mcp</a> в описании — read-only MCP-сервер для Яндекс Метрики: проверяемые отчёты, сравнение периодов, временные ряды и экспорт для Claude, Cursor, VS Code и Codex. Лицензия MIT, язык TypeScript, 127 звёзд, push 2026-11-10 13:08 UTC (16:08 МСК). На момент запроса репозиторий не был архивным.</p>
+    <p>Смотреть тем, кто забирает отчёты Яндекс Метрики, сравнение периодов, временные ряды и экспорт в Claude, Cursor, VS Code или Codex и кому в описании нужен режим только на чтение. Команд подключения в фактах этого выпуска нет. Сервер выпуск не запускал.</p>
+
+    <h2>SreAgentHarness: диагностика SRE-инцидентов на своём сервере</h2>
+    <p><a href="https://github.com/rainyZhou2/SreAgentHarness">rainyZhou2/SreAgentHarness</a> в описании — self-hosted мультитенантный агентный harness для диагностики SRE-инцидентов: одобрение инструментов по уровню риска, возобновляемые прогоны, журнал аудита, шлюз моделей, MCP-инструменты, нативный десктоп-чат. Язык Go, 103 звезды, push 2026-11-10 14:19 UTC (17:19 МСК). Лицензия не указана: без лицензии — права на использование не определены. На момент запроса репозиторий не был архивным.</p>
+    <p>Смотреть тем, кто поднимает свой мультитенантный harness для диагностики SRE-инцидентов и сверяет описание с нужным набором: одобрение инструментов по уровню риска, возобновляемые прогоны, журнал аудита, шлюз моделей, MCP-инструменты и нативный десктоп-чат. Перед использованием откройте страницу репозитория: лицензии нет, права на использование не определены. Harness выпуск не запускал.</p>
+
+    <h2>image-to-sculpt: одно изображение в 3D-скульпт</h2>
+    <p><a href="https://github.com/gokayfem/image-to-sculpt">gokayfem/image-to-sculpt</a> в описании — skill для кодинг-агентов: превращает одно изображение в 3D-скульпт, сверяемый с исходником; регистрация видов, проходы подгонки карт, повтор в Blender и таймлапс. Лицензия MIT, язык Python, 226 звёзд, push 2026-11-08 21:35 UTC (09.11 00:35 МСК). На момент запроса репозиторий не был архивным.</p>
+    <p>Смотреть тем, кто просит кодинг-агента получить из одного изображения 3D-скульпт и сверить его с исходником. В описании названы регистрация видов, проходы подгонки карт, повтор в Blender и таймлапс. Skill выпуск не запускал.</p>
+
+    <h2>ste80-humanizer: текст ближе к ASD-STE100</h2>
+    <p><a href="https://github.com/Dodaios/ste80-humanizer">Dodaios/ste80-humanizer</a> в описании — agent skill: убирает признаки ИИ-текста и переписывает текст ближе к ASD-STE100 (Simplified Technical English). Лицензия MIT, язык Python, 278 звёзд, push 2026-11-10 08:52 UTC (11:52 МСК). На момент запроса репозиторий не был архивным.</p>
+    <p>Смотреть тем, кто просит агента убрать признаки ИИ-текста и переписать формулировки ближе к ASD-STE100 (Simplified Technical English). Текст этого выпуска skill не обрабатывал.</p>
+
+    <h2>Что из этого следует</h2>
+    <p>Четыре репозитория закрывают разные задачи вокруг агентов. yandex-metrika-mcp — read-only MCP-сервер для Яндекс Метрики: проверяемые отчёты, сравнение периодов, временные ряды и экспорт для Claude, Cursor, VS Code и Codex. SreAgentHarness — self-hosted мультитенантный агентный harness для диагностики SRE-инцидентов: одобрение инструментов по уровню риска, возобновляемые прогоны, журнал аудита, шлюз моделей, MCP-инструменты и нативный десктоп-чат. image-to-sculpt — skill для кодинг-агентов, который превращает одно изображение в 3D-скульпт, сверяемый с исходником. ste80-humanizer — agent skill, который убирает признаки ИИ-текста и переписывает текст ближе к ASD-STE100. Число звёзд — данные GitHub API на 10.11.2026, 21:05 МСК, не оценка качества и не аудит безопасности.</p>
+    <p>Лицензии: MIT у yandex-metrika-mcp, image-to-sculpt и ste80-humanizer. У SreAgentHarness лицензия не указана: без лицензии — права на использование не определены.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 10.11.2026, 21:05 МСК. Это снимок на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
