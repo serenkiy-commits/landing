@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Оркестрация агентов: numbrone, Aspen, виртуальный экран и графики, утро 10 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор stevenmichaelthomas/numbrone, reason-machines/aspen, kilolonion/agent-vscreen и Junhan2/ztd-charts. Звёзды, лицензии и дата push сняты с GitHub 10 ноября 2026. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-10-morning-agent-orchestration/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-10-morning-agent-orchestration/">
+  <meta property="og:title" content="Оркестрация агентов: утренний выпуск 10 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar 10 ноября 2026, утро: оркестрация агентов — numbrone, Aspen, виртуальный экран и графики",
+        "datePublished": "2026-11-10",
+        "dateModified": "2026-11-10",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-10-morning-agent-orchestration/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор numbrone, Aspen, agent-vscreen и ztd-charts по данным GitHub API на 10 ноября 2026."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub 10 ноября 2026 в 06:02 по Москве. Это снимок на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "10 ноября 2026, утро", "item": "https://snezhko.ru/radar/blog/2026-11-10-morning-agent-orchestration/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">10 ноября 2026, утро · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar 10 ноября 2026, утро: оркестрация агентов — numbrone, Aspen, виртуальный экран и графики</h1>
+    <p>Четыре открытых репозитория про то, как агенты делят работу: штаб кодинг-агентов на herdr, свой Git-сервер под параллельные push, виртуальный экран Android и набор React-графиков, который агент собирает по JSON. У numbrone и agent-vscreen последний push 9 ноября 2026, у Aspen — 7 ноября, у ztd-charts — 10 ноября. В карточке — что делает репозиторий, язык, лицензия, число звёзд и дата push. Число звёзд — снимок публичного API GitHub 10 ноября 2026 в 06:02 по Москве, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 10 ноября 2026</h2>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что делает</th><th>Язык</th><th>Лицензия</th><th>Звёзды (снимок выпуска)</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/stevenmichaelthomas/numbrone">stevenmichaelthomas/numbrone</a></td>
+          <td>Штаб кодинг-агентов: запросы уходят менеджерам проектов, воркеры работают параллельно в git worktree на herdr</td>
+          <td>Shell</td>
+          <td>MIT</td>
+          <td>110</td>
+          <td>2026-11-09</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/reason-machines/aspen">reason-machines/aspen</a></td>
+          <td>Свой Git-сервер под нагрузку агентов: паки в объектном хранилище, история веток в Postgres. Pre-alpha</td>
+          <td>Rust</td>
+          <td>Apache-2.0</td>
+          <td>100</td>
+          <td>2026-11-07</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/kilolonion/agent-vscreen">kilolonion/agent-vscreen</a></td>
+          <td>Фоновый виртуальный экран для Android-агента: приложения на невидимом дисплее. CLI / MCP / HTTP, Shizuku, без root</td>
+          <td>Kotlin</td>
+          <td>MIT</td>
+          <td>45</td>
+          <td>2026-11-09</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/Junhan2/ztd-charts">Junhan2/ztd-charts</a></td>
+          <td>36 анимированных интерактивных React-графиков на чистом SVG, с CLI и MCP-сервером</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>170</td>
+          <td>2026-11-10</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>, запрос 10 ноября 2026 в 06:02 по Москве. Дата push в таблице — день из этого снимка. Архивными эти четыре репозитория на момент запроса не были. Звёзды в таблице — снимок на момент выпуска: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>numbrone: штаб, который раздаёт задачи кодинг-агентам</h2>
+    <p><a href="https://github.com/stevenmichaelthomas/numbrone">stevenmichaelthomas/numbrone</a> в описании — chief of staff для кодинг-агентов: запросы уходят менеджерам проектов, а те запускают параллельных воркеров в git worktree на herdr. По README это независимый проект сообщества поверх <a href="https://herdr.dev">herdr</a>, не продукт команды herdr. С агентом говорит chief: код он не пишет, он маршрутизирует запросы и сообщает, что происходит. На каждый проект — менеджер в своём workspace herdr. Мелочи менеджер закрывает сам, для правок кода поднимает воркера. Воркер — одна задача, своя вкладка и свой git worktree, чтобы задачи не задевали друг друга и вашу рабочую копию. Менеджер смотрит результат до отметки «готово». Отчёты идут снизу вверх: воркер, менеджер, chief, вы. Состояние — текстовые файлы, их можно читать и править. По README это один скилл, один bash-скрипт и три Markdown-файла ролей. Необязательные наблюдатели в README — Linear, GitHub issues, Sentry, Datadog и сбои CI: chief смотрит источники на несколько проектов, менеджер — источники своего. Лицензия MIT, язык Shell, 110 звёзд, push 9 ноября 2026. На момент запроса репозиторий не был архивным.</p>
+    <p>Смотреть тем, кто ведёт несколько репозиториев и хочет одну точку, куда отдать задачу обычным языком, а параллельную работу по коду видеть в herdr. Нужны herdr, git и jq, macOS или Linux. Агент по умолчанию — Claude Code; README называет ещё Codex, Gemini и OpenCode. Мерж, push и деплой происходят только по вашей команде. <code>numbrone close</code> не снимает worktree с незакоммиченными изменениями и ветку оставляет. Агенты работают на вашей машине с вашим доступом. Воркеры по умолчанию останавливаются на каждом запросе разрешения и в herdr видны как blocked, пока вы не ответите. Этот выпуск скрипт не запускал.</p>
+
+    <h2>Aspen: свой Git-сервер под одновременные push агентов</h2>
+    <p><a href="https://github.com/reason-machines/aspen">reason-machines/aspen</a> в описании — Git-сервер, который поднимают у себя, под трафик масштаба агентов: паки в объектном хранилище, история каждой ветки в Postgres. Статус в описании и в README — pre-alpha. По README сервер говорит обычным Git по HTTP и SSH, отдельный клиент не нужен. Паки лежат в объектном хранилище, история веток — в PostgreSQL; на одной машине хватает SQLite и локального каталога. Один бинарник. Зеркальный режим ставит Aspen перед GitHub или GitLab. Дизайн, по README, опирается на опубликованные описания внутреннего Git OpenAI (Pando) и хранилища Cursor (Origin). Это независимая реализация: общего кода нет, аффилиации с OpenAI или Cursor нет. В README указано демо — общий холст, где каждый штрих — git push: <a href="https://place.reasonmachines.com">place.reasonmachines.com</a>. Лицензия Apache-2.0, язык Rust, 100 звёзд, push 7 ноября 2026. На момент запроса репозиторий не был архивным.</p>
+    <p>Смотреть тем, кто ждёт много одновременных push и fetch от агентов и CI и хочет свой сервер. Ограничения прямо в README: опубликованных релизов нет, форматы хранения ещё могут измениться, данные, которые жалко потерять, класть рано. Свой launch gate проект не закрыл. Готовых бинарников нет, сервер собирают из исходников. Force-push и удаление ветки требуют <code>-o force</code>, lease или URL конкретной ветки. Partial clone, репозитории SHA-256, веб-интерфейс и код-ревью README не даёт. SSH принимает ключи Ed25519 и ECDSA. Снимок всех веток разом сервер не обещает: читатель нескольких веток может увидеть каждую в свой момент. Цифры скорости в README сняты с одного прогона, и сам текст просит считать их ориентиром. В этом выпуске они не повторяются. Сервер в этом выпуске не собирался.</p>
+
+    <h2>Agent-VScreen: агент работает в приложениях, экран телефона остаётся вашим</h2>
+    <p><a href="https://github.com/kilolonion/agent-vscreen">kilolonion/agent-vscreen</a> в описании — фоновый виртуальный экран для любого Android-агента: приложения открываются на невидимом дисплее, пока вы пользуетесь телефоном. CLI, MCP и HTTP, привилегии через Shizuku, root не нужен. По README на своём экране остаётся плавающее окно с тем, что делает ИИ: его можно перехватить или остановить. Агент с терминалом вызывает <code>vscreen</code>, агент с MCP подключается к MCP, свой код ходит по HTTP. Приложение модель не вызывает: что означает экран, решает модель агента. После действия возвращаются текущий экран, видимый текст, нажимаемые элементы и скриншот. OCR на устройстве, офлайн. Версия в README — 1.1.7 (versionCode 9), пакет <code>com.kilon.agentvscreen</code>, Android 11 и новее (с 14-й — рекомендация README), архитектура arm64. В настройках README указывает языки: системный, китайский и английский. Лицензия MIT, язык Kotlin, 45 звёзд, push 9 ноября 2026. На момент запроса репозиторий не был архивным. Модели OCR из PaddleOCR в комплекте идут по Apache-2.0.</p>
+    <p>Смотреть тем, кто хочет, чтобы агент на Android открывал другие приложения и не занимал основной экран. Нужен запущенный Shizuku. Сервис по умолчанию слушает только <code>127.0.0.1:18765</code>. Доступ с другого устройства в README выключен, пока его не включат через Tailscale. Публичную ссылку приложение не предлагает. Токен в README приравнен к управлению телефоном: в публичные карточки, общие конфиги и скриншоты его не кладут. Приложение можно запретить целиком или оставить только для чтения. Кнопки оплаты, удаления и похожие ждут подтверждения. Этот выпуск APK не ставил.</p>
+
+    <h2>ztd-charts: 36 графиков на SVG и спецификация для агента</h2>
+    <p><a href="https://github.com/Junhan2/ztd-charts">Junhan2/ztd-charts</a> в описании — 36 анимированных интерактивных React-графиков на чистом SVG, с CLI и MCP-сервером. По README у графиков нет runtime-зависимостей, peer-зависимость одна — React. Тот же график задаётся JSON-спецификацией с публичной JSON Schema. Её проверяют и рисуют CLI, MCP-сервер и агентский скилл: на выходе PNG, SVG или HTML. Группы в README: доли, иерархия, потоки, сравнение, тренд, распределение, связи и KPI. Документация и галерея — на <a href="https://charts.ztd.app/docs/">charts.ztd.app/docs</a>. Пакеты: <code>ztd-charts</code>, <code>ztd-charts-cli</code>, <code>ztd-charts-mcp</code>. Пример подключения MCP в README дан для Claude Code. Cursor и Claude Desktop в той же строке отнесены к руководству. Лицензия MIT, язык TypeScript, 170 звёзд, push 10 ноября 2026. На момент запроса репозиторий не был архивным.</p>
+    <p>Смотреть тем, кто собирает дашборд на React, и тем, кто хочет, чтобы агент отдавал график спецификацией. Числа в примерах README прямо называет выдуманными. Очень большие ряды библиотека сама переводит на canvas. Размер графика вместе с общим ядром README оценивает примерно в 12–26 КБ в Brotli. В этом выпуске сборка не замерялась. Язык по умолчанию — en-US, корейский включается локалью <code>ko-KR</code>.</p>
+
+    <h2>Что из этого следует</h2>
+    <p>Четыре репозитория закрывают разные этажи одной задачи: как агентам делить работу. numbrone — штаб на herdr: chief маршрутизирует запросы, менеджер проекта поднимает воркеров в отдельных git worktree и мержит только по вашей команде. Aspen — свой Git-сервер, чтобы много агентов и CI пушили и забирали историю одновременно. Это pre-alpha без опубликованных релизов. Agent-VScreen даёт Android-агенту невидимый дисплей и оставляет ваш экран свободным: CLI, MCP и HTTP через Shizuku, без root. ztd-charts — 36 React-графиков на SVG и JSON-спецификация для CLI и MCP. Число звёзд — снимок публичного API GitHub 10 ноября 2026 в 06:02 по Москве, не оценка качества и не аудит безопасности.</p>
+    <p>Лицензии: MIT у numbrone, agent-vscreen и ztd-charts, Apache-2.0 у Aspen. У agent-vscreen модели OCR из PaddleOCR в комплекте идут по Apache-2.0, само приложение — MIT.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub 10 ноября 2026 в 06:02 по Москве. Это снимок на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
