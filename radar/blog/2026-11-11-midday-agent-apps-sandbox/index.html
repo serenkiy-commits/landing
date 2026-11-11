@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Агент собирает приложение, VM и карта действий, день 11 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор expo/exact, modem-dev/boxery, Pluviobyte/saas-growth-agents и alexeyw/lot-map. Звёзды, лицензии и дата push сняты с GitHub 11 ноября 2026, 11:06 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-11-midday-agent-apps-sandbox/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-11-midday-agent-apps-sandbox/">
+  <meta property="og:title" content="Агент, VM и карта действий: дневной выпуск 11 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar 11 ноября 2026, дневной выпуск: агент собирает приложение, получает VM и видно, что он делает",
+        "datePublished": "2026-11-11",
+        "dateModified": "2026-11-11",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-11-midday-agent-apps-sandbox/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор exact, boxery, saas-growth-agents и lot-map по данным GitHub API на 11 ноября 2026, 11:06 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 11.11.2026, 11:06:58 МСК. Это снимок на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "11 ноября 2026, день", "item": "https://snezhko.ru/radar/blog/2026-11-11-midday-agent-apps-sandbox/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">11 ноября 2026, день · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar 11 ноября 2026, дневной выпуск: агент собирает приложение, получает VM и видно, что он делает</h1>
+    <p>Четыре репозитория про сборку приложения агентом, машину, на которой он работает, и способ увидеть его шаги. <a href="https://github.com/expo/exact">expo/exact</a> описывает одно приложение, которое идёт нативно на web, macOS, iOS и Linux: агент сам собирает, запускает и тестирует. <a href="https://github.com/modem-dev/boxery">modem-dev/boxery</a> даёт coding-агентам VM и песочницы локально, на удалённой машине и в облаке, через MCP. <a href="https://github.com/Pluviobyte/saas-growth-agents">Pluviobyte/saas-growth-agents</a> — SOP роста SaaS: новые запросы, кто ранжируется, бэклинки конкурентов и каталоги. <a href="https://github.com/alexeyw/lot-map">alexeyw/lot-map</a> рисует живую карту рядом с чатом Claude Code. Последний push: exact — 11.11.2026, 11:05:50 МСК; boxery — 10.11.2026, 05:02:28 МСК; saas-growth-agents — 10.11.2026, 17:18:47 МСК; lot-map — 11.11.2026, 07:55:09 МСК. Число звёзд — данные GitHub API на 11.11.2026, 11:06:58 МСК, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 11 ноября 2026</h2>
+    <p class="meta">Данные GitHub API на 11.11.2026, 11:06:58 МСК. Время push переведено из UTC в МСК (UTC+3).</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что делает</th><th>Язык</th><th>Лицензия</th><th>★</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/expo/exact">expo/exact</a></td>
+          <td>Одно приложение нативно на web, macOS, iOS и Linux; агент собирает, запускает и тестирует его</td>
+          <td>Rust</td>
+          <td>MIT</td>
+          <td>2429</td>
+          <td>11.11.2026, 11:05:50</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/modem-dev/boxery">modem-dev/boxery</a></td>
+          <td>VM и песочницы для coding-агентов локально, удалённо и в облаке, через MCP</td>
+          <td>JavaScript</td>
+          <td>MIT</td>
+          <td>109</td>
+          <td>10.11.2026, 05:02:28</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/Pluviobyte/saas-growth-agents">Pluviobyte/saas-growth-agents</a></td>
+          <td>SOP агента по росту SaaS: новые запросы, кто ранжируется, бэклинки конкурентов, каталоги</td>
+          <td>Python</td>
+          <td>MIT</td>
+          <td>513</td>
+          <td>10.11.2026, 17:18:47</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/alexeyw/lot-map">alexeyw/lot-map</a></td>
+          <td>Живая карта рядом с чатом Claude Code: tool calls, hooks, skills, subagents</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>153</td>
+          <td>11.11.2026, 07:55:09</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Данные GitHub API на 11.11.2026, 11:06:58 МСК. Архивными эти четыре репозитория на момент запроса не были. У всех четырёх лицензия MIT. Звёзды в таблице — снимок на 11.11.2026, 11:06:58 МСК: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>exact: одно приложение на web, macOS, iOS и Linux</h2>
+    <p><a href="https://github.com/expo/exact">expo/exact</a> в описании GitHub: приложение пишут один раз, оно идёт нативно на web, macOS, iOS и Linux, а AI-агент может собрать его, запустить, увидеть и протестировать на каждой из платформ. По README это кроссплатформенный runtime. Интерфейс описывают на языке Contract, логику данных — на TypeScript или Rust. Компилятор Contract превращает интерфейс в план. На вебе план становится одним ES-модулем над runtime и настоящим DOM браузера. На macOS, iOS и Linux тот же план исполняет раннер на Rust, раскладку считает ядро по правилам CSS, а рисует сама платформа: AppKit, UIKit или отрисовка на GPU (на Linux в схеме README — vello, запасной путь — tiny-skia). В README сказано, что в UI нет webview и JavaScript-моста и что JavaScript приложения не выполняется до первого кадра. Репозиторий помечен как pre-1.0: стабильности API и обратной совместимости нет, это пересборка более раннего exact.</p>
+    <p>Агенту в README отведён один скрипт, <code>scripts/agent.mjs</code>, и десять операций, одинаковых на web, macOS, iOS (симулятор или устройство) и Linux: <code>tree</code>, <code>screenshot</code>, <code>tap</code>, <code>type</code>, <code>state</code>, <code>layout</code>, <code>logs</code>, <code>clock</code>, <code>prefer</code>, <code>perf</code>. Между операциями ничего не двигается само: агент сдвигает часы командой вроде <code>clock +60000</code> или <code>clock settle</code> и читает результат. Тест — файл <code>app.test.contract</code>, один и тот же на любом хосте. Быстрый старт в README записан для macOS на Apple Silicon: Rust через rustup, Bun версии, которую фиксирует <code>package.json</code> (в тексте README — 1.4.2), Google Chrome. Для хостов macOS и iOS указан Xcode 27.1 или новее. Linux в README — для web-цикла и Linux-хоста. TypeScript на нативных хостах требует Hermes: Exact забирает закреплённый бандл Ibex, обычные сборки Cargo после этого идут офлайн.</p>
+    <p>Кому: тем, кто хочет одно описание интерфейса и прогон агентом на web, macOS, iOS и Linux без отдельного UI на каждой платформе. На что смотреть: <code>scripts/agent.mjs</code>, язык Contract и шов данных (TypeScript на Hermes или Rust). Язык репозитория по API — Rust, лицензия MIT, 2429 звёзд, push 11.11.2026, 11:05:50 МСК. На момент запроса репозиторий не был архивным. Выпуск Exact не собирал и агента не запускал.</p>
+
+    <h2>boxery: VM и песочницы для coding-агента</h2>
+    <p><a href="https://github.com/modem-dev/boxery">modem-dev/boxery</a> в описании GitHub — способ дать coding-агентам VM: локально, удалённо или облачные песочницы. По README агент остаётся на вашей машине со своим логином и настройками, а работает внутри Linux-VM. Ключи в VM не попадают: машина получает отзываемый токен, хост подставляет настоящий ключ. Пока доступ не выдан, у VM нет даже LLM.</p>
+    <p>Хост — это Mac, Linux-машина или небольшая VPS. Бэкенды, которые README относит к стабильным: Lima на macOS (Virtualization.framework), libvirt на Linux (QEMU на KVM, нужна физическая машина или вложенная виртуализация) и exe.dev в облаке. Экспериментальные: Cloud Hypervisor, OpenShell (через свой gateway это контейнеры на ядре хоста, не VM; без рабочего стола, снимков и форков) и boat.dev. Один MCP-сервер может вести несколько хостов сразу. Клиенты в README: Claude Code, Codex, Cursor, opencode, pi и любой MCP-клиент. Пакет — <code>boxery-vm</code>. Инструменты агента: оболочка и файлы (<code>vm_bash</code>, <code>vm_read</code>, <code>vm_write</code>, <code>vm_edit</code>, <code>vm_jobs</code>, <code>vm_copy</code>), рабочий стол и браузер (<code>vm_screenshot</code>, <code>vm_click</code>, <code>vm_type</code>, <code>vm_key</code>, <code>vm_scroll</code>, <code>vm_browser</code>), жизненный цикл (<code>vm_manage</code>, <code>vm_info</code>: создать, форкнуть, снять snapshot, откатить, удалить) и доступ (<code>vm_grant</code>, <code>vm_lease</code>). В README проект помечен как ранний: возможны шероховатости и ломающие изменения между релизами.</p>
+    <p>Кому: тем, кто хочет отдать агенту отдельную Linux-VM или песочницу и не класть туда свои ключи. На что смотреть: <code>docs/mcp.md</code>, <code>docs/install.md</code> (выбор бэкенда) и <code>docs/security.md</code>. Язык по API — JavaScript, лицензия MIT, 109 звёзд, push 10.11.2026, 05:02:28 МСК. На момент запроса репозиторий не был архивным. Выпуск boxery не ставил.</p>
+
+    <h2>saas-growth-agents: SOP роста SaaS для агента</h2>
+    <p><a href="https://github.com/Pluviobyte/saas-growth-agents">Pluviobyte/saas-growth-agents</a> в описании GitHub отдаёт агенту рутину роста SaaS: радар новых запросов, поиск сайтов по ключевым словам, бэклинки конкурентов, отправка в каталоги и пакет социального анализа со скиллом комментариев Douyin. В описании перечислены Grok Bot, Muse, Dot, Hermes, OpenClaw, Claude Code и Codex. По README это SOP и скрипты, которые автор гоняет для своих SaaS на зарубежных рынках. Три правила из README: скрипты делают детерминированную работу (сбор, дедуп, скоринг, лог); агент читает результат, разбирает и докладывает, а если данных нет — говорит об этом; траты, отправка наружу и удаление ждут подтверждения человека. Поправка человека становится новым правилом в скиллах.</p>
+    <ul>
+      <li>New-term radar. В таблице README — три отчёта в день о новых поисковых терминах: новые AI-продукты, модели, мемы, шаблоны. Источники в README: Google Trends, карты сайтов конкурентов, новые листинги каталогов, Product Hunt, GitHub Trending, Reddit и TikTok.</li>
+      <li>Site ops. Ему отдают ключевые слова и продукт. Он ищет сайты, которые конкурируют за запрос, смотрит их DR и бэклинки, ежедневно пишет метрики своего сайта, отправляет в бесплатные каталоги по правилам и ведёт лог.</li>
+      <li>Social analysis pack. По ссылке забирает оригинал (X, Douyin, RedNote, YouTube, WeChat или веб-страница), кратко пересказывает, выписывает, что можно поправить в своих SOP, и раскладывает по темам. Для Douyin может забрать раздел комментариев. Скилл лежит в <code>bots/social-kb/douyin-comments/</code>. README пишет, что этот модуль не ходит во внешний API данных и работает в своём залогиненном браузере.</li>
+    </ul>
+    <p>Отдельное дополнение, <code>extras/trade-radar</code>, смотрит движение цен и события и присылает разбор. В README сказано, что он только анализирует и заявок не выставляет; в его коде нет размещения ордеров. Внешние данные роста идут через сервис AIsa: в README перечислены SEO (DataForSEO SERP и Google Trends, Ahrefs), соцсети, веб и источники торгового радара. У запроса есть потолок цены, превышение отклоняется, перед вызовом можно спросить цену флагом <code>--quote</code>. Границы из README: не решает CAPTCHA, не вводит пароли и не регистрирует аккаунты; в каталоги идут только бесплатные площадки без требования обратной ссылки. Описания задач внутри репозитория на китайском; README говорит, что агент их читает и отвечает на языке человека. В README есть реферальные ссылки на регистрацию агента и на AIsa — в этот выпуск они не входят. Ссылка одна: репозиторий на GitHub.</p>
+    <p>Кому: тем, кто хочет отдать агенту повторяемый контур роста — новые запросы, конкуренты по выдаче, бэклинки и каталоги — и оставить за собой траты и отправку. На что смотреть: <code>AGENTS.md</code>, <code>bootstrap.md</code> и папки <code>bots/newterm</code>, <code>bots/site-ops</code>, <code>bots/social-kb</code>. Язык по API — Python, лицензия MIT, 513 звёзд, push 10.11.2026, 17:18:47 МСК. На момент запроса репозиторий не был архивным. Выпуск скрипты не запускал.</p>
+
+    <h2>lot-map: карта рядом с чатом Claude Code</h2>
+    <p><a href="https://github.com/alexeyw/lot-map">alexeyw/lot-map</a> в описании GitHub — живая карта рядом с чатом: видно, что делает Claude Code. Tool calls, шаги модели, hooks, skills и subagents загораются по ходу. Только локально, на пяти языках. По README это плагин Claude Code. Панель открывается сама при старте сессии. В терминале нужна ширина не меньше 144 колонок, рисуется текст; иначе команда <code>/lot-map</code>. В десктоп-приложении маркетплейс добавляют как <code>alexeyw/lot-map</code>, затем ставят плагин. README указывает сборку и проверку на Claude Code 2.1.321 на macOS и пишет, что пользователи сообщают о работе на Windows.</p>
+    <p>Станции на карте: You (ваши сообщения), Model (запрос к модели и сжатие контекста), Memory, Files (Read, Write, Edit, Grep, Glob и shell, который только читает или правит файлы), Shell (остальные команды), Network (web, MCP и команды вроде <code>curl</code>, <code>gh</code>, <code>ssh</code>, <code>git push</code>), Browser, Agents (subagents и их вызовы), Skills, Hooks (отказ, вопрос разрешения, добавленный контекст). Импульс уходит, когда вызов начался, и возвращается, когда закончился. Отказ и ошибка рисуются красным. Станция Shell определяется по имени команды, не по тому, что скрипт сделает внутри. Языки подписей: <code>en</code>, <code>ru</code>, <code>es</code>, <code>fr</code>, <code>de</code>.</p>
+    <p>README отдельно описывает, чего мод не делает: сетевых запросов нет, файлы он не читает, процессы не запускает, модель не вызывает и в разговор ничего не добавляет. Строки живут только текущую сессию. Между сессиями хранится имя модели, последней использованной в папке, чтобы показать смену. Подпись — имя, не содержимое: у файла последние две части пути, у адреса только хост, у shell — короткое описание или имя команды, не командная строка. Разбор имён — функция <code>classify</code> в <code>hooks/map.ts</code>. Маркетплейс с этого репозитория следит за веткой <code>main</code>; README советует читать diff перед обновлением. Сбой карты до вызова инструмента и до хода модели не доходит.</p>
+    <p>Кому: тем, кто смотрит сессию Claude Code и хочет видеть tool calls, hooks, skills и subagents на карте, а не лентой команд. На что смотреть: станции и <code>hooks/map.ts</code>, плюс то, что мод локальный и подписи не содержат текста файлов и командной строки. Язык по API — TypeScript, лицензия MIT, 153 звезды, push 11.11.2026, 07:55:09 МСК. На момент запроса репозиторий не был архивным. Выпуск плагин не ставил.</p>
+
+    <h2>Что из этого следует</h2>
+    <p>Четыре репозитория закрывают разные части одного контура. exact даёт один Contract на web, macOS, iOS и Linux и драйвер из десяти операций, которым агент гоняет одно и то же на каждом хосте. boxery даёт Linux-VM и песочницы через MCP: локально (Lima), на Linux (libvirt) или в облаке (exe.dev); ключи остаются на хосте, в VM уходит отзываемый токен. saas-growth-agents — SOP роста: новые запросы, сайты по ключевым словам, бэклинки конкурентов, бесплатные каталоги и разбор чужих постов, включая комментарии Douyin; траты, отправка и удаление в правилах README остаются за человеком. lot-map показывает tool calls, hooks, skills и subagents рядом с чатом Claude Code и наружу не ходит. У всех четырёх лицензия MIT. Ни один на момент запроса не был архивным. Число звёзд — снимок публичного API GitHub на 11.11.2026, 11:06:58 МСК.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 11.11.2026, 11:06:58 МСК. Это снимок на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
