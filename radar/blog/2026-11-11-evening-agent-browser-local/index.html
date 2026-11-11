@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Браузерные агенты, их трафик и локальный ИИ, вечер 11 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор mintlify/agent-traffic, onlyreadai/onlyread, jammaru/sakutto и Veloresearch/kinetic. Звёзды, лицензии и дата push сняты с GitHub 11 ноября 2026, ~21:00 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-11-evening-agent-browser-local/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-11-evening-agent-browser-local/">
+  <meta property="og:title" content="Браузерные агенты и локальный ИИ: вечерний выпуск 11 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar — 11 ноября 2026, вечерний выпуск: браузерные агенты, их трафик и локальный ИИ",
+        "datePublished": "2026-11-11",
+        "dateModified": "2026-11-11",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-11-evening-agent-browser-local/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор agent-traffic, onlyread, sakutto и kinetic по данным GitHub API на 11 ноября 2026, ~21:00 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 11.11.2026, ~21:00 МСК. Это снимок на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "11 ноября 2026, вечер", "item": "https://snezhko.ru/radar/blog/2026-11-11-evening-agent-browser-local/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">11 ноября 2026, вечер · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar — 11 ноября 2026, вечерний выпуск: браузерные агенты, их трафик и локальный ИИ</h1>
+    <p>Четыре репозитория про то, кто ходит по сайту, что агенту можно делать в браузере и как держать модель у себя. <a href="https://github.com/mintlify/agent-traffic">mintlify/agent-traffic</a> — датасет user-agent, заголовков и официальных источников верификации плюс маленький классификатор: агенты, AI-краулеры, поисковые краулеры и боты отдельно от людей. <a href="https://github.com/onlyreadai/onlyread">onlyreadai/onlyread</a> — расширение Chrome (Manifest V3): чтение для браузерного агента проходит, отправка, пост, лайк, правка, удаление и смена настроек блокируются до выхода из браузера. <a href="https://github.com/jammaru/sakutto">jammaru/sakutto</a> — расширение Chrome и Firefox: перевод страницы на устройстве моделью PLaMo 3 Translate через wllama, без своего сервера. <a href="https://github.com/Veloresearch/kinetic">Veloresearch/kinetic</a> — движок на Rust: читает GGUF, считает на CPU и на GPU NVIDIA, AMD и Intel из одного бинарника, отдаёт OpenAI-совместимый API на Windows и Linux x86-64. Последний push: agent-traffic — 10.11.2026, 21:43:20 МСК; onlyread — 11.11.2026, 20:24:23 МСК; sakutto — 11.11.2026, 21:04:04 МСК; kinetic — 10.11.2026, 20:20:53 МСК. Число звёзд — данные GitHub API на 11.11.2026, ~21:00 МСК, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 11 ноября 2026</h2>
+    <p class="meta">Данные GitHub API на 11.11.2026, ~21:00 МСК. Время push переведено из UTC в МСК (UTC+3).</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что делает</th><th>Язык</th><th>Лицензия</th><th>★</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/mintlify/agent-traffic">mintlify/agent-traffic</a></td>
+          <td>Датасет user-agent, заголовков и официальных источников верификации агентов и краулеров плюс маленький классификатор</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>57</td>
+          <td>10.11.2026, 21:43:20</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/onlyreadai/onlyread">onlyreadai/onlyread</a></td>
+          <td>Расширение Chrome (MV3): режим только-чтение для ИИ-агентов в браузере, запись блокируется до выхода из браузера</td>
+          <td>TypeScript</td>
+          <td>AGPL-3.0</td>
+          <td>55</td>
+          <td>11.11.2026, 20:24:23</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/jammaru/sakutto">jammaru/sakutto</a></td>
+          <td>Расширение Chrome и Firefox: перевод страницы на устройстве моделью PLaMo через wllama, без сервера</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>215</td>
+          <td>11.11.2026, 21:04:04</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/Veloresearch/kinetic">Veloresearch/kinetic</a></td>
+          <td>Движок на Rust: GGUF на CPU и GPU NVIDIA, AMD и Intel из одного бинарника, OpenAI-совместимый API</td>
+          <td>Rust</td>
+          <td>Apache-2.0</td>
+          <td>53</td>
+          <td>10.11.2026, 20:20:53</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: <code>description</code>, <code>license.spdx_id</code>, <code>language</code>, <code>stargazers_count</code>, <code>pushed_at</code>, <code>archived</code>. Данные GitHub API на 11.11.2026, ~21:00 МСК. Архивными эти четыре репозитория на момент запроса не были. Лицензии разные: MIT у agent-traffic и sakutto, AGPL-3.0 у onlyread, Apache-2.0 у kinetic. AGPL-3.0 у onlyread накладывает обязательства при модификации и при сетевом использовании: изменённую версию, которую распространяют или отдают другим как сервис, README требует выпускать под той же лицензией и с исходным кодом. Звёзды в таблице — снимок на 11.11.2026, ~21:00 МСК: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>agent-traffic: кто пришёл на страницу</h2>
+    <p><a href="https://github.com/mintlify/agent-traffic">mintlify/agent-traffic</a> в описании GitHub отделяет агентов, AI-краулеры, поисковые краулеры и ботов от людей. По README это проверенный датасет user-agent, заголовков и официальных источников верификации реальных агентов и краулеров плюс маленький классификатор. Пакет — <code>@mintlify/agent-traffic</code>, зависимостей нет, работает там, где есть <code>fetch</code>: Node, Bun, Deno, Cloudflare Workers, Vercel Edge. Скилл для агента ставится командой <code>npx skills add mintlify/agent-traffic</code> в Claude Code, Cursor, Codex и в других агентах, которых поддерживает skills CLI. Файл скилла — <code>skills/agent-traffic/SKILL.md</code>: он объясняет классификацию и использование пакета и датасета, от обработчика запроса до сохранённых логов.</p>
+    <p>Функция <code>classify</code> принимает user-agent, заголовки и реальный IP клиента. Категории из README: <code>agent</code> (продукт ИИ забирает страницу сейчас, для человека; виды <code>assistant</code>, <code>coding</code>, <code>browser</code>, <code>unidentified</code>), <code>ai-crawler</code> (компания ИИ собирает страницы заранее: <code>training</code>, <code>ai-search</code>, <code>ingest</code>), <code>crawler</code> (поисковик, вид <code>search</code>), <code>bot</code> (прочая автоматизация, включая <code>impersonator</code> и <code>fake-browser</code>), <code>human</code> и <code>unknown</code>. <code>loadIpRanges</code> скачивает опубликованные диапазоны IP OpenAI, Anthropic, Google, Perplexity, Apple, Microsoft, Common Crawl и DuckDuckGo. <code>verified: true</code> значит, что IP входит в опубликованные диапазоны оператора; <code>verified: false</code> — что запрос доказуемо не тот, за кого себя выдаёт. Кодинг-агенты вроде Claude Code README относит к машине пользователя, поэтому их по IP не проверяют. Проверка «поддельного браузера» включается флагом <code>headersComplete</code>, когда заголовки браузера доходят целиком по HTTPS. Отдельные регулярные выражения лежат в <code>patterns</code> по категориям <code>agent</code>, <code>ai-crawler</code>, <code>crawler</code> и <code>bot</code>. Датасет импортируется и как JSON: <code>data/agents.json</code>, <code>data/http-clients.json</code>, <code>data/headers.json</code>. Для логов README указывает ClickHouse, DuckDB и Postgres как проверенные: классифицируют каждый уникальный user-agent один раз и присоединяют результат к логу.</p>
+    <p>Кому: тем, кто считает долю агентов в трафике документации и API и хочет отличить известного краулера от чужого user-agent с тем же именем. На что смотреть: <code>GUIDELINES.md</code> и оговорки README. Часть продуктов делит одно имя: Codex, по README, встречался как <code>ChatGPT-User</code>, Cursor через Exa — как <code>ExaUser</code>. Агентные браузеры внутри обычного Chrome (в README названы Atlas, Comet и Claude in Chrome) на уровне HTTP выглядят как этот человек. Если в логе только user-agent, агент с браузерной строкой без заголовка <code>Accept</code> сойдёт за человека: <code>prefersMarkdown</code> ловит случай, когда <code>text/markdown</code> стоит выше <code>text/html</code>. Язык по API — TypeScript, лицензия MIT, 57 звёзд, push 10.11.2026, 21:43:20 МСК. На момент запроса репозиторий не был архивным. Выпуск пакет не ставил.</p>
+
+    <h2>onlyread: агент в браузере читает и не пишет</h2>
+    <p><a href="https://github.com/onlyreadai/onlyread">onlyreadai/onlyread</a> в описании GitHub делает браузерных ИИ-агентов только-читающими: расширение Chrome отказывает в записи (отправка, пост, правка, удаление) до того, как запрос уйдёт из браузера. По README это режим read-only. Чтение проходит. Отправка, пост, лайк, правка, удаление и смена настроек отклоняются. Расширение — Manifest V3. Ставится из Chrome Web Store или распакованным zip из релиза: у релиза указан SHA-256 обоих архивов, сборка та же, что в магазине. Подходит Chromium, который ставит расширения Chrome. Firefox и Safari в README на сегодня нет: нужны API расширений и отладчика Chrome. В списке README — Edge, Comet, Dia, Opera, BrowserOS и другие.</p>
+    <p>По умолчанию охрана включена, пока в браузере работает ИИ-агент, и не мешает обычной работе. Режим <b>Always</b> в настройках Security стережёт всё время, и тогда запись блокируется и у человека; для него README советует PIN настроек. Сайты, которые агенту можно открывать, включают в настройках. Судья ИИ на выбор: вход в OnlyRead Pro или свой ключ OpenRouter либо Vercel AI Gateway. В таблице README у своего ключа плата идёт шлюзу за использование; у Pro — 1000 бесплатных запросов к судье, дальше тот же контур моделей на стороне сервиса. Цепочка из README: правила, декодер сайта, кэш вердиктов, затем судья. Методы, которые только пишут, отправки форм с переходом, загрузки и beacon отклоняются сразу. Сокеты, протокол которых известен, разбираются; неизвестные отклоняются. Приложения, где чтение и запись идут в один endpoint (в README — каналы синхронизации Google, server actions LinkedIn, GraphQL Facebook), декодер узнаёт операцию по имени. Судья отвечает на вопрос, меняет ли запрос данные на сервере. Второй моделью проверяется то, что первая не закрыла. Сомнение или недоступный судья означают отказ. Судье уходит адрес запроса и короткий фрагмент тела, пароли, токены и номера карт из него убирают; cookies, заголовки, ответы и страница ему не отправляются. Подробности — <code>PRIVACY.md</code> и <code>docs/ARCHITECTURE.md</code>.</p>
+    <p>README пишет, что расширение охраняет браузер, а не конкретного агента: расширения-агенты, ИИ-браузеры и фреймворки автоматизации. В таблице названы Claude in Chrome, ChatGPT in Chrome, Gemini in Chrome, Comet, Grok Bot, Dia, Opera Neon, Edge Copilot Mode, Browser Operator, BrowserOS, Browser Use и Playwright. Сайт, которого нет в списке, можно включить со страницы настроек или пунктом <b>Guard this site</b>. В README указано «проверено на 100+ сайтах», включая записи датасета Mind2Web (Deng et al., NeurIPS 2023, CC BY 4.0). Глубже, чтение за чтением и запись за записью, разобраны Gmail, Google Calendar, Linear, LinkedIn, Facebook, X, Telegram, WhatsApp и Reddit — список в <code>docs/SITES.md</code>. Пока агент работает, выключить OnlyRead или ослабить настройки из самого расширения нельзя. Человек у клавиатуры по-прежнему может отключить расширение в <code>chrome://extensions</code>; закрыть и это, по README, может только корпоративная политика Chrome. Chrome показывает баннер «started debugging this browser», потому что запросы видны через debugger API. В дорожной карте README пока нет охраны по аккаунту, разбора каждого сообщения WebSocket и ролей вроде «комментарии можно, удаление и оплата нельзя»: сегодня охраняемый сайт для агента целиком только для чтения.</p>
+    <p>Кому: тем, кто пускает браузерного агента в уже открытую почту, календарь и рабочие сайты и хочет, чтобы запись останавливалась на сети, а не на инструкции модели. На что смотреть: лицензию AGPL-3.0 и <code>TRADEMARK.md</code>. README разрешает использовать, менять и распространять код, в том числе коммерчески. Изменённую версию, которую распространяют или запускают как сервис для других, нужно выпускать под той же лицензией и с исходниками. Имя и логотип OnlyRead — товарные знаки, форку нужно своё имя. Плюс баннер отладчика, отсутствие Firefox и Safari и то, что судья, по README, всё ещё может ошибиться: отказ при сомнении в тексте назван намеренным. Язык по API — TypeScript, лицензия AGPL-3.0, 55 звёзд, push 11.11.2026, 20:24:23 МСК. На момент запроса репозиторий не был архивным. Выпуск расширение не ставил.</p>
+
+    <h2>sakutto: перевод страницы моделью на устройстве</h2>
+    <p><a href="https://github.com/jammaru/sakutto">jammaru/sakutto</a> в описании GitHub — расширение браузера для перевода на устройстве локальной моделью PLaMo: приватно, бесплатно, сервер не нужен. README называет его неофициальным расширением для Chrome и Firefox. Модель — <a href="https://huggingface.co/pfnet/plamo-3-translate-0.8b-GGUF">PLaMo 3 Translate</a>, прогон через закреплённую сборку <a href="https://github.com/ngxson/wllama">wllama</a>. Каждую переведённую строку пишет PLaMo: страница, которая ждёт модель, остаётся с исходным текстом. В Chrome переводчик Chrome используется только для пар, которых у PLaMo нет. Firefox работает только с PLaMo. README прямо пишет: проект не аффилирован с Preferred Networks, Inc. Веса модели в репозиторий и в пакет расширения не входят. Код свободный, MIT, рекламы и платных функций в README нет.</p>
+    <p>Установка из Chrome Web Store; сборка из исходников — Node.js 24 и pnpm 12, затем <code>pnpm install</code>. Chrome грузят распакованным из <code>.output/chrome-mv3</code>. Firefox 153 и новее (в README сначала Windows) — временное дополнение из <code>.output/firefox-mv3/manifest.json</code>, подробности в <code>docs/FIREFOX.md</code>. <code>pnpm build:wllama</code> собирает закреплённый коммит wllama <code>d275dac</code> в контейнере <code>emscripten/emsdk:4.0.20</code>. Wasm, воркеры и веса в git не коммитятся; <code>pnpm build</code> и <code>pnpm zip</code> не идут, пока эта сборка не проверена. В zip не должно быть весов, source map и host permissions на момент установки. Сочетания клавиш: страница, двуязычный вид, выделение, текст, который печатают. В Firefox по умолчанию Alt+Shift и буква, чтобы не забирать строку меню Windows. Поле ввода переводится той же моделью PLaMo, встроенный переводчик Chrome там не используется. PLaMo 3 Translate, по README, покрывает 53 языка в обе стороны. Ещё одиннадцать (cs, da, el, fi, kn, no, pt, ro, sv, tr, uk) переводит только встроенный переводчик Chrome, и только в Chrome; Firefox эти цели скрывает. Интерфейс самого расширения переведён на 14 языков, в списке есть русский. Каталог выбирает язык интерфейса браузера, запасной — английский.</p>
+    <p>По умолчанию перевод идёт на устройстве. README пишет, что текст страницы, выделение, глоссарий и переводы разработчику не отправляются: нет аккаунта, рекламы и телеметрии. Сетевой запрос встроенного движка — скачивание модели с Hugging Face. Экспериментальный локальный сервер в настройках (mlx_lm.server, LM Studio или другой OpenAI-совместимый процесс на этом компьютере) получает текст только на адрес, который задал человек. README помечает этот путь как экспериментальный: точность не гарантируется, и перевод может разойтись со встроенным движком. Разрешения: <code>storage</code>, <code>unlimitedStorage</code> (модель и кэш на устройстве), <code>offscreen</code>, <code>activeTab</code>, <code>scripting</code>, <code>contextMenus</code>. Доступ к сайтам запрашивается, когда включают автоперевод для сайта, а не на все сайты при установке. Движок по умолчанию — упакованный wllama, WebGPU или CPU.</p>
+    <p>Кому: тем, кто хочет перевод страницы в Chrome или Firefox локальной моделью и без своего сервера перевода. На что смотреть: две лицензии. Код Sakutto — MIT, копирайт 2026 jammaru. Веса PLaMo 3 Translate идут по PLaMo Community License, тексты лежат в <code>licenses/PLaMo-Community-License-en.txt</code> и японской копии и упакованы в расширение. Личное и академическое использование, по README, регистрации не требует. Коммерческое использование статья 3 этой лицензии допускает после предварительной регистрации у PFN и при доходе или продажах не больше 1 млрд иен за последний финансовый год у вас или аффилированных лиц; иначе нужна отдельная коммерческая лицензия PFN. MIT репозитория веса не покрывает. Плюс пометка «неофициальное, не аффилировано с Preferred Networks» и то, что Firefox ограничен PLaMo, а пары вне модели там не уходят во встроенный переводчик. Язык по API — TypeScript, лицензия MIT, 215 звёзд, push 11.11.2026, 21:04:04 МСК. На момент запроса репозиторий не был архивным. Выпуск расширение не ставил и модель не гонял.</p>
+
+    <h2>kinetic: локальный движок для GGUF</h2>
+    <p><a href="https://github.com/Veloresearch/kinetic">Veloresearch/kinetic</a> в описании GitHub — открытый движок, чтобы запускать ИИ на своём компьютере. README уточняет: написан на Rust, читает файлы GGUF (формат llama.cpp) и гоняет поддерживаемые модели на CPU и на GPU NVIDIA, AMD и Intel из одного бинарника. Платформы — Windows и Linux x86-64. macOS в FAQ README нет и не планируется. Лицензия кода — Apache-2.0; имя и логотип Kinetic README относит к товарным знакам Velocity, правила в <code>TRADEMARKS.md</code>. Документация — <code>https://veloresearch.github.io/kinetic/</code>.</p>
+    <p>Установка в README: скрипт PowerShell на Windows (права администратора не нужны) и <code>install.sh</code> на Linux. Скрипты качают последний релиз, сверяют <code>SHA256SUMS</code> и кладут <code>kinetic</code> в <code>PATH</code>: <code>%LOCALAPPDATA%\Programs\kinetic</code> на Windows, <code>~/.local/bin</code> на Linux. Архив <code>x86_64-cuda</code> идёт через CUDA на NVIDIA, через Vulkan на любой GPU и на CPU; архив <code>x86_64-cpu</code> — только CPU. README советует брать cuda-архив, даже если GPU не уверены: он стартует на любой машине и падает на CPU. Нужен драйвер видеокарты, не CUDA toolkit. Бинарник Windows, по README, пока не подписан, SmartScreen может остановить первый запуск. Сборка из исходников — Rust 1.91 или новее, для ядер CUDA ещё toolkit 12.8 или новее: <code>cargo install --locked --git https://github.com/Veloresearch/kinetic kinetic-cli</code>. Образы Docker в репозитории есть (<code>docker/Dockerfile</code> и <code>docker/Dockerfile.cuda</code>, <code>kinetic serve</code> на порту 8080); опубликованные образы README относит к будущему. Python-пакет — <code>kinetic-engine</code>.</p>
+    <p>Команды из README: <code>kinetic pull</code> качает модель, <code>kinetic chat</code> открывает чат, в том числе по локальному пути к GGUF, если семейство в списке поддерживаемых. <code>kinetic</code> без аргументов смотрит компьютер и предлагает две-три модели. <code>kinetic models</code> показывает, что уже лежит в кэше Ollama, LM Studio и Hugging Face. Сервер — <code>kinetic serve model.gguf</code>, OpenAI-совместимый API на <code>http://127.0.0.1:8080/v1</code>. В README есть примеры клиента на Python и JavaScript, вызовы инструментов, <code>response_format</code> с JSON Schema и грамматика GBNF, эмбеддинги (<code>/v1/embeddings</code>) и реранк (<code>/v1/rerank</code>). Картинки для Qwen3.5 и Gemma 4 идут с <code>--mmproj</code> и только как данные в запросе: URL сервер не скачивает. Библиотека без сервера — Python (<code>import kinetic</code>), крейт Rust и заголовок C <code>include/kinetic.h</code>. Устройства: CPU на x86-64 с AVX2; NVIDIA через CUDA (RTX 20, GTX 16 и новее); Vulkan для AMD, Intel и NVIDIA. Vulkan на момент README закрывает Llama, Qwen2.5, Qwen3, Qwen3.5 и LFM3. <code>--device auto</code> пробует CUDA, затем Vulkan, затем CPU. Сеть, по разделу Privacy, появляется только у <code>kinetic pull</code>: телеметрии, проверки обновлений и аккаунтов README не описывает. Сервер слушает <code>127.0.0.1</code>, пока не передан <code>--host</code>. Запросы со страниц сайтов отклоняются.</p>
+    <p>Кому: тем, кто хочет локальный GGUF на Windows или Linux x86-64 и один бинарник на CPU и на GPU NVIDIA, AMD или Intel, с API в форме OpenAI. На что смотреть: нет macOS; Vulkan покрывает не все семейства из таблицы моделей; cuda-архив тянет драйвер, не toolkit; неподписанный бинарник Windows; лицензия Apache-2.0 на код и отдельные правила на имя. В README есть раздел сравнения с llama.cpp на одном ноутбуке. Этот выпуск тот прогон не повторял и цифры оттуда не переносит. Язык по API — Rust, лицензия Apache-2.0, 53 звезды, push 10.11.2026, 20:20:53 МСК. На момент запроса репозиторий не был архивным. Выпуск движок не собирал и не запускал.</p>
+
+    <h2>Что из этого следует</h2>
+    <p>Четыре репозитория стоят на разных концах одного контура: кто стучится в сайт, что агенту можно сделать в уже открытом браузере и какая модель при этом остаётся на машине. agent-traffic классифицирует запрос по user-agent, заголовкам и, когда переданы диапазоны, по опубликованным IP оператора. Категории — агент, AI-краулер, поисковый краулер, бот, человек, неизвестно. Скилл ставится в Claude Code, Cursor и Codex. onlyread ставит режим только-чтение на сетевом слое Chrome: чтение проходит, отправка, пост, лайк, правка, удаление и смена настроек останавливаются до выхода из браузера. Лицензия AGPL-3.0: изменённую версию, которую распространяют или отдают другим как сервис, нужно открывать под той же лицензией и с исходниками. sakutto переводит страницу на устройстве моделью PLaMo 3 Translate через wllama. Это неофициальное расширение, не аффилированное с Preferred Networks. Код под MIT, веса модели — под отдельной лицензией PLaMo. kinetic читает GGUF и считает на CPU и на GPU NVIDIA, AMD и Intel из одного бинарника, с OpenAI-совместимым API. Платформы README — Windows и Linux x86-64, лицензия Apache-2.0. Ни один из четырёх на момент запроса не был архивным. Число звёзд — снимок публичного API GitHub на 11.11.2026, ~21:00 МСК: agent-traffic 57, onlyread 55, sakutto 215, kinetic 53.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 11.11.2026, ~21:00 МСК. Это снимок на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
