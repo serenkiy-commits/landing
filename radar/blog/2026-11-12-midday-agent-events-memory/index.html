@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Агент на событиях, книга в скилл, опыт и память, день 12 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор pmndrs/pine, bookleme/bookleme, vzroslieigry/maxagent и SparkofSpike/Brain4Agent. Звёзды, лицензии и дата push сняты с GitHub 12 ноября 2026, 11:07 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-12-midday-agent-events-memory/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-12-midday-agent-events-memory/">
+  <meta property="og:title" content="События, скилл из книги и память агента: дневной выпуск 12 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar 12 ноября 2026, дневной выпуск: агент реагирует на события, книга становится скиллом, опыт и память остаются",
+        "datePublished": "2026-11-12",
+        "dateModified": "2026-11-12",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-12-midday-agent-events-memory/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор pine, bookleme, maxagent и Brain4Agent по данным GitHub API на 12 ноября 2026, 11:07:15 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 12.11.2026, 11:07:15 МСК. Это снимок на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "12 ноября 2026, день", "item": "https://snezhko.ru/radar/blog/2026-11-12-midday-agent-events-memory/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">12 ноября 2026, день · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar 12 ноября 2026, дневной выпуск: агент реагирует на события, книга становится скиллом, опыт и память остаются</h1>
+    <p>Четыре репозитория про то, на что агент просыпается, откуда берёт навык и что помнит между сессиями. <a href="https://github.com/pmndrs/pine">pmndrs/pine</a> — реактивная обвязка: агент подписывается на события, а не только отвечает в чат. <a href="https://github.com/bookleme/bookleme">bookleme/bookleme</a> компилирует книгу в устанавливаемый Agent Skill. <a href="https://github.com/vzroslieigry/maxagent">vzroslieigry/maxagent</a> держит общую полку опыта для Claude Code, Codex, Antigravity и OpenClaw и умеет вести ваш Chrome. <a href="https://github.com/SparkofSpike/Brain4Agent">SparkofSpike/Brain4Agent</a> — память сессий в одном SQLite, с поиском без модели на основном пути и с упором на китайский, японский и корейский. Последний push: pine — 12.11.2026, 04:14:12 МСК; bookleme — 10.11.2026, 06:44:20 МСК; maxagent — 10.11.2026, 20:25:58 МСК; Brain4Agent — 10.11.2026, 18:44:20 МСК. Число звёзд — данные GitHub API на 12.11.2026, 11:07:15 МСК, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 12 ноября 2026</h2>
+    <p class="meta">Данные GitHub API на 12.11.2026, 11:07:15 МСК. Время push переведено из UTC в МСК (UTC+3).</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что делает</th><th>Язык</th><th>Лицензия</th><th>★</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/pmndrs/pine">pmndrs/pine</a></td>
+          <td>Реактивная обвязка для агентов: подписка на события, чат, код и оркестрация</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>93</td>
+          <td>12.11.2026, 04:14:12</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/bookleme/bookleme">bookleme/bookleme</a></td>
+          <td>Компилятор: книга становится Agent Skill. Два движка, плагины жанров, проверка цитат по тексту</td>
+          <td>Python</td>
+          <td>MIT</td>
+          <td>143</td>
+          <td>10.11.2026, 06:44:20</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/vzroslieigry/maxagent">vzroslieigry/maxagent</a></td>
+          <td>Общая полка опыта для Claude Code, Codex, Antigravity и OpenClaw, плюс мост к своему Chrome</td>
+          <td>JavaScript</td>
+          <td>MIT</td>
+          <td>265</td>
+          <td>10.11.2026, 20:25:58</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/SparkofSpike/Brain4Agent">SparkofSpike/Brain4Agent</a></td>
+          <td>Память агента в SQLite: поиск по сессиям, сначала CJK, без модели на основном пути</td>
+          <td>Python</td>
+          <td>Apache-2.0</td>
+          <td>142</td>
+          <td>10.11.2026, 18:44:20</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: <code>description</code>, <code>license.spdx_id</code>, <code>language</code>, <code>stargazers_count</code>, <code>pushed_at</code>, <code>archived</code>, <code>created_at</code>. Данные GitHub API на 12.11.2026, 11:07:15 МСК. Архивными эти четыре репозитория на момент запроса не были, форками тоже. Даты создания: pine — 11.11.2026, bookleme — 09.11.2026, maxagent — 08.11.2026, Brain4Agent — 08.11.2026. Лицензии: MIT у pine, bookleme и maxagent, Apache-2.0 у Brain4Agent. Звёзды в таблице — снимок на 12.11.2026, 11:07:15 МСК: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>pine: агент просыпается на событие</h2>
+    <p><a href="https://github.com/pmndrs/pine">pmndrs/pine</a> в описании GitHub — реактивная обвязка для агентов. README ставит рядом обычный чат («сделай это») и подписку: агент смотрит папку, команду, сайт, FTP, вебхук и другие источники и сам реагирует. Чат, задачи, код и оркестрация в README тоже есть. Память у агента заявлена как базовая часть. Пакет — <code>@pmndrs/pine</code>, установка <code>npm install -g @pmndrs/pine</code>.</p>
+    <p>Источник события в README — файл <code>*.ts</code> со схемой. Агенту говорят, на что подписаться, и он подписывается сам: пример из README — следить за <code>~/documents/scans</code> и на каждый новый файл вытащить сводку и платёжные реквизиты, если они есть. Конфиги руками README предлагает не править: главный агент создаёт агентов, MCP, источники, скиллы и расписания своими вызовами. Встроенный MCP с индексом BM25 отдаёт справку по API по запросу, чтобы документация не лежала в контексте целиком. Интерфейс — терминал с вкладками, кнопками, картинками, видео и перетаскиванием. README пишет, что это работает в терминалах с протоколом Kitty, например Ghostty, а для старых есть запасной путь. В комплекте: computer use, браузер, инструменты для кода, диффы и git. Агент может делегировать и поднимать субагентов параллельно. Закреплённая вкладка хранит агента и его задачу.</p>
+    <p>Быстрый старт в README: <code>pine init</code> ставит браузер для веб-инструментов и каталог <code>~/.pine</code>. На Linux там же поднимается песочница, перед установкой пакетов программа показывает список и спрашивает один раз. <code>pine check</code> проверяет конфигурацию и печатает замечания по безопасности, если что-то открыто. <code>pine</code> открывает интерфейс и сам поднимает демон, если его нет. <code>pine start</code> оставляет демон без окна, чтобы агенты продолжали слушать события. Модели: <code>pine login anthropic</code> и <code>pine login openai-codex</code> садятся на подписку Claude или ChatGPT, <code>pine login opencode-go</code> — отдельный вход. Свой сервер (llama.cpp, vLLM, LM Studio) добавляется адресом, в README пример <code>pine model add studio http://127.0.0.1:8080</code>, переключение в интерфейсе — <code>/model</code>. <code>pine .</code> открывает проект в текущей папке.</p>
+    <p>Платформы в README: macOS и Linux. Для Windows прямо сказано, что можно пробовать Docker, и что полный набор того, что нужно для Windows, ещё открыт. Контейнеру в примере README выдают <code>SYS_ADMIN</code>, <code>NET_ADMIN</code>, <code>seccomp=unconfined</code> и <code>apparmor=unconfined</code>: песочница агента создаёт пространства имён и свой loopback. Страница <code>docs/references/security.md</code> делит вход на <code>owner</code> и <code>untrusted</code>. Событие без подтверждённого владельца, по этой странице, запускается в своём сеансе и с профилем только на чтение: <code>read</code>, <code>grep</code>, <code>find</code>, <code>ls</code>, без shell, записи, MCP, делегирования и субагентов. Telegram слышит только спаренный аккаунт или список <code>allow</code>. Control API по умолчанию на loopback и с bearer-токеном. Вебхук в описании имеет секрет, если не включён <code>"open": true</code>.</p>
+    <p>Кому: тем, кто хочет, чтобы агент реагировал на папку, расписание, Telegram, MQTT или вебхук, а не ждал следующей реплики в чате. На что смотреть: репозиторий создан 11.11.2026, на дату снимка ему один день. Windows в README ещё через Docker и с расширенными правами контейнера. Доверие к событию решает, можно ли агенту shell. Язык по API — TypeScript, лицензия MIT, 93 звезды, push 12.11.2026, 04:14:12 МСК. На момент запроса репозиторий не был архивным. Выпуск pine не ставил.</p>
+
+    <h2>bookleme: книга компилируется в скилл</h2>
+    <p><a href="https://github.com/bookleme/bookleme">bookleme/bookleme</a> в описании GitHub — «读了么», BookLeme: книга компилируется в Agent Skill. В описании названы два движка, сменные плагины жанра и проверка, что цитата совпадает с текстом. README на китайском, рядом есть <code>README.en.md</code>. Бейдж README перечисляет форматы: PDF, EPUB, DOCX, MD, HTML, RTF, MOBI. Ядро, по README, на стандартной библиотеке Python 3.9 и новее, без сторонних зависимостей. Запуск из клона: <code>python3 -m bookleme</code>.</p>
+    <p>README делит результат на два вида. <code>knowledge_pack</code> — справочник: указатель тем, куски, которые подгружаются по запросу, и список источников. <code>behavior_skill</code> — ход разговора: роль, жёсткие ограничения, конечный автомат, именованный формат ответа, антипаттерны. Встроенные плагины: <code>coach_dialogue</code> (коуч, вопрос за вопросом, вывод остаётся за человеком) и <code>knowledge_reference</code> (справка по рамкам; если в книге этого нет, скилл должен отказаться). <code>professional_analysis</code> и <code>decision_checklist</code> в таблице README помечены как ещё не сделанные, этап M4. Свой жанр — один файл в <code>bookleme/plugins/user/</code>. Плагин без автомата, контракта ответа, ограничений, антипаттернов, калибровки тона, профиля авторского права, трёх–пяти китайских слов-триггеров и хотя бы одного отрицательного примера для оценки README отказывается загружать.</p>
+    <p>Конвейер в README — стадии S0–S9. Извлечение и китайская нарезка идут детерминированным Python и не ждут заголовка «Chapter N». Маршрут жанра смотрит на 12 признаков. Два движка делят промежуточное представление и расходятся на стадии отрисовки, так что книгу не читают дважды. На стадии извлечения способностей README допускает необязательный LLM-экстрактор с OpenAI-совместимым API: цитата всю жизнь сверяется с текстом буквально, а если ключа нет, остаётся детерминированный путь. Установка в «настоящий» каталог скиллов выключена, пока не передан <code>--install</code>.</p>
+    <p>Авторское право в README отделено от лицензии кода. MIT покрывает конвертер. Книга и получившийся из неё скилл под MIT не попадают. Шесть жёстких ворот, и при любой неудаче результат не ставится и не публикуется: одна цитата не длиннее 150 знаков и находится в тексте буквально; доля цитат не выше 0,03; подряд скопировано не больше 150 знаков; перекрытие 13-знаковых шинглов не выше 0,10; в продукте нет полного текста и нарезок; флаг <code>contains_original_text</code> равен false. Скилл по чужой книге по умолчанию приватный. Публичная раздача требует явных флагов <code>--public --confirm-public PUBLISH</code> и поля прав <code>--user-rights</code>. README публикует таблицу из семи метрик по одному прогону китайской рукописи. Этот выпуск тот прогон не повторял и цифры оттуда не переносит.</p>
+    <p>Кому: тем, кто хочет превратить свою книгу или документ, на который есть права, в скилл с проверяемыми цитатами, а не в пересказ. На что смотреть: лицензия MIT на код и отдельная граница на текст книги, приватность по умолчанию и два жанра, которые в README ещё не реализованы. Репозиторий создан 09.11.2026. Язык по API — Python, лицензия MIT, 143 звезды, push 10.11.2026, 06:44:20 МСК. На момент запроса репозиторий не был архивным. Выпуск компиляцию не запускал.</p>
+
+    <h2>maxagent: одна полка опыта на нескольких агентов</h2>
+    <p><a href="https://github.com/vzroslieigry/maxagent">vzroslieigry/maxagent</a> в описании GitHub — опыт для ИИ-агентов. Хуки заставляют Claude Code, Codex, Antigravity и OpenClaw вспоминать и записывать то, что уже сработало. Рядом пакет <code>maxagent-bridge</code>: MCP ведёт ваш собственный Chrome, с вашим профилем и вашими входами, через небольшое расширение. README есть и на русском, файл <code>README.ru.md</code>. Страница пакета — <a href="https://www.npmjs.com/package/maxagent">npmjs.com/package/maxagent</a>.</p>
+    <p>Единица опыта в README — короткий проверенный рецепт, «атом». Рабочая папка по умолчанию <code>~/maxagent</code>: <code>AGENTS.md</code>, <code>experience/</code>, <code>projects/</code>, <code>sync.md</code>, <code>inbox/</code>. Обновление пакета эти файлы не перезаписывает. Мастер <code>npx maxagent init</code> требует Node.js 18 и новее. На установке npm скрипты не запускаются: тяжёлое скачивается после отдельного согласия. Мастер находит установленных агентов, дописывает короткий помеченный блок в их общие правила и ставит хуки. Свои правила остаются, перед правкой файл копируется. Один вопрос решает, ставить ли мост к браузеру, смысловой поиск и общие пачки опыта.</p>
+    <p>Полок две. Своя, <code>experience/</code>, пишется вашими агентами по формату <code>experience/_spec.md</code>. Свои атомы показываются первыми и могут остановить команду, про которую уже известно, что она ломается. Общая, <code>experience/shared/&lt;pack&gt;/</code>, качается из этого репозитория и только как справка: она видна, когда своей полки не хватило, не больше одного атома на сообщение, и команду не останавливает. Удачный общий атом можно забрать к себе командой <code>npx maxagent experience adopt</code>. Перед установкой пачки клиент сверяет sha256, имена файлов и сам текст: команды вида «скачай и запусти», попытки переписать правила агента, отправку секретов, разрушительные команды и скрытые символы. Любое совпадение отклоняет пачку целиком.</p>
+    <p>Мост к Chrome в README грузится как распакованное расширение: режим разработчика, Load unpacked, папка. Расширение говорит с локальной программой через Chrome Native Messaging, агенты — через локальный сокет. Открытого порта у моста нет. В описании есть подтверждение на каждого агента, список запрещённых сайтов, журнал действий и кнопка остановки. Смысловой поиск — отдельный шаг <code>npx maxagent vectors</code>, около 270 МБ: модель <code>multilingual-e5-small</code> с закреплённой ревизией и проверкой sha256, библиотеки в <code>~/.maxagent/vector</code>. Без Python поиск остаётся по словам. Сеть, по таблице README, — это GET публичных файлов: реестр npm, <code>news.json</code> в репозитории, каталог пачек и, только после согласия, Hugging Face и PyPI. <code>updates: false</code> выключает и эти запросы.</p>
+    <p>Кому: тем, у кого уже стоят Claude Code, Codex, Antigravity или OpenClaw и кто хочет, чтобы удачный приём не искали заново в каждой сессии. На что смотреть: мост к Chrome работает в вашем профиле, с вашими входами на сайты; свои атомы могут остановить команду; общие пачки команду не останавливают и проходят проверку текста. Репозиторий создан 08.11.2026. Язык по API — JavaScript, лицензия MIT, 265 звёзд, push 10.11.2026, 20:25:58 МСК. На момент запроса репозиторий не был архивным. Выпуск пакет не ставил.</p>
+
+    <h2>Brain4Agent: память сессий без модели на пути поиска</h2>
+    <p><a href="https://github.com/SparkofSpike/Brain4Agent">SparkofSpike/Brain4Agent</a> в описании GitHub — модуль памяти для основных агентов, в первую очередь для китайского, японского и корейского. README точнее: долгая память, поиск без модели на основном пути, в ответе улики, а не оценка уверенности. Хранилище — один файл SQLite. Единица выдачи — сессия, строка — реплика. Пакет на PyPI: <code>Brain4Agent</code>. Python 3.11 и новее. <code>pip install Brain4Agent</code> ставит вариант на биграммах без зависимостей. <code>pip install "Brain4Agent[precise]"</code> добавляет словарь jieba, в README это около 20 МБ. Без словаря код остаётся на биграммах.</p>
+    <p>Запись и запрос в README токенизируются по-разному. В индекс идут биграммы и словарные слова, в запрос — слова, из китайского запроса убираются вопросительные. Для английского README описывает стоп-слова, свёртку словоформ и бонус, если два соседних слова запроса стоят рядом в памяти. Китайский эти три правила не трогают: соседство уже сидит в биграммах. Поиск возвращает факты, а решение об отказе остаётся у вызывающего. <code>corpus_missing</code> — слово вопроса, которого нет ни в одном воспоминании. <code>missing_terms</code> — каких слов не хватило конкретной сессии. <code>term_frequencies</code> — в скольких сессиях слово вообще встречается. <code>related_terms</code> — до пяти слов из верхних сессий, которых в вопросе не было. Необязательный судья <code>Judge.from_env()</code> выключен, пока нет ключа <code>BRAIN4AGENT_JUDGE_KEY</code>. Таймаут судьи README помечает как <code>uncertain</code>, отдельно от <code>not_found</code>.</p>
+    <p>MCP в README — пять инструментов: <code>b4a_remember</code> сохраняет реплику и возвращает id сессии, <code>b4a_recall</code> ищет и отдаёт <code>corpus_missing</code> и <code>missing_terms</code>, <code>b4a_ask</code> ищет и отвечает за один шаг и прямо говорит, если модель не настроена, <code>b4a_session</code> читает сессию по порядку, <code>b4a_stats</code> отдаёт счётчики. Путь к базе — <code>BRAIN4AGENT_DB</code>. Статус в README: библиотека, CLI и MCP-сервер готовы. В списке того, чего нет: синтез между сессиями, мультимодальность, схема на поле <code>kind</code>, смешение нескольких способов поиска, планировщик напоминаний и забывание по времени. Рядом описаны близкие дубликаты через SimHash: они сообщаются и не сливаются, на путь поиска не встают. README пишет, что проект начался с правки в <a href="https://github.com/nhadaututtheky/neural-memory">nhadaututtheky/neural-memory</a>: китайский запрос ничего не находил, потому что регулярное выражение ключевых слов не содержало диапазона иероглифов. В <code>bench/</code> лежат прогоны, которые README называет воспроизводимыми. Этот выпуск их не запускал и цифры оттуда не переносит.</p>
+    <p>Кому: тем, кто хочет положить ходы агента в один локальный SQLite и искать их без вызова модели, в том числе по китайскому, японскому и корейскому. На что смотреть: лицензию Apache-2.0, границу «улика, а не вердикт» и список того, что README прямо называет несделанным. Репозиторий создан 08.11.2026. Язык по API — Python, лицензия Apache-2.0, 142 звезды, push 10.11.2026, 18:44:20 МСК. На момент запроса репозиторий не был архивным. Выпуск пакет не ставил.</p>
+
+    <h2>Что из этого следует</h2>
+    <p>Четыре репозитория закрывают разные края одного контура: на что агент просыпается, откуда берётся навык и что остаётся после сессии. pine подписывает агента на папки, расписания, Telegram, MQTT и вебхуки и делит вход на владельца и недоверенное событие: у второго в <code>security.md</code> только чтение. Лицензия MIT, репозиторий создан 11.11.2026. bookleme компилирует книгу в скилл двумя движками и сверяет цитату с текстом; MIT покрывает конвертер, а книга и скилл по ней по умолчанию остаются приватными. Репозиторий создан 09.11.2026. maxagent кладёт рецепты в одну папку для Claude Code, Codex, Antigravity и OpenClaw и может вести ваш Chrome через локальный сокет, без открытого порта. Лицензия MIT, репозиторий создан 08.11.2026. Brain4Agent хранит сессии в SQLite и ищет их без модели на основном пути, с отдельной поддержкой CJK. Лицензия Apache-2.0, репозиторий создан 08.11.2026. Ни один из четырёх на момент запроса не был архивным и не был форком. Число звёзд — снимок публичного API GitHub на 12.11.2026, 11:07:15 МСК: pine 93, bookleme 143, maxagent 265, Brain4Agent 142.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 12.11.2026, 11:07:15 МСК. Это снимок на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
