@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Агенты в общем чате, связка CLI, заметки встреч и GGUF, утро 12 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор FrigadeHQ/yogurt, agentes-chat/agentes-chat, chenhg5/myco и huawei-csl/MACaQ. Звёзды, лицензии и дата push сняты с GitHub 12 ноября 2026, 06:02 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-12-morning-agent-team-hub/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-12-morning-agent-team-hub/">
+  <meta property="og:title" content="Агенты в общем чате и квантизация GGUF: утренний выпуск 12 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar 12 ноября 2026, утро: агенты в общем чате, связка CLI-агентов, приватные заметки встреч и квантизация GGUF",
+        "datePublished": "2026-11-12",
+        "dateModified": "2026-11-12",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-12-morning-agent-team-hub/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор yogurt, agentes-chat, myco и MACaQ по данным GitHub API на 12 ноября 2026, 06:02 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 12.11.2026, 06:02 МСК. Это снимок на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "12 ноября 2026, утро", "item": "https://snezhko.ru/radar/blog/2026-11-12-morning-agent-team-hub/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">12 ноября 2026, утро · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar 12 ноября 2026, утро: агенты в общем чате, связка CLI-агентов, приватные заметки встреч и квантизация GGUF</h1>
+    <p>Четыре репозитория: заметки встречи на своём компьютере, общий чат команды и агентов, хаб для CLI-агентов на разных машинах и квантизация под локальный инференс. <a href="https://github.com/FrigadeHQ/yogurt">FrigadeHQ/yogurt</a> — приватные заметки встреч с ИИ, бесплатно и с открытым кодом, сайт <a href="https://yogurt.so">yogurt.so</a>. <a href="https://github.com/agentes-chat/agentes-chat">agentes-chat/agentes-chat</a> — self-hosted альтернатива Slack, где команда и агенты сидят в каналах и личках, сайт <a href="https://agentes.chat">agentes.chat</a>. <a href="https://github.com/chenhg5/myco">chenhg5/myco</a> — один хаб, через который Claude Code, Codex и любой CLI-агент находят друг друга. <a href="https://github.com/huawei-csl/MACaQ">huawei-csl/MACaQ</a> — model-agnostic квантизация для GGUF и локального инференса, блог <a href="https://huawei-csl.com/blog/macaq/">huawei-csl.com/blog/macaq/</a>. Последний push: yogurt — 12.11.2026, 02:46 МСК; agentes-chat — 12.11.2026, 05:59 МСК; myco — 12.11.2026, 05:54 МСК; MACaQ — 12.11.2026, 03:11 МСК. Число звёзд — данные GitHub API на 12.11.2026, 06:02 МСК, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 12 ноября 2026</h2>
+    <p class="meta">Данные GitHub API на 12.11.2026, 06:02 МСК. Время push переведено из UTC в МСК (UTC+3).</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что делает</th><th>Язык</th><th>Лицензия</th><th>★</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/FrigadeHQ/yogurt">FrigadeHQ/yogurt</a></td>
+          <td>Приватные заметки встреч с ИИ. Бесплатно и с открытым кодом. Запись созвона без бота во встрече</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>452</td>
+          <td>12.11.2026, 02:46</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/agentes-chat/agentes-chat">agentes-chat/agentes-chat</a></td>
+          <td>Self-hosted альтернатива Slack: команда и ИИ-агенты в каналах и личках, Docker Compose и Postgres</td>
+          <td>TypeScript</td>
+          <td>AGPL-3.0</td>
+          <td>324</td>
+          <td>12.11.2026, 05:59</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/chenhg5/myco">chenhg5/myco</a></td>
+          <td>Связывает Claude Code, Codex и любой CLI-агент между машинами через один хаб. Один бинарник на Go</td>
+          <td>Go</td>
+          <td>MIT</td>
+          <td>75</td>
+          <td>12.11.2026, 05:54</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/huawei-csl/MACaQ">huawei-csl/MACaQ</a></td>
+          <td>Model-agnostic квантизация для GGUF и локального инференса: текст, изображения, видео, аудио</td>
+          <td>C++</td>
+          <td>Apache-2.0</td>
+          <td>107</td>
+          <td>12.11.2026, 03:11</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: <code>description</code>, <code>license.spdx_id</code>, <code>language</code>, <code>stargazers_count</code>, <code>pushed_at</code>, <code>archived</code>, <code>created_at</code>. Данные GitHub API на 12.11.2026, 06:02 МСК. Архивными эти четыре репозитория на момент запроса не были. Даты создания: yogurt — 10.11.2026, agentes-chat — 09.11.2026, myco — 05.11.2026, MACaQ — 10.11.2026. Лицензии разные: MIT у yogurt и myco, AGPL-3.0 у agentes-chat, Apache-2.0 у MACaQ. Звёзды в таблице — снимок на 12.11.2026, 06:02 МСК: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>yogurt: заметки встречи без бота в созвоне</h2>
+    <p><a href="https://github.com/FrigadeHQ/yogurt">FrigadeHQ/yogurt</a> в описании GitHub — приватные заметки встреч с ИИ, бесплатно и с открытым кодом. Сайт — <a href="https://yogurt.so">yogurt.so</a>. README пишет, что Yogurt записывает созвон и не добавляет бота во встречу. Справка <code>docs/README.md</code> уточняет состав: программа пишет микрофон и звук звонка, расшифровывает встречу и кладёт Summary рядом с вашими заметками. Обработка остаётся на компьютере. В разделе Privacy той же справки: встречи не загружаются, телеметрии нет. В сеть программа выходит, чтобы скачать модели с Hugging Face, на Mac — за опциональными речевыми ассетами Apple, и чтобы проверить обновления на GitHub. Сборки в README: Mac (Apple Silicon), Windows x64 и Linux x64 AppImage. В справке порог — 8 ГБ памяти. Mac — macOS 14.4 или новее, Windows — 10 версии 2004 или новее, Linux — Ubuntu 22.04 или совместимая система новее, с PulseAudio или PipeWire.</p>
+    <p>Установщик Windows в справке помечен как ещё не подписанный: система может остановить первый запуск. Календарь и имена говорящих из приложений звонка в справке указаны только для Mac. Запись начинается после клика. В <b>Settings → AI apps</b> можно включить локальный MCP: другое ИИ-приложение читает встречи, заметки и расшифровки и не может их менять. Доступ выключен по умолчанию. Подключённое приложение, по справке, может отправить прочитанное в свою онлайн-модель. Данные лежат локально: на Mac в <code>~/Library/Application Support/Yogurt</code>, на Windows в <code>%APPDATA%\Yogurt</code>, на Linux в <code>~/.config/Yogurt</code>. README относит проект к Frigade, лицензия MIT.</p>
+    <p>Кому: тем, кто хочет конспект созвона на своей машине и без бота в конференции. На что смотреть: репозиторий создан 10.11.2026, на дату снимка ему два дня. Модели качаются при первом запуске. Справка называет размер лучшей модели на Mac: около 14 ГБ при 64 ГБ памяти и около 63 ГБ при 96 ГБ и больше. Плюс неподписанный установщик Windows и то, что MCP по умолчанию выключен, а включённый отдаёт текст уже другому приложению. Язык по API — TypeScript, лицензия MIT, 452 звезды, push 12.11.2026, 02:46 МСК. На момент запроса репозиторий не был архивным. Выпуск приложение не ставил.</p>
+
+    <h2>agentes-chat: команда и агенты в одном чате</h2>
+    <p><a href="https://github.com/agentes-chat/agentes-chat">agentes-chat/agentes-chat</a> в описании GitHub — self-hosted альтернатива Slack. Команда и ИИ-агенты работают в каналах и личных сообщениях. Агенты на Claude, ChatGPT/Codex, Gemini или Grok, с MCP-инструментами, своим компьютером и браузером, рутинами, памятью и подтверждениями. Клиенты — web, desktop и phone. Поставка — Docker Compose и Postgres. Сайт — <a href="https://agentes.chat">agentes.chat</a>. README добавляет, что тот же код можно поднять у себя или открыть в agentes.chat Cloud. На своём Linux-сервере установка в README — одна команда <code>curl</code>. Скрипт ставит недостающее, Docker спрашивает перед установкой, и выводит сервис в сеть Tailscale, приватно и с HTTPS. Подробности, телефон, свой домен, обновления, бэкапы и запуск без Docker — в <code>SELF_HOSTING.md</code>. Ключ модели организация добавляет в приложении. В списке README помимо Claude, OpenAI, Gemini и Grok есть DeepSeek, Kimi, Z.ai, MiniMax и OpenRouter.</p>
+    <p>Агенты в README — участники пространства, не бот в боковой панели. У каждого роль, инструкции, модель, месячный бюджет, который проверяется перед вызовом, и владелец, которому приходят подтверждения и предупреждения о бюджете. Слияние, выкладка, откат и то, что коннектор помечает как чувствительное, ждут владельца агента или администратора: карточка в чате, действие выполняется один раз и в том виде, в котором его подтвердили. Организация подключает MCP-сервер один раз, агент получает только выданные ему области. Браузер агента, почтовые ящики, коннектор Postgres, телефон и десктоп в таблице README помечены как Beta. Сборку Mac README называет не нотаризованной, установщик Windows — неподписанным. Codex через подключённый компьютер README помечает как всё ещё в тестировании.</p>
+    <p>Кому: команде, которая хочет общий чат людей и агентов на своём сервере, с подтверждением чувствительных действий в том же чате. На что смотреть: лицензию AGPL-3.0 и файл <code>LICENSE</code>. Если программу меняют и другие люди работают с изменённой версией по сети, лицензия требует предложить им исходный код этой версии. Репозиторий создан 09.11.2026: на дату снимка ему три дня. Часть клиентов в README ещё Beta, десктоп на Mac и Windows при первом открытии упирается в подпись сборки. Язык по API — TypeScript, лицензия AGPL-3.0, 324 звезды, push 12.11.2026, 05:59 МСК. На момент запроса репозиторий не был архивным. Выпуск сервер не поднимал.</p>
+
+    <h2>myco: CLI-агенты на разных машинах через один хаб</h2>
+    <p><a href="https://github.com/chenhg5/myco">chenhg5/myco</a> в описании GitHub связывает Claude Code, Codex и любой CLI-агент между машинами. Агенты находят друг друга, делегируют задачи и отвечают через один хаб. Поставка — один бинарник на Go, установка в одну строку. README называет три сценария одного хаба. Облачный агент из той же беседы выполняет команду на вашем компьютере или передаёт задачу уже настроенным там Claude Code или Codex и получает ответ. Ваш агент отдаёт задачу агенту коллеги вместе с нужным контекстом. Свои агенты видят друг друга и обмениваются результатами. Компьютер, по README, не открывает порты. Команда выполняется с уже выданными ему правами, только для агентов из списка разрешённых, и каждая команда записывается. Приложение: macOS (один DMG на Apple Silicon и Intel; README пишет, что сборка подписана и нотаризована Apple), Windows как preview и пока без подписи кода, Linux и серверы — командная строка. Хаб можно запустить на этом компьютере или поставить на свой сервер одной строкой из README.</p>
+    <p>У shell-узла в README есть границы. Он выполняет одну команду за раз, каждую в своём процессе: нет интерактивного терминала, <code>cd</code> не переносится на следующую команду. Таймаут по умолчанию — 60 с, потолок вывода — 64 КБ. Файлы читают и пишут командами. Передачи файлов, экрана и мыши нет. В командном хабе у агента есть список, кому можно писать. Получатель видит, кто спрашивает, и что запрос пришёл от коллеги, а не от владельца: он остаётся в пределах, которые разрешил владелец. Для командного хаба README описывает опциональное сквозное шифрование: сообщение читают две стороны и их владельцы, не хаб, его администраторы и остальные участники. Задача продолжается в собственной сессии агента. В списке README — Claude Code, Codex, облачные сессии claude.ai, Pi, Kiro и Gemini CLI. Обзор агентов — <code>myco agent list</code>, задача с ожиданием ответа — <code>myco message send --wait</code>.</p>
+    <p>Кому: тем, у кого Claude Code, Codex и другие CLI-агенты уже запущены на разных машинах и нужен один хаб, чтобы они находили друг друга и делегировали задачи. На что смотреть: репозиторий создан 05.11.2026. Windows-сборка в README ещё preview и без подписи. Shell-узел не даёт интерактивный терминал, передачу файлов и управление экраном. Язык по API — Go, лицензия MIT, 75 звёзд, push 12.11.2026, 05:54 МСК. На момент запроса репозиторий не был архивным. Выпуск хаб не ставил.</p>
+
+    <h2>MACaQ: квантизация для GGUF и локального инференса</h2>
+    <p><a href="https://github.com/huawei-csl/MACaQ">huawei-csl/MACaQ</a> в описании GitHub — model-agnostic квантизация для GGUF и локального инференса. Квантует и запускает модели текста, изображений, видео и аудио. В списке рантаймов — llama.cpp, vLLM, Diffusers и PyTorch. Блог — <a href="https://huawei-csl.com/blog/macaq/">huawei-csl.com/blog/macaq/</a>. README раскладывает бэкенды так: Diffusers — генерация изображений, видео и аудио; llama.cpp — текст и GGUF на 2, 3 и 4 бита, в том числе на CPU; vLLM — генерация и выдача текста; PyTorch — синтез речи. Для каждого бэкенда README просит Python 3.12 и отдельное окружение. Вариант MACaQ-R, по README, уточняет коды весов в уже квантованном GGUF и сохраняет его формат и блочные шкалы: такой файл запускается обычной установкой llama.cpp, командами <code>llama cli</code> и <code>llama serve</code>. Статья указана на arXiv: <a href="https://arxiv.org/abs/2611.10649">2611.10649</a>. Коллекция моделей — на Hugging Face, ссылка в README. Лицензия кода — Apache-2.0. Сторонние компоненты в поставке сохраняют свои лицензии.</p>
+    <p>Кому: тем, кто квантует модели под локальный инференс и хочет один метод на текст, картинки, видео и звук, с выходом в GGUF и в llama.cpp, vLLM, Diffusers или PyTorch. На что смотреть: репозиторий создан 10.11.2026, на дату снимка ему два дня. В README и в статье есть сравнения качества и времени. Этот выпуск тот прогон не повторял и цифры оттуда не переносит. Язык по API — C++, лицензия Apache-2.0, 107 звёзд, push 12.11.2026, 03:11 МСК. На момент запроса репозиторий не был архивным. Выпуск квантизацию не запускал.</p>
+
+    <h2>Что из этого следует</h2>
+    <p>Четыре репозитория закрывают разные края одного контура: где остаётся запись встречи, где люди и агенты пишут в один чат, как CLI-агенты на разных машинах находят друг друга и как ужать модель под локальный запуск. yogurt пишет созвон без бота и держит расшифровку и конспект на компьютере. Лицензия MIT, репозиторий создан 10.11.2026. agentes-chat сажает команду и агентов в каналы и лички на своём сервере: Docker Compose, Postgres, подтверждение чувствительных действий в чате. Лицензия AGPL-3.0, репозиторий создан 09.11.2026. myco соединяет Claude Code, Codex и другие CLI-агенты через один хаб. Один бинарник на Go, лицензия MIT, репозиторий создан 05.11.2026. MACaQ квантует текст, изображения, видео и аудио для llama.cpp, vLLM, Diffusers и PyTorch. Лицензия Apache-2.0, репозиторий создан 10.11.2026. Ни один из четырёх на момент запроса не был архивным. Число звёзд — снимок публичного API GitHub на 12.11.2026, 06:02 МСК: yogurt 452, agentes-chat 324, myco 75, MACaQ 107.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 12.11.2026, 06:02 МСК. Это снимок на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
