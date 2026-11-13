@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Режимы сессии Claude Code, файлы задач, линейная анимация и локальный агент, утро 13 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор danyuchn/claude-work-mode, ferhatcore/claude-codex-project-os, JDhruv14/line-art-animation и simplexai-labs/linger. Звёзды, лицензии и дата push сняты с GitHub 13 ноября 2026, 06:09 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-13-morning-agent-workflow-modes/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-13-morning-agent-workflow-modes/">
+  <meta property="og:title" content="Режимы сессии и локальный агент: утренний выпуск 13 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar 13 ноября 2026, утро: режимы сессии Claude Code, общее ведение задач, линейная SVG-анимация и локальный агент",
+        "datePublished": "2026-11-13",
+        "dateModified": "2026-11-13",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-13-morning-agent-workflow-modes/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор claude-work-mode, claude-codex-project-os, line-art-animation и linger по данным GitHub API на 13 ноября 2026, 06:09 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 13.11.2026, 06:09 МСК. Это снимок на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "13 ноября 2026, утро", "item": "https://snezhko.ru/radar/blog/2026-11-13-morning-agent-workflow-modes/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">13 ноября 2026, утро · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar 13 ноября 2026, утро: режимы сессии Claude Code, общее ведение задач, линейная SVG-анимация и локальный агент</h1>
+    <p>Четыре репозитория: режимы одной сессии Claude Code, общие файлы задач для Claude Code и Codex, скилл линейной SVG-анимации и персональный агент, который README описывает как локальный. <a href="https://github.com/danyuchn/claude-work-mode">danyuchn/claude-work-mode</a> — команды <code>/work-mode auto</code>, <code>out</code> и <code>wrap</code>, с необязательными гейтами. <a href="https://github.com/ferhatcore/claude-codex-project-os">ferhatcore/claude-codex-project-os</a> — задачи с критериями приёмки, роли разработчика и QA и подтверждения человека, всё в Markdown. <a href="https://github.com/JDhruv14/line-art-animation">JDhruv14/line-art-animation</a> — скилл Claude и небольшая библиотека TypeScript: чернильные фигуры в SVG ходят и реагируют на курсор, у сцены есть смена дня и ночи. <a href="https://github.com/simplexai-labs/linger">simplexai-labs/linger</a> — персональный агент на своём компьютере, документация <a href="https://docs.heylinger.com/">docs.heylinger.com</a>. Последний push, календарный день в МСК: claude-work-mode — 12.11.2026, claude-codex-project-os — 13.11.2026, line-art-animation — 10.11.2026, linger — 13.11.2026. Число звёзд — данные GitHub API на 13.11.2026, 06:09 МСК, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 13 ноября 2026</h2>
+    <p class="meta">Данные GitHub API на 13.11.2026, 06:09 МСК. Дата push — календарный день <code>pushed_at</code> в МСК (UTC+3), без времени суток.</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что делает</th><th>Язык</th><th>Лицензия</th><th>★</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/danyuchn/claude-work-mode">danyuchn/claude-work-mode</a></td>
+          <td>Режимы сессии Claude Code: <code>/work-mode auto</code>, <code>out</code> и <code>wrap</code>, с необязательными гейтами</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>177</td>
+          <td>12.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/ferhatcore/claude-codex-project-os">ferhatcore/claude-codex-project-os</a></td>
+          <td>Ведение задач для Claude Code и Codex: общие файлы, роли разработчика и QA, подтверждения человека</td>
+          <td>JavaScript</td>
+          <td>MIT</td>
+          <td>68</td>
+          <td>13.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/JDhruv14/line-art-animation">JDhruv14/line-art-animation</a></td>
+          <td>Скилл Claude и библиотека TypeScript: линейные SVG-фигуры, которые ходят и реагируют, сцены со сменой дня и ночи</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>595</td>
+          <td>10.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/simplexai-labs/linger">simplexai-labs/linger</a></td>
+          <td>Персональный агент с открытым кодом. README описывает запуск целиком на своём Mac или PC</td>
+          <td>TypeScript</td>
+          <td>не определена API / см. репозиторий</td>
+          <td>128</td>
+          <td>13.11.2026</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: <code>description</code>, <code>license.spdx_id</code>, <code>language</code>, <code>stargazers_count</code>, <code>pushed_at</code>, <code>archived</code>, <code>created_at</code>. Данные GitHub API на 13.11.2026, 06:09 МСК. Архивными эти четыре репозитория на момент запроса не были. Даты создания: claude-work-mode — 08.11.2026, claude-codex-project-os — 11.11.2026, line-art-animation — 10.11.2026, linger — 10.11.2026. Дата push в таблице — календарный день поля <code>pushed_at</code> в МСК (UTC+3). У claude-codex-project-os метка <code>2026-11-12T22:42:16Z</code>: по МСК это уже 13.11.2026. Лицензии: MIT у трёх репозиториев. У linger поле <code>license.spdx_id</code> равно <code>NOASSERTION</code>. Звёзды в таблице — снимок на 13.11.2026, 06:09 МСК: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>claude-work-mode: режимы одной сессии</h2>
+    <p><a href="https://github.com/danyuchn/claude-work-mode">danyuchn/claude-work-mode</a> в описании GitHub — режимы рабочей сессии для Claude Code. Одна слэш-команда переключает <code>auto</code>, <code>out</code> и <code>wrap</code>. README задаёт, что именно слышит модель. <code>auto</code>: внутренние обратимые шаги (локальные файлы, локальные коммиты, тесты) идут без вопроса. Жёсткие стопы — исходящие сообщения, установки, секреты, необратимые удаления, платежи, смена прав и изменения на проде — копятся в список и сообщаются один раз в конце. Вызовы, которые поднимут окно подтверждения, README ставит последними, подряд. <code>out</code>: пакетную работу, которую можно проверить целиком или выборочно (извлечение, классификация, конспекты, ревью), сессия отдаёт фоновому субагенту или внешней CLI, а основная нить проверяет результат. <code>wrap</code>: новые ветки не открываются, закрывается уже открытое, в списке только новые или изменившиеся решения, у каждого метка и рекомендация. Отдельное значение <code>off</code> возвращает обычный режим. Режимы действуют на сессию и сочетаются: в README есть пример <code>/work-mode auto wrap</code>.</p>
+    <p>Установка в README — <code>/plugin install work-mode --marketplace danyuchn/claude-work-mode</code>. Второй плагин, <code>work-mode-gates</code>, ставит необязательные гейты. README требует Claude Code с плагинами function-hook, версия 2.1.314 или новее. Гейтам нужны <code>bash</code>, <code>jq</code>, <code>git</code> и <code>python3</code>. Значения по умолчанию README называет прямо: напоминание о режимах каждый 8-й промпт, а в режиме <code>out</code> порог сырого вывода за один ход — 20000 символов, после него следующее чтение отказывается, пока модель не делегирует работу или одной строкой не объяснит, зачем читает дальше. Текст режима, по README, уходит модели один раз и повторяется после сжатия контекста или возобновления сессии. Конфиг необязателен. README отдельно пишет, что секреты, force push и выкладку в гейт <code>auto</code> класть не нужно: такие стопы спрашивают в любом режиме.</p>
+    <p>Кому: тем, кто хочет заранее задать сессии Claude Code, где она идёт по обратимым локальным шагам, где копит жёсткие стопы в один список на конец, а где сворачивает уже открытую работу. На что смотреть: репозиторий создан 08.11.2026, на дату снимка ему пять дней. Язык по API — TypeScript, лицензия MIT, 177 звёзд, push 12.11.2026. На момент запроса репозиторий не был архивным. Выпуск плагин не ставил.</p>
+
+    <h2>claude-codex-project-os: задачи в файлах, роли и подтверждение</h2>
+    <p><a href="https://github.com/ferhatcore/claude-codex-project-os">ferhatcore/claude-codex-project-os</a> в описании GitHub — ведение проекта для Claude Code и Codex: общие файлы задач, роли разработчика и QA, подтверждения человека. README описывает одну сессию как PM. Она записывает кусок работы задачей с проверяемыми критериями приёмки, просит подтвердить объём, передаёт Developer, затем независимому QA. QA сам запускает тесты и сверяет каждый критерий. Ревьюер в README только читает. Доска, задачи, решения и заметка Hand-off лежат в <code>planning/</code> обычным Markdown. Новая сессия читает эти файлы и продолжает с того же места. Claude Code и Codex используют одни и те же файлы, клиент можно сменить между шагами. Кода до подтверждения объёма README не предусматривает. Коммит, push и выкладка — отдельные подтверждения. «Готово» в README значит «проверено», а не «закоммичено» и не «выложено». QA может вернуть работу разработчику дважды. Третья попытка требует новый план и подтверждение.</p>
+    <p>Для старта README просит Node.js 22 или новее и Claude Code. Команда <code>node scripts/init.mjs --target ../my-project</code> создаёт новую папку. README пишет, что уже существующие папки установщик не трогает и в глобальные настройки Claude и Codex ничего не пишет. Внутри оказываются <code>CLAUDE.md</code>, <code>START.md</code>, <code>.project-os.json</code>, агенты <code>project-os-developer</code>, <code>project-os-qa</code> и <code>project-os-reviewer</code>, скиллы <code>/project-os-start</code>, <code>/project-os-task</code>, <code>/project-os-qa</code> и <code>/project-os-resume</code>, каталог <code>planning/</code>. Для Codex та же команда с <code>--runtime codex</code>, для обоих клиентов — <code>--runtime both</code>. Проверки <code>node scripts/check.mjs</code> и <code>node --test</code> модель не запускают. GitHub Actions гоняет их на Windows и Linux с Node.js 22. В конце README: независимый проект, не связан с Anthropic или OpenAI. Лицензия MIT.</p>
+    <p>Кому: тем, кто ведёт задачу Claude Code или Codex через файлы с критериями приёмки и отдельной проверкой QA, а не в памяти одной сессии. На что смотреть: репозиторий создан 11.11.2026, на дату снимка ему два дня. В README есть учебный диалог первой сессии. Этот выпуск его не воспроизводил и цифры из примера не переносит. Язык по API — JavaScript, лицензия MIT, 68 звёзд, push 13.11.2026. На момент запроса репозиторий не был архивным. Выпуск <code>init.mjs</code> не запускал.</p>
+
+    <h2>line-art-animation: линейный SVG, который рисуется вживую</h2>
+    <p><a href="https://github.com/JDhruv14/line-art-animation">JDhruv14/line-art-animation</a> в описании GitHub — скилл Claude и библиотека TypeScript для анимированных линейных SVG: чернильные фигуры, которые ходят и реагируют, сцены с циклом дня и ночи. README делит репозиторий на три части. <code>SKILL.md</code> и <code>references/</code> — сам скилл: порядок работы, правила стиля, движение, сцены, проверка, совпадение с референсным роликом и рендер видео. <code>lib/</code> — четыре модуля TypeScript без зависимостей: <code>ink.ts</code> рисует штрих, <code>gait.ts</code> считает походку и бег, <code>motion.ts</code> держит пружины, маятники и ветер, <code>daynight.ts</code> даёт палитру времени суток. <code>examples/walker/</code> — одна фигура, <code>examples/village/</code> — улица со сменой дня и ночи. Всё рисуется в SVG вживую, поэтому картинка остаётся резкой при любом масштабе и отвечает на курсор. В деревне README перечисляет действия в браузере: тащить солнце или луну по небу, двигать курсор, чтобы появился ветер, кликать людей, окна, фонари, колокольчик, кота, птиц и воду.</p>
+    <p>Установка скилла в README — <code>git clone</code> в <code>~/.claude/skills/line-art-animation</code> или в <code>.claude/skills/</code> одного проекта. Для примеров README просит Node 22.18 или новее, затем <code>npm install</code> и <code>npm run dev</code>, адрес <code>http://localhost:5173</code>. Скрипт <code>scripts/capture.ts</code> снимает кадры через headless Chrome по протоколу DevTools, без npm-зависимостей, и сдвигает сцену ровно на один кадр между снимками. Ролик README собирает отдельной командой <code>ffmpeg</code>. Лицензия MIT.</p>
+    <p>Кому: тем, кто просит Claude Code собрать линейную SVG-анимацию и хочет рядом маленький код рисования. На что смотреть: репозиторий создан 10.11.2026, push в тот же день. Язык по API — TypeScript, лицензия MIT, 595 звёзд, push 10.11.2026. На момент запроса репозиторий не был архивным. Выпуск примеры не запускал.</p>
+
+    <h2>linger: персональный агент на своём компьютере</h2>
+    <p><a href="https://github.com/simplexai-labs/linger">simplexai-labs/linger</a> в описании GitHub — персональный агент с открытым кодом, который работает на компьютере пользователя. README повторяет то же: локальный запуск на потребительских Mac и PC. Документация — <a href="https://docs.heylinger.com/">docs.heylinger.com</a>. В таблице README локальный режим держит личные данные и память на устройстве. Подключённые приложения при этом обмениваются данными со своими сервисами. Страница выбора рантайма, на которую ссылается README, называет Claude Code, Codex или Pi, на локальных моделях или по подписке. Сборки десктопа README берёт из GitHub Releases: macOS на Apple silicon (<code>dmg</code>), Windows x64 (установщик и portable zip), Linux x64, glibc 2.35 или новее. Пакета для Intel Mac в README нет: для них указан Docker Compose. Этот вариант README описывает как сервер на несколько компьютеров или сборку из исходников. Нужны Docker с Compose и не меньше 5 GiB памяти у виртуальной машины. После старта README открывает <code>http://localhost:3000</code>. Локальный инференс README связывает с PolyStrata и движком Strata и приводит пример скорости на конкретных видеокартах. Этот выпуск тот прогон не повторял и цифры оттуда не переносит.</p>
+    <p>Лицензия в API — <code>NOASSERTION</code>. В таблице этого выпуска так и стоит: «не определена API / см. репозиторий». README указывает файл <code>LICENSE</code>: Linger Open Source License, на базе Apache 2.0 с дополнительными условиями. <code>NOTICE</code> перечисляет сторонний код, логотипы и изображения, которые эта лицензия не покрывает. В примере Docker README есть тестовый пароль, и там же сказано сменить его, пока к серверу не подключаются другие люди. Кому: тем, кто смотрит локального персонального агента на своём Mac, Windows или Linux и отдельно читает <code>LICENSE</code>, потому что SPDX в API не определён. На что смотреть: репозиторий создан 10.11.2026, на дату снимка ему три дня. Язык по API — TypeScript, 128 звёзд, push 13.11.2026. На момент запроса репозиторий не был архивным. Выпуск приложение не ставил.</p>
+
+    <h2>Что из этого следует</h2>
+    <p>Четыре репозитория закрывают разные края одной работы с агентом: как сессия решает, где остановиться, где живут задачи между сессиями, чем рисовать линейную сцену и где крутится сам агент. claude-work-mode задаёт сессии Claude Code три режима. <code>auto</code> копит жёсткие стопы и не останавливается на обратимых локальных шагах, <code>out</code> отдаёт проверяемый пакет фоновому субагенту или внешней CLI, <code>wrap</code> закрывает уже открытое. Лицензия MIT, репозиторий создан 08.11.2026. claude-codex-project-os держит задачи, критерии приёмки и роли PM, Developer и QA в Markdown, общем для Claude Code и Codex. Новая сессия читает те же файлы. Лицензия MIT, репозиторий создан 11.11.2026. line-art-animation — скилл и четыре модуля TypeScript. Линейный SVG рисуется вживую и реагирует на курсор, у сцены есть смена дня и ночи. Лицензия MIT, репозиторий создан 10.11.2026. linger README описывает как персонального агента на своём компьютере, документация на docs.heylinger.com. Лицензию API не классифицирует (<code>NOASSERTION</code>), условия лежат в <code>LICENSE</code> репозитория. Репозиторий создан 10.11.2026. Ни один из четырёх на момент запроса не был архивным. Число звёзд — снимок публичного API GitHub на 13.11.2026, 06:09 МСК: claude-work-mode 177, claude-codex-project-os 68, line-art-animation 595, linger 128.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 13.11.2026, 06:09 МСК. Это снимок на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
