@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Терминал с ревью, профили браузера, Workers вне Cloudflare и аналитика, вечер 13 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор ELU-Labs/elu, aronhy/pibrowse, rivet-dev/open-orange и egoist/tinytraffic. Звёзды, лицензии и дата push сняты с GitHub 13 ноября 2026, 21:00 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-13-evening-selfhost-dev-tools/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-13-evening-selfhost-dev-tools/">
+  <meta property="og:title" content="Свой хостинг для разработчика: вечерний выпуск 13 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar 13 ноября 2026, вечер: свой хостинг для разработчика",
+        "datePublished": "2026-11-13",
+        "dateModified": "2026-11-13",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-13-evening-selfhost-dev-tools/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор elu, pibrowse, open-orange и tinytraffic по данным GitHub API на 13 ноября 2026, 21:00 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 13.11.2026, 21:00 МСК. Это снимок на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "13 ноября 2026, вечер", "item": "https://snezhko.ru/radar/blog/2026-11-13-evening-selfhost-dev-tools/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">13 ноября 2026, вечер · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar 13 ноября 2026, вечер: свой хостинг для разработчика</h1>
+    <p>Четыре репозитория про инструменты, которые можно держать у себя. <a href="https://github.com/ELU-Labs/elu">ELU-Labs/elu</a> — полноэкранный терминал: сессии кодинга поверх уже установленных Claude Code и Codex, с ботами-ревьюерами. <a href="https://github.com/aronhy/pibrowse">aronhy/pibrowse</a> — открытый браузер раздельных профилей, локально или на своём хосте для команды. <a href="https://github.com/rivet-dev/open-orange">rivet-dev/open-orange</a> запускает существующие Cloudflare Workers и Durable Objects без смены кода на AWS, Google Cloud, Azure или своих серверах. <a href="https://github.com/egoist/tinytraffic">egoist/tinytraffic</a> — веб-аналитика для личного использования: один бинарник и один файл DuckDB. Последний push в МСК: elu — 13.11.2026, 20:59:53; pibrowse — 12.11.2026, 06:08:07; open-orange — 13.11.2026, 17:47:44; tinytraffic — 12.11.2026, 15:08:25. Число звёзд — данные GitHub API на 13.11.2026, 21:00 МСК, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 13 ноября 2026</h2>
+    <p class="meta">Снимок на 13.11.2026, 21:00 МСК. Время push переведено из UTC в МСК (UTC+3).</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что делает</th><th>Язык</th><th>Лицензия</th><th>★</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/ELU-Labs/elu">ELU-Labs/elu</a></td>
+          <td>Полноэкранный терминал сессий Claude Code и Codex: правка в отдельном git worktree, ревью до пуша</td>
+          <td>JavaScript</td>
+          <td>MIT</td>
+          <td>88</td>
+          <td>13.11.2026, 20:59:53</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/aronhy/pibrowse">aronhy/pibrowse</a></td>
+          <td>Открытый браузер раздельных профилей, локально или на своём хосте. Превью 0.5.5 только для macOS Apple Silicon</td>
+          <td>TypeScript</td>
+          <td>AGPL-3.0</td>
+          <td>365</td>
+          <td>12.11.2026, 06:08:07</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/rivet-dev/open-orange">rivet-dev/open-orange</a></td>
+          <td>Запуск существующих Cloudflare Workers и Durable Objects без смены кода на AWS, Google Cloud, Azure или своих серверах</td>
+          <td>TypeScript</td>
+          <td>Apache-2.0</td>
+          <td>389</td>
+          <td>13.11.2026, 17:47:44</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/egoist/tinytraffic">egoist/tinytraffic</a></td>
+          <td>Веб-аналитика для личного использования: один бинарник, один файл DuckDB, без cookies</td>
+          <td>Go</td>
+          <td>AGPL-3.0</td>
+          <td>220</td>
+          <td>12.11.2026, 15:08:25</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: <code>language</code>, <code>license.spdx_id</code>, <code>stargazers_count</code>, <code>pushed_at</code>, <code>archived</code>. Снимок на 13.11.2026, 21:00 МСК. Архивными эти четыре репозитория на момент снимка не были. Дата и время push в таблице — поле <code>pushed_at</code>, переведённое из UTC в МСК (UTC+3). У elu метка <code>2026-11-13T17:59:53Z</code> даёт 13.11.2026, 20:59:53 МСК. У pibrowse <code>2026-11-12T03:08:07Z</code> — 12.11.2026, 06:08:07 МСК. У open-orange <code>2026-11-13T14:47:44Z</code> — 13.11.2026, 17:47:44 МСК. У tinytraffic <code>2026-11-12T12:08:25Z</code> — 12.11.2026, 15:08:25 МСК. Лицензии: MIT у elu, AGPL-3.0 у pibrowse и tinytraffic, Apache-2.0 у open-orange. Звёзды в таблице — снимок на 13.11.2026, 21:00 МСК: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>elu: ревью в worktree, push после /publish</h2>
+    <p><a href="https://github.com/ELU-Labs/elu">ELU-Labs/elu</a> — полноэкранное терминальное приложение. Сессии кодинга идут поверх уже установленных CLI Claude Code и Codex, рядом работают боты-ревьюеры. Установка в README: <code>npx -y @elu-labs/elu</code>. Для запуска README просит macOS или Linux, Node 22 или новее, Git, вошедший Claude Code и установленный Codex. Проверки проекта выполняет песочница Codex.</p>
+    <p>Каждая правка ложится в отдельный git worktree на своей ветке. Затем проходят проверки проекта и ревью <code>@reviewer</code>. В удалённый репозиторий ничего не уходит, пока не набрать <code>/publish</code> и не подтвердить отправку. Файл, похожий на секрет, README показывает на примере <code>.env</code>: такой файл останавливает сессию. Лицензия по снимку API — MIT.</p>
+    <p>Кому: тем, кто хочет вести сессию Claude Code или Codex в своём терминале и не пушить правку, пока не прошли проверки и ревью. На что смотреть: язык по API — JavaScript, лицензия MIT, 88 звёзд, push 13.11.2026, 20:59:53 МСК. На момент снимка репозиторий не был архивным. Этот выпуск команду установки не запускал.</p>
+
+    <h2>pibrowse: профили браузера, превью только на macOS</h2>
+    <p><a href="https://github.com/aronhy/pibrowse">aronhy/pibrowse</a> в README — open-source «fingerprint browser» для раздельных браузерных профилей. Сайт проекта — <a href="https://pibrowse.dev">pibrowse.dev</a>. Держать его можно локально или поднять self-host для команды. Открытое издание README называет бесплатным. PiBrowse Cloud — отдельный платный хостинг, и README пишет, что он в разработке.</p>
+    <p>Сейчас это превью 0.5.5 и только для macOS на Apple Silicon. Ядро Chromium 157 скачивается отдельно. Нотаризации Apple нет: README указывает открыть сборку вручную через «Открыть всё равно». Сборок для Windows и для Intel Mac в этом релизе нет. Сценарий из README — разные аккаунты в изолированных профилях. Лицензия по снимку API — AGPL-3.0.</p>
+    <p>Кому: тем, кому нужны изолированные браузерные профили на своей машине или на своём хосте и кто смотрит превью под macOS Apple Silicon. На что смотреть: язык по API — TypeScript, лицензия AGPL-3.0, 365 звёзд, push 12.11.2026, 06:08:07 МСК. На момент снимка репозиторий не был архивным. У AGPL-3.0 свои условия при сетевом использовании, их стоит прочитать до коммерческого применения. Этот выпуск сборку не запускал.</p>
+
+    <h2>open-orange: Workers и Durable Objects вне Cloudflare</h2>
+    <p><a href="https://github.com/rivet-dev/open-orange">rivet-dev/open-orange</a> запускает уже написанные Cloudflare Workers и Durable Objects на AWS, Google Cloud, Azure или своих серверах. README пишет, что код для этого менять не нужно. Сайт проекта — <a href="https://openorange.dev">openorange.dev</a>. Команда <code>wrangler dev</code> заменяется на <code>orange dev</code>. Хранилище README помещает на S3.</p>
+    <p>Нужен проект с конфигом <code>wrangler.jsonc</code>, <code>wrangler.json</code> или <code>wrangler.toml</code>, Node.js 22 или новее и pnpm. Для деплоя README просит Docker. В README есть готовый промпт для кодинг-агента — Claude Code, Codex или Cursor — через Rivet MCP. Лицензия по снимку API — Apache-2.0.</p>
+    <p>Кому: тем, у кого Workers и Durable Objects уже описаны конфигом Wrangler и кто хочет запускать их вне Cloudflare, на облаке или на своих серверах. На что смотреть: язык по API — TypeScript, лицензия Apache-2.0, 389 звёзд, push 13.11.2026, 17:47:44 МСК. На момент снимка репозиторий не был архивным. Этот выпуск <code>orange dev</code> не запускал.</p>
+
+    <h2>tinytraffic: аналитика одним бинарником</h2>
+    <p><a href="https://github.com/egoist/tinytraffic">egoist/tinytraffic</a> — веб-аналитика для личного использования. README сводит поставку к одному бинарнику и одному файлу DuckDB, без cookies. Размер трекера в README — около 1 КБ в gzip. Сервис принимает формат событий Plausible. Посетитель считается как хэш от суточной соли, сайта, IP и user agent. Сам IP README не хранит. В дашборде источники, страницы и цели; есть публичные дашборды и API-ключи.</p>
+    <p>Быстрый старт в README — образ Docker <code>ghcr.io/egoist/tinytraffic:main</code> и переменная <code>TT_PASSWORD</code>. Если сервис стоит за реверс-прокси, README просит выставить <code>TT_TRUST_PROXY=true</code>. Лицензия по снимку API — AGPL-3.0.</p>
+    <p>Кому: тем, кто хочет свою веб-аналитику без cookies и без хранения IP, одним процессом и одним файлом базы. На что смотреть: язык по API — Go, лицензия AGPL-3.0, 220 звёзд, push 12.11.2026, 15:08:25 МСК. На момент снимка репозиторий не был архивным. У AGPL-3.0 свои условия при сетевом использовании, их стоит прочитать до коммерческого применения. Этот выпуск образ не запускал.</p>
+
+    <h2>Что из этого следует</h2>
+    <p>Вечерний набор про то, чтобы держать инструменты у себя. elu ведёт сессию Claude Code и Codex в своём терминале: правка уходит в отдельный git worktree, проверки проекта и ревью <code>@reviewer</code> проходят до пуша, отправка только командой <code>/publish</code> с подтверждением, файл вроде <code>.env</code> останавливает сессию. Лицензия MIT, 88 звёзд, push 13.11.2026, 20:59:53 МСК. pibrowse держит разные аккаунты в изолированных профилях браузера, локально или на своём хосте для команды. Открытое издание README называет бесплатным, PiBrowse Cloud — отдельным платным хостингом в разработке. Сейчас это превью 0.5.5 только для macOS Apple Silicon: ядро Chromium 157 качается отдельно, нотаризации Apple нет, сборок Windows и Intel Mac в этом релизе нет. Лицензия AGPL-3.0, 365 звёзд, push 12.11.2026, 06:08:07 МСК. open-orange запускает существующие Cloudflare Workers и Durable Objects без смены кода на AWS, Google Cloud, Azure или своих серверах: <code>orange dev</code> вместо <code>wrangler dev</code>, хранилище на S3, для деплоя нужен Docker. Лицензия Apache-2.0, 389 звёзд, push 13.11.2026, 17:47:44 МСК. tinytraffic собирает веб-аналитику личного использования в один бинарник и один файл DuckDB, без cookies и без хранения IP. Лицензия AGPL-3.0, 220 звёзд, push 12.11.2026, 15:08:25 МСК. Ни один из четырёх на момент снимка не был архивным. У AGPL-лицензий pibrowse и tinytraffic свои условия при сетевом использовании: их стоит проверить перед коммерческим применением. Число звёзд — снимок публичного API GitHub на 13.11.2026, 21:00 МСК.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 13.11.2026, 21:00 МСК. Это снимок на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
