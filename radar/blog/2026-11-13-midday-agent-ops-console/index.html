@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Консоль агентов, общие факты, студия коротких видео и шопинг-агент, полдень 13 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор IluvatarLabs/sitrep, siwen-121/agent-shared-facts, fendouai/ViralForge и lawandrorder/mate. Звёзды, лицензии и дата push сняты с GitHub 13 ноября 2026, 11:03 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-13-midday-agent-ops-console/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-13-midday-agent-ops-console/">
+  <meta property="og:title" content="Консоль агентов и общие факты: полуденный выпуск 13 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar 13 ноября 2026, полдень: консоль сессий Claude Code и Codex, общие факты агентов, студия коротких видео и текстовый шопинг-агент",
+        "datePublished": "2026-11-13",
+        "dateModified": "2026-11-13",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-13-midday-agent-ops-console/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор sitrep, agent-shared-facts, ViralForge и mate по данным GitHub API на 13 ноября 2026, 11:03 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 13.11.2026, 11:03 МСК. Это снимок на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "13 ноября 2026, полдень", "item": "https://snezhko.ru/radar/blog/2026-11-13-midday-agent-ops-console/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">13 ноября 2026, полдень · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar 13 ноября 2026, полдень: консоль сессий Claude Code и Codex, общие факты агентов, студия коротких видео и текстовый шопинг-агент</h1>
+    <p>Четыре репозитория: живая консоль сессий на нескольких машинах, общие проверенные записи между устройствами, студия коротких видео для агента и текстовый стартер шопинг-агента. <a href="https://github.com/IluvatarLabs/sitrep">IluvatarLabs/sitrep</a> показывает сессии Claude Code и Codex сразу: контекст, оценка расходов и то, что ждёт ответа. <a href="https://github.com/siwen-121/agent-shared-facts">siwen-121/agent-shared-facts</a> держит опубликованную версию записи на Git-ветке и отдаёт её агентам, в том числе через read-only MCP. <a href="https://github.com/fendouai/ViralForge">fendouai/ViralForge</a> разбирает хук и сценарий короткого видео в отчёт Viral DNA и собирает редактируемый проект. <a href="https://github.com/lawandrorder/mate">lawandrorder/mate</a> отвечает в тексте на кэшбэк, промокод, трекинг посылки и цену, в этом репозитории — демо-данными. Последний push, календарный день в МСК: sitrep — 13.11.2026, agent-shared-facts — 12.11.2026, ViralForge — 12.11.2026, mate — 12.11.2026. Число звёзд — данные GitHub API на 13.11.2026, 11:03 МСК, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 13 ноября 2026</h2>
+    <p class="meta">Данные GitHub API на 13.11.2026, 11:03 МСК. Дата push — календарный день <code>pushed_at</code> в МСК (UTC+3), без времени суток.</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что делает</th><th>Язык</th><th>Лицензия</th><th>★</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/IluvatarLabs/sitrep">IluvatarLabs/sitrep</a></td>
+          <td>Консоль сессий Claude Code и Codex на нескольких машинах: контекст, оценка расходов, ответы на ожидание</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>78</td>
+          <td>13.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/siwen-121/agent-shared-facts">siwen-121/agent-shared-facts</a></td>
+          <td>Общие проверенные записи для агентов между устройствами: Git-ветка как опубликованная версия и необязательный read-only MCP</td>
+          <td>Python</td>
+          <td>MIT</td>
+          <td>64</td>
+          <td>12.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/fendouai/ViralForge">fendouai/ViralForge</a></td>
+          <td>Студия коротких видео для агента: разбор хука и сценария в отчёт Viral DNA, проект VFML и 10 вариантов. Skill, MCP и CLI</td>
+          <td>TypeScript</td>
+          <td>Apache-2.0</td>
+          <td>66</td>
+          <td>12.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/lawandrorder/mate">lawandrorder/mate</a></td>
+          <td>Текстовый шопинг-стартер: демо кэшбэка, промокодов, трекинга посылок и слежения за ценой. README отделяет его от продакшена mate.fm</td>
+          <td>Python</td>
+          <td>MIT</td>
+          <td>138</td>
+          <td>12.11.2026</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: <code>description</code>, <code>license.spdx_id</code>, <code>language</code>, <code>stargazers_count</code>, <code>pushed_at</code>, <code>archived</code>, <code>created_at</code>. Данные GitHub API на 13.11.2026, 11:03 МСК. Архивными эти четыре репозитория на момент запроса не были. Даты создания: sitrep — 12.11.2026, agent-shared-facts — 12.11.2026, ViralForge — 11.11.2026, mate — 12.11.2026. Дата push в таблице — календарный день поля <code>pushed_at</code> в МСК (UTC+3). У sitrep метка <code>2026-11-12T21:37:10Z</code>: по МСК это уже 13.11.2026. Лицензии: MIT у sitrep, agent-shared-facts и mate, Apache-2.0 у ViralForge. Звёзды в таблице — снимок на 13.11.2026, 11:03 МСК: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>sitrep: сессии агентов на всех машинах в одном окне</h2>
+    <p><a href="https://github.com/IluvatarLabs/sitrep">IluvatarLabs/sitrep</a> в описании GitHub — одна живая консоль, которая следит за агентами Claude Code и Codex на нескольких машинах, показывает контекст и расходы и помогает ответить сессии, которая ждёт человека. README формулирует то же короче: каждая сессия Claude Code и Codex, на каждой машине, в одном живом виде. Доска умеет карточки, список и граф. У сессии README перечисляет план и текущий шаг, агентов, модель и effort, заполнение контекста, состояние git, стоимость и то, что сломалось. Разрешения, вопросы и планы, которые ждут ответа, собираются наверху, сначала самое долгое ожидание. Ответить можно в консоли или в терминале, первый ответ побеждает. В ответ сессии уходят только свои ответы, сообщения и команды. README прямо пишет: консоль не управляет терминалом, не запускает, не останавливает и не перезапускает сессию, не хранит транскрипты и работает на машине владельца. Значение, которое harness не сообщил, показывается как «—», а не как догадка. Каждая стоимость помечена «est.»: это оценка. Кроме Claude Code и Codex README показывает сессии Hermes, но не отвечает на них.</p>
+    <p>Пробный запуск в README требует git и Node 24. Команды: <code>npm ci</code>, затем <code>npm run dev</code>. Сервер слушает порт 7487, панель открывается на <code>http://localhost:5173</code>. Во втором терминале README запускает симулятор <code>npx tsx scripts/sim.ts</code> с флагами числа сессий, доли Codex и числа машин. Установка сервера пишет admin secret в <code>~/.sitrep/server.env</code>. Предупреждение README: SITREP рассчитан на одного человека в доверенной локальной сети и говорит по обычному HTTP. Кто достучался до порта 7487, читает все сессии. Чтобы отвечать, нужен вход с admin secret. Платформы в бейдже README — macOS и Linux. На Windows, по README, проект не запускали. На сервере нужен Node 24, на остальных машинах — Node 22.15 или новее. Claude Code — 2.1.287 или новее, Codex — 0.162 или новее. Ответы сессиям Codex дополнительно требуют managed daemon Codex на той машине. Репортёр Hermes README описывает как sidecar-контейнер, для него нужен Docker. Лицензия MIT. Сторонние материалы README выносит в отдельные файлы уведомлений.</p>
+    <p>Кому: тем, кто держит сессии Claude Code или Codex на ноутбуке, рабочей станции и сервере и хочет видеть их состояние и ожидание ответа в одном окне на своей машине. На что смотреть: репозиторий создан 12.11.2026, на дату снимка ему один день. Язык по API — TypeScript, лицензия MIT, 78 звёзд, push 13.11.2026. На момент запроса репозиторий не был архивным. Выпуск сервер и симулятор не запускал.</p>
+
+    <h2>agent-shared-facts: одна опубликованная запись на всех устройствах</h2>
+    <p><a href="https://github.com/siwen-121/agent-shared-facts">siwen-121/agent-shared-facts</a> в описании GitHub — reference implementation для агентов: общие проверенные факты между устройствами через Git и read-only MCP. Английский раздел README говорит о reviewed records. У каждой записи опубликованная версия принадлежит одной Git-ветке. Агент может подготовить кандидата офлайн, сверить его после повторного подключения, отдать на ревью и подтвердить публикацию, забрав слитую запись из другого клона. Китайский раздел README разделяет три состояния: офлайн-черновик, кандидат на ревью и уже действующую запись. У общей записи на заданной ветке фиксированные ID и путь к файлу. Когда агент читает запись, он получает и commit SHA. Кандидат проходит сверку, ревью и слияние. Второе устройство подтверждает публикацию только после того, как прочитает с upstream фактическое содержимое.</p>
+    <p>Старт в README: на Windows <code>.\setup.cmd</code>, на macOS и Linux <code>sh ./setup.sh</code>. Нужны Git и Python 3.12 или новее. Для приёмки MCP README просит виртуальное окружение и <code>python -m pip install -r requirements-mcp.txt</code>, затем <code>python -m unittest discover -s tests -v</code>. Тесты, по README, используют временный Git-upstream, два независимых клона и синтетические записи. Аккаунт GitHub, API модели, домен и туннель для этого прогона не нужны. Деплой по умолчанию — свой приватный Git-репозиторий и локальные инструменты чтения и записи. Клиенту с MCP можно добавить сервис, который китайский раздел называет read-only. Английский раздел описывает необязательный MCP-адаптер: он отдаёт записи из allowlist через stdio или аутентифицированный Streamable HTTP. В оглавлении README есть страница подключения для Codex, Claude Code, Antigravity, Kimi, DeepSeek, Muse и браузера. Публичный репозиторий хранит программу, процесс и синтетические примеры. Настоящее развёртывание README отправляет в свой репозиторий с общими данными. Исходные файлы исследования, личные данные и учётные секреты остаются в разрешённых местах. На общую сторону попадают только одобренные конспекты и прослеживаемые ID доказательств. Лицензия MIT.</p>
+    <p>Кому: тем, кто хочет, чтобы агенты на разных устройствах читали одну и ту же опубликованную запись, а черновик и кандидат не смешивались с уже слитой версией. На что смотреть: репозиторий создан 12.11.2026, на дату снимка ему один день. Язык по API — Python, лицензия MIT, 64 звезды, push 12.11.2026. На момент запроса репозиторий не был архивным. Выпуск тесты и установку не запускал.</p>
+
+    <h2>ViralForge: хук и сценарий короткого видео в отчёте</h2>
+    <p><a href="https://github.com/fendouai/ViralForge">fendouai/ViralForge</a> в описании GitHub — agent-native студия вирусных коротких видео: повторить ролик, разобрать хуки и сценарий в отчёт Viral DNA и выпустить 10 вариантов со стоимостью. Там же названы Skill, MCP и CLI и лицензия Apache-2.0. README раскрывает состав отчёта: хук, покадровая структура, словесные якоря, сетка битов, стиль субтитров, эмоциональная кривая и логика конверсии. Продукт и текст сценария заменяются, структура собирается заново в редактируемый проект VFML. Дальше README говорит о 10 вариантах со стоимостью для проверки. Поверхности для агента README перечисляет так. Skill лежит в <code>skills/viralforge/SKILL.md</code>. MCP-сервер <code>mcp/server.mjs</code> отдаёт <code>list_cases</code>, <code>get_case</code>, <code>analyze_video</code> и <code>build_project</code>. CLI: <code>viralforge analyze</code>, <code>report</code>, <code>render</code> и <code>cases</code>. README пишет, что этим можно пользоваться из Claude Code, Codex, Cursor, OpenClaw или любого MCP-клиента. Артефакты: <code>dna.json</code>, проект VFML, CSV вариантов и журнал стоимости.</p>
+    <p>Статус в README — v0.1.0, MVP, дата релиза 2026-11-11. Смысловые выводы демо README называет подготовленными заранее, ролики-реплики — заранее отрендеренными. Пакет вариантов выдаёт сценарии, обложки и оценки стоимости. Вызовы моделей и пакетный рендер требуют ключ или воркер. Студия, CLI анализа, страницы отчёта, экспорт VFML и журнал стоимости, по README, проходят целиком. Скачивание по ссылке с площадки намеренно не сделано: только локальная загрузка. Подмены лица нет. Метка AI-generated стоит всегда, в кадре и в метаданных. README просит повторять структуру и ритм, а не кадры, музыку и исходный текст. Референс анализируется и в выходной ролик не попадает. Быстрый старт: Node.js 22.15 или новее, <code>npm install</code>, <code>npm run dev</code>, адрес <code>http://127.0.0.1:5173</code>. Демо крутится на своих заранее отрендеренных роликах. Структурный разбор — склейки, BPM, темп — README называет посчитанным локально. Ключ модели или площадки для демо не нужен. Свой локальный файл README анализирует командой <code>node cli/viralforge.mjs analyze</code>. Для неё перечислены FFmpeg, Python 3.9 или новее, <code>numpy</code> и <code>opencv-python-headless</code>. Приложение, по README, не читает <code>OPENAI_API_KEY</code>, <code>DASHSCOPE_API_KEY</code>, cookie площадок и секреты <code>VITE_*</code>. В README три демо-кейса: GLOW LAB, AER и MORI. Там же написано, что метрики — значения фикстур для формата отчёта, а не результаты заказчиков, а стоимости — демо-оценки в юанях, и приложение их не выставляет. Этот выпуск эти цифры не переносит. Лицензия Apache-2.0. README пишет, что зависимостей AGPL нет, код Hypit в репозиторий не входит, а рендер собран на Playwright и FFmpeg.</p>
+    <p>Кому: тем, кто хочет отдать агенту разбор структуры короткого ролика и получить проект VFML, отчёт и матрицу вариантов, отдельно читая, что смысловой слой демо подготовлен заранее. На что смотреть: репозиторий создан 11.11.2026, на дату снимка ему два дня. Язык по API — TypeScript, лицензия Apache-2.0, 66 звёзд, push 12.11.2026. На момент запроса репозиторий не был архивным. Выпуск студию и CLI не запускал.</p>
+
+    <h2>mate: текстовый шопинг-стартер с демо-ответами</h2>
+    <p><a href="https://github.com/lawandrorder/mate">lawandrorder/mate</a> в описании GitHub — текстовый агент на время шопинга: кэшбэк, персональные промокоды, трекинг посылок и оповещения о снижении цены. В том же описании — стартовый агент, веб-чат, свой набор иконок, документация и адрес mate.fm. README сразу сужает рамку. Этот репозиторий — открытый стартер Mate: свои иконки в палитре mate.fm, небольшой текстовый агент, который можно запустить, демо веб-чата, документация для GitHub Pages и провайдеры с явной пометкой demo. README пишет, что это не продакшен-сервис и что стартер не подключён к живой сети магазинов Mate. Живой продукт README указывает на <a href="https://mate.fm/">mate.fm</a>. Цитату и публичный счётчик магазинов README берёт с этого сайта, в том числе формулировку «200k merchant partnerships», и помечает, что текст продукта и счётчик взяты оттуда. Иллюстрированные диалоги на сайте README называет вымышленными. Примеры кодов, доставок и кэшбэка на маркетинговой странице и каждый демо-ответ в стартере — не настоящие предложения.</p>
+    <p>Четыре ответа README копирует с сайта продукта и кладёт рядом свои иконки: кэшбэк, если написать до покупки; код скидки под магазин; текст, когда посылка отправлена и когда она у двери; слежение за ценой. Стартер отвечает на те же виды сообщений демо-данными и всегда ставит метку <code>[demo]</code>. Разбор намерения в README ведёт в один из провайдеров: кэшбэк, код, трекинг, слежение за ценой или, если намерение не узнано, необязательный OpenRouter. В этом репозитории провайдеры — демо: ссылки-заглушки, коды с префиксом <code>DEMO-</code>, заскриптованные статусы отправления и локальное задание слежения за ценой, которое не снимает живые страницы товаров. Ключ <code>OPENROUTER_API_KEY</code> нужен только для нераспознанных сообщений. Зашитых ключей README не показывает. Быстрый старт: Python 3.10 или новее, сторонние пакеты в рантайме не требуются. <code>python -m mate serve</code> открывает <code>http://127.0.0.1:8080</code>. Есть команды чата, кода, трекинга <code>DEMO-123456</code>, слежения за URL и <code>python -m unittest discover -s tests -v</code>. Docker-образ README собирает как <code>mate-starter</code> и публикует порт 8080. Вебхук Twilio README описывает как заглушку: читает <code>Body</code> и <code>From</code>, отвечает TwiML и сам настоящее SMS не отправляет. В раскладке репозитория — 50 своих SVG-иконок и PNG 64, 128 и 512. Лицензия MIT. README пишет, что иконки в <code>assets/icons/</code> свои и что логотипов магазинов в репозитории нет.</p>
+    <p>Кому: тем, кто смотрит текстовый контур шопинг-агента — кэшбэк, код, посылка, цена — и хочет запустить стартер с помеченными демо-ответами, отдельно от живого mate.fm. На что смотреть: репозиторий создан 12.11.2026, на дату снимка ему один день. Язык по API — Python, лицензия MIT, 138 звёзд, push 12.11.2026. На момент запроса репозиторий не был архивным. Выпуск <code>python -m mate</code> не запускал.</p>
+
+    <h2>Что из этого следует</h2>
+    <p>Четыре репозитория расходятся по месту, где агент оставляет след. sitrep собирает сессии Claude Code и Codex с нескольких машин в одну консоль: контекст, оценка расходов с пометкой «est.», ожидание ответа. Сессию он не стартует и не останавливает, транскрипты не хранит, говорит по HTTP в доверенной сети. Лицензия MIT, репозиторий создан 12.11.2026. agent-shared-facts держит опубликованную версию записи на одной Git-ветке. Кандидат проходит сверку, ревью и слияние, второе устройство подтверждает её чтением с upstream. Необязательный MCP README описывает как чтение записей из allowlist. Лицензия MIT, репозиторий создан 12.11.2026. ViralForge отдаёт агенту Skill, MCP и CLI: отчёт Viral DNA, проект VFML и 10 вариантов со стоимостью. README помечает v0.1.0, заранее подготовленный смысловой слой демо и локальные загрузки вместо скачивания с площадок. Лицензия Apache-2.0, репозиторий создан 11.11.2026. mate в описании GitHub — текстовый шопинг-агент с кэшбэком, промокодами, трекингом и ценой. README этого репозитория называет его стартером с демо-провайдерами и меткой <code>[demo]</code> и отделяет от продакшена mate.fm. Лицензия MIT, репозиторий создан 12.11.2026. Ни один из четырёх на момент запроса не был архивным. Число звёзд — снимок публичного API GitHub на 13.11.2026, 11:03 МСК: sitrep 78, agent-shared-facts 64, ViralForge 66, mate 138.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 13.11.2026, 11:03 МСК. Это снимок на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
