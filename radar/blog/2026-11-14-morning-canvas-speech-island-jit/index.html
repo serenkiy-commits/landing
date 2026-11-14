@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Холст на GPU, живой голос, остров в React и JIT для Rust, утро 14 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор berkantay/gpucanvas, higurashi-ai/Haru, opencoredev/islandcn и makepad/relax. Звёзды, лицензии и дата push сняты с GitHub 14 ноября 2026, 06:13 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-14-morning-canvas-speech-island-jit/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-14-morning-canvas-speech-island-jit/">
+  <meta property="og:title" content="Холст, голос, остров и JIT: утренний выпуск 14 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar 14 ноября 2026, утро: холст на GPU, живой голос, остров в React и JIT для Rust",
+        "datePublished": "2026-11-14",
+        "dateModified": "2026-11-14",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-14-morning-canvas-speech-island-jit/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор gpucanvas, Haru, islandcn и relax по данным GitHub API на 14 ноября 2026, 06:13 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 14.11.2026, 06:13:51 МСК. Это снимок на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "14 ноября 2026, утро", "item": "https://snezhko.ru/radar/blog/2026-11-14-morning-canvas-speech-island-jit/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">14 ноября 2026, утро · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar 14 ноября 2026, утро: холст на GPU, живой голос, остров в React и JIT для Rust</h1>
+    <p>Четыре репозитория про то, что видно на экране, что слышно в разговоре и как быстро правка доходит до уже запущенной программы. <a href="https://github.com/berkantay/gpucanvas">berkantay/gpucanvas</a> кладёт тысячи живых DOM-узлов на бесконечный холст: рисует GPU, редактор выбирает и двигает, агент читает короткое дерево и указывает на элементы. Демо — <a href="https://berkantay.github.io/gpucanvas/">berkantay.github.io/gpucanvas</a>. <a href="https://github.com/higurashi-ai/Haru">higurashi-ai/Haru</a> — речевая модель полного дуплекса: слушает и говорит в одном кадре 133 мс, веса <a href="https://huggingface.co/higurashi-ai/Haru-4B">Haru-4B</a>. <a href="https://github.com/opencoredev/islandcn">opencoredev/islandcn</a> — компонент в духе Dynamic Island для React, ставится через shadcn, сайт <a href="https://islandcn.dev">islandcn.dev</a>. <a href="https://github.com/makepad/relax">makepad/relax</a> — живой компилятор и JIT для Rust: функция собирается при первом вызове, правка тела вшивается в уже идущий процесс. Последний push в МСК: gpucanvas — 14.11.2026, 01:34:16; Haru — 13.11.2026, 09:21:17; islandcn — 13.11.2026, 18:14:36; relax — 14.11.2026, 04:52:25. Число звёзд — данные GitHub API на 14.11.2026, 06:13:51 МСК, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 14 ноября 2026</h2>
+    <p class="meta">Снимок на 14.11.2026, 06:13:51 МСК. Время push переведено из UTC в МСК (UTC+3).</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что делает</th><th>Язык</th><th>Лицензия</th><th>★</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/berkantay/gpucanvas">berkantay/gpucanvas</a></td>
+          <td>Тысячи живых DOM-узлов на бесконечном холсте: GPU рисует, редактор двигает, агент читает дерево и указывает</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>196</td>
+          <td>14.11.2026, 01:34:16</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/higurashi-ai/Haru">higurashi-ai/Haru</a></td>
+          <td>Речевая модель полного дуплекса Haru-4B: слушает и говорит одновременно, кадр 133 мс</td>
+          <td>Python</td>
+          <td>Apache-2.0</td>
+          <td>227</td>
+          <td>13.11.2026, 09:21:17</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/opencoredev/islandcn">opencoredev/islandcn</a></td>
+          <td>Компонент в духе Dynamic Island для React. Установка через shadcn, движок на React</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>337</td>
+          <td>13.11.2026, 18:14:36</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/makepad/relax">makepad/relax</a></td>
+          <td>Живой компилятор и JIT для Rust: запуск из исходников, горячая правка функции в уже идущем процессе</td>
+          <td>Rust</td>
+          <td>MIT</td>
+          <td>496</td>
+          <td>14.11.2026, 04:52:25</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: <code>language</code>, <code>license.spdx_id</code>, <code>stargazers_count</code>, <code>pushed_at</code>, <code>archived</code>, <code>created_at</code>. Снимок на 14.11.2026, 06:13:51 МСК. Архивными эти четыре репозитория на момент снимка не были. Дата и время push в таблице — поле <code>pushed_at</code>, переведённое из UTC в МСК (UTC+3). У gpucanvas метка <code>2026-11-13T22:34:16Z</code> даёт 14.11.2026, 01:34:16 МСК. У Haru <code>2026-11-13T06:21:17Z</code> — 13.11.2026, 09:21:17 МСК. У islandcn <code>2026-11-13T15:14:36Z</code> — 13.11.2026, 18:14:36 МСК. У relax <code>2026-11-14T01:52:25Z</code> — 14.11.2026, 04:52:25 МСК. Создание в МСК: gpucanvas — 13.11.2026, 02:19:42 (<code>2026-11-12T23:19:42Z</code>); Haru — 12.11.2026, 14:15:42 (<code>2026-11-12T11:15:42Z</code>); islandcn — 13.11.2026, 14:50:50 (<code>2026-11-13T11:50:50Z</code>); relax — 11.11.2026, 22:12:58 (<code>2026-11-11T19:12:58Z</code>). Лицензии: MIT у gpucanvas, islandcn и relax, Apache-2.0 у Haru. Звёзды в таблице — снимок на 14.11.2026, 06:13:51 МСК: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>gpucanvas: живые экраны на холсте, агент указывает</h2>
+    <p><a href="https://github.com/berkantay/gpucanvas">berkantay/gpucanvas</a> в описании GitHub кладёт тысячи живых DOM-узлов на бесконечный холст. GPU их рисует, редактор выбирает, двигает и меняет размер, на узлах работают шейдеры и переходы, а ИИ-агент может прочитать холст и указать на элемент. Демо README открывает в Chrome 157 и новее: <a href="https://berkantay.github.io/gpucanvas/">berkantay.github.io/gpucanvas</a>. Статус в README — ранняя версия 0.4, API ещё может измениться. Установка пакета: <code>npm install gpucanvas</code>. Узлы остаются настоящим DOM: состояние React, события, CSS и доступность работают как обычно. Где есть WebGPU и HTML-in-Canvas, узлы попадают в атлас и рисуются одним instanced-вызовом. Иначе тот же API рисует запасной путь через CSS-transform.</p>
+    <p>Редактор подключается через <code>bindEditor</code>: клик выбирает слой, двойной клик спускается глубже, перетаскивание двигает с привязкой к соседям. Встроенные эффекты README перечисляет по именам: <code>glass</code>, <code>frost</code>, <code>shockwave</code>, <code>glitch</code>, <code>vhs</code> и другие, свой эффект — функция WGSL. Вид для агента, <code>createAgentView</code>, отдаёт то, что в кадре, коротким JSON с id, ролью и прямоугольником, и умеет снять регион в картинку. Снимок региона README относит к GPU-пути. Пометки — стрелки, булавки, заметки и курсоры — лежат слоем SVG и HTML и работают на обоих путях отрисовки. В README есть таблица замера версии 0.1: Mac на чипе M, Chrome 157, окно 1600×900, DPR 1, 5 000 экранов, средний fps 117 у gpucanvas и 23 у DOM-пути. Этот выпуск демо и замер не запускал.</p>
+    <p>Кому: тем, кто держит много живых экранов на одном холсте и хочет, чтобы агент читал их как дерево с координатами, а не как скриншот всей страницы. На что смотреть: язык по API — TypeScript, лицензия MIT, 196 звёзд, push 14.11.2026, 01:34:16 МСК. Репозиторий создан 13.11.2026, 02:19:42 МСК. На момент снимка он не был архивным. Firefox, Safari и браузеры iPhone и iPad, по README, HTML-in-Canvas пока не имеют и открывают DOM-версию. На телефоне README уменьшает число экранов, чтобы вкладка не умерла от памяти.</p>
+
+    <h2>Haru: слушает и говорит в одном кадре</h2>
+    <p><a href="https://github.com/higurashi-ai/Haru">higurashi-ai/Haru</a> в описании GitHub — речевая модель с малой задержкой, несколькими языками и полным дуплексом: слушает и говорит одновременно, как в телефонном разговоре. В репозитории код инференса Haru-4B, предобученной базовой модели. Три реализации читают один чекпоинт <a href="https://huggingface.co/higurashi-ai/Haru-4B">higurashi-ai/Haru-4B</a>: PyTorch в <code>haru/</code>, MLX для Apple silicon в <code>haru_mlx/</code> и плагин vLLM-Omni в <code>haru_vllm/</code>. Каждые 133 мс модель принимает один кадр звука пользователя и выдаёт свой кадр звука и текста. README перечисляет языки: английский, испанский, португальский, немецкий, французский, китайский, японский, русский и корейский. Характер задаёт текстовая карточка, голос — короткий референс.</p>
+    <p>Быстрый старт README для NVIDIA, около 12 ГБ памяти: <code>pip install -e ./haru</code> и <code>python -m haru.server --hf-repo higurashi-ai/Haru-4B</code>, затем страница <code>http://localhost:8998</code>. Микрофон браузер отдаёт странице на <code>localhost</code> или по HTTPS. Голосовых клипов в поставке нет: свой клип, один говорящий, от 3 секунд до 3 минут. README просит использовать только голоса, на которые есть право. Для малой задержки README рекомендует проводные наушники и проводной микрофон: Bluetooth, по тексту README, добавляет 100 мс и больше. На Mac с Apple silicon README собирает нативное приложение из <code>haru_mlx/swift</code>. Ограничение README прямое: Haru-4B — базовая модель для исследований. Разговор она держит, источником фактов README её не называет и следование инструкциям как у ассистента не обещает. Лицензия кода и весов в README — Apache License 2.0.</p>
+    <p>Кому: тем, кто смотрит полный дуплекс речи с кадром 133 мс и отдельными путями под NVIDIA, Apple silicon и vLLM, и кто читает ограничение про исследовательскую базовую модель до того, как звать её ассистентом. На что смотреть: язык по API — Python, лицензия Apache-2.0, 227 звёзд, push 13.11.2026, 09:21:17 МСК. Репозиторий создан 12.11.2026, 14:15:42 МСК. На момент снимка он не был архивным. Этот выпуск сервер и модель не запускал.</p>
+
+    <h2>islandcn: остров статуса в React</h2>
+    <p><a href="https://github.com/opencoredev/islandcn">opencoredev/islandcn</a> в описании GitHub — Dynamic Island с открытым кодом для React, установка через shadcn. Сайт — <a href="https://islandcn.dev">islandcn.dev</a>. Команда из README: <code>npx shadcn@latest add https://islandcn.dev/r/island-core.json</code>. Один остров наверху приложения показывает загрузку, таймер, трек, поездку, входящий звонок или запись. Активность стартует из любого компонента внутри <code>IslandProvider</code> через <code>useIsland()</code>: у активности есть компактный и развёрнутый вид, её можно обновить и завершить.</p>
+    <p>Движок README кладёт в <code>lib/island/</code>: стек активностей, четыре показа (idle, compact, split, expanded), пружины, подобранные по покадровым записям настоящего острова, долгое нажатие, алерты и reduced motion. Движок — только React. Пресеты лежат отдельно, каждый одним файлом: загрузка, таймер, «сейчас играет», звонок, ETA поездки или доставки, запись, передача рядом, батарея и split. Площадка <code>/playground</code> собирает остров из пресета или пустой активности и копирует команду установки. Для кодинг-агентов README указывает необязательный пункт реестра <code>islandcn-skill</code>, описание на <code>/docs/agent-skill</code>. Записи, по которым подогнали движение, в репозиторий не входят: <code>/compare</code> в README сравнивать не с чем, тест, который их читает, пропускается. Лицензия MIT. README пишет, что это копия вида и движения острова Apple, без ассетов Apple, и что проект с Apple не связан. Dynamic Island README называет товарным знаком Apple Inc.</p>
+    <p>Кому: тем, кто хочет один островок статуса в своём React-приложении и ставит его как компонент shadcn, с отдельным скиллом для агента по желанию. На что смотреть: язык по API — TypeScript, лицензия MIT, 337 звёзд, push 13.11.2026, 18:14:36 МСК. Репозиторий создан 13.11.2026, 14:50:50 МСК. На момент снимка он не был архивным. Этот выпуск команду <code>shadcn</code> не запускал.</p>
+
+    <h2>relax: Rust без ожидания полной сборки</h2>
+    <p><a href="https://github.com/makepad/relax">makepad/relax</a> в описании GitHub — Relax Rust JIT. README точнее: живой компилятор и JIT-рантайм для Rust, написанный на Rust. Программа запускается из исходников пакета Cargo. В цикле нет rustc, LLVM и линкера: функция компилируется при первом вызове, горячие функции оптимизируются, пока программа идёт, правка вшивается в уже запущенный процесс. Предупреждение README в начале файла: это эксперимент для цикла разработки — запуск, тесты и правка на живую. То, что уходит в релиз, README предлагает собирать самим Rust: <code>cargo build --release</code> и rustc. Пока, пишет README, проверку вели в основном в цикле правки Makepad и лишь слегка на других проектах.</p>
+    <p>Сборка из свежего клона в README: <code>cargo build --release --manifest-path relax/Cargo.toml -p relax-runner --bin relax</code>, затем <code>relax run</code>, <code>relax test</code> и <code>relax check</code> по имени пакета. Самому бинарнику README достаточно стабильного Rust и ничего с crates.io. Кодогенерация — x86-64 и AArch64. README пишет, что со свежего клона репозиторий собирается и тесты проходят на Linux x86-64 и macOS arm64. Windows README не проверял. Тело функции патчится на живую. Смена раскладки структуры, импорта, заголовка трейта или impl, а также макроса ждёт перезапуска: <code>relax inspect &lt;pid&gt; session relaunch</code>. Открытые пробелы README собирает в <code>libs/relax/KNOWN_GAPS.md</code>. В таблице README большой 3D-игре со свежего состояния до первого кадра отведено около 3 минут сборки у cargo и rustc и 11 секунд у Relax на MacBook M4. Там же скорость уже оптимизированного кода: в среднем по 21 нагрузке Relax медленнее rustc <code>--release</code>, 1,12× по времени на x64 и 1,24× на arm64, замер README датирует 2026-11-12. Этот выпуск эти цифры не повторял.</p>
+    <p>Кому: тем, кто крутит цикл правки Rust и хочет компилировать вызванную функцию, а не весь крейт заранее, и кто читает предупреждение про экспериментальный статус до того, как заменить этой сборкой релизный <code>cargo build --release</code>. На что смотреть: язык по API — Rust, лицензия MIT, 496 звёзд, push 14.11.2026, 04:52:25 МСК. Репозиторий создан 11.11.2026, 22:12:58 МСК. На момент снимка он не был архивным. Этот выпуск <code>relax run</code> не запускал.</p>
+
+    <h2>Что из этого следует</h2>
+    <p>Утренний набор про четыре разные задачи, а не про один продукт. gpucanvas рисует живые DOM-экраны на холсте WebGPU и отдаёт агенту JSON того, что в кадре, плюс снимок региона на GPU-пути. Демо README открывает в Chrome 157 и новее. Firefox, Safari и браузеры iPhone и iPad идут запасным DOM-путём. Статус 0.4. Лицензия MIT, 196 звёзд, push 14.11.2026, 01:34:16 МСК. Замер fps в таблице README этот выпуск не повторял. Haru слушает и говорит в одном кадре 133 мс. В списке языков README есть русский. Три реализации читают один чекпоинт Haru-4B. Быстрый старт README — NVIDIA и около 12 ГБ памяти. README прямо пишет, что это базовая модель для исследований: источником фактов она там не названа. Лицензия Apache-2.0, 227 звёзд, push 13.11.2026, 09:21:17 МСК. islandcn ставит один остров статуса в React через shadcn. Записей, по которым подогнали пружины, в репозитории нет. README отделяет проект от Apple и называет Dynamic Island товарным знаком Apple. Лицензия MIT, 337 звёзд, push 13.11.2026, 18:14:36 МСК. relax гоняет Rust из исходников и вшивает правку тела функции в живой процесс. README относит его к циклу разработки и просит релиз собирать через <code>cargo build --release</code>. Windows в README не проверен. Лицензия MIT, 496 звёзд, push 14.11.2026, 04:52:25 МСК. Ни один из четырёх на момент снимка не был архивным. Число звёзд — снимок публичного API GitHub на 14.11.2026, 06:13:51 МСК.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 14.11.2026, 06:13:51 МСК. Это снимок на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
