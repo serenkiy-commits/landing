@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Запись вкладки, панель серверов, чат DeepSeek и лента X, день 14 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор paulirish/chrome-capture, serveroshq/panel, deepseek-ai/chat-demo и yetone/rewind-for-x. Звёзды, лицензии и дата push сняты с GitHub 14 ноября 2026, 11:04 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-14-midday-selfhost-browser-tools/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-14-midday-selfhost-browser-tools/">
+  <meta property="og:title" content="Запись вкладки, свои серверы, чат и лента X: дневной выпуск 14 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar 14 ноября 2026 — дневной выпуск: запись вкладки Chrome, панель своих серверов, чат DeepSeek и откат ленты X",
+        "datePublished": "2026-11-14",
+        "dateModified": "2026-11-14",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-14-midday-selfhost-browser-tools/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор chrome-capture, panel, chat-demo и rewind-for-x по данным GitHub API на 14 ноября 2026, 11:04:51 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 14.11.2026, 11:04:51 МСК. Это снимок на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "14 ноября 2026, день", "item": "https://snezhko.ru/radar/blog/2026-11-14-midday-selfhost-browser-tools/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">14 ноября 2026, день · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar 14 ноября 2026 — дневной выпуск: запись вкладки Chrome, панель своих серверов, чат DeepSeek и откат ленты X</h1>
+    <p>Четыре репозитория про вкладку браузера и про Linux-серверы, которые уже есть. <a href="https://github.com/paulirish/chrome-capture">paulirish/chrome-capture</a> пишет вкладку Chrome в AV1 <code>.mp4</code>: 60–120 fps, до 2160p, со звуком вкладки, без ffmpeg. Демо README — <a href="https://paulirish.github.io/chrome-capture/">paulirish.github.io/chrome-capture</a>. <a href="https://github.com/serveroshq/panel">serveroshq/panel</a> — веб-панель ServerOS для своих Linux-серверов. На каждой машине отдельно работает демон <a href="https://github.com/serveroshq/daemon">serverosd</a>, сайт панели — <a href="https://serveros.com">serveros.com</a>. <a href="https://github.com/deepseek-ai/chat-demo">deepseek-ai/chat-demo</a> — статичный чат к API DeepSeek: своего бэкенда в репозитории нет, браузер ходит в настроенный сервис напрямую. Демо — <a href="https://deepseek-ai.github.io/chat-demo/">deepseek-ai.github.io/chat-demo</a>. <a href="https://github.com/yetone/rewind-for-x">yetone/rewind-for-x</a> — расширение Chrome: посты домашней ленты X, которые уже прошли по экрану. Сайт — <a href="https://rewindforx.com">rewindforx.com</a>. Последний push в МСК: chrome-capture — 11.11.2026, 04:40:29; panel — 14.11.2026, 09:41:44; chat-demo — 13.11.2026, 17:33:08; rewind-for-x — 10.11.2026, 12:12:24. Число звёзд — данные GitHub API на 14.11.2026, 11:04:51 МСК, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 14 ноября 2026</h2>
+    <p class="meta">Снимок на 14.11.2026, 11:04:51 МСК. Время push переведено из UTC в МСК (UTC+3).</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что делает</th><th>Язык</th><th>Лицензия</th><th>★</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/paulirish/chrome-capture">paulirish/chrome-capture</a></td>
+          <td>Запись вкладки Chrome в AV1 mp4: 60–120 fps, до 2160p, со звуком вкладки, без ffmpeg</td>
+          <td>TypeScript</td>
+          <td>Apache-2.0</td>
+          <td>441</td>
+          <td>11.11.2026, 04:40:29</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/serveroshq/panel">serveroshq/panel</a></td>
+          <td>Панель для своих Linux-серверов: машины, деплой, бэкапы, логи, команды и API</td>
+          <td>PHP</td>
+          <td>AGPL-3.0</td>
+          <td>761</td>
+          <td>14.11.2026, 09:41:44</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/deepseek-ai/chat-demo">deepseek-ai/chat-demo</a></td>
+          <td>Статичный чат к API DeepSeek. Ключ и переписка остаются в браузере</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>1210</td>
+          <td>13.11.2026, 17:33:08</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/yetone/rewind-for-x">yetone/rewind-for-x</a></td>
+          <td>Расширение Chrome: посты домашней ленты X, которые уже прошли по экрану</td>
+          <td>JavaScript</td>
+          <td>MIT</td>
+          <td>413</td>
+          <td>10.11.2026, 12:12:24</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: <code>description</code>, <code>language</code>, <code>license.spdx_id</code>, <code>stargazers_count</code>, <code>pushed_at</code>, <code>archived</code>, <code>created_at</code>. Снимок на 14.11.2026, 11:04:51 МСК. Архивными эти четыре репозитория на момент снимка не были. Дата и время push в таблице — поле <code>pushed_at</code>, переведённое из UTC в МСК (UTC+3). У chrome-capture метка <code>2026-11-11T01:40:29Z</code> даёт 11.11.2026, 04:40:29 МСК. У panel <code>2026-11-14T06:41:44Z</code> — 14.11.2026, 09:41:44 МСК. У chat-demo <code>2026-11-13T14:33:08Z</code> — 13.11.2026, 17:33:08 МСК. У rewind-for-x <code>2026-11-10T09:12:24Z</code> — 10.11.2026, 12:12:24 МСК. Создание в МСК: chrome-capture — 08.11.2026, 23:07:38 (<code>2026-11-08T20:07:38Z</code>); panel — 09.11.2026, 03:47:33 (<code>2026-11-09T00:47:33Z</code>); chat-demo — 12.11.2026, 11:08:19 (<code>2026-11-12T08:08:19Z</code>); rewind-for-x — 09.11.2026, 12:28:22 (<code>2026-11-09T09:28:22Z</code>). Лицензии: Apache-2.0 у chrome-capture, AGPL-3.0 у panel, MIT у chat-demo и rewind-for-x. Звёзды в таблице — снимок на 14.11.2026, 11:04:51 МСК: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>chrome-capture: вкладка Chrome сразу в AV1</h2>
+    <p><a href="https://github.com/paulirish/chrome-capture">paulirish/chrome-capture</a> в описании GitHub снимает вкладку Chrome: 60–120 fps, до 2160p, видео и звук. README уточняет контейнер: AV1 в <code>.mp4</code>, звук вкладки, без ffmpeg. Демо README открывает на <a href="https://paulirish.github.io/chrome-capture/">paulirish.github.io/chrome-capture</a>. Команда из README: <code>npx chrome-capture https://paulirish.github.io/chrome-capture/ demo.mp4 4s</code>. README относит запись к Chrome 153 и новее и к методу DevTools <code>Page.startScreenRecording</code>: кадры идут от композитора к кодеру вне процесса, Chrome пишет AV1 в mp4 по ходу и может добавить звук вкладки. Остановка короткая, потому что кодирование уже идёт во время съёмки. Старый путь README описывает у Playwright <code>recordVideo</code> и Puppeteer <code>page.screencast()</code>: JPEG-кадр через CDP, затем сборка ffmpeg. Этот выпуск оба пути не запускал.</p>
+    <p><code>startRecording()</code> в README принимает страницу Playwright, страницу Puppeteer или сессию CDP. В примере по умолчанию 60 fps, ширина до 1280 и высота до 720. Звук в комментарии к примеру — стерео Opus 48 кГц, в показанном вызове поле <code>audio</code> выключено. CLI README пишет звук по умолчанию и запускает headless, пока fps не выше 60. На macOS при <code>--fps</code> выше 60 CLI переключается в headful, чтобы Chrome сел на 120 Гц ProMotion. Для <code>@playwright/test</code> README даёт фикстуру <code>screenRecordingFixture</code>: она пишет каждый тест и прикладывает mp4 к отчёту. Таблица замера в README сравнивает один прогон интерфейса длительностью 6,4 с при 1280×800 на M4 Max. У <code>recordVideo</code> полное время 21 с и финализация 3 800 мс, у chrome-capture 11 с и 17 мс. Там же трафик WebSocket 10,5 МБ и 450 КБ, файл 480 КБ и 330 КБ, PSNR 32 дБ и 34 дБ. Регулятора битрейта и CRF README нет. Кодирование README описывает как libaom AV1, realtime, один проход, VBR, и приводит шкалу: 2 Мбит/с на 720p30, 9 Мбит/с на 1080p60, 18 Мбит/с на 1080p120, 72 Мбит/с на 2160p120. Пометка README от 10 ноября указывает открытый PR Playwright про <code>Page.startScreenRecording</code>. Статус этого PR выпуск не проверял. Экспериментальный <code>page.record()</code> README относит к Puppeteer v25.10 и новее.</p>
+    <p>Кому: тем, кто снимает вкладку Chrome в mp4 для демо или теста и хочет файл AV1 из композитора. На что смотреть: язык по API — TypeScript, лицензия Apache-2.0, 441 звезда, push 11.11.2026, 04:40:29 МСК. Репозиторий создан 08.11.2026, 23:07:38 МСК. На момент снимка он не был архивным. README пишет потолок так: headless на Mac держит 2160p при 60 fps, headful на 120 Гц ProMotion — 1080p и 2160p при 120 fps (в тексте README 119,9 fps), headless Linux без GPU — 1080p при 60 fps или 1440p около 58 уникальных fps. Строку про Windows и Linux с дискретной GPU README оставляет вопросом. На Mac с GPU README просит не передавать <code>--disable-frame-rate-limit</code> и <code>--disable-gpu-vsync</code>: <code>requestAnimationFrame</code> уходит в 1 600–9 800 fps, и съёмка 2160p при 60 fps в том же абзаце падает до 0,3 fps. Замер из таблицы README этот выпуск не повторял.</p>
+
+    <h2>panel: свои Linux-серверы в одной панели</h2>
+    <p><a href="https://github.com/serveroshq/panel">serveroshq/panel</a> в описании GitHub — открытая панель ServerOS: одно место для Linux-серверов, которые уже есть. README отделяет роли. Этот репозиторий — веб-панель, в которой работают человек и команда. На каждом сервере README ставит демон <a href="https://github.com/serveroshq/daemon">serverosd</a>, с ним панель и говорит. <a href="https://serveros.com">serveros.com</a> README называет тем же самым приложением, только как хостинг. Список README: машины с CPU, памятью, диском и обновлениями; сервисы и проекты из Git или шаблона, с доменами, HTTPS и копией на тест; бэкапы по расписанию, проверки доступности, страницы статуса и логи; шаги по расписанию, по push или вручную; участники, роли, вход с вторым фактором и журнал действий; MCP-сервер и API для своих инструментов.</p>
+    <p>Для своей установки README просит Linux, Docker, открытые порты 80, 443 и 8443 и домен с двумя A-записями: на имя панели и на <code>*.</code> этого имени. Пример в README — <code>panel.example.com</code>. Команда установки скачивает <code>docker/self-hosted/install.sh</code> и запускает его через <code>sudo bash</code>. README пишет, что скрипт ставит Docker, если его нет, запускает образ <code>ghcr.io/serveroshq/panel</code> и печатает код настройки. Дальше машины подключают из раздела Machines: демон на сервере сам выходит к панели на порт 8443. Таблица редакций в README делит поставку на три строки. Сборка community из этого репозитория — панель, лицензия AGPL-3.0. Официальный образ — панель плюс <code>serveroshq/panel-ee</code>, и panel-ee выключен, пока нет лицензионного ключа. <a href="https://serveros.com">serveros.com</a> README помечает как платную услугу. Без ключа образ, по README, работает как community. Ключ включает единый вход, SCIM, свои роли, свои домены и остальные платные функции. Разработка в README: PHP 8.4, Composer, Node 22 и npm, SQLite из коробки, команды <code>composer setup</code> и <code>composer dev</code>. Имя и логотип README выносит из AGPL: это товарные знаки ServerOS Cloud Ltd, текст в <code>TRADEMARKS.md</code>.</p>
+    <p>Кому: тем, у кого Linux-серверы уже лежат у своего провайдера и нужна одна веб-панель на деплой, бэкапы, логи и API, и кто до открытия панели в сеть прочитал AGPL-3.0. На что смотреть: язык по API — PHP, лицензия AGPL-3.0, 761 звезда, push 14.11.2026, 09:41:44 МСК. Репозиторий создан 09.11.2026, 03:47:33 МСК. На момент снимка он не был архивным. Установщик README — удалённый скрипт от root. Рядом README указывает <code>docs/self-hosting.md</code>: сборка community своими руками, установка без Docker и анонимный ежедневный ping с способом его выключить. Текст пинга этот выпуск не разбирал. Условия panel-ee README относит к отдельному документу, не к AGPL панели. Первый вклад README просит закрывать комментарием с CLA. Этот выпуск панель не разворачивал.</p>
+
+    <h2>chat-demo: чат DeepSeek без своего бэкенда</h2>
+    <p><a href="https://github.com/deepseek-ai/chat-demo">deepseek-ai/chat-demo</a> в описании GitHub назван коротко: Chat Demo. README длиннее: статичный чат на API DeepSeek. Своего бэкенда приложения нет, браузер ходит напрямую в настроенный сервис. Онлайн-демо README открывает на <a href="https://deepseek-ai.github.io/chat-demo/">deepseek-ai.github.io/chat-demo</a>. Архив для локального запуска README отправляет в релизы по адресу <code>github.com/deepseek-ai/deepseek-chat-demo</code>: распаковать и открыть <code>index.html</code>. Ключ API README просит ввести в настройках до первого сообщения. Локальная разработка: Node.js 22.12 и новее, pnpm, <code>pnpm install</code>, <code>pnpm dev</code>, страница <code>http://localhost:8090</code>. Сборка <code>pnpm build</code> пишет статику в <code>dist/</code>.</p>
+    <p>Ключ и настройки README кладёт в <code>localStorage</code>. Переписки и исходные вложения — в IndexedDB. Данные изолированы профилем браузера и origin сайта. Отправка сообщений, загрузка вложений и речевые функции передают соответствующее содержимое в настроенный API. Список возможностей README: несколько диалогов с автозаголовком, правка запроса, повтор ответа и ветки сообщений; поток ответа, режим размышления, поиск, чтение ссылок и ссылки на источники; вложения файлом, вставкой или перетаскиванием; голосовой ввод и чтение ответа вслух; Markdown, подсветка кода, формулы KaTeX и схемы Mermaid; упрощённый китайский и английский, светлая и тёмная тема, мобильная вёрстка, импорт и экспорт истории в ZIP. Импорт после подтверждения заменяет все локальные диалоги и вложения. Экспорт забирает диалоги и локально доступные исходные картинки и не включает ключ, настройки и исходные вложения не-картинки. Удаление всех чатов в настройках сохраняет ключ и настройки и не удаляет файлы, уже отправленные в API. В <code>rspack.config.ts</code> README указывает origin по умолчанию <code>https://api.deepseek.com</code>. Чат по умолчанию идёт в модель <code>deepseek-flash</code> через Messages и Files API, совместимые с Anthropic. Речь ходит в конечные точки ASR и TTS. Запросы несут расширения для поиска, чтения ссылок, заголовков и <code>latest_reminder</code>, поэтому сервис должен эти возможности поддерживать. Форматы вложений README отдаёт на проверку серверу.</p>
+    <p>Кому: тем, кто хочет статичную оболочку чата DeepSeek у себя в браузере и готов держать ключ API на стороне клиента. На что смотреть: язык по API — TypeScript, лицензия MIT, 1210 звёзд, push 13.11.2026, 17:33:08 МСК. Репозиторий создан 12.11.2026, 11:08:19 МСК. На момент снимка он не был архивным. Ключ лежит в <code>localStorage</code> этого origin: отдельного сервера, который прятал бы ключ, в репозитории нет. Прямое открытие <code>index.html</code> с диска README связывает с поддержкой хранилища на страницах <code>file://</code> и с API, который пускает такие запросы с другого origin. Языки интерфейса в README — упрощённый китайский и английский. Лицензию MIT сборка копирует в <code>dist/LICENSE</code>. Этот выпуск <code>pnpm dev</code> не запускал и содержимое репозитория релизов не сверял.</p>
+
+    <h2>rewind-for-x: что уже проскроллилось в ленте X</h2>
+    <p><a href="https://github.com/yetone/rewind-for-x">yetone/rewind-for-x</a> в описании GitHub — расширение Chrome: посмотреть посты, которые уже ушли с домашней ленты X. README по-китайски описывает правило записи. Пост считается увиденным, когда больше половины его высоты попало на экран. Расширение запоминает автора, текст, картинки, цитату, авторов репоста и ссылки. Пишет только домашнюю ленту: рекомендации и подписки. Рекламу, страницу одного поста и профиль README в запись не включает. Открыть список можно кнопкой справа снизу, над кнопкой Grok и чата на X, иконкой на панели или сочетанием <code>Alt+Shift+R</code>. Свежие записи сверху, группы по отрезку просмотра. Поиск по словам и фильтры по картинке, видео, цитате и репосту. Для китайского README отдельно пишет, что запрос находится и с пробелами, и без. Клик по посту открывает новую вкладку, чтобы домашняя лента не перезагрузилась. На узком экране ящик занимает весь экран, а кнопка обходит нижнюю панель вкладок и кнопку нового поста.</p>
+    <p>Данные README оставляет на машине: <code>chrome.storage.local</code>, не больше 3000 записей, очистка одной кнопкой. Поиск текста на картинках выключен, пока его не включат. Распознавание README относит к этой же машине. При первом включении скачиваются данные распознавания, README оценивает их в несколько мегабайт. В каталоге <code>ocr/</code> README называет Tesseract.js 7 с лицензией Apache-2.0, страница offscreen, данные с jsDelivr, хранение в IndexedDB. Установка — из Chrome Web Store по ссылке в README или распакованной папкой через <code>chrome://extensions</code> и режим разработчика, затем обновить <code>x.com/home</code>. Тесты README гоняет на Playwright и Chromium по странице, которая имитирует разметку X, а не по живому сайту: <code>node test/e2e.mjs</code>, <code>node test/mobile.mjs</code>, <code>node test/ocr.mjs</code>. Последнему нужно сеть, чтобы скачать данные распознавания. Скриншоты для магазина README помечает как вымышленные посты. Сайт <a href="https://rewindforx.com">rewindforx.com</a> лежит в <code>site/</code>, выкладка README — <code>npx wrangler deploy</code>. README прямо пишет, что это не продукт X и к X Corp. проект отношения не имеет.</p>
+    <p>Кому: тем, кто теряет пост домашней ленты X после обновления страницы и хочет локальный список уже увиденного, с поиском по тексту и по желанию по тексту на картинке. На что смотреть: язык по API — JavaScript, лицензия MIT, 413 звезды, push 10.11.2026, 12:12:24 МСК. Репозиторий создан 09.11.2026, 12:28:22 МСК. На момент снимка он не был архивным. Запись сидит на разметке <code>x.com</code>: смена вёрстки ленты может оборвать сбор. В локальное хранилище попадают текст поста и связанные поля, потолок README — 3000 записей. Распознавание картинок при первом включении качает данные с jsDelivr. Лицензия самого репозитория по API — MIT, библиотеку OCR README указывает отдельно как Apache-2.0. Этот выпуск расширение и тесты не запускал.</p>
+
+    <h2>Что из этого следует</h2>
+    <p>Дневной набор про четыре разные задачи. chrome-capture пишет вкладку Chrome в AV1 <code>.mp4</code> методом <code>Page.startScreenRecording</code>, который README относит к Chrome 153 и новее. Выше 60 fps на Mac README требует headful и дисплей 120 Гц. Регулятора битрейта в README нет. Цифры таблицы замера на M4 Max этот выпуск не повторял. Лицензия Apache-2.0, 441 звезда, push 11.11.2026, 04:40:29 МСК. panel — веб-панель для своих Linux-серверов, демон на машине ходит к ней на порт 8443. Community-сборка в README под AGPL-3.0. Официальный образ держит panel-ee выключенным до ключа, а serveros.com README помечает как платную услугу. Установщик — удалённый скрипт от root. Лицензия по API — AGPL-3.0, язык PHP, 761 звезда, push 14.11.2026, 09:41:44 МСК. chat-demo — статичный чат: ключ в <code>localStorage</code>, переписка в IndexedDB, запросы уходят в настроенный API. По умолчанию README ставит <code>https://api.deepseek.com</code> и модель <code>deepseek-flash</code>. Языки интерфейса в README — упрощённый китайский и английский. Лицензия MIT, 1210 звёзд, push 13.11.2026, 17:33:08 МСК. rewind-for-x пишет посты домашней ленты X, когда больше половины поста было на экране, и хранит до 3000 записей в <code>chrome.storage.local</code>. README отделяет проект от X Corp. Распознавание текста на картинках качает данные с jsDelivr. Лицензия MIT, 413 звезды, push 10.11.2026, 12:12:24 МСК. Ни один из четырёх на момент снимка не был архивным. Число звёзд — снимок публичного API GitHub на 14.11.2026, 11:04:51 МСК.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 14.11.2026, 11:04:51 МСК. Это снимок на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
