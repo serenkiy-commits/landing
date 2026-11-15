@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Детектор ИИ-картинок, 3D-скан, WebGPU-сад и нейрорендер, вечер 15 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор hikaku-io/hikaku-extension, faizfahmi77/ScanDot, Noniv/abyssal-garden и apex-compute/ANR. Звёзды, лицензии и дата push сняты с GitHub 15 ноября 2026, ~21:30 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-15-evening-ai-detect-scan-webgpu/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-15-evening-ai-detect-scan-webgpu/">
+  <meta property="og:title" content="Детектор ИИ-картинок и WebGPU: вечерний выпуск 15 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar — 15 ноября 2026, вечер: детектор ИИ-картинок, 3D-скан на Android, WebGPU-сад и нейрорендер",
+        "datePublished": "2026-11-15",
+        "dateModified": "2026-11-15",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-15-evening-ai-detect-scan-webgpu/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор hikaku-extension, ScanDot, abyssal-garden и ANR по данным GitHub API на 15 ноября 2026, ~21:30 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 15.11.2026, ~21:30 МСК. Это снимок на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "15 ноября 2026, вечер", "item": "https://snezhko.ru/radar/blog/2026-11-15-evening-ai-detect-scan-webgpu/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">15 ноября 2026, вечер · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar — 15 ноября 2026, вечер: детектор ИИ-картинок, 3D-скан на Android, WebGPU-сад и нейрорендер</h1>
+    <p>Четыре репозитория вечернего снимка. <a href="https://github.com/hikaku-io/hikaku-extension">hikaku-io/hikaku-extension</a> — расширение браузера, которое при просмотре помечает признаки сгенерированных ИИ картинок и видео. <a href="https://github.com/faizfahmi77/ScanDot">faizfahmi77/ScanDot</a> — экспериментальный 3D-скан облака точек на Android. <a href="https://github.com/Noniv/abyssal-garden">Noniv/abyssal-garden</a> — подводный мир в одном HTML на WebGPU. <a href="https://github.com/apex-compute/ANR">apex-compute/ANR</a> описывает нейрорендер кадров; README пишет, что исходный код ещё coming soon, лицензия в репозитории не указана. Число звёзд — данные GitHub API на 15.11.2026, ~21:30 МСК, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 15 ноября 2026</h2>
+    <p class="meta">Данные GitHub API на 15.11.2026, ~21:30 МСК. Время push дано в МСК (UTC+3).</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что это</th><th>Язык</th><th>Лицензия</th><th>★</th><th>Последний push МСК</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/hikaku-io/hikaku-extension">hikaku-io/hikaku-extension</a></td>
+          <td>Расширение Chrome, Edge и Firefox: признаки ИИ-картинок и видео при просмотре, расчёт на устройстве</td>
+          <td>JavaScript</td>
+          <td>Apache-2.0</td>
+          <td>394</td>
+          <td>14.11.2026, 23:36</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/faizfahmi77/ScanDot">faizfahmi77/ScanDot</a></td>
+          <td>Экспериментальное Android-приложение: 3D-облако точек через камеру и глубину ARCore</td>
+          <td>Kotlin</td>
+          <td>MIT</td>
+          <td>539</td>
+          <td>13.11.2026, 07:27</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/Noniv/abyssal-garden">Noniv/abyssal-garden</a></td>
+          <td>Подводный мир в браузере: всё собрано кодом на WebGPU, один HTML</td>
+          <td>JavaScript</td>
+          <td>MIT</td>
+          <td>922</td>
+          <td>14.11.2026, 20:41</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/apex-compute/ANR">apex-compute/ANR</a></td>
+          <td>Нейрорендер Apex Compute: генерация кадров, суперразрешение, реконструкция лучей. Исходный код не опубликован</td>
+          <td>C++</td>
+          <td>не указана</td>
+          <td>2060</td>
+          <td>15.11.2026, 12:11</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: язык, лицензия, число звёзд, <code>pushed_at</code>, признак архива. Данные GitHub API на 15.11.2026, ~21:30 МСК. Архивными эти четыре репозитория на момент снимка не были. Дата и время push в таблице — поле <code>pushed_at</code> в МСК (UTC+3). У hikaku-extension оно равно 2026-11-14T20:36Z, это 14.11.2026, 23:36 МСК. У ScanDot — 13.11.2026, 07:27 МСК. У abyssal-garden — 14.11.2026, 20:41 МСК. У ANR — 15.11.2026, 12:11 МСК. Лицензия ANR в репозитории не указана. Звёзды в таблице — на момент выпуска: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>hikaku-extension: признаки ИИ-картинок и видео</h2>
+    <p><a href="https://github.com/hikaku-io/hikaku-extension">hikaku-io/hikaku-extension</a> — открытое расширение для Chrome, Edge и Firefox: при просмотре помечает признаки сгенерированных ИИ картинок и видео и показывает, почему появилась пометка. Расчёт идёт на устройстве. Сайт проекта — <a href="https://hikaku.io">hikaku.io</a>; README ссылается на описание архитектуры, документацию моделей и отдельный репозиторий бенчмарка hikaku-bench. Язык JavaScript, лицензия Apache-2.0, 394 звезды, push 14.11.2026, 23:36 МСК; на момент снимка репозиторий не был архивным.</p>
+
+    <h2>ScanDot: облако точек на Android</h2>
+    <p><a href="https://github.com/faizfahmi77/ScanDot">faizfahmi77/ScanDot</a> — экспериментальное приложение Android: снимает и показывает трёхмерное облако точек, используя трекинг камеры и глубину ARCore. Сканы сохраняются на устройстве, просмотр интерактивный; нужен аппарат с ARCore Depth. Фотограмметрия по обычному видео описана отдельно: конвейер на рабочей станции с FFmpeg и COLMAP, само приложение на телефоне его не выполняет. Язык Kotlin, лицензия MIT, 539 звёзд, push 13.11.2026, 07:27 МСК; на момент снимка репозиторий не был архивным.</p>
+
+    <h2>abyssal-garden: подводный мир на WebGPU</h2>
+    <p><a href="https://github.com/Noniv/abyssal-garden">Noniv/abyssal-garden</a> — подводный мир, по которому плывут в браузере: леса ламинарии, солнечные лучи, затонувший корабль и манты. Всё собрано кодом на WebGPU, без файлов картинок, моделей и звука: один HTML около 97 КБ, страница работает офлайн. Нужен WebGPU в настольных Chrome или Edge; демо — <a href="https://noniv.github.io/abyssal-garden/">noniv.github.io/abyssal-garden</a>. Язык JavaScript, лицензия MIT, 922 звезды, push 14.11.2026, 20:41 МСК; на момент снимка репозиторий не был архивным.</p>
+
+    <h2>ANR: нейрорендер кадров</h2>
+    <p><a href="https://github.com/apex-compute/ANR">apex-compute/ANR</a> — Apex Neural Rendering от Apex Compute: генерация кадров ANR FG (бета), суперразрешение SR и реконструкция лучей RR (бета скоро). README пишет, что исходный код — coming soon: на момент снимка он не опубликован, лицензия в репозитории не указана. В составе есть инструмент nr-record: он записывает входы генерации кадров и апскейлера игры, чтобы сравнить ANR FG с DLSS-G, DLSS, FSR и XeSS. Язык C++, 2060 звёзд, push 15.11.2026, 12:11 МСК; на момент снимка репозиторий не был архивным.</p>
+
+    <h2>Вывод</h2>
+    <p>Вечерний набор — четыре разные задачи, и граница каждой взята из описания репозитория. hikaku-extension помечает признаки ИИ-картинок и видео в Chrome, Edge и Firefox и считает это на устройстве; лицензия Apache-2.0, 394 звезды, push 14.11.2026, 23:36 МСК, README отсылает к архитектуре, моделям и бенчмарку hikaku-bench. ScanDot снимает облако точек через трекинг и глубину ARCore и хранит сканы на устройстве: фотограмметрия по обычному видео — отдельный конвейер рабочей станции с FFmpeg и COLMAP, телефону нужен ARCore Depth. Лицензия MIT, язык Kotlin, 539 звёзд, push 13.11.2026, 07:27 МСК. abyssal-garden собирает ламинарии, лучи, затонувший корабль и мант кодом на WebGPU в одном HTML около 97 КБ, без файлов картинок, моделей и звука; страница работает офлайн и просит WebGPU в настольных Chrome или Edge. Лицензия MIT, 922 звезды, push 14.11.2026, 20:41 МСК, демо — <a href="https://noniv.github.io/abyssal-garden/">noniv.github.io/abyssal-garden</a>. ANR описывает генерацию кадров ANR FG (бета), суперразрешение SR, реконструкцию лучей RR (бета скоро) и инструмент nr-record для сравнения входов с DLSS-G, DLSS, FSR и XeSS. Лицензия в репозитории не указана, исходный код README помечает как coming soon и на момент снимка не опубликован. Язык C++, 2060 звёзд, push 15.11.2026, 12:11 МСК. Ни один из четырёх на момент снимка не был архивным. Число звёзд — снимок публичного API GitHub на 15.11.2026, ~21:30 МСК.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 15.11.2026, ~21:30 МСК. Это снимок на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
