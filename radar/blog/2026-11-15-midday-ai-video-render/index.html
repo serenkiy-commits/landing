@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>ИИ-видеоредактор, нарезка клипов, трассировка путей и студия генерации, день 15 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор Forward-Future/scarlet, haziqahmedqasmi/PeakCut, meshy-dev/ThreeRT и nickvasilescu/parallax. Звёзды, лицензии и дата push сняты с GitHub 15 ноября 2026, 11:20 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-15-midday-ai-video-render/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-15-midday-ai-video-render/">
+  <meta property="og:title" content="ИИ-видео и рендер: дневной выпуск 15 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar — 15 ноября 2026, дневной выпуск: ИИ-видео и рендер",
+        "datePublished": "2026-11-15",
+        "dateModified": "2026-11-15",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-15-midday-ai-video-render/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор scarlet, PeakCut, ThreeRT и parallax по данным GitHub API на 15 ноября 2026, 11:20 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 15.11.2026, 11:20 МСК. Это снимок на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "15 ноября 2026, день", "item": "https://snezhko.ru/radar/blog/2026-11-15-midday-ai-video-render/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">15 ноября 2026, день · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar — 15 ноября 2026, дневной выпуск: ИИ-видео и рендер</h1>
+    <p>Четыре репозитория про монтаж речи, нарезку длинного видео, трассировку света и студию генерации. <a href="https://github.com/Forward-Future/scarlet">Forward-Future/scarlet</a> в описании GitHub — ИИ-видеоредактор для macOS и Windows. README шире: открытый редактор для macOS, Windows и Linux. Правку просят у Claude Code или Codex голосом или текстом и смотрят её на таймлайне. <a href="https://github.com/haziqahmedqasmi/PeakCut">haziqahmedqasmi/PeakCut</a> нарезает длинные ролики и прямые эфиры в вертикальные клипы с субтитрами. Запуск на своём компьютере или сервере, ключ ИИ свой. <a href="https://github.com/meshy-dev/ThreeRT">meshy-dev/ThreeRT</a> — трассировщик путей в реальном времени за API в стиле three.js. Движок на Rust и wgpu, пакеты сцены и геймплея на TypeScript. Сайт — <a href="https://threert.dev">threert.dev</a>. <a href="https://github.com/nickvasilescu/parallax">nickvasilescu/parallax</a> — открытая студия картинок, видео и звука с чатом агента. README предлагает вести этот чат своим агентом <a href="https://github.com/NousResearch/hermes-agent">Hermes</a>, в примере — на компьютере Orgo. Последний push в МСК: scarlet — 15.11.2026, 09:31:42; PeakCut — 15.11.2026, 11:15:47; ThreeRT — 15.11.2026, 07:13:18; parallax — 14.11.2026, 03:05:43. Число звёзд — данные GitHub API на момент выпуска, 15.11.2026, 11:20 МСК, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 15 ноября 2026</h2>
+    <p class="meta">Данные GitHub API на 15.11.2026, 11:20 МСК. Время push дано в МСК (UTC+3).</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Описание</th><th>Язык</th><th>Лицензия</th><th>★</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/Forward-Future/scarlet">Forward-Future/scarlet</a></td>
+          <td>ИИ-видеоредактор: правки таймлайна голосом или текстом через Claude Code или Codex</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>255</td>
+          <td>15.11.2026, 09:31:42</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/haziqahmedqasmi/PeakCut">haziqahmedqasmi/PeakCut</a></td>
+          <td>Нарезка длинных видео и эфиров в вертикальные клипы 9:16 с субтитрами, на своём сервере и со своим ключом</td>
+          <td>Python</td>
+          <td>MIT</td>
+          <td>265</td>
+          <td>15.11.2026, 11:15:47</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/meshy-dev/ThreeRT">meshy-dev/ThreeRT</a></td>
+          <td>Трассировщик путей в реальном времени за API в стиле three.js. Движок Rust и wgpu, пакеты сцены на TypeScript</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>373</td>
+          <td>15.11.2026, 07:13:18</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/nickvasilescu/parallax">nickvasilescu/parallax</a></td>
+          <td>Студия картинок, видео и звука с чатом агента, в том числе на своём Hermes</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>108</td>
+          <td>14.11.2026, 03:05:43</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: <code>language</code>, <code>license.spdx_id</code>, <code>stargazers_count</code>, <code>pushed_at</code>, <code>archived</code>. Данные GitHub API на 15.11.2026, 11:20 МСК. Архивными эти четыре репозитория на момент снимка не были. Дата и время push в таблице — поле <code>pushed_at</code> в МСК (UTC+3): у scarlet 15.11.2026, 09:31:42; у PeakCut 15.11.2026, 11:15:47; у ThreeRT 15.11.2026, 07:13:18; у parallax 14.11.2026, 03:05:43. Лицензия всех четырёх по полю <code>license.spdx_id</code> — MIT. Звёзды в таблице — на момент выпуска: к моменту чтения число на GitHub может быть другим. Репозитории созданы недавно: scarlet — 13.11.2026, 20:02:31 МСК; PeakCut — 14.11.2026, 10:38:20 МСК; ThreeRT — 10.11.2026, 14:22:56 МСК; parallax — 14.11.2026, 02:49:19 МСК. Это поле <code>created_at</code> того же запроса.</p>
+
+    <h2>scarlet: таймлайн через Claude Code или Codex</h2>
+    <p><a href="https://github.com/Forward-Future/scarlet">Forward-Future/scarlet</a> в описании GitHub — ИИ-видеоредактор для macOS и Windows. README добавляет Linux и пишет, что исходные файлы остаются целыми. Правку говорят или печатают Claude Code или Codex, затем слушают её на рабочем таймлайне. README отдельно выделяет записи с речью: интервью, видеоподкаст, говорящая голова. Просят укоротить длинные паузы, убрать повтор фразы или оставить самый ясный дубль ответа и указать, где пауза важна. Запрошенные правки ложатся на рабочий таймлайн. Предложения ждут, пока их применят. Для первого прохода по целому интервью README предлагает перейти к склейкам, которые агент отметил для повторного прослушивания. Рендер, по README, считается только по затронутому участку, чтобы услышать правку в контексте.</p>
+    <p>README называет проект ранней разработкой. Сборка из исходников: macOS 13 и новее, Apple Silicon или Intel, Windows x64, Ubuntu 24.04 x86-64. На Ubuntu сначала ставят зависимости рабочего стола и воспроизведения из <code>docs/development.md</code>. Дальше Git, Node.js 22.x или 24.x, pnpm 12.16.1, Rust и инструменты Tauri. Команды README: <code>pnpm install --frozen-lockfile</code>, затем <code>pnpm build</code>. <code>pnpm desktop:demo</code> открывает нативный редактор с проектом в памяти и имитацией ассистента. Свои файлы: установить CMake, затем <code>pnpm desktop:ffmpeg</code>, <code>pnpm desktop:chrome</code>, <code>node apps/desktop/scripts/build-whisper.mjs</code> и <code>pnpm desktop:dev</code>. Готовые сборки README делит на Early Access для macOS и Windows, превью Ubuntu 24.04 x86-64 и стабильные релизы. Ссылки ведут в <a href="https://github.com/Forward-Future/scarlet-releases/releases">Forward-Future/scarlet-releases</a> и в релизы этого репозитория. Новый проект принимает видео, в README названы MP4 и MOV, отдельное аудио WAV или MP3 и картинки PNG или JPEG. В Settings → General подключают Claude Code или Codex по уже имеющейся подписке. Точку на таймлайне выбирают кликом. Текст вводят с клавиатуры, голос — удержанием <code>V</code>. <code>/dialogue-pass</code> запускает первый речевой проход, <code>/</code> открывает другие сценарии. Сам сценарий правят в Settings → Tools &amp; skills, список — в <code>skills/README.md</code>. На склейке открывают транскрипт и видят слова, отмеченные к удалению. Клавиша <code>\</code> проигрывает вырезанный кусок и повторно — стык. Проход спрашивает: принять склейку, пропустить или попросить переделку. Применённую правку можно изменить или отменить. Прежние версии остаются в истории проекта. Export сохраняет всё видео или выделенный диапазон в MP4 либо таймлайн в OpenTimelineIO (<code>.otio</code>) для DaVinci Resolve.</p>
+    <p>Проекты и рендер README хранит на компьютере пользователя. Транскрипция по умолчанию — CrisperWhisper. Пока его отдельно лицензируемые веса не установлены, Scarlet берёт Whisper large-v3-turbo и скачивает модель при первом запуске. Подключённый провайдер ИИ получает запрос на правку и контекст проекта: README пишет, что туда могут входить фрагменты транскрипта и кадры. Выбор модели — в <code>docs/transcription-models.md</code>. Собранные релизы шлют в PostHog анонимные сведения об использовании, решениях по правкам и исходах задач и экспорта. Выключение — пункт Send usage reports в Settings → About или переменная <code>SCARLET_TELEMETRY_ENABLED=false</code> до запуска. Версии Early Access по 0.1.3 включительно читают настройку из переменной окружения. Список событий — в <code>docs/telemetry.md</code>. Лицензия MIT. README пишет, что в состав входят сценарии, адаптированные из навыков монтажа DaVinci у Alex, © 2026 Alex (@The_Alex) и Forward Future. Текст — в <code>apps/desktop/src-tauri/licenses/alex-editing-skills.txt</code>. Детектор слов-паразитов по звуку README помечает как Powered by Desert Ant Labs. Кому: тем, кто монтирует интервью и говорящую голову и уже держит подписку Claude Code или Codex. На что смотреть: раннюю стадию, телеметрию PostHog в собранных релизах и то, что провайдер получает фрагменты транскрипта и кадры. Язык по API — TypeScript, лицензия MIT, 255 звёзд на момент выпуска, push 15.11.2026, 09:31:42 МСК. Репозиторий создан 13.11.2026, 20:02:31 МСК. На момент снимка он не был архивным. Этот выпуск редактор не собирал и не запускал.</p>
+
+    <h2>PeakCut: вертикальные клипы из длинного видео и эфира</h2>
+    <p><a href="https://github.com/haziqahmedqasmi/PeakCut">haziqahmedqasmi/PeakCut</a> в описании GitHub — нарезка длинных видео и прямых эфиров, свой хостинг, свой ключ ИИ. README: из ролика или эфира получаются вертикальные клипы 9:16 с субтитрами по словам и хуком. Их можно поставить в очередь или отправить в подключённые аккаунты. На вход — ссылка YouTube, Twitch или Kick либо свой файл. Аудио транскрибируют, модель спрашивают, какие моменты удержали бы внимание незнакомого зрителя, каждый момент рендерят с субтитрами. README называет три стиля субтитров. Для эфира запись идёт в скользящий буфер, нарезка — пока эфир ещё идёт. Сигналы README перечисляет так: громкость, активность чата и транскрипт. На автора заводят рабочее пространство: каналы, настройки клипа, правила публикации и журнал. Публикация — YouTube, Instagram и TikTok, очередь или автопост, с интервалами и дневным потолком. Разовая настройка подключений — в <code>DEPLOY.md</code>.</p>
+    <p>На своём компьютере входа нет: процесс открывается сразу в панель. На общем сервере <code>PEAKCUT_ACCOUNTS=1</code> включает вход по почте или Google и панель администратора. ИИ свой: Gemini, OpenAI, Grok, Groq, OpenRouter, Claude, локальная модель через Ollama или адрес в формате чата OpenAI. Без ключа клипы выбираются по громкости. Нужны Python 3.10 или новее и ffmpeg. Старт README: <code>pip install -r requirements.txt</code>, затем <code>python -m studio.server</code>, адрес <code>http://127.0.0.1:8765</code>. Первый запуск сам качает речевую модель. README называет объём около 480 МБ, один раз. Ключ задают в Settings, AI или в <code>.env</code> полями <code>PEAKCUT_AI_PROVIDER</code>, <code>PEAKCUT_AI_MODELS</code> и <code>PEAKCUT_AI_KEY</code>. Сохранённое в панели важнее файла. Ключ лежит в папке данных и повторно не показывается. Модель чата должна уметь вернуть JSON. README пишет, что часовой ролик читается примерно четырьмя запросами и что за них платят сервису напрямую. Страница AI usage показывает число запросов и токенов по каждому ролику. Речь в текст ключ ИИ не использует: она идёт на своей машине через sherpa-onnx и модель Parakeet. Аудио, по README, сервис ИИ не покидает.</p>
+    <p>Сервер — FastAPI в <code>studio/</code>. К сервису ИИ ходит только <code>studio/ai.py</code>. Страницы — каталог <code>web/</code>, без шага сборки. Видео делают ffmpeg и yt-dlp. Учётки — SQLite на своём компьютере и PostgreSQL на сервере. Ролики и клипы лежат в папке пользователя. Пока процесс запущен, PeakCut раз в минуту спрашивает GitHub о новой версии. На GitHub уходят только два идентификатора коммита. Проверку выключают <code>PEAKCUT_UPDATE_CHECK=0</code>. Обновление, по README, не трогает <code>.env</code>, ключи и клипы. Один сервер README поднимает через Docker, PostgreSQL и Caddy: <code>docker compose up -d --build</code>, шаги — в <code>DEPLOY.md</code>. Без входа сервер слушает только <code>127.0.0.1</code>. README прямо пишет не открывать его в интернет в этом режиме: сначала включить аккаунты. Пароли хранятся как солёные хеши scrypt. Сессии — случайные токены в виде хеша, куки HTTP-only. Чужие данные по полям запроса не отдают: личность берут из сессии. Качают только известные видеосайты. О проблеме README просит писать в security advisories, не в публичный issue. Права на скачанное, нарезанное и опубликованное README оставляет на пользователе. Лицензия MIT. Шрифты субтитров Anton, Archivo Black и Poppins в <code>studio/fonts/</code> — SIL Open Font License, тексты лицензий лежат в той же папке. Кому: тем, кто нарезает свои длинные ролики или эфиры в 9:16 на своей машине и держит ключ ИИ у себя. На что смотреть: режим без входа только на localhost, проверку обновлений раз в минуту и то, что публикация в три сети требует отдельной настройки и прав на ролик. Цифры «около 480 МБ» и «примерно четыре запроса на час» — из README, этот выпуск их не измерял. Язык по API — Python, лицензия MIT, 265 звёзд на момент выпуска, push 15.11.2026, 11:15:47 МСК. Репозиторий создан 14.11.2026, 10:38:20 МСК. На момент снимка он не был архивным. Этот выпуск сервер не запускал.</p>
+
+    <h2>ThreeRT: трассировка путей за API three.js</h2>
+    <p><a href="https://github.com/meshy-dev/ThreeRT">meshy-dev/ThreeRT</a> в описании GitHub — аппаратная трассировка для three.js: трассировщик путей в реальном времени за API в стиле three.js, движок на Rust и wgpu, пакеты сцены и геймплея на TypeScript. README формулирует то же короче: сцену пишут как в three.js, а каждый источник света считается на железе трассировки GPU. Сайт из API и README — <a href="https://threert.dev">threert.dev</a>. Приложения README выносит на <a href="https://threert.app">threert.app</a>. Что README относит к трассировке: тени, отражённый свет, отражения и светящиеся поверхности, которые освещают комнату. Карты теней, световые пробы, лайтмапы и запекание README в этом режиме не использует. Свет в примерах — в физических единицах: солнце в файле <code>scenes/sun-room.ts</code> задано как 90&nbsp;000 люкс, излучающая поверхность сама является источником. Тот же файл сцены README предлагает запускать и как обычный three.js в браузере. Клиент для macOS — 14 и новее, Apple silicon. Для iPhone и iPad — iOS 17 и новее. Клиент забирает код игры и считает кадр на GPU устройства. Команда <code>threert</code> входит в приложение для Mac: <code>threert create</code>, затем <code>threert dev</code>. README пишет, что dev-сервер при сохранении собирает пакет, отдаёт его клиентам в локальной сети и печатает QR-код для телефона. Тот же адрес в браузере показывает игру как three.js.</p>
+    <p>Пакеты README: <code>@threert/scene</code> — сетки, PBR-материалы, свет, модели glTF, физика и объёмы; <code>@threert/gameplay</code> — состояние, обработчики, кадры, ввод, HUD и канал к приложению; README называет ход детерминированным и пригодным к повторному проигрыванию; <code>@threert/voxel</code> — разрушаемые воксельные уровни. Сборка движка из исходников требует Rust, Node 24 и Bun. Движок — Rust и wgpu: аппаратные запросы лучей там, где они есть у GPU, README называет Metal и Vulkan, а где их нет — программное BVH. Окно рендера: <code>renderer/target/release/threert-render</code>. Внутри, по README, ещё денойзер, пост-обработка и встроенный QuickJS, который исполняет код сцены. Каталог демок README перечисляет Light Room, ночную улицу Кабукитё, Amazon Lumberyard Bistro, Zero-Day Бипла, Токио по модели PLATEAU, воксельный город и редактор Playground для macOS. README приводит свой замер одного кадра, Bistro night, 1280×720. ThreeRT вживую: 15,5 мс, 60 кадров/с, ошибка к референсу ΔE 3,4. three.js на WebGPU с SSGI, SSR и TRAA: 34,7 мс, 29 кадров/с, ΔE 10,1. three.js на WebGL: 15,9 мс, 60 кадров/с, ΔE 12,1. Референс README описывает как несмещённый офлайн-рендер, 4096 сэмплов на пиксель, без денойзера. Метод, остальные сцены и оговорку, что three.js рисует маленькие сцены примерно за 1 мс, README отсылает в <code>docs/COMPARE.md</code>. Подпись к ролику на странице README отдельно говорит, что эти демки и шутер OpenStrike идут вживую на Apple M3 Max. Этот выпуск замер не повторял и кадр не снимал.</p>
+    <p>Код движка и пакетов — MIT. Клиенты для macOS и iOS README называет бесплатными для использования и закрытыми. Ассетов в репозитории нет: их забирает <code>bun scripts/setup.ts</code>. Чужой контент сохраняет свои условия, список — в <code>docs/ASSETS.md</code>. README отдельно пишет, что three.js — независимый проект и ThreeRT с ним не связан. Проект, по README, вынесли из другого репозитория 10.11.2026. В подписи README называет работу исследовательским проектом MeshyAI. Кому: тем, кто пишет сцену в формах three.js и хочет считать свет трассировкой на GPU, отличая открытый движок от закрытых клиентов macOS и iOS. На что смотреть: таблицу Bistro в README и файл <code>docs/COMPARE.md</code>, программный BVH там, где у GPU нет аппаратных запросов лучей, и то, что ассеты качаются отдельно. Язык по API — TypeScript, лицензия MIT, 373 звезды на момент выпуска, push 15.11.2026, 07:13:18 МСК. Репозиторий создан 10.11.2026, 14:22:56 МСК. На момент снимка он не был архивным. Этот выпуск движок не собирал.</p>
+
+    <h2>parallax: студия картинок, видео и звука</h2>
+    <p><a href="https://github.com/nickvasilescu/parallax">nickvasilescu/parallax</a> в описании GitHub — открытая студия картинок, видео и звука с чатом агента, которого можно запустить на своём Hermes на Orgo. README то же раскладывает на одно веб-приложение: студии картинок, видео, голоса и музыки, инструменты поверх них, общая лента, библиотека, кредиты, API и Supercomputer — агент, который планирует и делает работу. Старт README: Node.js 22.13 или новее, <code>npm ci</code>, затем <code>PARALLAX_DEMO_SEED=1 npm run dev</code>. База — один файл SQLite. Без ключа провайдера каждая модель отвечает встроенным файлом-образцом: README пишет, что так можно пройти продукт, не вызывая платные модели. Адрес — <code>http://localhost:3000</code>. Гость получает несколько кредитов. Регистрация сохраняет то, что гость уже сделал. <code>PARALLAX_DEMO_SEED=1</code> на новой установке добавляет четыре служебных аккаунта и около шестидесяти опубликованных картинок. Войти под ними нельзя. Каждая такая запись, по README, несёт промпт, которым её сделали. Без переменной лента пустая.</p>
+    <p>Живые модели идут через один шлюз, в README это treg.to. Ключ — <code>TREG_TOKEN</code> в <code>.env.local</code>. README пишет, что в live-режиме доступны 39 моделей картинок, видео, голоса и музыки, у каждой свои настройки и точная цена до кнопки Generate. <code>TREG_DAILY_BUDGET_USD</code> останавливает платные запросы, когда за 24 часа потрачена заданная сумма. Чат Supercomputer живёт на <code>/supercomputer</code>. README даёт ему три движка. Stand-in по умолчанию — заскриптованный ассистент, ключи не нужны. Built-in — цикл агента внутри Parallax, для него <code>SUPER_MODE=live</code> и ключ модели. Hermes — разговор ведёт свой агент Hermes, в примере на компьютере Orgo. В режиме Hermes думает агент, а инструменты студии Parallax отдаёт ему по MCP. Когда агент просит картинку, участник видит карточку с ценой и платит своими кредитами. Ключ генерации, по README, Parallax не покидает. Подпись к снимку чата в README говорит, что этот кадр снят на тестовом стенде: stand-in агент и картинка-образец. Движок README считает прогнанным от начала до конца на stand-in. На живом агенте Hermes его, по README, ещё не запускали. Если запуск пробуют, README просит открыть issue с тем, что вышло. Собственные инструменты агента — shell, файлы, память — карточками подтверждения Parallax не закрыты. README прямо пишет не направлять публичный Parallax на личный агент. Пошаговая настройка — в <code>docs/hermes-on-orgo.md</code>.</p>
+    <p>Страницы README делит так: студии <code>/image</code>, <code>/video</code> и <code>/audio</code>, переделка <code>/remix</code>, покадровый план <code>/cinema</code>, вертикальный ролик <code>/shorts</code>, инструменты <code>/apps</code>, рекламные раунды <code>/ads</code>, доска <code>/canvas</code>, превью длинного видео <code>/horizon</code>, чат <code>/supercomputer</code>, лента, библиотека, кредиты и раздел разработчика с MCP. Отдельный список README называет «ещё не настоящее». Платёжной системы нет: кнопка пополнения начисляет кредиты бесплатно и так и пишет. Её закрывают <code>PARALLAX_DEMO_BILLING=off</code>. Живой режим Supercomputer умеет поднимать облачные компьютеры и подключать внешние приложения, и то и другое может стоить денег. README пишет, что этот режим тестировали заметно меньше, чем студии. Доски Canvas живут только в браузере. Horizon — страница-превью. Предложение на главной с кодом <code>LAUNCH-WEEK</code> README называет образцом маркетинга и просит сменить его до запуска для других людей. Проверки README: <code>npm run typecheck</code>, <code>npm run lint</code>, <code>npm run check:registry</code> — у каждой модели и каждого сочетания настроек есть точная цена, — затем сборка и <code>npm test</code>. Тесты README запускает в mock-режиме на пустой папке данных и вычищает ключи из окружения, чтобы прогон не тратил деньги. Лицензия MIT. README пишет, что проект независимый и не связан с компаниями, чьи модели и сервисы он упоминает или подключает. Кому: тем, кто хочет на своей машине пройти студию картинок, видео и звука на встроенных образцах и отдельно решить, подключать ли ключ шлюза и агента Hermes. На что смотреть: пополнение кредитов без платёжной системы, пометку, что Hermes ещё не прогоняли на живом агенте, и то, что shell, файлы и память агента не закрыты карточками подтверждения. Число 39 моделей и «около шестидесяти» демо-картинок — формулировки README, этот выпуск каталог не пересчитывал. Язык по API — TypeScript, лицензия MIT, 108 звёзд на момент выпуска, push 14.11.2026, 03:05:43 МСК. Репозиторий создан 14.11.2026, 02:49:19 МСК. На момент снимка он не был архивным. Этот выпуск приложение не запускал.</p>
+
+    <h2>Что из этого следует</h2>
+    <p>Дневной набор — четыре разные задачи. scarlet ведёт таймлайн записей с речью через Claude Code или Codex и оставляет исходники. Описание GitHub называет macOS и Windows, README добавляет Linux и помечает проект как раннюю разработку. Лицензия MIT, 255 звёзд на момент выпуска, push 15.11.2026, 09:31:42 МСК. Собранные релизы по умолчанию шлют анонимную телеметрию в PostHog, её можно выключить. Провайдер ИИ получает запрос и контекст, в котором README допускает фрагменты транскрипта и кадры. PeakCut нарезает длинное видео и эфир в 9:16 на своей машине. Без ключа момент выбирается по громкости. Речь в текст к сервису ИИ не уходит. Лицензия MIT, 265 звёзд на момент выпуска, push 15.11.2026, 11:15:47 МСК. Без аккаунтов сервер слушает только localhost. Объём речевой модели и число запросов на час в этом выпуске взяты из README и не измерялись заново. ThreeRT считает свет сцены трассировкой за API в стиле three.js. Движок и пакеты — MIT. Клиенты macOS и iOS README называет бесплатными и закрытыми. 373 звезды на момент выпуска, push 15.11.2026, 07:13:18 МСК. Таблицу кадра Bistro из README этот выпуск не переснимал. parallax — студия генерации на одном файле SQLite. Без ключа шлюза модели отвечают встроенным файлом. Чат на Hermes README помечает как не прогнанный на живом агенте, а инструменты самого агента — как не закрытые карточками подтверждения. Платёжной системы в README нет. Лицензия MIT, 108 звёзд на момент выпуска, push 14.11.2026, 03:05:43 МСК. Ни один из четырёх на момент снимка не был архивным. Число звёзд — снимок публичного API GitHub на 15.11.2026, 11:20 МСК.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 15.11.2026, 11:20 МСК. Это снимок на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
