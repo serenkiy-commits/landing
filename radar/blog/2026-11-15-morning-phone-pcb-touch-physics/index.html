@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Телефон для агента, платы KiCad, тактильная робототехника и физика, утро 15 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор hridaya423/phonedriver, claynicholson/copper-kicad-mcp, Robbyant/lingbot-touch и skild-ai/steel. Звёзды, лицензии и дата push сняты с GitHub 15 ноября 2026, около 06:30 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-15-morning-phone-pcb-touch-physics/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-15-morning-phone-pcb-touch-physics/">
+  <meta property="og:title" content="Телефон, платы KiCad, осязание и физика: утренний выпуск 15 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar — 15 ноября 2026, утро: телефон для агента, платы KiCad, тактильная робототехника, физика",
+        "datePublished": "2026-11-15",
+        "dateModified": "2026-11-15",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-15-morning-phone-pcb-touch-physics/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор phonedriver, copper-kicad-mcp, lingbot-touch и steel по данным GitHub API на 15 ноября 2026, около 06:30 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 15.11.2026, около 06:30 МСК. Это снимок на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "15 ноября 2026, утро", "item": "https://snezhko.ru/radar/blog/2026-11-15-morning-phone-pcb-touch-physics/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">15 ноября 2026, утро · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar — 15 ноября 2026, утро: телефон для агента, платы KiCad, тактильная робототехника, физика</h1>
+    <p>Четыре репозитория про телефон в руках агента, плату, которую можно отдать в производство, осязание робота и физику твёрдых тел. <a href="https://github.com/hridaya423/phonedriver">hridaya423/phonedriver</a> — MCP-сервер и CLI: агент вроде Claude Code видит экран Android или iOS и управляет телефоном. Сайт — <a href="https://phonedriver.dev">phonedriver.dev</a>. <a href="https://github.com/claynicholson/copper-kicad-mcp">claynicholson/copper-kicad-mcp</a> — MCP-сервер Copper: схема, детали LCSC, разводка платы, ERC и DRC KiCad и файлы для JLCPCB. <a href="https://github.com/Robbyant/lingbot-touch">Robbyant/lingbot-touch</a> — модель общего представления разнородных тактильных сигналов для ловкой манипуляции. <a href="https://github.com/skild-ai/steel">skild-ai/steel</a> — лёгкий масштабируемый решатель физики твёрдых тел, сайт <a href="https://skild-ai.github.io/steel/">skild-ai.github.io/steel</a>. Последний push в МСК: phonedriver — 15.11.2026, 00:49; copper-kicad-mcp — 14.11.2026, 01:44; lingbot-touch — 11.11.2026, 05:28; steel — 14.11.2026, 02:50. Число звёзд — данные GitHub API на момент выпуска, 15.11.2026, около 06:30 МСК, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 15 ноября 2026</h2>
+    <p class="meta">Снимок на 15.11.2026, около 06:30 МСК. Время push дано в МСК (UTC+3).</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что делает</th><th>Язык</th><th>Лицензия</th><th>★</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/hridaya423/phonedriver">hridaya423/phonedriver</a></td>
+          <td>MCP-сервер и CLI: агент видит экран Android и iOS и управляет телефоном</td>
+          <td>Rust</td>
+          <td>AGPL-3.0</td>
+          <td>105</td>
+          <td>15.11.2026, 00:49</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/claynicholson/copper-kicad-mcp">claynicholson/copper-kicad-mcp</a></td>
+          <td>MCP-сервер для KiCad: схема, детали LCSC, разводка, ERC/DRC и файлы для JLCPCB</td>
+          <td>Python</td>
+          <td>MIT</td>
+          <td>87</td>
+          <td>14.11.2026, 01:44</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/Robbyant/lingbot-touch">Robbyant/lingbot-touch</a></td>
+          <td>Общее представление разнородных тактильных сигналов для ловкой манипуляции</td>
+          <td>Python</td>
+          <td>Apache-2.0</td>
+          <td>545</td>
+          <td>11.11.2026, 05:28</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/skild-ai/steel">skild-ai/steel</a></td>
+          <td>Лёгкий масштабируемый решатель физики твёрдых тел</td>
+          <td>Python</td>
+          <td>Apache-2.0</td>
+          <td>214</td>
+          <td>14.11.2026, 02:50</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: <code>language</code>, <code>license.spdx_id</code>, <code>stargazers_count</code>, <code>pushed_at</code>, <code>archived</code>. Снимок на 15.11.2026, около 06:30 МСК. Архивными эти четыре репозитория на момент снимка не были. Дата и время push в таблице — поле <code>pushed_at</code> в МСК (UTC+3), как в снимке выпуска: у phonedriver 15.11.2026, 00:49; у copper-kicad-mcp 14.11.2026, 01:44; у lingbot-touch 11.11.2026, 05:28; у steel 14.11.2026, 02:50. Секунды в этом снимке не переданы. Лицензии: AGPL-3.0 у phonedriver, MIT у copper-kicad-mcp, Apache-2.0 у lingbot-touch и steel. Звёзды в таблице — на момент выпуска, 15.11.2026, около 06:30 МСК: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>phonedriver: агент видит телефон и спрашивает перед оплатой</h2>
+    <p><a href="https://github.com/hridaya423/phonedriver">hridaya423/phonedriver</a> в описании GitHub — открытый MCP-сервер и CLI, через которые агент вроде Claude Code видит Android и iOS и управляет ими. README короче: дать агенту телефон. Сайт — <a href="https://phonedriver.dev">phonedriver.dev</a>. Сервер обычный, по stdio, его берёт любой MCP-клиент. README перечисляет Claude Code, Codex, Cursor, VS Code, GitHub Copilot, Gemini CLI, Windsurf, Zed, Cline и opencode и пишет, что автор проверяет связку с Claude Code. Экран приходит коротким нумерованным списком, модель нажимает элемент по номеру и получает, что изменилось. Снимок README относит к случаю, когда нужна картинка. На Android отдельное приложение не ставится: помощник уходит на телефон по adb. На iOS раннер собирается на Mac с Xcode. В таблице README четыре класса устройств: эмулятор Android, телефон или планшет Android с отладкой по USB, симулятор iOS, iPhone или iPad. У MCP-сервера 14 инструментов: <code>devices</code>, <code>apps</code>, <code>snapshot</code>, <code>screenshot</code>, <code>tap</code>, <code>type</code>, <code>swipe</code>, <code>scroll</code>, <code>press</code>, <code>launch</code>, <code>wait</code>, <code>batch</code>, <code>clipboard</code> и <code>shell</code>. У CLI те же команды.</p>
+    <p>Если нажатие попадает на кнопку с подписью Pay, Buy now, Buy with GPay, Place order, Start subscription, Transfer или Delete account, phonedriver удерживает его и спрашивает человека. README пишет, что модель этот вопрос не видит и ответить на него сама не может. Подписи читаются на английском, испанском, португальском, французском, немецком, итальянском, нидерландском, японском, упрощённом китайском, корейском и хинди. Кнопку из одной иконки или с подписью на другом языке проверка, по README, не ловит. По умолчанию вопрос про оплату и удаление аккаунта. В поле пароля и одноразового кода модель plain text не вводит. Для долгой работы без присмотра README советует эмулятор или запасной телефон: код доступа, Face ID и отпечаток phonedriver не проходит. В README есть свой замер автора: 6,9× меньше токенов, чем у mobile-mcp, на девяти телефонных задачах. Метод и сырые данные лежат в <code>docs/bench/jobs.md</code>, скорость против adb — в <code>docs/bench/speed.md</code>. Этот выпуск замер не повторял.</p>
+    <p>Кому: тем, кто подключает Claude Code, Codex или другой MCP-клиент к эмулятору или запасному телефону и хочет, чтобы оплата и удаление аккаунта останавливались на вопросе человеку. На что смотреть: язык по API — Rust, лицензия AGPL-3.0, в файле лицензии README указывает AGPL-3.0-only, 105 звёзд на момент выпуска, push 15.11.2026, 00:49 МСК. На момент снимка репозиторий не был архивным. FAQ README пишет, что пользоваться можно свободно, а если код меняют и отдают другим как сетевой сервис, изменения нужно опубликовать. Это условие AGPL: перед работой его стоит открыть на странице репозитория и сверить с правилами своего продукта. В Android-помощник входят файлы scrcpy под Apache-2.0. Бинарник декодирует H.264 через OpenH264, собранный из исходников: README пишет, что патентная лицензия Cisco покрывает только бинарники Cisco, и у этой сборки лицензии на патенты H.264 нет. Поставка в README — <code>npx -y phonedriver mcp</code> и Homebrew. Этот выпуск сервер не запускал.</p>
+
+    <h2>copper-kicad-mcp: схема и плата, которую можно заказать</h2>
+    <p><a href="https://github.com/claynicholson/copper-kicad-mcp">claynicholson/copper-kicad-mcp</a> в описании GitHub — MCP-сервер, через который ИИ-приложение проектирует настоящую плату KiCad: схема, детали LCSC, разводка, ERC и DRC, файлы для производства JLCPCB. README называет проект Copper и требует KiCad 10. Сети задаются по имени вывода, не по координатам. Поиск деталей идёт по LCSC и JLCPCB, сначала детали Basic, с живым остатком. Символ, посадочное место и, если оно есть у EasyEDA, 3D-модель импортируются вместе с деталью. После каждого изменения KiCad заново гоняет ERC и DRC, к замечанию README прилагает готовое исправление. Разводка в README: поэтапный роутер, выравнивание длин, дифференциальные пары, классы ширины, заливка меди и Freerouting. Назад модели уходят рендеры схемы, слоёв и трассировки. На выходе — Gerber, сверловка, BOM и файл расстановки, архивом для JLCPCB, PCBWay, OSH Park или общего профиля. Инструментов в README — 31. Языковую модель сервер не вызывает: модель остаётся в приложении пользователя.</p>
+    <p>README показывает шесть плат и пишет, что все шесть проходят ERC и DRC KiCad 10 с 0 ошибок и 0 неподключённых цепей. Файлы этих плат, слои и производственный комплект README кладёт на <a href="https://coppereda.com">coppereda.com</a>. Этот выпуск файлы и KiCad не открывал. Проект работает на машине пользователя, телеметрии README не заявляет. В сеть он ходит за деталями LCSC, JLCPCB и EasyEDA, за проверкой новой версии KiCad при <code>setup</code> и <code>doctor</code> и, если попросить авторазводку, за Freerouting и средой Java. README пишет, что Windows проверен от начала до конца, а маршруты macOS и Linux новые. Для Claude Code установка — плагин из этого репозитория, для Cursor и ряда других клиентов — <code>npx -y copper-kicad</code>.</p>
+    <p>Кому: тем, кто уже держит KiCad 10 и хочет, чтобы агент вёл схему и плату до файлов заказа, а не до картинки платы. На что смотреть: язык по API — Python, лицензия MIT, 87 звёзд на момент выпуска, push 14.11.2026, 01:44 МСК. На момент снимка репозиторий не был архивным. README отделяет проект от KiCad, LCSC и JLCPCB: независимая разработка, с этими вендорами не связанная. Этот выпуск установщик не запускал.</p>
+
+    <h2>lingbot-touch: общее представление тактильных сигналов</h2>
+    <p><a href="https://github.com/Robbyant/lingbot-touch">Robbyant/lingbot-touch</a> в описании GitHub — Learning Heterogeneous Tactile Representation for General Dexterous Manipulation. README называет LingBot-Touch моделью представления тактильных сигналов на базе JEPA: общий Transformer и предсказание латентного представления по пространственно-временному контексту. Три модальности интерфейса: <code>magnetic</code>, <code>piezoresistive</code> и <code>visuotactile</code>. Статья — <a href="https://arxiv.org/abs/2611.12806">arxiv.org/abs/2611.12806</a>. Страница проекта — <a href="https://technology.robbyant.com/lingbot-touch">technology.robbyant.com/lingbot-touch</a>. Веса Tiny и Small лежат отдельно на Hugging Face и ModelScope: в каталог чекпоинта кладут пару <code>config.json</code> и <code>encoder.pt</code>. README пишет, что к репозиторию модели нужен аккаунт с доступом. В этом репозитории — замороженный target-энкодер и утилиты, которые достают признаки токенов и их адреса по времени, пальцу и точке.</p>
+    <p>Примеры README идут двумя ветками: Sharpa в <code>visuotactile</code>, XHand в <code>magnetic</code>. Команды инференса в README запускаются на CPU, для совместимого GPU NVIDIA там указан <code>--device cuda:0</code>. Окружение, которое README называет проверенным: Linux, Python 3.12, PyTorch 2.11. Для нового сырого расположения такселей README просит проверенную геометрическую калибровку. Образцы Sharpa и адаптер XHand, по README, уже содержат свои координаты, второе преобразование к ним применять не нужно. Чтение по умолчанию README советует через cross-attention к токенам, а не через среднее или максимум: после общего Transformer токен уже несёт контекст других точек и моментов времени.</p>
+    <p>Кому: тем, кто снимает признаки с разнородных тактильных датчиков для ловкой руки и читает статью до того, как переносить веса на свой сенсор. На что смотреть: язык по API — Python, лицензия Apache-2.0, 545 звёзд на момент выпуска, push 11.11.2026, 05:28 МСК. На момент снимка репозиторий не был архивным. README пишет, что представление, обученное на одних датчиках, переносится на другие датчики и на реальные ловкие руки без дообучения. Цифр этого переноса в README нет. Сторонние компоненты сохраняют свои лицензии, список — в <code>THIRD_PARTY_NOTICES.md</code>. Этот выпуск инференс не запускал.</p>
+
+    <h2>steel: решатель физики твёрдых тел на GPU</h2>
+    <p><a href="https://github.com/skild-ai/steel">skild-ai/steel</a> в описании GitHub — лёгкий масштабируемый решатель физики твёрдых тел. README точнее: GPU-решатель жёстких тел для масштабируемой симуляции манипуляции. Skild AI сделал Steel вместе с NVIDIA. Код решателя живёт внутри <a href="https://github.com/newton-physics/newton/tree/main/newton/_src/solvers/steel">Newton</a>, открытого физического движка под Linux Foundation, каталог <code>newton/_src/solvers/steel</code>. В этот репозиторий решатель не скопирован. Здесь примеры сцен, документация и пошаговые сценарии для человека или кодинг-агента: настройка, отладка, проверка правки решателя, новый пример, перенос сцены с PhysX. Сайт из снимка — <a href="https://skild-ai.github.io/steel/">skild-ai.github.io/steel</a>. README отдельно указывает площадку <a href="https://www.skild.ai/steel/playground">skild.ai/steel/playground</a> и браузерную реализацию <a href="https://github.com/skild-ai/steel-webgpu">skild-ai/steel-webgpu</a>. Открытый запуск README датирует 9 ноября 2026.</p>
+    <p>Примеры — отдельный Python-проект в <code>examples/</code>. README пишет, что они закреплены за форком <a href="https://github.com/skild-ai/newton">skild-ai/newton</a>, пока нужные изменения не войдут в релиз Newton. Старт из README: клон, переход в <code>steel/examples</code>, <code>uv sync</code>, затем <code>uv run python -m shelf play</code>. В наборе руки роботов, захваты, стопки, ткань, кабели и замкнутые механизмы, пресеты решателя и инструменты замера. README приводит свой замер: на 20 бенчмарках обучения роботов геометрическое среднее пропускной способности симуляции — 3,8× от PhysX, на разнородных пакетах из разных роботов и задач — до 13×, при меньшем объёме памяти GPU. Условия README отсылает в <a href="https://www.skild.ai/blogs/steel">заметку запуска</a>. Этот выпуск замер не повторял.</p>
+    <p>Кому: тем, кто собирает сцены симуляции манипуляции на Newton и хочет решатель жёстких тел на GPU, и тем, кто отличает этот репозиторий примеров от кода решателя в Newton. На что смотреть: язык по API — Python, лицензия Apache-2.0, 214 звёзд на момент выпуска, push 14.11.2026, 02:50 МСК. На момент снимка репозиторий не был архивным. У пакета примеров README отдельно называет код Apache-2.0 и данные моделей роботов под BSD-3-Clause. Товарные знаки Skild, Skild AI и логотип README из лицензии Apache-2.0 выводит. Правки самого решателя README просит отправлять в репозиторий Newton, а не сюда. Этот выпуск примеры не запускал.</p>
+
+    <h2>Что из этого следует</h2>
+    <p>Утренний набор — четыре разные задачи. phonedriver даёт MCP-клиенту экран Android и iOS списком элементов и удерживает нажатие на кнопках оплаты и удаления аккаунта. Лицензия AGPL-3.0. В тексте лицензии README — AGPL-3.0-only: пользоваться можно свободно, а если код меняют и отдают другим как сетевой сервис, изменения нужно опубликовать. 105 звёзд на момент выпуска, push 15.11.2026, 00:49 МСК. Замер токенов из README этот выпуск не повторял. copper-kicad-mcp ведёт плату в KiCad 10 до Gerber и BOM. Лицензия MIT, 87 звёзд на момент выпуска, push 14.11.2026, 01:44 МСК. README пишет, что Windows проверен целиком, а маршруты macOS и Linux новые, и что проект не связан с KiCad, LCSC и JLCPCB. lingbot-touch отдаёт признаки магнитных, пьезорезистивных и визуотактильных сигналов. Веса Tiny и Small лежат отдельно от кода, к ним README просит аккаунт с доступом. Лицензия Apache-2.0, 545 звёзд на момент выпуска, push 11.11.2026, 05:28 МСК. steel — решатель жёстких тел внутри Newton. Этот репозиторий держит примеры и документацию, код решателя — в Newton. Лицензия Apache-2.0, 214 звёзд на момент выпуска, push 14.11.2026, 02:50 МСК. Цифры 3,8× и 13× к PhysX этот выпуск не пересчитывал: они из README и заметки запуска. Ни один из четырёх на момент снимка не был архивным. Число звёзд — снимок публичного API GitHub на момент выпуска, 15.11.2026, около 06:30 МСК.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 15.11.2026, около 06:30 МСК. Это снимок на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
