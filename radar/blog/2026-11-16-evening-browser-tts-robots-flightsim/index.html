@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Браузер, мини-TTS, роботы и авиасимулятор, вечер 16 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор yetanotherbrowser/yab, n4ze3m/tiny-voca, mit-han-lab/pear и Rolandjg/fableflight. Звёзды, лицензии и дата push сняты с GitHub 16 ноября 2026, ~21:25 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-16-evening-browser-tts-robots-flightsim/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-16-evening-browser-tts-robots-flightsim/">
+  <meta property="og:title" content="Браузер, мини-TTS, роботы и авиасимулятор: вечерний выпуск 16 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar — 16 ноября 2026, вечерний выпуск: браузер, мини-TTS, роботы и авиасимулятор",
+        "datePublished": "2026-11-16",
+        "dateModified": "2026-11-16",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-16-evening-browser-tts-robots-flightsim/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор yab, tiny-voca, pear и fableflight по данным GitHub API на 16 ноября 2026, ~21:25 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Звёзды — на 16.11.2026, ~21:25 МСК, по GitHub API. Это снимок на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "16 ноября 2026, вечер", "item": "https://snezhko.ru/radar/blog/2026-11-16-evening-browser-tts-robots-flightsim/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">16 ноября 2026, вечер · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar — 16 ноября 2026, вечерний выпуск: браузер, мини-TTS, роботы и авиасимулятор</h1>
+    <p>Вечерний выпуск — четыре open-source проекта: нативный браузер для macOS, небольшой синтез английской речи, инфраструктура обучения роботов и авиасимулятор на Rust. Число звёзд — на 16.11.2026, ~21:25 МСК, по GitHub API, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 16 ноября 2026</h2>
+    <p class="meta">Звёзды — на 16.11.2026, ~21:25 МСК, по GitHub API. Время push — МСК.</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что это</th><th>Язык</th><th>Лицензия</th><th>Звёзды</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/yetanotherbrowser/yab">yetanotherbrowser/yab</a></td>
+          <td>нативный браузер macOS 15.4+ и компаньон для iPhone и Android</td>
+          <td>Swift</td>
+          <td>Apache-2.0</td>
+          <td>572</td>
+          <td>15.11.2026, 21:11</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/n4ze3m/tiny-voca">n4ze3m/tiny-voca</a></td>
+          <td>английский TTS с нуля: 4 537 291 параметр, 18 МБ, голоса F2 и M2</td>
+          <td>Python</td>
+          <td>Apache-2.0</td>
+          <td>569</td>
+          <td>16.11.2026, 18:21</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/mit-han-lab/pear">mit-han-lab/pear</a></td>
+          <td>PEAR: пост-обучение моделей рассуждения, чтобы они пользовались роботами через RL в симуляции</td>
+          <td>Python</td>
+          <td>Apache-2.0</td>
+          <td>485</td>
+          <td>16.11.2026, 10:54</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/Rolandjg/fableflight">Rolandjg/fableflight</a></td>
+          <td>авиасимулятор открытого мира на чистом Rust</td>
+          <td>Rust</td>
+          <td>MIT</td>
+          <td>286</td>
+          <td>16.11.2026, 20:26</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: язык, лицензия, число звёзд, дата push. Звёзды — на 16.11.2026, ~21:25 МСК, по GitHub API. Время push в таблице — МСК. yetanotherbrowser/yab создан 15.11.2026 и на момент снимка не был архивным. Звёзды к моменту чтения на GitHub могут отличаться.</p>
+
+    <h2>yab: браузер для macOS</h2>
+    <p><a href="https://github.com/yetanotherbrowser/yab">yetanotherbrowser/yab</a> — нативный браузер для macOS 15.4+ с приложением-компаньоном для iPhone и Android (сайт <a href="https://yetanotherbrowser.com">yetanotherbrowser.com</a>): по README одно поле служит адресом и поиском, вкладки ставятся сверху или слева, есть закрепления, папки, пространства и поиск вкладок по ⌘K. Движка два — WebKit по умолчанию и Chromium на Apple silicon, на вкладку или на сайт, с расширениями Chrome, DevTools и Web Store; внутри движка работает блокировщик рекламы, ⇧⌘H скрывает элемент, есть режим чтения, плавающее видео и разделённый вид, а ИИ-агенты провайдеров, за которых пользователь уже платит, работают в своих вкладках и не видят приватные вкладки.</p>
+    <p>Кому: тем, кто хочет такой браузер на Mac и отдельное приложение на iPhone или Android. Репозиторий создан 15.11.2026 и на момент снимка не был архивным; язык Swift, лицензия Apache-2.0, 572 звезды, push 15.11.2026, 21:11 МСК.</p>
+
+    <h2>tiny-voca: английский TTS</h2>
+    <p><a href="https://github.com/n4ze3m/tiny-voca">n4ze3m/tiny-voca</a> — небольшой синтез английской речи, обученный с нуля: 4 537 291 параметр, 18 МБ, два голоса американского английского F2 и M2 на 24 кГц. Код, веса, рецепт и датасет открыты (веса и датасет на Hugging Face, демо — <a href="https://tiny-voca.n4ze3m.com">tiny-voca.n4ze3m.com</a>); запуск на PyTorch, ONNX Runtime и ONNX Runtime Web в браузере, длинный текст читается по предложениям, параметры <code>--voice</code>, <code>--speed</code> и <code>--pitch-shift</code>.</p>
+    <p>Кому: тем, кому нужен маленький открытый английский TTS, в том числе в браузере. По данным README скорость около 70× реального времени на четырёх потоках CPU; репозиторий создан 14.11.2026, язык Python, лицензия Apache-2.0, 569 звёзд, push 16.11.2026, 18:21 МСК.</p>
+
+    <h2>PEAR: роботы через RL в симуляции</h2>
+    <p><a href="https://github.com/mit-han-lab/pear">mit-han-lab/pear</a> — PEAR, Post-training Engine for Agentic Robotics: обучает модели рассуждения нативно пользоваться роботами через RL в симуляции. Это инфраструктура статьи «Training Reasoning Models in Simulation to Natively Use Real Robots» (<a href="https://mit-han-lab.github.io/pear-blog">блог</a>, <a href="https://arxiv.org/abs/2611.18562">arXiv 2611.18562</a>): по README открытая модель рассуждения на 27B учится пользоваться настоящими роботами целиком в симуляции, без демонстраций. Стек — асинхронный RL на veRL, GRPO, FSDP и sequence parallelism, выгрузка KV через LMCache, ядра для H100, H200 и GB300, симуляторы MuJoCo на том же кластере Ray.</p>
+    <p>Кому: исследовательским группам с GPU-кластером — это исследовательская инфраструктура, не домашний инструмент; репозиторий создан 13.11.2026, язык Python, лицензия Apache-2.0, 485 звёзд, push 16.11.2026, 10:54 МСК.</p>
+
+    <h2>fableflight: авиасимулятор на Rust</h2>
+    <p><a href="https://github.com/Rolandjg/fableflight">Rolandjg/fableflight</a> — авиасимулятор открытого мира на чистом Rust. README сообщает, что проект создан с помощью ИИ («vibe coded»), и упоминает погоду реального мира и живой воздушный трафик; сборка — <code>cargo build --release</code>, интерфейс на английском или французском, джойстик, рычаг газа и педали руля можно назначить, есть инверсия, мёртвая зона и пресеты.</p>
+    <p>Кому: тем, кто собирает открытый авиасимулятор на Rust. Это хобби-проект, зрелость стоит проверить самостоятельно; репозиторий создан 13.11.2026, язык Rust, лицензия MIT, 286 звёзд, push 16.11.2026, 20:26 МСК.</p>
+
+    <h2>Вывод</h2>
+    <p>Вечерний набор — четыре разные задачи: браузер macOS с WebKit и Chromium, маленький английский TTS, исследовательский стек обучения роботов и авиасимулятор на Rust. У yab, tiny-voca и pear лицензия Apache-2.0, у fableflight — MIT. yab создан 15.11.2026 и на момент снимка не был архивным. PEAR рассчитан на GPU-кластер, fableflight — хобби-проект, заявленную скорость tiny-voca README относит к четырём потокам CPU. Звёзды в таблице — на 16.11.2026, ~21:25 МСК, по GitHub API.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Звёзды — на 16.11.2026, ~21:25 МСК, по GitHub API. Это снимок на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
