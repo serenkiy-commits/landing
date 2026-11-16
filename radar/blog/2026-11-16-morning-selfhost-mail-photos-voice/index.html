@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Self-hosted почта, фото, голос и мэрия, утро 16 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор nitrosend/nitromta, silentprovider423/HomeRoll, DeskLabs-OpenSource/DeskVoice и chiban-org/chiban-oss. Звёзды, лицензии и дата push сняты с GitHub 16 ноября 2026, 06:20 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-16-morning-selfhost-mail-photos-voice/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-16-morning-selfhost-mail-photos-voice/">
+  <meta property="og:title" content="Self-hosted почта, фото и голос: утренний выпуск 16 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar — 16 ноября 2026, утро: self-hosted почта, фото, голос и мэрия",
+        "datePublished": "2026-11-16",
+        "dateModified": "2026-11-16",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-16-morning-selfhost-mail-photos-voice/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор nitromta, HomeRoll, DeskVoice и chiban-oss по данным GitHub API на 16 ноября 2026, 06:20 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 16.11.2026, 06:20 МСК. Это снимок на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "16 ноября 2026, утро", "item": "https://snezhko.ru/radar/blog/2026-11-16-morning-selfhost-mail-photos-voice/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">16 ноября 2026, утро · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar — 16 ноября 2026, утро: self-hosted почта, фото, голос и мэрия</h1>
+    <p>Утренний выпуск — четыре свежих open-source проекта для тех, кто держит сервисы на своём сервере. Число звёзд — данные GitHub API на 16.11.2026, 06:20 МСК, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 16 ноября 2026</h2>
+    <p class="meta">Данные GitHub API на 16.11.2026, 06:20 МСК.</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что это</th><th>Язык</th><th>Лицензия</th><th>★ на 16.11.2026 06:20 МСК</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/nitrosend/nitromta">nitrosend/nitromta</a></td>
+          <td>open-source замена Amazon SES на Rust</td>
+          <td>Rust</td>
+          <td>Apache-2.0</td>
+          <td>126</td>
+          <td>11.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/silentprovider423/HomeRoll">silentprovider423/HomeRoll</a></td>
+          <td>нативное iOS-приложение «Фото» для своего сервера Immich</td>
+          <td>Swift</td>
+          <td>GPL-3.0</td>
+          <td>159</td>
+          <td>15.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/DeskLabs-OpenSource/DeskVoice">DeskLabs-OpenSource/DeskVoice</a></td>
+          <td>self-hosted телефонная станция с ИИ-агентами</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>120</td>
+          <td>16.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/chiban-org/chiban-oss">chiban-org/chiban-oss</a></td>
+          <td>open-source софт для земельных/строительных дел небольших городов США</td>
+          <td>TypeScript</td>
+          <td>AGPL-3.0</td>
+          <td>126</td>
+          <td>12.11.2026</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: язык, лицензия, число звёзд, дата push. Данные GitHub API на 16.11.2026, 06:20 МСК. Архивными эти четыре репозитория на момент снимка не были. Звёзды в таблице — на момент выпуска: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>nitromta: почтовый движок Nitrosend</h2>
+    <p><a href="https://github.com/nitrosend/nitromta">nitrosend/nitromta</a> — открытый движок доставки почты Nitrosend, написанный на Rust. Он совместим с SES v2 API: SendEmail, SendBulkEmail, шаблоны, identities, configuration sets, suppression list и события в стиле SES через подмножество SNS. Совместимость проверена официальными SDK: код отправки можно оставить и сменить endpoint, чтобы письма уходили со своих IP. Письмо подтверждается только после записи на диск и переживает падение процесса.</p>
+    <p>У того же движка есть управляемая версия Nitrosend — коммерческий вариант. Кому: тем, кто шлёт транзакционную и массовую почту и хочет уйти с SES на свои сервера. Язык Rust, лицензия Apache-2.0, 126 звёзд на 16.11.2026, 06:20 МСК, последний push 11.11.2026.</p>
+
+    <h2>HomeRoll: «Фото» для своего Immich</h2>
+    <p><a href="https://github.com/silentprovider423/HomeRoll">silentprovider423/HomeRoll</a> — независимый iPhone-клиент для self-hosted Immich. По виду и поведению он повторяет приложение «Фото» iOS 26: сетка с зумом на 1, 3 и 5 колонок, месяцы и годы, просмотр, редактор, воспоминания, поиск, люди, альбомы и поездки. Автор пишет, что пользуется приложением ежедневно с Immich v3.3.5. Это личный проект без гарантий поддержки, интерфейс на английском и немецком.</p>
+    <p>Есть сестринское приложение для macOS — HomeRoll Desktop. Проект не связан с Apple и с Immich/FUTO. Язык Swift, лицензия GPL-3.0, 159 звёзд на 16.11.2026, 06:20 МСК, последний push 15.11.2026.</p>
+
+    <h2>DeskVoice: телефонная станция на своей VPS</h2>
+    <p><a href="https://github.com/DeskLabs-OpenSource/DeskVoice">DeskLabs-OpenSource/DeskVoice</a> ставится на свою VPS. Агент отвечает на звонок, вызывает инструменты во время разговора, просит одобрения у человека, когда это нужно, переводит звонок и продолжает задачи после окончания вызова. README на португальском, есть английская и испанская версии.</p>
+    <p>По словам авторов, установка, обновление из интерфейса, бэкап и восстановление, а также откат неудачного обновления проверены на реальной VPS. Реальные звонки делались через OpenAI Realtime. README разделяет доказанное, экспериментальное и планы. Язык TypeScript, лицензия MIT, 120 звёзд на 16.11.2026, 06:20 МСК, последний push 16.11.2026.</p>
+
+    <h2>chiban-oss: земельные дела небольшого города</h2>
+    <p><a href="https://github.com/chiban-org/chiban-oss">chiban-org/chiban-oss</a> собирает работу вокруг земельного участка: разрешения на строительство, инспекции, заявки Planning Board и ZBA, контроль нарушений. Сроки и формулировки уведомлений берутся из «пакета штата», у каждого срока видна норма закона. Формы, сборы и шаблоны настраивают сотрудники без кода. Все записи можно выгрузить в открытые форматы: текст, таблицы, Excel и PDF/A. Софт можно разместить на своём сервере.</p>
+    <p>Для РФ это скорее пример хорошо продуманного продукта для госуслуг и муниципалитета, чем готовый инструмент. Язык TypeScript, лицензия AGPL-3.0, 126 звёзд на 16.11.2026, 06:20 МСК, последний push 12.11.2026.</p>
+
+    <h2>Вывод</h2>
+    <p>Утренний набор держится на одном тренде: self-hosted замены облачных сервисов — почта, фото, телефония и муниципальные системы. Перед продом лицензию стоит сверить на странице репозитория: у chiban-oss AGPL-3.0, у HomeRoll GPL-3.0. У nitromta лицензия Apache-2.0, у DeskVoice — MIT.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 16.11.2026, 06:20 МСК. Это снимок на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
