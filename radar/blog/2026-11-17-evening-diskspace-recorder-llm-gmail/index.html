@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Место на диске, записи, скорость LLM и Gmail, вечер 17 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор morajabi/poo, andyhuo520/beanpod, sybil-solutions/inference-optimisation-skill и louis49/purgatorius. Звёзды, лицензии и дата push сняты с GitHub 17 ноября 2026, ~21:25 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-17-evening-diskspace-recorder-llm-gmail/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-17-evening-diskspace-recorder-llm-gmail/">
+  <meta property="og:title" content="Место на диске, записи, скорость LLM и Gmail: вечерний выпуск 17 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar — 17 ноября 2026, вечер: место на диске, записи, скорость LLM и Gmail",
+        "datePublished": "2026-11-17",
+        "dateModified": "2026-11-17",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-17-evening-diskspace-recorder-llm-gmail/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор poo, BeanPod, inference-optimisation-skill и Purgatorius по данным GitHub API на 17 ноября 2026, ~21:25 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 17.11.2026, ~21:25 МСК. Звёзды — на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "17 ноября 2026, вечер", "item": "https://snezhko.ru/radar/blog/2026-11-17-evening-diskspace-recorder-llm-gmail/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">17 ноября 2026, вечер · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar — 17 ноября 2026, вечер: место на диске, записи, скорость LLM и Gmail</h1>
+    <p>Вечерний выпуск — четыре свежих open-source проекта: поиск места, которое на машине разработчика занимают сборки, кэши, симуляторы и worktree агентов; записи на Mac с локальной расшифровкой и вопросами к своей базе; скилл, который подбирает скорость локального LLM-сервера; карта ящика Gmail без стороннего сервера. Число звёзд — данные GitHub API на 17.11.2026, ~21:25 МСК, звёзды на момент выпуска, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 17 ноября 2026</h2>
+    <p class="meta">Данные GitHub API на 17.11.2026, ~21:25 МСК. Время push — МСК. Звёзды — на момент выпуска.</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что это</th><th>Язык</th><th>Лицензия</th><th>★ на 17.11.2026 ~21:25 МСК</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/morajabi/poo">morajabi/poo</a></td>
+          <td>место от сборок, кэшей, симуляторов и worktree агентов: меню macOS, CLI и MCP</td>
+          <td>Rust</td>
+          <td>MIT</td>
+          <td>70</td>
+          <td>16.11.2026, 18:15</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/andyhuo520/beanpod">andyhuo520/beanpod</a></td>
+          <td>записи на Mac: локальная расшифровка, заметки, вопросы к базе, MCP к Claude и Codex</td>
+          <td>Swift</td>
+          <td>MIT</td>
+          <td>89</td>
+          <td>17.11.2026, 15:52</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/sybil-solutions/inference-optimisation-skill">sybil-solutions/inference-optimisation-skill</a></td>
+          <td>скилл агента: скорость локального LLM — decode, prefill, KV, старт, TTFT</td>
+          <td>Python</td>
+          <td>MIT</td>
+          <td>753</td>
+          <td>16.11.2026, 21:40</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/louis49/purgatorius">louis49/purgatorius</a></td>
+          <td>treemap ящика Gmail на своём компьютере, без стороннего сервера</td>
+          <td>Go</td>
+          <td>AGPL-3.0</td>
+          <td>41</td>
+          <td>16.11.2026, 14:42</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: описание, язык, лицензия, число звёзд, дата push, признак архива. Данные GitHub API на 17.11.2026, ~21:25 МСК. Время push в таблице — МСК (UTC+3). Архивными эти четыре репозитория на момент снимка не были. Звёзды в таблице — на момент выпуска: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>poo: место, которое съедает разработка</h2>
+    <p><a href="https://github.com/morajabi/poo">morajabi/poo</a> в описании GitHub ищет и освобождает место, которое съедает разработка: сборки, кэши, симуляторы и worktree агентов. Форма поставки в описании — приложение в строке меню macOS, CLI и MCP-сервер. README ставит приложение на macOS 15 и новее, Apple silicon и Intel, и пишет, что сборка подписана и нотаризована; CLI README указывает и для Linux. Удаления нет, пока список не просмотрен и не подтверждён, либо пока сами не включены расписание или хук. Перед снятием worktree README описывает копию мелких игнорируемых файлов, stash незакоммиченного и сохранение отсоединённых коммитов в ветку. Планы <code>quick</code>, <code>stale</code>, <code>deep</code> и <code>emergency</code> чистят до своего уровня: то, что запущено, и то, что помечено как нуждающееся во взгляде человека, в такой план не входит. MCP (<code>poo mcp</code>) по README умеет показать обзор, список и план; очистка через него по умолчанию пробная, а агенту разрешён потолок уровня, который задаёт пользователь (в README уровень по умолчанию — <code>cold</code>). Аккаунта и телеметрии README не описывает. Страница в поле homepage API — <a href="https://poo.morajabi.com">poo.morajabi.com</a>.</p>
+    <p>Кому: тем, у кого диск занимают сборки, симуляторы и worktree Claude Code или Codex и кто хочет сначала увидеть список. Язык Rust, лицензия MIT, 70 звёзд на 17.11.2026, ~21:25 МСК, последний push 16.11.2026, 18:15 МСК. Репозиторий создан 15.11.2026, 21:39 МСК и на момент снимка не был архивным.</p>
+
+    <h2>BeanPod: записи и расшифровка на Mac</h2>
+    <p><a href="https://github.com/andyhuo520/beanpod">andyhuo520/beanpod</a> в описании GitHub (оригинал на китайском) — 豆仓 BeanPod, нативное приложение macOS для своих устройств записи: локальная расшифровка, заметки и задачи по встречам, вопросы к базе знаний, прослушивание по предложениям и режим английского, MCP к Claude и Codex. README называет устройство, с которого проект начинался: диктофон Anker soundcore, модель D3200, и сразу пишет, что проект неофициальный и с производителем не связан. Расшифровка по умолчанию на этом Mac, запись с машины не уходит; облачный сервис README описывает как отдельный выбор. Модель по умолчанию README называет Qwen3-ASR 0.6B через llama.cpp, а если модели нет — распознавание системы. Без диктофона README тоже описывает работу: запись с микрофона Mac, импорт файла, ссылка на подкаст или видео. Фразу в тексте можно слушать с её места, для английской записи включить учебный разбор. MCP README перечисляет поиск записей, карточку одной записи, список задач, сводку тем и приём текста или аудиофайла в локальный ящик. Для запуска README требует macOS 26. Поле homepage API на момент снимка — адрес того же репозитория.</p>
+    <p>Кому: тем, кто хочет держать записи и расшифровку на своём Mac и спрашивать их из Claude или Codex. Язык Swift, лицензия MIT, 89 звёзд на 17.11.2026, ~21:25 МСК, последний push 17.11.2026, 15:52 МСК. Репозиторий создан 16.11.2026, 11:56 МСК и на момент снимка не был архивным.</p>
+
+    <h2>inference-optimisation-skill: скорость локального LLM</h2>
+    <p><a href="https://github.com/sybil-solutions/inference-optimisation-skill">sybil-solutions/inference-optimisation-skill</a> в описании GitHub — скилл агента, который подбирает скорость локальной раздачи LLM: decode, спекулятивное декодирование, prefill, KV, старт и время до первого токена, на любом железе и любой квантизации. README раскладывает это в порядок: сначала теоретический потолок, потом одно изменение за раз, замер против соседних контрольных прогонов, журнал вместе с неудачами, проверка длинного контекста и после этого чистая закреплённая сборка. Скилл рассчитан на Claude Code и на агента, который читает <code>SKILL.md</code>; для любой модели README даёт <code>PROMPT.md</code>. Скрипты README собраны на стандартной библиотеке Python и bash: <code>bench.py</code> меряет OpenAI-совместимый сервер, <code>ceiling.py</code> считает потолок, <code>queue.sh</code> чередует контроль и кандидата, <code>mem.sh</code> смотрит память. Таблицу «до → после» README относит к названному железу и к своим прошлым прогонам и просит сверять метод по ссылкам на исходные логи. Этот выпуск замеры не повторял. Поле homepage в API на момент снимка пустое.</p>
+    <p>Кому: тем, кто уже крутит локальный сервер модели и хочет, чтобы агент менял один рычаг и сверял цифру с потолком. Язык Python, лицензия MIT, 753 звезды на 17.11.2026, ~21:25 МСК, последний push 16.11.2026, 21:40 МСК. Репозиторий создан 16.11.2026, 21:40 МСК и на момент снимка не был архивным.</p>
+
+    <h2>Purgatorius: карта ящика Gmail</h2>
+    <p><a href="https://github.com/louis49/purgatorius">louis49/purgatorius</a> в описании GitHub (оригинал на французском) — treemap почтового ящика Gmail, чтобы разобрать его без стороннего сервера. README описывает свободное настольное приложение: площадь блока переключается между размером писем, если нужно место в квоте, и числом писем, если нужно убрать шум. Группировка — домен, отправитель, тема, период, метка. Доступ по IMAP с паролем приложения; пароль README кладёт в связку ключей системы, а на Linux без связки — в файл, который читает только пользователь. Локальный кэш SQLite хранит метаданные, не тело письма, и чтение не помечает письмо прочитанным. Действие README называет одно: отправить выбранное в корзину Gmail, откуда на возврат даётся 30 дней. Сборка — Wails v2, интерфейс Vue 3 вшит в бинарник Go. Готовые файлы README указывает для macOS 13 и новее, Windows и Linux; бинарники не подписаны и не нотаризованы. Проект пишет, что с Google не связан. Подпись к снимку в README называет данные на картинке вымышленными, в этот выпуск они не входят. Поле homepage в API на момент снимка пустое.</p>
+    <p>Кому: тем, кто хочет увидеть, какой отправитель занимает ящик, и оставить почту на своём компьютере. Язык Go, лицензия AGPL-3.0, 41 звезда на 17.11.2026, ~21:25 МСК, последний push 16.11.2026, 14:42 МСК. Репозиторий создан 16.11.2026, 14:42 МСК и на момент снимка не был архивным. В тексте лицензии README указано AGPL-3.0-or-later.</p>
+
+    <h2>Вывод</h2>
+    <p>Три лицензии MIT и одна AGPL-3.0. poo показывает, что на диске разработчика можно снять, и ждёт подтверждения списка, пока расписание или хук не включены отдельно. BeanPod держит расшифровку записей на Mac и отдаёт её в Claude и Codex через MCP; облако README описывает как выбор, путь по умолчанию — модель на этой машине. inference-optimisation-skill задаёт агенту порядок замера локального LLM-сервера; цифры в его README — прошлые прогоны авторов на названном железе, не замер этого выпуска. Purgatorius рисует ящик Gmail на своей машине и отправляет выбранное в корзину; перед встраиванием в продукт лицензию AGPL-3.0 стоит прочитать ещё раз на странице репозитория, README пишет or-later. Звёзды в таблице — снимок GitHub API на 17.11.2026, ~21:25 МСК, на момент выпуска.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 17.11.2026, ~21:25 МСК. Звёзды — на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
