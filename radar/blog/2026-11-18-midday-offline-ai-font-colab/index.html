@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Офлайн-ИИ для выживания, шрифт Allo, скилл против средних ответов и Colab, день 18 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор Immortal-Protocols/lastbook, scarletkc/colab-playground, joshpuckett/allo и mankidev/antialgorithm. Звёзды, лицензии и дата push сняты с GitHub 18 ноября 2026, ~11:20 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-18-midday-offline-ai-font-colab/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-18-midday-offline-ai-font-colab/">
+  <meta property="og:title" content="Офлайн-ИИ, шрифт Allo, скилл против средних ответов и Colab: дневной выпуск 18 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar — 18 ноября 2026, дневной выпуск: офлайн-ИИ для выживания, открытый шрифт, скилл против средних ответов и приложение для Colab",
+        "datePublished": "2026-11-18",
+        "dateModified": "2026-11-18",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-18-midday-offline-ai-font-colab/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор lastbook, colab-playground, Allo и antialgorithm по данным GitHub API на 18 ноября 2026, ~11:20 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 18.11.2026, ~11:20 МСК. Звёзды — на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "18 ноября 2026, день", "item": "https://snezhko.ru/radar/blog/2026-11-18-midday-offline-ai-font-colab/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">18 ноября 2026, день · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar — 18 ноября 2026, дневной выпуск: офлайн-ИИ для выживания, открытый шрифт, скилл против средних ответов и приложение для Colab</h1>
+    <p>Дневной выпуск — четыре open-source проекта: офлайн-библиотека знаний, карт и видео для выживания и восстановления; настольное приложение на Rust поверх Google Colab CLI; открытый шрифт Allo; скилл Claude Code, который уводит модель от первого, самого среднего выбора в творческой работе. Число звёзд — данные GitHub API на 18.11.2026, ~11:20 МСК. Звёзды — снимок на момент выпуска, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 18 ноября 2026</h2>
+    <p class="meta">Снимок на 18.11.2026, ~11:20 МСК. Дата push — из этого снимка. Звёзды — на момент выпуска.</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что это</th><th>Язык</th><th>Лицензия</th><th>★ на 18.11.2026, ~11:20 МСК</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/Immortal-Protocols/lastbook">Immortal-Protocols/lastbook</a></td>
+          <td>офлайн-знания, ИИ, карты и видео для выживания и восстановления</td>
+          <td>Python</td>
+          <td>MIT</td>
+          <td>1923</td>
+          <td>18.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/scarletkc/colab-playground">scarletkc/colab-playground</a></td>
+          <td>настольное приложение для Google Colab CLI: аккаунты, GPU-сессии с ограничителями расхода, проброс портов и плагины</td>
+          <td>Rust</td>
+          <td>MIT</td>
+          <td>195</td>
+          <td>17.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/joshpuckett/allo">joshpuckett/allo</a></td>
+          <td>шрифт Allo, свободный и open source</td>
+          <td>Python</td>
+          <td>OFL-1.1</td>
+          <td>949</td>
+          <td>18.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/mankidev/antialgorithm">mankidev/antialgorithm</a></td>
+          <td>скилл Claude Code: уводит модель от первого, самого среднего выбора в творческой работе</td>
+          <td>Python</td>
+          <td>MIT</td>
+          <td>290</td>
+          <td>15.11.2026</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: описание, язык, лицензия, число звёзд, дата push, признак архива. Снимок на 18.11.2026, ~11:20 МСК. Архивными эти четыре репозитория на момент снимка не были. У Immortal-Protocols/lastbook в поле homepage API указан <a href="https://lastbook.org">lastbook.org</a>. Звёзды в таблице — на момент выпуска: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>lastbook: офлайн-знания, карты и видео</h2>
+    <p><a href="https://github.com/Immortal-Protocols/lastbook">Immortal-Protocols/lastbook</a> в описании GitHub — офлайн-знания, ИИ, карты и видео для выживания и восстановления. README называет Lastbook офлайн-библиотекой для Mac, Windows и Linux: руководства, видео, энциклопедии, карта и короткие практические гиды на одном компьютере; после настройки программа работает без сети, боковая панель открывает Videos, Map и Chat, а чат отвечает по библиотеке и ссылается на источники. Штат для подробной карты человек выбирает при установке, местоположение приложение не определяет; локальная модель по README необязательна и цитирует страницы библиотеки, без неё чат всё равно находит страницы. Оригинальный код и документация — MIT, язык Python, 1923 звезды на 18.11.2026, ~11:20 МСК, последний push 18.11.2026, страница <a href="https://lastbook.org">lastbook.org</a>, репозиторий на момент снимка не был архивным; сторонние материалы и компоненты сборок README оставляет на своих лицензиях, в поставке названы и GPL-компоненты python-libzim и libzim.</p>
+
+    <h2>Colab Playground: приложение над Colab CLI</h2>
+    <p><a href="https://github.com/scarletkc/colab-playground">scarletkc/colab-playground</a> в описании GitHub — настольное приложение для Google Colab CLI: аккаунты, GPU-сессии с ограничителями расхода, проброс портов и плагины. README уточняет, что это фронтенд на Rust и GPUI к команде <code>colab</code>, а не редактор ноутбуков и не замена CLI: всё идёт через <code>colab</code>, выкладка модели в ядро не входит и живёт плагином (в комплекте — «Deploy a GGUF model» на llama.cpp). Приложение хранит несколько аккаунтов Google, запускает сессию на CPU, GPU или TPU и пробрасывает порт сессии на <code>127.0.0.1</code>; автостоп и остановка по простою работают на самой сессии, потолок трат и пол баланса проверяются, пока приложение запущено, а скрипт плагина README выполняет на сессии Colab, не на компьютере. Лицензия MIT, язык Rust, 195 звёзд на 18.11.2026, ~11:20 МСК, последний push 17.11.2026, репозиторий на момент снимка не был архивным; на Windows README запускает Colab CLI внутри WSL.</p>
+
+    <h2>Allo: открытый шрифт</h2>
+    <p><a href="https://github.com/joshpuckett/allo">joshpuckett/allo</a> в описании GitHub — шрифт Allo, свободный и open source. README описывает переменный гротеск для экранов и интерфейсов: оптический размер подстраивается сам, есть оси насыщенности и скругления, настоящий oblique в каждом весе, табличные цифры, дроби и альтернативы; статические и переменные файлы — отдельные семейства Allo и Allo Variable, для веба есть WOFF2 и пакет <code>allo-font</code>. Сборку README ведёт скриптом на Python из UFO-исходников; основой назван Inter 4.2, каждый знак README считает перерисованным. Лицензия OFL-1.1: пользоваться, менять и распространять можно, в том числе коммерчески, продавать сами файлы шрифта нельзя; язык Python, 949 звёзд на 18.11.2026, ~11:20 МСК, последний push 18.11.2026, репозиторий на момент снимка не был архивным.</p>
+
+    <h2>antialgorithm: скилл против среднего выбора</h2>
+    <p><a href="https://github.com/mankidev/antialgorithm">mankidev/antialgorithm</a> в описании GitHub — скилл Claude Code, который уводит модель от первого, самого среднего выбора в творческой работе: имена, идеи, постеры, интерфейсы. README ставит тот же приём на тексты, истории и идеи игр: модель называет этот средний выбор и отходит от него по причине, взятой из проекта; ставится клоном в <code>~/.claude/skills/antialgorithm</code>. Три скрипта на Python 3: <code>seed.py</code> задаёт стартовую точку из системной случайности, если запрос тонкий, <code>rough.py</code> сдвигает линии, формы и буквы SVG только у техник вроде печати, краски, штампа и туши, <code>check.py</code> рендерит SVG в полном размере и в размере значка и перечисляет текст у края, под фигурой, со слабым контрастом или слишком мелкий (для него README просит numpy, Pillow и <code>rsvg-convert</code> либо пакет cairosvg). Лицензия MIT, язык Python, 290 звёзд на 18.11.2026, ~11:20 МСК, последний push 15.11.2026, репозиторий на момент снимка не был архивным.</p>
+
+    <h2>Вывод</h2>
+    <p>Три лицензии MIT и одна OFL-1.1 у шрифта Allo. Lastbook — офлайн-набор знаний, карт и видео: чат ссылается на библиотеку, локальная модель по README необязательна, оригинальный код — MIT, а материалы библиотеки и часть компонентов сборок остаются на своих лицензиях. Colab Playground — приложение на Rust поверх Google Colab CLI, с ограничителями расхода и плагинами, которые крутятся на сессии Colab. Allo — открытый шрифт: OFL-1.1 разрешает пользоваться и менять его, продавать сами файлы шрифта нельзя. antialgorithm — скилл Claude Code: модель сначала называет средний выбор и уходит от него по причине из проекта. Звёзды в таблице — снимок на 18.11.2026, ~11:20 МСК. К моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 18.11.2026, ~11:20 МСК. Звёзды — на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
