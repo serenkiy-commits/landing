@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Заряд устройств, идеи в реальном времени, чатбот на правилах и пиксельные сплаты, вечер 18 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор krisgfx9/Wireless-Device-Battery-Monitor, chuanqisun/spaceship, huggingface/pybot и siliconjungle/shapeshift-labs-ink-studio. Звёзды, лицензии и дата push сняты с GitHub 18 ноября 2026, 21:22 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-18-evening-battery-ideas-pybot-splats/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-18-evening-battery-ideas-pybot-splats/">
+  <meta property="og:title" content="Заряд устройств, идеи, чатбот на правилах и пиксельные сплаты: вечерний выпуск 18 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar — 18 ноября 2026, вечерний выпуск: заряд устройств, идеи в реальном времени, чатбот на правилах и пиксельные сплаты",
+        "datePublished": "2026-11-18",
+        "dateModified": "2026-11-18",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-18-evening-battery-ideas-pybot-splats/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор Wireless Battery, Spaceship, PyBot и Ink Studio по данным GitHub API на 18 ноября 2026, 21:22 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 18.11.2026, 21:22 МСК. Звёзды — на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "18 ноября 2026, вечер", "item": "https://snezhko.ru/radar/blog/2026-11-18-evening-battery-ideas-pybot-splats/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">18 ноября 2026, вечер · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar — 18 ноября 2026, вечерний выпуск: заряд устройств, идеи в реальном времени, чатбот на правилах и пиксельные сплаты</h1>
+    <p>Вечерний выпуск — четыре open-source проекта: приложение панели задач Windows с зарядом беспроводных мышей, гарнитур, клавиатур и контроллеров без программ вендоров; браузерное демо, где текст идеи крутят ручками; чатбот на чистом Python из правил, без весов и обучения; набор JavaScript для лепки, анимации и симуляции пиксельных гауссовых сплатов. Число звёзд — данные GitHub API на 18.11.2026, 21:22 МСК. Звёзды — снимок на момент выпуска, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 18 ноября 2026</h2>
+    <p class="meta">Снимок на 18.11.2026, 21:22 МСК. Дата push — из этого снимка. Звёзды — на момент выпуска.</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что это</th><th>Язык</th><th>Лицензия</th><th>★ на 18.11.2026, 21:22 МСК</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/krisgfx9/Wireless-Device-Battery-Monitor">krisgfx9/Wireless-Device-Battery-Monitor</a></td>
+          <td>заряд беспроводных мышей, гарнитур, клавиатур и контроллеров на панели задач Windows, без программ вендоров</td>
+          <td>C++</td>
+          <td>GPL-3.0</td>
+          <td>3744</td>
+          <td>18.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/chuanqisun/spaceship">chuanqisun/spaceship</a></td>
+          <td>«Steer your ideas in realtime»: демо, где текст идеи крутят в реальном времени</td>
+          <td>HTML</td>
+          <td>MIT</td>
+          <td>835</td>
+          <td>16.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/huggingface/pybot">huggingface/pybot</a></td>
+          <td>чатбот на чистом Python: правила, без весов и обучения</td>
+          <td>Python</td>
+          <td>Apache-2.0</td>
+          <td>809</td>
+          <td>16.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/siliconjungle/shapeshift-labs-ink-studio">siliconjungle/shapeshift-labs-ink-studio</a></td>
+          <td>лепка, анимация и симуляция пиксельных гауссовых сплатов</td>
+          <td>JavaScript</td>
+          <td>MIT</td>
+          <td>481</td>
+          <td>18.11.2026</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: описание, язык, лицензия, число звёзд, дата push, признак архива. Снимок на 18.11.2026, 21:22 МСК. Архивными эти четыре репозитория на момент снимка не были. Звёзды в таблице — на момент выпуска: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>Wireless Battery: заряд на панели задач</h2>
+    <p><a href="https://github.com/krisgfx9/Wireless-Device-Battery-Monitor">krisgfx9/Wireless-Device-Battery-Monitor</a> в описании GitHub — приложение панели задач и трея Windows 10/11: уровень батареи беспроводных мышей, гарнитур, клавиатур и контроллеров (Logitech, Razer, SteelSeries, Corsair, HyperX, Glorious, DualSense, Xbox, Bluetooth) без программ вендоров. README называет его Wireless Battery: обычный C++/Win32, около 350 КБ и около 2 МБ оперативной памяти, без среды выполнения и без фоновой службы. Установщик не просит права администратора. Программа читает устройства сама, через HID++ и вендорские HID-отчёты. G HUB, Synapse, iCUE, GG и NGenuity можно не открывать; если они уже запущены, README пишет, что конфликта нет. В комплекте HeadsetControl. На панели по умолчанию значок и процент. Цифра краснеет на 15% и ниже, в трее в этот момент уведомление о низком заряде. Синяя молния — зарядка, приглушённый текст — устройство спит и показан последний уровень. Уровни обновляются раз в 60 секунд, сразу при подключении устройства и при пробуждении компьютера. Язык интерфейса следует языку Windows, в списке есть русский, другой выбирается в меню. Файл для установки — WirelessBattery-Setup со страницы последнего релиза, либо портативный zip с <code>WirelessBattery.exe</code>. Подписи у файла нет: Windows может предупредить о запуске, README в этом случае указывает «More info → Run anyway» или сборку у себя через <code>make</code> или <code>build.bat</code>. Запросы к устройствам README описывает как чтение: неизвестным устройствам программа не пишет. В сеть она выходит из одного окна, «Request support for a device», и только после кнопки Send. Рядом README описывает экспериментальный трей для Linux на GTK4 и hidraw: для доступа к HID нужно правило udev, а Bluetooth, HeadsetControl и часть вендоров отнесены к следующим фазам.</p>
+    <p>Кому: тем, кто на Windows хочет видеть заряд мыши, гарнитуры, клавиатуры или контроллера на панели задач и не держать для этого программу вендора. Язык C++, лицензия GPL-3.0. README пишет «GPL-3.0 or later»: изменённую программу, которую распространяют, нужно выпускать под той же лицензией и с исходным кодом. 3744 звезды на 18.11.2026, 21:22 МСК, последний push 18.11.2026. Репозиторий на момент снимка не был архивным.</p>
+
+    <h2>Spaceship: идеи в реальном времени</h2>
+    <p><a href="https://github.com/chuanqisun/spaceship">chuanqisun/spaceship</a> в описании GitHub — «Steer your ideas in realtime». README называет проект Spaceship IDE и показывает, какими ручками крутить текст идеи, когда генерация станет быстрой и дешёвой. Четыре приёма: монитор фокуса (что модель сейчас держит во внимании и куда из-за этого смотреть человеку), замок внимания (удержать фразу, чтобы сместить дальнейший текст), рули будущих векторов (разложить задачу на составляющие, подкрутить каждую и собрать снова) и повторная генерация (листать другие продолжения). Попробовать можно в браузере: <a href="https://chuanqisun.github.io/spaceship/">chuanqisun.github.io/spaceship</a>. Живой режим README подключает ключи Cerebras и Gemini; ключи остаются в local storage браузера, README прямо пишет, что это на свой риск. Когда основная ручка едет назад, будущий текст очищается, а текущие запросы отменяются: README связывает это с упреждающей генерацией и сбросом кэша. Автор пишет, что большую часть кода собрал в Claude Code, а интерфейс правил сам, и относит проект к шагу в сторону диссертации в MIT Media Lab. Фразу про 60 кадров в секунду README ставит как догадку о будущем моделей, не как замер этого демо.</p>
+    <p>Кому: тем, кто хочет руками покрутить, как текст идеи мог бы слушаться ручек. Язык HTML, лицензия MIT, 835 звёзд на 18.11.2026, 21:22 МСК, последний push 16.11.2026. Репозиторий на момент снимка не был архивным.</p>
+
+    <h2>PyBot: чатбот из правил</h2>
+    <p><a href="https://github.com/huggingface/pybot">huggingface/pybot</a> в описании GitHub — «PyBot: a chatbot written in pure Python by a swarm of agents. No weights, no training, just rules.» README спрашивает, как далеко уйдёт чатбот на правилах, если правила пишет рой агентов, а не человек, как у ELIZA. В коде — ветки if-else, регулярные выражения и таблицы, без весов и без обучения. README пишет, что рой из более чем 1000 агентов собрал и оценил более 5000 версий, а доля побед на SmolTalkBench, где судья-модель сравнивает ответ с эталоном, выросла с 0% до 26%, и ставит это рядом со SmolLM-360M-Instruct. Этот выпуск бенчмарк не повторял. Сам чатбот README оценивает примерно в 640 тысяч строк, тесты, которые написали агенты, — в 550 тысяч. На каждый ход модули в <code>bot/modules/</code> предлагают ответ, арбитр <code>bot/modules/arbiter.py</code> выбирает один. Общие части README называет так: разбор реплики, память диалога, база фактов и сборка фразы. Запуск: Python 3.8 или новее, пакеты и модель не нужны. Клон репозитория и <code>python -m pybot</code> открывают чат в терминале; <code>/reset</code> начинает диалог заново, <code>/exit</code> выходит. README пишет, что старт занимает несколько секунд из-за объёма кода, а ответ — около секунды. Один вопрос без чата: <code>python -m pybot -p</code> и текст. Тот же чат в браузере README указывает на <a href="https://huggingface.co/spaces/HuggingFaceSwarms/PyBot">пространство Hugging Face</a>: у ответа там видно, какой модуль его дал.</p>
+    <p>Кому: тем, кто хочет поговорить с чатботом без скачивания модели и готов читать правила вместо весов. Язык Python, лицензия Apache-2.0, 809 звёзд на 18.11.2026, 21:22 МСК, последний push 16.11.2026. Репозиторий на момент снимка не был архивным.</p>
+
+    <h2>Ink Studio: пиксельные гауссовы сплаты</h2>
+    <p><a href="https://github.com/siliconjungle/shapeshift-labs-ink-studio">siliconjungle/shapeshift-labs-ink-studio</a> в описании GitHub — набор для лепки, анимации и симуляции пиксельных гауссовых сплатов. README называет пакет <code>@shapeshift-labs/ink-studio</code>: на JavaScript лепят объёмы по расстоянию до поверхности, запекают их в пиксельные гауссовы сплаты и дальше двигают, ломают, растят и оставляют след того, что с ними было. Запускать можно из Node, командой <code>ink-studio</code> или вшитым бандлом в своём приложении Inkwell или в браузере. Своё окно и редактор README отдаёт приложению-хозяину. В комплекте геометрия, материалы, свет, анимация, управление персонажем, частицы, физика, процедурная генерация, авторские правки и рендер без окна. Сцена — функция на JavaScript или JSON. У сплата в массиве 16 чисел float32: позиция, плотность, форма, цвет и параметры движения. Пакет в README стоит версии 0.1.0 и помечен private, чтобы случайно не уехать в реестр npm. Node 18 или новее, отдельных runtime-зависимостей README не объявляет. В клоне: <code>node cli/ink-studio.js help</code>, список сцен и <code>node cli/ink-studio.js render watcher --colored</code>. Из другого проекта: <code>npm install github:siliconjungle/shapeshift-labs-ink-studio</code>, затем <code>npx ink-studio help</code>. Картинку без браузера README собирает командой <code>npx ink-studio render model.js --colored</code>.</p>
+    <p>Кому: тем, кто собирает пиксельную сцену из форм, сплатов и симуляции в Node. Язык JavaScript, лицензия MIT, 481 звезда на 18.11.2026, 21:22 МСК, последний push 18.11.2026. Репозиторий на момент снимка не был архивным.</p>
+
+    <h2>Вывод</h2>
+    <p>Одна лицензия GPL-3.0 и три разрешительные: MIT у Spaceship и Ink Studio, Apache-2.0 у PyBot. Wireless Battery показывает заряд беспроводных устройств на панели задач Windows и читает его сама; распространять изменённую программу README просит под GPL-3.0 or later, вместе с исходным кодом. Spaceship — демо в браузере: четыре приёма, которыми крутят текст идеи, а живой режим с ключами Cerebras и Gemini оставляет ключи в local storage. PyBot — чатбот из правил на Python, без модели; долю побед на SmolTalkBench README относит к своим прогонам, этот выпуск их не повторял. Ink Studio лепит пиксельные гауссовы сплаты в Node 18, без объявленных runtime-зависимостей, и рисует картинку командой без браузера. Звёзды в таблице — снимок на 18.11.2026, 21:22 МСК. К моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 18.11.2026, 21:22 МСК. Звёзды — на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
