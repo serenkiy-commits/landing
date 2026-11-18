@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Перенос в Rust, скиллы для маркетинга, сервер принтеров и 3D-детали, утро 18 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор erkamyaman/rust-anything, boringmarketer/boring-marketing-skills, prusa3d/prusa-connect и baney75/smoothstone. Звёзды, лицензии и дата push сняты с GitHub 18 ноября 2026, 06:25 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-18-morning-rust-marketing-3dprint/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-18-morning-rust-marketing-3dprint/">
+  <meta property="og:title" content="Перенос в Rust, скиллы для маркетинга, сервер принтеров и 3D-детали: утренний выпуск 18 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar — 18 ноября 2026, утро: перенос в Rust, скиллы для маркетинга, свой сервер принтеров и 3D-детали",
+        "datePublished": "2026-11-18",
+        "dateModified": "2026-11-18",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-18-morning-rust-marketing-3dprint/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор rust-anything, boring-marketing-skills, Prusa Connect и smoothstone по данным GitHub API на 18 ноября 2026, 06:25 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 18.11.2026, 06:25 МСК. Звёзды — на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "18 ноября 2026, утро", "item": "https://snezhko.ru/radar/blog/2026-11-18-morning-rust-marketing-3dprint/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">18 ноября 2026, утро · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar — 18 ноября 2026, утро: перенос в Rust, скиллы для маркетинга, свой сервер принтеров и 3D-детали</h1>
+    <p>Утренний выпуск — четыре свежих open-source проекта: перенос CLI, HTTP-сервера или библиотеки на Rust по частям, со сверкой каждого шага с записью поведения исходной программы; 32 маркетинговых скилла для агента; локальный сервер для своих 3D-принтеров; скилл и CLI, чтобы небольшая локальная модель собирала деталь для печати по рецепту, а не писала геометрию сама. Число звёзд — данные GitHub API на 18.11.2026, 06:25 МСК. Звёзды — снимок на момент выпуска, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 18 ноября 2026</h2>
+    <p class="meta">Снимок на 18.11.2026, 06:25 МСК. Дата push — из этого снимка. Звёзды — на момент выпуска.</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что это</th><th>Язык</th><th>Лицензия</th><th>★ на 18.11.2026, 06:25 МСК</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/erkamyaman/rust-anything">erkamyaman/rust-anything</a></td>
+          <td>перенос приложения на Rust по частям, сверка с записью поведения исходного кода. CLI, HTTP-серверы и библиотеки</td>
+          <td>Rust</td>
+          <td>MIT</td>
+          <td>1545</td>
+          <td>18.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/boringmarketer/boring-marketing-skills">boringmarketer/boring-marketing-skills</a></td>
+          <td>32 бесплатных маркетинговых скилла для ИИ-агента, включая пакет для локального бизнеса</td>
+          <td>Python</td>
+          <td>MIT</td>
+          <td>545</td>
+          <td>17.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/prusa3d/prusa-connect">prusa3d/prusa-connect</a></td>
+          <td>Prusa Connect: локальный сервер для своих принтеров</td>
+          <td>Go</td>
+          <td>не указана в API (NOASSERTION); текст в LICENSE</td>
+          <td>133</td>
+          <td>17.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/baney75/smoothstone">baney75/smoothstone</a></td>
+          <td>скилл и CLI: небольшая локальная модель собирает деталь для 3D-печати по словам или картинке</td>
+          <td>Python</td>
+          <td>MIT</td>
+          <td>71</td>
+          <td>17.11.2026</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: описание, язык, лицензия, число звёзд, дата push, признак архива. Снимок на 18.11.2026, 06:25 МСК. Архивными эти четыре репозитория на момент снимка не были. Звёзды в таблице — на момент выпуска: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>rust-anything: перенос по записи поведения</h2>
+    <p><a href="https://github.com/erkamyaman/rust-anything">erkamyaman/rust-anything</a> в описании GitHub переписывает приложение на Rust по частям и на каждом шаге сверяет кусок с записанным поведением исходной программы. В описании названы CLI, HTTP-серверы и библиотеки на TypeScript, Python, C, Go, Ruby и Java. README добавляет Node.js к TypeScript и JavaScript и помечает PHP и C# как preview: для них уже есть запись и проигрывание целого CLI или сервера, мост отдельных единиц README относит к следующему шагу. Код на Rust пишет агент или человек. README прямо говорит, что rust-anything код не переводит: он показывает, куда уходит время, в каком порядке переносить, собирает мост, чтобы остальной код звал Rust прежним API, записывает поведение и ставит gate, после которого шаг считается сделанным. Запись покрывает не всё. README выносит это в отдельный раздел: входы, которых не было в записи, расхождения регулярных выражений, то, что меняется между запусками, числа с плавающей точкой, побочные эффекты вне вывода и другую платформу. Проект README называет независимым: он не связан с Rust Project и Rust Foundation, слово Rust — товарный знак Rust Foundation.</p>
+    <p>Как попробовать из README. <code>cargo install rust-anything</code>, затем <code>rust-anything setup</code>. Setup регистрирует инструмент у Claude Code, Codex, Cursor и Gemini CLI. По таблице README Claude Code и Codex получают MCP-сервер и скилл, Cursor и Gemini CLI — MCP-сервер. Повторный запуск README называет безопасным, <code>--remove</code> снимает свои записи и оставляет чужие настройки. Для JavaScript README даёт <code>npm install -g rust-anything</code> — тот же бинарник. Если Rust ещё нет, готовые файлы для macOS, Linux и Windows README указывает во вложениях каждого GitHub release. В Claude Code README отдельно описывает установку плагином: MCP и скилл, CLI при этом должен быть в <code>PATH</code>. В README есть таблицы сравнений скорости и счётчики записанных случаев по прогонам автора. Этот выпуск их не повторял. Страница в поле homepage API — <a href="https://www.npmjs.com/package/rust-anything">пакет rust-anything на npm</a>.</p>
+    <p>Кому: тем, кто переносит CLI, HTTP-сервер или библиотеку на Rust и хочет сверять порт с записью исходной программы. Язык Rust, лицензия MIT, 1545 звёзд на 18.11.2026, 06:25 МСК, последний push 18.11.2026. Репозиторий создан 16.11.2026 и на момент снимка не был архивным.</p>
+
+    <h2>Boring Marketing Skills: 32 скилла для агента</h2>
+    <p><a href="https://github.com/boringmarketer/boring-marketing-skills">boringmarketer/boring-marketing-skills</a> в описании GitHub — 32 бесплатных маркетинговых скилла для ИИ-агента: исследования, позиционирование, тексты, страницы, SEO, поиск в ответах ИИ, реклама, почта и контент, плюс отдельный пакет для локального бизнеса. README пишет, что скиллы рассчитаны на Claude Code, Codex, Cursor и других агентов, собраны из рабочих кампаний и каждый работает без платного инструмента. Лицензия в README — MIT, пользоваться можно для своего бизнеса, клиентов или своего продукта. Автор в README — James Dickerson. Список README делит по этапам, в том порядке, в каком клиент встречает бизнес: с чего начать, как вас находят, как выбирают, как доходят до звонка, как возвращаются, как агентству или фрилансеру искать клиентов и как вести свои публикации. У каждого клиента README предлагает отдельную папку: в <code>/start-here</code> говорят «new client».</p>
+    <p>Как попробовать из README. Для любого агента: <code>npx skills add boringmarketer/boring-marketing-skills</code>. Для Claude Code README даёт две команды: <code>/plugin marketplace add boringmarketer/boring-marketing-skills</code> и <code>/plugin install boring-marketing@boring-marketing-skills</code>. Дальше <code>/start-here</code> и название бизнеса. README описывает этот шаг так: скилл читает сайт и отзывы, пишет файлы бренда, которыми пользуются остальные скиллы, и называет, какой запустить следующим. Платные сервисы README выносит в отдельную таблицу и пишет, что у скилла остаётся бесплатный путь, а свой продукт автор помечает в той же строке, где скилл его называет. Поле homepage API — <a href="https://boringmarketing.com">boringmarketing.com</a>.</p>
+    <p>Кому: маркетологу или агентству, которое хочет отдать агенту исследование, страницу, SEO или письмо и оставить за собой отправку и бюджет. Язык Python, лицензия MIT, 545 звёзд на 18.11.2026, 06:25 МСК, последний push 17.11.2026. Репозиторий создан 16.11.2026 и на момент снимка не был архивным.</p>
+
+    <h2>Prusa Connect: сервер для своих принтеров</h2>
+    <p><a href="https://github.com/prusa3d/prusa-connect">prusa3d/prusa-connect</a> в описании GitHub — Prusa Connect, локальный сервер для принтеров. README описывает один бинарник Go со встроенным веб-приложением, сборки для Linux, Windows, macOS и Raspberry Pi. Принтеры ходят на свой сервер по своей сети, люди входят учётками, которые живут на этом сервере. Учётки, принтеры, история печати и файлы README относит к машине, где запущен сервер. Драйвер принтеров Prusa встроен. Чужие принтеры добавляет драйвер: контракт README кладёт в <code>sdk/connectorapi</code>, пример адаптера — Moonraker для Klipper. Снаружи те же данные, что в веб-приложении, отдают REST API, живые события и MQTT. README перечисляет семейства CORE One, MK4, MK3.9 и MK3.5, XL и MINI и отсылает к таблице команд по версии прошивки. Проект README помечает публичной бетой: релизы 0.x, конфигурация, API и SDK расширений могут меняться от версии к версии, перед обновлением просит сделать копию данных. Нагрузочный прогон README описывает как 400 симулированных принтеров на одном сервере. Этот выпуск прогон не запускал.</p>
+    <p>Как попробовать из README. Скачать файл релиза под свою систему, на Linux и macOS сначала <code>chmod +x</code>, открыть <code>http://&lt;этот компьютер&gt;:8080/</code> и пройти мастер. Либо <code>docker compose -f docker-compose.local.yml up -d prusa-connect</code> и открыть <code>http://localhost:8080/</code>. Без принтера README даёт <code>make demo</code>: нужны Go и pnpm, демо поднимает сервер и симулированный парк, Ctrl+C всё останавливает. Принтер Prusa README подключает файлом на флешке со страницы Add a printer: в файле адрес сервера, токен README туда не кладёт. Дальше на принтере Load Settings и Add Printer to Connect, код с экрана сверяют и подтверждают в браузере. Сборка из исходников README требует Go 1.26.11 или новее, make и POSIX-оболочку, Node.js и pnpm — только для веба и документации. Поле homepage в API на момент снимка пустое.</p>
+    <p>Лицензия. GitHub API на момент снимка лицензию не назвал: поле <code>license.spdx_id</code> — NOASSERTION. Файл <code>LICENSE</code> в репозитории называет комплект OCL v1.1 + Micro v1 + NoSaaS v1 + SWAtt v1: Open Community License v1.1 и три дополнения, Micro Business, Software Specific Use и Software Attribution. README коротко пересказывает тот же файл и пишет, что считается текст в <code>LICENSE</code>. По этому пересказу некоммерческое использование разрешает пользоваться, копировать, менять и разбирать проект; если изменённое отдают дальше, то под той же лицензией и дополнениями, с указанием, на чём оно собрано, в интерфейсе и в исходниках. Бизнесу README разрешает запускать и менять сервер для своего внутреннего использования, включая своё производство, пока годовая валовая выручка вместе с аффилированными лицами не выше одного миллиона евро. Отдавать это другим как сервис — хостинг для третьих лиц или доступ к функциям и API — README не разрешает. Всё, что шире, README относит к отдельной коммерческой лицензии и даёт адрес sales@prusa3d.com. Это пересказ README и шапки LICENSE, не замена текста файла.</p>
+    <p>Кому: тем, кто хочет панель своих принтеров на своей машине и готов сверить LICENSE до того, как открывать сервер наружу. Язык Go, лицензия в API не указана, 133 звезды на 18.11.2026, 06:25 МСК, последний push 17.11.2026. Репозиторий создан 17.11.2026 и на момент снимка не был архивным.</p>
+
+    <h2>smoothstone: деталь по рецепту</h2>
+    <p><a href="https://github.com/baney75/smoothstone">baney75/smoothstone</a> в описании GitHub — скилл и CLI, с которыми небольшая локальная модель вроде LFM3-1.7B делает детали для 3D-печати по словам или по картинке, в том числе если контекст модели уплотнили. README описывает приём так: модель не пишет геометрию. Она выбирает проверенный рецепт и подставляет размеры из запроса или картинки, а команда <code>stone</code> собирает деталь, проверяет, что её можно напечатать, и пишет шаги на диск. Каждое сообщение stone заканчивается строкой, что запустить дальше. <code>stone status</code> печатает эту строку снова вместе с запросом, рецептом, размерами и последней сборкой, так что модель, которая всё забыла, продолжает с неё. Сборка идёт через OpenSCAD с бэкендом Manifold. Проверки README перечисляет: замкнутая поверхность, одно тело, плоскость на столе, первый слой, толщина стенок, свес не круче 45 градусов и размер, который обещал рецепт. Если проверка не прошла, stone называет одну настройку и команду, которая её меняет. Картинку README пускает контуром для брелока, формочки и вывески и картой высот для литофании и рельефа; чтобы картинка пошла в дело, модели не обязательно на неё смотреть.</p>
+    <p>Рецепты README перечисляет: fan_guard, panel, cable_comb, vase, planter, gridfinity_bin, phone_stand, hook, spur_gear, box, keychain, cookie_cutter, sign, lithophane и relief. Каждый, пишет README, печатается без поддержек, примеры по умолчанию собираются и проверяются в CI. Уровень задают <code>STONE_TIER</code> или <code>tier</code> в <code>stone.toml</code>. Карточка S — модели около 3B и меньше только выбирают рецепт и числа. M — около 4B–30B ещё выбирают вид: стиль, узор, скругление, текст. L README отдаёт крупным моделям: они пишут новые рецепты на OpenSCAD с BOSL2 и библиотекой stone. <code>stone status</code> повторяет правила карточки, чтобы они вернулись после уплотнения контекста. Как поставить из README: нужны uv, OpenSCAD 2026 или новее (ночной сборке README приписывает бэкенд Manifold) и potrace для картинок. Дальше клон репозитория, <code>uv tool install -e .</code> и <code>stone status</code>. OpenSCAD README ищет в <code>STONE_OPENSCAD</code>, затем в PATH, затем в <code>vendor/openscad/AppRun</code>. Скилл — папка <code>skill</code>. README даёт символическую ссылку в каталог скиллов Claude Code, Codex и pi. Для локальной модели на llama.cpp README предлагает один инструмент <code>stone</code>, который запускает командную строку, и файл <code>skill/tiers/S.md</code> в системном промпте. В README есть свой прогон LFM3-1.7B, логи в <code>LOG.md</code> и наборы в <code>evals</code>. Этот выпуск прогон не повторял и доли из README в текст не переносит. Лицензию кода README называет MIT. BOSL2 в <code>vendor/BOSL2</code> — BSD 2-Clause. Картинки кота, кролика и дерева в <code>examples/images</code> — Material Design Icons, Apache 2.0. Поле homepage в API на момент снимка пустое.</p>
+    <p>Кому: тем, у кого на своём компьютере крутится небольшая модель и нужна печатная деталь по фразе или картинке, без того чтобы модель сама писала OpenSCAD. Язык Python, лицензия MIT, 71 звезда на 18.11.2026, 06:25 МСК, последний push 17.11.2026. Репозиторий создан 15.11.2026 и на момент снимка не был архивным.</p>
+
+    <h2>Вывод</h2>
+    <p>Три лицензии MIT. У Prusa Connect GitHub API лицензию не назвал (NOASSERTION), текст лежит в <code>LICENSE</code>: OCL v1.1 с дополнениями Micro, NoSaaS и SWAtt. rust-anything не переводит код сам: он записывает поведение исходной программы и проверяет Rust, который написали вы или агент. Сравнения скорости в его README — прогоны автора, этот выпуск их не повторял. boring-marketing-skills отдаёт агенту 32 скилла, вход README начинает с <code>/start-here</code>. Prusa Connect — свой сервер принтеров в публичной бете 0.x; внутреннее использование бизнеса README ограничивает выручкой, сервис для третьих лиц — нет, сверять нужно файл LICENSE. smoothstone оставляет небольшой модели выбор рецепта и размеров, геометрию собирает <code>stone</code> и пишет шаги на диск, чтобы работа пережила уплотнение контекста. Доли успешных прогонов в README этот выпуск не перепроверял. Звёзды в таблице — снимок на 18.11.2026, 06:25 МСК. К моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 18.11.2026, 06:25 МСК. Звёзды — на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
