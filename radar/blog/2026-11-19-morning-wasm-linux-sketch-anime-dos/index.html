@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Linux в WebAssembly, скетч-анимации для агентов, аниме-UI и LLM для DOS, утро 19 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор pithings/unkernel, nilbuild/stick-scene, finktheartist/sakuga-vfx и WollyMonjac/Tiny-2.1. Звёзды, лицензии и дата push сняты с GitHub 19 ноября 2026, ~06:25 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-19-morning-wasm-linux-sketch-anime-dos/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-19-morning-wasm-linux-sketch-anime-dos/">
+  <meta property="og:title" content="Linux в WebAssembly, скетч-анимации, аниме-UI и LLM для DOS: утренний выпуск 19 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar 19 ноября 2026 — утренний выпуск: Linux в WebAssembly, скетч-анимации для агентов, аниме-UI и LLM для DOS",
+        "datePublished": "2026-11-19",
+        "dateModified": "2026-11-19",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-19-morning-wasm-linux-sketch-anime-dos/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор Unkernel, Stick Scene, Sakuga VFX и Tiny-2.1 по данным GitHub API на 19 ноября 2026, ~06:25 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 19.11.2026, ~06:25 МСК. Звёзды — на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "19 ноября 2026, утро", "item": "https://snezhko.ru/radar/blog/2026-11-19-morning-wasm-linux-sketch-anime-dos/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">19 ноября 2026, утро · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar 19 ноября 2026 — утренний выпуск: Linux в WebAssembly, скетч-анимации для агентов, аниме-UI и LLM для DOS</h1>
+    <p>Утренний выпуск — четыре open-source проекта: ядро Linux, собранное в WebAssembly; навык агента, который рисует сцены из человечков; веб-компоненты интерфейса с реакцией как в аниме; вопросно-ответная модель, которую README описывает как эксперимент под DOS. Число звёзд — данные GitHub API на 19.11.2026, ~06:25 МСК, снимок на момент публикации. Звёзды — снимок на момент выпуска, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 19 ноября 2026</h2>
+    <p class="meta">Снимок на 19.11.2026, ~06:25 МСК. Дата push — из этого снимка. Звёзды — на момент выпуска.</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что это</th><th>Язык</th><th>Лицензия</th><th>★ на 19.11.2026, ~06:25 МСК</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/pithings/unkernel">pithings/unkernel</a></td>
+          <td>настоящее ядро Linux, собранное в WebAssembly; в описании GitHub — оболочка меньше чем за секунду</td>
+          <td>TypeScript</td>
+          <td>GPL-2.0</td>
+          <td>468</td>
+          <td>17.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/nilbuild/stick-scene">nilbuild/stick-scene</a></td>
+          <td>навык, который рисует анимированные сцены из человечков</td>
+          <td>JavaScript</td>
+          <td>MIT</td>
+          <td>440</td>
+          <td>16.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/finktheartist/sakuga-vfx">finktheartist/sakuga-vfx</a></td>
+          <td>двенадцать обычных элементов интерфейса с реакцией как в аниме; по файлу на элемент, без зависимостей</td>
+          <td>HTML</td>
+          <td>MIT</td>
+          <td>356</td>
+          <td>15.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/WollyMonjac/Tiny-2.1">WollyMonjac/Tiny-2.1</a></td>
+          <td>языковая модель для DOS, которая в описании GitHub помещается на дискету</td>
+          <td>Python</td>
+          <td>MIT</td>
+          <td>282</td>
+          <td>17.11.2026</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: описание, язык, лицензия, число звёзд, дата push, признак архива. Снимок на 19.11.2026, ~06:25 МСК. Архивными эти четыре репозитория на момент снимка не были. Звёзды в таблице — на момент выпуска: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>Unkernel: Linux в WebAssembly</h2>
+    <p><a href="https://github.com/pithings/unkernel">pithings/unkernel</a> в описании GitHub — «A real Linux kernel, compiled to WebAssembly. It boots to a shell in less than a second.» Домашняя страница — <a href="https://unkernel.dev">unkernel.dev</a>. README описывает Linux 7.x, собранный одним wasm-модулем с настоящим MMU. Ядро — системные вызовы, планировщик, управление памятью, ext4 и TCP/IP — это скомпилированный код, не эмуляция. Пользовательские программы — немодифицированные бинарники Linux для riscv64, их исполняет JIT, поэтому пакеты Alpine и Ubuntu, по README, запускаются как есть. На странице в браузере README называет оболочку, пакетный менеджер, постоянный диск, доступ в интернет и экран со звуком. Всё выполняется на устройстве, без сервера. Есть CLI и JavaScript SDK.</p>
+    <p>Кому: тем, кто хочет открыть в браузере оболочку Linux, собранного в WebAssembly, и запускать немодифицированные пакеты Alpine и Ubuntu. Как попробовать: страница <a href="https://unkernel.dev">unkernel.dev</a> — README относит к ней оболочку, пакетный менеджер, постоянный диск, интернет и экран со звуком. Отдельно README называет CLI и JavaScript SDK. Фразу «меньше секунды до оболочки» выпуск берёт из описания GitHub и сам не замерял. Язык по снимку API — TypeScript, лицензия GPL-2.0. 468 звёзд на 19.11.2026, ~06:25 МСК, последний push 17.11.2026. Репозиторий на момент снимка не был архивным.</p>
+
+    <h2>Stick Scene: скетч-анимации для агентов</h2>
+    <p><a href="https://github.com/nilbuild/stick-scene">nilbuild/stick-scene</a> в описании GitHub — «Skill to draw stick figure animated visuals». Домашняя страница — <a href="https://kamran.fyi/stick-scene">kamran.fyi/stick-scene</a>. README описывает навык агента: он рисует небольшие сцены из человечков, которые показывают, что делает продукт. Каждая сцена — один <code>&lt;canvas&gt;</code>, без зависимостей. Сцена стоит в покое и проигрывает действие, когда блок попадает в зону просмотра, по клику или при наведении. Установка из README: <code>npx skills add nilbuild/stick-scene</code>, затем <code>/stick-scene</code> и текст того, что показать. Дальше, по README, агент читает проект, предлагает 2–3 идеи, пишет сцену, рендерит её кадр за кадром, чтобы проверить наложения, и добавляет сцену на страницу. Правки просят обычными словами: медленнее, зациклить, цвет бренда.</p>
+    <p>Кому: тем, кто хочет, чтобы агент добавил на страницу короткую сцену из человечков про свой продукт. Как попробовать: команда <code>npx skills add nilbuild/stick-scene</code>, затем <code>/stick-scene</code> с описанием сцены. Страница навыка — <a href="https://kamran.fyi/stick-scene">kamran.fyi/stick-scene</a>. Язык по снимку API — JavaScript, лицензия MIT. 440 звёзд на 19.11.2026, ~06:25 МСК, последний push 16.11.2026. Репозиторий на момент снимка не был архивным.</p>
+
+    <h2>Sakuga VFX: аниме-UI</h2>
+    <p><a href="https://github.com/finktheartist/sakuga-vfx">finktheartist/sakuga-vfx</a> в описании GitHub — «Twelve ordinary UI controls that react like anime. One file each, no dependencies.» Демо — <a href="https://sakuga-vfx.vercel.app">sakuga-vfx.vercel.app</a>. README называет веб-компоненты <code>&lt;sakuga-button&gt;</code>, <code>&lt;sakuga-toggle&gt;</code>, <code>&lt;sakuga-slider&gt;</code>, <code>&lt;sakuga-checkbox&gt;</code>, <code>&lt;sakuga-radio&gt;</code> и другие в том же ряду. При взаимодействии они сжимаются и проскакивают на пружинах и рисуют эффекты: дым, вспышки удара, кристаллы, разрезы, брызги — с манга-надписями звуковых эффектов. Эффекты рисуются кодом на одном canvas. Зависимостей нет, шага сборки нет.</p>
+    <p>Кому: тем, кто хочет обычные элементы интерфейса с реакцией как в аниме, по файлу на элемент и без сборки. Как попробовать: открыть <a href="https://sakuga-vfx.vercel.app">демо</a> или вставить названные веб-компоненты. Число «двенадцать» выпуск берёт из описания GitHub; README в этом тексте перечисляет часть имён и ставит многоточие. Язык по снимку API — HTML, лицензия MIT. 356 звёзд на 19.11.2026, ~06:25 МСК, последний push 15.11.2026. Репозиторий на момент снимка не был архивным.</p>
+
+    <h2>Tiny-2.1: LLM для DOS</h2>
+    <p><a href="https://github.com/WollyMonjac/Tiny-2.1">WollyMonjac/Tiny-2.1</a> в описании GitHub — «Language model for DOS that fits on a floppy disk». README описывает маленькую вопросно-ответную трансформер-модель, написанную на Turbo C 2.0: она запускается на Pentium или 486DX под обычным DOS. В README: 367&nbsp;000 параметров, 4 слоя, ширина 96, ответ по буквам. Веса 8-битные, всего 380 КБ. Нужно около 540 КБ свободной conventional memory. Обучена примерно на 3500 фактах и вне их, по README, уверенно выдумывает. Набор для обучения — на Python и PyTorch, по README хватает CPU. Свои факты можно добавить. Это эксперимент и любопытство, не практический инструмент для ответов.</p>
+    <p>Кому: тем, кто хочет посмотреть на маленькую вопросно-ответную модель под DOS, а не получить рабочий помощник. Как попробовать по README: программа на Turbo C 2.0 для Pentium или 486DX под обычным DOS, ей нужно около 540 КБ свободной conventional memory. Набор обучения — Python и PyTorch, CPU по README достаточно, свои факты можно добавить. Отдельной домашней страницы в снимке API нет. Язык по снимку API — Python, лицензия MIT. 282 звезды на 19.11.2026, ~06:25 МСК, последний push 17.11.2026. Репозиторий на момент снимка не был архивным.</p>
+
+    <h2>Вывод</h2>
+    <p>Одна лицензия GPL-2.0 у Unkernel и три MIT: у Stick Scene, Sakuga VFX и Tiny-2.1. Unkernel — Linux 7.x одним wasm-модулем с настоящим MMU: ядро скомпилировано, а не эмулировано, пакеты Alpine и Ubuntu README относит к немодифицированным бинарникам riscv64 через JIT, страница в браузере работает на устройстве и без сервера. Stick Scene — навык агента: одна сцена на один <code>&lt;canvas&gt;</code>, без зависимостей, установка <code>npx skills add nilbuild/stick-scene</code>. Sakuga VFX — веб-компоненты интерфейса с пружинами и нарисованными эффектами, без зависимостей и без шага сборки; демо на <a href="https://sakuga-vfx.vercel.app">sakuga-vfx.vercel.app</a>. Tiny-2.1 — эксперимент: вопросно-ответная модель на Turbo C 2.0 под DOS, 367&nbsp;000 параметров и 380 КБ, вне примерно 3500 фактов README пишет, что она уверенно выдумывает. Звёзды в таблице — снимок на 19.11.2026, ~06:25 МСК. К моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 19.11.2026, ~06:25 МСК. Звёзды — на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
