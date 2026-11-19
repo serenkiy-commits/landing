@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Место на диске Windows, MATE на Wayland, мониторинг Android и локальный MCP, день 19 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор krezio/roomy, scottsturrock/mate-wayland-desktop, ybblab/Jiumi и ysunyang4/Nexus. Звёзды, лицензии и дата push сняты с GitHub 19 ноября 2026, ~11:20 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-19-midday-disk-wayland-android-mcp/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-19-midday-disk-wayland-android-mcp/">
+  <meta property="og:title" content="Место на диске Windows, MATE на Wayland, мониторинг Android и локальный MCP: дневной выпуск 19 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar 19 ноября 2026, день: место на диске Windows, MATE на Wayland, мониторинг Android и локальный MCP",
+        "datePublished": "2026-11-19",
+        "dateModified": "2026-11-19",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-19-midday-disk-wayland-android-mcp/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор Roomy, MATE Wayland Desktop, Jiumi и Nexus по данным GitHub API на 19 ноября 2026, ~11:20 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 19.11.2026, ~11:20 МСК. Звёзды — на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "19 ноября 2026, день", "item": "https://snezhko.ru/radar/blog/2026-11-19-midday-disk-wayland-android-mcp/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">19 ноября 2026, день · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar 19 ноября 2026, день: место на диске Windows, MATE на Wayland, мониторинг Android и локальный MCP</h1>
+    <p>Дневной выпуск — четыре open-source проекта: программа, которая показывает, чем занят диск Windows, и чистит то, что README называет безопасным; дистрибутив с рабочим столом MATE на Wayland; монитор поведения приложений Android; локальный MCP, который открывает веб-ассистентам файлы, терминал, Git и инструменты рабочего стола по разрешению пользователя. Число звёзд — данные GitHub API на 19.11.2026, ~11:20 МСК, снимок на момент публикации. Звёзды — снимок на момент выпуска, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 19 ноября 2026</h2>
+    <p class="meta">Снимок на 19.11.2026, ~11:20 МСК. Дата push — из этого снимка. Звёзды — на момент выпуска.</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что это</th><th>Язык</th><th>Лицензия</th><th>★ на 19.11.2026, ~11:20 МСК</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/krezio/roomy">krezio/roomy</a></td>
+          <td>программа для Windows: показывает, чем занят диск, и чистит то, что README относит к безопасному</td>
+          <td>C#</td>
+          <td>MIT</td>
+          <td>463</td>
+          <td>19.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/scottsturrock/mate-wayland-desktop">scottsturrock/mate-wayland-desktop</a></td>
+          <td>рабочий стол MATE на Wayland с композитором labwc, база Ubuntu 26.04; исходники и система сборки</td>
+          <td>Shell</td>
+          <td>GPL-3.0</td>
+          <td>440</td>
+          <td>17.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/ybblab/Jiumi">ybblab/Jiumi</a></td>
+          <td>монитор поведения и приватности приложений Android: доступ к разрешениям и сетевая активность, root не обязателен</td>
+          <td>Kotlin</td>
+          <td>Apache-2.0</td>
+          <td>476</td>
+          <td>19.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/ysunyang4/Nexus">ysunyang4/Nexus</a></td>
+          <td>локальный MCP: веб-ассистенты получают файлы, терминал, Git и инструменты рабочего стола с разрешениями пользователя</td>
+          <td>TypeScript</td>
+          <td>AGPL-3.0</td>
+          <td>412</td>
+          <td>18.11.2026</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: описание, язык, лицензия, число звёзд, дата push, признак архива. Снимок на 19.11.2026, ~11:20 МСК. Архивными эти четыре репозитория на момент снимка не были. Звёзды в таблице — на момент выпуска: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>Roomy: место на диске Windows</h2>
+    <p><a href="https://github.com/krezio/roomy">krezio/roomy</a> в описании GitHub — «Your C: drive is full. Let's fix that. See what's eating your space in plain English and clean the safe stuff in one click.» README повторяет ту же формулу: увидеть, что занимает место, простыми словами и почистить безопасное в один клик. Сайт — <a href="https://roomy.krezio.xyz">roomy.krezio.xyz</a>. README относит программу к Windows 10 версии 2004 и новее и к Windows 11. Сборка из исходников требует .NET 10 SDK. К категории Safe по умолчанию README относит остатки Windows Update, Delivery Optimization и временные файлы Windows (для них нужны права администратора); кэши Discord, Spotify, VS Code, Slack, Teams, npm, pip, Yarn, NuGet и лаунчеров Steam, Epic, Battle.net, EA app, Ubisoft Connect, Riot Client и GOG Galaxy; кэши Chrome, Edge, Brave, Vivaldi, Firefox и Opera; временные файлы старше суток, дампы сбоев, отчёты об ошибках и корзину. Кэши шейдеров GPU (NVIDIA, AMD, Intel, DirectX, Steam) README помечает как безопасные, но снятые с галочки. На усмотрение пользователя: старые установщики и большие нетронутые загрузки, игры Steam, в которые не играли два месяца и дольше (удаление через Steam), <code>Windows.old</code> через штатную очистку Windows и файл гибернации. Про файл гибернации README пишет, что он часто занимает 6–16 ГБ; выпуск это не замерял. Отдельно есть карта места: папки диска и самые большие файлы. Сканирование README описывает как только чтение: удаление начинается после Clean up. Папки Documents, Desktop, Pictures, Videos, Music, Downloads как папка, папка пользователя, Windows и Program Files заблокированы. Junctions и symlinks программа не следует, занятые файлы пропускает. Сети README не заявляет: ни телеметрии, ни аккаунтов, ни обновлений «домой»; при сбое текст ошибки пишется в <code>%LOCALAPPDATA%\Roomy\crash.log</code> на этом компьютере. По умолчанию файлы удаляются насовсем, и программа говорит об этом до подтверждения. Фоновые проверки README описывает как выключенные: трей, автозапуск, проверка свободного места на системном диске каждые 30 или 60 минут (порог от 1 до 500 ГБ, по умолчанию 10 ГБ) и еженедельная проверка кэшей. Сами проверки ничего не удаляют. Интерфейс следует языку Windows: английский, русский и упрощённый китайский. Установка из README: <a href="https://apps.microsoft.com/detail/9P983BK0XVMC?mode=direct">Microsoft Store</a>, <code>Roomy-Setup.exe</code> на пользователя без прав администратора или <code>Roomy-portable.exe</code> из релизов.</p>
+    <p>Кому: тем, у кого на Windows заканчивается место и кто хочет сначала прочитать, что занимает диск и что README считает безопасным. На что обратить внимание: репозиторий создан 12.11.2026. Без перезапуска от администратора категория остатков Windows пропускается. Язык по снимку API — C#, лицензия MIT. 463 звезды на 19.11.2026, ~11:20 МСК, последний push 19.11.2026. Репозиторий на момент снимка не был архивным.</p>
+
+    <h2>MATE Wayland Desktop: MATE на Wayland</h2>
+    <p><a href="https://github.com/scottsturrock/mate-wayland-desktop">scottsturrock/mate-wayland-desktop</a> в описании GitHub — «MATE Wayland Desktop: the MATE desktop on Wayland with labwc, on an Ubuntu 26.04 base. Sources and build system.» README описывает дистрибутив вокруг двухпанельного рабочего стола MATE, продолжения GNOME 2, на Wayland. Панель, меню, файловый менеджер и настройки MATE работают на композиторе <a href="https://labwc.github.io/">labwc</a> вместо оконного менеджера MATE, который README называет только для X11. Исходники — весь проект: сессия, настройки, сборка пакетов, оформление и система, которая собирает live ISO. README пишет, что проект независимый и не связан с проектами MATE и GNOME и с Canonical; база — Ubuntu. Сайт — <a href="https://mate-wayland.org/">mate-wayland.org</a>, ISO, контрольная сумма и шаги установки — <a href="https://mate-wayland.org/download/">mate-wayland.org/download/</a>. В поставке README называет меню Applications, Places и System, область уведомлений, батарею, громкость и часы сверху, список окон и переключатель рабочих столов снизу, значки на рабочем столе, файловый менеджер Caja, MATE Control Center и Firefox с uBlock Origin. Тема Menta, шрифт Noto Sans, значки Yaru, свои обои, логотип, экран входа, блокировка и заставка загрузки. Несколько мониторов, у каждого своё разрешение. Live ISO для USB или DVD (UEFI), установщик Calamares, необязательное шифрование LUKS2; <code>/boot</code> остаётся незашифрованным, как у установщика Ubuntu. Таблица README: пакеты Ubuntu 26.04 LTS, Linux 7.0, без GNOME Shell и без snap; Wayland и labwc 0.9 (wlroots); XWayland для программ только под X11; MATE 1.29 и mate-applets 1.28; LightDM и Calamares 3.3; Firefox из APT-репозитория Mozilla. Сборка — на машине семейства Debian с <code>debootstrap</code>, <code>apt</code>, <code>sudo</code>, <code>curl</code> и компилятором C. Команды из README: <code>./build.sh --packages</code> в первый раз, затем <code>./build.sh</code>. ISO пишется в <code>iso/out/</code>. Первую сборку пустого клона README оценивает примерно в 35 минут, полную пересборку ISO примерно в 8 минут, пересборку после правок только своих файлов примерно в минуту. Эти сроки выпуск не замерял. ISO стартует на открытых драйверах ядра: для NVIDIA это nouveau. Проприетарный драйвер README предлагает ставить после установки системы командой <code>sudo ubuntu-drivers install</code>, нужен интернет.</p>
+    <p>Кому: тем, кто хочет классический двухпанельный MATE на Wayland и готов взять ISO или собрать его. На что обратить внимание: Ubuntu 26.04 LTS, ядро Linux 7.0, labwc 0.9 и MATE 1.29 — формулировки README на дату снимка. Лицензия проекта GPL-3.0; README пишет, что компоненты из других проектов сохраняют свои лицензии. Репозиторий создан 16.11.2026. Язык по снимку API — Shell. 440 звёзд на 19.11.2026, ~11:20 МСК, последний push 17.11.2026. Репозиторий на момент снимка не был архивным.</p>
+
+    <h2>Jiumi: поведение приложений Android</h2>
+    <p><a href="https://github.com/ybblab/Jiumi">ybblab/Jiumi</a> в описании GitHub — «揪咪 Jiumi：开源安卓应用行为监测与管理，查看权限访问和网络活动。Android app activity &amp; privacy monitor. No root required.» README описывает лёгкий инструмент мониторинга и управления поведением приложений Android: компьютер не нужен, записи хранятся на телефоне. Сайт — <a href="https://jiumi.ybblab.com">jiumi.ybblab.com</a>, руководство — <a href="https://jiumi.ybblab.com/download/">jiumi.ybblab.com/download/</a>. README указывает Android 11 и выше и размер установочного пакета около 4 МБ. Журнал смотрят по времени, приложению или типу; среди примеров README — местоположение, буфер обмена и идентификаторы устройства. README называет 12 классов данных и 56 видов доступа и отдельный фильтр фоновых записей. Блок «нужно внимание» собирает отправку данных в фоне, чтение чувствительных данных в фоне, частый доступ за короткое время и повторные отклонённые попытки. По приложениям видны адреса соединений и доступная статистика трафика; после включения записи доменов показываются связанные домены. В карточке приложения README обещает детали доступа к разрешениям, которые хранит сам Android, включая часть поведения до начала мониторинга. Экспорт — ZIP с CSV за выбранный период. Пока мониторинг идёт, висит уведомление с длительностью и кнопкой остановки. Управление README описывает как действия пользователя: разрешения по одному, общий выключатель контролируемых разрешений, заморозка для текущего пользователя с сохранением данных, удаление самостоятельно установленного приложения после ввода полного имени пакета. Перед таким удалением README описывает копию установочного пакета и прямо пишет: данные приложения при удалении пропадают, копия восстанавливает только пакет. На поддерживаемых устройствах сеть одного приложения закрывается штатным файрволом Android, без VPN. Как README объясняет наблюдение без обязательного root: зонд читает сигналы с правами shell — записи AppOps, таблицу соединений (по умолчанию раз в 5 секунд), трассировку Perfetto и журнал событий — и не внедряет код в другие приложения. Запуск зонда: беспроводная отладка, Shizuku или root. Необязательная запись доменов поднимает локальный VPN: DNS-запросы принимаются и без изменений уходят DNS-серверу текущей сети, остальной трафик идёт напрямую, слот VPN системы при этом занят. Записи README обещает не выгружать, аккаунта нет. Проверка обновлений с GitHub отключается; выбранный пакет сверяется по размеру, SHA-256 и подписи. Текст переписки, пароли и тело сетевой передачи README относит к тому, чего инструмент не видит. Статистика трафика по соединениям — Android 14 и выше и поддержка системы. Сборка: JDK 17, Android SDK, из каталога <code>code</code> команда <code>./gradlew :app:assembleDebug</code>. README просит ставить приложение на своё устройство или на то, где есть разрешение.</p>
+    <p>Кому: тем, кто на Android 11 и новее хочет смотреть доступ приложений к разрешениям и сетевую активность и держать журнал на телефоне. На что обратить внимание: «без root» в описании GitHub относится к чтению сигналов через shell. Беспроводная отладка, Shizuku или root нужны, чтобы этот зонд запустить. Запись доменов занимает VPN. Числа «12 классов», «56 видов доступа» и «около 4 МБ» выпуск берёт из README и сам не пересчитывал. Короткое соединение может закончиться между двумя чтениями таблицы — так пишет README. Репозиторий создан 13.11.2026. Язык по снимку API — Kotlin, лицензия Apache-2.0. 476 звёзд на 19.11.2026, ~11:20 МСК, последний push 19.11.2026. Репозиторий на момент снимка не был архивным.</p>
+
+    <h2>Nexus: локальный MCP для веб-ассистентов</h2>
+    <p><a href="https://github.com/ysunyang4/Nexus">ysunyang4/Nexus</a> в описании GitHub — «Connect web AI assistants to local files, terminals, Git, and desktop tools through MCP, with user-controlled permissions.» README называет Nexus локальной панелью MCP для совместимых клиентов: разрешённые инструменты отдаются по MCP Streamable HTTP с bearer-токеном. Рядом описано необязательное расширение <a href="https://github.com/ysunyang4/webagent">WebAgent</a> для совместимых веб-чатов; Nexus README предлагает подключать и к другим MCP-клиентам. Бейдж README показывает версию 1.3.1, платформы Windows, macOS и Linux и формулировку «332 Canonical MCP Tools» в 24 возможностях. Выпуск это число не пересчитывал. Схема README: веб-чат ходит на локальный адрес, панель на Tauri 2 поднимает Fastify на порту 18080 и SQLite с WAL, дальше JSON-RPC 2.0 по WebSocket к локальному раннеру. У раннера README перечисляет журнал действий с записью до побочного эффекта, восстановление после сбоя, нативное управление окнами Windows через WinRT OCR и UI Automation, песочницы каталогов, git worktree, LSP для TypeScript и Python и браузерную автоматизацию. По умолчанию README описывает песочницу путей <code>read-only</code> и фильтр команд <code>safe-only</code>. Режимы доступа (<code>read-only</code> или <code>read-write</code>) и исполнения (<code>disabled</code>, <code>safe-only</code>, <code>project-code</code>) переключаются без перезапуска. Если включить запись, исполнение кода проекта, автоматизацию интерфейса или режим полного контроля, README перекладывает ответственность за команды и файлы на пользователя. Маска чувствительных файлов в README: <code>.env*</code>, <code>*.pem</code>, <code>*.key</code>, <code>id_rsa</code>, <code>.git</code> и облачные учётные данные. Результаты, которые возвращаются в веб-чат, могут уйти с машины к стороннему сервису — README просит это учитывать. Подключение: авторизовать каталог, выпустить токен клиента и указать <code>http://127.0.0.1:18080/mcp</code> с заголовком <code>Authorization: Bearer</code>. Сборка из README: Node.js 24 или новее, pnpm 10 или новее, стабильный Rust, затем <code>pnpm install</code>, <code>pnpm run build</code> и <code>pnpm --filter @localbridge/desktop dev</code>. Про установщик README предупреждает: скачивать только файл, который реально лежит в Assets релиза, и не предполагать сборку под свою систему, пока её нет на странице; сборки тега v1.3.1 и ветки main могут различаться. Лицензия в снимке API — AGPL-3.0. README относит её к GNU AGPL-3.0 и отсылает к тексту лицензии, в том числе к обязанностям при распространении и при сетевом доступе к изменённой версии.</p>
+    <p>Кому: тем, кто хочет сам решить, какой локальный каталог и какой режим открыть веб-ассистенту или другому MCP-клиенту. На что обратить внимание: AGPL-3.0, ответы инструментов уходят в подключённый чат, а полный контроль README описывает как ответственность пользователя. Репозиторий создан 13.11.2026. Отдельной домашней страницы в снимке API нет. Язык по снимку API — TypeScript. 412 звёзд на 19.11.2026, ~11:20 МСК, последний push 18.11.2026. Репозиторий на момент снимка не был архивным.</p>
+
+    <h2>Вывод</h2>
+    <p>Четыре лицензии: MIT у Roomy, GPL-3.0 у MATE Wayland Desktop, Apache-2.0 у Jiumi и AGPL-3.0 у Nexus. Roomy — очистка диска Windows 10 версии 2004 и новее и Windows 11: чтение до клика Clean up, без сети по тексту README, с заблокированными пользовательскими папками; сайт <a href="https://roomy.krezio.xyz">roomy.krezio.xyz</a>. MATE Wayland Desktop — live ISO на пакетах Ubuntu 26.04 LTS, ядро Linux 7.0 по README, рабочий стол MATE 1.29 на labwc 0.9, без GNOME Shell и без snap; скачивание на <a href="https://mate-wayland.org/download/">mate-wayland.org/download/</a>. Jiumi — журнал разрешений и сети на Android 11 и новее, записи на телефоне; зонд с правами shell, обязательный root README не требует; сайт <a href="https://jiumi.ybblab.com">jiumi.ybblab.com</a>. Nexus — локальный MCP на <code>127.0.0.1:18080</code>, по умолчанию <code>read-only</code> и <code>safe-only</code>, лицензия AGPL-3.0. Звёзды в таблице — снимок на 19.11.2026, ~11:20 МСК. К моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 19.11.2026, ~11:20 МСК. Звёзды — на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
