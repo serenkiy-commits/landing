@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Личный self-hosted агент, робототехника для агентов, дизайн-скиллы и офлайн-Википедия, вечер 20 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор replit/amuse, google-deepmind/robotics-antigravity-plugin, diego3g/craft и gordonbrander/zim-mcp. Звёзды, лицензии и дата push сняты с GitHub 20 ноября 2026, ~21:18 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-20-evening-personal-agent-robotics-design-wiki/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-20-evening-personal-agent-robotics-design-wiki/">
+  <meta property="og:title" content="Личный self-hosted агент, робототехника для агентов, дизайн-скиллы и офлайн-Википедия: вечерний выпуск 20 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Личный self-hosted агент, робототехника для агентов, дизайн-скиллы и офлайн-Википедия через MCP — вечер 20 ноября 2026",
+        "datePublished": "2026-11-20",
+        "dateModified": "2026-11-20",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-20-evening-personal-agent-robotics-design-wiki/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор amuse, Robotics Antigravity Plugin, craft и zim-mcp по данным GitHub API на 20 ноября 2026, ~21:18 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 20.11.2026, ~21:18 МСК. Звёзды — на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "20 ноября 2026, вечер", "item": "https://snezhko.ru/radar/blog/2026-11-20-evening-personal-agent-robotics-design-wiki/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">20 ноября 2026, вечер · Сергей Снежко · снимок GitHub API</p>
+    <h1>Личный self-hosted агент, робототехника для агентов, дизайн-скиллы и офлайн-Википедия через MCP — вечер 20 ноября 2026</h1>
+    <p>Вечерний выпуск — четыре репозитория. Amuse от Replit — личный агент на своём компьютере: исследование, живой браузер, напоминания и небольшие приложения, с подтверждением перед отправкой, формой или оплатой. Плагин Robotics от Google DeepMind даёт агенту скиллы робототехники: контроллер пишется, проверяется в симуляции MuJoCo и может идти тем же кодом на реальную руку. Craft — дизайн-скиллы: бриф, экраны со всеми состояниями из дизайн-системы и проверка результата, для Paper, pen.dev, Figma или HTML. zim-mcp открывает локальному агенту офлайн-архивы Kiwix, в том числе Википедию, по MCP. Число звёзд — данные GitHub API на 20.11.2026, ~21:18 МСК, снимок на момент публикации. Звёзды — снимок на момент выпуска, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 20 ноября 2026</h2>
+    <p class="meta">Снимок на 20.11.2026, ~21:18 МСК. Дата и время push — из этого снимка, часовой пояс МСК. Звёзды — на момент выпуска.</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что это</th><th>Язык</th><th>Лицензия</th><th>Звёзды</th><th>Последний push (МСК)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/replit/amuse">replit/amuse</a></td>
+          <td>self-hosted личный ИИ-агент: исследование, живой браузер, напоминания и небольшие приложения, с подтверждением перед действиями; на своём компьютере с ключом OpenAI</td>
+          <td>TypeScript</td>
+          <td>Apache-2.0</td>
+          <td>89</td>
+          <td>19.11.2026, 22:29</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/google-deepmind/robotics-antigravity-plugin">google-deepmind/robotics-antigravity-plugin</a></td>
+          <td>скиллы GDM Robotics для агентных робототехнических сценариев в симуляции и на реальных роботах</td>
+          <td>Python</td>
+          <td>Apache-2.0</td>
+          <td>165</td>
+          <td>20.11.2026, 14:48</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/diego3g/craft">diego3g/craft</a></td>
+          <td>дизайн-скиллы для ИИ-агентов: /craft-setup пишет бриф, /craft собирает экраны со всеми состояниями из дизайн-системы и проверяет их; Paper, pen.dev, Figma или HTML</td>
+          <td>JavaScript</td>
+          <td>не определена GitHub</td>
+          <td>288</td>
+          <td>17.11.2026, 19:49</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/gordonbrander/zim-mcp">gordonbrander/zim-mcp</a></td>
+          <td>локальная Википедия для локального агента: доступ к zim-архивам Kiwix по MCP</td>
+          <td>Rust</td>
+          <td>GPL-3.0</td>
+          <td>28</td>
+          <td>19.11.2026, 08:37</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: описание, язык, лицензия, число звёзд, дата push, признак архива, домашняя страница, топики. У <a href="https://github.com/google-deepmind/robotics-antigravity-plugin">google-deepmind/robotics-antigravity-plugin</a> в снимке домашняя страница <a href="https://deepmind.google/models/gemini-robotics/">deepmind.google/models/gemini-robotics</a>. У <a href="https://github.com/replit/amuse">replit/amuse</a>, <a href="https://github.com/diego3g/craft">diego3g/craft</a> и <a href="https://github.com/gordonbrander/zim-mcp">gordonbrander/zim-mcp</a> домашняя страница в снимке не задана. Топики снимка: у amuse — ai-agent, browser-automation, openai, personal-assistant, postgresql, self-hosted, typescript; у robotics-antigravity-plugin — ai, antigravity, gemini, mujoco, robotics; у craft — agent-skills, claude-code, claude-code-plugin, design-system, figma, paper, ui-design; у zim-mcp — mcp, offline-first, wikipedia, zim. Снимок на 20.11.2026, ~21:18 МСК. Архивными эти четыре репозитория на момент снимка не были. Звёзды в таблице — на момент выпуска: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>Amuse: личный агент на своём компьютере</h2>
+    <p><a href="https://github.com/replit/amuse">replit/amuse</a> в описании GitHub — self-hosted личный ИИ-агент: исследование, живой браузер, напоминания и небольшие приложения, с подтверждением перед действиями. Работает на своём компьютере с ключом OpenAI. README уточняет состав. Агент исследует сеть с источниками через веб-поиск OpenAI. В чате живой браузер заполняет формы и ходит по сайтам: его можно смотреть, перехватить или остановить. Есть напоминания, мониторы и фоновый heartbeat, который пишет, только когда есть повод. Цели превращаются в пошаговые планы, и агент продолжает по ним работать. Документы, PDF, изображения, подкасты и spaces — небольшие приложения с сохранёнными данными. Память можно читать и править: она лежит обычными файлами рабочей области. Карточки подтверждения закрывают отправки, отправку форм, оплаты и новые расписания, с областями once, task, site или always. Зашифрованное хранилище логинов и ключей API показывает модели только подставные токены. Голосовой режим делает транскрипцию и устные ответы. Amuse — веб-приложение для одного человека на одном компьютере. Нужны ключ OpenAI API и PostgreSQL. Аккаунт, хостинг-сервис и другой ключ API README не требует. К сервисам агент ходит через ключи API и живой браузер, а не через MCP-серверы. Уведомления появляются, пока открыта вкладка Amuse: пуша на телефон README пока нет.</p>
+    <p>Кому: тому, кто хочет личного агента на своей машине, с живым браузером и вопросом перед отправкой, формой или оплатой. Как попробовать по README. Docker Compose: клонировать репозиторий, скопировать <code>.env.example</code> в <code>.env</code>, указать <code>OPENAI_API_KEY</code> и выполнить <code>docker compose up -d --build</code>. Приложение открывается на <code>http://localhost:3000</code>. Compose поднимает PostgreSQL рядом и публикует приложение только на <code>127.0.0.1</code>. Из исходников README указывает Node.js 22.9+, pnpm 10.26.1 и PostgreSQL 14+. Дальше <code>pnpm install --frozen-lockfile</code>, <code>pnpm setup:browser</code> (скачивает Chromium для живого браузера), <code>.env</code> с <code>OPENAI_API_KEY</code> и <code>DATABASE_URL</code>, <code>pnpm build</code> и <code>pnpm start</code>. Сервер сам мигрирует схему до того, как начнёт слушать. По README агент — <code>gpt-6.2-sol</code>, быстрые шаги — <code>gpt-6-luna</code>, генерация изображений — <code>gpt-image-2</code>, плюс транскрипция и устные ответы: всё это идёт на ключе OpenAI. README советует поставить лимит трат в проекте OpenAI. Amuse останавливается на день при <code>AMUSE_DAILY_LIMIT</code> единицах использования (2&nbsp;000 по умолчанию) и ставит фоновые задачи на паузу до следующего дня. Кроме OpenAI, Amuse ходит на сайты, которые агент открывает для человека, и для вопросов о погоде — на бесплатный API <a href="https://open-meteo.com/">Open-Meteo</a> (данные Open-Meteo.com, CC BY 4.0). Шрифты и остальные ассеты отдаются локально. Входа нет: процесс слушает только <code>127.0.0.1</code> и отклоняет изменения с других сайтов. README просит не выставлять приложение в сеть или интернет. Агент достигает только публичных адресов, сохранённые учётные данные уходят только на сайт, который человек подтвердил, а действия с последствиями сначала спрашивают. Ключ шифрования сохранённых учётных данных создаётся при первом запуске в <code>.data/secret.key</code> или в Docker-томе <code>amuse-data</code>. README просит хранить его вместе с базой: без ключа сохранённые учётные данные не прочитать. Код — pnpm-монорепозиторий: <code>apps/server</code> (Express API и агент), <code>apps/web</code> (React и Vite), <code>lib/db</code> (схема и миграции Drizzle), <code>tests/e2e</code> (Playwright). Раскладка файлов рабочей области (<code>SOUL.md</code>, <code>IDENTITY.md</code>, <code>USER.md</code>, <code>AGENTS.md</code>, <code>MEMORY.md</code>, <code>HEARTBEAT.md</code>, <code>BOOTSTRAP.md</code> и дневные <code>memory/YYYY-MM-DD.md</code>) следует <a href="https://github.com/openclaw/openclaw">OpenClaw</a> (MIT). README пишет, что Amuse — независимый проект и не аффилирован с OpenAI и не одобрен OpenAI. Язык по снимку API — TypeScript, лицензия Apache-2.0. 89 звёзд на 20.11.2026, ~21:18 МСК, последний push 19.11.2026, 22:29 МСК. Репозиторий на момент снимка не был архивным.</p>
+
+    <h2>Robotics: скиллы агента для симуляции и руки</h2>
+    <p><a href="https://github.com/google-deepmind/robotics-antigravity-plugin">google-deepmind/robotics-antigravity-plugin</a> в описании GitHub — «GDM Robotics Skills for agentic robotics workflows across simulation and real robots». README называет это плагином Robotics. Агент пишет контроллер, проверяет его в симуляции <a href="https://mujoco.org">MuJoCo</a> и запускает тот же код на реальной руке. Можно остаться только в симуляции, без робота. Пример в README — фабрика печенья: рука I2RT YAM Pro сортирует печенье с движущейся ленты в две коробки, рядом ролики симуляции и реального робота. Промпты в README разложены на два списка. Только симуляция: пеликан на велосипеде в MuJoCo; сортировка продуктов рукой LeRobot SO-101 с разными формами, случайной раскладкой и без давления на хрупкое; кофейня с двумя руками Franka Research 3, где движения предметов идут от контакта с роботом; сцена по фотографиям с одной рукой YAM Pro, лентой, двумя видами печенья и двумя коробками. Реальный робот: поднять синий маркер рукой SO-101, помахать рукой YAM, положить ручку на несколько дюймов внутрь высокой коробки, не касаясь стенок. В трёх промптах реального робота README просит записать видео. В последнем симуляционном промпте — показать видео.</p>
+    <p>Кому: тому, кто хочет, чтобы агент писал управление роботом и проверял его в MuJoCo, с тем же кодом на реальной руке или только в симуляции. Как попробовать по README. В <a href="https://antigravity.google/">Google Antigravity</a> команда <code>agy plugin install https://github.com/google-deepmind/robotics-antigravity-plugin</code>. Второй путь: клонировать репозиторий и скопировать <code>plugins/*</code> в <code>~/.gemini/config/plugins/</code>, затем перезапустить Google Antigravity. Отдельные скиллы ставятся командой <code>npx skills add google-deepmind/robotics-antigravity-plugin</code>. Семь скиллов MuJoCo API (<code>mujoco-python</code>, <code>mujoco-spec-editing</code>, <code>mujoco-rendering</code>, <code>mujoco-accelerated</code>, <code>mujoco-parity</code>, <code>mujoco-studio</code>, <code>mujoco-gui</code>) уже в комплекте, если плагин Robotics ставится из Google Antigravity Marketplace. При установке из этого репозитория README предлагает <code>npx skills add google-deepmind/mujoco</code>. Те же скиллы лежат внутри Python-пакета mujoco по пути <code>pathlib.Path(mujoco.__file__).parent / 'doc' / 'skills'</code>. Для скиллов, которые вызывают модели восприятия Gemini, перед запуском README просит задать <code>GEMINI_API_KEY</code>. В корне — <code>plugins.json</code> и каталог <code>plugins/robotics/</code>: единый плагин восприятия, планирования, управления, sim2real, MuJoCo Studio и bring-up робота. README предупреждает: движущийся робот может травмировать людей и повредить оборудование; нужно быть рядом, держать рабочую зону свободной и иметь под рукой способ отключить питание. Ответственность за безопасную работу робота README оставляет на человеке. Страница Gemini Robotics — <a href="https://deepmind.google/models/gemini-robotics/">deepmind.google/models/gemini-robotics</a>, она же домашняя страница в снимке API. Лицензия в README и в снимке API — Apache-2.0, copyright 2026 Google LLC. README отдельно пишет, что часть скиллов при запуске скачивает сторонние программы и модели роботов или вызывает сторонние сервисы, в том числе Gemini API, и у этих частей свои условия. Язык по снимку API — Python. 165 звёзд на 20.11.2026, ~21:18 МСК, последний push 20.11.2026, 14:48 МСК. Репозиторий на момент снимка не был архивным.</p>
+
+    <h2>Craft: дизайн-скиллы для агента</h2>
+    <p><a href="https://github.com/diego3g/craft">diego3g/craft</a> в описании GitHub — дизайн-скиллы для ИИ-агентов. <code>/craft-setup</code> пишет дизайн-бриф, <code>/craft</code> собирает экраны со всеми состояниями из дизайн-системы и проверяет их. Работает с Paper, pen.dev, Figma или HTML. README добавляет агентов: Claude Code, Codex, OpenCode, Cursor и другие. С установленным craft запрос вроде «a pricing page» идёт так: короткий бриф, список состояний экрана, куски дизайн-системы, проверка своей работы до показа. Агент останавливается на «yes» там, где это важно, и записывает решения на следующий раз.</p>
+    <p>Скиллы по таблице README. <code>craft-setup</code> задаёт вопросы по одному: продукт, аудитория и голос, настроение, бренд, референсы, ограничения, затем пишет <code>DESIGN.md</code> и основы — токены и базовые компоненты. <code>craft</code> проектирует страницу, экран, поток или элемент: подтверждает объём, для каждого экрана перечисляет состояния, рисует кусками системы и проверяет результат. <code>craft-states</code> перечисляет состояния экрана (empty, loading, error, длинный контент, права, offline и другие) на реалистичных неаккуратных данных, затем рисует и называет каждое. <code>craft-explore</code> рисует три направления, которые отличаются структурой, взаимодействием или плотностью, а не только цветом; они стоят рядом с текущим дизайном, рекомендация — первой. <code>craft-system</code> ведёт систему: токены с именами ролей, правила взаимодействия, заданные один раз, матрица состояний на компонент и индекс компонентов; перед тем как правка разойдётся, перечисляет затронутые экраны. <code>craft-sync</code> переносит систему, которая уже живёт в коде, в инструмент дизайна, а позже отправляет изменения гайда обратно в код как просмотренный diff. <code>craft-critique</code> смотрит на отрисованный дизайн: иерархия, отступы, контраст, текст, согласованность и движение; находки ранжируются по влиянию; в режиме review ничего не меняет. Скрытый скилл <code>using-craft</code> отправляет запрос нужному скиллу. Агенты со слэш-командами вызывают их по имени: <code>/craft</code>, <code>/craft-setup</code>; в плагине Claude Code — <code>/craft:craft</code>, <code>/craft:craft-setup</code>. В любом агенте README разрешает просить обычными словами.</p>
+    <p>Кому: тому, кто хочет, чтобы агент вёл экран от брифа и состояний, а не от одной фразы «сделай страницу». Как попробовать по README. В сессии Claude Code: <code>/plugin marketplace add diego3g/craft</code> и <code>/plugin install craft@craft</code>. Плагин добавляет хук на старт сессии, чтобы запрос сам попадал в нужный скилл. Обновление из оболочки: <code>claude plugin update craft@craft</code>. В Claude Desktop и claude.ai путь такой: Customize › Plugins › Add › Add marketplace, затем <code>diego3g/craft</code>. Для Codex, OpenCode, Cursor и других агентов — <code>npx skills add diego3g/craft</code>. Команда спрашивает, в каких агентов ставить. Флаг <code>-a</code> называет агента: codex, opencode, cursor, gemini-cli, github-copilot, windsurf. Флаг <code>-g</code> ставит на все проекты, а не только на текущий. Позже — <code>npx skills update</code>. У этих агентов нет хука старта сессии: README просит вставить маршрутизацию в <code>AGENTS.md</code>. Вручную — скопировать папки из <code>skills/</code> в <code>.agents/skills/</code> проекта и добавить ту же маршрутизацию. Порядок в README: один раз на проект <code>craft-setup</code> пишет <code>DESIGN.md</code>, который остальные скиллы читают первым; если в репозитории уже есть библиотека компонентов или файлы токенов, <code>craft-setup</code> предлагает <code>craft-sync</code>, чтобы не выдумывать систему второй раз. <code>DESIGN.md</code> — восемь коротких разделов: Product, Audience and voice, Mood, Brand, References, Constraints, журнал решений с датами и открытые вопросы. Правила внешнего вида README считает значениями по умолчанию: если система проекта устроена иначе, агент следует проекту. Отдельные правила README относит к процессу в любом проекте: покрыть состояния, остановиться для подтверждения, дать варианты, которые реально отличаются, сделать каждый цвет токеном, взять один набор иконок, менять дизайн и код вместе. Мелкую правку, которую человек описал точно (одно значение, подпись или размер), агент делает без этого цикла. Скиллы описывают действия («создай доску», «отрисуй и посмотри»), а адаптеры сопоставляют их с Paper (MCP), pen.dev (MCP), Figma (MCP) или обычным HTML. Обычный HTML ещё и запасной путь. README пишет, что адаптер Figma ещё не проверяли на реальных прогонах. Проверки в репозитории: <code>npm test</code> и <code>npm run check</code>. Идея хука на старт сессии и одного входного скилла, который маршрутизирует остальные, взята из <a href="https://github.com/obra/superpowers">obra/superpowers</a> (MIT). Баннер использует Departure Mono (OFL). Язык по снимку API — JavaScript. Поле лицензии в снимке API — NOASSERTION, поэтому в таблице стоит «не определена GitHub». Файл <code>LICENSE</code> в репозитории начинается со строк «MIT License» и «Copyright (c) 2026 Diego Fernandes», README заканчивается строкой MIT. 288 звёзд на 20.11.2026, ~21:18 МСК, последний push 17.11.2026, 19:49 МСК. Репозиторий на момент снимка не был архивным.</p>
+
+    <h2>zim-mcp: офлайн-Википедия для локального агента</h2>
+    <p><a href="https://github.com/gordonbrander/zim-mcp">gordonbrander/zim-mcp</a> в описании GitHub — локальная Википедия для локального агента и доступ к zim-архивам Kiwix по MCP. README описывает чтение и поиск zim-файлов, офлайн-формата архивов <a href="https://kiwix.org">Kiwix</a>: Wikipedia, Stack Overflow, Project Gutenberg и каталог Kiwix. Сервер отдаёт архивы по MCP (stdio) с полнотекстовым поиском, ведёт библиотеку (поиск, просмотр и скачивание каталога) и экспортирует статьи в Markdown. README пишет, что сервер работает с любым ИИ, у которого есть MCP, включая локальные, и называет Llamafile.</p>
+    <p>Кому: тому, кто хочет дать локальному агенту офлайн-архив, в том числе Википедию, без обращения к сайту энциклопедии в момент вопроса. Как попробовать по README. С GitHub Releases берётся архив под свою ОС: один самодостаточный бинарник <code>zim-mcp</code>. Либо сборка <code>cargo install zim-mcp</code> — чистый Rust, системные библиотеки README не требует. ZIM читает <code>zimfile</code>, порт libzim Kiwix на чистом Rust (чтение и запись) в этом репозитории. Поиск идёт через <code>zimfile-xapian</code>, переписывание поисковых индексов Xapian из libzim. Команды библиотеки: <code>zim-mcp library search wikipedia --lang eng</code>, <code>library add wikipedia_en_all_nopic --dir ~/zim</code>, <code>library list</code>, <code>library update</code>, <code>library remove</code>, <code>library status</code>. Загрузка продолжается после обрыва, сверяется с sha256, который публикует Kiwix, и появляется в папке как <code>&lt;name&gt;_&lt;YYYY-MM&gt;.zim</code> только после проверки. При обновлении старые файлы уходят, когда новые прошли проверку. Папка и есть библиотека: ZIM можно положить вручную. Индекс Xapian архив несёт сам, отдельного шага сборки нет. Редкий архив без индекса ищется только по заголовку: <code>list_archives</code> пишет «titles only». Инструменты MCP: <code>search</code>, <code>read</code>, <code>list_archives</code>, плюс <code>library_search</code>, <code>library_list</code>, <code>library_status</code>, а также <code>library_add</code>, <code>library_update</code>, <code>library_remove</code> и <code>export</code>. Изменения библиотеки и экспорт спрашивают подтверждение. Флаг <code>--no-library</code> прячет инструменты библиотеки и <code>export</code>: README пишет, что маленьким моделям так проще. Для Claude Code: <code>claude mcp add --scope user wiki -- zim-mcp serve --dir ~/zim --dir .</code>. Флаг <code>--dir</code> повторяется: архивы читаются из каждой папки, а add, update и remove идут в первую. Для Claude Desktop, LM Studio и Jan README даёт блок <code>mcpServers</code> в конфиге приложения. Для Pi и агентов, которым ближе CLI, те же операции идут командами <code>search</code>, <code>read</code> и <code>list</code> и печатают Markdown или JSON с <code>--json</code>. Для llama.cpp и llamafile README даёт аргумент <code>--mcp-servers-json</code> с <code>serve</code>, <code>--dir</code> и <code>--no-library</code>. По MCP добавление, обновление, удаление архива и экспорт статей спрашивают человека через elicitation: архив, размер и то, что будет удалено. Модель подтвердить это не может. Если приложение спросить не умеет, инструмент отказывает и возвращает эквивалентную команду CLI. Флаг <code>--trust-client-approval</code> опирается на подтверждение, которое приложение уже показывает перед каждым вызовом. Одобренные загрузки идут в фоне, прогресс показывает <code>library_status</code>. Экспорт: <code>zim-mcp export</code> с путём к zim, именами статей и <code>--out</code>; <code>--all</code> можно продолжить после обрыва. Файлы ложатся в <code>&lt;out&gt;/&lt;archive&gt;/&lt;первые два символа&gt;/&lt;path&gt;.md</code>, начинаются с YAML front matter (title, archive, path, date, source, license) и ссылаются друг на друга относительными ссылками. Редиректы становятся короткими файлами со ссылкой на цель. Сам архив экспорт не меняет. Каталог <code>bundle/</code> собирает необязательный диск для Mac, Windows или Linux: Wikipedia, <code>zim-mcp</code>, небольшая локальная модель и llamafile, лаунчер двойным щелчком открывает страницу чата в браузере. Для этого диска README указывает отсутствие сети и установки. Команды из README: <code>just pin-release v0.3.0</code> закрепляет релиз zim-mcp в <code>bundle/manifest.sha256</code>, <code>just assemble /Volumes/WHOLE-EARTH</code> добавляет архивы через <code>zim-mcp library add</code>. Язык по снимку API — Rust, лицензия GPL-3.0. README указывает GPL-3.0-or-later для <code>zim-mcp</code>, <code>zimfile</code> и <code>zimfile-xapian</code> и пишет, что это порты libzim, у которого GPL-2.0-or-later. 28 звёзд на 20.11.2026, ~21:18 МСК, последний push 19.11.2026, 08:37 МСК. Репозиторий на момент снимка не был архивным.</p>
+
+    <h2>Вывод</h2>
+    <p>Amuse — self-hosted агент на TypeScript под Apache-2.0 для одного человека на одном компьютере. README требует ключ OpenAI и PostgreSQL, живой браузер, напоминания, цели, небольшие приложения и карточки подтверждения перед отправкой, формой, оплатой и новым расписанием. Запуск из README: Docker Compose на <code>127.0.0.1:3000</code> или Node.js 22.9+, pnpm 10.26.1 и PostgreSQL 14+. Дневной порог <code>AMUSE_DAILY_LIMIT</code> по умолчанию — 2&nbsp;000 единиц. Входа нет, MCP-серверы README не использует. Robotics Antigravity Plugin — скиллы на Python под Apache-2.0: агент пишет контроллер, гоняет его в MuJoCo и может запустить тот же код на реальной руке. Установка из README — <code>agy plugin install</code> или <code>npx skills add google-deepmind/robotics-antigravity-plugin</code>. Семь скиллов MuJoCo API приходят с плагином из Marketplace; при установке из этого репозитория README отправляет к <code>npx skills add google-deepmind/mujoco</code>. Для восприятия через Gemini нужен <code>GEMINI_API_KEY</code>. Топики снимка включают antigravity, gemini и mujoco. Craft — дизайн-скиллы на JavaScript. Команды README: <code>/craft-setup</code> пишет <code>DESIGN.md</code>, <code>/craft</code> собирает экраны и состояния. Рядом <code>craft-states</code>, <code>craft-explore</code>, <code>craft-system</code>, <code>craft-sync</code> и <code>craft-critique</code>. Адаптеры — Paper, pen.dev, Figma или HTML. Поле лицензии GitHub API — NOASSERTION, в таблице «не определена GitHub»; файл <code>LICENSE</code> начинается с «MIT License». zim-mcp — сервер на Rust: zim-архивы Kiwix, в том числе Википедия, по MCP (stdio), с поиском по индексу Xapian архива, библиотекой каталога и экспортом в Markdown. Бинарник из Releases или <code>cargo install zim-mcp</code>. Изменения библиотеки и экспорт спрашивают человека. Лицензия снимка API — GPL-3.0, README пишет GPL-3.0-or-later. Звёзды в таблице — снимок на 20.11.2026, ~21:18 МСК. К моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 20.11.2026, ~21:18 МСК. Звёзды — на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
