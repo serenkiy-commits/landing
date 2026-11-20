@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Зеркало на AirPlay и Cast, свой PaaS, связь агентов и локальный шлюз, день 20 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор mitsuhiko/tvpipe, hackclub/orchard, yocontra/pulsar и pansy-ai/pansy. Звёзды, лицензии и дата push сняты с GitHub 20 ноября 2026, ~11:20 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-20-midday-cast-paas-agents-gateway/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-20-midday-cast-paas-agents-gateway/">
+  <meta property="og:title" content="Зеркало на AirPlay и Cast, свой PaaS, связь агентов и локальный шлюз: дневной выпуск 20 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar 20 ноября 2026 — дневной выпуск: зеркало на AirPlay и Cast, свой PaaS, связь агентов и локальный шлюз моделей",
+        "datePublished": "2026-11-20",
+        "dateModified": "2026-11-20",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-20-midday-cast-paas-agents-gateway/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор tvpipe, Orchard, Pulsar и Pansy по данным GitHub API на 20 ноября 2026, ~11:20 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 20.11.2026, ~11:20 МСК. Звёзды — на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "20 ноября 2026, день", "item": "https://snezhko.ru/radar/blog/2026-11-20-midday-cast-paas-agents-gateway/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">20 ноября 2026, день · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar 20 ноября 2026 — дневной выпуск: зеркало на AirPlay и Cast, свой PaaS, связь агентов и локальный шлюз моделей</h1>
+    <p>Дневной выпуск — четыре репозитория. CLI зеркалирует видео и звук на приёмники AirPlay и Google Cast и на вкладку браузера. Self-hosted PaaS от Hack Club собирает репозиторий из Git и запускает его на своём сервере. MCP-сервер даёт кодинг-агентам видеть друг друга и переписываться, в том числе между машинами. Локальный шлюз на Rust подставляет модели разных провайдеров любому агенту и показывает это в десктоп-окне. Число звёзд — данные GitHub API на 20.11.2026, ~11:20 МСК, снимок на момент публикации. Звёзды — снимок на момент выпуска, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 20 ноября 2026</h2>
+    <p class="meta">Снимок на 20.11.2026, ~11:20 МСК. Дата и время push — из этого снимка, часовой пояс МСК. Звёзды — на момент выпуска.</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что это</th><th>Язык</th><th>Лицензия</th><th>Звёзды</th><th>Последний push (МСК)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/mitsuhiko/tvpipe">mitsuhiko/tvpipe</a></td>
+          <td>CLI для зеркалирования видео и звука на приёмники AirPlay и Google Cast и на вкладки браузера; протоколы real-time mirroring</td>
+          <td>Rust</td>
+          <td>Apache-2.0</td>
+          <td>147</td>
+          <td>20.11.2026, 02:33</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/hackclub/orchard">hackclub/orchard</a></td>
+          <td>open-source self-hosted PaaS: репозиторий из Git собирается и запускается на своём сервере одной командой</td>
+          <td>TypeScript</td>
+          <td>AGPL-3.0</td>
+          <td>99</td>
+          <td>19.11.2026, 19:55</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/yocontra/pulsar">yocontra/pulsar</a></td>
+          <td>кодинг-агенты разных харнесов видят друг друга и переписываются, в том числе между машинами; управление с телефона или другого компьютера</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>54</td>
+          <td>20.11.2026, 02:37</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/pansy-ai/pansy">pansy-ai/pansy</a></td>
+          <td>локальный шлюз и десктоп-окно: кодинг-агент получает модели разных провайдеров</td>
+          <td>Rust</td>
+          <td>MIT</td>
+          <td>68</td>
+          <td>20.11.2026, 11:10</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: описание, язык, лицензия, число звёзд, дата push, признак архива, домашняя страница. У <a href="https://github.com/mitsuhiko/tvpipe">mitsuhiko/tvpipe</a> в снимке домашняя страница <a href="https://mitsuhiko.github.io/tvpipe">mitsuhiko.github.io/tvpipe</a>. У <a href="https://github.com/hackclub/orchard">hackclub/orchard</a> — <a href="https://orchard.hackclub.com">orchard.hackclub.com</a>. У <a href="https://github.com/yocontra/pulsar">yocontra/pulsar</a> — <a href="https://www.npmjs.com/package/pulsar">npmjs.com/package/pulsar</a>. У <a href="https://github.com/pansy-ai/pansy">pansy-ai/pansy</a> — <a href="https://pansyai.dev">pansyai.dev</a>. Снимок на 20.11.2026, ~11:20 МСК. Архивными эти четыре репозитория на момент снимка не были. Звёзды в таблице — на момент выпуска: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>tvpipe: зеркало на AirPlay и Google Cast</h2>
+    <p><a href="https://github.com/mitsuhiko/tvpipe">mitsuhiko/tvpipe</a> в описании GitHub — «Airplay/Chrome Cast anything». README описывает CLI для низкозадержечного зеркалирования видео и звука на приёмники AirPlay и Google Cast: Apple TV, смарт-ТВ, Chromecast и Google TV, а также на вкладки браузера. Картинка и звук идут протоколами real-time mirroring. README отделяет этот путь от воспроизведения файла по URL.</p>
+    <p>Кому: тем, кто хочет вывести файл, экран, окно или вкладку на Apple TV, смарт-ТВ, Chromecast, Google TV или вкладку браузера. Как попробовать по README: <code>tvpipe discover</code> ищет приёмники, <code>pair</code> нужен только для Apple TV, <code>play --to &lt;TV&gt; file.mp4</code> отправляет файл и одним кодированием может идти на два ТВ, <code>screen</code> зеркалирует экран со звуком или одно окно через <code>--window</code>, <code>share</code> отдаёт вкладку браузера или веб-страницу, <code>game play</code> запускает party-игру на ТВ и телефонах. Установка: <code>install.sh</code> для macOS и Linux, <code>install.ps1</code> для Windows. Для файлов и URL нужны ffmpeg и ffprobe. Node SDK ставится командой <code>npm install @tvpipe/sdk</code>. Сайт и мануал: <a href="https://mitsuhiko.github.io/tvpipe/">mitsuhiko.github.io/tvpipe</a> — тот же адрес стоит домашней страницей в снимке API. Язык по снимку API — Rust, лицензия Apache-2.0. 147 звёзд на 20.11.2026, ~11:20 МСК, последний push 20.11.2026, 02:33 МСК. Репозиторий на момент снимка не был архивным.</p>
+
+    <h2>Orchard: self-hosted PaaS от Hack Club</h2>
+    <p><a href="https://github.com/hackclub/orchard">hackclub/orchard</a> в описании GitHub — open-source self-hosted платформа деплоя: из Git на свой сервер одной командой. README называет её PaaS от Hack Club, проект Leafd. К платформе подключают репозиторий из GitHub, GitLab, Gitea или другого Git-хоста. Orchard собирает его и запускает по HTTPS. В комплекте Postgres с point-in-time restore из S3-совместимого хранилища, логи, метрики и откаты. Управление — дашборд, CLI или AI-агент через MCP-сервер. Платформа работает на Kubernetes. Одна команда, по README, превращает один Linux-сервер в k3s-кластер: README указывает домашнюю лабораторию, сайд-проект и малую команду. Для продакшена README даёт Helm chart на мультинодовом кластере, пример — Talos Linux. Hack Club сам запускает Orchard на шести нодах Talos Linux. Лицензия в README и в снимке API — AGPL-3.0.</p>
+    <p>Кому: тем, кто хочет self-hosted PaaS на своём сервере и деплой из Git, с логами, метриками, откатами и Postgres. Как попробовать по README: документация на <a href="https://docs.orchard.hackclub.com">docs.orchard.hackclub.com</a>. Домашняя страница в снимке API — <a href="https://orchard.hackclub.com">orchard.hackclub.com</a>. Язык по снимку API — TypeScript, лицензия AGPL-3.0. 99 звёзд на 20.11.2026, ~11:20 МСК, последний push 19.11.2026, 19:55 МСК. Репозиторий на момент снимка не был архивным.</p>
+
+    <h2>Pulsar: агенты видят друг друга</h2>
+    <p><a href="https://github.com/yocontra/pulsar">yocontra/pulsar</a> в описании GitHub даёт агентам находить друг друга и свободно переписываться между харнессами и между машинами, а также управлять ими с любого устройства. README описывает MCP-сервер и маленький демон на каждую машину. Любой кодинг-агент из списка README — Claude Code, Codex, OpenCode, pi, omp, Cursor, Gemini CLI или любой MCP-клиент — видит, кто ещё запущен, помечает себя тегом и пишет одному агенту, группе или всем. В большинстве харнессов сообщение будит простаивающего агента. Agent mesh работает между машинами в сети Tailscale. Приложение Pulsar показывает агентов и даёт управлять ими с телефона или другого компьютера. Отдельного сервера Pulsar и аккаунта README не требует.</p>
+    <p>Кому: тем, кто держит несколько кодинг-агентов и хочет, чтобы они видели друг друга и обменивались сообщениями, в том числе между машинами в Tailscale. Как попробовать по README: <code>npx pulsar setup</code>. Команда показывает, какие файлы изменит, спрашивает один раз и делает бэкап каждого изменяемого файла. Домашняя страница в снимке API — <a href="https://www.npmjs.com/package/pulsar">npmjs.com/package/pulsar</a>. Язык по снимку API — TypeScript, лицензия MIT. 54 звезды на 20.11.2026, ~11:20 МСК, последний push 20.11.2026, 02:37 МСК. Репозиторий на момент снимка не был архивным.</p>
+
+    <h2>Pansy: локальный шлюз моделей для агентов</h2>
+    <p><a href="https://github.com/pansy-ai/pansy">pansy-ai/pansy</a> в описании GitHub — локальный шлюз, через который каждый кодинг-агент получает модели любого провайдера, плюс десктоп-окно. README описывает локальный шлюз и десктоп-приложение для Linux, macOS и Windows на Rust. Окно собрано на Native Shell (NSH). Модель выбирается для агента из списка README: Claude Code, Codex, Gemini CLI, OpenCode, Qwen Code, Crush и ещё около пятидесяти агентов. Приложение меняет одну нужную настройку в конфиге агента. Disconnect возвращает ровно то, что изменил. Шлюз слушает <code>127.0.0.1:7267</code> и говорит на Anthropic Messages, OpenAI Chat Completions, OpenAI Responses и Gemini, переводя между этими форматами: стриминг, tool calls и reasoning. У провайдера может быть несколько ключей: при rate limit или исчерпании квоты шлюз переключается на следующий. README пишет, что всё работает локально: ключи, промпты и ответы уходят только выбранным провайдерам.</p>
+    <p>Кому: тем, кто хочет одну локальную точку для моделей разных провайдеров и подключать её к Claude Code, Codex, Gemini CLI, OpenCode, Qwen Code, Crush и другим агентам из README. Как попробовать по README: сайт <a href="https://pansyai.dev">pansyai.dev</a> — он же домашняя страница в снимке API. Адрес шлюза из README — <code>127.0.0.1:7267</code>. Язык по снимку API — Rust, лицензия MIT. 68 звёзд на 20.11.2026, ~11:20 МСК, последний push 20.11.2026, 11:10 МСК. Репозиторий на момент снимка не был архивным.</p>
+
+    <h2>Вывод</h2>
+    <p>tvpipe — CLI на Rust под Apache-2.0: зеркало видео и звука на AirPlay и Google Cast и на вкладку браузера. Команды README: <code>discover</code>, <code>pair</code> (только Apple TV), <code>play</code> (одним кодированием на два ТВ), <code>screen</code>, <code>share</code> и <code>game play</code>. Установка — <code>install.sh</code> или <code>install.ps1</code>, для файлов и URL нужны ffmpeg и ffprobe, есть Node SDK. Orchard — self-hosted PaaS от Hack Club на TypeScript под AGPL-3.0: Git-репозиторий собирается и запускается по HTTPS, Postgres с point-in-time restore из S3-совместимого хранилища, логи, метрики, откаты. Управление — дашборд, CLI или MCP. Один Linux-сервер README поднимает как k3s, продакшен — Helm chart на мультинодовом кластере. Hack Club запускает Orchard на шести нодах Talos Linux. Pulsar — MCP-сервер и демон на TypeScript под MIT: агенты видят друг друга, пишут одному, группе или всем, mesh между машинами в Tailscale, приложение с телефона или другого компьютера. Установка — <code>npx pulsar setup</code>, с показом файлов, одним вопросом и бэкапом. Отдельного сервера Pulsar и аккаунта README не требует. Pansy — локальный шлюз и десктоп на Rust под MIT для Linux, macOS и Windows, окно на NSH. Шлюз <code>127.0.0.1:7267</code> переводит Anthropic Messages, OpenAI Chat Completions, OpenAI Responses и Gemini. Несколько ключей провайдера переключаются при rate limit или исчерпании квоты. Disconnect возвращает изменённую настройку агента. Звёзды в таблице — снимок на 20.11.2026, ~11:20 МСК. К моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 20.11.2026, ~11:20 МСК. Звёзды — на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
