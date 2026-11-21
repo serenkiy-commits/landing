@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Скиллы NestJS, флот Claude Code, TUI для chrony и MIDI из записи, день 21 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор nestjs/agent-skills, petekp/coordinator, geerlingguy/chronytop и kobimusic/dettato. Звёзды, лицензии и дата push сняты с GitHub 21 ноября 2026, ~11:20 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-21-midday-nest-skills-claude-fleet-chrony-midi/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-21-midday-nest-skills-claude-fleet-chrony-midi/">
+  <meta property="og:title" content="Скиллы NestJS, флот Claude Code, TUI для chrony и MIDI из записи: дневной выпуск 21 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar 21 ноября 2026 — дневной выпуск: скиллы NestJS для агентов, координатор флота Claude Code, TUI для chrony, MIDI из записи",
+        "datePublished": "2026-11-21",
+        "dateModified": "2026-11-21",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-21-midday-nest-skills-claude-fleet-chrony-midi/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор nestjs/agent-skills, coordinator, chronytop и dettato. Данные сняты с GitHub 21 ноября 2026, ~11:20 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные сняты с GitHub 21 ноября 2026, ~11:20 МСК. Звёзды — на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "21 ноября 2026, день", "item": "https://snezhko.ru/radar/blog/2026-11-21-midday-nest-skills-claude-fleet-chrony-midi/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">21 ноября 2026, день · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar 21 ноября 2026 — дневной выпуск: скиллы NestJS для агентов, координатор флота Claude Code, TUI для chrony, MIDI из записи</h1>
+    <p>Дневной выпуск — четыре репозитория. <a href="https://github.com/nestjs/agent-skills">nestjs/agent-skills</a> — официальные Agent Skills для NestJS: агент получает текущие API, пакеты первой стороны и список ошибок, которые всё ещё проходят тесты. <a href="https://github.com/petekp/coordinator">petekp/coordinator</a> превращает одну сессию Claude Code в координатора флота в Herdr: бриф, отдельная сессия в своём worktree, наблюдение и уборка. <a href="https://github.com/geerlingguy/chronytop">geerlingguy/chronytop</a> — TUI в духе btop для chrony: график запросов NTP, источники, клиенты под ограничением частоты, CPU и память. <a href="https://github.com/kobimusic/dettato">kobimusic/dettato</a> пишет из записи MIDI: ноты, дорожка на инструмент и барабаны. Число звёзд — данные сняты с GitHub 21 ноября 2026, ~11:20 МСК, снимок на момент публикации. Звёзды — снимок на момент выпуска, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 21 ноября 2026</h2>
+    <p class="meta">Данные сняты с GitHub 21 ноября 2026, ~11:20 МСК. Дата и время push — из этого снимка, часовой пояс МСК (UTC+3). Звёзды — на момент выпуска.</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что это</th><th>Язык</th><th>Лицензия</th><th>Звёзды</th><th>Последний push (МСК)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/nestjs/agent-skills">nestjs/agent-skills</a></td>
+          <td>официальные Agent Skills для NestJS: текущие API, пакеты первой стороны и ошибки, которые проходят тесты; Claude Code, Codex, Cursor и другие агенты формата Agent Skills</td>
+          <td>JavaScript</td>
+          <td>MIT</td>
+          <td>108</td>
+          <td>20.11.2026, 14:05</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/petekp/coordinator">petekp/coordinator</a></td>
+          <td>одна сессия Claude Code становится координатором флота в Herdr: бриф, отдельная сессия в своём worktree и вкладке, наблюдение и уборка; не больше трёх делегатов сразу</td>
+          <td>Python</td>
+          <td>MIT</td>
+          <td>49</td>
+          <td>21.11.2026, 07:37</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/geerlingguy/chronytop">geerlingguy/chronytop</a></td>
+          <td>TUI в духе btop для мониторинга chrony: график запросов NTP в секунду, счётчики сервера, клиенты под ограничением, источники, tracking, канал, CPU и память</td>
+          <td>Go</td>
+          <td>MIT</td>
+          <td>140</td>
+          <td>20.11.2026, 19:41</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/kobimusic/dettato">kobimusic/dettato</a></td>
+          <td>транскрибатор записи в MIDI: ноты, дорожка на инструмент и барабаны; четыре модели в цепочке, код и веса под Apache-2.0</td>
+          <td>Python</td>
+          <td>Apache-2.0</td>
+          <td>186</td>
+          <td>20.11.2026, 08:29</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: описание, язык, лицензия, число звёзд, дата push, дата создания, признак архива, темы. Данные сняты с GitHub 21 ноября 2026, ~11:20 МСК. Архивными эти четыре репозитория на момент снимка не были. Звёзды в таблице — на момент выпуска: к моменту чтения число на GitHub может быть другим. Время push переведено из UTC в МСК прибавлением трёх часов.</p>
+
+    <h2>nestjs/agent-skills: скиллы NestJS для агента</h2>
+    <p><a href="https://github.com/nestjs/agent-skills">nestjs/agent-skills</a> в описании GitHub — agent skills для фреймворка Nest (Node.js). README называет это официальными <a href="https://agentskills.io">Agent Skills</a> для сборки и расширения приложений <a href="https://nestjs.com">NestJS</a>. Скилл, по README, даёт агенту то, чего нет в обучающих данных: текущие API, которые часто новее модели; пакеты Nest первой стороны; ошибки, которые всё ещё проходят тесты. В README перечислены примеры таких ошибок: вход, который выдаёт, какие адреса почты существуют; <code>@IsOptional()</code>, пропускающий <code>null</code> до ответа 500; ограничитель частоты, который не видит пользователя; поток событий, который живёт дольше отозванного ключа. Каждый скилл — папка с <code>SKILL.md</code> и каталогом <code>references/</code>. README пишет, что каждый рецепт прогнан на выпущенных пакетах. Скиллы читает любой агент формата Agent Skills: Claude Code, Codex, Cursor и другие. Агент подхватывает скилл, когда описание совпадает с задачей, отдельной команды вызова нет.</p>
+    <p>В таблице README шесть скиллов. <code>nestjs</code> — новое или расширяемое приложение: старт проекта, раскладка, модули, где лежат документы, частые ошибки. <code>nestjs-feature</code> — эндпоинты: куда класть код, модули и провайдеры, проверка тела через Zod с <code>@Body({ schema })</code> или class-validator, коды статуса, ошибки, параметры HTTP, Server-Sent Events. <code>nestjs-auth</code> — <code>@nestjs/authentication</code> (пароли, сессии, токены, ключи API) и <code>@nestjs/authorization</code> (политики). <code>nestjs-data</code> — <code>@nestjs/drizzle</code> и <code>@nestjs/typeorm</code>, миграции, безопасные обновления, постраничная выдача, транзакции. <code>nestjs-testing</code> — модульные, сервисные и сквозные тесты, подмена провайдеров и глобальных гардов, вход тестового пользователя. <code>nestjs-production</code> — конфигурация, журналы, наблюдаемость через NestJS Observe, проверки здоровья, ограничение частоты, OpenAPI, остановка, выкладка.</p>
+    <p>Кому: тому, кто собирает или меняет приложение NestJS агентом, который читает Agent Skills. Как поставить по README. Для любого агента: <code>npx @nestjs/skills add</code> копирует скиллы в <code>.agents/skills/</code>, откуда их читают Codex и Cursor. Флаг <code>--agent</code> выбирает каталог: <code>agents</code> (по умолчанию), <code>claude</code> (<code>.claude/skills/</code>), <code>cursor</code> (<code>.cursor/skills/</code>), <code>all</code> (оба каталога <code>.agents</code> и <code>.claude</code>). <code>--global</code> ставит в домашний каталог, на все проекты машины. Можно перечислить только часть скиллов. <code>npx @nestjs/skills list</code> показывает состав пакета, <code>remove</code> снимает то, что поставил установщик. Установщик меняет только папки со своей меткой <code>.nestjs-skills</code>; чужую одноимённую папку заменяет флаг <code>--force</code>. Версию для команды README предлагает закрепить через <code>npm i -D @nestjs/skills</code> и <code>npx nestjs-skills add</code>. Из кода: <code>listSkills</code> и <code>skillsDir</code> из <code>@nestjs/skills</code>. Для Claude Code как плагин: <code>claude plugin marketplace add nestjs/agent-skills</code>, затем <code>claude plugin install nestjs@nestjs</code>. Скиллы плагина идут с префиксом <code>nestjs:</code>, например <code>nestjs:nestjs-auth</code>. Вручную README предлагает клонировать репозиторий и скопировать <code>skills/*</code> в <code>.agents/skills/</code>, папку целиком: <code>SKILL.md</code> ссылается на <code>references/</code> относительными путями.</p>
+    <p>README пишет совместимость: NestJS 12 (<code>@nestjs/core</code> 12.x) и Node.js 20 или новее. Рецепты прогнаны на Nest 12.5.1, <code>@nestjs/authentication</code> 0.1.6, <code>@nestjs/authorization</code> 0.1.4, <code>@nestjs/drizzle</code> 0.0.2 с Drizzle 1.0 rc, <code>@nestjs/typeorm</code> 12.0.3 с TypeORM 1.1, <code>@nestjs/throttler</code> 6.8, <code>@nestjs/swagger</code> 12.1, <code>@nestjs/terminus</code> 12.2, <code>@nestjs/config</code> 12.1 и <code>@nestjs/observe</code> 0.3. Скиллы велят агенту сверять установленную версию и <a href="https://docs.nestjs.com/llms.txt">docs.nestjs.com/llms.txt</a>, прежде чем опираться на память модели. Формат <code>SKILL.md</code> — спецификация Agent Skills: имя совпадает с папкой, описание короче 1024 символов, во frontmatter только переносимые поля <code>name</code>, <code>description</code>, <code>license</code>, <code>compatibility</code>. Репозиторий одновременно плагин Claude Code, свой marketplace и npm-пакет <code>@nestjs/skills</code>: скиллы, манифесты плагина и установщик <code>nestjs-skills</code>, зависимостей у пакета нет. Лицензия в снимке API и в README — MIT. Язык по снимку API — JavaScript. Темы снимка: agent-skills, ai-agents, claude-code, claude-code-plugin, codex, coding-agents, cursor, nest, nestjs, nodejs, skills, typescript. Репозиторий создан 20.11.2026, 10:44 МСК. 108 звёзд на 21.11.2026, ~11:20 МСК, последний push 20.11.2026, 14:05 МСК. На момент снимка репозиторий не был архивным.</p>
+
+    <h2>coordinator: одна сессия ведёт флот в Herdr</h2>
+    <p><a href="https://github.com/petekp/coordinator">petekp/coordinator</a> в описании GitHub превращает одну сессию Claude Code в координатора, который запускает, наблюдает и убирает флот сессий агентов в Herdr. README уточняет устройство. Человек задаёт область — репозиторий или часть продукта — и шлёт запросы по мере появления. Координатор пишет бриф на задачу и поднимает отдельную сессию агента: свой Git worktree и своя вкладка. Он смотрит эти сессии, передаёт их вопросы человеку, проверяет работу и убирает задачу, когда она села. Человек говорит с одной сессией, параллельно работают до трёх других. Это пара скиллов для Claude Code и скрипты на Python, которые управляют <a href="https://herdr.dev">Herdr</a>. Herdr держит каждого агента в терминале, который остаётся живым, и показывает их в одном приложении.</p>
+    <p>Координатор стартует командой <code>/coordinator &lt;область или проект&gt;</code> и ведёт одну область. Состояние лежит в Markdown-файле backlog: что входит в область, что человек утвердил, что открыто и что сделано. Backlog переживает перезапуск. Делегат — сессия на одну задачу: worktree, бриф с критерием готовности и местом остановки, вкладка в Herdr под координатором. Остановившись, делегат пишет <code>REPORT.md</code>. Наблюдатель <code>fleet_watch.py</code> работает в фоне и будит координатора, когда делегат закончил, спросил или застрял, а также когда pull request влит, провалил проверки или получил ревью. Ограничение числа не пускает больше трёх делегатов сразу. Тихий делегат, который сутки не отвечает, завершают и позже возобновляют той же сессией, если для него что-то пришло. Второй скилл, fleet-sweep, снимает законченные worktree, ветки, вкладки и осиротевшие процессы. То, что потеряло бы работу, он не трогает и спрашивает человека. Мелкие обратимые решения координатор принимает сам и говорит, что выбрал. Спрашивает, когда ответ меняет, что будут строить, стоит времени или денег, касается других людей или является вопросом вкуса. Вопросы приходят пачками не больше пяти, у каждого варианты и рекомендация.</p>
+    <p>Кому: тому, кто уже работает в Claude Code и хочет одну сессию-распорядителя над несколькими делегатами в Herdr. Как поставить по README. Нужны herdr-core (<code>hc</code>), приложение Herdr, Claude Code, Python 3.9 или новее, git и вошедший в аккаунт <code>gh</code> — статус pull request для областей с репозиторием на GitHub. Скрипты используют только стандартную библиотеку Python. README пишет, что связку проверяли на macOS с herdr-core 0.1.21, приложением Herdr 0.1.15 и Claude Code 2.1.325. herdr-core ставится скриптом <code>curl -fsSL https://releases.herdr.dev/core/install.sh | sh</code>, приложение качают с herdr.dev. Агенту можно отдать фразу из README со ссылкой на <code>SETUP.md</code>: он ставит Herdr, скиллы и плагин Inbox и предлагает Vignette и боковую панель Herdr, спрашивая перед каждым шагом. Вручную: клон в <code>~/src/coordinator</code> и <code>install.sh</code>. Скрипт вешает оба скилла ссылками в <code>~/.claude/skills</code> и <code>~/.agents/skills</code>. Клон README просит не переносить: ссылки смотрят внутрь него. Обновление — <code>git pull</code> в клоне. При первом пробуждении за сутки наблюдатель проверяет, отстал ли клон от upstream, и координатор сообщает об этом. Сам он не подтягивает изменения. Снятие — <code>install.sh --remove</code>, затем удаление клона. Необязательный мод <a href="https://github.com/petekp/inbox">inbox</a> собирает вопросы в одну панель; скрипты читают сохранённые вопросы, если он стоит. В каталоге <code>herdr/</code> лежит необязательная раскладка Herdr: закреплённые координаторы сверху, делегаты под ними. Она есть в галерее раскладок по адресу herdr.dev/layouts/petekp/coordinator--herdr. Раз в сутки верхняя строка боковой панели проверяет GitHub на новую версию раскладки и показывает точку, если версия есть. Нажатие даёт строку для агента.</p>
+    <p>Первый запуск по README: открыть приложение Herdr и вкладку терминала, запустить Claude Code в нужном репозитории, выполнить <code>/coordinator &lt;область&gt;</code>. Координатор спрашивает, что входит в область, создаёт backlog и докладывает, что нашёл. Запрос крупнее нескольких файлов уходит делегату в новую вкладку, человеку сообщают имя вкладки. Вопрос «where are we» печатает таблицу делегатов, pull request и открытых вопросов. Настройки по умолчанию есть у каждого ключа. Свой файл — копия <code>config.example.json</code> в <code>~/.config/coordinator/config.json</code>; значения в примере README называет примерами, не значениями по умолчанию. Среди ключей: каталог backlog (по умолчанию <code>~/.config/coordinator/backlogs</code>), каталог состояния, список областей, чьих делегатов не завершают за тишину, дополнительные аргументы Claude Code для каждого делегата, предел backlog вне секции Done — 40 КБ, около 10&nbsp;000 токенов. Ограничения README пишет прямо. Вкладки делегатов живут в приложении Herdr, без него схема не работает. Снятие worktree переносит игнорируемые файлы, в том числе <code>.env</code> и <code>.scratch/</code>, в <code>&lt;основная копия&gt;/.scratch/parked/</code>. Эти папки скрипт не удаляет. Делегаты идут в том режиме разрешений Claude Code, который стоит у человека: в режиме по умолчанию каждый останавливается на запросе разрешения и на доверии к папке в новом worktree, пока человек не ответит во вкладке. Если входная оболочка — fish или другая не-POSIX, делегат стартует через <code>/bin/sh</code> и ищет <code>hc</code>, <code>claude</code> и <code>python3</code> в её PATH. Лицензия MIT. Язык по снимку API — Python. Темы снимка: agent-orchestration, agentic-workflow, claude-code, claude-skills, herdr, herdr-layout, skills. Репозиторий создан 15.11.2026, 03:00 МСК. 49 звёзд на 21.11.2026, ~11:20 МСК, последний push 21.11.2026, 07:37 МСК. На момент снимка репозиторий не был архивным.</p>
+
+    <h2>chronytop: TUI для chrony</h2>
+    <p><a href="https://github.com/geerlingguy/chronytop">geerlingguy/chronytop</a> в описании GitHub — TUI для наблюдения за сервером времени chrony. README ставит его в ряд с btop. Программа рисует график запросов NTP в секунду и показывает счётчики сервера, клиентов, которых chrony ограничивает по частоте сильнее всего, источники, tracking, канал, загрузку CPU и память, в том числе самого chronyd. Панели меняют размер вместе с терминалом, их можно показать и спрятать. Требования README: Linux и chronyd 4.3 или новее. Более старые версии, по README, могут работать, их не проверяли. Для панелей сервера и клиентов под ограничением нужны root или <code>sudo</code>, отдельный раздел README описывает запуск без root. Это один статический бинарник. Зависимостей вне стандартной библиотеки Go нет, поэтому README пишет, что он идёт на Debian, Ubuntu, Fedora, RHEL, Arch, Alpine и других дистрибутивах. С chronyd программа говорит напрямую по его Unix-сокету команд или по UDP с флагом <code>-host</code>. <code>chronyc</code> не нужен.</p>
+    <p>Кому: тому, кто держит chronyd на Linux и хочет смотреть его в терминале, а не разбирать вывод <code>chronyc</code>. Как поставить по README. Бинарник под свою архитектуру — из релизов, затем <code>sudo install --owner=root --group=root --mode=755 chronytop-linux-amd64 /usr/local/bin/chronytop</code>. Сборка из исходников — Go 1.24 или новее, <code>CGO_ENABLED=0 go build -trimpath -ldflags "-s -w" -o chronytop .</code>. Путь сокета по умолчанию сборщик может подменить флагом <code>-X main.defaultSocket=...</code>. Запуск — <code>sudo chronytop</code>. Флаги README: <code>-i</code> интервал опроса, по умолчанию 1 с, допустимо от 500 мс до 10 с; <code>-p</code> минимум пакетов, чтобы клиент попал в список ограничиваемых, по умолчанию 100; <code>-socket</code> путь сокета, по умолчанию <code>/var/run/chrony/chronyd.sock</code>; <code>-host</code> наблюдение по UDP, адрес, <code>host:port</code> или <code>[IPv6]:port</code>, порт по умолчанию 323; <code>-version</code> печатает версию и выходит. Клавиши: <code>1</code>–<code>7</code> показывают и прячут панель, <code>+</code> и <code>-</code> меняют частоту опроса, <code>?</code> и <code>h</code> — справку, Esc закрывает справку или выходит, <code>q</code> выходит. Видимые панели и интервал пишутся при выходе в <code>~/.config/chronytop/chronytop.conf</code> (у root — в <code>/root/.config/...</code>) и читаются при следующем запуске. <code>-i</code> перекрывает сохранённый интервал. Список ограничиваемых клиентов обновляется в фоне каждые 10 секунд. Фильтр <code>-p</code> применяет сам chronyd, поэтому README пишет, что список дёшев даже на публичном сервере с сотнями тысяч клиентов.</p>
+    <p>Удалённый хост: <code>chronytop -host ntp.example.com</code>. Сервер должен разрешить это в <code>chrony.conf</code>: <code>bindcmdaddress</code>, <code>cmdallow</code> и <code>opencommands</code> со списком команд, куда README добавляет <code>serverstats</code> и <code>clients</code>. <code>opencommands</code> есть в chrony 4.7 и новее и заменяет набор по умолчанию, поэтому список в README сначала повторяет штатные команды. Панели сети и системы для удалённого хоста не показываются. Без root, если сокет недоступен, программа уходит на UDP localhost, как <code>chronyc</code>. Тогда видны все панели, кроме сервера и ограничиваемых клиентов: <code>serverstats</code> и <code>clients</code> по UDP chronyd отдаёт только если это разрешено. На chrony 4.7+ README просит добавить ту же строку <code>opencommands</code>, перезапустить chronyd и запускать <code>chronytop</code> любым пользователем. Без <code>cmdallow</code> эти запросы принимает только localhost. На более старых версиях README предлагает добавить пользователя в группу chrony, и только если группа может писать в <code>/run/chrony</code>: программа создаёт там сокет ответа. На Debian и Ubuntu этот каталог группе не открыт, там README оставляет <code>sudo</code>. Где группа работает, её члены получают полный доступ к сокету управления chronyd и могут сдвинуть часы или сменить источники. Раздел безопасности README: программа шлёт chronyd только команды наблюдения на чтение, не сбрасывает счётчики и не запускает другие программы; локальную статистику читает из <code>/proc</code>; UDP использует с <code>-host</code> или как запасной путь на localhost; сокет ответа создаёт в отдельном каталоге со случайным именем рядом с сокетом chronyd и удаляет при выходе; файл настроек пишет только если настройка изменилась, пропускает файл и каталоги, если владелец не тот пользователь, который запустил программу, и пишет через временный файл, не следуя по symlink. Непечатные символы из данных chrony она вырезает, чтобы в терминал не попали управляющие последовательности. CI на каждое изменение гоняет <code>go vet</code>, <code>staticcheck</code>, <code>gosec</code> и <code>govulncheck</code> и проверяет программу на chronyd 4.3, 4.6 и последнем релизе. Лицензия MIT. Язык по снимку API — Go. Тем в снимке нет. Репозиторий создан 18.11.2026, 05:51 МСК. 140 звёзд на 21.11.2026, ~11:20 МСК, последний push 20.11.2026, 19:41 МСК. На момент снимка репозиторий не был архивным.</p>
+
+    <h2>dettato: MIDI из записи</h2>
+    <p><a href="https://github.com/kobimusic/dettato">kobimusic/dettato</a> в описании GitHub — транскрибатор KobiMusic из звука в MIDI: ноты, дорожки инструментов и барабаны из любой записи. README раскладывает это на четыре модели в цепочке. Транскрайбер (15,3 млн параметров) находит ноты. Модель починки по свидетельствам (4,9 млн) правит их по данным самого транскрайбера. Группировщик (2,9 млн) раскладывает ноты по дорожкам инструментов. Модель барабанов (5,0 млн) пишет удары. Вместе README считает 28,1 млн параметров. Код и веса — Apache-2.0; README пишет, что коммерческое использование допустимо. Карточки моделей, по README, перечисляют учебные наборы и их лицензии: у части наборов группировщика и модели барабанов условия некоммерческие. Обучение README описывает так: смесь синтетических записей инструментов и сольных инструментов CC из набора URMP, остальные инструменты собраны вокруг примерно 20 саундфонтов приёмом soundfont babies, вокал и остальное дополнение тоже на данных CC. Записей под копирайтом, по словам README, в обучении нет, и ни одна запись из бенчмарка в обучение не входила. Этот выпуск учебные наборы не перепроверял.</p>
+    <p>Цифры качества в README — измерения автора, выпуск их не повторял. Таблица README оценивает ноты транскрайбера и удары модели барабанов, не всю цепочку из четырёх моделей: автор прямо пишет, что четыре модели вместе, как их запускает пакет, он ещё не считал. На девяти открытых наборах связка «транскрайбер + барабаны» (в таблице 20,3 млн параметров) даёт составной F1 59,2 (95% интервал 57,9–60,6) против 45,1 у MuScriptor 1.3B. Составляющие той же строки: onset 67,2, frame 77,9, offset 44,8, drums 47,1. Отдельно README пишет, что измеренная часть — 20 млн параметров, и MuScriptor примерно в 65 раз больше. Девять наборов — восемь из таблицы 2 статьи MuScriptor (Bach10, Dagstuhl ChoirSet, PHENICX-Anechoic, RWC Popular, RWC Classical, RWC Genre, RWC Jazz, RWC Royalty-Free) плюс тест Slakh2100. Составной балл — среднее F1 по onset, frame, offset и барабанам, правила подсчёта README берёт из той статьи. На трёх наборах, которые публикует Mirelo (PHENICX-Anechoic, RWC Classical, RWC Royalty-Free), README даёт dettato 60,8, Mirelo A2M v1.1 Pro — 56,1 (число Mirelo, по README, опубликовано самой Mirelo), MuScriptor — 47,4, YourMT3+ — 45,7. На восьми наборах MuScriptor без Slakh2100 README пишет 58,4 у dettato, 44,6 у MuScriptor и 41,1 у YourMT3+, последние два числа относит к статье. Починку по свидетельствам автор мерил отдельно: +0,30 к составному баллу, когда перед ней стоит базовая сеть транскрайбера. Группировщик мерился на его собственном бенчмарке дорожек, подробности README отсылает на карточки моделей. Слабое место, по README, — раскладка нот по дорожкам: на джазовых записях около четверти нот саксофона может попасть в дорожку фортепиано. MIDI здесь исполнительский: длительности держат тайминг записи и не квантуются в долю. Для нот, которые можно сыграть с листа, README отсылает к Songscription и Klangio.</p>
+    <p>Кому: тому, кто хочет из записи получить MIDI с отдельными дорожками инструментов и барабанов и готов к тому, что тайминг останется как в записи. Как попробовать по README. Python 3.10 или новее, PyTorch 2.2 или новее. <code>pip install git+https://github.com/kobimusic/dettato</code>, затем <code>dettato song.mp3 -o out/</code> пишет <code>out/song.mid</code> и <code>out/song.json</code>. Веса при первом запуске качаются с Hugging Face, коллекция kobimusic/dettato. Команда принимает несколько файлов и папок. Папки обходятся рекурсивно, структура каталогов сохраняется под <code>out/</code>. JSON хранит дорожки, число нот, оценку строя и то, какая модель барабанов отработала. GPU берётся, если он есть; <code>--device cpu</code> оставляет процессор. Из Python: <code>dettato.transcribe("song.mp3")</code> грузит модели один раз и переиспользует их, <code>result.save_midi</code> пишет файл, у дорожки есть имя, программа, признак барабанов и ноты — четвёрки onset, конец, высота, velocity. Для многих файлов README показывает <code>Dettato.from_pretrained("cuda")</code>. Каждую ступень можно вызвать отдельно: <code>dettato.transcriber</code>, <code>dettato.evidence</code>, <code>dettato.grouper</code>, <code>dettato.drums</code>. Офлайн-веса: переменная <code>DETTATO_WEIGHTS</code> на каталог с четырьмя репозиториями моделей, в каждом <code>config.json</code> и <code>model.safetensors</code>. Скорость README приводит как замер автора на RTX 5060 (8 ГБ): песня на 4 минуты около 15 с, на 6 минут около 25 с, пик ниже 4 ГБ видеопамяти. Дольше 250 с буферы признаков транскрайбера лежат в памяти хоста, около 10 МБ на секунду звука, и видеопамять дальше с длиной песни не растёт. На процессоре ноутбука клип 15 с занял 87 с вместе с загрузкой моделей. Звук читает <code>soundfile</code>. Форматы, которые она не берёт (m4a / aac, часть mp3), идут через <code>ffmpeg</code>, он тогда должен быть в PATH.</p>
+    <p>Как это устроено по README. Транскрайбер — сеть дорожек, равноправная по высоте. Она читает гармоническую лог-частотную спектрограмму и выдаёт вероятности onset, frame и offset для каждой из 88 клавиш, по два голоса на клавишу, шаг 20 мс. Песня идёт перекрывающимися окнами по 8 с, окно каждые 2 с, среднее с окном Ханна, ноты берутся поиском пиков. Сеть прогоняется по записи один раз, этот проход кормит починку и группировщик. Сначала оценивается строй, и если он явно ушёл от A440, проход идёт по перестроенному звуку. Модель починки — трансформер уровня ноты: нота плюс свидетельства транскрайбера (карты вероятности вокруг ноты и его последнее скрытое состояние). Она решает, какие ноты оставить, где у них начало и конец и каких нот не хватает. Группировщик собирает внутренние признаки транскрайбера на каждой починенной ноте и даёт ноте инструмент и вектор дорожки. Ноты кластеризуются. Дорожка остаётся, только если она явно свой инструмент, одинаковые инструменты сливаются. Барабаны — две маленькие модели, набор ударных и оркестровая перкуссия. Маршрутизатор слушает всю запись и выбирает одну. Модели барабанов нужен звук от 40 кГц, на более низкой частоте дискретизации ступень пропускается. Пределы README: высоты — 88 клавиш фортепиано, не больше двух нот на одной клавише сразу; имена инструментов приблизительные, на живом джазе около четверти нот саксофона или соло-гитары может уйти в дорожку фортепиано, насыщенная синтезаторами музыка именуется менее надёжно, духовой оркестр получает грубые имена; барабанов нет у источников ниже 40 кГц. В библиографической записи README автор — Nathan Mills, 2026. Лицензия в снимке API — Apache-2.0, в README то же для кода и весов. Язык по снимку API — Python. Темы снимка: audio-to-midi, automatic-music-transcription, deep-learning, drums, midi, music-information-retrieval, music-transcription, pytorch. Репозиторий создан 16.11.2026, 12:06 МСК. 186 звёзд на 21.11.2026, ~11:20 МСК, последний push 20.11.2026, 08:29 МСК. На момент снимка репозиторий не был архивным.</p>
+
+    <h2>Вывод</h2>
+    <p>nestjs/agent-skills — скиллы формата Agent Skills для NestJS 12 на Node.js 20+. В снимке язык JavaScript, лицензия MIT, 108 звёзд. Старт из README — <code>npx @nestjs/skills add</code> или плагин Claude Code <code>nestjs@nestjs</code>. petekp/coordinator — пара скиллов Claude Code и скрипты на Python под MIT. Одна сессия ведёт до трёх делегатов в Herdr, у каждого свой worktree. README требует приложение Herdr, herdr-core, Python 3.9+ и git; проверку автор описывает на macOS. geerlingguy/chronytop — один статический бинарник на Go под MIT, TUI для chronyd 4.3+ на Linux. Панели сервера и ограничиваемых клиентов в обычном режиме просят root. Команды chronyd README относит к чтению. kobimusic/dettato — Python под Apache-2.0, четыре модели на 28,1 млн параметров по README, веса качаются с Hugging Face. Составной F1 59,2 — цифра автора для транскрайбера вместе с барабанами, не для всей цепочки из четырёх моделей. Выпуск эти замеры не повторял. У части учебных наборов группировщика и барабанов README отмечает некоммерческие условия, при том что код и веса стоят под Apache-2.0. Звёзды в таблице — данные сняты с GitHub 21 ноября 2026, ~11:20 МСК. К моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные сняты с GitHub 21 ноября 2026, ~11:20 МСК. Звёзды — на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
