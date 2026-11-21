@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Оболочка Windows на Rust, ускоритель Antigravity, телефон как Stream Deck и звук из подписи, утро 21 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор Lemxy/WinRust, INK-Q/agy-fast, howznguyen/phonedesk и stdevMac/orb-audio. Звёзды, лицензии и дата push сняты с GitHub 21 ноября 2026, ~06:20 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-21-morning-rust-shell-antigravity-phone-audio/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-21-morning-rust-shell-antigravity-phone-audio/">
+  <meta property="og:title" content="Оболочка Windows на Rust, ускоритель Antigravity, телефон как Stream Deck и звук из подписи: утренний выпуск 21 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar 21 ноября 2026, утро: оболочка Windows на Rust, ускоритель Antigravity, телефон как Stream Deck, звук из подписи",
+        "datePublished": "2026-11-21",
+        "dateModified": "2026-11-21",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-21-morning-rust-shell-antigravity-phone-audio/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор WinRust, agy-fast, PhoneDesk и ORB по данным GitHub на 21 ноября 2026, ~06:20 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub на 21.11.2026, ~06:20 МСК. Звёзды — на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "21 ноября 2026, утро", "item": "https://snezhko.ru/radar/blog/2026-11-21-morning-rust-shell-antigravity-phone-audio/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">21 ноября 2026, утро · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar 21 ноября 2026, утро: оболочка Windows на Rust, ускоритель Antigravity, телефон как Stream Deck, звук из подписи</h1>
+    <p>Утренний выпуск — четыре репозитория. WinRust ставит на Windows оболочку на Rust: панель задач, файловый менеджер, поиск по NTFS, диспетчер задач и очистку диска, одним установщиком. agy-fast — локальный плагин MCP для Google Antigravity: автор заявляет меньше ходов модели, квоты и исходящего трафика, без правки родного интерфейса и diff. PhoneDesk отдаёт старому телефону панель в духе Stream Deck для Mac или Windows, без приложения на телефоне. ORB превращает подпись в звук: JSON Spec и DSP на 48 кГц. Число звёзд — данные GitHub на 21.11.2026, ~06:20 МСК, снимок на момент публикации. Звёзды — снимок на момент выпуска, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 21 ноября 2026</h2>
+    <p class="meta">Данные GitHub на 21.11.2026, ~06:20 МСК. Дата и время push — из этого снимка, часовой пояс МСК. Звёзды — на момент выпуска.</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что это</th><th>Язык</th><th>Лицензия</th><th>Звёзды</th><th>Последний push (МСК)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/Lemxy/WinRust">Lemxy/WinRust</a></td>
+          <td>замена оболочки Windows на Rust: панель задач, файловый менеджер, поиск по NTFS, диспетчер задач, очистка диска; один установщик exe</td>
+          <td>Rust</td>
+          <td>Apache-2.0</td>
+          <td>766</td>
+          <td>21.11.2026, 02:56</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/INK-Q/agy-fast">INK-Q/agy-fast</a></td>
+          <td>плагин MCP для Google Antigravity (CLI, Desktop, IDE): по заявлению автора −34% ходов LLM, −31% квоты токенов и −40% исходящего трафика; родной интерфейс и diff не меняет</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>188</td>
+          <td>20.11.2026, 18:02</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/howznguyen/phonedesk">howznguyen/phonedesk</a></td>
+          <td>старый телефон как панель в духе Stream Deck и дашборд для Mac или Windows; без приложения, аккаунта и облака</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>42</td>
+          <td>18.11.2026, 23:01</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/stdevMac/orb-audio">stdevMac/orb-audio</a></td>
+          <td>звук как код: движок подписи в звук с нуля; в описании GitHub — 15 млн параметров; подпись → JSON Spec → DSP 48 кГц</td>
+          <td>Python</td>
+          <td>Apache-2.0</td>
+          <td>29</td>
+          <td>20.11.2026, 22:08</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: описание, язык, лицензия, число звёзд, дата push, признак архива, домашняя страница. У <a href="https://github.com/Lemxy/WinRust">Lemxy/WinRust</a> и <a href="https://github.com/INK-Q/agy-fast">INK-Q/agy-fast</a> домашняя страница в снимке не задана. У <a href="https://github.com/howznguyen/phonedesk">howznguyen/phonedesk</a> в снимке домашняя страница — <a href="https://github.com/howznguyen/phonedesk#readme">github.com/howznguyen/phonedesk#readme</a>. У <a href="https://github.com/stdevMac/orb-audio">stdevMac/orb-audio</a> — <a href="https://stdevmac.github.io/orb-audio/">stdevmac.github.io/orb-audio</a>. Данные GitHub на 21.11.2026, ~06:20 МСК. Архивными эти четыре репозитория на момент снимка не были. Звёзды в таблице — на момент выпуска: к моменту чтения число на GitHub может быть другим. Проценты agy-fast в таблице — формулировка описания GitHub, по заявлению автора.</p>
+
+    <h2>WinRust: оболочка Windows на Rust</h2>
+    <p><a href="https://github.com/Lemxy/WinRust">Lemxy/WinRust</a> в описании GitHub — замена оболочки Windows на Rust: панель задач, файловый менеджер, поиск по NTFS, диспетчер задач, очистка диска, один установщик exe. README называет это набором небольших нативных программ без .NET и без Electron. В таблице плагинов: <code>rust-search</code> (поиск по всем дискам NTFS, Alt+Space; при установке выключает службу Windows Search), <code>rtaskmgr-win32</code> (диспетчер задач на Ctrl+Shift+Esc и очистка диска <code>rs-du</code>), <code>topbar</code> (нижняя панель в духе Windows 11 и горячие клавиши <code>reshell</code>), <code>rust-explorer</code> (файловый менеджер с вкладками; проводник перестаёт быть оболочкой; нужен topbar; на чистой установке выключен), <code>wiztree</code> (карта диска), <code>photoview</code>, <code>rust-settings</code> (экран, звук, питание, сеть, Bluetooth, обновления). Отдельно и только из командной строки: <code>debloat</code> (телеметрия, Copilot, Recall, реклама в меню «Пуск»; значения сохраняются и возвращаются при удалении) и <code>purge</code> (удаление встроенных приложений в духе Tiny11; README пишет, что отмены нет). Плагин <code>chrome-rs</code> README помечает как ещё не устанавливаемый. Кнопка в установщике или пункт меню переключает программы WinRust на русский. Стили панели README перечисляет шесть: Normal, Terminal, Floating dock, Tiling, White road, Ruby.</p>
+    <p>Кому: тому, кто хочет заменить панель, проводник, поиск и диспетчер задач Windows своими программами на Rust и поставить их одним exe. Как попробовать по README: скачать <code>WinRust.exe</code> из последнего релиза, Windows 10/11 x64, запустить от имени администратора, отметить компоненты и нажать установку. Перед установкой README создаёт точку восстановления и просит сначала проверить на запасной машине или в виртуальной машине: поиск Windows выключается, штатная панель прячется, оболочкой может стать не Explorer. Файл README называет неподписанным, SmartScreen предупредит. Снятие всего — кнопка Remove all в том же окне; если панели и рабочего стола нет, README даёт путь Ctrl+Alt+Del → диспетчер задач → <code>explorer.exe</code>, затем Remove all. Сборка из исходников: Windows x64, Rust stable 1.85+ с MSVC, <code>scripts\build-all.ps1</code>. Замеры скорости и размера README публикует как разовые на одной машине и просит читать их как порядок величины, не как лабораторные цифры. Этот выпуск те прогоны не повторял. В снимке API лицензия Apache-2.0. README даёт выбор: MIT или Apache-2.0. Домашняя страница в снимке не задана. Язык по снимку API — Rust. 766 звёзд на 21.11.2026, ~06:20 МСК, последний push 21.11.2026, 02:56 МСК. Репозиторий на момент снимка не был архивным.</p>
+
+    <h2>agy-fast: плагин MCP для Antigravity</h2>
+    <p><a href="https://github.com/INK-Q/agy-fast">INK-Q/agy-fast</a> в описании GitHub — неинвазивный плагин-ускоритель MCP для Google Antigravity (CLI, Desktop и IDE). По заявлению автора он сокращает ходы LLM на 34%, квоту токенов на 31% и исходящий трафик на 40% и не трогает родной интерфейс и diff. README уточняет те же три ряда своей таблицы на основных сессиях: −33,7% ходов LLM на 10 действий, −31,5% расчётной квоты и −39,7% байт, которые инструменты отдают наверх. Рядом в той же таблице другие дельты, в том числе для длинного контекста и субагентов. База сравнения, по README, — 10 дней транскриптов: 14 основных сессий без плагина (5&nbsp;771 ход) и 7 с плагином (901 ход). Это цифры автора, выпуск их не пересчитывал. Плагин README описывает как локальный сервер MCP по stdio с четырьмя составными инструментами: <code>batch_search</code> (до 20 поисков за вызов, <code>rg</code> или запасной путь на Node.js), <code>apply_edits</code> (несколько правок сразу, при ошибке файлы не меняются, если не включён <code>bestEffort</code>), <code>read_slices</code> (контуры символов и диапазоны строк), <code>run_checks</code> (сборка, типы, линтер, тесты). Хук <code>SessionStart</code> один раз подмешивает снимок репозитория, по README до 1,5 КБ. README пишет, что плагин не меняет окно diff, список изменённых файлов, контрольные точки, встроенные инструменты и проверки безопасности и не ставит хуки на каждый шаг.</p>
+    <p>Кому: тому, кто уже работает в Google Antigravity и хочет склеивать несколько поисков, правок и проверок в один вызов локального MCP. Как попробовать по README: нужен Node.js 20 или новее, <code>npm install</code> для запуска не требуется, пакеты <code>dist/*.mjs</code> лежат в репозитории. <code>ripgrep</code> необязателен. На macOS и Linux — <code>curl -fsSL https://raw.githubusercontent.com/INK-Q/agy-fast/main/install.sh | sh</code>. В PowerShell — <code>irm https://raw.githubusercontent.com/INK-Q/agy-fast/main/install.ps1 | iex</code>. Либо клон в <code>~/.gemini/config/plugins/agy-fast</code>, либо <code>agy plugin install</code> и <code>agy plugin enable agy-fast</code>. В Desktop и IDE README просит включить плагин в Customizations → Installed и начать новую сессию. Проверка — <code>install.sh doctor</code> или <code>node scripts/install.mjs doctor</code>. Свой замер README предлагает офлайн: <code>node dist/benchmark.mjs analyze --local</code>. Фон проверяет обновление раз в 12 часов и не перезаписывает грязный git и установку через symlink. Лицензия в снимке API и в README — MIT. Домашняя страница в снимке не задана. Язык по снимку API — TypeScript. 188 звёзд на 21.11.2026, ~06:20 МСК, последний push 20.11.2026, 18:02 МСК. Репозиторий на момент снимка не был архивным.</p>
+
+    <h2>PhoneDesk: телефон как панель для компьютера</h2>
+    <p><a href="https://github.com/howznguyen/phonedesk">howznguyen/phonedesk</a> в описании GitHub — старый телефон как панель в духе Stream Deck и дашборд для Mac или Windows, без приложения, аккаунта и облака. README уточняет устройство: небольшой агент на компьютере отдаёт сенсорную страницу любому браузеру в той же сети Wi-Fi. На телефон ничего не ставится. Статус в README — ранний, 0.x: основная цель macOS, Windows экспериментальный, сборки без Developer ID и без нотаризации. Сетка плиток собирается на <code>http://localhost:7420/manage/</code>. README перечисляет плитки: приложения и их значки, адреса, сочетания клавиш, ввод текста, команды оболочки, макросы, громкость и медиа, графики CPU, памяти, сети и нагрузки, квоты Claude, Codex и Antigravity, локальные сессии Claude Code и Codex, ответ Allow / Deny и вопросы Claude Code с телефона (хуки по желанию), «сейчас играет», часы, погода, саундборд, уведомления, устройства Home Assistant, вебхуки. Раскладку может собрать MCP-сервер того же агента. Погоду README берёт у Open-Meteo (CC BY 4.0) и отсылает к <code>PRIVACY.md</code> за списком исходящих соединений. Описание про «без облака» в снимке API относится к отсутствию аккаунта и облачного сервиса самой панели.</p>
+    <p>Кому: тому, у кого есть Mac или ПК с Windows и старый телефон или планшет в той же сети Wi-Fi и кому нужна панель кнопок без отдельного приложения. Как попробовать по README. Mac, macOS 13 или новее: в Terminal <code>curl -fsSL https://raw.githubusercontent.com/howznguyen/phonedesk/main/setup.sh | bash</code>. Windows 10/11, README помечает путь как экспериментальный: в PowerShell без прав администратора <code>irm https://raw.githubusercontent.com/howznguyen/phonedesk/main/setup.ps1 | iex</code>. Установщик печатает QR, адрес вида <code>http://your-mac.local:7420</code> и шестизначный PIN. Камера телефона открывает ссылку, PIN вводится один раз. На весь экран страницу добавляют на домашний экран. Первое сочетание клавиш на Mac просит доступ Accessibility. На Windows README предупреждает: клавиши, которые печатают текст, могут давать не те символы; запуск приложений, сочетания, медиа и громкость README относит к рабочим. Сборка из исходников — Bun 1.3+, <code>bun install</code> и <code>bun run build</code>. Linux README ещё не проверял. Агент слушает локальную сеть, страница управления отвечает только на localhost. Команды оболочки на плитках выполняет то, что человек сам туда записал. Лицензия MIT. Домашняя страница в снимке API — якорь README на GitHub. Язык по снимку API — TypeScript. 42 звезды на 21.11.2026, ~06:20 МСК, последний push 18.11.2026, 23:01 МСК. Репозиторий на момент снимка не был архивным.</p>
+
+    <h2>ORB: звук из подписи</h2>
+    <p><a href="https://github.com/stdevMac/orb-audio">stdevMac/orb-audio</a> в описании GitHub — звук как код: движок подписи в звук с нуля на 15 млн параметров для агентов. Цепочка в описании: подпись, JSON Spec, DSP на 48 кГц. README раскладывает размер иначе, это тоже цифры автора: открытый планировщик — 5,1 млн параметров (в таблице результатов README — 5,10 млн, около 20 МБ), дальше JSON Spec и рендер на NumPy, 48 кГц, стерео. Необязательная модель детализации — 9,1 млн (в таблице — 9,06 млн). Вместе README пишет 14,16 млн. Модель детализации в репозиторий не входит: README даёт ей лицензию CC BY-NC-4.0 и пишет, что она обучена на ESC-50. Код и веса планировщика — Apache-2.0. Звук README описывает как функцию партитуры, не как файл-сэмпл: событие двигают числом, тот же Spec даёт тот же WAV. В Spec README называет 47 ролей, 13 текстур, 10 настроений, до 8 событий и длительность 2–30 с. Путь DSP README ограничивает NumPy: без torch, без весов и без GPU. Планировщик для свободного текста и грамматики подписи torch использует. README прямо пишет, чего движок не делает: не заменяет библиотеку записей, не открытый словарь text-to-audio (только свои роли и текстуры), не генератор музыки, не реальное время, без голоса и без голосовых животных.</p>
+    <p>Кому: тому, кто хочет отдать агенту звук как проверяемый JSON, а не как готовый WAV, и рендерить короткие cues на 48 кГц. Как попробовать по README. Клон, Python 3.11 или новее, <code>pip install -e ".[dev]"</code>, затем <code>python examples/04_no_torch.py</code> — только NumPy, без весов. Полный конвейер с подписью: <code>pip install -e ".[train]"</code> и <code>python examples/01_generate.py</code>. Веса планировщика README ищет в <code>weights/planner.pt</code> (Git LFS), в переменной <code>ORB_PLANNER</code> или качает <code>marcosmaceo/orb-planner</code> с Hugging Face, если стоит <code>huggingface_hub</code>. Из оболочки — <code>orb-generate</code> с текстом подписи и <code>--out</code>. Локальная страница: <code>python web/server.py --port 8765</code>, адрес <code>http://127.0.0.1:8765</code>. Для агента: <code>pip install "orb-audio[mcp,train] @ git+https://github.com/stdevMac/orb-audio"</code> и команда <code>orb-mcp</code>, сервер MCP по stdio. Без планировщика Spec рендерит <code>render_spec</code>. Страница проекта, она же домашняя страница в снимке API, — <a href="https://stdevmac.github.io/orb-audio/">stdevmac.github.io/orb-audio</a>. Язык по снимку API — Python, лицензия Apache-2.0. 29 звёзд на 21.11.2026, ~06:20 МСК, последний push 20.11.2026, 22:08 МСК. Репозиторий на момент снимка не был архивным.</p>
+
+    <h2>Вывод</h2>
+    <p>WinRust — установщик оболочки Windows на Rust, в снимке API лицензия Apache-2.0, README оставляет выбор MIT или Apache-2.0. Ставится <code>WinRust.exe</code> на Windows 10/11 x64 от администратора; README предупреждает про неподписанный файл, отключение поиска Windows и замену оболочки. agy-fast — плагин на TypeScript под MIT для Antigravity CLI, Desktop и IDE. Минус 34% ходов LLM, минус 31% квоты и минус 40% исходящего трафика — формулировка описания GitHub, по заявлению автора; таблица README пишет −33,7%, −31,5% и −39,7% на его транскриптах. Выпуск эти проценты не проверял. Старт из README — Node.js 20 и скрипт установки или клон в каталог плагинов. PhoneDesk — агент на TypeScript под MIT: телефон в той же сети Wi-Fi открывает панель на порту 7420 по PIN, приложения на телефоне нет. README помечает статус 0.x, macOS как основную цель, Windows как экспериментальный путь. ORB — Python под Apache-2.0: подпись или готовый Spec, DSP 48 кГц. Описание GitHub говорит о 15 млн параметров, README — о планировщике на 5,1 млн и отдельной модели детализации на 9,1 млн под CC BY-NC-4.0, в репозиторий она не входит. Звёзды в таблице — данные GitHub на 21.11.2026, ~06:20 МСК. К моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub на 21.11.2026, ~06:20 МСК. Звёзды — на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
