@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Телефон как панель, офисные редакторы, ядро Linux на iOS и десктоп Lumo, вечер 21 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор ersinkoc/phonebox, XinaTian/MROffice, imxieyi/Kernarium и ProtonLumo/lumo-desktop. Звёзды, лицензии и дата push сняты с GitHub 21 ноября 2026, ~21:25 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-21-evening-phonebox-office-ios-linux-lumo/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-21-evening-phonebox-office-ios-linux-lumo/">
+  <meta property="og:title" content="Телефон как панель, офисные редакторы, ядро Linux на iOS и десктоп Lumo: вечерний выпуск 21 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar — 21 ноября 2026, вечер: телефон как панель, офисные редакторы, ядро Linux на iOS и десктоп Lumo",
+        "datePublished": "2026-11-21",
+        "dateModified": "2026-11-21",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-21-evening-phonebox-office-ios-linux-lumo/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор phonebox, MROffice, Kernarium и lumo-desktop. Данные GitHub API на 21.11.2026, ~21:25 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 21.11.2026, ~21:25 МСК. Звёзды — на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "21 ноября 2026, вечер", "item": "https://snezhko.ru/radar/blog/2026-11-21-evening-phonebox-office-ios-linux-lumo/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">21 ноября 2026, вечер · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar — 21 ноября 2026, вечер</h1>
+    <p>Вечерний выпуск — четыре репозитория. <a href="https://github.com/ersinkoc/phonebox">ersinkoc/phonebox</a> превращает старый Android-телефон в настольную панель и тач-деку для Windows, Linux и macOS: статистика компьютера, сессии ИИ-кодинга, медиа и автоматизация, по USB или по Wi-Fi, без своего облака. <a href="https://github.com/XinaTian/MROffice">XinaTian/MROffice</a> публикует исходники редакторов MR Office: документы, таблицы, презентации, PDF, рукописный ввод и код. <a href="https://github.com/imxieyi/Kernarium">imxieyi/Kernarium</a> запускает настоящее ядро Linux нативно на iOS через user-mode-linux. <a href="https://github.com/ProtonLumo/lumo-desktop">ProtonLumo/lumo-desktop</a> — кодовая база десктоп-клиента Lumo, ИИ-ассистента Proton. Число звёзд — данные GitHub API на 21.11.2026, ~21:25 МСК, снимок на момент публикации. Звёзды — снимок на момент выпуска, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 21 ноября 2026</h2>
+    <p class="meta">Данные GitHub API на 21.11.2026, ~21:25 МСК. Дата и время push — из этого снимка, часовой пояс МСК (UTC+3). Звёзды — на момент выпуска.</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что это</th><th>Язык</th><th>Лицензия</th><th>Звёзды</th><th>Последний push (МСК)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/ersinkoc/phonebox">ersinkoc/phonebox</a></td>
+          <td>старый Android-телефон как настольная панель и тач-дека для Windows, Linux и macOS: статистика, сессии ИИ, медиа и автоматизация; USB или парный Wi-Fi, без облака</td>
+          <td>C#</td>
+          <td>MIT</td>
+          <td>4562</td>
+          <td>21.11.2026, 21:10</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/XinaTian/MROffice">XinaTian/MROffice</a></td>
+          <td>исходники редакторов MR Office: документы, таблицы, презентации, PDF, рукопись и код; чтение и запись файлов Microsoft Office в этих исходниках нет</td>
+          <td>TypeScript</td>
+          <td>AGPL-3.0</td>
+          <td>1394</td>
+          <td>21.11.2026, 11:49</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/imxieyi/Kernarium">imxieyi/Kernarium</a></td>
+          <td>настоящее ядро Linux нативно на iOS через user-mode-linux: ядро — нативный arm64, программы пользовательского режима эмулируются</td>
+          <td>C++</td>
+          <td>GPL-2.0</td>
+          <td>2329</td>
+          <td>20.11.2026, 05:09</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/ProtonLumo/lumo-desktop">ProtonLumo/lumo-desktop</a></td>
+          <td>кодовая база десктоп-клиента Lumo: оболочка Tauri вокруг веб-приложения ассистента Proton, коннекторы к файлам, командам и MCP</td>
+          <td>Rust</td>
+          <td>GPL-3.0</td>
+          <td>80</td>
+          <td>17.11.2026, 12:39</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: описание, язык, лицензия, число звёзд, дата push, признак архива, темы. Данные GitHub API на 21.11.2026, ~21:25 МСК. Перед публикацией повторный запрос к тем же четырём адресам вернул те же звёзды, SPDX-лицензию, язык, <code>pushed_at</code> и признак архива. Архивными эти четыре репозитория на момент снимка не были. Звёзды в таблице — на момент выпуска: к моменту чтения число на GitHub может быть другим. Время push переведено из UTC в МСК прибавлением трёх часов.</p>
+
+    <h2>phonebox: старый телефон как панель компьютера</h2>
+    <p><a href="https://github.com/ersinkoc/phonebox">ersinkoc/phonebox</a> в описании GitHub — старый Android-телефон как настраиваемая настольная панель и тач-дека для Windows, Linux и macOS. Описание называет 124 виджета и 30 шаблонов для статистики системы, ИИ-кодинга, медиа и автоматизации, на 13 языках; связь по USB или по парному Wi-Fi, своё облако не требуется. README формулирует то же устройство иначе по числу виджетов: полноэкранное приложение Android и небольшой агент на компьютере, панель собирается в визуальном редакторе в браузере — 126 виджетов, 30 шаблонов, несколько страниц и живой предпросмотр. К агенту можно подключить несколько телефонов со своими раскладками или переключать один телефон между спаренными компьютерами. README пишет, что root, учётная запись PhoneBox и облачный сервис не нужны. Переводы README лежат рядом с английским, среди них русский: английский и двенадцать ссылок на другие языки совпадают с «13 languages» в описании.</p>
+    <p>Что README кладёт на экран телефона. Наблюдение за компьютером: CPU, GPU, память, диски, сеть и ping, графики, подробности GPU и управление процессами. ИИ-кодинг: квоты Claude, Codex и Antigravity, время сброса и прогноз расхода; локальные сессии Claude Code, Codex и OpenCode, в том числе внутри WSL; ревью и статус CI на GitHub. Нажатие на сессию показывает модель, тайминг и токены. Если включить запросы разрешений Codex, Claude Code или OpenCode, с телефона можно ответить Allow или Deny, а для OpenCode ещё Always allow. Тач-управление README выносит в Control Deck: ярлыки приложений и адресов, сочетания клавиш и макросы, звук приложений, микрофон, медиа, OBS и системные действия. Повседневные блоки: сейчас играет, интернет-радио, часы, погода, календари, заметки, списки, помодоро и таймеры. Автоматизация: значения и уведомления вебхуков, элементы Home Assistant и правила, которые реагируют на активность компьютера. Необязательная связка с CodexBar добавляет поставщиков квот и сводку расходов. Сетка страницы — 12 на 6, есть портрет и альбом, Smart Stack кладёт до 12 виджетов в одну ячейку. Стартовые шаблоны README: Home, System, AI quotas, Sessions, Music, Planner, Automation и Control Deck.</p>
+    <p>Кому: тому, у кого есть телефон на Android 5 или новее и компьютер на Windows, Linux или macOS, и кто хочет вынести статусы и кнопки на этот экран. Как поставить по README. Нужен Android 5+, рекомендуется Android 6 или новее. Агенты из релизов уже включают .NET, отдельно рантайм ставить не нужно. На Windows 10/11 x64 README предлагает в обычном PowerShell строку <code>irm https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.ps1 | iex</code>. На Linux и macOS — <code>curl -fsSL https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.sh | bash</code> от своего пользователя. Скрипт качает последний релиз, сверяет SHA-256, предлагает недостающие зависимости и автозапуск и открывает настройки на <code>http://127.0.0.1:8765</code>. Повторный запуск обновляет или чинит установку, не трогая настройки и пары. README просит прочитать скрипты до запуска. Вручную: распаковать агент своей системы с страницы релизов и поставить APK на телефон. Есть вариант Scoop. Манифесты winget лежат в <code>packaging/winget</code>, README отсылает за подробностями в руководство по установке. Приложения в магазинах нет, APK только из релизов этого репозитория. Версии для iOS у телефонного приложения нет.</p>
+    <p>USB: включить параметры разработчика и отладку по USB, кабель с передачей данных и подтверждение на телефоне. Тогда панель просыпается при подключении, а приложение можно обновлять по adb. Wi-Fi по умолчанию выключен. В настройках включают «Let the phone connect without the USB cable», сохраняют, перезапускают агент, выбирают пару по Wi-Fi, сканируют QR и сверяют код. Для Wi-Fi adb и параметры разработчика не нужны, обновления приложения ставят вручную, пока не настроен USB. Сервер настроек слушает <code>127.0.0.1:8765</code>. USB доходит до агента через <code>adb reverse</code> на свой loopback-порт, по TLS с закреплённым сертификатом, как Wi-Fi. Необязательный Wi-Fi — HTTPS на порту 8766, закреплённый сертификат и парный ключ. Телефон запрашивает действия по идентификатору; команды и учётные данные интеграций остаются на компьютере. Своей телеметрии, аналитики и учётных записей README не описывает. Необязательные виджеты ходят наружу за погодой, квотами, GitHub и другими данными, агент проверяет GitHub на обновления. Список исходящих соединений — в <code>PRIVACY.md</code>. Сборки релизов: Windows x64; Linux x64 и ARM64 на glibc; macOS Apple silicon и Intel. CPU, память, диски, сеть и процессы README отмечает на всех трёх. GPU, медиа и громкость зависят от системы: на Windows громкость своя, на Linux <code>playerctl</code> и <code>wpctl</code> или <code>pactl</code>, на macOS <code>nowplaying-cli</code> с запасным путём для Spotify и Music. Готовых сборок для Windows ARM и musl, в том числе Alpine, README не обещает. Агент на Windows пока без подписи: заявка в SignPath Foundation на рассмотрении, SmartScreen или антивирус могут предупредить. APK подписывается собственным ключом проекта, отдельно от SignPath. Агент в разработке — .NET 10, приложение Android — Kotlin и WebView, виджеты на обычном JavaScript. Для сборки Android README просит JDK 17 и Android SDK Platform 35; само приложение рассчитано на Android 5.0, API 21, и новее. Лицензия в снимке API и в README — MIT. Язык по снимку API — C#. Темы снимка: android, claude-code, codex, dashboard, desk-panel, dotnet, home-assistant, linux, macos, old-phone, smart-stack, stream-deck, system-monitor, tailscale, webhooks, widgets, windows. Репозиторий создан 07.11.2026, 19:45 МСК. 4562 звёзды на 21.11.2026, ~21:25 МСК, последний push 21.11.2026, 21:10 МСК. На момент снимка репозиторий не был архивным.</p>
+
+    <h2>MROffice: редакторы документов, таблиц, слайдов, PDF, рукописи и кода</h2>
+    <p><a href="https://github.com/XinaTian/MROffice">XinaTian/MROffice</a> в описании GitHub — открытые редакторы документов, таблиц, презентаций, PDF, рукописного ввода и кода, сайт <a href="https://mroffice.ai">mroffice.ai</a>. README уточняет границу репозитория. Это исходники тех же редакторов, которые запускает MR Office: их можно собрать, запустить и встроить. Это открытые редакторы, а не полный открытый офисный пакет: чтение и запись файлов Microsoft Office остаётся в MR Office, не в этом исходном коде. Шесть редакторов и что README относит к каждому. Документы — страничный текстовый процессор: стили, шрифты, списки, таблицы, колонтитулы, разделы и колонки, фигуры и формулы, обложки и оглавление, комментарии, правки и чернила на странице. Свой формат <code>.mrdoc</code>; открывает HTML, Markdown и простой текст. Таблицы — ячейки и формулы, форматы чисел, условное форматирование, сортировка и фильтр, закреплённые области и несколько листов, сумма и среднее по выделению. Арифметика между ячейками вроде <code>=A1*B1+10</code> считается в браузере по мере набора. Формулы с функциями (SUM, IF, VLOOKUP и другие) хранятся как написаны. Свой формат <code>.mrsheet</code>; открывает и сохраняет CSV и TSV. Презентации — слайды с восемью своими темами, макеты, мастер и макеты, текст, фигуры, надписи, таблицы, WordArt и формулы, комментарии, разделы, переходы и анимация с предпросмотром, показ слайдов. Свой формат <code>.mrslides</code>. PDF — чтение, поиск, показ и печать, копирование и чтение текста вслух, пометки выделенного текста (подсветка, подчёркивание, зачёркивание, волна) с заметками и панелью комментариев, пока файл открыт. Сохранение отдаёт файл таким, каким его открыли. Рукопись — заметки от руки: перья с нажатием, маркеры, ластики, лассо и линейка, чернила, которые превращаются в фигуры. Свой формат <code>.mrink</code>. Код — лёгкий редактор с подсветкой многих языков, структурой документа, поиском и заменой; JavaScript и TypeScript, Python, SQL, Lua и shell запускаются в браузере. Подсчёт формул с функциями, построение диаграмм и раскладка SmartArt, по README, идут в собственном движке приложения MR Office. Открытые редакторы сохраняют формулы, диаграммы и SmartArt, которые уже лежат в файле, и показывают SmartArt так, как его сохранили.</p>
+    <p>Кому: тому, кто хочет встроить или запустить эти шесть редакторов у себя и отдельно учитывает, что файлы Word, Excel и PowerPoint в открытую часть не входят. Как запустить по README. Редакторы лежат в <code>packages/</code> (<code>@mrnote/docs</code>, <code>sheets</code>, <code>slides</code>, <code>pdf</code>, <code>ink</code>, <code>code</code>, общий <code>@mrnote/core</code>) и собираются вместе в <code>apps/playground</code>. Команды: <code>npm install</code>, <code>npm run fonts</code> (открытые замены шрифтов Office), <code>npm run build</code>, <code>npm run preview</code> на <code>http://localhost:5178</code>. <code>npm run dev</code> поднимает разработку на том же адресе, <code>npm run smoke</code> проверяет сборку. На npm те же редакторы как React-компоненты: <code>mroffice-docs</code>, <code>mroffice-core</code>, <code>mroffice-sheets</code>, <code>mroffice-slides</code>, <code>mroffice-pdf</code>, <code>mroffice-ink</code>, <code>mroffice-code</code>. Каталог <code>apps/desktop</code> — оболочка десктоп-приложения на Electron, своя идентичность, лицензия оболочки и редакторов — AGPL. С бесплатным компонентом MR Office из релизов это десктоп-приложение с файлами Word, Excel, PowerPoint и PDF, входом и ИИ. Без компонента оболочка запускает только открытые редакторы: <code>.mrdoc</code>, <code>.mrsheet</code>, <code>.mrslides</code>, <code>.mrink</code>, CSV, HTML, Markdown и PDF. Компонент, по README, собранный, бесплатный и не открытый. После <code>npm run build</code> его стартуют командой <code>npm run desktop</code>. Что README относит к полному десктоп-приложению и не относит к открытым редакторам: открытие и сохранение <code>.docx</code>, <code>.xlsx</code> и <code>.pptx</code>; вычисление формул с функциями; диаграммы; правка SmartArt; запись правок PDF обратно в файл.</p>
+    <p>Встраивание, которое README называет рекомендуемым, — размещённый сервис, не сборка этого репозитория. MR Office держит редакторы, сервер приложения подписывает короткоживущий токен сессии, страница открывает редактор. README пишет, что так правятся настоящие файлы Word, Excel, PowerPoint и PDF, с совместным редактированием, загрузкой, экспортом, печатью и сохранением обратно на свой сервер подписанным обратным вызовом. План, который README называет бесплатным: 1000 сессий в месяц на localhost, 100 на своих доменах, до двух приложений. README прямо пишет, что это размещённая коммерческая услуга, поэтому своё приложение не связано лицензией AGPL этого репозитория. Старт: <code>npx mroffice-embed init</code> или приложение в консоли разработчика, токен на сервере через <code>createSessionToken</code> из <code>mroffice-embed/server</code>, на странице <code>open()</code> из <code>mroffice-embed</code>. Секретный ключ README просит не выпускать с сервера. Для ИИ-приложений есть MCP-сервер: размещённая точка <code>https://mcp.mroffice.ai/mcp</code> со входом в учётную запись MR Office, без ключа, или <code>npx -y mroffice-mcp</code> на своём компьютере. Исходник MCP — в <code>apps/mcp</code>. Отдельно README описывает MR Office как сервер авторизации OAuth 2.1. Свой хостинг шести редакторов README ставит под AGPL-3.0: если изменённой версией пользуются по сети, нужно отдать полный исходный код и сохранить указание «MR Office» (<code>NOTICE.md</code>). Эти редакторы открывают свои форматы, CSV, HTML, Markdown и PDF. Коммерческая лицензия, по README, запрашивается у support@mr-note.com. Прав на имя и логотип MR Office лицензия не даёт. Лицензия в снимке API — AGPL-3.0, в README — GNU Affero General Public License v3.0 плюс условия <code>NOTICE.md</code>. Язык по снимку API — TypeScript. Темы снимка: agpl, document-editor, excel, office-suite, open-source, pdf-editor, powerpoint, spreadsheet, typescript, word. Репозиторий создан 10.11.2026, 20:54 МСК. 1394 звёзды на 21.11.2026, ~21:25 МСК, последний push 21.11.2026, 11:49 МСК. На момент снимка репозиторий не был архивным.</p>
+
+    <h2>Kernarium: ядро Linux на iOS</h2>
+    <p><a href="https://github.com/imxieyi/Kernarium">imxieyi/Kernarium</a> в описании GitHub запускает настоящее ядро Linux нативно на iOS. README раскрывает способ: ядро <a href="https://en.wikipedia.org/wiki/User-mode_Linux">User-mode Linux</a> собирается в нативный код arm64 и линкуется с рантаймом iOS. Ядро выполняется нативно, без эмуляции. Программы пользовательского режима эмулирует интерпретатор в духе <a href="https://github.com/ish-app/ish">iSH</a>, с потоками и поддержкой SMP. Ускорение гостевого GPU даёт <a href="https://docs.mesa3d.org/drivers/kosmickrisp.html">KosmicKrisp</a>, слой перевода Vulkan в Metal. README ставит эту схему между полной эмуляцией системы, как UTM, и полной эмуляцией пользовательского режима, как iSH: настоящее ядро Linux плюс эмулятор, которому нужно эмулировать только код пользовательского режима. README пишет, что так на современных устройствах iOS идут Docker-контейнеры, рабочие столы Linux, Wine и Proton и полная система Android, и называет скорость приемлемой. Этот выпуск запуск не повторял.</p>
+    <p>Что README перечисляет в возможностях. Ядро — основной 6.18 LTS и для гостей Linux, и для гостей Android; большая часть возможностей ядра, включая пространства имён и SELinux. Эмуляция процессора: гостевые инструкции <code>arm64</code>, <code>arm32</code> и <code>x86_64</code>, режимы интерпретатора и JIT; у сборки для TestFlight только интерпретатор. Графика: Vulkan 1.4 через KosmicKrisp, OpenGL 4.6 и GLES 3.2 через Zink, аппаратные кодирование и декодирование H.264 и HEVC через VideoToolbox. Диски: виртуальные диски драйвером UBD с discard, файловые системы Linux, среди них ext2/3/4, erofs и xfs, loop-устройства и FUSE. Сеть: полный сетевой стек Linux, выход гостя через libslirp. В репозитории два приложения. Andarium — эмулятор Android на рантайме Kernarium. README пишет, что приложение выходило в App Store и позже было снято Apple: цитата из Guideline 2.5.2 и 1.1 говорит, что приложение позволяет воспроизводить операционные системы Android на платформах iOS. В App Store его больше нет, исходники лежат в <code>Andarium/</code>, IPA для боковой установки README указывает брать из релизов. Kernarium — общее приложение-эмулятор Linux под разные дистрибутивы. README называет его ранней стадией и пишет, что к выпуску оно не готово. Исходники — в <code>Kernarium/</code>.</p>
+    <p>Кому: тому, кто хочет настоящее ядро Linux на устройстве iOS и готов к боковой установке IPA либо к сборке по документации репозитория. README для сборки и встраивания рантайма отсылает агента к <code>AGENTS.md</code> и каталогу <code>docs/</code>. Образ системы Android, по README, собирается на мощной удалённой машине x86_64 с Linux; требования README отсылает к документации Android. Готовые образы можно скачать из релизов и указать на них агенту. Лицензия в снимке API — GPL-2.0. README формулирует её как GPL-2.0-or-later, кроме файлов, где заголовок SPDX говорит иначе, и отсылает к каталогу <code>LICENSES/</code>. Язык по снимку API — C++. Темы снимка: android, emulator, ios, linux, linux-kernel, user-mode-linux, virtualization. Репозиторий создан 07.11.2026, 17:15 МСК. 2329 звёзд на 21.11.2026, ~21:25 МСК, последний push 20.11.2026, 05:09 МСК. На момент снимка репозиторий не был архивным.</p>
+
+    <h2>lumo-desktop: оболочка десктоп-клиента Lumo</h2>
+    <p><a href="https://github.com/ProtonLumo/lumo-desktop">ProtonLumo/lumo-desktop</a> в описании GitHub — кодовая база Lumo Desktop. README уточняет: это десктоп-приложение <a href="https://lumo.proton.me">Lumo</a>, ИИ-ассистента Proton, для macOS, Windows и Linux. Приложение оборачивает веб-приложение Lumo в оболочку <a href="https://tauri.app">Tauri</a> и даёт ему доступ к компьютеру и инструментам после подтверждения человека. Что README перечисляет. Коннекторы: чтение и правка локальных файлов, команды оболочки, Proton Mail, Luminance и любой MCP-сервер. Каталог заготовок включает GitHub, Linear, Figma, Grafana, Stripe и PubMed. Подтверждения: каждый инструмент стоит в одном из трёх режимов — выполнять сразу, спрашивать или выключить. Режим «спрашивать» ждёт ответа, прежде чем инструмент запустится. Быстрый вопрос: глобальное сочетание клавиш открывает окно поиска из любого места. Запросы по расписанию. Секреты: токены OAuth, ключи API и учётные данные MCP лежат в связке ключей операционной системы, служба <code>me.proton.lumo-app</code>. Вход — в своём браузере, чтобы работали ключи безопасности и passkey: README объясняет это тем, что WKWebView не отдаёт WebAuthn. Сессия возвращается в вебвью по протоколу session-fork Proton, код — в <code>src-tauri/src/browser_login.rs</code>. Обновления подписаны на всех платформах, которые README перечисляет.</p>
+    <p>Само веб-приложение в этом репозитории не лежит. README пишет, что оно живёт в монорепозитории веб-клиентов Proton и загружается по адресу <code>LUMO_URL</code>. Мост <code>window.LumoConnectors</code> связывает страницу с TypeScript в <code>webview/bridges/connectors</code>, дальше Tauri IPC идёт в ядро на Rust в <code>src-tauri/src</code>. Ядро держит реестр инструментов, коннекторы, связку ключей, шлюз подтверждений, область учётной записи и обновлятор. Команды перечислены в <code>src-tauri/permissions/*.toml</code> и выданы в <code>src-tauri/capabilities/default.json</code>. Контракт моста разделён на два репозитория: <code>webview/bridges/connectors.ts</code> и <code>desktop-tools.ts</code> веб-приложения должны совпадать. Коннекторы регистрируются при старте в <code>ToolRegistry</code> и видны веб-приложению как инструменты формата OpenAI с именем <code>{connector_id}__{tool_name}</code>. README перечисляет <code>filesystem</code> (поиск, чтение, запись и правка внутри выданных корней), <code>bash</code>, <code>browser</code> (страницы из сети), <code>proton_mail</code> через Proton Mail Bridge, <code>luminance</code> через публичный API v2 напрямую, произвольные <code>mcp-{id}</code>, отдельный <code>mcp-zendesk</code> и <code>mcp-figma</code> на локальный сервер Figma <code>http://127.0.0.1:3845/mcp</code>. Часть серверов каталога README называет экспериментальными и прячет за флагом. <code>echo</code> — фикстура сквозных тестов, только при <code>LUMO_E2E_TESTING</code>. Инструмент в режиме «спрашивать» останавливает выполнение, шлёт запрос в вебвью и ждёт ответ или таймаут.</p>
+    <p>Кому: тому, кто хочет читать или собирать десктоп-оболочку Lumo. Веб-ассистент при этом остаётся удалённой страницей Proton, а не файлами этого репозитория. Пакеты по README: macOS — универсальный <code>.dmg</code> для Apple silicon и Intel; Windows — <code>.msi</code> и установщик <code>-setup.exe</code>; Linux — <code>.deb</code> и <code>.rpm</code> для Ubuntu 24.04+ и Fedora 40+. Для разработки README просит Node.js 22, стабильный Rust редакции 2021 и зависимости Tauri для своей системы: WebKitGTK на Linux, WebView2 на Windows. <code>npm install</code> и <code>npm run dev</code> по умолчанию грузят веб-приложение с <code>https://lumo.proton.dev</code>, это локальная копия веб-клиентов Proton. Против боевого адреса: <code>LUMO_URL=https://lumo.proton.me npm run dev</code>. Без входа приложением, по README, не воспользоваться. Изменения Rust перезапускают приложение. Изменения TypeScript сами не подхватываются: отдельного сервера разработки для фронтенда нет, esbuild отрабатывает один раз при старте, после правки <code>.ts</code> README просит <code>npm run build:webview</code> и перезагрузку окна. Скрипты, которые вставляются в страницу, требуют перезапуска <code>npm run dev</code>. Проверки: <code>npm run typecheck</code> и <code>cargo test --manifest-path src-tauri/Cargo.toml --features test-utils</code>. Сквозные тесты — <code>./e2e/run.sh</code> в контейнере Linux, потому что WebKitGTK отдаёт WebDriver; нужна копия веб-клиентов Proton рядом с проектом или в <code>CLIENTS_DIR</code>. Сборка: на macOS <code>APPLE_SIGNING_IDENTITY="-" npm run build</code> даёт приложение с ad-hoc подписью, на Linux и Windows хватает <code>npm run build</code>. Пакеты попадают в <code>src-tauri/target/&lt;target&gt;/release/bundle/</code>. Исполняемый файл называется <code>lumo-desktop</code> (<code>lumo-desktop.exe</code> на Windows), отображаемое имя — Lumo. Настройки: на macOS <code>~/Library/Application Support/me.proton.lumo-app/</code>, на Windows <code>%APPDATA%\me.proton.lumo-app\</code>, на Linux <code>~/.config/me.proton.lumo-app/</code>. Снятие локальной установки и её данных — <code>./src-tauri/scripts/uninstall.sh</code>. Сборки релизов, подпись и публикацию README относит к внутреннему CI Proton, файл <code>RELEASING.md</code> во внутреннем репозитории. Лицензия в снимке API и в README — GPL-3.0. Язык по снимку API — Rust. Темы снимка: ai, privacy, productivity. Репозиторий создан 17.11.2026, 10:20 МСК. 80 звёзд на 21.11.2026, ~21:25 МСК, последний push 17.11.2026, 12:39 МСК. На момент снимка репозиторий не был архивным.</p>
+
+    <h2>Вывод</h2>
+    <p>ersinkoc/phonebox — агент на .NET 10 и приложение Android 5+ под MIT. Описание GitHub говорит о 124 виджетах, README — о 126; 30 шаблонов совпадают в обоих местах. Панель для Windows, Linux и macOS ходит по USB или по парному Wi-Fi, настройки агента слушают <code>127.0.0.1:8765</code>. Сборки агента для Windows README называет неподписанными, пока заявка SignPath на рассмотрении. В снимке язык C#, 4562 звёзды. XinaTian/MROffice — шесть редакторов на TypeScript под AGPL-3.0. README отделяет их от полного пакета: файлы Word, Excel и PowerPoint, вычисление формул с функциями, диаграммы и правка SmartArt остаются в компоненте MR Office, который README называет бесплатным и закрытым. Размещённое встраивание README называет коммерческой услугой вне AGPL этого репозитория. В снимке 1394 звёзды. imxieyi/Kernarium — user-mode-linux на iOS: ядро 6.18 LTS как нативный arm64, пользовательский режим через интерпретатор в духе iSH. Приложение Andarium README описывает как снятое из App Store, IPA — из релизов, боковой установкой. Общее приложение Kernarium README называет ранним и не готовым к выпуску. В снимке API лицензия GPL-2.0, язык C++, 2329 звёзд; README пишет GPL-2.0-or-later, кроме файлов с другим SPDX. ProtonLumo/lumo-desktop — оболочка Tauri и ядро на Rust под GPL-3.0 вокруг удалённого веб-приложения Lumo. Коннекторы, подтверждения и связка ключей описаны в этом репозитории, само веб-приложение — нет. В снимке 80 звёзд. Звёзды в таблице — данные GitHub API на 21.11.2026, ~21:25 МСК. К моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 21.11.2026, ~21:25 МСК. Звёзды — на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
