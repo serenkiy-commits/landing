@@ -1,0 +1,23 @@
+:root {
+  color-scheme: light;
+  background: #faf8f3;
+  color: #30272a;
+  font: 1.125rem/1.55 system-ui, sans-serif;
+}
+body { margin: 0; }
+main {
+  max-width: 36rem;
+  margin: clamp(3rem, 13vh, 8rem) auto;
+  padding: 0 1.25rem;
+}
+h1 {
+  margin: 0 0 1.6rem;
+  font: 500 clamp(3.2rem, 10vw, 5.3rem)/1.06 Georgia, serif;
+  letter-spacing: -0.035em;
+}
+section { border-top: 1px solid #cdc3bf; padding-top: 1.35rem; }
+h2 { margin: 0 0 .4rem; font-size: 1.35rem; line-height: 1.3; }
+address { font-style: normal; }
+p { max-width: 41ch; margin: 1.2rem 0; color: #574d50; }
+a { color: #764033; text-underline-offset: .2em; }
+a:focus-visible { outline: 3px solid #764033; outline-offset: 4px; }
