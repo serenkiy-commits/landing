@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Голографическая фольга для three.js, центр управления Windows-ПК, псевдо-3D спрайты и перенос сессии, утро 22 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор dmitrykurash/holospot, estebanarosemena/StellarHub, danielwh2/sprite-stacking и sybil-solutions/skill-distill. Звёзды, лицензии и дата push сняты с GitHub 22 ноября 2026, ~06:20 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-22-morning-holo-foil-pc-hub-sprites-distill/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-22-morning-holo-foil-pc-hub-sprites-distill/">
+  <meta property="og:title" content="Голографическая фольга для three.js, центр управления Windows-ПК, псевдо-3D спрайты и перенос сессии: утренний выпуск 22 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar — 22 ноября 2026, утро: голографическая фольга для three.js, центр управления Windows-ПК, псевдо-3D спрайты и перенос сессии в открытую модель",
+        "datePublished": "2026-11-22",
+        "dateModified": "2026-11-22",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-22-morning-holo-foil-pc-hub-sprites-distill/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор holospot, StellarHub, sprite-stacking и skill-distill. Данные GitHub API на 22.11.2026, ~06:20 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 22.11.2026, ~06:20 МСК. Звёзды — на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "22 ноября 2026, утро", "item": "https://snezhko.ru/radar/blog/2026-11-22-morning-holo-foil-pc-hub-sprites-distill/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">22 ноября 2026, утро · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar — 22 ноября 2026, утро: голографическая фольга для three.js, центр управления Windows-ПК, псевдо-3D спрайты и перенос сессии в открытую модель</h1>
+    <p>dmitrykurash/holospot, estebanarosemena/StellarHub, danielwh2/sprite-stacking и sybil-solutions/skill-distill — звёзды, лицензии и push с GitHub API на 22.11.2026, ~06:20 МСК. Звёзды — снимок на момент выпуска, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 22 ноября 2026</h2>
+    <p class="meta">Данные GitHub API на 22.11.2026, ~06:20 МСК. В колонке push — календарная дата из этого снимка. Звёзды — на момент выпуска.</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Звёзды</th><th>Лицензия</th><th>Язык (GitHub)</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/dmitrykurash/holospot">dmitrykurash/holospot</a></td>
+          <td>212</td>
+          <td>MIT</td>
+          <td>TypeScript</td>
+          <td>17.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/estebanarosemena/StellarHub">estebanarosemena/StellarHub</a></td>
+          <td>253</td>
+          <td>GPL-3.0</td>
+          <td>JavaScript</td>
+          <td>21.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/danielwh2/sprite-stacking">danielwh2/sprite-stacking</a></td>
+          <td>385</td>
+          <td>MIT</td>
+          <td>HTML</td>
+          <td>21.11.2026</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/sybil-solutions/skill-distill">sybil-solutions/skill-distill</a></td>
+          <td>379</td>
+          <td>MIT</td>
+          <td>Python</td>
+          <td>21.11.2026</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: число звёзд, лицензия, язык, дата последнего push, признак архива. Данные GitHub API на 22.11.2026, ~06:20 МСК. Архивными эти четыре репозитория на момент снимка не были. Язык StellarHub в таблице — JavaScript по GitHub. Звёзды в таблице — на момент выпуска: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>holospot: голографическая фольга для three.js</h2>
+    <p><a href="https://github.com/dmitrykurash/holospot">dmitrykurash/holospot</a> — голографические материалы сервиса holo.spot для своих сцен на three.js: радужная фольга коллекционных карточек, голографический глиттер и стикеры-голограммы с 3D-картинкой внутри. По описанию репозиторий сделан так, чтобы его можно было отдать ИИ-агенту. Кому: фронтендерам и 3D-дизайнерам на three.js. В снимке GitHub API на 22.11.2026, ~06:20 МСК: 212 звёзды, лицензия MIT, язык TypeScript, последний push 17.11.2026, репозиторий не архивный.</p>
+
+    <h2>StellarHub: центр управления Windows-ПК</h2>
+    <p><a href="https://github.com/estebanarosemena/StellarHub">estebanarosemena/StellarHub</a> — приложение-«центр управления» для Windows 10/11: живые показатели железа, драйверы, приложения, место на диске, очистка и тесты оборудования в одном окне. Автор заявляет, что приложение обходится без аккаунта, подписок, платежей и телеметрии; в README указан Python 3.12+ (теги репозитория: pywebview), есть релизы. Кому: тем, кто обслуживает свой Windows-ПК и хочет один инструмент вместо набора утилит; утилиты с доступом к драйверам и очистке стоит проверять перед запуском. В снимке GitHub API на 22.11.2026, ~06:20 МСК: 253 звёзды, лицензия GPL-3.0, язык JavaScript по GitHub, последний push 21.11.2026, репозиторий не архивный.</p>
+
+    <h2>sprite-stacking: псевдо-3D спрайты</h2>
+    <p><a href="https://github.com/danielwh2/sprite-stacking">danielwh2/sprite-stacking</a> — скилл для агента, который превращает четыре pixel-art вида (сверху, сбоку, спереди, сзади) в псевдо-3D спрайт, который можно вращать. Работает с Claude Code, Codex, Cursor, OpenCode, Gemini CLI и Pi; установка — <code>npx skills add danielwh2/sprite-stacking</code> (нужен Node 22.20+), внутри Python 3, Pillow и NumPy; если генератора картинок нет, агент рисует виды сам Python-скриптом. Кому: инди-геймдеву, в том числе на Godot, и пиксель-арту. В снимке GitHub API на 22.11.2026, ~06:20 МСК: 385 звёзд, лицензия MIT, язык HTML, последний push 21.11.2026, репозиторий не архивный.</p>
+
+    <h2>skill-distill: перенос сессии в открытую модель</h2>
+    <p><a href="https://github.com/sybil-solutions/skill-distill">sybil-solutions/skill-distill</a> — скилл для Claude Code или Codex («учитель»): в конце удачной сессии он пишет скилл для «ученика», open-weight модели в своём агентском harness. Учитель запускает ученика в tmux на чистой копии исходного состояния, сравнивает результат с эталоном, правит скилл в месте первой ошибки и повторяет (по три прогона на версию), пока ученик не совпадёт с эталоном; финальное решение принимает человек. Нужны tmux, git и Python 3.10+; кому — тем, кто хочет перенести рутинные задачи с дорогих моделей на открытые. В снимке GitHub API на 22.11.2026, ~06:20 МСК: 379 звёзд, лицензия MIT, язык Python, последний push 21.11.2026, репозиторий не архивный.</p>
+
+    <h2>Вывод</h2>
+    <p>Утренний выпуск — про визуальные ассеты (holospot, sprite-stacking), обслуживание ПК (StellarHub) и переносимость агентских навыков (skill-distill). Запуск на своей машине в текст не входит, пока не проверен отдельно. Звёзды в таблице — данные GitHub API на 22.11.2026, ~06:20 МСК.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Канал в MAX: <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>. Канал в Telegram: <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 22.11.2026, ~06:20 МСК. Звёзды — на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
