@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Тачпад MacBook через тактильный мотор, тестеры на телефонах, детект атак агентов и проверка формализации, утро 23 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор os6/nospeaker, pierridotite/mobile-agent-testers, ThreatDefence/agentic-attack-detections и leanprover-community/riemann-hypothesis. Звёзды, лицензии и дата push сняты с GitHub 23 ноября 2026, 06:20 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-23-morning-haptic-agents-security-lean/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-23-morning-haptic-agents-security-lean/">
+  <meta property="og:title" content="Тачпад MacBook через тактильный мотор, тестеры на телефонах, детект атак агентов и проверка формализации: утренний выпуск 23 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar — 23 ноября 2026, утренний выпуск: тачпад MacBook через тактильный мотор, тестеры на телефонах, детект атак агентов и проверка формализации на Lean",
+        "datePublished": "2026-11-23",
+        "dateModified": "2026-11-23",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-23-morning-haptic-agents-security-lean/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор nospeaker, mobile-agent-testers, agentic-attack-detections и riemann-hypothesis. Данные GitHub API на 23.11.2026, 06:20 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 23.11.2026, 06:20 МСК. Звёзды — на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "23 ноября 2026, утро", "item": "https://snezhko.ru/radar/blog/2026-11-23-morning-haptic-agents-security-lean/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">23 ноября 2026, утро · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar — 23 ноября 2026, утренний выпуск: тачпад MacBook через тактильный мотор, тестеры на телефонах, детект атак агентов и проверка формализации на Lean</h1>
+    <p>os6/nospeaker, pierridotite/mobile-agent-testers, ThreatDefence/agentic-attack-detections и leanprover-community/riemann-hypothesis — звёзды, лицензии и push с GitHub API на 23.11.2026, 06:20 МСК. Звёзды — снимок на момент выпуска, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 23 ноября 2026</h2>
+    <p class="meta">Данные GitHub API на 23.11.2026, 06:20 МСК. В колонке push — дата и время из этого снимка (МСК). Звёзды — на момент выпуска.</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что делает</th><th>Язык</th><th>Лицензия</th><th>Звёзды</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/os6/nospeaker">os6/nospeaker</a></td>
+          <td>Тачпад MacBook «говорит» через тактильный мотор</td>
+          <td>Swift</td>
+          <td>MIT</td>
+          <td>488</td>
+          <td>22.11.2026, 16:14 МСК</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/pierridotite/mobile-agent-testers">pierridotite/mobile-agent-testers</a></td>
+          <td>20 ИИ-тестеров на 20 телефонах параллельно, на бесплатных раннерах GitHub</td>
+          <td>Python</td>
+          <td>MIT</td>
+          <td>648</td>
+          <td>23.11.2026, 03:06 МСК</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/ThreatDefence/agentic-attack-detections">ThreatDefence/agentic-attack-detections</a></td>
+          <td>Правила детекта и IOC для фреймворков атак ИИ-агентов</td>
+          <td>Python</td>
+          <td>MIT</td>
+          <td>421</td>
+          <td>23.11.2026, 06:10 МСК</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/leanprover-community/riemann-hypothesis">leanprover-community/riemann-hypothesis</a></td>
+          <td>Независимый Comparator для формализации гипотезы Римана на Lean</td>
+          <td>Lean</td>
+          <td>не указана</td>
+          <td>642</td>
+          <td>23.11.2026, 06:11 МСК</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: число звёзд, лицензия, язык, дата последнего push, признак архива. Данные GitHub API на 23.11.2026, 06:20 МСК. Архивными эти четыре репозитория на момент снимка не были. У leanprover-community/riemann-hypothesis лицензия не указана. Звёзды в таблице — на момент выпуска: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>nospeaker: тачпад MacBook через тактильный мотор</h2>
+    <p><a href="https://github.com/os6/nospeaker">os6/nospeaker</a> по описанию репозитория заставляет тачпад MacBook «говорить» через его тактильный мотор (haptic motor). Язык Swift, лицензия MIT. В снимке GitHub API на 23.11.2026, 06:20 МСК: 488 звёзд, последний push 22.11.2026 в 16:14 МСК, репозиторий не архивный.</p>
+
+    <h2>mobile-agent-testers: 20 ИИ-тестеров на 20 телефонах</h2>
+    <p><a href="https://github.com/pierridotite/mobile-agent-testers">pierridotite/mobile-agent-testers</a> — 20 ИИ-тестеров на 20 разных телефонах, параллельно, на бесплатных раннерах GitHub. По описанию это агенты Claude Code на симуляторах iOS и эмуляторах Android: они ищут сломанные сценарии, ошибки перевода, вёрстки и доступности. Язык Python, лицензия MIT. В снимке GitHub API на 23.11.2026, 06:20 МСК: 648 звёзд, последний push 23.11.2026 в 03:06 МСК, репозиторий не архивный.</p>
+
+    <h2>agentic-attack-detections: правила детекта атак ИИ-агентов</h2>
+    <p><a href="https://github.com/ThreatDefence/agentic-attack-detections">ThreatDefence/agentic-attack-detections</a> — правила детектирования и индикаторы компрометации (IOC) для фреймворков атак ИИ-агентов: ARTEX, Cairn, PentAGI, HexStrike, CyberStrikeAI, Strix, Hermes Agent и Agent Zero. В описании указаны KQL-охоты для Microsoft Sentinel и Defender XDR, а также Sigma, Suricata, Zeek, YARA, Splunk, Elastic и STIX 2.1. Язык Python, лицензия MIT. В снимке GitHub API на 23.11.2026, 06:20 МСК: 421 звезда, последний push 23.11.2026 в 06:10 МСК, репозиторий не архивный.</p>
+
+    <h2>riemann-hypothesis: проверка формализации на Lean</h2>
+    <p><a href="https://github.com/leanprover-community/riemann-hypothesis">leanprover-community/riemann-hypothesis</a> — по описанию независимая установка Comparator для формализации гипотезы Римана на Lean (Alpöge, 2026-11-20). Это репозиторий проверки формализации: выпуск не утверждает, что гипотеза доказана или признана. Язык Lean, лицензия не указана. В снимке GitHub API на 23.11.2026, 06:20 МСК: 642 звезды, последний push 23.11.2026 в 06:11 МСК, репозиторий не архивный.</p>
+
+    <h2>Вывод</h2>
+    <p>Утренний выпуск — про тачпад MacBook, который по описанию «говорит» через тактильный мотор (nospeaker), параллельных ИИ-тестеров на симуляторах iOS и эмуляторах Android (mobile-agent-testers), правила детекта и IOC для фреймворков атак агентов (agentic-attack-detections) и независимую установку Comparator для формализации гипотезы Римана на Lean (riemann-hypothesis). Репозиторий riemann-hypothesis проверяет формализацию и не означает, что гипотеза доказана или признана. Запуск на своей машине в текст не входит, пока не проверен отдельно. Звёзды в таблице — данные GitHub API на 23.11.2026, 06:20 МСК.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Подписаться на следующие выпуски: канал в MAX — <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>, канал в Telegram — <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 23.11.2026, 06:20 МСК. Звёзды — на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
