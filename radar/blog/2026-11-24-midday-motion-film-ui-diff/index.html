@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Поясняющее видео кодом, скилл режиссёра и diff интерфейса, день 24 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор zeative/motion-educator, memoryoffish/film-director-skill-plugin и imuratalpay/ui-diff. Звёзды, лицензии и дата push сняты с GitHub 24 ноября 2026, 11:22 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-24-midday-motion-film-ui-diff/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-24-midday-motion-film-ui-diff/">
+  <meta property="og:title" content="Поясняющее видео кодом, скилл режиссёра и визуальный diff: дневной выпуск 24 ноября 2026, 11:00">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar — 24 ноября 2026, дневной выпуск, 11:00: поясняющее видео кадр за кадром, скилл режиссёра и визуальный diff интерфейса",
+        "datePublished": "2026-11-24",
+        "dateModified": "2026-11-24",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-24-midday-motion-film-ui-diff/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор motion-educator, film-director и ui-diff. Данные GitHub API на 24.11.2026, 11:22 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 24.11.2026, 11:22 МСК. Звёзды — на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "24 ноября 2026, день", "item": "https://snezhko.ru/radar/blog/2026-11-24-midday-motion-film-ui-diff/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">24 ноября 2026, день · 11:00 МСК · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar — 24 ноября 2026, дневной выпуск, 11:00: поясняющее видео кадр за кадром, скилл режиссёра и визуальный diff интерфейса</h1>
+    <p>Дневной выпуск — три скилла для агентов. <a href="https://github.com/zeative/motion-educator">zeative/motion-educator</a> собирает поясняющий ролик кадром из HTML, GSAP и three.js. <a href="https://github.com/memoryoffish/film-director-skill-plugin">memoryoffish/film-director-skill-plugin</a> ведёт агента от сценария к ролику: склейки, белая модель в Blender и звук. <a href="https://github.com/imuratalpay/ui-diff">imuratalpay/ui-diff</a> снимает интерфейс до и после правки и готовит один комментарий в pull request. Звёзды, лицензии и push — данные GitHub API на 24.11.2026, 11:22 МСК. Звёзды — снимок на момент выпуска, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 24 ноября 2026</h2>
+    <p class="meta">Данные GitHub API на 24.11.2026, 11:22 МСК. В колонке push — дата и время из этого снимка (МСК). Звёзды — на момент выпуска.</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что делает</th><th>Язык</th><th>Лицензия</th><th>Звёзды</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/zeative/motion-educator">zeative/motion-educator</a></td>
+          <td>Скилл агента: поясняющее видео кадр за кадром из HTML, GSAP и three.js</td>
+          <td>JavaScript</td>
+          <td>MIT</td>
+          <td>108</td>
+          <td>24.11.2026, 09:49 МСК</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/memoryoffish/film-director-skill-plugin">memoryoffish/film-director-skill-plugin</a></td>
+          <td>Скилл и плагин: от сценария к ролику, склейки, белая модель в Blender, звук</td>
+          <td>Python</td>
+          <td>Apache-2.0</td>
+          <td>124</td>
+          <td>24.11.2026, 11:12 МСК</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/imuratalpay/ui-diff">imuratalpay/ui-diff</a></td>
+          <td>Скилл и CLI: скриншоты до и после, пиксельный diff и комментарий в PR</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>134</td>
+          <td>23.11.2026, 13:57 МСК</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: описание, язык, лицензия, число звёзд, дата push, признак архива, домашняя страница. Данные GitHub API на 24.11.2026, 11:22 МСК. Архивными эти три репозитория на момент снимка не были, форками в том же ответе API не числились. Домашняя страница в снимке: у motion-educator — <a href="https://motionedu.kejaa.id">motionedu.kejaa.id</a>, у film-director-skill-plugin — <a href="https://memoryoffish.github.io/film-director-page/">memoryoffish.github.io/film-director-page</a>, у ui-diff — <a href="https://skills.muratalpay.me/ui-diff">skills.muratalpay.me/ui-diff</a>. Звёзды в таблице — на момент выпуска: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>motion-educator: поясняющее видео кадром из кода</h2>
+    <p><a href="https://github.com/zeative/motion-educator">zeative/motion-educator</a> в описании GitHub — скилл агента и движок фильма для учебных роликов в духе разбора: трёхмерные копии реальных вещей, движение камеры как в ролике о продукте, закреплённые подписи, закадровый текст одним дублем, музыка и звуковые эффекты. Сначала раскадровка, сборка в HTML, GSAP и three.js, рендер кадр за кадром. README добавляет формат 1080p60, вертикальный 9:16 и горизонтальный 16:9, и пишет, что рендер начинается после проверки раскадровки и согласия человека. Подпись к демо в README: каждый кадр — код, стокового видео и видеомодели нет. Кому: тем, кто просит агента собрать поясняющий ролик из скилла. Проба из README — клон в каталог скиллов: <code>git clone --depth 1 https://github.com/zeative/motion-educator ~/.claude/skills/motion-educator</code>, затем просьба агенту или вызов <code>/motion-educator</code>. Это папка Agent Skills: <code>SKILL.md</code>, <code>references/</code> и набор на Node. Таблица README называет каталоги для Claude Code, OpenAI Codex, Gemini CLI, GitHub Copilot и Cursor. Агенту без поддержки скиллов README предлагает прочитать <code>SKILL.md</code>. Нужны оболочка для Node, FFmpeg и Python и умение смотреть картинки: скилл сверяет свои кадры. README пишет, что ролики в репозитории сняты в Claude Code, остальные агенты не проверялись. Без агента README требует Node 20+, FFmpeg, Python 3 с numpy и Chromium Playwright (<code>npx playwright install chromium</code>). На Linux без GPU нужен программный Vulkan Mesa (<code>apt install mesa-vulkan-drivers</code>). Среду проверяет <code>node kit/tools/doctor.mjs</code>. Раскадровка в README — часы фильма: начала и концы планов, подписи и линейка глав читаются из неё. Проверка отказывает доске со слишком редкими картинками (около одной на 3,2 с), с подписью, которую не успеть прочитать, с числом без факта, со строкой, которая не влезает в план, с трёхмерным объектом без листа модели или с коротким роликом, чей конец не зациклен. Сам ролик README описывает как веб-страницу с одной поставленной на паузу шкалой GSAP: headless Chromium перематывает шкалу на каждый кадр, FFmpeg собирает кадры и добавляет bloom и зерно. Картинка режется кусками по четыре секунды, правка перерисовывает задетые секунды. Закадр — один непрерывный дубль через ElevenLabs, картинка режется под голос. Без ключа README оставляет подписи и библиотечный трек. Музыка и эффекты Mixkit в репозиторий не входят: их лицензия, по README, разрешает использование внутри ролика и не разрешает передавать сами файлы, их качает <code>kit/audio/fetch.sh</code>. На CPU без GPU минута 1080p60 в 3D, по README, занимает большую часть часа на небольшой машине. Таблица README приводит замер одного тяжёлого портретного кадра 1080×1920 на CPU: свой программный рендер Chromium — 7,1 с на кадр, Mesa lavapipe — 1,1 с. Этот выпуск замер не повторял. Шаблонов внешнего вида в README шестнадцать; у шести есть образцы фильмов, остальные карточки README помечает как проверку движка. Лицензия кода, документов и примеров репозитория — MIT. Ролики, которые человек соберёт сам, README оставляет ему. GSAP README относит к собственной бесплатной лицензии, не к MIT: зависимость ставится из npm и в репозиторий не входит. В снимке GitHub API на 24.11.2026, 11:22 МСК: 108 звёзд, язык JavaScript, лицензия MIT, последний push 24.11.2026 в 09:49 МСК, репозиторий не архивный, домашняя страница <a href="https://motionedu.kejaa.id">motionedu.kejaa.id</a>.</p>
+
+    <h2>film-director: скилл режиссёра от сценария к ролику</h2>
+    <p><a href="https://github.com/memoryoffish/film-director-skill-plugin">memoryoffish/film-director-skill-plugin</a> в описании GitHub — агент как режиссёр: склейки, белые модели в Blender и звук, от сценария до ролика. Один скилл и один плагин для кодинг-агентов. Основной README на китайском, рядом лежит <code>README.en.md</code>. README ставит в центр склейку, которая держит ритм рассказа, белую модель мира и отдельную работу со звуком и монтажом. Стыков между планами README называет восемь; в тексте перечислены перекрытие, проход в дверной проём, проезд камеры насквозь, белая вспышка, match cut и смена носителя, у каждого обещан снятый пример. Белая модель собирается в Blender: где кто стоит, куда смотрит, где камера и в какую сторону открывается дверь. Её рендер README отдаёт видеомодели как ориентир, а готовый ролик сверяет с этой моделью. Звук README делит на реплики, фон, эффекты и музыку. Эффекты берутся с Freesound и только с лицензиями CC0 и CC-BY, с указанием автора. Скилл <code>film-director</code> состоит из трёх частей: <code>video-film-maker</code> (раскадровка, ключевые кадры, генерация с проверкой, монтаж), <code>blender-previz</code> и <code>refsound</code>. Заметки по промптам есть для Wan 3.0 и Seedance 2.5; официальные руководства этих двух README просит скачать отдельно. Плагин <code>film-crew</code> README называет необязательным. Его backends отправляют задание видео- и изображение-моделям и оставляют запись каждой генерации, viewer собирает веб-страницу просмотра с узлами и прогрессом, comfyui открывает каждый план как workflow в ComfyUI только для просмотра. Скилл без плагина, по README, работает сам. Установка скилла: <code>npx skills add memoryoffish/film-director-skill-plugin</code>. Плагин для Claude Code: <code>claude plugin install film-crew --marketplace memoryoffish/film-director-skill-plugin</code>. Установщик скиллов берёт Node.js и кладёт <code>skills/film-director</code> туда, где агент читает <code>SKILL.md</code>: Claude Code, Codex и другие. Вручную README предлагает скопировать или сослаться на папки в <code>~/.claude/skills/</code> или <code>~/.agents/skills/</code>. Для запуска README требует Python 3.10+, numpy, opencv-python и ffmpeg; тесты — pytest. Белая модель — Blender 5.3 через <code>pip install bpy==5.3.0</code> и Python 3.13; другие версии README не проверял. Ключи свои и лежат в окружении: <code>DASHSCOPE_API_KEY</code> для Wan 3.0 и <code>OPENAI_API_KEY</code> для ключевых кадров, при необходимости <code>OPENAI_BASE_URL</code>. В репозитории ключей нет. Команда <code>request</code>, по README, сначала печатает запрос как есть, и только потом тратит вызов модели. Лицензия Apache-2.0. Мебель KayKit в <code>skills/film-director/blender-previz/assets/</code> README относит к CC0. README пишет, что проект не связан с Anthropic и не является официальным проектом Anthropic. Страница — <a href="https://memoryoffish.github.io/film-director-page/">memoryoffish.github.io/film-director-page</a>. В снимке GitHub API на 24.11.2026, 11:22 МСК: 124 звезды, язык Python, лицензия Apache-2.0, последний push 24.11.2026 в 11:12 МСК, репозиторий не архивный, домашняя страница та же.</p>
+
+    <h2>ui-diff: визуальный diff интерфейса в pull request</h2>
+    <p><a href="https://github.com/imuratalpay/ui-diff">imuratalpay/ui-diff</a> в описании GitHub — скриншоты до и после, подсвеченный пиксельный diff и короткий UX-итог для изменений интерфейса в pull request, скилл агента. README уточняет: комментарий в PR один и липкий, а картинки остаются приватными. По умолчанию <code>publish</code> коммитит их в сиротскую ветку <code>ui-diff-assets</code> того же репозитория и не трогает рабочее дерево, индекс и остальные ветки. Ссылка вида <code>https://github.com/&lt;owner&gt;/&lt;repo&gt;/raw/ui-diff-assets/…</code>, по README, открывается у вошедшего пользователя с правом чтения. Для публичного репозитория publish отказывается, пока не передан <code>--allow-public-repo</code>; неизвестная видимость требует <code>--assume-private</code>. Это скилл для Claude Code, Cursor и Codex и CLI на TypeScript, который человек и CI запускают сами. Сайт — <a href="https://skills.muratalpay.me/ui-diff">skills.muratalpay.me/ui-diff</a>. Кому: тем, кто хочет увидеть, что правка сдвинула в интерфейсе, до того как комментарий уйдёт в PR. Проба из README: git и Node.js 20.10+; на Windows README просит WSL2. GitHub CLI (<code>gh auth login</code>) нужен для <code>ui-diff publish</code> и для <code>--pr</code>. Клон, затем <code>install.sh --claude</code> (Cursor читает тот же каталог скиллов; <code>--codex</code> ставит скилл для Codex), алиас на <code>skills/ui-diff/bin/ui-diff.mjs</code>, в своём проекте <code>ui-diff init</code> и <code>ui-diff check</code>. Первый запуск качает Chromium, README называет объём около 150 МБ. Результат лежит в <code>.ui-diff/</code>. Наружу ничего не уходит, пока не запущен <code>publish</code>. Что делает CLI, по README. Изменённые файлы интерфейса сопоставляются с маршрутами через <code>ui-diff.config.json</code>, соглашения Next.js, SvelteKit, Nuxt, Astro, Remix, TanStack Router и обычного HTML и через граф импортов. Смена UI-зависимости в <code>package.json</code> или lock-файле помечает каждый маршрут затронутым. База и голова поднимаются во временных git worktree, каждая на своём порту, либо берутся готовые preview URL. Снимки базы кэшируются в <code>.ui-diff/cache/</code>, пока коммит базы и настройки съёмки те же. Playwright снимает обе стороны одинаково: замороженные часы, посеянные <code>Math.random</code> и <code>crypto</code>, остановленные анимации и каретка, дождавшиеся веб-шрифты, маски, спрятанные полосы прокрутки. Кадр переснимается, пока два подряд не совпадут. По умолчанию видовые экраны — desktop и mobile. Diff считает pixelmatch. Для изменённой области README описывает пару «база | голова», мигающий GIF и кроп «до | после | diff». Карта элементов называет, что изменилось в стиле, например отступ ссылки. Комментарий один: его находят по скрытому маркеру и правят на месте. <code>ui-diff check</code> сравнивает рабочее дерево с базой слияния и ничего не публикует. Код выхода 0, если визуально ничего не изменилось, 1 если изменилось, 2 при ошибке. Пример в README — статическая страница двумя коммитами в самом репозитории; вердикт этого прогона README формулирует как «5 measured changes on 1 route». Публикацию README проверял на локальном bare remote и пишет, что настоящий PR при этом не вызывался. Этот выпуск пример не прогонял. Лицензия MIT. В снимке GitHub API на 24.11.2026, 11:22 МСК: 134 звезды, язык TypeScript, лицензия MIT, последний push 23.11.2026 в 13:57 МСК, репозиторий не архивный, домашняя страница <a href="https://skills.muratalpay.me/ui-diff">skills.muratalpay.me/ui-diff</a>.</p>
+
+    <h2>Вывод</h2>
+    <p>Дневной выпуск, 11:00, — про три скилла, которые агент читает как инструкцию, а не про готовый чат. motion-educator собирает поясняющий ролик кадром из HTML, GSAP и three.js и ждёт согласия на раскадровку до рендера. Закадр и сочинённая музыка идут через ключ ElevenLabs; без ключа README оставляет подписи и библиотечный трек. Замер скорости кадра в README этот выпуск не повторял. GSAP в зависимостях живёт на своей бесплатной лицензии, код репозитория — MIT. film-director ведёт от сценария к ролику через склейки, белую модель Blender 5.3 и звук с Freesound (CC0 и CC-BY). Плагин необязателен. Ключи Wan и OpenAI README просит класть в окружение, в репозитории их нет. Лицензия Apache-2.0. ui-diff снимает интерфейс до и после, считает пиксели и измеренные стили и готовит один комментарий в PR. Картинки по умолчанию уходят в сиротскую ветку того же репозитория, а publish на публичном репозитории ждёт <code>--allow-public-repo</code>. Цифры примера в его README этот выпуск не перепроверял. Запуск на своей машине в текст не входит, пока не проверен отдельно. Звёзды в таблице — данные GitHub API на 24.11.2026, 11:22 МСК.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Подписаться на следующие выпуски: канал в MAX — <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>, канал в Telegram — <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 24.11.2026, 11:22 МСК. Звёзды — на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
