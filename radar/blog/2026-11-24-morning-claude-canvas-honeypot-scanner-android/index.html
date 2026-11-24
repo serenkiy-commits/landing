@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Холст сессий Claude Code, honeypot для агентов, сканер уязвимостей и Android без системы, утро 24 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор krispuckett/rounds, tracebit-com/turingpot, erkamyaman/safe-anything и sohzm/winedroid. Звёзды, лицензии и дата push сняты с GitHub 24 ноября 2026, 06:20 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-24-morning-claude-canvas-honeypot-scanner-android/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-24-morning-claude-canvas-honeypot-scanner-android/">
+  <meta property="og:title" content="Холст сессий Claude Code, honeypot для агентов, сканер уязвимостей и Android без системы: утренний выпуск 24 ноября 2026">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar — 24 ноября 2026, утренний выпуск: холст сессий Claude Code, honeypot для агентов, сканер уязвимостей на Rust и Android-приложения без системы",
+        "datePublished": "2026-11-24",
+        "dateModified": "2026-11-24",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-24-morning-claude-canvas-honeypot-scanner-android/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор rounds, turingpot, safe-anything и winedroid. Данные GitHub API на 24.11.2026, 06:20 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 24.11.2026, 06:20 МСК. Звёзды — на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "24 ноября 2026, утро", "item": "https://snezhko.ru/radar/blog/2026-11-24-morning-claude-canvas-honeypot-scanner-android/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">24 ноября 2026, утро · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar — 24 ноября 2026, утренний выпуск: холст сессий Claude Code, honeypot для агентов, сканер уязвимостей на Rust и Android-приложения без системы</h1>
+    <p>krispuckett/rounds, tracebit-com/turingpot, erkamyaman/safe-anything и sohzm/winedroid — звёзды, лицензии и push с GitHub API на 24.11.2026, 06:20 МСК. Звёзды — снимок на момент выпуска, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 24 ноября 2026</h2>
+    <p class="meta">Данные GitHub API на 24.11.2026, 06:20 МСК. В колонке push — дата и время из этого снимка (МСК). Звёзды — на момент выпуска.</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что делает</th><th>Язык</th><th>Лицензия</th><th>Звёзды</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/krispuckett/rounds">krispuckett/rounds</a></td>
+          <td>Локальный холст того, что сделали сессии Claude Code</td>
+          <td>JavaScript</td>
+          <td>MIT</td>
+          <td>82</td>
+          <td>22.11.2026, 21:24 МСК</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/tracebit-com/turingpot">tracebit-com/turingpot</a></td>
+          <td>Honeypot-прототип: журнал быстрых решений задач как признак ИИ-агента</td>
+          <td>JavaScript</td>
+          <td>MIT</td>
+          <td>48</td>
+          <td>19.11.2026, 20:04 МСК</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/erkamyaman/safe-anything">erkamyaman/safe-anything</a></td>
+          <td>Сканер на Rust: XSS, SQL-инъекции, секреты, CVE зависимостей и настройки агентов</td>
+          <td>Rust</td>
+          <td>MIT</td>
+          <td>511</td>
+          <td>23.11.2026, 23:22 МСК</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/sohzm/winedroid">sohzm/winedroid</a></td>
+          <td>Запуск Android-приложений в браузере, на Linux, macOS и Windows</td>
+          <td>Rust</td>
+          <td>не указана/нестандартная</td>
+          <td>277</td>
+          <td>20.11.2026, 22:16 МСК</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: число звёзд, лицензия, язык, дата последнего push, признак архива. Данные GitHub API на 24.11.2026, 06:20 МСК. Архивными эти четыре репозитория на момент снимка не были, форками в том же ответе API не числились. Домашняя страница в снимке: у rounds, turingpot и safe-anything пустая, у winedroid — <a href="https://winedroid.soham.sh/">winedroid.soham.sh</a>. У winedroid поле лицензии API — NOASSERTION, в таблице это «не указана/нестандартная». Звёзды в таблице — на момент выпуска: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>rounds: холст сессий Claude Code</h2>
+    <p><a href="https://github.com/krispuckett/rounds">krispuckett/rounds</a> по описанию репозитория — локальный холст всего, что производят сессии Claude Code. README пишет, зачем он появился: автор вёл много сессий сразу и терял, что каждая сделала; теперь результат собирается в одном месте, и на нём можно оставить заметку. Кому: тем, кто запускает Claude Code на своём Mac. Сессии в облаке до холста не доходят. Нужны Mac, Node 20 или новее и Claude Code. Проба из README — <code>npx github:krispuckett/rounds --demo</code>: шесть публичных проектов автора и заметки, которые он на них оставил. Демо стартует в своей папке и настройку Claude Code не меняет. Установка — <code>npx github:krispuckett/rounds init</code>: программа добавляет MCP-сервер, skill и два хука и спрашивает перед каждым. Затем <code>npx github:krispuckett/rounds</code> открывает холст и подтягивает свежую версию, включая хуки. На холсте — экраны, страницы и push каждой сессии, разложенные по проектам. Заметку можно приколоть к экрану: сессия, которая это сделала, получает заметку, вносит правку и отвечает. Экраны сравнивают перетаскиванием, по дням можно отступить назад, сессию ищут по имени или по заголовку группы на шкале времени. Файлы, которые сессия меняла, лежат на листе рядом с экранами: файл открывают, читают правки построчно и видят, какие ещё сессии его меняли. README отдельно пишет, что Claude Code по умолчанию удаляет терминальные сессии через 30 дней; сделанное и каждая опубликованная страница остаются на холсте, даже если папку потом очистили. Приватность: всё лежит в <code>~/.rounds</code> на Mac, сайты до этого каталога не достучаться. Чтобы разложить старые экраны по темам, Rounds спрашивает Claude Haiku через ваш же Claude Code и отправляет подпись экрана, имя сессии и имена файлов. Раз в день программа спрашивает GitHub, есть ли новая версия; с этим запросом ничего с холста не уходит, а <code>"updates": false</code> в <code>~/.rounds/config.json</code> проверку выключает. Поле <code>private</code> в том же файле скрывает совпавшие проекты. Снять поставленное — <code>npx github:krispuckett/rounds uninstall</code>. Лицензия в README и в поле API — MIT, автор Kris Puckett. В снимке GitHub API на 24.11.2026, 06:20 МСК: 82 звезды, язык JavaScript, лицензия MIT, последний push 22.11.2026 в 21:24 МСК, репозиторий не архивный, домашняя страница пустая.</p>
+
+    <h2>turingpot: honeypot для агентов</h2>
+    <p><a href="https://github.com/tracebit-com/turingpot">tracebit-com/turingpot</a> по описанию — открытый honeypot, прототип для расследования ARTEX и других автономных атакующих фреймворков. README: сервис показывает простые задачи и записывает, как быстро посетитель их решает. Быстрые верные ответы — эвристика активности ИИ-агента. В журнале есть IP источника и, когда отпечаток доступен, JA4: его ищут в журналах других своих сервисов. README прямо пишет, что код на 100% сгенерирован ИИ, человек его прочитал, и сценарий прогнан от начала до конца на Cloudflare Workers. Кому: тем, кто подозревает, что организацию разбирает такой фреймворк, и хочет IP, окно времени и иногда JA4, чтобы проверить, доходил ли тот же клиент до своих сервисов входа. Проба: Node.js 22.12 или новее, из каталога проекта <code>npm ci</code> и <code>npm run dev</code>. Локальный адрес печатает Wrangler; README просит открыть ссылку Access inventory. Ответ HTTP 409 на первой задаче там назван намеренным. <code>npm test</code> гоняет тесты протокола и адаптера хостинга. Выкладка из README: Cloudflare Workers на бесплатном тарифе — <code>npx wrangler login</code>, затем <code>npm run deploy</code>; на Vercel репозиторий импортируют с пресетом Other и входящим <code>vercel.json</code>. По умолчанию третье верное решение пишет событие <code>possible_ai_agent</code>, двенадцатое — <code>pagination_sequence_completed</code> с тем же идентификатором сессии; в обоих есть затраченное время. Решить задачи, по README, может человек, ИИ-агент или скрипт, написанный под эти задачи. В проверках README модели гоняли напрямую, без обвязки агента, и отдельно гоняли ARTEX: в этих прогонах модель или агент брались за задачи и поднимали сигнал. Скрипт, написанный специально под протокол, тоже поднимал его в сквозных тестах на Cloudflare Workers и Vercel. Долю ложных срабатываний на живом трафике README называет неизвестной. На Cloudflare Workers Free поле <code>ja4</code> пустое; отпечаток, по README, могут отдать Cloudflare Enterprise с Bot Management и Vercel на всех тарифах. README советует ставить сервис на поддомен той организации, которую проверяют, и оставить на основном сайте указатель на него. Лицензия MIT. В снимке GitHub API на 24.11.2026, 06:20 МСК: 48 звёзд, язык JavaScript, лицензия MIT, последний push 19.11.2026 в 20:04 МСК, репозиторий не архивный, домашняя страница пустая.</p>
+
+    <h2>safe-anything: сканер уязвимостей на Rust</h2>
+    <p><a href="https://github.com/erkamyaman/safe-anything">erkamyaman/safe-anything</a> по описанию API — быстрый сканер уязвимостей целиком на Rust: XSS, SQL-инъекции, утёкшие секреты, CVE зависимостей и настройки ИИ-агентов. README шире той же фразы: одна команда ищет это в своём коде, плюс рискованные настройки мобильных и облачных конфигов; у каждой находки есть строка, причина и правка. Кому: тем, кто хочет прогнать свой репозиторий и файлы настроек агента локально, до коммита или в CI, без аккаунта и без выгрузки кода. Проба: <code>cargo install safe-anything</code> или <code>npx safe-anything .</code>, затем <code>safe-anything .</code>. Конфиг не нужен. Код выхода 1, если нашлось что-то уровня high или critical, поэтому README предлагает ставить команду проверкой pre-commit или CI как есть. Отчёт для машины — <code>--json</code>, для GitHub code scanning — <code>--sarif</code>, без сети — <code>--offline</code>: проверка зависимостей тогда пропускается. Список правил — <code>safe-anything --list-rules</code>. Учитывается <code>.gitignore</code>; пропускаются <code>node_modules</code>, <code>vendor</code>, <code>target</code>, <code>dist</code>, <code>build</code>, виртуальные окружения и <code>.claude/worktrees</code>. README называет 74 правила: у каждого идентификатор CWE, категория OWASP и ссылка на страницу OWASP. Языки кода в таблице README — JS/TS, Python, Go, Java, Kotlin, PHP, Ruby, C# и SQL. Секреты в выводе скрыты. Зависимости сверяют по lock-файлам с OSV.dev: это единственный сетевой вызов, уходят имена пакетов и версии. Код не исполняется, поток данных по программе не прослеживается. README прямо пишет: чистый прогон значит, что эти 74 проблемы не найдены. Безопасность кода из этого не следует. Для агентов есть MCP-сервер: <code>claude mcp add safe-anything -- safe-anything mcp</code> и та же форма для Codex, плюс плагин Claude Code. Пример GitHub Action в README закреплён на <code>erkamyaman/safe-anything@v1.0.2</code>. Свои замерки README приводит на Apple M4, сборка release, флаг <code>--offline</code>, дата 22.11.2026: OWASP Juice Shop — 1&nbsp;195 файлов и 67 находок, expressjs/express — 216 файлов и 0 находок, время одного прогона в той заметке от 0,03 до 0,13 с. Этот выпуск замер не повторял. Значки README помечают бинарники как native для macOS, Linux и Windows. Лицензия MIT. В снимке GitHub API на 24.11.2026, 06:20 МСК: 511 звёзд, язык Rust, лицензия MIT, последний push 23.11.2026 в 23:22 МСК, репозиторий не архивный, домашняя страница пустая.</p>
+
+    <h2>winedroid: Android-приложения без системы</h2>
+    <p><a href="https://github.com/sohzm/winedroid">sohzm/winedroid</a> по описанию API запускает Android-приложения в вебе, на Linux, macOS и Windows. README описывает экспериментальный слой совместимости с Android для macOS, Linux и браузера, по образцу Wine: APK без загрузки ОС Android. Раздел локальной сборки покрывает macOS и Linux, отдельный раздел — сборку для браузера. Отдельной инструкции для Windows в этом README нет. Написан на Rust: исполняет байткод DEX, воспроизводит поведение фреймворка Android и рисует интерфейс через Skia. В сборках для рабочего стола есть JIT Cranelift. Сборка WebAssembly гоняет тот же рантайм и ту же отрисовку в браузере, на интерпретаторе. Стадия в README — очень ранняя: часть приложений и сценариев запускается, совместимость ограничена, части API нет, приложения ломаются. Кому: тем, кто хочет открыть APK на macOS, Linux или в браузере, не поднимая Android. Проба в браузере из README — демо на <a href="https://winedroid.soham.sh/demo/">winedroid.soham.sh/demo</a>. Локально нужны свежий стабильный Rust и нативные инструменты C/C++. На macOS это Xcode Command Line Tools. На Linux ещё <code>pkg-config</code> и пакеты разработки FreeType и Fontconfig; для окна нужна сессия X11 или Wayland. Сборка из README: <code>cargo build --release --locked --bin winedroid</code>, запуск <code>./target/release/winedroid /path/to/app.apk</code>. Данные приложения лежат в <code>~/.winedroid/default</code>, другой каталог задаёт <code>WINEDROID_PREFIX</code>. Сборка для браузера: в PATH нужен <code>emcc</code> из Emscripten и Python 3, затем <code>rustup target add wasm32-unknown-emscripten</code>, <code>scripts/build_web.sh</code> и <code>python3 -m http.server 4173 --directory web</code>. APK выбирают или перетаскивают на страницу. В браузерной сборке данные пропадают при перезагрузке, нативные библиотеки Android <code>.so</code> и JIT Cranelift не поддерживаются. Таблица AppDB в README называет шесть приложений с оценками: Weather Overview 0.1 — Gold, Candle 1.7.1 — Silver, Open Notes 1.4.0, Currency 1.58, OpenCalc 3.2.0 и Meditation Timer 1.2.0 — Bronze. Этот выпуск приложения не запускал. Если вызов гостевого метода упирается в явно помеченную недостающую поддержку, программа печатает <code>FIXME</code>, подставляет void, числовой ноль или null по типу возврата и уже сделанные побочные эффекты не откатывает. Вывод после такой подстановки README доказательством совместимости с Android не считает. <code>WINEDROID_STRICT=1</code> останавливает запуск на такой нехватке. Поле лицензии API — NOASSERTION, в таблице это «не указана/нестандартная». README пишет «GPLv3 only»; сторонние компоненты сохраняют свои лицензии, список — в <code>THIRD_PARTY_NOTICES.md</code>. В снимке GitHub API на 24.11.2026, 06:20 МСК: 277 звёзд, язык Rust, лицензия в поле API нестандартная (NOASSERTION), последний push 20.11.2026 в 22:16 МСК, репозиторий не архивный, домашняя страница <a href="https://winedroid.soham.sh/">winedroid.soham.sh</a>.</p>
+
+    <h2>Вывод</h2>
+    <p>Утренний выпуск — про локальный холст результатов сессий Claude Code на Mac (rounds), honeypot-прототип, который по скорости решения задач отмечает возможную активность ИИ-агента (turingpot), локальный сканер шаблонов уязвимостей, секретов и настроек агента на Rust (safe-anything) и экспериментальный запуск APK без ОС Android (winedroid). У rounds облачные сессии на холст не попадают, а сортировка старых экранов отправляет подпись, имя сессии и имена файлов в Claude Haiku через ваш Claude Code. У turingpot долю ложных срабатываний на живом трафике README называет неизвестной, а на бесплатном Cloudflare Workers поле JA4 пустое. У safe-anything чистый прогон значит, что 74 правила ничего не нашли; цифры скорости — замерка из README, этот выпуск её не повторял. У winedroid поле лицензии API — NOASSERTION, README при этом пишет GPLv3 only, а описание API называет Windows, тогда как разделы сборки README описывают macOS, Linux и браузер. Запуск на своей машине в текст не входит, пока не проверен отдельно. Звёзды в таблице — данные GitHub API на 24.11.2026, 06:20 МСК.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Подписаться на следующие выпуски: канал в MAX — <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>, канал в Telegram — <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 24.11.2026, 06:20 МСК. Звёзды — на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
