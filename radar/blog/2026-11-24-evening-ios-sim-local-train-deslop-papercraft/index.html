@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Симулятор iOS на Linux, локальное обучение модели, линтер и скилл papercraft, вечер 24 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор Developing-Gamer/agent-sim, sous-labs/songe, deterministic-machines/deslop-please и xikhar/papercraft. Звёзды, лицензии и дата push сняты с GitHub 24 ноября 2026, 21:15 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-24-evening-ios-sim-local-train-deslop-papercraft/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-24-evening-ios-sim-local-train-deslop-papercraft/">
+  <meta property="og:title" content="Симулятор iOS на Linux, локальное обучение, линтер и papercraft: вечерний выпуск 24 ноября 2026, 21:00">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar — 24 ноября 2026, вечерний выпуск, 21:00: симулятор iOS для агентов на Linux, локальное обучение модели, линтер неряшливого кода и скилл pop-up papercraft",
+        "datePublished": "2026-11-24",
+        "dateModified": "2026-11-24",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-24-evening-ios-sim-local-train-deslop-papercraft/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор agent-sim, songe, deslop-please и papercraft. Данные GitHub API на 24.11.2026, 21:15 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 24.11.2026, 21:15 МСК. Звёзды — на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "24 ноября 2026, вечер", "item": "https://snezhko.ru/radar/blog/2026-11-24-evening-ios-sim-local-train-deslop-papercraft/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">24 ноября 2026, вечер · 21:00 МСК · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar — 24 ноября 2026, вечерний выпуск, 21:00: симулятор iOS для агентов на Linux, локальное обучение модели, линтер неряшливого кода и скилл pop-up papercraft</h1>
+    <p>Вечерний выпуск — четыре репозитория. <a href="https://github.com/Developing-Gamer/agent-sim">Developing-Gamer/agent-sim</a> даёт агентам симулятор iOS на обычном Linux: это слой поверх x86Sim, без Mac и без GPU. <a href="https://github.com/sous-labs/songe">sous-labs/songe</a> доучивает локальную модель, когда агент простаивает, и по README ничего не отправляет с машины. <a href="https://github.com/deterministic-machines/deslop-please">deterministic-machines/deslop-please</a> — опиничный линтер для Rust по идеям книги «A Philosophy of Software Design». <a href="https://github.com/xikhar/papercraft">xikhar/papercraft</a> — скилл агента для игр и сцен в стиле pop-up papercraft на three.js, не библиотека. Звёзды, лицензии и push — данные GitHub API на 24.11.2026, 21:15 МСК. Звёзды — снимок на момент выпуска, не оценка качества и не прогноз роста.</p>
+
+    <h2>Снимок на 24 ноября 2026</h2>
+    <p class="meta">Данные GitHub API на 24.11.2026, 21:15 МСК. В колонке push — дата и время из этого снимка, переведённые из UTC в МСК (UTC+3). Звёзды на 24.11.2026, 21:15 МСК.</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что делает</th><th>Язык</th><th>Лицензия</th><th>Звёзды на 24.11.2026, 21:15 МСК</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/Developing-Gamer/agent-sim">Developing-Gamer/agent-sim</a></td>
+          <td>Симулятор iOS для агентов на Linux, слой поверх x86Sim</td>
+          <td>Rust</td>
+          <td>Apache-2.0</td>
+          <td>494</td>
+          <td>24.11.2026, 21:14 МСК</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/sous-labs/songe">sous-labs/songe</a></td>
+          <td>Локальный движок обучения своей модели на простое машины</td>
+          <td>Python</td>
+          <td>Apache-2.0</td>
+          <td>475</td>
+          <td>24.11.2026, 20:40 МСК</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/deterministic-machines/deslop-please">deterministic-machines/deslop-please</a></td>
+          <td>Опиничный линтер Rust: глубокие модули, узкие интерфейсы</td>
+          <td>Rust</td>
+          <td>MIT</td>
+          <td>607</td>
+          <td>24.11.2026, 09:40 МСК</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/xikhar/papercraft">xikhar/papercraft</a></td>
+          <td>Скилл агента: игры и сцены в стиле pop-up papercraft</td>
+          <td>JavaScript</td>
+          <td>MIT</td>
+          <td>590</td>
+          <td>21.11.2026, 20:37 МСК</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: описание, язык, лицензия, число звёзд, дата push, признак архива, адрес репозитория. Данные GitHub API на 24.11.2026, 21:15 МСК. Архивными эти четыре репозитория на момент снимка не были. Время push в ответе API было в UTC, в таблице оно переведено в МСК. Звёзды на 24.11.2026, 21:15 МСК: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>agent-sim: симулятор iOS для агентов на Linux</h2>
+    <p><a href="https://github.com/Developing-Gamer/agent-sim">Developing-Gamer/agent-sim</a> в описании GitHub — симуляторы iOS для ИИ-агентов на Linux, агентский слой для x86Sim. README уточняет формулировку: на обычной Linux-машине, без Mac и без GPU. Симулятор, который x86Sim поднимает в виртуальной машине x86-64, агент получает как стенд: поставить файл <code>.ipa</code>, прочитать экран как текст, нажать, ввести текст, прокрутить и смотреть живую картинку в браузере. Для скриптов и CI README обещает одну командную строку, для Claude Code, Cursor, Codex и других агентов — MCP-сервер. Пример в README: <code>agent-sim launch com.apple.Preferences</code> и <code>agent-sim snapshot</code> печатают элементы экрана «Настроек» с метками вроде <code>@e2</code>, <code>agent-sim tap @e2</code> нажимает выбранную кнопку. README отдельно пишет, что проект построен на <a href="https://github.com/x86sim/x86sim">x86Sim</a> автора <a href="https://github.com/designgears">designgears</a>: x86Sim с первого релиза запускает симулятор iOS от Apple на Linux, agent-sim — слой для агентов поверх него. Кому: тем, кто хочет проверять iOS-приложение агентом на Linux, а не на компьютере Apple. Ограничения из того же README. Статус — early: сквозной сценарий работает, шероховатости ожидаются, список того, что ещё не работает, лежит в <code>docs/KNOWN_ISSUES.md</code>. Машина из быстрого старта — x86-64, Ubuntu 24.04, 8 и больше процессоров, 16 ГБ памяти, 60 ГБ свободного диска. <code>agent-sim setup</code> README описывает как однократный шаг примерно на полчаса: сам x86Sim, рантайм iOS от Apple объёмом 8 ГБ и первый телефон. <code>agent-sim up</code>, по README, поднимает симулятор за 12–30 секунд в зависимости от процессора. Запись Safari в README — 60 кадров в секунду, GIF там же — 15. Этот выпуск эти длительности и частоту кадров не перепроверял. Лицензия Apache-2.0. В снимке GitHub API на 24.11.2026, 21:15 МСК: 494 звезды, язык Rust, последний push 24.11.2026 в 21:14 МСК, репозиторий не архивный.</p>
+
+    <h2>songe: локальное обучение своей модели на простое</h2>
+    <p><a href="https://github.com/sous-labs/songe">sous-labs/songe</a> в описании GitHub — движок обучения для своей локальной модели на простаивающих ресурсах компьютера. README: моделью пользуются как обычно через opencode, pi или любой инструмент с интерфейсом, совместимым с OpenAI. Пока идёт работа, Songe замечает, что случилось после каждого действия модели: результат инструмента, ошибку, следующее сообщение. Когда агент молчит, Songe учит модель это предвидеть. Новая версия подключается, только если проходит свои проверки, и ничего не покидает машину. Два режима README называет Dreams. Quick Dream за минуты дописывает предпочтения в инструкции модели. Deep Dream обучает саму модель, пока человека нет. Если новая версия на своих разговорах не лучше, она не встаёт; откат README описывает как один щелчок к любой прошлой версии. Запуск только когда агент простаивает, память свободна и с батареей всё в порядке; как только человек возвращается, обучение останавливается. Приватность в README: без аккаунта, без телеметрии, без облака; свои инструменты Songe не запускает. Кому: тем, кто уже работает с локальной моделью и хочет, чтобы она училась на поправках и ошибках инструментов, не отправляя переписку наружу. Установка в README — Python 3.11 или новее, <code>uv tool install songe</code> или <code>pipx install songe</code>, затем <code>songe init</code>. Оба способа, по README, кладут Songe в отдельное окружение: оно нужно фоновой службе. Для macOS README начинает отдельный путь через Homebrew, tap <code>sous-labs/tap</code>. Лицензия Apache-2.0. В снимке GitHub API на 24.11.2026, 21:15 МСК: 475 звёзд, язык Python, последний push 24.11.2026 в 20:40 МСК, репозиторий не архивный.</p>
+
+    <h2>deslop-please: опиничный линтер для Rust</h2>
+    <p><a href="https://github.com/deterministic-machines/deslop-please">deterministic-machines/deslop-please</a> в описании GitHub коротко: вернуть коду рассудок. README называет проект опиничным линтером, который убирает неряшливый код, и опирается на книгу Джона Оустерхаута «A Philosophy of Software Design»: глубокие модули, узкие интерфейсы. Язык репозитория — Rust, установка в README — <code>cargo install deslop-please</code>, пакет отмечен значком crates.io. Образец вывода в README — диагностика <code>field-leak</code>: поле структуры известно снаружи своего модуля, линтер печатает места вызова и показывает, какие поля утекли, а какие остались внутри. Тот же README показывает, как заглушить замечания: <code>deslop-please --update-allow .deslop-please.allow</code>, затем запуск с <code>--allow</code>. Кому: тем, кто пишет на Rust и хочет машинную проверку «узкий интерфейс, глубокий модуль», а не только стиль форматирования. Ограничение заложено в подаче: правила — позиция авторов, а не нейтральный стандарт оформления. Закрывающая строка образца в README — «65535 errors, well done!»; это текст примера, не замер этого выпуска. Лицензия MIT. В снимке GitHub API на 24.11.2026, 21:15 МСК: 607 звёзд, язык Rust, последний push 24.11.2026 в 09:40 МСК, репозиторий не архивный.</p>
+
+    <h2>papercraft: скилл агента в стиле pop-up papercraft</h2>
+    <p><a href="https://github.com/xikhar/papercraft">xikhar/papercraft</a> в описании GitHub — скилл агента для игр, интерактивных сцен, веб-страниц и анимаций в рукодельном стиле pop-up papercraft. Это не библиотека: README учит методу и несёт приёмы уже выпущенной игры на three.js. Кадр, по README, должен читаться как снятый бумажный макет: матовая бумага, каждый принт — слоёный коллаж с контрастными акцентами, тонкий тёмный обрез со светлой кромкой на освещённой стороне, мягкие тени, подкрашенные цветом мира, плотный мир из крупных кусков, макрообъектив с наклоном и сдвигом оптической оси сверху вниз, спокойное движение петель и тихие звуки бумаги. Типы конструкций, которые README предлагает расширять: кресты с прорезями, слоёные плоскости, складные коробки и призмы, купола, печатная вода, настилы, мосты и лестницы. Отдельно — как бумага двигается и звучит, как собрать персонажа, чьи карточки не врезаются друг в друга, и цикл «замерил и покритиковал». Мир задают промпт и референсы: снимок бумажной модели может быть целью по виду, фото, набросок или мудборд задают тему, агент пересобирает её в бумаге. Генератор картинок README подключает только по просьбе; всё можно собрать кодом. Галерея в README — пять миров из исходной игры, у каждого свой промпт. Агент проектирует детали своего предмета сам; код в комплекте README называет обвязкой: бумага, карточки, слоёный принт, петли, свет, объектив. Кому: тем, кто просит агента собрать сцену, игру или ролик в одном заданном бумажном стиле. Числа, которые README называет найденными на той игре, в этот разбор не переносились: в карточке выпуска их нет. Лицензия MIT. В снимке GitHub API на 24.11.2026, 21:15 МСК: 590 звёзд, язык JavaScript, последний push 21.11.2026 в 20:37 МСК, репозиторий не архивный.</p>
+
+    <h2>Вывод</h2>
+    <p>Вечерний выпуск, 21:00, собирает четыре разные задачи. agent-sim — ранний слой для агентов над симулятором iOS, который на Linux запускает x86Sim; README требует x86-64, Ubuntu 24.04, 8 и больше процессоров, 16 ГБ памяти и 60 ГБ диска и прямо пишет, что Mac и GPU не нужны. Длительности setup и загрузки этот выпуск не перепроверял. songe учит локальную модель на простое и по своему README не выпускает данные с машины: новая версия встаёт только после своих проверок, облака и телеметрии README не описывает. deslop-please — опиничный линтер для Rust про глубокие модули и узкие интерфейсы; строка про 65535 ошибок в его README — текст образца, не измерение. papercraft — скилл стиля pop-up papercraft для агента на three.js, не библиотека; генератор картинок README зовёт только по просьбе. Запуск на своей машине в текст не входит, пока не проверен отдельно. Звёзды в таблице — на 24.11.2026, 21:15 МСК.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Подписаться на следующие выпуски: канал в MAX — <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>, канал в Telegram — <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 24.11.2026, 21:15 МСК. Звёзды — на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
