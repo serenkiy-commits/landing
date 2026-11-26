@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>openset-llm, OpenDashboards, Sessionly и Obituary, вечер 26 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор opensetlabs/openset-llm, thesysdev/opendashboards, KIvanow/sessionly и woodfishhhh/obituary. Звёзды, лицензии и дата push сняты с GitHub 26 ноября 2026, ~21:24 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-26-evening-openset-opendashboards-sessionly-obituary/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-26-evening-openset-opendashboards-sessionly-obituary/">
+  <meta property="og:title" content="openset-llm, OpenDashboards, Sessionly и Obituary: вечерний выпуск 26 ноября 2026, 21:00">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar 26 ноября 2026, вечером: openset-llm, OpenDashboards, Sessionly, Obituary",
+        "datePublished": "2026-11-26",
+        "dateModified": "2026-11-26",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-26-evening-openset-opendashboards-sessionly-obituary/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор openset-llm, OpenDashboards, Sessionly и Obituary. Снимок GitHub API: 26.11.2026, ~21:24 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Снимок GitHub API: 26.11.2026, ~21:24 МСК. Звёзды — на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "26 ноября 2026, вечер", "item": "https://snezhko.ru/radar/blog/2026-11-26-evening-openset-opendashboards-sessionly-obituary/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">26 ноября 2026, вечер · 21:00 МСК · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar 26 ноября 2026, вечером: openset-llm, OpenDashboards, Sessionly, Obituary</h1>
+    <p>Вечерний выпуск, слот 21:00 МСК, — четыре репозитория. <a href="https://github.com/opensetlabs/openset-llm">opensetlabs/openset-llm</a> — локальный вывод LLM на обычном CPU, без GPU, с сервером в формате OpenAI. <a href="https://github.com/thesysdev/opendashboards">thesysdev/opendashboards</a> — открытые дашборды: вопрос обычными словами и живая панель по своим источникам. <a href="https://github.com/KIvanow/sessionly">KIvanow/sessionly</a> — локальный журнал сессий Claude Code, Codex, Cursor и Grok: что сделали, сколько стоило и что осталось в файлах. <a href="https://github.com/woodfishhhh/obituary">woodfishhhh/obituary</a> — корзина для файлов, которые оставляют агенты: срок жизни и восстановление удалённого. Звёзды, лицензии и push — из снимка, не оценка качества и не прогноз роста. Снимок GitHub API: 26.11.2026, ~21:24 МСК.</p>
+
+    <h2>Снимок на 26 ноября 2026</h2>
+    <p class="meta">Снимок GitHub API: 26.11.2026, ~21:24 МСК. В колонке push — дата и время из этого снимка, в МСК. Звёзды — на момент выпуска.</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что делает</th><th>Язык</th><th>Лицензия</th><th>Звёзды на 26.11.2026, ~21:24 МСК</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/opensetlabs/openset-llm">opensetlabs/openset-llm</a></td>
+          <td>Локальный вывод LLM на обычном CPU, без GPU, сервер в формате OpenAI</td>
+          <td>C++</td>
+          <td>MIT</td>
+          <td>1542</td>
+          <td>26.11.2026, 13:39 МСК</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/thesysdev/opendashboards">thesysdev/opendashboards</a></td>
+          <td>Открытые дашборды: вопрос обычными словами и живая панель по своим данным</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>503</td>
+          <td>26.11.2026, 19:47 МСК</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/KIvanow/sessionly">KIvanow/sessionly</a></td>
+          <td>Локальный журнал сессий Claude Code, Codex, Cursor и Grok: действия, стоимость, что осталось</td>
+          <td>TypeScript</td>
+          <td>Apache-2.0</td>
+          <td>189</td>
+          <td>26.11.2026, 19:49 МСК</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/woodfishhhh/obituary">woodfishhhh/obituary</a></td>
+          <td>Корзина для файлов ИИ-агентов: срок жизни и семь дней на восстановление удалённого</td>
+          <td>Go</td>
+          <td>MIT</td>
+          <td>111</td>
+          <td>26.11.2026, 18:20 МСК</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: описание, язык, лицензия, число звёзд, дата push, признак архива, адрес репозитория. Снимок GitHub API: 26.11.2026, ~21:24 МСК. Архивными эти четыре репозитория на момент снимка не были. У sessionly лицензия в снимке — Apache-2.0; README отдельно выводит каталог <code>ee/</code> из этой лицензии, см. разбор ниже. Звёзды в таблице — на момент выпуска: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>openset-llm: 27B на CPU без видеокарты</h2>
+    <p><a href="https://github.com/opensetlabs/openset-llm">opensetlabs/openset-llm</a> в описании API — быстрый локальный вывод LLM на обычных процессорах: без GPU, 8 ГБ памяти, сервер, совместимый с OpenAI. README уточняет, что сегодня движок запускает одну модель: Qwen3.8-27B в троичном виде PrismML, <a href="https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf">Bonsai-2-27B</a>, файл 5.95 ГБ, на x86 с AVX-512. Это набор новых ядер и патчей рантайма поверх форка llama.cpp от PrismML: <code>install.sh</code> накладывает их на закреплённый коммит <code>e3de715</code>. Сервер говорит на API OpenAI, поэтому уже существующий клиент ходит на <code>http://127.0.0.1:8080/v1</code> без смены протокола. README называет соседний проект <a href="https://github.com/opensetlabs/openset-tts">opensetlabs/openset-tts</a> для речи; этот выпуск его API не снимал. Быстрый путь README требует AVX-512 VNNI и VBMI: Intel Xeon Ice Lake и новее, AMD Zen 4 и новее, включая Ryzen 7000 и 9000. У Intel Core 12-го поколения и новее этого набора нет, README относит их к более медленному запасному ядру форка. Apple Silicon <code>install.sh</code> не собирает и отсылает к Metal-сборке PrismML; Intel Mac тем же скриптом не поддерживается. Windows README проводит через WSL2 и просит клонировать в домашний каталог Linux, не в <code>/mnt/c</code>. Команда для чата: клон и <code>./start</code>. Первая команда проверяет машину, собирает движок и скачивает модель (README пишет около 7.3 ГБ), затем открывает страницу <code>http://127.0.0.1:8080</code>. <code>./install.sh --check</code> смотрит CPU и свободную память до скачивания. Скрипт отказывается работать ниже 8 ГБ RAM и на время подготовки просит около 15 ГБ свободного диска; после подготовки README называет 6.2 ГБ. Для разработчиков: <code>./serve</code> — один пользователь, <code>./serve --multi 4</code> — несколько запросов сразу, <code>./serve --no-webui</code> — только API. Пример Docker публикует порт только на <code>127.0.0.1:8080</code> и помечает образ как без аутентификации, для этой машины. Цифры скорости в README — замеры авторов, этот выпуск их не повторял. Заголовок README: 17–20 токенов в секунду для одного пользователя на машине 8 vCPU и 8 ГБ Ice Lake и около 4× к следующему из проверенных ими движков. В таблице прогона 11.11.2026 медиана <code>./serve</code> — 19.67 ток/с против 4.58 у ik_llama.cpp и 3.16 у форка PrismML, те же промпты и та же машина. README отдельно пишет, что модель троичная, а сравнение с полной точностью лежит на карточке PrismML. Спекуляция, по README, меняет ответ только на почти равных вариантах: жадные ответы побайтно совпали с обычным декодированием на 17 из 24 промптов бенчмарка. Контекст по умолчанию — 4096 токенов: на 8 ГБ полный контекст со спекуляцией оставляет около 0.2 ГБ свободно. Веса README называет Apache 2.0 и пишет, что они скачиваются с Hugging Face, а в репозитории их нет. Лицензия кода — MIT, уведомление авторов ggml README сохраняет, кредиты относит к файлу NOTICE. Лицензия в снимке — MIT, язык — C++. Темы снимка: ai, avx512, cpu-inference, edge-ai, gguf, inference-engine, llama-cpp, llm, llm-inference, local-ai, local-llm, no-gpu, on-device-ai, openai-api, openai-compatible, quantization, qwen, self-hosted, speculative-decoding, ternary. Домашней страницы в снимке нет. Смотреть тем, у кого есть Linux или WSL2, процессор с AVX-512 и 8 ГБ памяти под один локальный сервер без видеокарты. В снимке GitHub API на 26.11.2026, ~21:24 МСК: 1542 звезды, последний push 26.11.2026, 13:39 МСК, репозиторий не архивный.</p>
+
+    <h2>OpenDashboards: вопрос, потом панель</h2>
+    <p><a href="https://github.com/thesysdev/opendashboards">thesysdev/opendashboards</a> в описании API — открытые дашборды Claude. README называет проект открытой альтернативой Claude Dashboards: подключить базы и инструменты, задать вопрос обычными словами и получить живую панель, которую можно фильтровать и править по одному графику. Панели README строит через OpenUI Dashboards API, поэтому модель можно сменить, а крутить сервис — на <a href="https://opendashboards.com">opendashboards.com</a> или на своих серверах. Лицензия в README — MIT, правообладатель Thesys Inc. Таблица источников README помечает как поддерживаемые PostgreSQL (включая Supabase и Neon), MySQL и MariaDB, ClickHouse, BigQuery, PostHog, Google Analytics 4 и Search Console. Любой MCP-сервер — ограниченно: нужен удалённый адрес HTTPS и ключ API, OAuth README не обещает. Stripe и HubSpot встроенного коннектора в этой таблице нет: README проводит их через свой MCP-сервер. Учётные данные README просит давать только на чтение. Свой запуск: Node.js 20.9 или новее, pnpm, Docker и ключ Thesys с <a href="https://console.thesys.dev">console.thesys.dev</a>. README пишет, что у OpenUI Cloud есть щедрый бесплатный уровень, без цифры квоты. Дальше: <code>pnpm install</code>, копия <code>.env.example</code> в <code>.env.local</code> с <code>THESYS_API_KEY</code>, <code>pnpm db:up</code> поднимает Postgres на <code>localhost:54329</code> и базу <code>opendashboards_test</code>, <code>pnpm db:reset</code> создаёт таблицы из <code>lib/db/schema.ts</code>, <code>pnpm dev</code> открывает <code>http://localhost:3000</code>. Локально каждый запрос идёт от пользователя из <code>config/local.ts</code>, а ключи подключений хранятся без шифрования; README пишет, что боевой режим отказывает и в том, и в другом. Для продакшена README просит форкнуть репозиторий и реализовать интерфейс <code>AuthProvider</code> в <code>lib/auth/provider.ts</code>. Ход в README: подключить источники, задать вопрос, агент сборки смотрит источники и планирует панель, API её строит, а данные при открытии запрашиваются через ваш сервер. Рядом README пишет, что данные за каждым ответом уходят в OpenUI Dashboards API на OpenUI Cloud, и там же хранятся панели и чаты. Полную изоляцию README относит к частному размещению OpenUI Cloud внутри своей сети. Учётные данные, по разделу «как это работает», шифруются и остаются на сервере, запросы тоже идут с него. Этот выпуск сервис не поднимал. Лицензия в снимке — MIT, язык — TypeScript. Темы снимка: ai, analytics, claude, dashboard, dashboards. Домашняя страница в снимке — <a href="https://opendashboards.com">opendashboards.com</a>. Смотреть тем, кто собирает одну панель из Postgres и соседних сервисов и заранее принимает, что сборка панели идёт через API Thesys. В снимке GitHub API на 26.11.2026, ~21:24 МСК: 503 звезды, последний push 26.11.2026, 19:47 МСК, репозиторий не архивный.</p>
+
+    <h2>Sessionly: журнал сессий на своей машине</h2>
+    <p><a href="https://github.com/KIvanow/sessionly">KIvanow/sessionly</a> в описании API — нейтральный к лаборатории локальный журнал сессий Claude Code, Codex, Cursor и Grok: что они сделали, сколько это стоило и что уцелело. README держит журнал на своей машине: какие инструменты запускались, какие файлы менялись и какая была цена, а затем считает, сколько строк агента ещё лежит в файле и сколько осталось в пул-реквесте после ревью. Делиться README предлагает по желанию: пока сервер не подключён, наружу ничего не уходит, а исходный код не уходит и после подключения. Снимок демо в README датирован 25.11.2026 и снят с собственного репозитория Sessionly: Claude Code — 21 сессия и $1,207.32, Grok — 13 сессий и $53.23, Codex — 3 сессии и $0.25, Cursor — 2 сессии без цены; всего 39 сессий, $1,260.80 и 63% строк, которые README ещё видит на месте. Рядом README пишет, что 9 из 39 цен — оценки, у трёх сессий цены нет, это один репозиторий и один разработчик за тринадцать дней, запись этой работы, а не бенчмарк агентов, и что демо обновляется каждый день, так что цифры уже сдвинулись. Этот выпуск демо не открывал. Установка: бинарник релиза для Linux и macOS или <code>cargo install sessionly</code> при Rust 1.89 или новее. Дальше <code>sessionly install</code> ставит хуки захвата, <code>sessionly status</code> показывает, стоят ли хуки и сколько сессий поймано, <code>sessionly import</code> подтягивает сессии до хуков. Команды README: <code>sessionly list</code>, <code>sessionly summary</code>, <code>sessionly show</code>. Хук, по README, дописывает событие в локальный файл за 2–4 мс и только наблюдает: сессию он не блокирует и не меняет. Запись сессии ложится в SQLite по пути <code>~/.sessionly</code>. Журнал README называет производными данными: удалить его и собрать заново можно командой <code>sessionly sync --force</code>. Облачные сессии Claude Code, Cursor и Codex README ловит хуками репозитория: <code>sessionly install --repo</code>. GitHub Action из каталога <code>action/</code> сообщает пул-реквест серверу; обе стороны, по README, шлют хеши строк, не исходный код. Свой сервер: <code>docker compose up -d</code>, панель на <code>http://127.0.0.1:8080</code>, затем <code>sessionly connect</code> и <code>sessionly upload</code>. У своего сервера входа README нет: кто до него дошёл, тот и администратор, поэтому README просит держать его в сети, которой вы доверяете. Вход через Google или GitHub README относит к размещённому сервису на <a href="https://app.sessionly.dev">app.sessionly.dev</a>, который на время раннего доступа называет бесплатным. Всё вне каталога <code>ee/</code> README лицензирует Apache-2.0: бинарник, сервер и панель, ключ лицензии не нужен. Каталог <code>ee/</code> закрыт файлом LICENSE-EE: функции Business и Enterprise и работа Sessionly как сервиса для многих организаций, включая регистрацию и вход через Google или GitHub. В снимке API лицензия — Apache-2.0, без отдельной пометки про <code>ee/</code>. Язык в снимке — TypeScript. README при этом описывает бинарник на Rust и отдельно гоняет проверку типов и тесты TypeScript-стороны и GitHub Action командой <code>pnpm typecheck &amp;&amp; pnpm test</code>. Темы снимка: ai-agents, ai-coding, claude-code, cli, codex, coding-agents, cost-tracking, cursor, developer-tools, devtools, github-actions, grok, llm, llm-cost, local-first, observability, privacy, rust, self-hosted, sqlite. Домашняя страница в снимке — <a href="https://sessionly.dev">sessionly.dev</a>. Смотреть тем, кто хочет один локальный журнал по четырём кодинг-агентам и заранее отделяет Apache-2.0 от каталога <code>ee/</code>. В снимке GitHub API на 26.11.2026, ~21:24 МСК: 189 звёзд, последний push 26.11.2026, 19:49 МСК, репозиторий не архивный.</p>
+
+    <h2>Obituary: срок жизни для файлов агента</h2>
+    <p><a href="https://github.com/woodfishhhh/obituary">woodfishhhh/obituary</a> в описании API — корзина для ИИ-агентов: файлы, которые агент оставляет, уходят сами, когда истекает срок, а то, что агент удалил, семь дней можно вернуть. README раскладывает это на команды. <code>obit add debug.log 2h</code> хоронит файл, когда время вышло; <code>obit bury</code> хоронит сразу; <code>obit resurrect</code> возвращает на место и, по README, не затирает то, что уже лежит по этому пути; <code>obit purge</code> стирает по-настоящему то, что пережило срок хранения. Кладбище по умолчанию держит записи 7 дней. Запись помнит серийный номер тома и 128-битный идентификатор файла, поэтому переименованный файл README всё ещё находит, а чужой файл на старом пути не трогает. <code>obit init</code> добавляет Obituary в инструкции агента: файл <code>OBIT.md</code>, Agent Skill, MCP по желанию. Агент помечает отладочные скрипты, логи и снимки экрана командой <code>obit mark</code>, берёт временный каталог через <code>obit mktemp</code> и хоронит сомнительное через <code>obit bury</code>. Автоматическая регистрация по умолчанию выключена. Если её включить, README не регистрирует зависимости, результаты сборки и кэши ни в одном из трёх режимов и не трогает файлы, которые отслеживает Git. Сторож удаления, когда он включён, останавливает <code>rm -rf</code>, <code>git clean</code> и <code>Remove-Item</code> агента и подменяет их командой <code>obit</code>; README пишет, что обходы вроде <code>find -delete</code> и <code>xargs rm</code> тоже останавливаются. Перед тем как <code>obit rm</code> что-то тронет, README проверяет путь на диске, а не только текст команды, и отказывает корням дисков, системным каталогам и профилю пользователя. На Windows README отдельно останавливает удаление внутри обратных кавычек и <code>$(…)</code> в командах Codex, даже если фрагмент в кавычках: там команда проходит через ещё одну оболочку. Платформы README: Windows 10 и 11, macOS, Linux на x64 и ARM64. Установка: Scoop или <code>install.ps1</code> на Windows (winget README помечает как на ревью), Homebrew или <code>install.sh</code> на macOS, <code>install.sh</code> на Linux. Лоток, маленькое окно, меню проводника и даты в Explorer README относит к Windows; окно и лоток на macOS — к универсальному DMG, на Ubuntu 24.04 amd64 — к пакету deb. Языки интерфейса командной строки, лотка, окна и меню README называет английский и упрощённый китайский; в репозитории при этом лежит перевод README на русский, <code>README.ru.md</code>. Схема агентов в README называет Claude Code, Codex, Cursor и длинный ряд других клиентов, а файл <code>docs/agents.md</code> README описывает как покрытие 30 агентов; этот выпуск тот файл не открывал. Контейнер можно пометить <code>obit docker add</code>, тома Docker сами не регистрируются. Подпись кода README относит к SignPath.io и сертификату SignPath Foundation. Этот выпуск команды не запускал. Лицензия в снимке и в README — MIT, язык в снимке — Go. Темы снимка: agent, agentic, ai, cli, cli-tool, tools. Домашняя страница в снимке записана без схемы: <code>obituary.woodfish.site</code>. README открывает её как <a href="https://obituary.woodfish.site">https://obituary.woodfish.site</a>. Смотреть тем, кто пускает агентов в рабочий каталог и хочет срок жизни для отладочных файлов и кладбище вместо окончательного <code>rm</code>. В снимке GitHub API на 26.11.2026, ~21:24 МСК: 111 звёзд, последний push 26.11.2026, 18:20 МСК, репозиторий не архивный.</p>
+
+    <h2>Вывод</h2>
+    <p>Вечерний выпуск, 21:00, собирает четыре инструмента вокруг локальной работы с агентами. openset-llm — вывод одной троичной модели Bonsai-2-27B на CPU с AVX-512, API в формате OpenAI, код под MIT; цифры 17–20 ток/с и сравнения с ik_llama.cpp и форком PrismML взяты из README и в этом выпуске не повторялись, порог README — 8 ГБ RAM, Docker-пример без аутентификации и только на localhost. OpenDashboards — панели по вопросу к Postgres, MySQL, ClickHouse, BigQuery, PostHog, GA4 и Search Console, MCP только по HTTPS и ключу; лицензия MIT, Thesys Inc. Локально ключи подключений лежат без шифрования, боевой режим README это запрещает, а данные ответа уходят в OpenUI Dashboards API на OpenUI Cloud, если облако не размещено у себя. Sessionly — журнал сессий Claude Code, Codex, Cursor и Grok на своей машине, SQLite в <code>~/.sessionly</code>, исходный код README наружу не отправляет. В снимке лицензия Apache-2.0 и язык TypeScript; README лицензирует Apache-2.0 всё вне <code>ee/</code>, а <code>ee/</code> оставляет на LICENSE-EE, бинарник описывает как Rust 1.89 или новее. Свой сервер без входа: кто дошёл, тот администратор. Цифры демо на 25.11.2026 README само называет записью одного репозитория, не бенчмарком. Obituary — корзина файлов агента на Go и MIT: срок жизни, кладбище на 7 дней, сторож <code>rm</code> проверяет путь на диске и отказывает корням и профилю; авторегистрация выключена, файлы под Git README не трогает. Запуск на своей машине в текст не входит, пока не проверен отдельно. Снимок GitHub API: 26.11.2026, ~21:24 МСК.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Подписаться на следующие выпуски: канал в MAX — <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>, канал в Telegram — <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Снимок GitHub API: 26.11.2026, ~21:24 МСК. Звёзды — на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
