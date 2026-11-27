@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>OpenGame, PopAgent, generate-icons и Weaponized Curiosity, утро 27 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор nexu-io/opengame, duzhenxun/pop-agent, sergiobanhos/generate-icons и AyushRajSinghParihar/weaponized-curiosity. Звёзды, лицензии и дата push сняты с GitHub 27 ноября 2026, ~06:23 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-27-morning-opengame-popagent-icons-curiosity/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-27-morning-opengame-popagent-icons-curiosity/">
+  <meta property="og:title" content="OpenGame, PopAgent, generate-icons и Weaponized Curiosity: утренний выпуск 27 ноября 2026, 06:00">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar 27 ноября 2026, утренний выпуск: OpenGame, PopAgent, generate-icons, Weaponized Curiosity",
+        "datePublished": "2026-11-27",
+        "dateModified": "2026-11-27",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-27-morning-opengame-popagent-icons-curiosity/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор OpenGame, PopAgent, generate-icons и Weaponized Curiosity. Снимок GitHub API: 27.11.2026, ~06:23 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Снимок GitHub API: 27.11.2026, ~06:23 МСК. Звёзды — на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "27 ноября 2026, утро", "item": "https://snezhko.ru/radar/blog/2026-11-27-morning-opengame-popagent-icons-curiosity/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">27 ноября 2026, утро · 06:00 МСК · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar 27 ноября 2026, утренний выпуск: OpenGame, PopAgent, generate-icons, Weaponized Curiosity</h1>
+    <p>Утренний выпуск, слот 06:00 МСК, — четыре репозитория. <a href="https://github.com/nexu-io/opengame">nexu-io/opengame</a> подключает локального кодинг-агента к студии с играбельными шаблонами на HTML5 и Three.js. <a href="https://github.com/duzhenxun/pop-agent">duzhenxun/pop-agent</a> открывает уже установленные агенты в локальной веб-странице: ход рассуждения, правки посреди ответа, сессии остаются файлами движка. <a href="https://github.com/sergiobanhos/generate-icons">sergiobanhos/generate-icons</a> — скилл, который снимает стиль проекта и рисует свой набор SVG-иконок. <a href="https://github.com/AyushRajSinghParihar/weaponized-curiosity">AyushRajSinghParihar/weaponized-curiosity</a> — скилл, который исследует вопрос по источникам и может гонять ограниченные замеры. Звёзды, лицензии и push — из снимка, не оценка качества и не прогноз роста. Снимок GitHub API: 27.11.2026, ~06:23 МСК.</p>
+
+    <h2>Снимок на 27 ноября 2026</h2>
+    <p class="meta">Снимок GitHub API: 27.11.2026, ~06:23 МСК. В колонке push — дата и время из этого снимка, в МСК. Звёзды — на момент выпуска.</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что делает</th><th>Язык</th><th>Лицензия</th><th>Звёзды на 27.11.2026, ~06:23 МСК</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/nexu-io/opengame">nexu-io/opengame</a></td>
+          <td>Студия для кодинг-агента: шаблоны HTML5 и Three.js, ремикс и локальный MCP</td>
+          <td>TypeScript</td>
+          <td>Apache-2.0</td>
+          <td>1155</td>
+          <td>27.11.2026, 06:11 МСК</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/duzhenxun/pop-agent">duzhenxun/pop-agent</a></td>
+          <td>Локальный веб-интерфейс к pi, Codex, Claude Code, OpenCode и DeepSeek Harness</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>128</td>
+          <td>27.11.2026, 06:07 МСК</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/sergiobanhos/generate-icons">sergiobanhos/generate-icons</a></td>
+          <td>Скилл агента: оригинальная библиотека иконок под дизайн-систему проекта</td>
+          <td>Python</td>
+          <td>MIT</td>
+          <td>113</td>
+          <td>26.11.2026, 15:22 МСК</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/AyushRajSinghParihar/weaponized-curiosity">AyushRajSinghParihar/weaponized-curiosity</a></td>
+          <td>Скилл агента: исследование по источникам и ограниченная оптимизация</td>
+          <td>Python</td>
+          <td>MIT</td>
+          <td>190</td>
+          <td>24.11.2026, 01:25 МСК</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: описание, язык, лицензия, число звёзд, дата push, признак архива, адрес репозитория. Снимок GitHub API: 27.11.2026, ~06:23 МСК. Архивными эти четыре репозитория на момент снимка не были. Лицензии в API: Apache-2.0 у opengame, MIT у трёх остальных. Звёзды в таблице — на момент выпуска: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>OpenGame: шаблоны, ремикс и MCP</h2>
+    <p><a href="https://github.com/nexu-io/opengame">nexu-io/opengame</a> в описании API — Super Game Agent: «the Unity &amp; Unreal for AI agents», больше 100 вирусных игр для ремикса и студия, которая собирает 3D и мини-игры и публикует их в WeChat, Douyin, TikTok, Telegram, itch.io и другие площадки. README называет проект открытой студией, которая подключает уже стоящего локального агента, и пишет о 25 готовых играбельных шаблонах в <code>templates/games/</code>: HTML5, Canvas и Three.js, с обложками и метаданными. Таблица README перечисляет эти 25 по именам, от Castle Crush до Tilt Temple. Стена агентов подписана как 22 локальных клиента; описание API говорит о «20+». Бейджи README называют DeepSeek TUI, Claude Code, Codex, Cursor, Gemini CLI, WorkBuddy и ещё шестнадцать имён из того же списка. Запуск README описывает так: Git, Git LFS, npm и Node.js 22.18 или новее; CI фиксирует Node.js 26.11.1. Клон с <code>--depth 1</code>, затем <code>npm ci</code>, <code>npm run build:studio</code> и <code>npm start</code>. Каталог открывается сразу, файлы шаблона скачиваются при первом запуске или ремиксе; Tidebreaker README называет работающим офлайн. Скилл ставится командой <code>npx skills add https://github.com/nexu-io/opengame/tree/skills --skill opengame</code>. Локальный MCP — stdio, двенадцать инструментов <code>openmotion_game_*</code>: черновик игры, чтение и запись файлов, проверка логики на 50 тиках, три сценария симуляции, плейтест в headless Chrome, обложка 1280×720, трейлер и публикация в локальный каталог. Запись файлов README ограничивает сотней текстовых файлов и 8 МиБ на одну свою игру. Ключи моделей README держит в Model Gateway, отдельно от исходников игры; без ключей остаются процедурные спрайты, Web Audio и геометрия Three.js. В таблице публикации колонка «уже доступно» — локальный каталог Studio, веб-ссылка через OpenDesign Cloud, режим 9:16 playable ad и выгрузка самодостаточного HTML5/JS для ручной упаковки. Направляемая публикация на WeChat Mini Games, Douyin, TikTok, Xiaohongshu, itch.io, Poki и CrazyGames стоит в колонке «Roadmap (In Progress)». Telegram в этой колонке README не назван. Лицензия Apache-2.0, язык в снимке — TypeScript. Смотреть тем, кто уже гоняет локального кодинг-агента и хочет студию с шаблонами игр и MCP, сверив площадки по таблице README. В снимке GitHub API на 27.11.2026, ~06:23 МСК: 1155 звёзд, последний push 27.11.2026, 06:11 МСК, репозиторий не архивный.</p>
+
+    <h2>PopAgent: интерфейс к своим агентам</h2>
+    <p><a href="https://github.com/duzhenxun/pop-agent">duzhenxun/pop-agent</a> в описании API — локальный веб-интерфейс к уже установленным кодинг-агентам: поток рассуждений, правка по ходу хода, модели и инструменты. Сессии остаются файлами самого движка, без базы и без аккаунта. README повторяет это тремя правилами: сессии — JSONL и треды движка; кнопки скрываются, если у движка нет такой возможности; по умолчанию сервер слушает только <code>127.0.0.1</code>. Доступ снаружи README описывает как явный <code>-H 0.0.0.0</code> и пароль, заданный на самой машине: удалённый клиент пароль создать не может. Движки в таблице README: pi через нативный SDK, он же по умолчанию; Codex через app-server; DeepSeek Harness и opencode через ACP; Claude Code через адаптер <code>claude-code-acp</code>. В API DeepSeek Harness назван DSH. У pi в таблице есть нативный steering и панель субагентов; у остальных steering README описывает как остановку и повторную отправку, панели субагентов нет. Рядом README описывает голос, задачи по cron, управление Mac через дерево accessibility, холст шагов, Web Push без стороннего сервиса и раскладку для телефона. Распознавание речи по умолчанию — локальное на macOS, <code>SFSpeechRecognizer</code>, системный голос; переключение на <code>edge</code>, свой <code>kokoro</code> или <code>qwen3</code> README даёт отдельно. У задач по расписанию запись в файлы по умолчанию выключена, пока на задаче не отмечено разрешение менять файлы. Поля паролей управление компьютером не заполняет, системную аутентификацию и приложения из System Settings README оставляет закрытыми. Установка: <code>.dmg</code> для macOS на Apple Silicon, рантайм внутри приложения; иначе <code>npm -g install pop-agent</code> и Node 22.19 или новее. На Linux встроенный терминал собирает <code>node-pty</code> и просит <code>make</code>, <code>g++</code> и <code>python3</code>. Пакет macOS README называет подписанным ad-hoc, без подписи Apple Developer. Лицензия MIT, язык в снимке — TypeScript. Смотреть тем, кто хочет видеть ход pi, Codex, Claude Code, OpenCode или DeepSeek Harness в браузере на своей машине. В снимке GitHub API на 27.11.2026, ~06:23 МСК: 128 звёзд, последний push 27.11.2026, 06:07 МСК, репозиторий не архивный.</p>
+
+    <h2>generate-icons: набор иконок под дизайн-систему</h2>
+    <p><a href="https://github.com/sergiobanhos/generate-icons">sergiobanhos/generate-icons</a> в описании API — скилл агента, который рисует оригинальную библиотеку иконок под дизайн-систему проекта: React, Vue, Svelte, React Native или SVG. README раскладывает ход так: <code>scripts/scan_design_system.py</code> читает токены, тему, шрифты и уже стоящие иконки; агент спрашивает только то, что скан не закрыл; пишет <code>icon-style.json</code> и показывает, из какого файла взято каждое решение; <code>scripts/inventory.py</code> собирает кандидатов из меню, маршрутов, enum и эмодзи. Сначала образец из 6–8 иконок рядом с текущими, в светлой и тёмной теме, в макете сайдбара, кнопок и пустого состояния. После подтверждения — полный набор, проверка <code>scripts/validate.py</code> и сборка <code>scripts/build.py</code>. На выходе README называет компоненты под стек, каталог <code>svg/</code>, <code>sprite.svg</code>, <code>icons.css</code>, <code>manifest.json</code>, <code>catalog.html</code> и README. Восемь стартовых стилей README даёт проекту без своей системы: outline, solid, duotone, soft 3D gradient, glossy app icon, flat color, pixel и hand-drawn. README прямо пишет, что пути из Lucide, Heroicons, Phosphor, Material и чужие логотипы скилл не копирует, а нарисованное относит к вам. Установка — <code>git clone</code> в <code>~/.claude/skills/generate-icons</code> или в <code>.claude/skills/</code> одного проекта; другим агентам README предлагает положить папку туда, где они читают <code>SKILL.md</code>. Нужен Python 3.8 или новее, только стандартная библиотека; headless-браузер README называет необязательным. В <code>examples/</code> лежит готовая библиотека из 12 иконок в двух стилях для React. README публикует скриншот меню CvPorVaga до и после; этот выпуск страницу не открывал. Лицензия MIT, язык в снимке — Python. Смотреть тем, кто просит Claude Code или другого агента со <code>SKILL.md</code> нарисовать набор иконок под уже существующие токены. В снимке GitHub API на 27.11.2026, ~06:23 МСК: 113 звёзд, последний push 26.11.2026, 15:22 МСК, репозиторий не архивный.</p>
+
+    <h2>Weaponized Curiosity: исследование с лимитом</h2>
+    <p><a href="https://github.com/AyushRajSinghParihar/weaponized-curiosity">AyushRajSinghParihar/weaponized-curiosity</a> в описании API — переносимый скилл агента для исследований по источникам, экспериментов и ограниченной оптимизации. README ставит его командой <code>npx skills add AyushRajSinghParihar/weaponized-curiosity --skill weaponized-curiosity</code> и называет Codex и Claude Code: вызов <code>$weaponized-curiosity</code> и <code>/weaponized-curiosity</code>. Ручная установка README сводит к Git. Режимы в таблице README: Quick — проверить утверждение, сравнить два варианта или сверить план с жёстким требованием; Deep — разобрать противоречивые источники, агент может разделить работу на четырёх независимых воркеров там, где это поддержано, и сравнить, что они нашли; Extreme — больше времени на разбор источников, конкурирующие объяснения и повтор; Autoresearch — улучшать то, что можно измерить, с целью и лимитом попыток. Лимиты README принимает и словами, и ключами вроде <code>searches=12 experiments=2 minutes=10</code>; <code>experiments=0</code> оставляет исследование без опытов. Короткий ответ README описывает как вывод и доказательства за ним. При близком выборе агент должен сказать, что перевернёт рекомендацию и как это проверить дешевле всего. Длинные прогоны могут сохранить источники, гипотезы, результаты проб и чекпоинт в <code>.research/&lt;run-id&gt;/</code>. Скилл пользуется инструментами и правами уже установленного агента; если инструмента нет, отчёт должен назвать, что осталось непроверенным. В примере оптимизации README пишет, что индексация всех значений была примерно в 41 раз быстрее на свежих входах и не прошла лимит памяти, а замороженный кандидат индексировал только пробы, занял около 10 КиБ временного выделения Python и те же проверки прошёл. Этот выпуск замер не повторял. Лицензия MIT, язык в снимке — Python. Смотреть тем, кто хочет отдать Codex или Claude Code вопрос с бюджетом поиска и опытов и получить ответ вместе с границей доказательств. В снимке GitHub API на 27.11.2026, ~06:23 МСК: 190 звёзд, последний push 24.11.2026, 01:25 МСК, репозиторий не архивный.</p>
+
+    <h2>Вывод</h2>
+    <p>Утренний выпуск, 06:00, собирает четыре инструмента вокруг уже установленного агента. OpenGame — локальная студия игр: в README 25 шаблонов и двенадцать MCP-инструментов <code>openmotion_game_*</code>, лицензия Apache-2.0, язык TypeScript. Короткое описание API говорит о более чем 100 играх и о публикации на площадки; в README направляемая публикация на WeChat, Douyin, TikTok, Xiaohongshu, itch.io, Poki и CrazyGames стоит в колонке дорожной карты. PopAgent — веб-интерфейс к pi, Codex, Claude Code, OpenCode и DeepSeek Harness на своей машине, лицензия MIT, по умолчанию только loopback <code>127.0.0.1</code>. generate-icons — скилл, который сначала снимает стиль проекта, потом рисует SVG-набор под React, Vue, Svelte, React Native или голый SVG; лицензия MIT, язык Python, нужен Python 3.8 или новее. Weaponized Curiosity — скилл исследования с режимами Quick, Deep, Extreme и Autoresearch; пример «примерно в 41 раз» README приводит для своего замера, этот выпуск его не перезапускал. Запуск на своей машине в текст не входит, пока не проверен отдельно. Снимок GitHub API: 27.11.2026, ~06:23 МСК.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Подписаться на следующие выпуски: канал в MAX — <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>, канал в Telegram — <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Снимок GitHub API: 27.11.2026, ~06:23 МСК. Звёзды — на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
