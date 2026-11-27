@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>tabc, outtrue, Side by Side и Lifestream, день 27 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор fzakaria/tabc, jakubkrehel/outtrue, michidk/sidebyside и shlokkhemani/lifestream. Звёзды, лицензии и дата push сняты с GitHub 27 ноября 2026, ~11:25 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-27-midday-tabc-outtrue-sidebyside-lifestream/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-27-midday-tabc-outtrue-sidebyside-lifestream/">
+  <meta property="og:title" content="tabc, outtrue, Side by Side и Lifestream: дневной выпуск 27 ноября 2026, 11:00">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar 27 ноября 2026, дневной выпуск: tabc, outtrue, Side by Side, Lifestream",
+        "datePublished": "2026-11-27",
+        "dateModified": "2026-11-27",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-27-midday-tabc-outtrue-sidebyside-lifestream/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор tabc, outtrue, Side by Side и Lifestream. Снимок GitHub API: 27.11.2026, ~11:25 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Снимок GitHub API: 27.11.2026, ~11:25 МСК. Звёзды — на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "27 ноября 2026, день", "item": "https://snezhko.ru/radar/blog/2026-11-27-midday-tabc-outtrue-sidebyside-lifestream/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">27 ноября 2026, день · 11:00 МСК · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar 27 ноября 2026, дневной выпуск: tabc, outtrue, Side by Side, Lifestream</h1>
+    <p>Дневной выпуск, слот 11:00 МСК, — четыре репозитория. <a href="https://github.com/fzakaria/tabc">fzakaria/tabc</a> — OCI-рантайм, который запускает каждый контейнер во вкладке браузера. <a href="https://github.com/jakubkrehel/outtrue">jakubkrehel/outtrue</a> — правила Oxlint, которые держат код на дизайн-системе: токены, пропсы, импорты и композицию. <a href="https://github.com/michidk/sidebyside">michidk/sidebyside</a> открывает один URL в Firefox, Chromium, Epiphany и других браузерах рядом: каждый — настоящий браузер в своей Linux VM на WebAssembly во вкладке, статическая страница без сервера. <a href="https://github.com/shlokkhemani/lifestream">shlokkhemani/lifestream</a> собирает сообщения, почту, фото, места, здоровье и экран в одной зашифрованной папке на Mac; читать запись могут агенты, которых выбирает владелец. Звёзды, лицензии и push — из снимка, не оценка качества и не прогноз роста. Снимок GitHub API: 27.11.2026, ~11:25 МСК.</p>
+
+    <h2>Снимок на 27 ноября 2026</h2>
+    <p class="meta">Снимок GitHub API: 27.11.2026, ~11:25 МСК. В колонке push — дата и время из этого снимка, в МСК. Звёзды — на момент выпуска.</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что делает</th><th>Язык</th><th>Лицензия</th><th>Звёзды на 27.11.2026, ~11:25 МСК</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/fzakaria/tabc">fzakaria/tabc</a></td>
+          <td>OCI-рантайм: каждый контейнер в отдельной вкладке браузера</td>
+          <td>Go</td>
+          <td>MIT</td>
+          <td>66</td>
+          <td>27.11.2026, 03:24 МСК</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/jakubkrehel/outtrue">jakubkrehel/outtrue</a></td>
+          <td>Правила Oxlint для токенов, пропсов, импортов и композиции дизайн-системы</td>
+          <td>TypeScript</td>
+          <td>MIT</td>
+          <td>89</td>
+          <td>25.11.2026, 21:25 МСК</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/michidk/sidebyside">michidk/sidebyside</a></td>
+          <td>Один URL в нескольких браузерах рядом, каждый в своей Linux VM на WebAssembly во вкладке</td>
+          <td>TypeScript</td>
+          <td>Apache-2.0</td>
+          <td>70</td>
+          <td>27.11.2026, 00:08 МСК</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/shlokkhemani/lifestream">shlokkhemani/lifestream</a></td>
+          <td>Сообщения, почта, фото, места, здоровье и экран в зашифрованной папке на Mac</td>
+          <td>TypeScript</td>
+          <td>Apache-2.0</td>
+          <td>55</td>
+          <td>26.11.2026, 22:43 МСК</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: описание, язык, лицензия, число звёзд, дата push, признак архива, адрес репозитория. Снимок GitHub API: 27.11.2026, ~11:25 МСК. Повторный запрос к тем же адресам API при сборке выпуска вернул те же поля: tabc — 66 звёзд, MIT, Go; outtrue — 89, MIT, TypeScript; sidebyside — 70, Apache-2.0, TypeScript; lifestream — 55, Apache-2.0, TypeScript. Даты push и признак архива совпали со снимком. Архивными эти четыре репозитория на момент снимка не были. Лицензии в API: MIT у tabc и outtrue, Apache-2.0 у sidebyside и lifestream. Звёзды в таблице — на момент выпуска: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>tabc: контейнер во вкладке</h2>
+    <p><a href="https://github.com/fzakaria/tabc">fzakaria/tabc</a> в описании API — OCI-рантайм, который запускает каждый контейнер во вкладке браузера. README ставит его рядом с runc: runc стартует контейнер как процесс Linux, tabc поднимает headless Chromium и загружает контейнер внутри вкладки, на ядре Linux, собранном в WebAssembly. Вкладка и есть песочница. Пример README: <code>docker run --rm --runtime tabc --platform linux/arm64 alpine uname -sm</code> печатает <code>Linux aarch64</code>. README пишет, что Linux под tabc не нужен, поэтому на Mac контейнер идёт без виртуальной машины. Флаг <code>--open</code> открывает контейнер во вкладке уже стоящего браузера: то, что набрано во вкладке и в терминале, видно в обоих местах. Пример: <code>tabc run -it --open -p 8123:80 nginx:alpine sh</code>. Compose README проводит через <code>tocker</code> — тот же файл, что и tabc, под другим именем, замена команды <code>docker</code>. <code>tocker compose up</code> поднимает каждый сервис в своей вкладке. <code>tocker --dashboard compose up</code> собирает сервисы панелями на одной странице, <code>tocker --stop</code> останавливает демон и его контейнеры. В <code>examples/compose</code> — веб-сервер и Redis, в котором тот считает визиты. Установка README даёт двумя путями. С Nix, на Linux или Mac с Apple Silicon: <code>nix run github:fzakaria/tabc -- run alpine echo hi</code>. Без Nix — архив релиза для Linux и для Mac, x86-64 и arm64. tabc из релиза берёт установленные Chrome или Chromium, <code>tocker</code> — установленную командную строку <code>docker</code>. На Linux пакет Nix приносит свой Chromium. На Mac tabc ищет Chrome в <code>/Applications</code> или берёт путь из <code>TABC_CHROMIUM</code>. С <code>--open</code> контейнер идёт в браузере, который уже открыт. Флаги README совпадают с привычными у <code>docker run</code>: <code>-i</code> и <code>-t</code>, <code>-e</code>, <code>-w</code>, <code>-u</code>, <code>-m</code>, <code>--cpus</code> (по умолчанию 2), <code>-p host:container</code> (порт на loopback по умолчанию), <code>-v dir:/path[:ro]</code> (каталог живой и доступный на запись), <code>--name</code> и <code>--network</code>, <code>--open</code> и <code>--link</code>. Свой демон Docker для отдельного запуска README не требует: <code>docker</code> здесь клиент, <code>tocker</code> поднимает минимальный демон, если его ещё нет, и направляет клиент на него, так что команды <code>docker</code>, включая Compose, README описывает как неизменные. Если Docker уже стоит, tabc регистрируется как runtime в <code>/etc/docker/daemon.json</code>, после перезапуска демона контейнер идёт с <code>--runtime tabc</code>. На NixOS README сводит регистрацию к строке <code>virtualisation.docker.daemon.settings.runtimes.tabc.path</code>. <code>docker exec</code> README называет работающим у контейнера, запущенного так. В Compose runtime — строка у сервиса, не флаг <code>docker compose up</code>, и рядом в примере стоит <code>platform: linux/arm64</code>. README пишет, что сети Docker, <code>-p</code> и тома тогда работают как с runc. Podman README запускает без отдельной регистрации: <code>podman run --rm --runtime /path/to/tabc --platform linux/arm64 alpine echo hi</code>. Ход README раскладывает так. Движок, Docker или Podman, вызывает <code>tabc create</code>, как вызвал бы runc. Супервизор стартует headless Chromium со свежим профилем на странице, которую отдаёт с loopback. Страница загружает unkernel — ядро Linux для WebAssembly авторства Pooya Parsa; оно исполняет программы aarch64. Гость монтирует образ, каждый открытый файл — запрос супервизору, который читает его из бандла или прямо из слоёв, поэтому образ не распаковывается. <code>tabc start</code> запускает программу. Ввод, вывод и каждое сетевое соединение идут по WebSocket к супервизору; входящие соединения супервизор слушает на портах, которые открыла программа, и несёт их во вкладку. Движок считает контейнером супервизор и берёт у него pid, код выхода и stdio. Подробности README отсылает в <code>docs/design.md</code>. Лицензия tabc — MIT. Ядро unkernel README помечает GPL-2.0. Язык в снимке — Go. Смотреть тем, кто хочет гонять OCI-образы во вкладке, в том числе на Mac без виртуальной машины Linux, или подставить tabc вместо runc в Docker и Podman. Перед запуском сверить две лицензии: MIT у tabc и GPL-2.0 у ядра unkernel. Примеры Docker и Podman в README идут с платформой <code>linux/arm64</code>. В снимке GitHub API на 27.11.2026, ~11:25 МСК: 66 звёзд, последний push 27.11.2026, 03:24 МСК, репозиторий не архивный.</p>
+
+    <h2>outtrue: правила Oxlint для дизайн-системы</h2>
+    <p><a href="https://github.com/jakubkrehel/outtrue">jakubkrehel/outtrue</a> в описании API — правила Oxlint, которые держат код на дизайн-системе: токены, пропсы, импорты и композицию. README добавляет: каждая ошибка называет исправление, чтобы агент и человек правили её в том же прогоне. Правила читают имена классов Tailwind в коде React и требуют Oxlint 1.92 или новее. Установка: <code>npm i -D oxlint outtrue</code>. В конфиге README подключает <code>./node_modules/outtrue/configs/recommended.json</code> и задаёт <code>settings.design-system.primitives</code> — папку своих примитивов, в примере <code>src/components/ui</code>. По умолчанию это <code>src/design-system/components</code>. Папка, которой нет, сообщается как ошибка. Конфигов три: <code>base</code> включает три стартовых правила, <code>recommended</code> добавляет ещё двенадцать, <code>all</code> включает все двадцать четыре. Среди имён в README: <code>no-raw-values</code> — жёстко заданные длины и цвета в классах, атрибутах и inline-стилях; <code>layout-only-classname</code> — <code>className</code>, который перестилизует примитив вместо того, чтобы его разместить; <code>one-way-imports</code> — импорт с уровня выше; <code>no-rebuilt-primitives</code> — сырой <code>&lt;button&gt;</code>, <code>&lt;input&gt;</code> или собранный вручную оверлей там, где примитив уже есть; <code>semantic-tokens-only</code> — сырой класс палитры вроде <code>text-gray-900</code> вне дизайн-системы; <code>icon-button-label</code> — кнопка только с иконкой без <code>aria-label</code>; <code>no-important</code> — модификатор <code>!</code>; <code>no-inline-style</code> — фиксированное значение в объекте <code>style</code>. Полный список из двадцати четырёх имён лежит в README. У каждого правила есть опции папок, имён и исключений; README отсылает их в <code>OPTIONS.md</code> вместе с тем, как включать правила в коде, который их уже нарушает. Релизы перечислены в <code>CHANGELOG.md</code>. Лицензия MIT, язык в снимке — TypeScript. Смотреть тем, кто уже гоняет Oxlint на React с Tailwind и хочет, чтобы отход от своих примитивов и токенов был ошибкой линтера с названным исправлением. Перед включением проверить версию Oxlint — 1.92 или новее — и путь <code>primitives</code>: несуществующая папка для этих правил ошибка. В снимке GitHub API на 27.11.2026, ~11:25 МСК: 89 звёзд, последний push 25.11.2026, 21:25 МСК, репозиторий не архивный.</p>
+
+    <h2>Side by Side: несколько браузеров во вкладке</h2>
+    <p><a href="https://github.com/michidk/sidebyside">michidk/sidebyside</a> в описании API открывает один URL в Firefox, Chromium, Epiphany и других браузерах рядом. Каждый — настоящий браузер в своей Linux VM на WebAssembly во вкладке. Страница статическая, сервера за ней нет. README называет живую страницу <a href="https://michidk.github.io/sidebyside/">michidk.github.io/sidebyside</a> и просит открывать её на настольном компьютере с 8 ГиБ оперативной памяти или больше. По кнопке Open Firefox (Gecko), Chromium (Blink) и Epiphany (WebKit) загружаются каждый в своей панели. Первый визит README оценивает в 1–3 минуты, пока браузеры скачиваются; следующие визиты берут кэш. Меню Browsers добавляет Firefox ESR и NetSurf и задаёт порядок панелей. Mobile переключает окно на размер телефона и, кроме NetSurf, мобильный user agent, без перезагрузки VM: Firefox и Chromium переключаются на ходу, Epiphany перезапускается. Settings задаёт память на VM, показывает CPU, память и сеть панели, выбирает интернет-релей и правит флаги командной строки браузера. Console собирает сообщения веб-консоли Firefox, Firefox ESR и Chromium в один список. Reset забывает сохранённые VM. Новый URL открывается в уже запущенных браузерах: Firefox и Chromium переходят, Epiphany и NetSurf перезапускаются, VM при этом не перезагружается. Ссылка хранит сравнение. README приводит вид <code>?url=https://example.com/&amp;browsers=netsurf,firefox&amp;mobile=1</code>. Ядро — unkernel, Linux, собранный в WebAssembly и исполняющий программы aarch64, по VM на браузер в своём iframe (<code>vm.html</code>). Каждая VM получает равную долю потоков CPU, не больше 4, в Firefox — 2. Браузеры — сборки nixpkgs. Путь из кэша cache.nixos.org скачивается, когда гость впервые читает файл, и каждый NAR сверяется с NarHash в <code>public/closures/*.json</code>. Скрипт <code>scripts/closures.ts</code> на сборке проверяет подписи narinfo ключом cache.nixos.org. Загрузки лежат в Cache Storage страницы и общие для всех VM. Стартовые флаги выключают обновления, телеметрию, синхронизацию, safe browsing и лишние процессы; они лежат в <code>src/modules/browsers/browsers.ts</code>, правятся в Settings → Browser flags и сохраняются в ссылке. Окна Wayland гостя собирает wland: релей в госте говорит со страницей по vsock. Сырые сокеты страница открыть не может, поэтому TCP гостя идёт по WebSocket на публичный релей Wisp. README называет <code>wisp.mercurywork.shop</code> и <code>anura.pro</code> и пишет, что эти реле видят, к каким хостам подключаются VM. Свой релей задаётся параметром <code>?wisp=wss://your-relay/</code>. Локальный релей README описывает так: Node.js 18 или новее и команда <code>npx -p @mercuryworkshop/wisp-js wisp-js-server</code>. Процесс слушает только <code>127.0.0.1:5001</code> и отказывает соединениям на частные и loopback-адреса, чтобы VM не доставали домашнюю сеть через него. В Settings кнопка «Use local relay» или параметр <code>wisp=ws://127.0.0.1:5001/</code>. После подъёма браузера его VM сохраняется в приватном хранилище сайта: память, процессы и открытая страница. Следующий визит продолжает её, а не грузит Linux заново. Сохранение привязано к браузеру, его флагам, памяти, числу CPU и сборке страницы. В нём остаётся то, что браузер держал в памяти, в том числе cookie показанной страницы. Reset их удаляет. Страница ведёт Chromium по протоколу DevTools и Firefox по WebDriver BiDi. Оба слушают <code>127.0.0.1:9222</code> гостя. Сайты в Firefox видят <code>navigator.webdriver</code> равным <code>true</code>, в адресной строке — полосы удалённого управления. VM нужен <code>SharedArrayBuffer</code>, поэтому страницы подключают <code>coi-serviceworker</code>, который добавляет заголовки COOP и COEP там, где хост их не шлёт. Сборка README: <code>bun install</code>, <code>bun run build</code> кладёт статику в <code>dist/client/</code>. Это SPA на TanStack Start: оболочка пререндерится, серверного кода README не описывает. Компоненты — shadcn/ui на Base UI. Отдавать каталог нужно по HTTPS или с localhost, иначе service worker не встанет. Workflow <code>.github/workflows/pages.yml</code> выкладывает каждый push в <code>main</code> на <a href="https://michidk.github.io/sidebyside/">michidk.github.io/sidebyside</a>. Пределы README такие. Первая загрузка занимает 1–3 минуты и скачивает около 800 МиБ на три браузера по умолчанию. VM эмулируются, страницы медленные, Epiphany может показать «Page Unresponsive». Сохранённая VM занимает около 0,3–0,7 ГБ хранилища сайта на браузер: Epiphany 333 МБ, Chromium 513 МБ, Firefox 697 МБ. Возобновлённый Chromium README оценивает примерно в 20 секунд вместо примерно минуты. Вкладке нужно около 2 ГиБ памяти на показанный браузер и 6 ГиБ на три по умолчанию. Ladybird и Servo в VM пока не идут: у Ladybird движок JavaScript резервирует больше адресного пространства, чем есть у гостя, Servo грузит страницы, но не рисует их программным OpenGL. GPU нет, браузеры рисуют программно. Лицензия в снимке API — Apache-2.0. Раздел License в README даёт выбор: Apache License 2.0 или MIT. Язык в снимке — TypeScript. Смотреть тем, кто сравнивает вёрстку одного URL в нескольких движках прямо во вкладке и готов к первой загрузке около 800 МиБ. Перед использованием решить, чей релей видит хосты VM: публичный из README или свой, в том числе локальный на <code>127.0.0.1:5001</code>. В снимке GitHub API на 27.11.2026, ~11:25 МСК: 70 звёзд, последний push 27.11.2026, 00:08 МСК, репозиторий не архивный.</p>
+
+    <h2>Lifestream: запись жизни в папке на Mac</h2>
+    <p><a href="https://github.com/shlokkhemani/lifestream">shlokkhemani/lifestream</a> в описании API — запись жизни, которая обновляется по ходу и остаётся у владельца. Сообщения, почта, фото, места, здоровье и экран лежат в одной зашифрованной папке на Mac. Читать её могут агенты, которых выбирает владелец. README пишет о более чем 40 источниках, среди них сообщения, почта, фото, места, здоровье, календарь и экран, и о прошлом из выгрузок вроде Google Takeout и резервных копий iPhone. Поиск README описывает по всей этой папке. В первом абзаце README агенты — ChatGPT, Claude, Instinct и Muse. Ниже к списку добавлены Grok Bot и другие приложения, которые подключаются по MCP. Каждому агенту README отдаёт только выбранные коннекторы и отрезок времени; отключить его можно в любой момент. Таблица установки: Mac с Apple Silicon и macOS 14.2 или новее; iPhone — бета в TestFlight, iOS 26 или новее; расширение Chrome на том же Mac. Приложение Mac хранит данные и работает одно. Приложение iPhone добавляет место, движение и фото с телефона. Расширение Chrome читает данные Claude, ChatGPT и WHOOP в браузере на этом Mac. README называет приложение Mac нотаризованным Apple и собранным из коммита ветки <code>main</code> этого репозитория. Lifestream README называет бесплатным и открытым. Чат требует платный план ChatGPT или Claude либо ключ OpenRouter с кредитом. Без этого остальное, по README, работает. По диску README планирует около 3 ГБ в неделю с Mac и ещё 5 ГБ с iPhone, плюс прошлое, пока оно прибывает. Запись идёт, только пока Mac не спит; пока Mac спит, iPhone держит то, что записал сам. Коннекторы в README: WhatsApp, iMessage, Gmail, Google Calendar, Photos и Google Photos, Apple Health и WHOOP, Notes и Granola, звонки, Spotify, просмотр страниц, GitHub и переписки ChatGPT, Claude, Claude Code и Codex. Полный список README отсылает в <code>docs/user/connectors/README.md</code>. Приложение Mac пишет экран, звук звонков и время работы. Приложение iPhone шлёт, куда человек ходит, как двигается, здоровье, фото и заметки, сделанные в нём. Пауза всего — из строки меню. Приложение или сайт можно исключить насовсем, один коннектор можно выключить. Поля паролей README описывает как никогда не записываемые. Прошлые годы README предлагает ввозить из Google Takeout, резервной копии iPhone и выгрузок ChatGPT, Claude, Spotify и Google Maps Timeline. Источник, которого в списке нет, README предлагает добавить коннектором: его пишет кодинг-агент вроде Claude Code или Codex. О чтении данных README пишет так. Сервиса, который принимает запись, у Lifestream нет, аккаунта тоже нет. Всё, что программа хранит, лежит в одной папке на Mac или на диске, который выбран. Свой код приложений README описывает как не отправляющий аналитику и отчёты о сбоях. Два запроса уходят всегда, и записи они не несут: ежечасная проверка обновления на сервер обновлений Lifestream и область открытой карты — компании этой карты. Приложение iPhone идёт через TestFlight. По условиям TestFlight Apple передаёт авторам отчёты о сбоях, как часто приложение открывают, и отзыв, который отправил пользователь. Шифрование папки README включает при настройке, пока человек сам от него не откажется. Открыть папку может ключ этого Mac в Keychain или ключ восстановления, который хранит владелец. Перед тем как элемент уходит модели в компании, README заменяет имена, телефоны, адреса и другие личные детали заполнителями вроде <code>[[Person 3]]</code>. Модель на своём Mac читает элемент и ничего не отправляет. README прямо пишет, что скрытие находит большинство личных деталей и не все: код, номер счёта или имя, которого Lifestream ещё не видел, могут уйти. Звук скрыть нельзя, поэтому голосовая заметка покидает Mac только когда это разрешено: голосовые заметки коннектора после режима «Don't hide» и произнесённый вопрос после выбора «Scribe v2». Что ушло, README показывает в Settings → Privacy → «What left Lifestream today»: счётчик элементов по компаниям и вид, в котором элемент получила модель. Резервную копию Lifestream сам не делает. README отсылает к Time Machine. На новом Mac папку открывает ключ восстановления. Если потеряны и ключ Mac, и ключ восстановления, зашифрованную папку README называет неоткрываемой, в том числе для авторов. Windows и Android README помечает как ещё не поддерживаемые: сегодня это macOS и приложение для iPhone рядом. Статус README: проект молодой, его пишет один человек, заметную часть сборки делают ИИ-агенты; уже ведётся одна реальная жизнь целиком — миллионы записей больше чем за четырнадцать лет; у каждой установки — жизнь одного человека; форматы ещё могут меняться. Для разработки README просит Mac с Apple Silicon, Xcode 27 и Node 22.23.3. На Mac процесс home — единственный, кто пишет запись: он хранит каждую доставку как она пришла, выводит то, что может вывести код, и спрашивает модель только про отдельные элементы, например одно фото. Затем пишет один текстовый файл на день. Окно и агенты читают запись через один HTTP-процесс, door. Лицензия Apache-2.0, язык в снимке — TypeScript. Смотреть тем, кто хочет папку на своём Mac с записью перечисленных источников и выдачей выбранных частей агенту по MCP. Перед установкой сверить Apple Silicon, macOS 14.2 или новее, оценку диска из README и то, что в запись входят экран и звук звонков. Список запросов, которые машину покидают, README держит в <code>docs/user/what-leaves-your-mac.md</code>. В снимке GitHub API на 27.11.2026, ~11:25 МСК: 55 звёзд, последний push 26.11.2026, 22:43 МСК, репозиторий не архивный.</p>
+
+    <h2>Вывод</h2>
+    <p>Дневной выпуск, слот 11:00, собирает четыре проекта вокруг вкладки браузера и локальной машины. tabc — OCI-рантайм на Go: контейнер грузится во вкладке на ядре unkernel. Лицензия проекта в снимке — MIT, ядро unkernel README помечает GPL-2.0. Примеры Docker и Podman в README идут с <code>--platform linux/arm64</code>. outtrue — правила Oxlint для кода React с классами Tailwind. Конфиг <code>base</code> включает три правила, <code>recommended</code> добавляет двенадцать, <code>all</code> включает двадцать четыре. Лицензия MIT, язык TypeScript, нужен Oxlint 1.92 или новее. Side by Side — статическая страница: Firefox, Chromium и Epiphany в отдельных Linux VM на WebAssembly. Лицензия в снимке API — Apache-2.0, раздел License в README даёт выбор Apache-2.0 или MIT. README оценивает первую загрузку трёх браузеров примерно в 800 МиБ и 1–3 минуты и пишет, что публичные реле Wisp видят хосты подключений VM. Lifestream — папка на Mac с Apple Silicon и macOS 14.2 или новее, лицензия Apache-2.0, язык TypeScript. Шифрование README включает, пока от него не отказываются. Чат требует свой платный план ChatGPT или Claude либо ключ OpenRouter с кредитом. Число «миллионы записей больше чем за четырнадцать лет» README приводит как статус одной уже ведущейся записи, этот выпуск её не проверял. Запуск на своей машине в текст не входит, пока не проверен отдельно. Снимок GitHub API: 27.11.2026, ~11:25 МСК.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Подписаться на следующие выпуски: канал в MAX — <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>, канал в Telegram — <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Снимок GitHub API: 27.11.2026, ~11:25 МСК. Звёзды — на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
