@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080F">
+  <meta name="robots" content="index, follow">
+  <title>Клиент Immich, редактор плат, CLI для iPhone и CMS на Rust, день 28 ноября 2026 | GitHub Radar</title>
+  <meta name="description" content="Разбор jakobhviid/verso, YutingXu/waffle-eda, Maxteabag/turbotap и hyscaler/HyScribe. Звёзды, лицензии и дата push сняты с GitHub 28 ноября 2026, 11:20 МСК. Канал GitHub Radar в MAX и Telegram.">
+  <link rel="canonical" href="https://snezhko.ru/radar/blog/2026-11-28-midday-immich-pcb-iphone-cms/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://snezhko.ru/radar/blog/2026-11-28-midday-immich-pcb-iphone-cms/">
+  <meta property="og:title" content="verso, waffle-eda, turbotap и HyScribe: дневной выпуск 28 ноября 2026, 11:00">
+  <meta property="og:description" content="Факты с GitHub: звёзды, лицензии и дата push. Куда читать следующие выпуски.">
+  <meta property="og:image" content="https://snezhko.ru/radar/og-radar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "GitHub Radar — 28 ноября 2026, дневной выпуск: неофициальный клиент Immich, редактор схем и плат, CLI для iPhone и CMS на Rust",
+        "datePublished": "2026-11-28",
+        "dateModified": "2026-11-28",
+        "inLanguage": "ru",
+        "mainEntityOfPage": "https://snezhko.ru/radar/blog/2026-11-28-midday-immich-pcb-iphone-cms/",
+        "image": "https://snezhko.ru/radar/og-radar.png",
+        "author": {"@type": "Person", "name": "Сергей Снежко", "url": "https://snezhko.ru/"},
+        "publisher": {"@type": "Organization", "name": "Snezhko AI", "url": "https://snezhko.ru/"},
+        "description": "Разбор verso, waffle-eda, turbotap и HyScribe. Данные GitHub API на 28.11.2026, 11:20 МСК."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Откуда взяты звёзды и лицензии?", "acceptedAnswer": {"@type": "Answer", "text": "С публичного API GitHub. Данные GitHub API на 28.11.2026, 11:20 МСК. Звёзды — на момент выпуска, не прогноз роста."}},
+          {"@type": "Question", "name": "Где выходят следующие выпуски?", "acceptedAnswer": {"@type": "Answer", "text": "На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Snezhko AI", "item": "https://snezhko.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "GitHub Radar", "item": "https://snezhko.ru/radar/"},
+          {"@type": "ListItem", "position": 3, "name": "Выпуски", "item": "https://snezhko.ru/radar/blog/"},
+          {"@type": "ListItem", "position": 4, "name": "28 ноября 2026, день", "item": "https://snezhko.ru/radar/blog/2026-11-28-midday-immich-pcb-iphone-cms/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#06080f; --text:#f2f7ff; --muted:#9ba9bd; --cyan:#00f0ff; --line:rgba(139,168,205,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:
+      radial-gradient(circle at 18% 8%, rgba(0,119,255,.14), transparent 28rem),
+      var(--bg); color:var(--text); font-family:Onest,sans-serif; font-size:18px; line-height:1.65; }
+    .shell { width:min(760px, calc(100% - 32px)); margin:0 auto; }
+    a { color:var(--cyan); }
+    header, footer { padding:24px 0; }
+    footer { color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    h1, h2 { font-family:Unbounded,sans-serif; line-height:1.2; }
+    h1 { font-size:clamp(30px, 5vw, 46px); }
+    h2 { font-size:24px; margin-top:36px; }
+    .meta, .crumbs { color:var(--muted); font-size:14px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
+    .cta-row a { display:inline-flex; min-height:48px; align-items:center; padding:10px 16px; border:1px solid rgba(0,240,255,.35); border-radius:14px; text-decoration:none; font-weight:800; }
+    table { width:100%; border-collapse:collapse; font-size:15px; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:10px 8px; vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="crumbs"><a href="https://snezhko.ru/">Snezhko AI</a> / <a href="/radar/">GitHub Radar</a> / <a href="/radar/blog/">Выпуски</a></div>
+  </header>
+  <article class="shell">
+    <p class="meta">28 ноября 2026, день · 11:00 МСК · Сергей Снежко · снимок GitHub API</p>
+    <h1>GitHub Radar — 28 ноября 2026, дневной выпуск</h1>
+    <p>Дневной выпуск, слот 11:00 МСК, — четыре репозитория. <a href="https://github.com/jakobhviid/verso">jakobhviid/verso</a> — неофициальное нативное приложение библиотеки Immich на iPhone, iPad, Apple TV, Mac и Linux, с резервной копией телефона и библиотекой как диском в Files или Finder. <a href="https://github.com/YutingXu/waffle-eda">YutingXu/waffle-eda</a> — лёгкий открытый редактор схем и печатных плат для macOS, Linux и Windows; в темах есть KiCad, Altium и MCP. <a href="https://github.com/Maxteabag/turbotap">Maxteabag/turbotap</a> — headless CLI для физических iPhone по Wi‑Fi, в темах — автоматизация и ИИ-агенты. <a href="https://github.com/hyscaler/HyScribe">hyscaler/HyScribe</a> — замена WordPress на Rust. Звёзды, лицензии и push — из снимка, не оценка качества и не прогноз роста. Данные GitHub API на 28.11.2026, 11:20 МСК.</p>
+
+    <h2>Снимок на 28 ноября 2026</h2>
+    <p class="meta">Данные GitHub API на 28.11.2026, 11:20 МСК. В колонке push — дата и время из этого снимка, в МСК. Звёзды — на момент выпуска.</p>
+    <table>
+      <thead>
+        <tr><th>Репозиторий</th><th>Что это</th><th>Язык</th><th>Лицензия</th><th>Звёзды на 28.11.2026, 11:20 МСК</th><th>Последний push</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/jakobhviid/verso">jakobhviid/verso</a></td>
+          <td>Неофициальное нативное приложение библиотеки Immich: iPhone, iPad, Apple TV, Mac и Linux, резервная копия телефона и библиотека как диск в Files или Finder</td>
+          <td>Swift</td>
+          <td>MIT</td>
+          <td>82</td>
+          <td>28.11.2026, 00:50 МСК</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/YutingXu/waffle-eda">YutingXu/waffle-eda</a></td>
+          <td>Лёгкий открытый редактор схем и печатных плат для macOS, Linux и Windows</td>
+          <td>JavaScript</td>
+          <td>MIT</td>
+          <td>38</td>
+          <td>28.11.2026, 05:10 МСК</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/Maxteabag/turbotap">Maxteabag/turbotap</a></td>
+          <td>Headless CLI и многошаговые сценарии для физического iPhone по Wi‑Fi</td>
+          <td>Rust</td>
+          <td>MIT</td>
+          <td>85</td>
+          <td>28.11.2026, 08:57 МСК</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/hyscaler/HyScribe">hyscaler/HyScribe</a></td>
+          <td>Замена WordPress на Rust: drop-in, self-hosted CMS</td>
+          <td>Rust</td>
+          <td>AGPL-3.0</td>
+          <td>46</td>
+          <td>28.11.2026, 06:22 МСК</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Источник строк: <code>https://api.github.com/repos/&lt;owner&gt;/&lt;repo&gt;</code>. Поля снимка: описание, язык, лицензия, число звёзд, дата push, признак архива, темы, адрес репозитория, homepage. Данные GitHub API на 28.11.2026, 11:20 МСК. Архивными эти четыре репозитория на момент снимка не были. Лицензии в API: MIT у verso, waffle-eda и turbotap, AGPL-3.0 у HyScribe. Время push в таблице переведено из UTC снимка в МСК (UTC+3): verso — 2026-11-27T21:50:13Z, waffle-eda — 2026-11-28T02:10:54Z, turbotap — 2026-11-28T05:57:53Z, HyScribe — 2026-11-28T03:22:40Z. Звёзды в таблице — на момент выпуска: к моменту чтения число на GitHub может быть другим.</p>
+
+    <h2>verso: неофициальный клиент Immich</h2>
+    <p><a href="https://github.com/jakobhviid/verso">jakobhviid/verso</a> в описании API — Verso for Immich: нативное приложение библиотеки Immich на iPhone, iPad, Apple TV, Mac и Linux, с резервной копией телефона и библиотекой как диском в Files или Finder. В том же описании стоит пометка Unofficial. README повторяет: проект независимый и неофициальный, не аффилирован с Immich и FUTO и ими не поддержан; имя Immich используется, чтобы назвать сервер, с которым программа работает. Темы снимка: apple-tv, file-provider, fuse, gallery, gnome, gtk4, immich, immich-client, ios, ipados, libadwaita, linux, macos, photo-backup, photos, rust, self-hosted, swiftui, tvos. Homepage в снимке — <a href="https://jakob.hviid.phd/verso/">jakob.hviid.phd/verso</a>.</p>
+    <p>README раскладывает одно приложение по платформам: SwiftUI и UIKit на iPhone и iPad, SwiftUI на Apple TV, SwiftUI и AppKit на Mac, GTK 4 и libadwaita на Linux под GNOME. Общее ядро README называет написанным на Rust: клиент Immich, раскладка диска и расчёт дат в сетке. По README в библиотеке есть лента, альбомы, люди, места, карта, поиск, избранное, общий доступ, архив, корзина и Locked Folder. Verso Drive показывает библиотеку папками в Files на Linux, iPhone и iPad и в Finder на Mac; README пишет, что диск выключен, пока его не включат, а оригиналы скачиваются, когда файл открывают. На iPhone и iPad README описывает фоновую резервную копию фото в Immich. Смотреть тем, кто держит свой сервер Immich и хочет нативный клиент на этих системах.</p>
+    <p>На что обратить внимание: пометка Unofficial есть и в описании API, и в README. Лицензия в снимке — MIT, README указывает тот же LICENSE. Язык в снимке API — Swift; тема rust и абзац README про общее ядро на Rust описывают вторую часть кодовой базы. README пишет, что выпуски нумеруются 0.x до публичного запуска: Linux и Mac — сборки 0.x, iPhone, iPad и Apple TV — бета через TestFlight. В снимке GitHub API на 28.11.2026, 11:20 МСК: 82 звезды, последний push 28.11.2026, 00:50 МСК, репозиторий не архивный.</p>
+
+    <h2>waffle-eda: редактор схем и плат</h2>
+    <p><a href="https://github.com/YutingXu/waffle-eda">YutingXu/waffle-eda</a> в описании API — лёгкий открытый редактор схем и печатных плат для macOS, Linux и Windows. Темы снимка: altium, eda, electronics, kicad, mcp, pcb, pcb-design, schematics. README называет Waffle локальным настольным EDA: сценарии в духе Altium, живые проверки проекта, визуальная история, расширения и интерфейс для ИИ. По README программа работает офлайн, аккаунт не нужен, и наружу ничего не уходит, пока функцию не включат. Homepage в снимке ведёт на тег релиза <a href="https://github.com/YutingXu/waffle-eda/releases/tag/v0.8.0">v0.8.0</a>.</p>
+    <p>README добавляет пресеты клавиш KiCad и VS Code рядом с раскладкой в духе Altium, импорт проектов Altium, KiCad 6–9, EAGLE и EasyEDA и встроенные MCP-сервер и CLI: проверки, генераторы и правки. Правки от ИИ README описывает как предложения, которые человек просматривает. Смотреть тем, кто рисует схемы и платы и смотрит связку редактора с MCP, KiCad или Altium. Язык в снимке API — JavaScript. В комментарии к сборке README рядом с Python указан Rust для движка.</p>
+    <p>Статус в README: 0.8 «Butter», ранний выпуск; шероховатости ожидаются, резервные копии стоит хранить, а файлы для производства — сверять в просмотрщике производителя до заказа плат. README пишет, что проект независимый и не связан с Altium. Лицензия в снимке — MIT. В снимке GitHub API на 28.11.2026, 11:20 МСК: 38 звёзд, последний push 28.11.2026, 05:10 МСК, репозиторий не архивный.</p>
+
+    <h2>turbotap: CLI для физического iPhone</h2>
+    <p><a href="https://github.com/Maxteabag/turbotap">Maxteabag/turbotap</a> в описании API — быстрый headless CLI и раннер многошаговых сценариев для физических iPhone по Wi‑Fi. Темы снимка: ai-agents, automation, cli, ios, iphone, ocr, webdriveragent. README уточняет адресата: терминал или ИИ-агент, среди названных — Claude Code, Codex и OpenClaw. Сценарий из нажатий, прокрутки, ввода текста и чтения экрана README описывает как одну локальную команду на Rust к WebDriverAgent на телефоне. Ответ README называет JSON с текстом и интерактивными элементами на экране. Чтение экрана в README — OCR и дерево интерфейса. Homepage в снимке пустой.</p>
+    <p>Смотреть тем, кто автоматизирует настоящий iPhone по Wi‑Fi, в том числе из агента. README требует iPhone с iOS 17 или новее в локальной сети Wi‑Fi, включённые Developer Mode и UI Automation, и Mac с Xcode, чтобы подписать и запустить WebDriverAgent. Дальше CLI, по README, говорит с телефоном с этого Mac или с машины Linux в той же сети. В README описаны ограничители: файл остановки, список разрешённых приложений и фильтр запрещённых нажатий.</p>
+    <p>Лицензия в снимке — MIT, язык — Rust. В снимке GitHub API на 28.11.2026, 11:20 МСК: 85 звёзд, последний push 28.11.2026, 08:57 МСК, репозиторий не архивный.</p>
+
+    <h2>HyScribe: CMS на Rust вместо WordPress</h2>
+    <p><a href="https://github.com/hyscaler/HyScribe">hyscaler/HyScribe</a> в описании API — замена WordPress на Rust. Темы снимка: agpl, block-editor, blog, cms, drop-in-replacement, gutenberg, rest-api, rust, security, self-hosted, webassembly, wordpress, wordpress-alternative. README описывает запуск так: бинарник <code>hyscribe</code> указывает на существующую базу WordPress и папку <code>wp-content</code>, короткий мастер настройки, сайт отдаёт один нативный процесс. PHP-рантайма README не описывает, схему базы называет неизменной, а саму базу — по-прежнему читаемой PHP WordPress, с возможностью вернуться. Homepage в снимке — <a href="https://hyscribe.com">hyscribe.com</a>.</p>
+    <p>Смотреть тем, кто хочет отдавать сайт на данных WordPress без PHP и держать расширения в песочнице. README пишет, что плагины идут пакетами WebAssembly с заявленными правами и лимитами времени и памяти, а PHP-плагины не исполняются и нуждаются в порте. Блочные темы Twenty Twenty-Two — Twenty Twenty-Five README называет встроенными. Классические темы и популярные плагины README помечает как ещё не перенесённые. В предупреждении README: ранний выпуск, внешнего аудита безопасности не было, часть hs-admin и REST API отвечает <code>501 Not Implemented</code>, проверять стоит на копии сайта и с резервными копиями.</p>
+    <p>Лицензия в снимке API — AGPL-3.0. README пишет AGPL-3.0-or-later. Условия стоит прочитать до того, как код попадёт в продукт, в том числе если сервис отдают по сети. Язык в снимке — Rust. В снимке GitHub API на 28.11.2026, 11:20 МСК: 46 звёзд, последний push 28.11.2026, 06:22 МСК, репозиторий не архивный.</p>
+
+    <h2>Вывод</h2>
+    <p>Дневной выпуск, слот 11:00 МСК, собирает неофициальный клиент Immich, лёгкий редактор схем и плат, CLI для физического iPhone по Wi‑Fi и CMS на Rust вместо WordPress. Verso, waffle-eda и turbotap в снимке под MIT; у HyScribe лицензия снимка — AGPL-3.0, README пишет AGPL-3.0-or-later и просит не ставить ранний выпуск на живой сайт. Звёзды в таблице — данные GitHub API на 28.11.2026, 11:20 МСК, а запуск на своей машине в текст не входит, пока не проверен отдельно.</p>
+
+    <h2>Куда приходят следующие выпуски</h2>
+    <p>Лента карточек живёт на <a href="/radar/">странице GitHub Radar</a>. Подписаться на следующие выпуски: канал в MAX — <a href="https://max.ru/id10604113677_biz">GitHub Radar | AI-находки</a>, канал в Telegram — <a href="https://t.me/github_nahodki">github_nahodki</a>.</p>
+    <div class="cta-row">
+      <a href="https://max.ru/id10604113677_biz">Открыть MAX</a>
+      <a href="https://t.me/github_nahodki">Telegram</a>
+    </div>
+
+    <h2>Короткие ответы</h2>
+    <h3>Откуда взяты звёзды и лицензии?</h3>
+    <p>С публичного API GitHub. Данные GitHub API на 28.11.2026, 11:20 МСК. Звёзды — на момент выпуска, не прогноз роста.</p>
+    <h3>Где выходят следующие выпуски?</h3>
+    <p>На странице GitHub Radar, в канале MAX, в Telegram github_nahodki и во ВК.</p>
+  </article>
+  <footer class="shell">
+    <div>ИП Снежко Сергей Андреевич · ИНН 010604113677 · ОГРНИП 321010500006225</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a> · <a href="/radar/blog/">Все выпуски</a></div>
+  </footer>
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112187050, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  </script>
+</body>
+</html>
